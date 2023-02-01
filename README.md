@@ -24,6 +24,26 @@ git push -uf origin main
 
 - [ ] [Set up project integrations](https://gitlab.stud.idi.ntnu.no/ai4users/AI4Users/-/settings/integrations)
 
+## Conventions for working with issues, labels and milestones
+- Every issue represents a child-issue.
+- Every child-issue belongs to a user story.
+- Every user story is a label, and child issues are connected to a label.
+- When a developer has finished a issue, type "Fix #numberOfIssue" in commit-message to close given issue.
+    - Or, click into issue and click on "create merge request". this will create a branch that is connected to given issue.
+    When this branch is merged with main, issue will automatically close.
+- Every issue is connected to a milestone.
+
+
+## Git commit and merging coventions
+- Create new branch for each issue/child-issue
+- Merge mainbranch into your workingbranch locally before merging into main in gitlab.
+    - This way there wont be any merge-issues anywhere else than on your local pc. 
+- Try as good as you can to describe what you have changed/implemented in your commit.
+    - Including problems that was not planned.
+- REMEMBER TO UPDATE JIRA-ISSUES ACCORDING TO YOUR PROGRESS
+
+## Project setup and running rules
+
 ## Collaborate with your team
 
 - [ ] [Invite team members and collaborators](https://docs.gitlab.com/ee/user/project/members/)
