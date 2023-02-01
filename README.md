@@ -18,6 +18,29 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 
 [API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.ts`.
 
+## Conventions for working with issues, labels and milestones
+
+-   Every issue represents a child-issue.
+-   Every child-issue belongs to a user story.
+-   Every user story is a label, and child issues are connected to a label.
+-   When a developer has finished a issue, type "Fix #numberOfIssue" in commit-message to close given issue.
+    -   Or, click into issue and click on "create merge request". this will create a branch that is connected to given issue.
+        When this branch is merged with main, issue will automatically close.
+-   Every issue is connected to a milestone.
+
+## Git commit and merging coventions
+
+-   Create new branch for each issue/child-issue
+-   Merge mainbranch into your workingbranch locally before merging into main in gitlab.
+    -   This way there wont be any merge-issues anywhere else than on your local pc.
+-   Try as good as you can to describe what you have changed/implemented in your commit.
+    -   Including problems that was not planned.
+-   REMEMBER TO UPDATE JIRA-ISSUES ACCORDING TO YOUR PROGRESS
+
+## Project setup and running rules
+
+## Collaborate with your team
+
 The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
 
 This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
@@ -26,8 +49,8 @@ This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-opti
 
 To learn more about Next.js, take a look at the following resources:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+-   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+-   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
 You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
