@@ -12,6 +12,9 @@ module.exports = {
     extend: {
       colors: {
       'backgroundColor' : '#fffaf9',
+      'primary' : '#579bb1',
+      'secondary' : '#e07a5f',
+
     },},
   },
   plugins: [],
