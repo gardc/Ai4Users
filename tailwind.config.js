@@ -9,9 +9,13 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    fontFamily: {
+      'sans' : ['Source Sans Pro', 'system-ui'],
+    },
     extend: {
       colors: {
       'backgroundColor' : '#fffaf9',
+      'backgroundColor2': '#f8f8f8', 
     },},
   },
   plugins: [],
