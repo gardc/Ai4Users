@@ -1,6 +1,11 @@
 import React from "react";
 import Tooltip from "@/components/Tooltip";
 
+/**
+ * The props for the DataTable component.
+ *
+ * @param data - The data to display in the table. Each row of data needs to have a label, a value, and a description.
+ */
 interface DataTableProps {
     data: {
         label: string;
@@ -8,9 +13,27 @@ interface DataTableProps {
         description: string;
     }[];
 }
+
+/**
+ * A table that displays data with labels and optional descriptions.
+ *
+ * @param data - The data to display in the table. Each row of data needs to have a label, a value, and a description.
+ *
+ * @returns A table of the data as a React functional component.
+ */
 const DataTable: React.FC<DataTableProps> = ({data}) => {
+    /**
+     * Removes the table header.
+     *
+     * @returns Nothing
+     */
     const renderTableHeader = () => null;
 
+    /**
+     * Renders the table body. Required to remove the header row.
+     *
+     * @returns The rendered table body.
+     */
     const renderTableBody = () => {
         return (
             <tbody>
