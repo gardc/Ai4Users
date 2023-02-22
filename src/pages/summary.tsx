@@ -1,34 +1,46 @@
 import Button from "@/components/Button";
 import DataTable from "@/components/DataTable"
-import Link from "next/link";
+import {useRouter} from "next/router";
 import Parent from "@/components/Parent";
 import React from "react";
+import {exampleData} from "@/pages/api/exampleData";
 
-const tempData = [
-    { name: 'Ola Normann', age: '25', occupation: 'Programmer' },
-    { name: 'Hanna Normann', age: '30', occupation: 'Designer' },
-    { name: 'John Doe', age: '40', occupation: 'Manager' },
-    { name: 'Jane Doe', age: '42', occupation: 'Manager' },
-];
-
+/**
+ * The summary page component that displays a summary of information used to estimate sick leave duration.
+ *
+ * @returns A React functional component representing the summary page.
+ */
 const summary: React.FC = () => {
+    const router = useRouter();
+    const {consent} = router.query;
+
+    /**
+     * The model query value that determines whether the AI-model is used for estimation or not.
+     */
+    let text = ''
+    if (consent === 'true') {
+        text = 'You have chosen to use the AI-model for estimation';
+    } else if (consent === 'false') {
+        text = 'You have chosen <b>not</b> to use the AI-model for estimation';
+        text = text.replace(/(<b>not<\/b>)/, '<b>$1</b>');
+    }
     return (
         <Parent>
             <div>
                 <div className="flex items-center mt-5 ml-5">
-                    <Link href="/" className="px-4 py-2 bg-blue-500 text-white rounded">
+                    <Button color="blue" href={"/"} >
                         Go back
-                    </Link>
+                    </Button>
                 </div>
-                <div className="flex justify-center">
-                    <h1 className="text-2xl font-bold text-center">You have chosen to use the AI-model for estimation</h1>
+                <div className="flex justify-center text-2xl text-center">
+                    <h1 dangerouslySetInnerHTML={{ __html: text }} />
                 </div>
 
-                <div className="flex justify-center">
+                <div className="flex justify-center mb-16">
                     <h2 className="text-lg font-bold text-gray-600 text-center">Summary of information used to estimate sick leave duration</h2>
                 </div>
                 <div className="flex justify-center mt-4">
-                    <DataTable data={tempData} />
+                    <DataTable data={exampleData} />
                 </div>
                 <div className="flex justify-center mt-4">
                     <Button color="blue" onClick={() => alert('Okay')} >

@@ -14,6 +14,8 @@ module.exports = {
       'backgroundColor' : '#fffaf9',
       'primary' : '#579bb1',
       'secondary' : '#e07a5f',
+      'tertiary' : '#f8f4ea',
+      'quaternary' : '#f8f4ea',
 
     },},
   },
