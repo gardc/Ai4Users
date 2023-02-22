@@ -30,12 +30,16 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 
 ## Git commit and merging coventions
 
--   Create new branch for each issue/child-issue
+-   Conventions for creating branches, issues, and merge requests can be found in the wiki.
 -   Merge mainbranch into your workingbranch locally before merging into main in gitlab.
     -   This way there wont be any merge-issues anywhere else than on your local pc.
--   Try as good as you can to describe what you have changed/implemented in your commit.
-    -   Including problems that was not planned.
--   REMEMBER TO UPDATE JIRA-ISSUES ACCORDING TO YOUR PROGRESS
+-   In commit message:
+    -   Separate subject body with a blank line (not needed in most IDE's e.g. VSCode by default)
+    -   Use imperative mood in the subject line.
+    -   Capitalize the subject line.
+    -   Try to keep the subject line concise.
+    -   Use the body to explain what and why
+    -   Include "#{issue number}" at the end of the commit-message
 
 ## Project setup and running rules
 
