@@ -38,7 +38,7 @@ const Tooltips: React.FC<Tooltips> = ({
         <div className="absolute" >?</div> 
         </button>
         {open ? (
-        <div ref={ref} className="absolute bg-black aspect-square text-white bg-opacity-80 rounded-xl p-5">{extendedInfo}</div>) 
+        <div ref={ref} className="absolute bg-black z-50 aspect-square text-white bg-opacity-80 rounded-xl p-5">{extendedInfo}</div>) 
         : (<div></div>)}
       </div>
     );
