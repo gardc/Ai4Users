@@ -5,11 +5,13 @@ import Parent from "@/components/Parent";
 import UsingAi from "@/pages/UsingAi";
 import React from "react";
 import Link from "next/link";
+import NavBar from "@/components/NavBar";
 
 function index() {
     return (
         <Parent>
             <Content>
+                <NavBar />
                 <div className="index bg-gradient-to-b from-purple-300 to-slate-50 py-32">
                     <p className="text-center text-5xl m-3">
                         Estimation of sick leave
