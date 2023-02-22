@@ -1,5 +1,6 @@
 import Content from "@/components/Content";
 import InformationDropdownBox from "@/components/InformationDropdownBox";
+import Tooltips from "@/components/Tooltips";
 import Parent from "@/components/Parent";
 import React from "react";
 
@@ -11,6 +12,8 @@ function index() {
                     <p className="text-center text-3xl">
                         Estimation of sick leave
                     </p>
+                    <Tooltips 
+                        extendedInfo={"idfvbrelkjv"}></Tooltips>
                     <p className="text-center text-m">
                         We will estimate you total duration of sick leave
                     </p>
@@ -19,6 +22,7 @@ function index() {
                         initialInfo={"Lorem ipsum dette er initial info"}
                         extendedInfo={"Lorem ipsum dette er extendedinfo"}
                     />
+               
                 </div>
             </Content>
         </Parent>
