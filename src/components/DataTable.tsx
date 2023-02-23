@@ -1,5 +1,5 @@
 import React from "react";
-import Tooltip from "@/components/Tooltip";
+import Tooltip from "@/components/Tooltips";
 
 /**
  * The props for the DataTable component.
@@ -46,7 +46,7 @@ const DataTable: React.FC<DataTableProps> = ({data}) => {
                         </td>
                         <td className="p-2 px-6">
                             {row.description && (
-                                <Tooltip description={row.description}/>
+                                <Tooltip extendedInfo={row.description}/>
                             )}
                         </td>
                     </tr>
