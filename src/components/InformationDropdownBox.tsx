@@ -1,11 +1,6 @@
 import React, { useState } from "react";
 import "@fortawesome/fontawesome-free/css/all.css";
-
-interface InformationDropdownBoxProps {
-    title: string;
-    initialInfo: string | JSX.Element;
-    extendedInfo: string | JSX.Element;
-}
+import { InformationDropdownBoxProps } from "./interfaces";
 
 /**
  * Returns HTML code for an information box component, that may have a title, some initial
