@@ -1,6 +1,5 @@
 import Content from "@/components/Content";
 import InformationDropdownBox from "@/components/InformationDropdownBox";
-import Tooltips from "@/components/Tooltip";
 import Parent from "@/components/Parent";
 import React from "react";
 
