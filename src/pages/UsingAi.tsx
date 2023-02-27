@@ -1,8 +1,10 @@
 import Button from "@/components/Button";
 import Content from "@/components/Content";
+import ExpandableInformationBox from "@/components/ExpandableInformationBox";
 import InformationDropdownBox from "@/components/InformationDropdownBox";
 import NavBar from "@/components/NavBar";
 import Parent from "@/components/Parent";
+import ExplainingUseOfAiInfoBox from "@/components/ExplainingUseOfAiInfoBox";
 import Link from "next/link";
 import React from "react";
 
@@ -17,15 +19,7 @@ const UsingAI = () => {
                     </p>
                 </div>
                 <div className="text-center bg-slate-50 flex justify-center flex-col items-center">
-                    <InformationDropdownBox
-                        title={""}
-                        initialInfo={
-                            "We offer the use of an Artificial Intelligence (AI) model to be used for estimating your sick leave duration. The use of this system can help case workers in making more accurate estimations, as well as shortening the response time."
-                        }
-                        extendedInfo={
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
-                        }
-                    />
+                    <ExplainingUseOfAiInfoBox />
                     <InformationDropdownBox
                         title={""}
                         initialInfo={
