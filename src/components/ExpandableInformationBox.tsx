@@ -36,7 +36,7 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
                 {content}
                 <br></br>
                 <div className="flex justify-center mb-16 lg:mb-0 lg:pt-7 mt-2 lg:mt-5">
-                    <button onClick={handleExpantion} className="p-3 text-xs rounded-xl 
+                    <button onClick={handleExpantion} className="p-3 text-xs mt-5 rounded-xl 
                     bg-orange-300 hover:bg-orange-200 text-white">
                         {buttonText}
                     </button>
@@ -46,16 +46,16 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
                 : (<>
                     <div className="fixed inset-0 bg-black opacity-25 z-10"></div>
                     <div className="bg-white p-14 w-3/4 rounded-xl fixed top-1/2 left-1/2 transform
-                    -translate-x-1/2 -translate-y-1/2 z-50">
-                        <p className="font-bold mb-6 text-xl text-black">
+                    -translate-x-1/2 -translate-y-1/2 z-50 overflow-y-auto max-h-full mt-10 
+                    max-w-5xl">
+                        <p className="font-bold mb-6 text-xl w-5/6 xl:w-full text-orange-400">
                             {expandedContentTitle}
                         </p>
                         <p className="text-black">
                             {expandedContent}
                         </p>
                         <button onClick={handleExpantion} className="text-black hover:text-sky-600
-                        absolute top-14 right-14 
-                        underline">
+                        absolute top-14 right-14 underline">
                             Close
                         </button>
                     </div>
