@@ -31,15 +31,15 @@ const InformationDropdownBox: React.FC<InformationDropdownBoxProps> = ({
     };
 
     return (
-        <div className="bg-white rounded-xl shadow-lg w-3/4 justify-center items-center">
+        <div className="bg-white rounded-xl shadow-lg w-3/4 justify-center items-center m-2">
             {" "}
             {/* TODO: Must change color, or set color somewhere else.*/}
             {title.length !== 0 && (
                 <h2 className="font-bold px-12 pt-14 text-xl">{title}</h2>
             )}
-            <div className="px-12 pt-12 pb-12">{initialInfo}</div>
+            <div className="px-6 pt-6 pb-6">{initialInfo}</div>
             {!open && (
-                <div className="flex justify-center pb-7">
+                <div className="flex justify-center pb-4">
                     <button onClick={handleOpen}>
                         <p className="text-xs">More info</p>
                         <i className="fas fa-chevron-down"></i>
@@ -48,9 +48,9 @@ const InformationDropdownBox: React.FC<InformationDropdownBoxProps> = ({
             )}
             {open ? (
                 <div className="bg-slate-50 rounded-b-xl">
-                    <div className="px-12 py-12">{extendedInfo}</div>
+                    <div className="px-6 py-6">{extendedInfo}</div>
                     {open && (
-                        <div className="flex justify-center pb-7">
+                        <div className="flex justify-center pb-4">
                             <button onClick={handleOpen}>
                                 <i className="fas fa-chevron-up"></i>
                                 <br></br>

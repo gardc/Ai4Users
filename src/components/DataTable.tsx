@@ -21,7 +21,7 @@ interface DataTableProps {
  *
  * @returns A table of the data as a React functional component.
  */
-const DataTable: React.FC<DataTableProps> = ({data}) => {
+const DataTable: React.FC<DataTableProps> = ({ data }) => {
     /**
      * Removes the table header.
      *
@@ -37,26 +37,31 @@ const DataTable: React.FC<DataTableProps> = ({data}) => {
     const renderTableBody = () => {
         return (
             <tbody>
-            {data.map((row, index) => {
-                return (
-                    <tr key={index} className="border-t border-b">
-                        <td className="p-2 px-6 font-bold border-r border-gray-200">{row.label}</td>
-                        <td className="p-2 px-6 text-gray-600 border-r border-gray-200 ">
-                            {row.value}{' '}
-                        </td>
-                        <td className="p-2 px-6">
-                            {row.extendedInfo && (
-                                <Tooltip extendedInfo={row.extendedInfo}/>
-                            )}
-                        </td>
-                    </tr>
-                );
-            })}
+                {data.map((row, index) => {
+                    return (
+                        <tr key={index} className="border-t border-b">
+                            <td className="p-2 px-6 font-bold border-r border-gray-200">
+                                {row.label}
+                            </td>
+                            <td className="p-2 px-6 text-gray-600 border-r border-gray-200 ">
+                                {row.value}{" "}
+                            </td>
+                            <td className="p-2 px-6">
+                                {row.extendedInfo && (
+                                    <Tooltip extendedInfo={row.extendedInfo} />
+                                )}
+                            </td>
+                        </tr>
+                    );
+                })}
             </tbody>
         );
     };
     return (
-        <table className="p-6 border rounded-[20px] shadow-[1px_1px_6px_rgba(0,0,0,0.25)]" style={{ borderCollapse: "separate"}}>
+        <table
+            className="m-5 p-6 border rounded-[20px] shadow-[1px_1px_6px_rgba(0,0,0,0.25)]"
+            style={{ borderCollapse: "separate" }}
+        >
             {renderTableHeader()}
             {renderTableBody()}
         </table>

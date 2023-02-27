@@ -1,4 +1,4 @@
-import React from 'react';
+import React from "react";
 import Link from "next/link";
 
 /**
@@ -10,7 +10,7 @@ import Link from "next/link";
  * @param children - The child elements to display inside the button.
  */
 interface ButtonProps {
-    color?: 'blue' | 'red' | 'white';
+    color?: "blue" | "red" | "white" | "black";
     href?: string;
     onClick?: () => void;
     children: React.ReactNode;
@@ -26,22 +26,30 @@ interface ButtonProps {
  *
  * @returns A React functional component representing a button element or a Link component.
  */
-const Button: React.FC<ButtonProps> = ({ color = 'blue', href, onClick, children }) => {
-    const baseClasses = 'font-bold py-2 px-4 rounded-xl';
+const Button: React.FC<ButtonProps> = ({
+    color = "blue",
+    href,
+    onClick,
+    children,
+}) => {
+    const baseClasses = "py-3 px-4 rounded-md";
 
     let colorClasses;
     switch (color) {
-        case 'blue':
-            colorClasses = 'bg-primary text-white';
+        case "blue":
+            colorClasses = "bg-primary text-white";
             break;
-        case 'red':
-            colorClasses = 'bg-secondary text-white';
+        case "red":
+            colorClasses = "bg-secondary text-white";
             break;
-        case 'white':
-            colorClasses = 'bg-tertiary text-primary border-primary border';
+        case "white":
+            colorClasses = "bg-tertiary text-primary border-primary border";
+            break;
+        case "black":
+            colorClasses = "bg-black text-white";
             break;
         default:
-            colorClasses = 'bg-blue-500 text-white';
+            colorClasses = "bg-blue-500 text-white";
     }
 
     const classes = `${baseClasses} ${colorClasses}`;
