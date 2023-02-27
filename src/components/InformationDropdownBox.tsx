@@ -36,20 +36,20 @@ const InformationDropdownBox: React.FC<InformationDropdownBoxProps> = ({
             {!open && (
                 <div className="flex justify-center pb-7">
                     <button onClick={handleOpen}>
-                        <p className="text-xs">More info</p>
+                        <p className="text-xs">Read more</p>
                         <i className="fas fa-chevron-down"></i>
                     </button>
                 </div>
             )}
             {open ? (
                 <div className="bg-slate-50 rounded-b-xl">
-                    <div className="px-12 py-12">{extendedInfo}</div>
+                    <div className="px-12 pt-12">{extendedInfo}</div>
                     {open && (
                         <div className="flex justify-center pb-7">
                             <button onClick={handleOpen}>
                                 <i className="fas fa-chevron-up"></i>
                                 <br></br>
-                                <p className="text-xs">Less info</p>
+                                <p className="text-xs">Close</p>
                             </button>
                         </div>
                     )}
