@@ -10,7 +10,7 @@ interface DataTableProps {
     data: {
         label: string;
         value: string;
-        description: string;
+        extendedInfo: string;
     }[];
 }
 
@@ -45,8 +45,8 @@ const DataTable: React.FC<DataTableProps> = ({data}) => {
                             {row.value}{' '}
                         </td>
                         <td className="p-2 px-6">
-                            {row.description && (
-                                <Tooltip extendedInfo={row.description}/>
+                            {row.extendedInfo && (
+                                <Tooltip extendedInfo={row.extendedInfo}/>
                             )}
                         </td>
                     </tr>
