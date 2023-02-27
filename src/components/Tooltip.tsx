@@ -1,11 +1,11 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef } from "react";
 import "@fortawesome/fontawesome-free/css/all.css";
 
-interface Tooltips {
+interface TooltipProps {
     extendedInfo: string | JSX.Element;
 }
 
-const Tooltips: React.FC<Tooltips> = ({
+const Tooltip: React.FC<TooltipProps> = ({
     extendedInfo,
 }) => {
     const [open, setOpen] = React.useState(false); 
@@ -33,15 +33,18 @@ const Tooltips: React.FC<Tooltips> = ({
     };
   
     return (
-      <div className="">
-        <button className=" w-1/100 h-1/100 bg-white focus:outline-none focus:ring focus:ring-black rounded-full flex justify-center items-center text-center p-5 shadow-xl" onClick={handleOpen}>
-        <div className="absolute" >?</div> 
-        </button>
-        {open ? ( 
-        <div ref={ref} className="absolute bg-black z-50 aspect-square text-white bg-opacity-80 rounded-xl p-5">{extendedInfo}</div>) 
-        : (<div></div>)}
+      <div className="flex items-center">
+          <button className=" w-1/100 h-1/100 bg-white focus:outline-none focus:ring focus:ring-black rounded-full flex justify-center items-center text-center p-5 shadow-xl" onClick={handleOpen}>
+              <div className="absolute" >?</div>
+          </button>
+          <div className="">
+              {open ? (
+                  <div ref={ref} className="absolute bg-black z-50 text-white bg-opacity-80 rounded-xl p-5">
+                      {extendedInfo}
+                  </div>)
+                  : (<div></div>)}
+          </div>
       </div>
     );
-  };
-  
-  export default Tooltips;
+};
+export default Tooltip;
