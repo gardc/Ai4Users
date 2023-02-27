@@ -15,15 +15,12 @@ module.exports = {
     extend: {
       colors: {
       'backgroundColor' : '#fffaf9',
-<<<<<<< HEAD
       'backgroundColor2': '#f8f8f8', 
-=======
       'primary' : '#579bb1',
       'secondary' : '#e07a5f',
       'tertiary' : '#f8f4ea',
       'quaternary' : '#f8f4ea',
 
->>>>>>> bec9512d18ef4ce6d97af4b35b86addbc53e288d
     },},
   },
   plugins: [],

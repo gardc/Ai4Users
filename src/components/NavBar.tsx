@@ -4,7 +4,7 @@ import React from "react";
 const NavBar = () => {
     return (
         <div className="flex bg-purple-300 text-xl p-12 justify-between">
-            <Link className="text-white  px-2" href={"/"}>
+            <Link className="text-white px-2" href={"/"}>
                 SickLeave
             </Link>
             <div className="text-end">
