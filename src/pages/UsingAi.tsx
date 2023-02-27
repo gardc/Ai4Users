@@ -47,7 +47,7 @@ const UsingAI = () => {
                     <button className="m-2 py-3 bg-black hover:bg-neutral-800 w-60 rounded-lg text-center text-white font-normal Sans">
                         <Link
                             className="text-center"
-                            href={"/summary?consent=false"}
+                            href={"/Summary?consent=false"}
                         >
                             Dont evaluate with AI
                         </Link>
@@ -55,7 +55,7 @@ const UsingAI = () => {
                     <button className="m-2 py-3 bg-black hover:bg-neutral-800 w-60 rounded-lg text-center text-white font-normal Sans">
                         <Link
                             className="text-center"
-                            href={"/summary?consent=true"}
+                            href={"/Summary?consent=true"}
                         >
                             Consent to use AI
                         </Link>

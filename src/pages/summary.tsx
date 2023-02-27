@@ -11,7 +11,7 @@ import NavBar from "@/components/NavBar";
  *
  * @returns A React functional component representing the summary page.
  */
-const summary: React.FC = () => {
+const Summary: React.FC = () => {
     const router = useRouter();
     const { consent } = router.query;
 
@@ -63,4 +63,4 @@ const summary: React.FC = () => {
         </Parent>
     );
 };
-export default summary;
+export default Summary;
