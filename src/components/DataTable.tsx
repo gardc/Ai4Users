@@ -1,5 +1,5 @@
 import React from "react";
-import Tooltip from "@/components/Tooltips";
+import Tooltip from "@/components/Tooltip";
 
 /**
  * The props for the DataTable component.
