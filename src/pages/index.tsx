@@ -19,6 +19,7 @@ function index() {
                         initialInfo={"Lorem ipsum dette er initial info"}
                         extendedInfo={"Lorem ipsum dette er extendedinfo"}
                     />
+               
                 </div>
             </Content>
         </Parent>
