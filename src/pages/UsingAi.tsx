@@ -342,6 +342,7 @@ const UsingAI = () => {
                                             <a
                                                 href="https://lovdata.no/lov/2018-06-15-38/gdpr/a15"
                                                 target="_blank"
+                                                rel="noreferrer"
                                                 className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
                                             >
                                                 Learn more
@@ -367,6 +368,7 @@ const UsingAI = () => {
                                             <a
                                                 href="https://lovdata.no/lov/2018-06-15-38/gdpr/a16"
                                                 target="_blank"
+                                                rel="noreferrer"
                                                 className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
                                             >
                                                 Learn more
@@ -393,6 +395,7 @@ const UsingAI = () => {
                                             <a
                                                 href="https://lovdata.no/lov/2018-06-15-38/gdpr/a17"
                                                 target="_blank"
+                                                rel="noreferrer"
                                                 className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
                                             >
                                                 Learn more
@@ -419,6 +422,7 @@ const UsingAI = () => {
                                             <a
                                                 href="https://lovdata.no/lov/2018-06-15-38/gdpr/a18"
                                                 target="_blank"
+                                                rel="noreferrer"
                                                 className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
                                             >
                                                 Learn more
@@ -445,6 +449,7 @@ const UsingAI = () => {
                                             <a
                                                 href=" https://lovdata.no/lov/2018-06-15-38/gdpr/a20"
                                                 target="_blank"
+                                                rel="noreferrer"
                                                 className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
                                             >
                                                 Learn more
@@ -471,6 +476,7 @@ const UsingAI = () => {
                                             <a
                                                 href="https://lovdata.no/lov/2018-06-15-38/gdpr/a21"
                                                 target="_blank"
+                                                rel="noreferrer"
                                                 className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
                                             >
                                                 Learn more
