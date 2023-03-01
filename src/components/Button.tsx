@@ -10,7 +10,7 @@ import Link from 'next/link'
  * @param children - The child elements to display inside the button.
  */
 interface ButtonProps {
-    color?: 'violet' | 'beaver' | 'white' | 'black'
+    color?: 'violet' | 'beaver' | 'primary' | 'black'
     href?: string
     onClick?: () => void
     children: React.ReactNode
@@ -42,8 +42,8 @@ const Button: React.FC<ButtonProps> = ({
         case 'beaver':
             colorClasses = 'bg-beaver text-white'
             break
-        case 'white':
-            colorClasses = 'bg-primary text-primary border-primary border'
+        case 'primary':
+            colorClasses = 'bg-primary text-black border-primary border'
             break
         case 'black':
             colorClasses = 'bg-black text-white'
