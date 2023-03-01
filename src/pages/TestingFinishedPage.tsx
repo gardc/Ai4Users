@@ -1,5 +1,11 @@
 import Link from "next/link";
 
+/**
+ * The end page for testing component that displays some information and buttons for restarting
+ * the demo and for navigating to a questionnaire.
+ *
+ * @returns A React functional component representing the end page for testing.
+ */
 export default function TestingFinishedPage() {
     return (
         <div className="w-full h-screen flex flex-col justify-center items-center bg-white">
