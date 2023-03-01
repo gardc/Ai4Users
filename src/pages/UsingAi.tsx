@@ -1,15 +1,21 @@
-import Content from '@/components/Content'
-import InformationDropdownBox from '@/components/InformationDropdownBox'
-import NavBar from '@/components/NavBar'
-import Parent from '@/components/Parent'
-import React from 'react'
-import BookIcon from '@/components/Assets/bookIcon'
-import Image from 'next/image'
-import CogIcon from '@/components/Assets/cogIcon'
-import FastForwardIcon from '@/components/Assets/fastForwardIcon'
-import ExpandableInformationBox from '@/components/ExpandableInformationBox'
-import Button from '@/components/Button'
+import BookIcon from "@/components/Assets/bookIcon";
+import Button from "@/components/Button";
+import CogIcon from "@/components/Assets/cogIcon";
+import Content from "@/components/Content";
+import ExpandableInformationBox from "@/components/ExpandableInformationBox";
+import FastForwardIcon from "@/components/Assets/fastForwardIcon";
+import Image from "next/image";
+import InformationDropdownBox from "@/components/InformationDropdownBox";
+import NavBar from "@/components/NavBar";
+import Parent from "@/components/Parent";
+import React from "react";
 
+/**
+ * The page component for explaining the use of an AI model for the tester of the web application.
+ *
+ * @returns A React functional component representing the page
+ * containing information about the use of an AI model.
+ */
 const UsingAI = () => {
     return (
         <Parent>
@@ -22,7 +28,7 @@ const UsingAI = () => {
                 </div>
                 <div className="text-center bg-slate-50 flex justify-center flex-col items-center">
                     <InformationDropdownBox
-                        title={''}
+                        title={""}
                         initialInfo={`In order to provide you with the most appropriate support 
                         given your situation, we offer the use of an artificial intelligence (AI) 
                         model to aid the case handler in predicting the duration of your sick 
@@ -54,7 +60,7 @@ const UsingAI = () => {
                                         </div>
                                     }
                                     expandedContentTitle={
-                                        'What agreeing to use the AI model entails'
+                                        "What agreeing to use the AI model entails"
                                     }
                                     expandedContent={
                                         <div className="text-base pb-4">
@@ -68,7 +74,7 @@ const UsingAI = () => {
                                             <ul className="list-disc list-inside pb-6">
                                                 <p className="font-bold pb-4">
                                                     No matter your choice, it
-                                                    will be the case that{' '}
+                                                    will be the case that{" "}
                                                 </p>
                                                 <li>
                                                     the exact same personal data
@@ -100,10 +106,10 @@ const UsingAI = () => {
                                             </p>
                                             <Image
                                                 src={
-                                                    '/img/disagreeToUseFlow.jpg'
+                                                    "/img/disagreeToUseFlow.jpg"
                                                 }
                                                 alt={
-                                                    'Flow of declining or accepting the use of the AI model'
+                                                    "Flow of declining or accepting the use of the AI model"
                                                 }
                                                 width={1000}
                                                 height={1000}
@@ -127,9 +133,9 @@ const UsingAI = () => {
                                                 you in your situation.
                                             </p>
                                             <Image
-                                                src={'/img/agreeToUseFlow.jpg'}
+                                                src={"/img/agreeToUseFlow.jpg"}
                                                 alt={
-                                                    'Flow of declining or accepting the use of the AI model'
+                                                    "Flow of declining or accepting the use of the AI model"
                                                 }
                                                 width={1000}
                                                 height={1000}
@@ -137,7 +143,7 @@ const UsingAI = () => {
                                             />
                                         </div>
                                     }
-                                    buttonText={'Learn more'}
+                                    buttonText={"Learn more"}
                                 />
                                 <ExpandableInformationBox
                                     content={
@@ -164,7 +170,7 @@ const UsingAI = () => {
                                         </div>
                                     }
                                     expandedContentTitle={
-                                        'How the AI model works'
+                                        "How the AI model works"
                                     }
                                     expandedContent={
                                         <div className="text-base pb-4">
@@ -203,10 +209,10 @@ const UsingAI = () => {
                                             </div>
                                             <Image
                                                 src={
-                                                    '/img/trainingTheModel.jpg'
+                                                    "/img/trainingTheModel.jpg"
                                                 }
                                                 alt={
-                                                    'Illustration of how the model is trained'
+                                                    "Illustration of how the model is trained"
                                                 }
                                                 width={1000}
                                                 height={1000}
@@ -226,17 +232,17 @@ const UsingAI = () => {
                                             </p>
                                             <Image
                                                 src={
-                                                    '/img/usingTheModelForPrediction.jpg'
+                                                    "/img/usingTheModelForPrediction.jpg"
                                                 }
                                                 alt={
-                                                    'Illustration of how the model is used'
+                                                    "Illustration of how the model is used"
                                                 }
                                                 width={1000}
                                                 height={1000}
                                             />
                                         </div>
                                     }
-                                    buttonText={'Learn more'}
+                                    buttonText={"Learn more"}
                                 />
                                 <ExpandableInformationBox
                                     content={
@@ -261,7 +267,7 @@ const UsingAI = () => {
                                         </div>
                                     }
                                     expandedContentTitle={
-                                        'Why we offer the use of the AI model in predicting sick leave duration'
+                                        "Why we offer the use of the AI model in predicting sick leave duration"
                                     }
                                     expandedContent={
                                         <div className="text-base pb-4">
@@ -271,7 +277,7 @@ const UsingAI = () => {
                                                 number of people. To aid our
                                                 case handlers achieve this aim,
                                                 we offer the use of an AI model
-                                                for estimation to:{' '}
+                                                for estimation to:{" "}
                                             </p>
                                             <ul className="list-disc list-inside pb-4">
                                                 <li>
@@ -298,23 +304,199 @@ const UsingAI = () => {
                                             </p>
                                         </div>
                                     }
-                                    buttonText={'Learn more'}
+                                    buttonText={"Learn more"}
                                 />
                             </div>
                         }
                     />
                     <InformationDropdownBox
-                        title={''}
+                        title={""}
                         initialInfo={
-                            'You have the right to choose whether to use this AI-model or not. If you choose to not use the model the case worker will handle your case without any involvement from the artificial intelligence model. This may result in longer processing time for your case'
+                            <>
+                                <p>
+                                    You have the right to choose whether to use
+                                    this AI-model or not. If you choose to not
+                                    use the model the case worker will handle
+                                    your case without any involvement from the
+                                    artificial intelligence model. This may
+                                    result in longer processing time for your
+                                    case.
+                                </p>
+                                <p>
+                                    {" "}
+                                    Read more about your rights as a user below.
+                                </p>
+                            </>
                         }
                         extendedInfo={
-                            "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
+                            <div className="space-y-4">
+                                <h2 className="">
+                                    {" "}
+                                    As a user you have the right to:{" "}
+                                </h2>
+                                <ul className="space-y-4 list-disc text-left">
+                                    <li>
+                                        <p className="">
+                                            Get information on which of your
+                                            personal data is being used and why{" "}
+                                            <a
+                                                href="https://lovdata.no/lov/2018-06-15-38/gdpr/a15"
+                                                target="_blank"
+                                                className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                            >
+                                                Learn more
+                                                <svg
+                                                    aria-hidden="true"
+                                                    className="w-5 h-5 ml-1"
+                                                    fill="currentColor"
+                                                    viewBox="0 0 20 20"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                                        clip-rule="evenodd"
+                                                    ></path>
+                                                </svg>
+                                            </a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p className="">
+                                            Correct faulty data about yourself{" "}
+                                            <a
+                                                href="https://lovdata.no/lov/2018-06-15-38/gdpr/a16"
+                                                target="_blank"
+                                                className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                            >
+                                                Learn more
+                                                <svg
+                                                    aria-hidden="true"
+                                                    className="w-5 h-5 ml-1"
+                                                    fill="currentColor"
+                                                    viewBox="0 0 20 20"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                                        clip-rule="evenodd"
+                                                    ></path>
+                                                </svg>
+                                            </a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p className="">
+                                            At any time request the removal of
+                                            your personal data from our system{" "}
+                                            <a
+                                                href="https://lovdata.no/lov/2018-06-15-38/gdpr/a17"
+                                                target="_blank"
+                                                className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                            >
+                                                Learn more
+                                                <svg
+                                                    aria-hidden="true"
+                                                    className="w-5 h-5 ml-1"
+                                                    fill="currentColor"
+                                                    viewBox="0 0 20 20"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                                        clip-rule="evenodd"
+                                                    ></path>
+                                                </svg>
+                                            </a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p className="">
+                                            Request that the process which is
+                                            using your data is canceled{" "}
+                                            <a
+                                                href="https://lovdata.no/lov/2018-06-15-38/gdpr/a18"
+                                                target="_blank"
+                                                className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                            >
+                                                Learn more
+                                                <svg
+                                                    aria-hidden="true"
+                                                    className="w-5 h-5 ml-1"
+                                                    fill="currentColor"
+                                                    viewBox="0 0 20 20"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                                        clip-rule="evenodd"
+                                                    ></path>
+                                                </svg>
+                                            </a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p className="">
+                                            Be presented with your personal
+                                            information in an understandable way{" "}
+                                            <a
+                                                href=" https://lovdata.no/lov/2018-06-15-38/gdpr/a20"
+                                                target="_blank"
+                                                className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                            >
+                                                Learn more
+                                                <svg
+                                                    aria-hidden="true"
+                                                    className="w-5 h-5 ml-1"
+                                                    fill="currentColor"
+                                                    viewBox="0 0 20 20"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                                        clip-rule="evenodd"
+                                                    ></path>
+                                                </svg>
+                                            </a>
+                                        </p>
+                                    </li>
+                                    <li>
+                                        <p className="">
+                                            At any time protest against
+                                            processing of your personal data{" "}
+                                            <a
+                                                href="https://lovdata.no/lov/2018-06-15-38/gdpr/a21"
+                                                target="_blank"
+                                                className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                            >
+                                                Learn more
+                                                <svg
+                                                    aria-hidden="true"
+                                                    className="w-5 h-5 ml-1"
+                                                    fill="currentColor"
+                                                    viewBox="0 0 20 20"
+                                                    xmlns="http://www.w3.org/2000/svg"
+                                                >
+                                                    <path
+                                                        fill-rule="evenodd"
+                                                        d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z"
+                                                        clip-rule="evenodd"
+                                                    ></path>
+                                                </svg>
+                                            </a>
+                                        </p>
+                                    </li>
+                                </ul>
+                            </div>
                         }
                     />
                     <InformationDropdownBox
-                        title={''}
-                        initialInfo={'Explore how it works with our sandbox!'}
+                        title={""}
+                        initialInfo={"Explore how it works with our sandbox!"}
                         extendedInfo={
                             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
                         }
@@ -322,7 +504,7 @@ const UsingAI = () => {
                 </div>
                 <div className="flex justify-center justify-evenly m-5 ">
                     <Button color="black" href="/Summary?consent=false">
-                        Don't evaluate with AI
+                        Do not evaluate with AI
                     </Button>
                     <Button color="black" href="/Summary?consent=true">
                         Consent to use AI
@@ -330,7 +512,7 @@ const UsingAI = () => {
                 </div>
             </Content>
         </Parent>
-    )
-}
+    );
+};
 
-export default UsingAI
+export default UsingAI;
