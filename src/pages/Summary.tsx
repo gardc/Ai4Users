@@ -18,12 +18,22 @@ const Summary: React.FC = () => {
     /**
      * The model query value that determines whether the AI-model is used for estimation or not.
      */
-    let text = "";
+    let predictionChoiceTitle = "";
+    let predictionChoiceText = "";
     if (consent === "true") {
-        text = "You have chosen to use the AI-model for estimation";
+        predictionChoiceTitle =
+            "You have chosen to use the AI model for prediction";
+        predictionChoiceText =
+            "The case handler will use the AI model to predict the total duration of your sick leave.";
     } else if (consent === "false") {
-        text = "You have chosen <b>not</b> to use the AI-model for estimation";
-        text = text.replace(/(<b>not<\/b>)/, "<b>$1</b>");
+        predictionChoiceTitle =
+            "You have chosen <b>not</b> to use the AI model for prediction";
+        predictionChoiceTitle = predictionChoiceTitle.replace(
+            /(<b>not<\/b>)/,
+            "<b>$1</b>"
+        );
+        predictionChoiceText =
+            "The case handler will make a prediction of the total duration of your sick leave without the use of the AI model. This may result in a longer processing time.";
     }
 
     return (
@@ -52,14 +62,28 @@ const Summary: React.FC = () => {
                             Go back
                         </Button>
                     </div> */}
-                    <div className="flex justify-center text-2xl text-center">
-                        <h1 dangerouslySetInnerHTML={{ __html: text }} />
+                    <div className="flex flex-col justify-center text-2xl items-center text-center">
+                        <h1
+                            dangerouslySetInnerHTML={{
+                                __html: predictionChoiceTitle,
+                            }}
+                        />
+                        <p
+                            className="text-base mt-2 w-1/2 text-center"
+                            dangerouslySetInnerHTML={{
+                                __html: predictionChoiceText,
+                            }}
+                        />
+                        <p className="text-base mt-10 w-1/2 text-center">
+                            To change your choice, click on "Using AI" in the
+                            top left corner.
+                        </p>
                     </div>
 
-                    <div className="flex justify-center pb-8">
-                        <h2 className="text-lg font-bold text-gray-600 text-center">
-                            Summary of information used to estimate sick leave
-                            duration
+                    <div className="flex justify-center mt-16">
+                        <h2 className="text-base font-bold text-prussian-blue text-center">
+                            Summary of the information used to predict your sick
+                            leave duration
                         </h2>
                     </div>
                 </div>
@@ -72,9 +96,9 @@ const Summary: React.FC = () => {
                             Is this information incorrect?
                         </Button>
                     </div> */}
-                    <div className="flex justify-center mt-4">
-                        <Button color="black" href="/estimate">
-                            Estimate sick leave
+                    <div className="flex justify-center mt-4 pb-16">
+                        <Button color="black" href="/TestingFinishedPage">
+                            Submit your choice
                         </Button>
                     </div>
                 </div>
