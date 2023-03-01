@@ -34,7 +34,7 @@ const UsingAI = () => {
                         </Link>
                     </div>
 
-                    <p className="text-center text-3xl m-3">
+                    <p className="text-center text-prussian-blue font-semibold text-3xl m-3">
                         Using Artificial Intelligence for estimation
                     </p>
                 </div>
@@ -169,8 +169,8 @@ const UsingAI = () => {
                                                 The AI model is a computational
                                                 tool that makes a prediction of
                                                 your total sick leave duration
-                                                based its knowledge of previous
-                                                predictions.
+                                                based on its knowledge of
+                                                previous predictions.
                                             </p>
                                             <p>
                                                 The output it provides to the
@@ -323,32 +323,36 @@ const UsingAI = () => {
                             </div>
                         }
                     />
+                    <div className="h-6"></div>
                     <InformationDropdownBox
                         title={""}
                         initialInfo={
                             <>
-                                <p>
+                                {/* <p>
                                     You have the right to choose whether to use
-                                    this AI-model or not. If you choose to not
-                                    use the model the case worker will handle
-                                    your case without any involvement from the
-                                    artificial intelligence model. This may
-                                    result in longer processing time for your
-                                    case.
+                                    this AI model or not. If you choose to not
+                                    use the model the case handler will process
+                                    your case entirely without its use. This may
+                                    result in longer processing time.
+                                </p> */}
+                                <p className="mt-4">
+                                    As a user of this service you have certain
+                                    rights, especially related to your personal
+                                    data.
                                 </p>
-                                <p>
-                                    {" "}
-                                    Read more about your rights as a user below.
+                                <p className="mt-4">
+                                    You can read more about your rights as a
+                                    user by expanding this box.
                                 </p>
                             </>
                         }
                         extendedInfo={
-                            <div className="space-y-4">
-                                <h2 className="">
+                            <div className="space-y-4 ml-4">
+                                <h2 className="font-semibold">
                                     {" "}
                                     As a user you have the right to:{" "}
                                 </h2>
-                                <ul className="space-y-4 list-disc text-left">
+                                <ul className="space-y-4 list-disc list-inside text-left">
                                     <li>
                                         <p className="">
                                             Get information on which of your
@@ -521,13 +525,17 @@ const UsingAI = () => {
                             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
                         }
                     /> */}
+                    <p className="mt-16 font-semibold text-lg">
+                        Do you concent to the use of the AI model for predicting
+                        your sick leave duration?
+                    </p>
                 </div>
-                <div className="flex justify-center justify-evenly m-5 ">
+                <div className="flex justify-center justify-evenly mt-16 m-5 mb-24">
                     <Button color="black" href="/Summary?consent=false">
-                        Do not evaluate with AI
+                        I do not wish to use the AI model
                     </Button>
                     <Button color="black" href="/Summary?consent=true">
-                        Consent to use AI
+                        I concent to the use of the AI model
                     </Button>
                 </div>
             </Content>
