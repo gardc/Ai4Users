@@ -41,7 +41,7 @@ const Tooltip: React.FC<TooltipProps> = ({ extendedInfo }) => {
                 {open ? (
                     <div
                         ref={ref}
-                        className="absolute bg-black z-50 text-white bg-opacity-80 rounded p-2 text-sm"
+                        className="absolute max-w-xs text-left bg-black z-50 text-white bg-opacity-80 rounded p-2 text-sm"
                     >
                         {extendedInfo}
                     </div>
