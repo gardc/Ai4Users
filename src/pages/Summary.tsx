@@ -12,8 +12,8 @@ import { exampleData } from "./api/exampleData";
  * @returns A React functional component representing the summary page.
  */
 const Summary: React.FC = () => {
-    const router = useRouter();
-    const { consent } = router.query;
+  const router = useRouter();
+  const { consent } = router.query;
 
     /**
      * The model query value that determines whether the AI-model is used for estimation or not.
