@@ -15,8 +15,8 @@ const LandingPage: React.FC = () => {
     return (
         <Parent>
             <Content>
-                <NavBar />
-                <div className="index bg-gradient-to-b from-purple-300 to-slate-50 py-32 flex-col flex items-center">
+                {/* <NavBar /> */}
+                <div className="index bg-gradient-to-b from-sky-blue to-slate-50 py-32 flex-col flex items-center">
                     <p className="text-center text-5xl">
                         Estimation of sick leave
                     </p>

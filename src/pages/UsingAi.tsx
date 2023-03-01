@@ -20,9 +20,12 @@ const UsingAI = () => {
     return (
         <Parent>
             <Content>
-                <div className="bg-gradient-to-b from-purple-300 to-slate-50 pb-16 text-center">
+                <div className="bg-gradient-to-b from-sky-blue to-slate-50 pb-16 text-center">
                     <div className="flex justify-start py-5 pt-10 text-white">
-                        <Link className="text-white pl-12 px-3" href={"/"}>
+                        <Link
+                            className="text-white pl-12 px-3"
+                            href={"/LandingPage"}
+                        >
                             Frontpage
                         </Link>
                         {">"}

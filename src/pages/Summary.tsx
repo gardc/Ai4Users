@@ -31,9 +31,12 @@ const Summary: React.FC = () => {
     return (
         <Parent>
             <Content>
-                <div className="bg-gradient-to-b from-purple-300 to-slate-50">
+                <div className="bg-gradient-to-b from-sky-blue to-slate-50">
                     <div className="flex justify-start py-5 pt-10 text-white">
-                        <Link className="text-white pl-12 px-3" href={"/"}>
+                        <Link
+                            className="text-white pl-12 px-3"
+                            href={"/LandingPage"}
+                        >
                             Frontpage
                         </Link>
                         {">"}

@@ -19,6 +19,7 @@ module.exports = {
         'violet': '#736372',
         'beaver': '#A18276',
         'battleship-gray': '#7A918D',
+        'sky-blue': '#8ECAE6',
       },
       borderWidth: {
         '1': '1px', 
