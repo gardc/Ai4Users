@@ -20,6 +20,7 @@ module.exports = {
         'beaver': '#A18276',
         'battleship-gray': '#7A918D',
         'sky-blue': '#8ECAE6',
+        'prussian-blue': '#003049',
       },
       borderWidth: {
         '1': '1px', 
