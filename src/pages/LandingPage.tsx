@@ -41,8 +41,8 @@ const LandingPage: React.FC = () => {
                         <p className="py-3 text-left mb-4 w-4/6">
                             Below are all the data points about you that will be
                             used in predicting your sick leave duration. Click
-                            on the "?" beside each data point to see the reason
-                            for its use.
+                            on the &quot;?&quot; beside each data point to see
+                            the reason for its use.
                         </p>
                         {/*Her kommer komponent om informasjon om brukeren */}
                         <DataTable data={exampleData}></DataTable>
