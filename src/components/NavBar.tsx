@@ -2,9 +2,9 @@ import Link from "next/link";
 import React from "react";
 
 const NavBar = () => {
-    return (
+    return {
+        /*
         <div className="flex bg-purple-300 text-xl p-12 pb-2 justify-between">
-            {/*
             <div className="text-end">
                 <Link className="px-8" href={"/UsingAi"}>
                     Use of AI
@@ -13,9 +13,9 @@ const NavBar = () => {
                     Sandbox
                 </Link>
             </div> 
-            */}
-        </div>
-    );
+            </div>
+        */
+    };
 };
 
 export default NavBar;
