@@ -17,7 +17,7 @@ function index() {
                     <p className="text-center text-5xl">
                         Estimation of sick leave
                     </p>
-                    <p className="text-center text-m">
+                    <p className="text-center text-m p-4">
                         We will estimate you total duration of sick leave
                     </p>
                 </div>

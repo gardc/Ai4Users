@@ -7,6 +7,7 @@ const NavBar = () => {
             <Link className="text-white px-2" href={"/"}>
                 SickLeave
             </Link>
+            {/*
             <div className="text-end">
                 <Link className="px-8" href={"/UsingAi"}>
                     Use of AI
@@ -14,7 +15,8 @@ const NavBar = () => {
                 <Link className="px-8" href={"/Sandbox"}>
                     Sandbox
                 </Link>
-            </div>
+            </div> 
+            */}
         </div>
     );
 };

@@ -21,6 +21,9 @@ module.exports = {
         'battleship-gray': '#7A918D',
       },
     },
+    borderWidth: {
+      '1': '1px', 
+    }
   },
   plugins: [],
 };
