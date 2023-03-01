@@ -1,28 +1,38 @@
-import Content from '@/components/Content'
-import InformationDropdownBox from '@/components/InformationDropdownBox'
-import NavBar from '@/components/NavBar'
-import Parent from '@/components/Parent'
-import React from 'react'
-import BookIcon from '@/components/Assets/bookIcon'
-import Image from 'next/image'
-import CogIcon from '@/components/Assets/cogIcon'
-import FastForwardIcon from '@/components/Assets/fastForwardIcon'
-import ExpandableInformationBox from '@/components/ExpandableInformationBox'
-import Button from '@/components/Button'
+import Content from "@/components/Content";
+import InformationDropdownBox from "@/components/InformationDropdownBox";
+import NavBar from "@/components/NavBar";
+import Parent from "@/components/Parent";
+import React from "react";
+import BookIcon from "@/components/Assets/bookIcon";
+import Image from "next/image";
+import CogIcon from "@/components/Assets/cogIcon";
+import FastForwardIcon from "@/components/Assets/fastForwardIcon";
+import ExpandableInformationBox from "@/components/ExpandableInformationBox";
+import Button from "@/components/Button";
+import Link from "next/link";
 
 const UsingAI = () => {
     return (
         <Parent>
             <Content>
-                <NavBar />
-                <div className="bg-gradient-to-b from-purple-300 to-slate-50 pt-5 pb-16 text-center">
+                <div className="bg-gradient-to-b from-purple-300 to-slate-50 pb-16 text-center">
+                    <div className="flex justify-start py-5 pt-10 text-white">
+                        <Link className="text-white pl-12 px-3" href={"/"}>
+                            Frontpage
+                        </Link>
+                        {">"}
+                        <Link className="text-white px-3" href={"/UsingAi"}>
+                            Using AI
+                        </Link>
+                    </div>
+
                     <p className="text-center text-3xl m-3">
                         Using Artificial Intelligence for estimation
                     </p>
                 </div>
                 <div className="text-center bg-slate-50 flex justify-center flex-col items-center">
                     <InformationDropdownBox
-                        title={''}
+                        title={""}
                         initialInfo={`In order to provide you with the most appropriate support 
                         given your situation, we offer the use of an artificial intelligence (AI) 
                         model to aid the case handler in predicting the duration of your sick 
@@ -54,7 +64,7 @@ const UsingAI = () => {
                                         </div>
                                     }
                                     expandedContentTitle={
-                                        'What agreeing to use the AI model entails'
+                                        "What agreeing to use the AI model entails"
                                     }
                                     expandedContent={
                                         <div className="text-base pb-4">
@@ -68,7 +78,7 @@ const UsingAI = () => {
                                             <ul className="list-disc list-inside pb-6">
                                                 <p className="font-bold pb-4">
                                                     No matter your choice, it
-                                                    will be the case that{' '}
+                                                    will be the case that{" "}
                                                 </p>
                                                 <li>
                                                     the exact same personal data
@@ -100,10 +110,10 @@ const UsingAI = () => {
                                             </p>
                                             <Image
                                                 src={
-                                                    '/img/disagreeToUseFlow.jpg'
+                                                    "/img/disagreeToUseFlow.jpg"
                                                 }
                                                 alt={
-                                                    'Flow of declining or accepting the use of the AI model'
+                                                    "Flow of declining or accepting the use of the AI model"
                                                 }
                                                 width={1000}
                                                 height={1000}
@@ -127,9 +137,9 @@ const UsingAI = () => {
                                                 you in your situation.
                                             </p>
                                             <Image
-                                                src={'/img/agreeToUseFlow.jpg'}
+                                                src={"/img/agreeToUseFlow.jpg"}
                                                 alt={
-                                                    'Flow of declining or accepting the use of the AI model'
+                                                    "Flow of declining or accepting the use of the AI model"
                                                 }
                                                 width={1000}
                                                 height={1000}
@@ -137,7 +147,7 @@ const UsingAI = () => {
                                             />
                                         </div>
                                     }
-                                    buttonText={'Learn more'}
+                                    buttonText={"Learn more"}
                                 />
                                 <ExpandableInformationBox
                                     content={
@@ -164,7 +174,7 @@ const UsingAI = () => {
                                         </div>
                                     }
                                     expandedContentTitle={
-                                        'How the AI model works'
+                                        "How the AI model works"
                                     }
                                     expandedContent={
                                         <div className="text-base pb-4">
@@ -203,10 +213,10 @@ const UsingAI = () => {
                                             </div>
                                             <Image
                                                 src={
-                                                    '/img/trainingTheModel.jpg'
+                                                    "/img/trainingTheModel.jpg"
                                                 }
                                                 alt={
-                                                    'Illustration of how the model is trained'
+                                                    "Illustration of how the model is trained"
                                                 }
                                                 width={1000}
                                                 height={1000}
@@ -226,17 +236,17 @@ const UsingAI = () => {
                                             </p>
                                             <Image
                                                 src={
-                                                    '/img/usingTheModelForPrediction.jpg'
+                                                    "/img/usingTheModelForPrediction.jpg"
                                                 }
                                                 alt={
-                                                    'Illustration of how the model is used'
+                                                    "Illustration of how the model is used"
                                                 }
                                                 width={1000}
                                                 height={1000}
                                             />
                                         </div>
                                     }
-                                    buttonText={'Learn more'}
+                                    buttonText={"Learn more"}
                                 />
                                 <ExpandableInformationBox
                                     content={
@@ -261,7 +271,7 @@ const UsingAI = () => {
                                         </div>
                                     }
                                     expandedContentTitle={
-                                        'Why we offer the use of the AI model in predicting sick leave duration'
+                                        "Why we offer the use of the AI model in predicting sick leave duration"
                                     }
                                     expandedContent={
                                         <div className="text-base pb-4">
@@ -271,7 +281,7 @@ const UsingAI = () => {
                                                 number of people. To aid our
                                                 case handlers achieve this aim,
                                                 we offer the use of an AI model
-                                                for estimation to:{' '}
+                                                for estimation to:{" "}
                                             </p>
                                             <ul className="list-disc list-inside pb-4">
                                                 <li>
@@ -298,23 +308,20 @@ const UsingAI = () => {
                                             </p>
                                         </div>
                                     }
-                                    buttonText={'Learn more'}
+                                    buttonText={"Learn more"}
                                 />
                             </div>
                         }
                     />
                     <InformationDropdownBox
-                        title={''}
+                        title={""}
                         initialInfo={
-                            'You have the right to choose whether to use this AI-model or not. If you choose to not use the model the case worker will handle your case without any involvement from the artificial intelligence model. This may result in longer processing time for your case'
+                            "You have the right to choose whether to use this AI-model or not. If you choose to not use the model the case worker will handle your case without any involvement from the artificial intelligence model. This may result in longer processing time for your case"
                         }
                         extendedInfo={
                             "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum"
                         }
                     />
-                    <InformationDropdownBox
-                        title={''}
-                        initialInfo={'Explore how it works with our sandbox!'}
                     {/*<InformationDropdownBox
                         title={""}
                         initialInfo={"Explore how it works with our sandbox!"}
@@ -333,7 +340,7 @@ const UsingAI = () => {
                 </div>
             </Content>
         </Parent>
-    )
-}
+    );
+};
 
-export default UsingAI
+export default UsingAI;

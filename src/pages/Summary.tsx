@@ -1,11 +1,12 @@
-import Button from '@/components/Button'
-import DataTable from '@/components/DataTable'
-import { useRouter } from 'next/router'
-import Parent from '@/components/Parent'
-import React from 'react'
-import { exampleData } from '@/pages/api/exampleData'
-import NavBar from '@/components/NavBar'
-import Content from '@/components/Content'
+import Button from "@/components/Button";
+import DataTable from "@/components/DataTable";
+import { useRouter } from "next/router";
+import Parent from "@/components/Parent";
+import React from "react";
+import { exampleData } from "@/pages/api/exampleData";
+import NavBar from "@/components/NavBar";
+import Content from "@/components/Content";
+import Link from "next/link";
 
 /**
  * The summary page component that displays a summary of information used to estimate sick leave duration.
@@ -13,29 +14,42 @@ import Content from '@/components/Content'
  * @returns A React functional component representing the summary page.
  */
 const Summary: React.FC = () => {
-    const router = useRouter()
-    const { consent } = router.query
+    const router = useRouter();
+    const { consent } = router.query;
 
     /**
      * The model query value that determines whether the AI-model is used for estimation or not.
      */
-    let text = ''
-    if (consent === 'true') {
-        text = 'You have chosen to use the AI-model for estimation'
-    } else if (consent === 'false') {
-        text = 'You have chosen <b>not</b> to use the AI-model for estimation'
-        text = text.replace(/(<b>not<\/b>)/, '<b>$1</b>')
+    let text = "";
+    if (consent === "true") {
+        text = "You have chosen to use the AI-model for estimation";
+    } else if (consent === "false") {
+        text = "You have chosen <b>not</b> to use the AI-model for estimation";
+        text = text.replace(/(<b>not<\/b>)/, "<b>$1</b>");
     }
     return (
         <Parent>
             <Content>
-                <NavBar />
                 <div className="bg-gradient-to-b from-purple-300 to-slate-50">
+                    <div className="flex justify-start py-5 pt-10 text-white">
+                        <Link className="text-white pl-12 px-3" href={"/"}>
+                            Frontpage
+                        </Link>
+                        {">"}
+                        <Link className="text-white px-3" href={"/UsingAi"}>
+                            Using AI
+                        </Link>
+                        {">"}
+                        <Link className="text-white px-3" href={"/Summary"}>
+                            Summary
+                        </Link>
+                    </div>
+                    {/*
                     <div className="flex items-center ml-5">
-                        <Button color="black" href={'/UsingAi'}>
+                        <Button color="black" href={"/UsingAi"}>
                             Go back
                         </Button>
-                    </div>
+                    </div> */}
                     <div className="flex justify-center text-2xl text-center">
                         <h1 dangerouslySetInnerHTML={{ __html: text }} />
                     </div>
@@ -52,7 +66,7 @@ const Summary: React.FC = () => {
                         <DataTable data={exampleData} />
                     </div>
                     <div className="flex justify-center mt-4">
-                        <Button color="black" onClick={() => alert('Okay')}>
+                        <Button color="black" onClick={() => alert("Okay")}>
                             Is this information incorrect?
                         </Button>
                     </div>
@@ -64,6 +78,6 @@ const Summary: React.FC = () => {
                 </div>
             </Content>
         </Parent>
-    )
-}
-export default Summary
+    );
+};
+export default Summary;

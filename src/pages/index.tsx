@@ -1,16 +1,15 @@
-import Content from '@/components/Content'
-import DataTable from '@/components/DataTable'
-import Parent from '@/components/Parent'
-import React from 'react'
-import { exampleData } from '@/pages/api/exampleData'
-import NavBar from '@/components/NavBar'
-import Button from '@/components/Button'
+import Content from "@/components/Content";
+import DataTable from "@/components/DataTable";
+import Parent from "@/components/Parent";
+import React from "react";
+import { exampleData } from "@/pages/api/exampleData";
+import NavBar from "@/components/NavBar";
+import Button from "@/components/Button";
 
 function index() {
     return (
         <Parent>
             <Content>
-                <NavBar />
                 <div className="index bg-gradient-to-b from-purple-300 to-slate-50 py-32 flex-col flex items-center">
                     <p className="text-center text-5xl">
                         Estimation of sick leave
@@ -50,7 +49,7 @@ function index() {
                 </div>
             </Content>
         </Parent>
-    )
+    );
 }
 
-export default index
+export default index;

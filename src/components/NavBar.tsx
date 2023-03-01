@@ -3,10 +3,7 @@ import React from "react";
 
 const NavBar = () => {
     return (
-        <div className="flex bg-purple-300 text-xl p-12 justify-between">
-            <Link className="text-white px-2" href={"/"}>
-                SickLeave
-            </Link>
+        <div className="flex bg-purple-300 text-xl p-12 pb-2 justify-between">
             {/*
             <div className="text-end">
                 <Link className="px-8" href={"/UsingAi"}>
