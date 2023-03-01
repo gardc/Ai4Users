@@ -1,7 +1,8 @@
 import { exampleData } from "./api/exampleData";
+import Button from "@/components/Button";
 import Content from "@/components/Content";
 import DataTable from "@/components/DataTable";
-import Link from "next/link";
+import NavBar from "@/components/NavBar";
 import Parent from "@/components/Parent";
 
 /**
@@ -14,6 +15,7 @@ const LandingPage: React.FC = () => {
     return (
         <Parent>
             <Content>
+                <NavBar />
                 <div className="index bg-gradient-to-b from-purple-300 to-slate-50 py-32 flex-col flex items-center">
                     <p className="text-center text-5xl">
                         Estimation of sick leave
@@ -39,17 +41,16 @@ const LandingPage: React.FC = () => {
                         {/*Her kommer komponent om informasjon om brukeren */}
                         <DataTable data={exampleData}></DataTable>
                         <div className="flex-col justify-center flex">
-                            <button className="m-2 py-3 bg-black hover:bg-neutral-800 w-60 rounded-lg text-center text-white font-normal Sans">
-                                <Link className="text-center" href={"/%"}>
+                            <div className="flex justify-center mt-4">
+                                <Button color="black" href="/%">
                                     Is this information incorrect?
-                                </Link>
-                            </button>
-
-                            <button className="m-2 py-3 bg-black hover:bg-neutral-800 w-60 rounded-lg text-center text-white font-normal Sans">
-                                <Link className="text-center" href={"/UsingAi"}>
+                                </Button>
+                            </div>
+                            <div className="flex justify-center mt-4">
+                                <Button color="black" href="/UsingAi">
                                     Continue
-                                </Link>
-                            </button>
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 </div>
