@@ -20,7 +20,7 @@ export default function demoFinishedPage() {
                         bg={"bg-neutral-600 bg-opacity-25"}
                     />
                     <a
-                        href="https://google.com/"
+                        href="https://forms.gle/wF7tcB194UTanhwD6"
                         target="_blank"
                         rel="noreferrer"
                         className="px-4 py-1 cursor-pointer border border-neutral-600 bg-purple-600 bg-opacity-25 rounded-md"
