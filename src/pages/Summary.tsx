@@ -1,10 +1,10 @@
+import { exampleData } from "@/pages/api/exampleData";
+import { useRouter } from "next/router";
 import Button from "@/components/Button";
 import DataTable from "@/components/DataTable";
-import { useRouter } from "next/router";
+import NavBar from "@/components/NavBar";
 import Parent from "@/components/Parent";
 import React from "react";
-import { exampleData } from "@/pages/api/exampleData";
-import NavBar from "@/components/NavBar";
 
 /**
  * The summary page component that displays a summary of information used to estimate sick leave duration.
