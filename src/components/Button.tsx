@@ -1,5 +1,5 @@
-import React from "react";
-import Link from "next/link";
+import React from 'react'
+import Link from 'next/link'
 
 /**
  * The props for the Button component.
@@ -10,10 +10,10 @@ import Link from "next/link";
  * @param children - The child elements to display inside the button.
  */
 interface ButtonProps {
-    color?: "blue" | "red" | "white" | "black";
-    href?: string;
-    onClick?: () => void;
-    children: React.ReactNode;
+    color?: 'violet' | 'beaver' | 'primary' | 'black'
+    href?: string
+    onClick?: () => void
+    children: React.ReactNode
 }
 
 /**
@@ -27,46 +27,46 @@ interface ButtonProps {
  * @returns A React functional component representing a button element or a Link component.
  */
 const Button: React.FC<ButtonProps> = ({
-    color = "blue",
+    color = 'violet',
     href,
     onClick,
     children,
 }) => {
-    const baseClasses = "py-3 px-4 rounded-md";
+    const baseClasses = 'py-3 px-4 rounded-md'
 
-    let colorClasses;
+    let colorClasses
     switch (color) {
-        case "blue":
-            colorClasses = "bg-primary text-white";
-            break;
-        case "red":
-            colorClasses = "bg-secondary text-white";
-            break;
-        case "white":
-            colorClasses = "bg-tertiary text-primary border-primary border";
-            break;
-        case "black":
-            colorClasses = "bg-black text-white";
-            break;
+        case 'violet':
+            colorClasses = 'bg-violet text-white'
+            break
+        case 'beaver':
+            colorClasses = 'bg-beaver text-white'
+            break
+        case 'primary':
+            colorClasses = 'bg-primary text-black border-primary border'
+            break
+        case 'black':
+            colorClasses = 'bg-black text-white'
+            break
         default:
-            colorClasses = "bg-blue-500 text-white";
+            colorClasses = 'bg-blue-500 text-white'
     }
 
-    const classes = `${baseClasses} ${colorClasses}`;
+    const classes = `${baseClasses} ${colorClasses}`
 
     if (href) {
         return (
             <Link href={href} className={classes}>
                 {children}
             </Link>
-        );
+        )
     }
 
     return (
         <button className={classes} onClick={onClick}>
             {children}
         </button>
-    );
-};
+    )
+}
 
-export default Button;
+export default Button

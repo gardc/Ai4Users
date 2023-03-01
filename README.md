@@ -34,12 +34,13 @@ You can start editing the page by modifying `pages/index.tsx`. The page auto-upd
 -   Merge mainbranch into your workingbranch locally before merging into main in gitlab.
     -   This way there wont be any merge-issues anywhere else than on your local pc.
 -   In commit message:
-    -   Separate subject body with a blank line (not needed in most IDE's e.g. VSCode by default)
-    -   Use imperative mood in the subject line.
-    -   Capitalize the subject line.
-    -   Try to keep the subject line concise.
+    -   Subject line must be written in imperativ form, e.g. "Add (...)" or "Fix (...)"
+    -   Subject line should not have punctuation
+    -   Separate subject line andbody with a blank line (not needed in most IDE's e.g. VSCode by default)
+    -   Try to keep the subject line concise
     -   Use the body to explain what and why
-    -   Include "#{issue number}" at the end of the commit-message
+    -   Separate body and footer with a blank line
+    -   Include "#{issue number}" in the footer of the commit-message
 
 ## Project setup and running rules
 
