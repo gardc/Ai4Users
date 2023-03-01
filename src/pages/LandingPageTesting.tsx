@@ -43,7 +43,7 @@ const LandingPageTesting: React.FC = () => {
                 </p>
                 <p className="mt-4">jjsterke@stud.ntnu.no</p>
                 <div className="mt-20">
-                    <Button color="red" href={"/LandingPage"}>
+                    <Button color="primary" href={"/LandingPage"}>
                         Begin testing the web application
                     </Button>
                 </div>
