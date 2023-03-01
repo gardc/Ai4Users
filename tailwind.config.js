@@ -20,10 +20,10 @@ module.exports = {
         'beaver': '#A18276',
         'battleship-gray': '#7A918D',
       },
+      borderWidth: {
+        '1': '1px', 
+      },
     },
-    borderWidth: {
-      '1': '1px', 
-    }
   },
   plugins: [],
 };

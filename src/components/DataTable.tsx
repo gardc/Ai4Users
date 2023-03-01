@@ -40,13 +40,13 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
                 {data.map((row, index) => {
                     return (
                         <tr key={index} className="border-t border-b">
-                            <td className="p-2 px-6 font-bold border-r border-gray-200">
+                            <td className="p-2 px-6 font-bold border-r border-gray-200 text-left">
                                 {row.label}
                             </td>
-                            <td className="p-2 px-6 text-gray-600 border-r border-gray-200 ">
-                                {row.value}{" "}
+                            <td className="p-2 px-6 text-gray-600 border-gray-200 text-left ">
+                                {row.value}
                             </td>
-                            <td className="p-2 px-6">
+                            <td className="p-2">
                                 {row.extendedInfo && (
                                     <Tooltip extendedInfo={row.extendedInfo} />
                                 )}
