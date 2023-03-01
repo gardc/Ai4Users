@@ -1,16 +1,17 @@
 import Link from "next/link";
 
-export default function demoFinishedPage() {
+export default function TestingFinishedPage() {
     return (
-        <div className="w-full h-screen flex flex-col justify-center items-center bg-neutral-800">
+        <div className="w-full h-screen flex flex-col justify-center items-center bg-white">
             {/* Infobox */}
-            <div
-                className="max-w-xl flex flex-col justify-center items-center rounded-md bg-zinc-800 gap-5 px-8 py-5 shadow-md border border-gray-600 text-white text-center">
-                <h1 className="text-xl font-semibold">Thanks for testing AI4Users!</h1>
+            <div className="max-w-xl flex flex-col justify-center items-center rounded-md bg-zinc-800 gap-5 px-8 py-5 shadow-md border border-gray-600 text-white text-center">
+                <h1 className="text-xl font-semibold">
+                    Thank you for testing our web application!
+                </h1>
                 <p className="text-neutral-200">
-                    You have now completed the demo. You can either go back to the
-                    beginning of the demo (front page), or continue to our questionnaire
-                    (Google Forms) if you have now completed a user test of the site.
+                    You have now completed the demo. You can either go back to
+                    the beginning of the demo (front page), or continue to our
+                    questionnaire (Google Forms) to answer some questions.
                 </p>
                 {/* Buttons */}
                 <div className="flex gap-5">
@@ -33,7 +34,15 @@ export default function demoFinishedPage() {
     );
 }
 
-const InfoButton = ({href, text, bg}: { href: string; text: string, bg: string }) => {
+const InfoButton = ({
+    href,
+    text,
+    bg,
+}: {
+    href: string;
+    text: string;
+    bg: string;
+}) => {
     return (
         <Link
             href={href}
