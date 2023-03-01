@@ -55,7 +55,7 @@ const Summary: React.FC = () => {
                     </Button>
                 </div>
                 <div className="flex justify-center mt-4">
-                    <Button color="black" href="/estimate">
+                    <Button color="black" href="/demo-finished">
                         Estimate sick leave
                     </Button>
                 </div>
