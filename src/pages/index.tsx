@@ -1,12 +1,10 @@
-import Content from "@/components/Content";
-import DataTable from "@/components/DataTable";
-import InformationDropdownBox from "@/components/InformationDropdownBox";
-import Parent from "@/components/Parent";
-import React from "react";
-import { exampleData } from "@/pages/api/exampleData";
-import NavBar from "@/components/NavBar";
-import Button from "@/components/Button";
-import Link from "next/link";
+import Content from '@/components/Content'
+import DataTable from '@/components/DataTable'
+import Parent from '@/components/Parent'
+import React from 'react'
+import { exampleData } from '@/pages/api/exampleData'
+import NavBar from '@/components/NavBar'
+import Button from '@/components/Button'
 
 function index() {
     return (
@@ -35,26 +33,24 @@ function index() {
                             we use this information to estimate the sick leave
                             duration. There is several parameters that.
                         </p>
-                        {/*Her kommer komponent om informasjon om brukeren */}
                         <DataTable data={exampleData}></DataTable>
                         <div className="flex-col justify-center flex">
-                            <button className="m-2 py-3 bg-black hover:bg-neutral-800 w-60 rounded-lg text-center text-white font-normal Sans">
-                                <Link className="text-center" href={"/%"}>
+                            <div className="flex justify-center mt-4">
+                                <Button color="black" href="/%">
                                     Is this information incorrect?
-                                </Link>
-                            </button>
-
-                            <button className="m-2 py-3 bg-black hover:bg-neutral-800 w-60 rounded-lg text-center text-white font-normal Sans">
-                                <Link className="text-center" href={"/UsingAi"}>
+                                </Button>
+                            </div>
+                            <div className="flex justify-center mt-4">
+                                <Button color="black" href="/UsingAi">
                                     Continue
-                                </Link>
-                            </button>
+                                </Button>
+                            </div>
                         </div>
                     </div>
                 </div>
             </Content>
         </Parent>
-    );
+    )
 }
 
-export default index;
+export default index
