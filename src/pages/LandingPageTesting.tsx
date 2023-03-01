@@ -15,10 +15,16 @@ const LandingPageTesting: React.FC = () => {
                     Thank you for wanting to test our web application
                 </h1>
                 <p className="mt-8">
+                    The test involves navigating through our web application,
+                    and answering a questionnaire at the end.
+                </p>
+                <p className="mt-12 font-bold">
                     The web application is, as of now, only intended for use on
-                    desktop computers. If you are visiting the web application
-                    on a mobile device, please consider switching to a desktop
-                    computer.
+                    desktop computers
+                </p>
+                <p className="mt-4">
+                    If you are visiting the web application on a mobile device,
+                    please consider switching to a desktop computer.
                 </p>
                 <p className="mt-12 font-bold">Before you begin testing</p>
                 <p className="mt-4">
