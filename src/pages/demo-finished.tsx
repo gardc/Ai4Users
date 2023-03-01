@@ -23,7 +23,7 @@ export default function demoFinishedPage() {
                         href="https://forms.gle/wF7tcB194UTanhwD6"
                         target="_blank"
                         rel="noreferrer"
-                        className="px-4 py-1 cursor-pointer border border-neutral-600 bg-purple-600 bg-opacity-25 rounded-md"
+                        className="px-4 py-1 cursor-pointer border border-neutral-700 bg-purple-600 bg-opacity-25 rounded-md hover:px-5 transition-all"
                     >
                         Questionnaire
                     </a>
@@ -37,7 +37,7 @@ const InfoButton = ({href, text, bg}: { href: string; text: string, bg: string }
     return (
         <Link
             href={href}
-            className={`px-4 py-1 cursor-pointer border border-neutral-600 ${bg} rounded-md`}
+            className={`px-4 py-1 cursor-pointer border border-neutral-700 ${bg} rounded-md hover:px-5 transition-all`}
         >
             {text}
         </Link>
