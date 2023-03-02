@@ -5,4 +5,4 @@ function index() {
     return <LandingPageTesting></LandingPageTesting>;
 }
 
-export default index
+export default index;

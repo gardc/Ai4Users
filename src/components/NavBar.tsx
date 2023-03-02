@@ -2,11 +2,9 @@ import Link from "next/link";
 import React from "react";
 
 const NavBar = () => {
-    return (
-        <div className="flex bg-purple-300 text-xl p-12 justify-between">
-            <Link className="text-white px-2" href={"/"}>
-                SickLeave
-            </Link>
+    return {
+        /*
+        <div className="flex bg-purple-300 text-xl p-12 pb-2 justify-between">
             <div className="text-end">
                 <Link className="px-8" href={"/UsingAi"}>
                     Use of AI
@@ -14,9 +12,10 @@ const NavBar = () => {
                 <Link className="px-8" href={"/Sandbox"}>
                     Sandbox
                 </Link>
+            </div> 
             </div>
-        </div>
-    );
+        */
+    };
 };
 
 export default NavBar;
