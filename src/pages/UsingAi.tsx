@@ -86,8 +86,7 @@ const UsingAI = () => {
                                             <ul className="list-disc list-inside pb-6">
                                                 <p className="font-bold pb-4">
                                                     No matter your choice, it
-                                                    will be the case that will
-                                                    be the case that{" "}
+                                                    will be the case that
                                                 </p>
                                                 <li>
                                                     the exact same personal data
@@ -112,8 +111,7 @@ const UsingAI = () => {
                                                 use of the AI model in
                                                 predicating you sick leave, your
                                                 case handler will process the
-                                                data without the use of an
-                                                automated tool. This might
+                                                data without its use. This might
                                                 result in longer processing
                                                 time.
                                             </p>
@@ -197,13 +195,13 @@ const UsingAI = () => {
                                             <div className="pb-4">
                                                 The type of artificial
                                                 intelligence we use for
-                                                estimation is a so called
+                                                prediction is a so called
                                                 machine learning model, which
                                                 has the following traits:
                                                 <ul className="list-disc list-inside pt-4">
                                                     <li>
                                                         It initially learns from
-                                                        a select set of starting
+                                                        a select set of training
                                                         data that contains
                                                         patterns or similarities
                                                     </li>
@@ -237,11 +235,11 @@ const UsingAI = () => {
                                                 is this that is used for
                                                 prediction. New data of the same
                                                 category is used as input,
-                                                meaning it has the same data
-                                                points and the same domain (for
-                                                example estimation of sick leave
-                                                duration), and the result is the
-                                                prediction.
+                                                meaning the data has the same
+                                                data points and the same domain
+                                                (for example estimation of sick
+                                                leave duration), and the result
+                                                is the prediction.
                                             </p>
                                             <Image
                                                 src={
@@ -270,12 +268,11 @@ const UsingAI = () => {
                                                 number of people.
                                             </p>
                                             <p>
-                                                The AI model may aid case
+                                                The AI model may help case
                                                 workers in making more accurate
                                                 predictions of sick leave
                                                 duration, and its use may
-                                                therefore contribute to achieve
-                                                this aim.
+                                                contribute to achieve this aim.
                                             </p>
                                         </div>
                                     }
@@ -287,11 +284,10 @@ const UsingAI = () => {
                                             <p className="font-bold pb-4">
                                                 Our goal is to ensure the most
                                                 helpful support for the highest
-                                                number of people. To aid our
+                                                number of people. To help our
                                                 case handlers achieve this aim,
                                                 we offer the use of an AI model
-                                                for estimation to: for
-                                                estimation to:{" "}
+                                                for estimation to:
                                             </p>
                                             <ul className="list-disc list-inside pb-4">
                                                 <li>
@@ -303,18 +299,16 @@ const UsingAI = () => {
                                                     support where it is needed
                                                 </li>
                                                 <li>
-                                                    save resources and time, and
-                                                    thus letting the case
-                                                    handlers help more people
+                                                    save resources and time,
+                                                    letting the case handlers
+                                                    help more people
                                                 </li>
                                             </ul>
                                             <p>
                                                 It is your right to choose
                                                 whether the case handler should
                                                 use the AI model for prediction
-                                                or not. You can read more about
-                                                this and other rights further
-                                                down the page.
+                                                or not.
                                             </p>
                                         </div>
                                     }
@@ -325,7 +319,7 @@ const UsingAI = () => {
                     />
                     <div className="h-6"></div>
                     <InformationDropdownBox
-                        title={""}
+                        title={"Your rights as a user"}
                         initialInfo={
                             <>
                                 {/* <p>
@@ -335,24 +329,23 @@ const UsingAI = () => {
                                     your case entirely without its use. This may
                                     result in longer processing time.
                                 </p> */}
-                                <p className="mt-4">
+                                <p>
                                     As a user of this service you have certain
                                     rights, especially related to your personal
                                     data.
                                 </p>
-                                <p className="mt-4">
+                                <p>
                                     You can read more about your rights as a
                                     user by expanding this box.
                                 </p>
                             </>
                         }
                         extendedInfo={
-                            <div className="space-y-4 ml-4">
+                            <div className="space-y-4 ml-4 flex flex-col justify-center items-center my-6">
                                 <h2 className="font-semibold">
-                                    {" "}
-                                    As a user you have the right to:{" "}
+                                    As a user you have the right to:
                                 </h2>
-                                <ul className="space-y-4 list-disc list-inside text-left">
+                                <ul className="space-y-4 list-disc text-left">
                                     <li>
                                         <p className="">
                                             Get information on which of your
@@ -526,16 +519,16 @@ const UsingAI = () => {
                         }
                     /> */}
                     <p className="mt-16 font-semibold text-lg">
-                        Do you concent to the use of the AI model for predicting
+                        Do you consent to the use of the AI model for predicting
                         your sick leave duration?
                     </p>
                 </div>
                 <div className="flex justify-center justify-evenly mt-16 m-5 mb-24">
                     <Button color="black" href="/Summary?consent=false">
-                        I do not wish to use the AI model
+                        I do not consent to usage of the AI model
                     </Button>
                     <Button color="black" href="/Summary?consent=true">
-                        I concent to the use of the AI model
+                        I consent to usage of the AI model
                     </Button>
                 </div>
             </Content>

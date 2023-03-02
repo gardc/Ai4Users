@@ -41,7 +41,7 @@ const LandingPageTesting: React.FC = () => {
                     </li>
                     <li>
                         No data is gathered from users, and the user data
-                        presented in the web application is only fictional.
+                        presented in the web application is fictional.
                     </li>
                 </ul>
                 <p className="mt-12 font-bold">

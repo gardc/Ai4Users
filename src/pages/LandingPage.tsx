@@ -42,7 +42,7 @@ const LandingPage: React.FC = () => {
                             Below are all the data points about you that will be
                             used in predicting your sick leave duration. Click
                             on the &quot;?&quot; beside each data point to see
-                            the reason for its use.
+                            why it is used.
                         </p>
                         {/*Her kommer komponent om informasjon om brukeren */}
                         <DataTable data={exampleData}></DataTable>
