@@ -9,8 +9,8 @@ import React from "react";
  */
 const LandingPageTesting: React.FC = () => {
     return (
-        <div className="h-screen text-black bg-white w-full">
-            <div className="py-28 px-40">
+        <div className="break-words text-black bg-white">
+            <div className="py-28 px-10 lg:px-40">
                 <h1 className="text-2xl text-cyan-900 font-bold">
                     Thank you for wanting to test our web application
                 </h1>

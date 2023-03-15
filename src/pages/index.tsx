@@ -2,7 +2,7 @@ import LandingPageTesting from "./LandingPageTesting";
 import React from "react";
 
 function index() {
-    return <LandingPageTesting></LandingPageTesting>;
+    return <LandingPageTesting />
 }
 
 export default index;
