@@ -75,8 +75,8 @@ const Summary: React.FC = () => {
                             }}
                         />
                         <p className="text-base mt-10 w-1/2 text-center">
-                            To change your choice, click on &quot;Using AI&quot;
-                            in the top left corner.
+                            If you would like to change your choice, click on
+                            &quot;Using AI&quot; in the top left corner.
                         </p>
                     </div>
 
