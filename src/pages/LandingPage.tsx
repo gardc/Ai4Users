@@ -2,9 +2,13 @@ import { exampleData } from "./api/exampleData";
 import Button from "@/components/Button";
 import Content from "@/components/Content";
 import DataTable from "@/components/DataTable";
-import NavBar from "@/components/NavBar";
 import Parent from "@/components/Parent";
-import InformationDropdownBox from "@/components/InformationDropdownBox";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { useRouter } from "next/router";
+
+type Props = {};
 
 /**
  * The landing page component that displays initial information about the web
@@ -12,7 +16,19 @@ import InformationDropdownBox from "@/components/InformationDropdownBox";
  *
  * @returns A React functional component representing the landing page.
  */
-const LandingPage: React.FC = () => {
+const LandingPage: React.FC = (/* _props: InferGetStaticPropsType<typeof getStaticProps> */) => {
+    const router = useRouter();
+    const { locale } = router;
+    const { t } = useTranslation("common");
+
+    /* const onToggleLanguageClick = (newLocale: string) => {
+        const { pathname, asPath, query } = router;
+        router.push({ pathname, query }, asPath, { locale: newLocale });
+    };
+
+    onToggleLanguageClick("en");
+ */
+
     return (
         <Parent>
             <Content>
@@ -22,7 +38,7 @@ const LandingPage: React.FC = () => {
                 flex-col flex items-center"
                 >
                     <p className="text-center text-prussian-blue font-semibold text-3xl">
-                        Prediction of sick leave duration
+                        {t("landingPageTitle")}
                     </p>
                     <p className="w-3/4 mt-8 text-left">
                         In order to provide you with appropriate support during your sick leave, we
@@ -69,3 +85,9 @@ const LandingPage: React.FC = () => {
 };
 
 export default LandingPage;
+
+/* export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => ({
+    props: {
+        ...(await serverSideTranslations(locale ?? "en", ["common"])),
+    },
+}); */
