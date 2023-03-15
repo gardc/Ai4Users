@@ -16,12 +16,12 @@ const LandingPageTesting: React.FC = (_props: InferGetStaticPropsType<typeof get
     const { t } = useTranslation("common");
 
     return (
-        <div className="h-screen text-black bg-white w-full">
+        <div className="break-words text-black bg-white">
             <div className="float-right mt-10 mr-10">
                 <LocaleSelection />
             </div>
 
-            <div className="py-28 px-40">
+            <div className="py-28 px-10 lg:px-40">
                 <h1 className="text-2xl text-cyan-900 font-bold">
                     {t("landingPageTesting.title")}
                 </h1>
