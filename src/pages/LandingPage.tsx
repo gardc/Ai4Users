@@ -40,7 +40,7 @@ const LandingPage: React.FC = () => {
                     >
                         <p className="text-2xl py-3">Data that is used in the prediction</p>
                         <p className="py-3 text-left w-4/6">
-                            Below are all the data points about you that will be used in predicting
+                            Below is all the information about you that will be used in predicting
                             your sick leave duration. This information is gathered from the national
                             population register and our registers.
                         </p>
