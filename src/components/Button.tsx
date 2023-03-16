@@ -32,7 +32,7 @@ const Button: React.FC<ButtonProps> = ({
     onClick,
     children,
 }) => {
-    const baseClasses = 'py-3 px-4 rounded-md'
+    const baseClasses = 'text-center  py-1 px-2 m-2 lg:py-3 lg:px-4 lg:m-0 rounded-md'
 
     let colorClasses
     switch (color) {
@@ -56,9 +56,11 @@ const Button: React.FC<ButtonProps> = ({
 
     if (href) {
         return (
+            <div className={"flex"}>
             <Link href={href} className={classes}>
                 {children}
             </Link>
+            </div>
         )
     }
 
