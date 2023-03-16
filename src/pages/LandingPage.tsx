@@ -1,15 +1,16 @@
+import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { exampleData } from "./api/exampleData";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
 import Content from "@/components/Content";
 import DataTable from "@/components/DataTable";
 import Parent from "@/components/Parent";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useTranslation } from "next-i18next";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
 
 /**
  * The landing page component that displays initial information about the web
- * application and the  data points used for sick leave duration prediction.
+ * application and the data points used for sick leave duration prediction.
+ * Supports i18next translation.
  *
  * @returns A React functional component representing the landing page.
  */

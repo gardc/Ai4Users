@@ -1,16 +1,17 @@
-import Button from "@/components/Button";
-import DataTable from "@/components/DataTable";
-import { useRouter } from "next/router";
-import Parent from "@/components/Parent";
-import React from "react";
-import Link from "next/link";
+import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { exampleData } from "./api/exampleData";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import { GetStaticProps, InferGetStaticPropsType } from "next";
+import Button from "@/components/Button";
+import DataTable from "@/components/DataTable";
+import Link from "next/link";
+import Parent from "@/components/Parent";
+import React from "react";
 
 /**
- * The summary page component that displays a summary of information used to estimate sick leave duration.
+ * The summary page component that displays a summary of information used to estimate sick leave
+ * duration. Supports i18next translation.
  *
  * @returns A React functional component representing the summary page.
  */
