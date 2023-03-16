@@ -40,19 +40,19 @@ const Summary: React.FC = () => {
         <Parent>
             <div className="bg-slate-50 h-screen">
                 <div className="bg-gradient-to-b from-sky-blue to-slate-50">
-                    <div className="flex justify-start py-5 pt-10 text-white">
-                        <Link
-                            className="text-white pl-12 px-3"
-                            href={"/LandingPage"}
-                        >
+                    <div className="flex justify-start py-5 pt-10 text-black">
+                        <Link className="pl-12 px-3" href={"/LandingPage"}>
                             Frontpage
                         </Link>
                         {">"}
-                        <Link className="text-white px-3" href={"/UsingAi"}>
+                        <Link className="px-3" href={"/UsingAi"}>
                             Using AI
                         </Link>
                         {">"}
-                        <Link className="text-white px-3" href={"/Summary"}>
+                        <Link
+                            className="underline underline-offset-4 px-3"
+                            href={"/Summary"}
+                        >
                             Summary
                         </Link>
                     </div>
