@@ -27,9 +27,9 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
         <Parent>
             <Content>
                 <div className="bg-gradient-to-b from-sky-blue to-slate-50 pb-16 text-center">
-                    <div className="flex justify-start py-5 pt-10 text-black">
+                    <div className="flex justify-start py-5 text-black">
                         <Link className="pl-12 px-3" href={"/LandingPage"}>
-                            Frontpage
+                            Home
                         </Link>
                         {">"}
                         <Link
