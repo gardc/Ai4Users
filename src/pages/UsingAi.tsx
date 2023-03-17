@@ -1,3 +1,6 @@
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 import BookIcon from "@/components/Assets/bookIcon";
 import Button from "@/components/Button";
 import CogIcon from "@/components/Assets/cogIcon";
@@ -6,22 +9,25 @@ import ExpandableInformationBox from "@/components/ExpandableInformationBox";
 import FastForwardIcon from "@/components/Assets/fastForwardIcon";
 import Image from "next/image";
 import InformationDropdownBox from "@/components/InformationDropdownBox";
+import Link from "next/link";
 import Parent from "@/components/Parent";
 import React from "react";
-import Link from "next/link";
 
 /**
  * The page component for explaining the use of an AI model for the tester of the web application.
+ * Supports i18next translation.
  *
  * @returns A React functional component representing the page
  * containing information about the use of an AI model.
  */
-const UsingAI = () => {
+const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+    const { t } = useTranslation("common");
+
     return (
         <Parent>
             <Content>
                 <div className="bg-gradient-to-b from-sky-blue to-slate-50 pb-16 text-center">
-                    <div className="flex justify-start py-5 pt-10 text-black">
+                    <div className="flex justify-start py-5 text-black">
                         <Link className="pl-12 px-3" href={"/LandingPage"}>
                             Frontpage
                         </Link>
@@ -37,7 +43,7 @@ const UsingAI = () => {
                     </div>
 
                     <p className="text-center text-prussian-blue font-semibold text-3xl m-3">
-                        Using Artificial Intelligence for estimation
+                        {t("usingAiPageTitle")}
                     </p>
                 </div>
                 <div className="text-center bg-slate-50 flex justify-center flex-col items-center">
@@ -539,3 +545,11 @@ const UsingAI = () => {
 };
 
 export default UsingAI;
+
+type Props = {};
+
+export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => ({
+    props: {
+        ...(await serverSideTranslations(locale ?? "en", ["common"])),
+    },
+});
