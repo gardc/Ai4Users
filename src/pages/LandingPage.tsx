@@ -30,9 +30,8 @@ const LandingPage: React.FC = (
                     >
                         Home
                     </Link>
-                    {">"}
+                    <p className="text-gray-500">{">"}</p>
                     <p className="text-gray-500 px-3">UsingAi</p>
-
                     <p className="text-gray-500">{">"}</p>
                     <p className="text-gray-500 px-3">Summary</p>
                 </div>
