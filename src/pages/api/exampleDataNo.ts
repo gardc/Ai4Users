@@ -1,24 +1,24 @@
-export const exampleData = [
+// MUST BE TRANSLATED
+export const exampleDataNo = [
     {
-        label: "Age",
+        label: "Alder",
         value: "46",
         extendedInfo:
             "Your age is important to the prediction because higher age usually indicates a longer sick leave duration.",
     },
     {
-        label: "Gender",
+        label: "Kjønn",
         value: "Male",
         extendedInfo:
             "Your gender is a relevant factor when paired with factors such as diagnosis and profession.",
     },
     {
-        label: "Profession",
+        label: "Yrke",
         value: "Carpenter",
-        extendedInfo:
-            "Your profession is a relevant factor paired with diagnosis.",
+        extendedInfo: "Your profession is a relevant factor paired with diagnosis.",
     },
     {
-        label: "Diagnosis",
+        label: "Diagnose",
         value: "Stroke",
         extendedInfo:
             "The diagnosis that caused the sick leave is one of the most relevant factors when predicting sick leave duration.",

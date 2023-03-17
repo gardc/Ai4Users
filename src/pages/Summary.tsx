@@ -1,5 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { exampleData } from "./api/exampleDataEn";
+import { exampleDataDe } from "./api/exampleDataDe";
+import { exampleDataEn } from "./api/exampleDataEn";
+import { exampleDataNo } from "./api/exampleDataNo";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
@@ -18,6 +20,7 @@ import React from "react";
 const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const router = useRouter();
     const { consent } = router.query;
+    const { locale } = router;
     const { t } = useTranslation("common");
 
     /**
@@ -74,7 +77,9 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
                 </div>
                 <div className="flex flex-col justify-center items-center bg-slate-50">
                     <div className="flex justify-center pt-4">
-                        <DataTable data={exampleData} />
+                        {locale == "en" ? <DataTable data={exampleDataEn}></DataTable> : <></>}
+                        {locale == "no" ? <DataTable data={exampleDataNo}></DataTable> : <></>}
+                        {locale == "de" ? <DataTable data={exampleDataDe}></DataTable> : <></>}
                     </div>
                     <p className="text-base mb-10 w-2/5 text-center">
                         {t("summaryPage.informationSummarySource")}
