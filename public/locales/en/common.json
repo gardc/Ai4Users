@@ -29,7 +29,7 @@
                     "description2": "The AI model is an aid the case handler can use in this prediction, but only if you agree to its use.",
                     "learnMore": {
                         "title": "What agreeing to use the AI model entails",
-                        "description:": "You are free to choose whether you would like to have the AI model used as an aid in predicting the duration of your sick leave or not.",
+                        "description": "You are free to choose whether you would like to have the AI model used as an aid in predicting the duration of your sick leave or not.",
                         "regardlessOfChoiceList": {
                             "title": "No matter your choice, it will be the case that",
                             "li1": "the exact same personal data is used",
@@ -86,16 +86,16 @@
             "description2": "You can read more about your rights as a user by expanding this box.",
             "readMore": {
                 "userRightsTitle": "As a user you have the right to:",
-                "li1": "Get information on which of your personal data is being used and why",
-                "li2": "Correct faulty data about yourself",
-                "li3": "At any time request the removal of your personal data from our system",
-                "li4": "Request that the process which is using your data is canceled",
+                "li1": "Get information on which of your personal data is being used and why ",
+                "li2": "Correct faulty data about yourself ",
+                "li3": "At any time request the removal of your personal data from our system ",
+                "li4": "Request that the process which is using your data is canceled ",
                 "li5": "Be presented with your personal information in an understandable way ",
-                "li6": "At any time protest against processing of your personal data",
+                "li6": "At any time protest against processing of your personal data ",
                 "learnMoreLinkText": "Learn more"
             }
         },
-        "consentQuestion:": "Do you consent to the use of the AI model for predicting your sick leave duration?",
+        "consentQuestion": "Do you consent to the use of the AI model for predicting your sick leave duration?",
         "disagreeButtonText": "I do not consent to usage of the AI model",
         "agreeButtonText": "I consent to usage of the AI model"
     }
