@@ -1,19 +1,26 @@
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { exampleData } from "./api/exampleData";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
 import DataTable from "@/components/DataTable";
-import { useRouter } from "next/router";
+import Link from "next/link";
 import Parent from "@/components/Parent";
 import React from "react";
-import Link from "next/link";
-import { exampleData } from "./api/exampleData";
 
 /**
- * The summary page component that displays a summary of information used to estimate sick leave duration.
+ * The summary page component that displays a summary of information used to estimate sick leave
+ * duration. Supports i18next translation.
  *
  * @returns A React functional component representing the summary page.
  */
-const Summary: React.FC = () => {
+const Summary: React.FC = (
+    _props: InferGetStaticPropsType<typeof getStaticProps>
+) => {
     const router = useRouter();
     const { consent } = router.query;
+    const { t } = useTranslation("common");
 
     /**
      * The model query value that determines whether the AI-model is used for estimation or not.
@@ -21,12 +28,17 @@ const Summary: React.FC = () => {
     let predictionChoiceTitle = "";
     let predictionChoiceText = "";
     if (consent === "true") {
-        predictionChoiceTitle = "You have chosen to use the AI model for prediction";
+        predictionChoiceTitle =
+            "You have chosen to use the AI model for prediction";
         predictionChoiceText =
             "The case handler will use the AI model to predict the total duration of your sick leave.";
     } else if (consent === "false") {
-        predictionChoiceTitle = "You have chosen <b>not</b> to use the AI model for prediction";
-        predictionChoiceTitle = predictionChoiceTitle.replace(/(<b>not<\/b>)/, "<b>$1</b>");
+        predictionChoiceTitle =
+            "You have chosen <b>not</b> to use the AI model for prediction";
+        predictionChoiceTitle = predictionChoiceTitle.replace(
+            /(<b>not<\/b>)/,
+            "<b>$1</b>"
+        );
         predictionChoiceText =
             "The case handler will make a prediction of the total duration of your sick leave without the use of the AI model. This may result in a longer processing time.";
     }
@@ -35,8 +47,11 @@ const Summary: React.FC = () => {
         <Parent>
             <div className="bg-slate-50 h-screen">
                 <div className="bg-gradient-to-b from-sky-blue to-slate-50">
-                    <div className="flex justify-start py-5 pt-10 text-white">
-                        <Link className="text-white pl-12 px-3" href={"/LandingPage"}>
+                    <div className="flex justify-start py-5 text-white">
+                        <Link
+                            className="text-white pl-12 px-3"
+                            href={"/LandingPage"}
+                        >
                             Frontpage
                         </Link>
                         {">"}
@@ -74,7 +89,7 @@ const Summary: React.FC = () => {
 
                     <div className="flex justify-center mt-16">
                         <h2 className="text-base font-bold text-prussian-blue text-center">
-                            Summary of the information used to predict your sick leave duration
+                            {t("summaryPageInfoSummaryTitle")}
                         </h2>
                     </div>
                 </div>
@@ -83,8 +98,8 @@ const Summary: React.FC = () => {
                         <DataTable data={exampleData} />
                     </div>
                     <p className="text-base mb-10 w-2/5 text-center">
-                        This information is gathered from the national population register and our
-                        registers.
+                        This information is gathered from the national
+                        population register and our registers.
                     </p>
                     {/* <div className="flex justify-center mt-4">
                         <Button color="black" onClick={() => alert("Okay")}>
@@ -103,3 +118,11 @@ const Summary: React.FC = () => {
 };
 
 export default Summary;
+
+type Props = {};
+
+export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => ({
+    props: {
+        ...(await serverSideTranslations(locale ?? "en", ["common"])),
+    },
+});

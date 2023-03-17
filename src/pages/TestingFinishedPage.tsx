@@ -1,12 +1,19 @@
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 import Link from "next/link";
 
 /**
  * The end page for testing component that displays some information and buttons for restarting
- * the demo and for navigating to a questionnaire.
+ * the demo and for navigating to a questionnaire. Supports i18next translation.
  *
  * @returns A React functional component representing the end page for testing.
  */
-export default function TestingFinishedPage() {
+export default function TestingFinishedPage(
+    _props: InferGetStaticPropsType<typeof getStaticProps>
+) {
+    const { t } = useTranslation("common");
+
     return (
         <div className="w-full h-screen flex flex-col justify-center items-center bg-white">
             {/* Infobox */}
@@ -15,9 +22,9 @@ export default function TestingFinishedPage() {
                     Thank you for testing our web application!
                 </h1>
                 <p className="text-neutral-200">
-                    You have now completed the demo. You can either go back to
-                    the beginning of the demo (front page), or continue to our
-                    questionnaire (Google Forms) to answer some questions.
+                    You have now completed the demo. You can either go back to the beginning of the
+                    demo (front page), or continue to our questionnaire (Google Forms) to answer
+                    some questions.
                 </p>
                 {/* Buttons */}
                 <div className="flex gap-5">
@@ -40,15 +47,7 @@ export default function TestingFinishedPage() {
     );
 }
 
-const InfoButton = ({
-    href,
-    text,
-    bg,
-}: {
-    href: string;
-    text: string;
-    bg: string;
-}) => {
+const InfoButton = ({ href, text, bg }: { href: string; text: string; bg: string }) => {
     return (
         <Link
             href={href}
@@ -58,3 +57,11 @@ const InfoButton = ({
         </Link>
     );
 };
+
+type Props = {};
+
+export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => ({
+    props: {
+        ...(await serverSideTranslations(locale ?? "en", ["common"])),
+    },
+});

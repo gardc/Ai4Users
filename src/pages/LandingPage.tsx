@@ -1,18 +1,22 @@
+import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { exampleData } from "./api/exampleData";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
 import Content from "@/components/Content";
 import DataTable from "@/components/DataTable";
-import NavBar from "@/components/NavBar";
 import Parent from "@/components/Parent";
-import InformationDropdownBox from "@/components/InformationDropdownBox";
 
 /**
  * The landing page component that displays initial information about the web
- * application and the  data points used for sick leave duration prediction.
+ * application and the data points used for sick leave duration prediction.
+ * Supports i18next translation.
  *
  * @returns A React functional component representing the landing page.
  */
-const LandingPage: React.FC = () => {
+const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+    const { t } = useTranslation("common");
+
     return (
         <Parent>
             <Content>
@@ -22,7 +26,7 @@ const LandingPage: React.FC = () => {
                 flex-col flex items-center"
                 >
                     <p className="text-center text-prussian-blue font-semibold text-3xl">
-                        Prediction of sick leave duration
+                        {t("landingPageTitle")}
                     </p>
                     <p className="w-3/4 mt-8 text-left">
                         In order to provide you with appropriate support during your sick leave, we
@@ -59,6 +63,9 @@ const LandingPage: React.FC = () => {
                                 <Button color="black" href="/UsingAi">
                                     Continue
                                 </Button>
+                                {/* <Link href="/LandingPage" locale={otherLocale}>
+                  {otherLocale.toUpperCase()}
+                </Link> */}
                             </div>
                         </div>
                     </div>
@@ -69,3 +76,11 @@ const LandingPage: React.FC = () => {
 };
 
 export default LandingPage;
+
+type Props = {};
+
+export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => ({
+    props: {
+        ...(await serverSideTranslations(locale ?? "en", ["common"])),
+    },
+});
