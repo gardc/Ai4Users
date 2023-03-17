@@ -33,9 +33,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                             {t("pageProgressBar.frontpage")}
                         </Link>
                         {">"}
-                        <Link className="text-white px-3" href={"/UsingAi"}>
-                            {t("pageProgressBar.usingAiPage")}
-                        </Link>
+                        <p className="text-white px-3">{t("pageProgressBar.usingAiPage")}</p>
                     </div>
 
                     <p className="text-center text-prussian-blue font-semibold text-3xl m-3">
@@ -142,6 +140,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                     buttonText={t(
                                         "usingAiPage.aboutAiInfo.readMore.learnMoreButtonText"
                                     )}
+                                    expandedCloseButtonText={t("expandedInfoBoxCloseButtonText")}
                                 />
                                 <ExpandableInformationBox
                                     content={
@@ -221,6 +220,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                     buttonText={t(
                                         "usingAiPage.aboutAiInfo.readMore.learnMoreButtonText"
                                     )}
+                                    expandedCloseButtonText={t("expandedInfoBoxCloseButtonText")}
                                 />
                                 <ExpandableInformationBox
                                     content={
@@ -278,9 +278,12 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                     buttonText={t(
                                         "usingAiPage.aboutAiInfo.readMore.learnMoreButtonText"
                                     )}
+                                    expandedCloseButtonText={t("expandedInfoBoxCloseButtonText")}
                                 />
                             </div>
                         }
+                        extendInfoButtonText={t("informationDropdownBoxExtendButtonText")}
+                        closeInfoButtonText={t("informationDropdownBoxCloseButtonText")}
                     />
                     <div className="h-6"></div>
                     <InformationDropdownBox
@@ -396,6 +399,8 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                 </ul>
                             </div>
                         }
+                        extendInfoButtonText={t("informationDropdownBoxExtendButtonText")}
+                        closeInfoButtonText={t("informationDropdownBoxCloseButtonText")}
                     />
                     <p className="mt-16 font-semibold text-lg">
                         {t("usingAiPage.consentQuestion")}
