@@ -1,5 +1,5 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { exampleData } from "./api/exampleData";
+import { exampleData } from "./api/exampleDataEn";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
@@ -26,14 +26,12 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
     let predictionChoiceTitle = "";
     let predictionChoiceText = "";
     if (consent === "true") {
-        predictionChoiceTitle = "You have chosen to use the AI model for prediction";
-        predictionChoiceText =
-            "The case handler will use the AI model to predict the total duration of your sick leave.";
+        predictionChoiceTitle = t("summaryPage.titleConsenting");
+        predictionChoiceText = t("summaryPage.descriptionConsenting");
     } else if (consent === "false") {
-        predictionChoiceTitle = "You have chosen <b>not</b> to use the AI model for prediction";
+        predictionChoiceTitle = t("summaryPage.titleNotConsenting");
         predictionChoiceTitle = predictionChoiceTitle.replace(/(<b>not<\/b>)/, "<b>$1</b>");
-        predictionChoiceText =
-            "The case handler will make a prediction of the total duration of your sick leave without the use of the AI model. This may result in a longer processing time.";
+        predictionChoiceText = t("summaryPage.descriptionConsenting");
     }
 
     return (
@@ -42,23 +40,15 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
                 <div className="bg-gradient-to-b from-sky-blue to-slate-50">
                     <div className="flex justify-start py-5 pt-10 text-white">
                         <Link className="text-white pl-12 px-3" href={"/LandingPage"}>
-                            Frontpage
+                            {t("pageProgressBar.frontpage")}
                         </Link>
                         {">"}
                         <Link className="text-white px-3" href={"/UsingAi"}>
-                            Using AI
+                            {t("pageProgressBar.usingAiPage")}
                         </Link>
                         {">"}
-                        <Link className="text-white px-3" href={"/Summary"}>
-                            Summary
-                        </Link>
+                        <p className="text-white px-3">{t("pageProgressBar.summaryPage")} </p>
                     </div>
-                    {/*
-                    <div className="flex items-center ml-5">
-                        <Button color="black" href={"/UsingAi"}>
-                            Go back
-                        </Button>
-                    </div> */}
                     <div className="flex flex-col justify-center text-2xl items-center text-center">
                         <h1
                             dangerouslySetInnerHTML={{
@@ -72,14 +62,13 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
                             }}
                         />
                         <p className="text-base mt-10 w-1/2 text-center">
-                            If you would like to change your choice, click on &quot;Using AI&quot;
-                            in the top left corner.
+                            {t("summaryPage.changeCoice")}
                         </p>
                     </div>
 
                     <div className="flex justify-center mt-16">
                         <h2 className="text-base font-bold text-prussian-blue text-center">
-                            {t("summaryPageInfoSummaryTitle")}
+                            {t("summaryPage.informationSummaryTitle")}
                         </h2>
                     </div>
                 </div>
@@ -88,8 +77,7 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
                         <DataTable data={exampleData} />
                     </div>
                     <p className="text-base mb-10 w-2/5 text-center">
-                        This information is gathered from the national population register and our
-                        registers.
+                        {t("summaryPage.informationSummarySource")}
                     </p>
                     {/* <div className="flex justify-center mt-4">
                         <Button color="black" onClick={() => alert("Okay")}>
@@ -98,7 +86,7 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
                     </div> */}
                     <div className="flex justify-center mt-4 pb-16">
                         <Button color="black" href="/TestingFinishedPage">
-                            Submit your choice
+                            {t("summaryPage.submitChoiceButtonText")}
                         </Button>
                     </div>
                 </div>
