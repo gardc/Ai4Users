@@ -50,9 +50,9 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
                             {t("pageProgressBar.usingAiPage")}
                         </Link>
                         {">"}
-                        <Link className="underline underline-offset-4 px-3" href={"/Summary"}>
+                        <p className="underline underline-offset-4 px-3">
                             {t("pageProgressBar.summaryPage")}
-                        </Link>
+                        </p>
                     </div>
                     <div className="flex flex-col justify-center text-2xl items-center text-center">
                         <h1

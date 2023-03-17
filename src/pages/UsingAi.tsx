@@ -33,9 +33,9 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                             {t("pageProgressBar.frontpage")}
                         </Link>
                         {">"}
-                        <Link className="underline underline-offset-4 px-3" href={"/UsingAi"}>
+                        <p className="underline underline-offset-4 px-3">
                             {t("pageProgressBar.usingAiPage")}
-                        </Link>
+                        </p>
                         <p className="text-gray-500">{">"}</p>
                         <p className="text-gray-500 px-3">Summary</p>
                     </div>

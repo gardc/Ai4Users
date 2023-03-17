@@ -27,9 +27,9 @@ const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticP
         <Parent>
             <Content>
                 <div className="bg-sky-blue flex justify-start py-5 text-black">
-                    <Link className="underline underline-offset-4 pl-12 px-3" href={"/LandingPage"}>
-                        Home
-                    </Link>
+                    <p className="underline underline-offset-4 pl-12 px-3">
+                        {t("pageProgressBar.frontpage")}
+                    </p>
                     <p className="text-gray-500">{">"}</p>
                     <p className="text-gray-500 px-3">UsingAi</p>
                     <p className="text-gray-500">{">"}</p>
