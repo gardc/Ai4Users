@@ -1,13 +1,27 @@
 {
-    "summaryPageInfoSummaryTitle": "Summary of the information used to predict your sick leave duration",
+    "expandedInfoBoxCloseButtonText": "Close",
+    "informationDropdownBoxExtendButtonText": "Read more",
+    "informationDropdownBoxCloseButtonText": "Close",
+
     "pageProgressBar": {
         "frontpage": "Frontpage",
         "usingAiPage": "Using AI",
         "summaryPage": "Summary"
     },
+
     "landingPageTesting": {
-        "title": "Thank you for wanting to test our web application"
+        "title": "Thank you for wanting to test our web application",
+        "description": "The test involves navigating through our web application, and answering a questionnaire at the end.",
+        "beforeTestingTitle": "Before you begin testing",
+        "beforeTestingDescription": "Imagine that you are on sick leave for an extended period of time, and you are in need of support. Because of this, your doctor has directed you to the web site you are about to test.",
+        "disclaimerTitle": "Disclaimer",
+        "disclaimer1": "This is a student project only intended for testing a user interface.",
+        "disclaimer2": "No data is gathered from users, and the user data presented in the web application is fictional.",
+        "questionsTitle": "If you have any questions, please send an e-mail to",
+        "questionsEmailAddress": "jjsterke@stud.ntnu.no",
+        "beginTestingButtonText": "Begin testing the web application"
     },
+
     "landingPage": {
         "title": "Prediction of sick leave duration",
         "description": "In order to provide you with appropriate support during your sick leave, we will make a prediction of its duration based on your data. This is helpful in planning for support measures such as follow-up meetings and economical support for a longer period of time.",
@@ -18,6 +32,7 @@
         },
         "continueButtonText": "Continue"
     },
+
     "usingAiPage": {
         "title": "Using Artificial Intelligence for prediction",
         "aboutAiInfo": {
@@ -98,5 +113,23 @@
         "consentQuestion": "Do you consent to the use of the AI model for predicting your sick leave duration?",
         "disagreeButtonText": "I do not consent to usage of the AI model",
         "agreeButtonText": "I consent to usage of the AI model"
+    },
+
+    "summaryPage": {
+        "titleNotConsenting": "You have chosen <b>not</b> to use the AI model for prediction",
+        "titleConsenting": "You have chosen to use the AI model for prediction",
+        "descriptionNotConsenting": "The case handler will make a prediction of the total duration of your sick leave without the use of the AI model. This may result in a longer processing time.",
+        "descriptionConsenting": "The case handler will use the AI model to predict the total duration of your sick leave.",
+        "changeCoice": "If you would like to change your choice, click on \"Using AI\" in the top left corner.",
+        "informationSummaryTitle": "Summary of the information used to predict your sick leave duration",
+        "informationSummarySource": "This information is gathered from the national population register and our registers.",
+        "submitChoiceButtonText": "Submit your choice"
+    },
+
+    "testingFinishedPage": {
+        "title": "Thank you for testing our web application!",
+        "information": "You have now completed the demo. You can either go back to the beginning of the demo (front page), or continue to our questionnaire (Google Forms) to answer some questions.",
+        "toFrontPageButtonText": "Front page",
+        "toQuestionnaireButtonText": "Questionnaire"
     }
 }
