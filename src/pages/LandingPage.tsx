@@ -9,6 +9,7 @@ import Button from "@/components/Button";
 import Content from "@/components/Content";
 import DataTable from "@/components/DataTable";
 import Parent from "@/components/Parent";
+import Link from "next/link";
 
 /**
  * The landing page component that displays initial information about the web
@@ -25,8 +26,17 @@ const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticP
     return (
         <Parent>
             <Content>
+                <div className="bg-sky-blue flex justify-start py-5 text-black">
+                    <Link className="underline underline-offset-4 pl-12 px-3" href={"/LandingPage"}>
+                        Home
+                    </Link>
+                    <p className="text-gray-500">{">"}</p>
+                    <p className="text-gray-500 px-3">UsingAi</p>
+                    <p className="text-gray-500">{">"}</p>
+                    <p className="text-gray-500 px-3">Summary</p>
+                </div>
                 <div
-                    className="index bg-gradient-to-b from-sky-blue to-slate-50 pt-24 pb-16 
+                    className="index bg-gradient-to-b from-sky-blue to-slate-50 pt-8 pb-8 
                 flex-col flex items-center"
                 >
                     <p className="text-center text-prussian-blue font-semibold text-3xl">

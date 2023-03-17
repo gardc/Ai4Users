@@ -41,16 +41,18 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
         <Parent>
             <div className="bg-slate-50 h-screen">
                 <div className="bg-gradient-to-b from-sky-blue to-slate-50">
-                    <div className="flex justify-start py-5 pt-10 text-white">
-                        <Link className="text-white pl-12 px-3" href={"/LandingPage"}>
+                    <div className="flex justify-start py-5 text-black">
+                        <Link className="pl-12 px-3" href={"/LandingPage"}>
                             {t("pageProgressBar.frontpage")}
                         </Link>
                         {">"}
-                        <Link className="text-white px-3" href={"/UsingAi"}>
+                        <Link className="px-3" href={"/UsingAi"}>
                             {t("pageProgressBar.usingAiPage")}
                         </Link>
                         {">"}
-                        <p className="text-white px-3">{t("pageProgressBar.summaryPage")} </p>
+                        <Link className="underline underline-offset-4 px-3" href={"/Summary"}>
+                            {t("pageProgressBar.summaryPage")}
+                        </Link>
                     </div>
                     <div className="flex flex-col justify-center text-2xl items-center text-center">
                         <h1

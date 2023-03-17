@@ -4,8 +4,8 @@ import React from "react";
 
 const NavBar = () => {
     return (
-        <div className="w-full flex justify-center align-center bg-sky-blue ">
-            <div className="m-4 max-w-4xl flex flex-row justify-between w-full ">
+        <div className="bg-sky-blue ">
+            <div className="px-12 pt-8 pb-2 flex justify-between">
                 {/* Left side */}
                 <div>
                     <Link

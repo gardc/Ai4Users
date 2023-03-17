@@ -28,12 +28,16 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
         <Parent>
             <Content>
                 <div className="bg-gradient-to-b from-sky-blue to-slate-50 pb-16 text-center">
-                    <div className="flex justify-start py-5 pt-10 text-white">
-                        <Link className="text-white pl-12 px-3" href={"/LandingPage"}>
+                    <div className="flex justify-start py-5 text-black">
+                        <Link className="pl-12 px-3" href={"/LandingPage"}>
                             {t("pageProgressBar.frontpage")}
                         </Link>
                         {">"}
-                        <p className="text-white px-3">{t("pageProgressBar.usingAiPage")}</p>
+                        <Link className="underline underline-offset-4 px-3" href={"/UsingAi"}>
+                            {t("pageProgressBar.usingAiPage")}
+                        </Link>
+                        <p className="text-gray-500">{">"}</p>
+                        <p className="text-gray-500 px-3">Summary</p>
                     </div>
 
                     <p className="text-center text-prussian-blue font-semibold text-3xl m-3">
