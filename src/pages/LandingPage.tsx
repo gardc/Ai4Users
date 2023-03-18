@@ -9,7 +9,6 @@ import Button from "@/components/Button";
 import Content from "@/components/Content";
 import DataTable from "@/components/DataTable";
 import Parent from "@/components/Parent";
-import Link from "next/link";
 
 /**
  * The landing page component that displays initial information about the web
@@ -31,9 +30,9 @@ const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticP
                         {t("pageProgressBar.frontpage")}
                     </p>
                     <p className="text-gray-500">{">"}</p>
-                    <p className="text-gray-500 px-3">UsingAi</p>
+                    <p className="text-gray-500 px-3">{t("pageProgressBar.usingAiPage")}</p>
                     <p className="text-gray-500">{">"}</p>
-                    <p className="text-gray-500 px-3">Summary</p>
+                    <p className="text-gray-500 px-3">{t("pageProgressBar.summaryPage")}</p>
                 </div>
                 <div
                     className="index bg-gradient-to-b from-sky-blue to-slate-50 pt-8 pb-8 
@@ -58,10 +57,10 @@ const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticP
                         <p className="py-3 text-left mb-4 w-4/6">
                             {t("landingPage.dataPointsSummary.description2")}
                         </p>
-                        {/*Her kommer komponent om informasjon om brukeren */}
-                        {locale == "en" ? <DataTable data={exampleDataEn}></DataTable> : <></>}
-                        {locale == "no" ? <DataTable data={exampleDataNo}></DataTable> : <></>}
-                        {locale == "de" ? <DataTable data={exampleDataDe}></DataTable> : <></>}
+                        {/*Here there will be a component with information about the user */}
+                        {locale == "en" ? <DataTable data={exampleDataEn}/> : <></>}
+                        {locale == "no" ? <DataTable data={exampleDataNo}/> : <></>}
+                        {locale == "de" ? <DataTable data={exampleDataDe}/> : <></>}
                         <div className="flex-col justify-center flex">
                             {/* <div className="flex justify-center mt-4">
                                 <Button color="black" href="/%">

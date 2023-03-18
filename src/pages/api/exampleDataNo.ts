@@ -1,4 +1,4 @@
-// MUST BE TRANSLATED
+// TODO: MUST BE TRANSLATED
 export const exampleDataNo = [
     {
         label: "Alder",
