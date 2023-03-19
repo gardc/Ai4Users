@@ -37,7 +37,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                             {t("pageProgressBar.usingAiPage")}
                         </p>
                         <p className="text-gray-500">{">"}</p>
-                        <p className="text-gray-500 px-3">Summary</p>
+                        <p className="text-gray-500 px-3">{t("pageProgressBar.summaryPage")}</p>
                     </div>
 
                     <p className="text-center text-prussian-blue font-semibold text-3xl m-3">

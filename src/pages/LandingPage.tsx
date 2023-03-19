@@ -31,9 +31,9 @@ const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticP
                         {t("pageProgressBar.frontpage")}
                     </p>
                     <p className="text-gray-500">{">"}</p>
-                    <p className="text-gray-500 px-3">UsingAi</p>
+                    <p className="text-gray-500 px-3">{t("pageProgressBar.usingAiPage")}</p>
                     <p className="text-gray-500">{">"}</p>
-                    <p className="text-gray-500 px-3">Summary</p>
+                    <p className="text-gray-500 px-3">{t("pageProgressBar.summaryPage")}</p>
                 </div>
                 <div
                     className="index bg-gradient-to-b from-sky-blue to-slate-50 pt-8 pb-8 
