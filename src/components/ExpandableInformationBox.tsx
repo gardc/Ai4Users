@@ -1,42 +1,41 @@
-import React, { useEffect, useRef, useState } from 'react'
-import Button from '@/components/Button'
+import React, { useEffect, useRef, useState } from "react";
+import Button from "@/components/Button";
 
 export interface ExpandableInformationBoxProps {
-    content: string | JSX.Element
-    expandedContentTitle: string
-    expandedContent: string | JSX.Element
-    buttonText: string
+    content: string | JSX.Element;
+    expandedContentTitle: string;
+    expandedContent: string | JSX.Element;
+    expandedCloseButtonText: string;
+    buttonText: string;
 }
 
 const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
     content,
     expandedContentTitle,
     expandedContent,
+    expandedCloseButtonText,
     buttonText,
 }) => {
-    const [expanded, setExpanded] = useState<boolean>(false)
-    const expandedRef = useRef<HTMLDivElement>(null)
+    const [expanded, setExpanded] = useState<boolean>(false);
+    const expandedRef = useRef<HTMLDivElement>(null);
 
     useEffect(() => {
         const handleOutsideClick = (event: MouseEvent) => {
-            if (
-                expandedRef.current &&
-                !expandedRef.current.contains(event.target as Node)
-            ) {
-                setExpanded(false)
+            if (expandedRef.current && !expandedRef.current.contains(event.target as Node)) {
+                setExpanded(false);
             }
-        }
+        };
 
-        document.addEventListener('mousedown', handleOutsideClick)
+        document.addEventListener("mousedown", handleOutsideClick);
 
         return () => {
-            document.removeEventListener('mousedown', handleOutsideClick)
-        }
-    }, [expandedRef])
+            document.removeEventListener("mousedown", handleOutsideClick);
+        };
+    }, [expandedRef]);
 
     const handleExpansion = () => {
-        setExpanded(!expanded)
-    }
+        setExpanded(!expanded);
+    };
 
     return (
         <div className="flex flex-col">
@@ -63,21 +62,19 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
                         <div className="font-bold mb-6 text-xl w-5/6 xl:w-full text-left text-violet">
                             {expandedContentTitle}
                         </div>
-                        <div className="text-black text-left">
-                            {expandedContent}
-                        </div>
+                        <div className="text-black text-left">{expandedContent}</div>
                         <button
                             onClick={handleExpansion}
                             className="text-black hover:text-sky-600
                             absolute top-14 right-14 underline"
                         >
-                            Close
+                            {expandedCloseButtonText}
                         </button>
                     </div>
                 </>
             )}
         </div>
-    )
-}
+    );
+};
 
-export default ExpandableInformationBox
+export default ExpandableInformationBox;

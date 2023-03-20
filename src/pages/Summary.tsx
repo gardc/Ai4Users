@@ -1,5 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { exampleData } from "./api/exampleData";
+import { exampleDataDe } from "./api/exampleDataDe";
+import { exampleDataEn } from "./api/exampleDataEn";
+import { exampleDataNo } from "./api/exampleDataNo";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
@@ -15,11 +17,10 @@ import React from "react";
  *
  * @returns A React functional component representing the summary page.
  */
-const Summary: React.FC = (
-    _props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const router = useRouter();
     const { consent } = router.query;
+    const { locale } = router;
     const { t } = useTranslation("common");
 
     /**
@@ -28,19 +29,12 @@ const Summary: React.FC = (
     let predictionChoiceTitle = "";
     let predictionChoiceText = "";
     if (consent === "true") {
-        predictionChoiceTitle =
-            "You have chosen to use the AI model for prediction";
-        predictionChoiceText =
-            "The case handler will use the AI model to predict the total duration of your sick leave.";
+        predictionChoiceTitle = t("summaryPage.titleConsenting");
+        predictionChoiceText = t("summaryPage.descriptionConsenting");
     } else if (consent === "false") {
-        predictionChoiceTitle =
-            "You have chosen <b>not</b> to use the AI model for prediction";
-        predictionChoiceTitle = predictionChoiceTitle.replace(
-            /(<b>not<\/b>)/,
-            "<b>$1</b>"
-        );
-        predictionChoiceText =
-            "The case handler will make a prediction of the total duration of your sick leave without the use of the AI model. This may result in a longer processing time.";
+        predictionChoiceTitle = t("summaryPage.titleNotConsenting");
+        predictionChoiceTitle = predictionChoiceTitle.replace(/(<b>not<\/b>)/, "<b>$1</b>");
+        predictionChoiceText = t("summaryPage.descriptionNotConsenting");
     }
 
     return (
@@ -49,26 +43,17 @@ const Summary: React.FC = (
                 <div className="bg-gradient-to-b from-sky-blue to-slate-50">
                     <div className="flex justify-start py-5 text-black">
                         <Link className="pl-12 px-3" href={"/LandingPage"}>
-                            Home
+                            {t("pageProgressBar.frontpage")}
                         </Link>
                         {">"}
                         <Link className="px-3" href={"/UsingAi"}>
-                            Using AI
+                            {t("pageProgressBar.usingAiPage")}
                         </Link>
                         {">"}
-                        <Link
-                            className="underline underline-offset-4 px-3"
-                            href={"/Summary"}
-                        >
-                            Summary
-                        </Link>
+                        <p className="underline underline-offset-4 px-3">
+                            {t("pageProgressBar.summaryPage")}
+                        </p>
                     </div>
-                    {/*
-                    <div className="flex items-center ml-5">
-                        <Button color="black" href={"/UsingAi"}>
-                            Go back
-                        </Button>
-                    </div> */}
                     <div className="flex flex-col justify-center text-2xl items-center text-center">
                         <h1
                             dangerouslySetInnerHTML={{
@@ -82,24 +67,24 @@ const Summary: React.FC = (
                             }}
                         />
                         <p className="text-base mt-10 w-1/2 text-center">
-                            If you would like to change your choice, click on
-                            &quot;Using AI&quot; in the top left corner.
+                            {t("summaryPage.changeCoice")}
                         </p>
                     </div>
 
                     <div className="flex justify-center mt-16">
                         <h2 className="text-base font-bold text-prussian-blue text-center">
-                            {t("summaryPageInfoSummaryTitle")}
+                            {t("summaryPage.informationSummaryTitle")}
                         </h2>
                     </div>
                 </div>
                 <div className="flex flex-col justify-center items-center bg-slate-50">
                     <div className="flex justify-center pt-4">
-                        <DataTable data={exampleData} />
+                        {locale == "en" ? <DataTable data={exampleDataEn}/> : <></>}
+                        {locale == "no" ? <DataTable data={exampleDataNo}/> : <></>}
+                        {locale == "de" ? <DataTable data={exampleDataDe}/> : <></>}
                     </div>
                     <p className="text-base mb-10 w-2/5 text-center">
-                        This information is gathered from the national
-                        population register and our registers.
+                        {t("summaryPage.informationSummarySource")}
                     </p>
                     {/* <div className="flex justify-center mt-4">
                         <Button color="black" onClick={() => alert("Okay")}>
@@ -108,7 +93,7 @@ const Summary: React.FC = (
                     </div> */}
                     <div className="flex justify-center mt-4 pb-16">
                         <Button color="black" href="/TestingFinishedPage">
-                            Submit your choice
+                            {t("summaryPage.submitChoiceButtonText")}
                         </Button>
                     </div>
                 </div>
