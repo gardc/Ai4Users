@@ -316,7 +316,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon></ArrowRightIcon>
+                                                <ArrowRightIcon/>
                                             </a>
                                         </p>
                                     </li>
@@ -332,7 +332,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon></ArrowRightIcon>
+                                                <ArrowRightIcon/>
                                             </a>
                                         </p>
                                     </li>
@@ -348,7 +348,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon></ArrowRightIcon>
+                                                <ArrowRightIcon/>
                                             </a>
                                         </p>
                                     </li>
@@ -364,7 +364,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon></ArrowRightIcon>
+                                                <ArrowRightIcon/>
                                             </a>
                                         </p>
                                     </li>
@@ -380,7 +380,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon></ArrowRightIcon>
+                                                <ArrowRightIcon/>
                                             </a>
                                         </p>
                                     </li>
@@ -396,7 +396,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon></ArrowRightIcon>
+                                                <ArrowRightIcon/>
                                             </a>
                                         </p>
                                     </li>
