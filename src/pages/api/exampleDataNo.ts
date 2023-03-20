@@ -4,47 +4,47 @@ export const exampleDataNo = [
         label: "Alder",
         value: "46",
         extendedInfo:
-            "Your age is important to the prediction because higher age usually indicates a longer sick leave duration.",
+            "Alderen din er viktig for prediksjonen fordi høyere alder vanligvis indikerer et lengre sykefravær.",
     },
     {
         label: "Kjønn",
-        value: "Male",
+        value: "Mann",
         extendedInfo:
-            "Your gender is a relevant factor when paired with factors such as diagnosis and profession.",
+            "Ditt kjønn er en relevant faktor sett i sammenheng med faktorer som diagnose og yrke.",
     },
     {
         label: "Yrke",
-        value: "Carpenter",
-        extendedInfo: "Your profession is a relevant factor paired with diagnosis.",
+        value: "Snekker",
+        extendedInfo: "Ditt yrke er en relevant faktor sett i sammenheng med diagnose.",
     },
     {
         label: "Diagnose",
-        value: "Stroke",
+        value: "Hjerneslag",
         extendedInfo:
-            "The diagnosis that caused the sick leave is one of the most relevant factors when predicting sick leave duration.",
+            "Diagnosen som er grunnen til sykefraværet er en av de mest relevante faktorene i predikeringen av sykefraværsvarighet.",
     },
     {
-        label: "Start date of current sick leave",
+        label: "Startdato for nåværende sykefravær",
         value: "01.03.2023",
         extendedInfo:
-            "The start date of your current sick leave. May be relevant when paired with diagnosis and age.",
+            "Startdatoen for nåværende sykefravær. Dette kan være en relvant faktor sett i sammenheng med diagnose og alder.",
     },
     {
-        label: "Number of previous sick leaves",
+        label: "Antall tidligere sykefravær",
         value: "1",
         extendedInfo:
-            "The number of previous sick leaves is a relevant factor, as this may give an indication of duration compared to other people with the same number of sick leaves.",
+            "Antallet tidligere sykefravær er en relevant faktor, da dette kan gi en indikasjon på varighet når sammenlignet med andre, lignende tilfeller med samme antall sykefravær.",
     },
     {
-        label: "Start date of last sick leave",
+        label: "Startdato for forrige sykefravær",
         value: "05.01.2020",
         extendedInfo:
-            "The start date of your last sick leave is a relevant factor paired with the end date, as the duration of your last sick leave may influence the duration of your current one.",
+            "Stardatoen for ditt forrige sykefravær er en relevant faktor når sammenlignet med sluttdatoen, da varigheten av ditt forrige sykefravær kan gi en indikasjon på varigheten av ditt nåværende sykefravær.",
     },
     {
-        label: "End date of last sick leave",
+        label: "Sluttdato for forrige sykefravær",
         value: "25.03.2020",
         extendedInfo:
-            "The end date of your last sick leave is a relevant factor paired with the start date, as the duration of your last sick leave may influence the duration of your current one.",
+            "Sluttdatoen for ditt forrige sykefravær er en relevant faktor når sammenlignet med startdatoen, da varigheten av ditt forrige sykefravær kan gi en indikasjon på varigheten av ditt nåværende sykefravær.",
     },
 ];
