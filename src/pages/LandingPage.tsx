@@ -47,20 +47,20 @@ const LandingPage: React.FC = (
                     <p className="text-center text-prussian-blue font-semibold text-3xl">
                         {t("landingPage.title")}
                     </p>
-                    <p className="w-3/4 mt-8 text-left">
+                    <p className="px-4 sm:px-6 md:px-16 sm:w-3/4 mt-8 text-left">
                         {t("landingPage.description")}
                     </p>
                 </div>
                 {/*Second page that shows personal information */}
                 <div className="text-center bg-slate-50 flex justify-center">
-                    <div className="w-full sm:w-3/4 drop-shadow-lg sm:rounded-xl bg-white py-8 px-16 flex justify-center items-center flex-col m-4">
+                    <div className="w-full px-4 sm:w-3/4 drop-shadow-lg sm:rounded-xl sm:m-4 sm:px-16 bg-white py-8  flex justify-center items-center flex-col">
                         <p className="text-2xl py-3">
                             {t("landingPage.dataPointsSummary.title")}
                         </p>
-                        <p className="py-3 text-left w-4/6">
+                        <p className="py-3 text-left mb-4">
                             {t("landingPage.dataPointsSummary.description1")}
                         </p>
-                        <p className="py-3 text-left mb-4 w-4/6">
+                        <p className="py-3 text-left mb-4 md:w-4/6">
                             {t("landingPage.dataPointsSummary.description2")}
                         </p>
                         {/*Here there will be a component with information about the user */}

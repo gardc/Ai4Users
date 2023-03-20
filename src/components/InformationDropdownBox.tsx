@@ -42,10 +42,12 @@ const InformationDropdownBox: React.FC<InformationDropdownBoxProps> = ({
     };
 
     return (
-        <div className="bg-white rounded-xl shadow-lg w-3/4 text-left justify-center items-center m-2">
+        <div className="bg-white rounded-xl shadow-lg sm:w-3/4 text-left justify-center items-center m-2">
             {" "}
-            {title.length !== 0 && <h2 className="font-bold px-12 pt-14 text-xl">{title}</h2>}
-            <div className="p-10">{initialInfo}</div>
+            {title.length !== 0 && (
+                <h2 className="font-bold px-12 pt-14 text-xl">{title}</h2>
+            )}
+            <div className="p-4 sm:p-8">{initialInfo}</div>
             {!open && (
                 <div className="flex justify-center pb-4">
                     <button onClick={handleOpen}>
@@ -56,9 +58,9 @@ const InformationDropdownBox: React.FC<InformationDropdownBoxProps> = ({
             )}
             {open ? (
                 <div className="bg-slate-50 rounded-b-xl">
-                    <div className="px-6 pt-6">{extendedInfo}</div>
+                    <div className="">{extendedInfo}</div>
                     {open && (
-                        <div className="flex justify-center pt-6 pb-4">
+                        <div className="flex justify-center sm:pt-6 pb-4">
                             <button onClick={handleOpen}>
                                 <i className="fas fa-chevron-up pb-4"></i>
                                 <p className="text-xs">{closeInfoButtonText}</p>
