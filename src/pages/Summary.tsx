@@ -33,7 +33,13 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
         predictionChoiceText = t("summaryPage.descriptionConsenting");
     } else if (consent === "false") {
         predictionChoiceTitle = t("summaryPage.titleNotConsenting");
-        predictionChoiceTitle = predictionChoiceTitle.replace(/(<b>not<\/b>)/, "<b>$1</b>");
+        if (locale === "en") {
+            predictionChoiceTitle = predictionChoiceTitle.replace(/(not)/, "<b>not</b>");
+        } else if (locale === "no") {
+            predictionChoiceTitle = predictionChoiceTitle.replace(/(ikke)/, "<b>ikke</b>");
+        } else {
+            //TODO: Provide bold emphasis on german translation
+        }
         predictionChoiceText = t("summaryPage.descriptionConsenting");
     }
 
