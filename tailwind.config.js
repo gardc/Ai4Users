@@ -25,6 +25,9 @@ module.exports = {
       borderWidth: {
         '1': '1px', 
       },
+      spacing: {
+        '19/20': '95%'
+      }
     },
   },
   plugins: [],
