@@ -5,6 +5,7 @@ import DataTable from "@/components/DataTable";
 import NavBar from "@/components/NavBar";
 import Parent from "@/components/Parent";
 import InformationDropdownBox from "@/components/InformationDropdownBox";
+import AImodel from "@/pages/ai-models";
 
 /**
  * The landing page component that displays initial information about the web
