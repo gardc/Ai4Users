@@ -42,7 +42,7 @@ const InformationDropdownBox: React.FC<InformationDropdownBoxProps> = ({
     };
 
     return (
-        <div className="bg-white rounded-xl shadow-lg sm:w-19/20 md:w-3/4 text-left justify-center items-center sm:m-2">
+        <div className="bg-white rounded-xl shadow-lg sm:w-19/20 md:w-3/4 text-left justify-center items-center m-2">
             {title.length !== 0 && (
                 <h2 className="font-bold px-12 pt-8 sm:pt-14 text-xl">
                     {title}

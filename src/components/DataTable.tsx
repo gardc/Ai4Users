@@ -59,7 +59,7 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
     };
     return (
         <table
-            className="m-5 p-6 border rounded-[20px]" //shadow-[1px_1px_6px_rgba(0,0,0,0.25)]
+            className="sm:m-5 p-2 sm:p-6 border rounded-[20px]" //shadow-[1px_1px_6px_rgba(0,0,0,0.25)]
             style={{ borderCollapse: "separate" }}
         >
             {renderTableHeader()}
