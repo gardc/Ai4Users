@@ -52,10 +52,14 @@
                             "li3": "you have the exact same rights regarding your personal data"
                         },
                         "disagreeTitle": "If you disagree to the use of the AI model",
-                        "disagreeInfo": "If you choose to disagree to the use of the AI model in predicating your sick leave duration, your case handler will process the data without its use. This might result in longer processing time.",
+                        "disagreeInfo": "If you choose to disagree to the use of the AI model in predicating you sick leave, your case handler will process the data without its use. This might result in longer processing time.",
+                        "disagreeFlowImageSrc": "/img/disagreeToUseFlowEn.png",
+                        "disagreeFlowImageMobileSrc": "/img/disagreeToUseFlowMobileEn.png",
                         "disagreeFlowImageAlt": "Process when declining the use of the AI model",
                         "agreeTitle": "If you agree to the use of the AI model",
                         "agreeInfo": "If you choose to agree to the use of the AI model in predicating your sick leave duration, the data will first be processed by the model, and the result of the prediction will be handed to a case handler. The case handler then uses this prediction, along with other factors, to decide what support is appropriate for you in your situation.",
+                        "agreeFlowImageSrc": "/img/agreeToUseFlowEn.png",
+                        "agreeFlowImageMobileSrc": "/img/agreeToUseFlowMobileEn.png",
                         "agreeFlowImageAlt": "Process when agreeing to the use of the AI model"
                     }
                 },
@@ -72,8 +76,12 @@
                             "li2": "The patterns are revealed through processing",
                             "li3": "A model is generated that can recognize these patterns in other data of the same category"
                         },
+                        "trainingModelImageSrc": "/img/trainingTheModelEn.png",
+                        "trainingModelImageMobileSrc": "/img/trainingTheModelMobileEn.png",
                         "trainingModelImageAlt": "Illustration of how the model is trained",
                         "descriptionPatternMatching": "The model is the resulting pattern matching program, and it is this that is used for prediction. New data of the same category is used as input, meaning the data has the same data points and the same domain (for example prediction of sick leave duration), and the result is the prediction.",
+                        "usingModelImageSrc": "/img/usingTheModelForPredictionsEn.png",
+                        "usingModelImageMobileSrc": "/img/usingTheModelForPredictionsMobileEn.png",
                         "usingModelImageAlt": "Illustration of how the model is used"
                     }
                 },

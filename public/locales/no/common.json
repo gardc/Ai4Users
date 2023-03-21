@@ -53,9 +53,13 @@
                         },
                         "disagreeTitle": "Dersom du ikke samtykker til bruken av KI-modellen",
                         "disagreeInfo": "Dersom du velger å ikke samtykke til bruken av KI-modellen i predikeringen av varigheten av ditt sykefravær, vil saksbehandleren din prosessere dine personopplysninger uten bruk av modellen. Dette kan resultere i lengre saksbenahndligstid.",
+                        "disagreeFlowImageSrc": "/img/disagreeToUseFlowNo.png",
+                        "disagreeFlowImageMobileSrc": "/img/disagreeToUseFlowMobileNo.png",
                         "disagreeFlowImageAlt": "Prosessen dersom du ikke samtykker til bruk av KI-modellen",
                         "agreeTitle": "Dersom du samtykker til bruken av KI-modellen",
                         "agreeInfo": "Dersom du velger å samtykke til bruken av KI-modellen i predikeringen av varigheten av ditt sykefravær, vil dine personopplysninger først bli prosessert av modellen, og resultatet av prediksjonen vil gis til saksbehandleren. Saksbehandleren vil så bruke dette resultatet, sammen med andre faktorer, for å bestemme hva slags støtte er passende for deg i din situasjon.",
+                        "agreeFlowImageSrc": "/img/agreeToUseFlowNo.png",
+                        "agreeFlowImageMobileSrc": "/img/agreeToUseFlowMobileNo.png",
                         "agreeFlowImageAlt": "Prosessen dersom du samtykker til bruk av KI-modellen"
                     }
                 },
@@ -72,8 +76,12 @@
                             "li2": "Mønsterene blir synlige gjennom prosesseringen",
                             "li3": "En modell blir generert som kan gjenkjenne disse mønstrene i annen data innen samme kategori"
                         },
+                        "trainingModelImageSrc": "/img/trainingTheModelNo.png",
+                        "trainingModelImageMobileSrc": "/img/trainingTheModelMobileNo.png",
                         "trainingModelImageAlt": "Illustasjon av hvordan modellen blir trent",
                         "descriptionPatternMatching": "Modellen er det resulterende programmet som kan gjenkjenne mønstrene, og det er dette som blir brukt for predikering. Når en prediksjon skal utføres, gis modellen ny data som inneholder samme parametere som treningsdataene.",
+                        "usingModelImageSrc": "/img/usingTheModelForPredictionsNo.png",
+                        "usingModelImageMobileSrc": "/img/usingTheModelForPredictionsMobileNo.png",
                         "usingModelImageAlt": "Illustrasjon av hvordan modellen blir brukt"
                     }
                 },

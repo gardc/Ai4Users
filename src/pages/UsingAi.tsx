@@ -37,7 +37,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                             {t("pageProgressBar.usingAiPage")}
                         </p>
                         <p className="text-gray-500">{">"}</p>
-                        <p className="text-gray-500 px-3">{t("pageProgressBar.summaryPage")}</p>
+                        <p className="text-gray-500 px-3">Summary</p>
                     </div>
 
                     <p className="text-center text-prussian-blue font-semibold text-3xl m-3">
@@ -112,13 +112,30 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 )}
                                             </p>
                                             <Image
-                                                src={"/img/disagreeToUseFlow.jpg"}
+                                                src={
+                                                    t(
+                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageSrc"
+                                                    ) as string
+                                                }
                                                 alt={t(
                                                     "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageAlt"
                                                 )}
                                                 width={1000}
                                                 height={1000}
-                                                className="pb-8"
+                                                className="pb-8 hidden lg:block"
+                                            />
+                                            <Image
+                                                src={
+                                                    t(
+                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageMobileSrc"
+                                                    ) as string
+                                                }
+                                                alt={t(
+                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageAlt"
+                                                )}
+                                                width={1000}
+                                                height={1000}
+                                                className="pb-8 block lg:hidden"
                                             />
                                             <p className="font-bold pb-4">
                                                 {t(
@@ -131,13 +148,30 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 )}
                                             </p>
                                             <Image
-                                                src={"/img/agreeToUseFlow.jpg"}
+                                                src={
+                                                    t(
+                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeFlowImageSrc"
+                                                    ) as string
+                                                }
                                                 alt={t(
                                                     "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeFlowImageAlt"
                                                 )}
                                                 width={1000}
                                                 height={1000}
-                                                className="pb-4"
+                                                className="pb-4 hidden lg:block"
+                                            />
+                                            <Image
+                                                src={
+                                                    t(
+                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeFlowImageMobileSrc"
+                                                    ) as string
+                                                }
+                                                alt={t(
+                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeFlowImageAlt"
+                                                )}
+                                                width={1000}
+                                                height={1000}
+                                                className="pb-4 block lg:hidden"
                                             />
                                         </div>
                                     }
@@ -198,13 +232,30 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 </ul>
                                             </div>
                                             <Image
-                                                src={"/img/trainingTheModel.jpg"}
+                                                src={
+                                                    t(
+                                                        "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.trainingModelImageSrc"
+                                                    ) as string
+                                                }
                                                 alt={t(
                                                     "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.trainingModelImageAlt"
                                                 )}
                                                 width={1000}
                                                 height={1000}
-                                                className="pb-8"
+                                                className="pb-8 hidden lg:block"
+                                            />
+                                            <Image
+                                                src={
+                                                    t(
+                                                        "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.trainingModelImageMobileSrc"
+                                                    ) as string
+                                                }
+                                                alt={t(
+                                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.trainingModelImageAlt"
+                                                )}
+                                                width={1000}
+                                                height={1000}
+                                                className="pb-8 block lg:hidden"
                                             />
                                             <p className="pb-4">
                                                 {t(
@@ -212,12 +263,30 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 )}
                                             </p>
                                             <Image
-                                                src={"/img/usingTheModelForPrediction.jpg"}
+                                                src={
+                                                    t(
+                                                        "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.usingModelImageSrc"
+                                                    ) as string
+                                                }
                                                 alt={t(
                                                     "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.usingModelImageAlt"
                                                 )}
                                                 width={1000}
                                                 height={1000}
+                                                className="hidden lg:block"
+                                            />
+                                            <Image
+                                                src={
+                                                    t(
+                                                        "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.usingModelImageMobileSrc"
+                                                    ) as string
+                                                }
+                                                alt={t(
+                                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.usingModelImageAlt"
+                                                )}
+                                                width={1000}
+                                                height={1000}
+                                                className="block lg:hidden"
                                             />
                                         </div>
                                     }
@@ -316,7 +385,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon/>
+                                                <ArrowRightIcon />
                                             </a>
                                         </p>
                                     </li>
@@ -332,7 +401,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon/>
+                                                <ArrowRightIcon />
                                             </a>
                                         </p>
                                     </li>
@@ -348,7 +417,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon/>
+                                                <ArrowRightIcon />
                                             </a>
                                         </p>
                                     </li>
@@ -364,7 +433,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon/>
+                                                <ArrowRightIcon />
                                             </a>
                                         </p>
                                     </li>
@@ -380,7 +449,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon/>
+                                                <ArrowRightIcon />
                                             </a>
                                         </p>
                                     </li>
@@ -396,7 +465,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon/>
+                                                <ArrowRightIcon />
                                             </a>
                                         </p>
                                     </li>
