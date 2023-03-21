@@ -52,10 +52,10 @@ const LandingPage: React.FC = (
                     </p>
                 </div>
                 {/*Second page that shows personal information */}
-                <div className="text-center bg-slate-50 flex justify-center">
+                <div className="m-2 text-center bg-slate-50 flex justify-center">
                     <div
                         className="w-full sm:w-3/4 
-                bg-white drop-shadow-lg py-8 sm:py-4 px-4 sm:px-16 rounded-xl flex justify-center items-center flex-col m-4"
+                bg-white drop-shadow-lg py-8 sm:py-4 px-4 sm:px-16 rounded-xl flex justify-center items-center flex-col"
                     >
                         <p className="text-2xl py-3">
                             {t("landingPage.dataPointsSummary.title")}
