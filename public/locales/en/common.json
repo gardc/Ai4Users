@@ -24,10 +24,10 @@
 
     "landingPage": {
         "title": "Prediction of sick leave duration",
-        "description": "In order to provide you with appropriate support during your sick leave, we will make a prediction of its duration based on your data. This is helpful in planning for support measures such as follow-up meetings and economical support for a longer period of time.",
+        "description": "In order to provide you with appropriate support during your sick leave, The National Social Service will make a prediction of its duration based on your data. This is helpful in planning for support measures such as follow-up meetings and economical support for a longer period of time.",
         "dataPointsSummary": {
             "title": "Data that is used in the prediction",
-            "description1": "Below is all the information about you that will be used in predicting your sick leave duration. This information is gathered from the national population register and our registers.",
+            "description1": "Below is all the information about you that will be used in predicting your sick leave duration. This information is gathered from the national population register and The National Social Service registers.",
             "description2": "Click on the \"?\" beside each piece of information to see why it is used."
         },
         "continueButtonText": "Continue"
@@ -36,7 +36,7 @@
     "usingAiPage": {
         "title": "Using Artificial Intelligence for prediction",
         "aboutAiInfo": {
-            "description": "In order to provide you with the most appropriate support given your situation, we offer the use of an artificial intelligence (AI) model to aid the case handler in predicting the duration of your sick leave. You can read more about what this entails and how the model works by expanding this box. Whether you wish to use the AI model for prediction is completely up to you.",
+            "description": "In order to provide you with the most appropriate support given your situation, The National Social Service offers the use of an artificial intelligence (AI) model to aid the case handler in predicting the duration of your sick leave. You can read more about what this entails and how the model works by expanding this box. Whether you wish to use the AI model for prediction is completely up to you.",
             "readMore": {
                 "whatAi": {
                     "title": "What agreeing to the use entails",
@@ -68,7 +68,7 @@
                         "title": "How the AI model works",
                         "description": "Artificial intelligence is an umbrella term that describes computer systems that can solve complex problems and learn from previous experiences.",
                         "machineLearningModelTraitList": {
-                            "title": "The type of artificial intelligence we use for prediction is a so called machine learning model, which has the following traits:",
+                            "title": "The type of artificial intelligence The National Social Service use for prediction is a so called machine learning model, which has the following traits:",
                             "li1": "It initially learns from a select set of training data that contains patterns or similarities",
                             "li2": "The patterns are revealed through processing",
                             "li3": "A model is generated that can recognize these patterns in other data of the same category"
@@ -80,12 +80,12 @@
                 },
                 "whyAi": {
                     "title": "Why we offer use of an AI model",
-                    "description1": "Our goal is to ensure the most helpful support for the highest number of people.",
+                    "description1": "The goal of The National Social Service is to ensure the most helpful support for the highest number of people.",
                     "description2": "The AI model may help case workers in making more accurate predictions of sick leave duration, and its use may contribute to achieve this aim.",
                     "learnMore": {
                         "title": "Why we offer the use of the AI model in predicting sick leave duration",
                         "reasonForUseList": {
-                            "title": "Our goal is to ensure the most helpful support for the highest number of people. To help our case handlers achieve this aim, we offer the use of an AI model for estimation to:",
+                            "title": "The goal of The National Social Service is to ensure the most helpful support for the highest number of people. To help our case handlers achieve this aim, we offer the use of an AI model for estimation to:",
                             "li1": "help case handlers make more accurate assessments",
                             "li2": "help in ensuring appropriate support where it is needed",
                             "li3": "save resources and time, letting the case handlers help more people"
@@ -104,7 +104,7 @@
                 "userRightsTitle": "As a user you have the right to:",
                 "li1": "Get information on which of your personal data is being used and why ",
                 "li2": "Correct faulty data about yourself ",
-                "li3": "At any time request the removal of your personal data from our system ",
+                "li3": "At any time request the removal of your personal data from The National Social Service's registers ",
                 "li4": "Request that the process which is using your data is canceled ",
                 "li5": "Be presented with your personal information in an understandable way ",
                 "li6": "At any time protest against processing of your personal data ",
@@ -123,7 +123,7 @@
         "descriptionConsenting": "The case handler will use the AI model to predict the total duration of your sick leave.",
         "changeCoice": "If you would like to change your choice, click on \"Using AI\" in the top left corner.",
         "informationSummaryTitle": "Summary of the information used to predict your sick leave duration",
-        "informationSummarySource": "This information is gathered from the national population register and our registers.",
+        "informationSummarySource": "This information is gathered from the national population register and The National Social Service's registers.",
         "submitChoiceButtonText": "Submit your choice"
     },
 
