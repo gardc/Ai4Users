@@ -23,11 +23,11 @@
     },
 
     "landingPage": {
-        "title": "Prediksjon av varigheten av sykefravær",
-        "description": "For å kunne gi støtte tilpasset din situasjon under sykefraværet ditt, utfører vi en prediksjon av varigheten av sykefraværet basert på din informasjon. Dette er behjelpelig i planleggingen av støttetiltak som oppfølgingsmøter og økonomisk støtte under en lengre periode.",
+        "title": "Prediksjon av sykefraværets varighet",
+        "description": "For å kunne gi støtte tilpasset din situasjon under sykefraværet ditt, utfører vi en prediksjon av sykefraværets varighet basert på din informasjon. Dette er behjelpelig i planleggingen av støttetiltak som oppfølgingsmøter og økonomisk støtte under en lengre periode.",
         "dataPointsSummary": {
             "title": "Data som blir brukt i predikeringen",
-            "description1": "Nedenfor finner du all infomrasjon om deg som vil bli brukt i predikeringen av varigheten av sykefraværert ditt. Denne informasjonen er hentet fra det nasjonale folkeregiseteret og våre registere.",
+            "description1": "Nedenfor finner du all informasjon om deg som vil bli brukt i predikeringen av varigheten av sykefraværet ditt. Denne informasjonen er hentet fra det nasjonale folkeregisteret og våre registre.",
             "description2": "Klikk på \"?\"-symbolet ved siden av hvert informasjonspunkt for å se hvorfor det brukes."
         },
         "continueButtonText": "Fortsett"
@@ -90,7 +90,7 @@
                     "description1": "Vårt mål er å sikre den mest hjelpsomme støtten for flest mulig.",
                     "description2": "KI-modellen kan hjelpe saksbehandlere i å gjøre mer nøyaktige prediksjoner angående varigheten av sykefravær, og dens bruk kan derfor bidra til at en høyere andel av mennesker får støtten som er riktig tilpasset for deres situasjon.",
                     "learnMore": {
-                        "title": "Hvorfor vi tilbyr bruken av KI-modellen i prediksjon av varigheten av sykefravær",
+                        "title": "Hvorfor vi tilbyr bruken av KI-modellen i prediksjon av sykefraværets varighet",
                         "reasonForUseList": {
                             "title": "Vårt mål er å sikre den mest hjelpsomme støtten for flest mulig. For å hjelpe våre saksbehandlere i å oppnå dette målet, tilbyr vi bruken av en KI-modell for prediksjon for å:",
                             "li1": "hjelpe saksbehandlere i å gjøre mer nøyaktige vurderinger",
