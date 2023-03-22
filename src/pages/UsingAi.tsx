@@ -24,10 +24,6 @@ import React from "react";
 const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { t } = useTranslation("common");
 
-    let imagePath: string = t(
-        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageAlt"
-    );
-
     return (
         <Parent>
             <Content>
