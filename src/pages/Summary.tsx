@@ -61,14 +61,18 @@ const Summary: React.FC = (
             <div>
                 <div className="flex justify-start py-5 text-black">
                     <Link className="pl-12 px-3" href={"/LandingPage"}>
-                        {t("pageProgressBar.frontpage")}
+                        {t("pageProgressBar.home")}
+                    </Link>
+                    {">"}
+                    <Link className="px-3" href={"/UseOfData"}>
+                        {t("pageProgressBar.useOfData")}
                     </Link>
                     {">"}
                     <Link className="px-3" href={"/UsingAi"}>
                         {t("pageProgressBar.usingAiPage")}
                     </Link>
                     {">"}
-                    <p className="underline underline-offset-4 px-3">
+                    <p className="font-bold underline underline-offset-4 px-3">
                         {t("pageProgressBar.summaryPage")}
                     </p>
                 </div>

@@ -9,6 +9,7 @@ import Button from "@/components/Button";
 import Content from "@/components/Content";
 import DataTable from "@/components/DataTable";
 import Parent from "@/components/Parent";
+import Link from "next/link";
 
 /**
  * The landing page component that displays initial information about the web
@@ -17,7 +18,7 @@ import Parent from "@/components/Parent";
  *
  * @returns A React functional component representing the landing page.
  */
-const LandingPage: React.FC = (
+const UseOfData: React.FC = (
     _props: InferGetStaticPropsType<typeof getStaticProps>
 ) => {
     const { t } = useTranslation("common");
@@ -28,8 +29,15 @@ const LandingPage: React.FC = (
         <Parent>
             <Content>
                 <div className="flex justify-start py-5 text-black">
-                    <p className="underline underline-offset-4 pl-12 px-3">
-                        {t("pageProgressBar.frontpage")}
+                    <Link
+                        className="hover:font-bold pl-12 px-3"
+                        href={"/LandingPage"}
+                    >
+                        {t("pageProgressBar.home")}
+                    </Link>
+                    <p className="text-black">{">"}</p>
+                    <p className="font-bold underline underline-offset-4 text-black px-3">
+                        {t("pageProgressBar.useOfData")}
                     </p>
                     <p className="text-gray-500">{">"}</p>
                     <p className="text-gray-500 px-3">
@@ -101,7 +109,7 @@ const LandingPage: React.FC = (
     );
 };
 
-export default LandingPage;
+export default UseOfData;
 
 type Props = {};
 

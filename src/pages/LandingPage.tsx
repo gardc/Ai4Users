@@ -34,10 +34,7 @@ const LandingPage: React.FC = (
                             <p className="w-5/6 sm:w-3/4 mt-10 text-left tracking-wide leading-6 text-lg">
                                 {t("landingPage.description")}
                             </p>
-                            <Button
-                                color="lavaorange"
-                                href="/DataUsedInPrediction"
-                            >
+                            <Button color="lavaorange" href="/UseOfData">
                                 Continue
                             </Button>
                         </div>

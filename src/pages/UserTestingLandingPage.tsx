@@ -50,7 +50,7 @@ const userTestingLandingPage: React.FC = (
                     {t("userTestingLandingPage.questionsEmailAddress")}
                 </p>
                 <div className="mt-20">
-                    <Button color="primary" href={"/LandingPage"}>
+                    <Button color="lavaorange" href={"/LandingPage"}>
                         {t("userTestingLandingPage.beginTestingButtonText")}
                     </Button>
                 </div>

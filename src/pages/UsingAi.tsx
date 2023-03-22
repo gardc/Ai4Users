@@ -30,10 +30,14 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 <div className="pb-8 text-center">
                     <div className="flex justify-start py-5 text-black">
                         <Link className="pl-12 px-3" href={"/LandingPage"}>
-                            {t("pageProgressBar.frontpage")}
+                            {t("pageProgressBar.home")}
                         </Link>
                         {">"}
-                        <p className="underline underline-offset-4 px-3">
+                        <Link className="px-3" href={"/UseOfData"}>
+                            {t("pageProgressBar.useOfData")}
+                        </Link>
+                        {">"}
+                        <p className="font-bold underline underline-offset-4 px-3">
                             {t("pageProgressBar.usingAiPage")}
                         </p>
                         <p className="text-gray-500">{">"}</p>
