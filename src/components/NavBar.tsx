@@ -10,9 +10,9 @@ const NavBar = () => {
                 <div>
                     <Link
                         href="/"
-                        className="text-xl font-bold text-transparent bg-clip-text bg-blue-900"
+                        className="text-xl font-bold text-transparent bg-clip-text bg-white"
                     >
-                        LeaveEstimation
+                        LeaveEstimation.
                     </Link>
                 </div>
                 {/* Right side */}

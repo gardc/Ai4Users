@@ -12,7 +12,7 @@ import LocaleSelection from "@/components/LocaleSelection";
  *
  * @returns A React functional component representing the landing page for testing.
  */
-const UserTestingLandingPage: React.FC = (
+const userTestingLandingPage: React.FC = (
     _props: InferGetStaticPropsType<typeof getStaticProps>
 ) => {
     const { t } = useTranslation("common");
@@ -25,33 +25,33 @@ const UserTestingLandingPage: React.FC = (
 
             <div className="py-28 px-10 lg:px-40">
                 <h1 className="text-2xl text-cyan-900 font-bold">
-                    {t("UserTestingLandingPage.title")}
+                    {t("userTestingLandingPage.title")}
                 </h1>
                 <p className="mt-8">
-                    {t("UserTestingLandingPage.description")}
+                    {t("userTestingLandingPage.description")}
                 </p>
                 <p className="mt-12 font-bold">
-                    {t("UserTestingLandingPage.beforeTestingTitle")}
+                    {t("userTestingLandingPage.beforeTestingTitle")}
                 </p>
                 <p className="mt-4">
-                    {t("UserTestingLandingPage.beforeTestingDescription")}
+                    {t("userTestingLandingPage.beforeTestingDescription")}
                 </p>
                 <p className="mt-12 font-bold">
-                    {t("UserTestingLandingPage.disclaimerTitle")}
+                    {t("userTestingLandingPage.disclaimerTitle")}
                 </p>
                 <ul className="mt-4 list-disc list-inside">
-                    <li>{t("UserTestingLandingPage.disclaimer1")}</li>
-                    <li>{t("UserTestingLandingPage.disclaimer2")}</li>
+                    <li>{t("userTestingLandingPage.disclaimer1")}</li>
+                    <li>{t("userTestingLandingPage.disclaimer2")}</li>
                 </ul>
                 <p className="mt-12 font-bold">
-                    {t("UserTestingLandingPage.questionsTitle")}
+                    {t("userTestingLandingPage.questionsTitle")}
                 </p>
                 <p className="mt-4">
-                    {t("UserTestingLandingPage.questionsEmailAddress")}
+                    {t("userTestingLandingPage.questionsEmailAddress")}
                 </p>
                 <div className="mt-20">
                     <Button color="primary" href={"/LandingPage"}>
-                        {t("UserTestingLandingPage.beginTestingButtonText")}
+                        {t("userTestingLandingPage.beginTestingButtonText")}
                     </Button>
                 </div>
             </div>
@@ -59,7 +59,7 @@ const UserTestingLandingPage: React.FC = (
     );
 };
 
-export default UserTestingLandingPage;
+export default userTestingLandingPage;
 
 type Props = {};
 

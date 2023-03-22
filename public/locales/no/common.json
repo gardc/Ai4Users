@@ -9,7 +9,7 @@
         "summaryPage": "Sammendrag"
     },
 
-    "landingPageTesting": {
+    "userTestingLandingPage": {
         "title": "Takk for at du ønsker å teste web applikasjonen vår",
         "description": "Testen går ut på at du skal navigere deg gjennom web applikasjonen, og deretter svare på noen spørsmål.",
         "beforeTestingTitle": "Før du begynner å teste",
@@ -134,7 +134,7 @@
         "submitChoiceButtonText": "Send inn valget ditt"
     },
 
-    "testingFinishedPage": {
+    "userTestingFinishedPage": {
         "title": "Takk for at du testet vår web applikasjon!",
         "information": "Du har nå fullført testingen. Du kan enten gå tilbake til forsiden for å teste en gang til, eller fortsette videre til en spørreundersøkelse (Google Forms) for å svare på noen spørsmål om ditt inntyrkk av web applikasjonen.",
         "toFrontPageButtonText": "Forside",
