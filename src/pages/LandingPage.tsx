@@ -17,9 +17,7 @@ import Parent from "@/components/Parent";
  *
  * @returns A React functional component representing the landing page.
  */
-const LandingPage: React.FC = (
-    _props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { t } = useTranslation("common");
     const router = useRouter();
     const { locale } = router;
@@ -32,13 +30,9 @@ const LandingPage: React.FC = (
                         {t("pageProgressBar.frontpage")}
                     </p>
                     <p className="text-gray-500">{">"}</p>
-                    <p className="text-gray-500 px-3">
-                        {t("pageProgressBar.usingAiPage")}
-                    </p>
+                    <p className="text-gray-500 px-3">{t("pageProgressBar.usingAiPage")}</p>
                     <p className="text-gray-500">{">"}</p>
-                    <p className="text-gray-500 px-3">
-                        {t("pageProgressBar.summaryPage")}
-                    </p>
+                    <p className="text-gray-500 px-3">{t("pageProgressBar.summaryPage")}</p>
                 </div>
                 <div
                     className="index bg-gradient-to-b from-sky-blue to-slate-50 pt-8 pb-8 
@@ -47,9 +41,7 @@ const LandingPage: React.FC = (
                     <p className="text-center text-prussian-blue font-semibold text-3xl">
                         {t("landingPage.title")}
                     </p>
-                    <p className="w-5/6 sm:w-3/4 mt-8 text-left">
-                        {t("landingPage.description")}
-                    </p>
+                    <p className="w-5/6 sm:w-3/4 mt-8 text-left">{t("landingPage.description")}</p>
                 </div>
                 {/*Second page that shows personal information */}
                 <div className="m-2 text-center bg-slate-50 flex justify-center">
@@ -57,9 +49,7 @@ const LandingPage: React.FC = (
                         className="w-full sm:w-3/4 
                 bg-white drop-shadow-lg py-8 sm:py-4 px-4 sm:px-16 rounded-xl flex justify-center items-center flex-col"
                     >
-                        <p className="text-2xl py-3">
-                            {t("landingPage.dataPointsSummary.title")}
-                        </p>
+                        <p className="text-2xl py-3">{t("landingPage.dataPointsSummary.title")}</p>
                         <p className="py-3 text-left lg:w-3/4">
                             {t("landingPage.dataPointsSummary.description1")}
                         </p>
@@ -67,21 +57,9 @@ const LandingPage: React.FC = (
                             {t("landingPage.dataPointsSummary.description2")}
                         </p>
                         {/*Here there will be a component with information about the user */}
-                        {locale == "en" ? (
-                            <DataTable data={exampleDataEn} />
-                        ) : (
-                            <></>
-                        )}
-                        {locale == "no" ? (
-                            <DataTable data={exampleDataNo} />
-                        ) : (
-                            <></>
-                        )}
-                        {locale == "de" ? (
-                            <DataTable data={exampleDataDe} />
-                        ) : (
-                            <></>
-                        )}
+                        {locale == "en" ? <DataTable data={exampleDataEn} /> : <></>}
+                        {locale == "no" ? <DataTable data={exampleDataNo} /> : <></>}
+                        {locale == "de" ? <DataTable data={exampleDataDe} /> : <></>}
                         <div className="flex-col justify-center flex">
                             {/* <div className="flex justify-center mt-4">
                                 <Button color="black" href="/%">
