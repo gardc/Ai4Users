@@ -53,6 +53,7 @@
                         },
                         "disagreeTitle": "If you disagree to the use of the AI model",
                         "disagreeInfo": "If you choose to disagree to the use of the AI model in predicating you sick leave, your case handler will process the data without its use. This might result in longer processing time.",
+                        "disagreeFlowImageSrc": "/img/disagreeToUseFlowEn.png",
                         "disagreeFlowImageAlt": "Process when declining the use of the AI model",
                         "agreeTitle": "If you agree to the use of the AI model",
                         "agreeInfo": "If you choose to agree to the use of the AI model in predicating you sick leave, the data will first be processed by the model, and the result of the prediction will be handed to a case handler. The case handler then uses this prediction, along with other factors, to decide what support is appropriate for you in your situation.",
