@@ -60,10 +60,10 @@ const LandingPage: React.FC = (
                         <p className="text-2xl py-3">
                             {t("landingPage.dataPointsSummary.title")}
                         </p>
-                        <p className="py-3 text-left md:w-4/6">
+                        <p className="py-3 text-left lg:w-3/4">
                             {t("landingPage.dataPointsSummary.description1")}
                         </p>
-                        <p className="py-3 text-left mb-4 md:w-4/6">
+                        <p className="py-3 text-left mb-4 lg:w-3/4">
                             {t("landingPage.dataPointsSummary.description2")}
                         </p>
                         {/*Here there will be a component with information about the user */}
