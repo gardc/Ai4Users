@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import '@fortawesome/fontawesome-free/css/all.css'
+import React, { useState } from "react";
+import "@fortawesome/fontawesome-free/css/all.css";
 
 /**
  * Interface for the input props for InformationDropBox component.
@@ -9,9 +9,11 @@ import '@fortawesome/fontawesome-free/css/all.css'
  * title: string, initialInfo: string | JSX.Element, extendedInfo: string | JSX.Element
  */
 export interface InformationDropdownBoxProps {
-    title: string
-    initialInfo: string | JSX.Element
-    extendedInfo: string | JSX.Element
+    title: string;
+    initialInfo: string | JSX.Element;
+    extendInfoButtonText: string;
+    extendedInfo: string | JSX.Element;
+    closeInfoButtonText: string;
 }
 
 /**
@@ -29,25 +31,25 @@ export interface InformationDropdownBoxProps {
 const InformationDropdownBox: React.FC<InformationDropdownBoxProps> = ({
     title,
     initialInfo,
+    extendInfoButtonText,
     extendedInfo,
+    closeInfoButtonText,
 }) => {
-    const [open, setOpen] = useState<Boolean>(false)
+    const [open, setOpen] = useState<Boolean>(false);
 
     const handleOpen = () => {
-        setOpen(!open)
-    }
+        setOpen(!open);
+    };
 
     return (
-        <div className="bg-white rounded-xl shadow-lg w-3/4 text-left justify-center items-center m-2">
-            {' '}
-            {title.length !== 0 && (
-                <h2 className="font-bold px-12 pt-14 text-xl">{title}</h2>
-            )}
+        <div className="w-19/20 bg-white rounded-xl shadow-lg md:w-3/4 text-left justify-center items-center m-2">
+            {" "}
+            {title.length !== 0 && <h2 className="font-bold px-12 pt-14 text-xl">{title}</h2>}
             <div className="p-10">{initialInfo}</div>
             {!open && (
                 <div className="flex justify-center pb-4">
                     <button onClick={handleOpen}>
-                        <p className="text-xs">Read more</p>
+                        <p className="text-xs">{extendInfoButtonText}</p>
                         <i className="fas fa-chevron-down"></i>
                     </button>
                 </div>
@@ -58,8 +60,8 @@ const InformationDropdownBox: React.FC<InformationDropdownBoxProps> = ({
                     {open && (
                         <div className="flex justify-center pt-6 pb-4">
                             <button onClick={handleOpen}>
-                                <i className="fas fa-chevron-up pb-4"></i>
-                                <p className="text-xs">Close</p>
+                                <i className="fas fa-chevron-up pb-4"/>
+                                <p className="text-xs">{closeInfoButtonText}</p>
                             </button>
                         </div>
                     )}
@@ -68,7 +70,7 @@ const InformationDropdownBox: React.FC<InformationDropdownBoxProps> = ({
                 <></>
             )}
         </div>
-    )
-}
+    );
+};
 
-export default InformationDropdownBox
+export default InformationDropdownBox;

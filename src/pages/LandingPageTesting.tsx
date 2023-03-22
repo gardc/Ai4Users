@@ -1,56 +1,43 @@
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
 import React from "react";
+import LocaleSelection from "@/components/LocaleSelection";
 
 /**
  * The landing page for testing component that displays information relevant
  * for the tester of the web application.
+ * Supports i18next translation.
  *
  * @returns A React functional component representing the landing page for testing.
  */
-const LandingPageTesting: React.FC = () => {
+const LandingPageTesting: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+    const { t } = useTranslation("common");
+
     return (
         <div className="h-screen text-black bg-white w-full">
+            <div className="float-right mt-10 mr-10">
+                <LocaleSelection />
+            </div>
+
             <div className="py-28 px-40">
                 <h1 className="text-2xl text-cyan-900 font-bold">
-                    Thank you for wanting to test our web application
+                    {t("landingPageTesting.title")}
                 </h1>
-                <p className="mt-8">
-                    The test involves navigating through our web application,
-                    and answering a questionnaire at the end.
-                </p>
-                <p className="mt-12 font-bold">
-                    The web application is, as of now, only intended for use on
-                    desktop computers
-                </p>
-                <p className="mt-4">
-                    If you are visiting the web application on a mobile device,
-                    please consider switching to a desktop computer.
-                </p>
-                <p className="mt-12 font-bold">Before you begin testing</p>
-                <p className="mt-4">
-                    Imagine that you are on sick leave for an extended period of
-                    time, and you are in need of support. Because of this, your
-                    doctor has directed you to the web site you are about to
-                    test.
-                </p>
-                <p className="mt-12 font-bold">Disclaimer</p>
+                <p className="mt-8">{t("landingPageTesting.description")}</p>
+                <p className="mt-12 font-bold">{t("landingPageTesting.beforeTestingTitle")}</p>
+                <p className="mt-4">{t("landingPageTesting.beforeTestingDescription")}</p>
+                <p className="mt-12 font-bold">{t("landingPageTesting.disclaimerTitle")}</p>
                 <ul className="mt-4 list-disc list-inside">
-                    <li>
-                        This is a student project only intended for testing a
-                        user interface.
-                    </li>
-                    <li>
-                        No data is gathered from users, and the user data
-                        presented in the web application is fictional.
-                    </li>
+                    <li>{t("landingPageTesting.disclaimer1")}</li>
+                    <li>{t("landingPageTesting.disclaimer2")}</li>
                 </ul>
-                <p className="mt-12 font-bold">
-                    If you have any questions, please send an e-mail to
-                </p>
-                <p className="mt-4">jjsterke@stud.ntnu.no</p>
+                <p className="mt-12 font-bold">{t("landingPageTesting.questionsTitle")}</p>
+                <p className="mt-4">{t("landingPageTesting.questionsEmailAddress")}</p>
                 <div className="mt-20">
                     <Button color="primary" href={"/LandingPage"}>
-                        Begin testing the web application
+                        {t("landingPageTesting.beginTestingButtonText")}
                     </Button>
                 </div>
             </div>
@@ -59,3 +46,11 @@ const LandingPageTesting: React.FC = () => {
 };
 
 export default LandingPageTesting;
+
+type Props = {};
+
+export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => ({
+    props: {
+        ...(await serverSideTranslations(locale ?? "en", ["common"])),
+    },
+});

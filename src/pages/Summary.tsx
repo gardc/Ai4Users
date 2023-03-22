@@ -1,19 +1,27 @@
+import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { exampleDataDe } from "./api/exampleDataDe";
+import { exampleDataEn } from "./api/exampleDataEn";
+import { exampleDataNo } from "./api/exampleDataNo";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useRouter } from "next/router";
+import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
 import DataTable from "@/components/DataTable";
-import { useRouter } from "next/router";
+import Link from "next/link";
 import Parent from "@/components/Parent";
 import React from "react";
-import Link from "next/link";
-import { exampleData } from "./api/exampleData";
 
 /**
- * The summary page component that displays a summary of information used to estimate sick leave duration.
+ * The summary page component that displays a summary of information used to estimate sick leave
+ * duration. Supports i18next translation.
  *
  * @returns A React functional component representing the summary page.
  */
-const Summary: React.FC = () => {
+const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const router = useRouter();
     const { consent } = router.query;
+    const { locale } = router;
+    const { t } = useTranslation("common");
 
     /**
      * The model query value that determines whether the AI-model is used for estimation or not.
@@ -21,47 +29,39 @@ const Summary: React.FC = () => {
     let predictionChoiceTitle = "";
     let predictionChoiceText = "";
     if (consent === "true") {
-        predictionChoiceTitle =
-            "You have chosen to use the AI model for prediction";
-        predictionChoiceText =
-            "The case handler will use the AI model to predict the total duration of your sick leave.";
+        predictionChoiceTitle = t("summaryPage.titleConsenting");
+        predictionChoiceText = t("summaryPage.descriptionConsenting");
     } else if (consent === "false") {
-        predictionChoiceTitle =
-            "You have chosen <b>not</b> to use the AI model for prediction";
-        predictionChoiceTitle = predictionChoiceTitle.replace(
-            /(<b>not<\/b>)/,
-            "<b>$1</b>"
-        );
-        predictionChoiceText =
-            "The case handler will make a prediction of the total duration of your sick leave without the use of the AI model. This may result in a longer processing time.";
+        predictionChoiceTitle = t("summaryPage.titleNotConsenting");
+        predictionChoiceTitle = predictionChoiceTitle.replace(/(<b>not<\/b>)/, "<b>$1</b>");
+        predictionChoiceText = t("summaryPage.descriptionNotConsenting");
+        if (locale === "en") {
+            predictionChoiceTitle = predictionChoiceTitle.replace(/(not)/, "<b>not</b>");
+        } else if (locale === "no") {
+            predictionChoiceTitle = predictionChoiceTitle.replace(/(ikke)/, "<b>ikke</b>");
+        } else {
+            //TODO: Provide bold emphasis on german translation
+        }
+        predictionChoiceText = t("summaryPage.descriptionNotConsenting");
     }
 
     return (
         <Parent>
             <div className="bg-slate-50 h-screen">
                 <div className="bg-gradient-to-b from-sky-blue to-slate-50">
-                    <div className="flex justify-start py-5 pt-10 text-black">
+                    <div className="flex justify-start py-5 text-black">
                         <Link className="pl-12 px-3" href={"/LandingPage"}>
-                            Frontpage
+                            {t("pageProgressBar.frontpage")}
                         </Link>
                         {">"}
                         <Link className="px-3" href={"/UsingAi"}>
-                            Using AI
+                            {t("pageProgressBar.usingAiPage")}
                         </Link>
                         {">"}
-                        <Link
-                            className="underline underline-offset-4 px-3"
-                            href={"/Summary"}
-                        >
-                            Summary
-                        </Link>
+                        <p className="underline underline-offset-4 px-3">
+                            {t("pageProgressBar.summaryPage")}
+                        </p>
                     </div>
-                    {/*
-                    <div className="flex items-center ml-5">
-                        <Button color="black" href={"/UsingAi"}>
-                            Go back
-                        </Button>
-                    </div> */}
                     <div className="flex flex-col justify-center text-2xl items-center text-center">
                         <h1
                             dangerouslySetInnerHTML={{
@@ -75,22 +75,25 @@ const Summary: React.FC = () => {
                             }}
                         />
                         <p className="text-base mt-10 w-1/2 text-center">
-                            To change your choice, click on &quot;Using AI&quot;
-                            in the top left corner.
+                            {t("summaryPage.changeCoice")}
                         </p>
                     </div>
 
                     <div className="flex justify-center mt-16">
                         <h2 className="text-base font-bold text-prussian-blue text-center">
-                            Summary of the information used to predict your sick
-                            leave duration
+                            {t("summaryPage.informationSummaryTitle")}
                         </h2>
                     </div>
                 </div>
-                <div className="bg-slate-50">
+                <div className="flex flex-col justify-center items-center bg-slate-50">
                     <div className="flex justify-center pt-4">
-                        <DataTable data={exampleData} />
+                        {locale == "en" ? <DataTable data={exampleDataEn} /> : <></>}
+                        {locale == "no" ? <DataTable data={exampleDataNo} /> : <></>}
+                        {locale == "de" ? <DataTable data={exampleDataDe} /> : <></>}
                     </div>
+                    <p className="text-base mb-10 w-2/5 text-center">
+                        {t("summaryPage.informationSummarySource")}
+                    </p>
                     {/* <div className="flex justify-center mt-4">
                         <Button color="black" onClick={() => alert("Okay")}>
                             Is this information incorrect?
@@ -98,7 +101,7 @@ const Summary: React.FC = () => {
                     </div> */}
                     <div className="flex justify-center mt-4 pb-16">
                         <Button color="black" href="/TestingFinishedPage">
-                            Submit your choice
+                            {t("summaryPage.submitChoiceButtonText")}
                         </Button>
                     </div>
                 </div>
@@ -108,3 +111,11 @@ const Summary: React.FC = () => {
 };
 
 export default Summary;
+
+type Props = {};
+
+export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => ({
+    props: {
+        ...(await serverSideTranslations(locale ?? "en", ["common"])),
+    },
+});

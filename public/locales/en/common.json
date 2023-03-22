@@ -1,0 +1,143 @@
+{
+    "expandedInfoBoxCloseButtonText": "Close",
+    "informationDropdownBoxExtendButtonText": "Read more",
+    "informationDropdownBoxCloseButtonText": "Close",
+
+    "pageProgressBar": {
+        "frontpage": "Frontpage",
+        "usingAiPage": "Using AI",
+        "summaryPage": "Summary"
+    },
+
+    "landingPageTesting": {
+        "title": "Thank you for wanting to test our web application",
+        "description": "The test involves navigating through our web application, and answering a questionnaire at the end.",
+        "beforeTestingTitle": "Before you begin testing",
+        "beforeTestingDescription": "Imagine that you are on sick leave for an extended period of time, and you are in need of support. Because of this, your doctor has directed you to the web site you are about to test.",
+        "disclaimerTitle": "Disclaimer",
+        "disclaimer1": "This is a student project only intended for testing a user interface.",
+        "disclaimer2": "No data is gathered from users, and the user data presented in the web application is fictional.",
+        "questionsTitle": "If you have any questions, please send an e-mail to",
+        "questionsEmailAddress": "jjsterke@stud.ntnu.no",
+        "beginTestingButtonText": "Begin testing the web application"
+    },
+
+    "landingPage": {
+        "title": "Prediction of sick leave duration",
+        "description": "In order to provide you with appropriate support during your sick leave, we will make a prediction of its duration based on your data. This is helpful in planning for support measures such as follow-up meetings and economical support for a longer period of time.",
+        "dataPointsSummary": {
+            "title": "Data that is used in the prediction",
+            "description1": "Below is all the information about you that will be used in predicting your sick leave duration. This information is gathered from the national population register and our registers.",
+            "description2": "Click on the \"?\" beside each piece of information to see why it is used."
+        },
+        "continueButtonText": "Continue"
+    },
+
+    "usingAiPage": {
+        "title": "Using Artificial Intelligence for prediction",
+        "aboutAiInfo": {
+            "description": "In order to provide you with the most appropriate support given your situation, we offer the use of an artificial intelligence (AI) model to aid the case handler in predicting the duration of your sick leave. You can read more about what this entails and how the model works by expanding this box. Whether you wish to use the AI model for prediction is completely up to you.",
+            "readMore": {
+                "whatAi": {
+                    "title": "What agreeing to the use entails",
+                    "description1": "The support you will receive is determined by a case handler, and one of the factors in this decision is the prediction of your sick leave duration.",
+                    "description2": "The AI model is an aid the case handler can use in this prediction, but only if you agree to its use.",
+                    "learnMore": {
+                        "title": "What agreeing to use the AI model entails",
+                        "description": "You are free to choose whether you would like to have the AI model used as an aid in predicting the duration of your sick leave or not.",
+                        "regardlessOfChoiceList": {
+                            "title": "No matter your choice, it will be the case that",
+                            "li1": "the exact same personal data is used",
+                            "li2": "a case handler makes the final decision",
+                            "li3": "you have the exact same rights regarding your personal data"
+                        },
+                        "disagreeTitle": "If you disagree to the use of the AI model",
+                        "disagreeInfo": "If you choose to disagree to the use of the AI model in predicating you sick leave, your case handler will process the data without its use. This might result in longer processing time.",
+                        "disagreeFlowImageSrc": "/img/disagreeToUseFlowEn.png",
+                        "disagreeFlowImageMobileSrc": "/img/disagreeToUseFlowMobileEn.png",
+                        "disagreeFlowImageAlt": "Process when declining the use of the AI model",
+                        "agreeTitle": "If you agree to the use of the AI model",
+                        "agreeInfo": "If you choose to agree to the use of the AI model in predicating your sick leave duration, the data will first be processed by the model, and the result of the prediction will be handed to a case handler. The case handler then uses this prediction, along with other factors, to decide what support is appropriate for you in your situation.",
+                        "agreeFlowImageSrc": "/img/agreeToUseFlowEn.png",
+                        "agreeFlowImageMobileSrc": "/img/agreeToUseFlowMobileEn.png",
+                        "agreeFlowImageAlt": "Process when agreeing to the use of the AI model"
+                    }
+                },
+                "howAi": {
+                    "title": "How the AI model works",
+                    "description1": "The AI model is a computational tool that makes a prediction of your total sick leave duration based on its knowledge of previous predictions.",
+                    "description2": "The output it provides to the case handler is the number of weeks it predicts that your sick leave duration will be, and what data points contributed most to this prediction.",
+                    "learnMore": {
+                        "title": "How the AI model works",
+                        "description": "Artificial intelligence is an umbrella term that describes computer systems that can solve complex problems and learn from previous experiences.",
+                        "machineLearningModelTraitList": {
+                            "title": "The type of artificial intelligence we use for prediction is a so called machine learning model, which has the following traits:",
+                            "li1": "It initially learns from a select set of training data that contains patterns or similarities",
+                            "li2": "The patterns are revealed through processing",
+                            "li3": "A model is generated that can recognize these patterns in other data of the same category"
+                        },
+                        "trainingModelImageSrc": "/img/trainingTheModelEn.png",
+                        "trainingModelImageMobileSrc": "/img/trainingTheModelMobileEn.png",
+                        "trainingModelImageAlt": "Illustration of how the model is trained",
+                        "descriptionPatternMatching": "The model is the resulting pattern matching program, and it is this that is used for prediction. New data of the same category is used as input, meaning the data has the same data points and the same domain (for example prediction of sick leave duration), and the result is the prediction.",
+                        "usingModelImageSrc": "/img/usingTheModelForPredictionsEn.png",
+                        "usingModelImageMobileSrc": "/img/usingTheModelForPredictionsMobileEn.png",
+                        "usingModelImageAlt": "Illustration of how the model is used"
+                    }
+                },
+                "whyAi": {
+                    "title": "Why we offer use of an AI model",
+                    "description1": "Our goal is to ensure the most helpful support for the highest number of people.",
+                    "description2": "The AI model may help case workers in making more accurate predictions of sick leave duration, and its use may contribute to achieve this aim.",
+                    "learnMore": {
+                        "title": "Why we offer the use of the AI model in predicting sick leave duration",
+                        "reasonForUseList": {
+                            "title": "Our goal is to ensure the most helpful support for the highest number of people. To help our case handlers achieve this aim, we offer the use of an AI model for prediction to:",
+                            "li1": "help case handlers make more accurate assessments",
+                            "li2": "help in ensuring appropriate support where it is needed",
+                            "li3": "save resources and time, letting the case handlers help more people"
+                        },
+                        "rightToChoose": "It is your right to choose whether the case handler should use the AI model for prediction or not."
+                    }
+                },
+                "learnMoreButtonText": "Learn more"
+            }
+        },
+        "aboutRightsInfo": {
+            "title": "Your rights as a user",
+            "description1": "As a user of this service you have certain rights, especially related to your personal data.",
+            "description2": "You can read more about your rights as a user by expanding this box.",
+            "readMore": {
+                "userRightsTitle": "As a user you have the right to:",
+                "li1": "Get information on which of your personal data is being used and why ",
+                "li2": "Correct faulty data about yourself ",
+                "li3": "At any time request the removal of your personal data from our system ",
+                "li4": "Request that the process which is using your data is canceled ",
+                "li5": "Be presented with your personal information in an understandable way ",
+                "li6": "At any time protest against processing of your personal data ",
+                "learnMoreLinkText": "Learn more"
+            }
+        },
+        "consentQuestion": "Do you consent to the use of the AI model for predicting your sick leave duration?",
+        "disagreeButtonText": "I do NOT consent to usage of the AI model",
+        "agreeButtonText": "I consent to usage of the AI model"
+    },
+
+    "summaryPage": {
+        "titleNotConsenting": "You have chosen not to use the AI model for prediction",
+        "titleConsenting": "You have chosen to use the AI model for prediction",
+        "descriptionNotConsenting": "The case handler will make a prediction of the total duration of your sick leave without the use of the AI model. This may result in a longer processing time.",
+        "descriptionConsenting": "The case handler will use the AI model to predict the total duration of your sick leave.",
+        "changeCoice": "If you would like to change your choice, click on \"Using AI\" in the top left corner.",
+        "informationSummaryTitle": "Summary of the information used to predict your sick leave duration",
+        "informationSummarySource": "This information is gathered from the national population register and our registers.",
+        "submitChoiceButtonText": "Submit your choice"
+    },
+
+    "testingFinishedPage": {
+        "title": "Thank you for testing our web application!",
+        "information": "You have now completed the demo. You can either go back to the beginning of the demo (front page), or continue to our questionnaire (Google Forms) to answer some questions.",
+        "toFrontPageButtonText": "Front page",
+        "toQuestionnaireButtonText": "Questionnaire"
+    }
+}
