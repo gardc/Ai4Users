@@ -48,7 +48,7 @@ export const sandboxParametersEn = [
             }]
     },
     {
-        label: "County",
+        label: "Region",
         argument: [
             {
                 itemName: "Agder",
@@ -92,7 +92,7 @@ export const sandboxParametersEn = [
             }]
     },
     {
-        label: "Sex",
+        label: "Gender",
         argument: [
             {
                 itemName: "Male",
@@ -104,7 +104,7 @@ export const sandboxParametersEn = [
             }]
     },
     {
-        label: "Diagnosis",
+        label: "Disorder",
         argument: [
             {
                 itemName: "Cardiovascular diseases",
