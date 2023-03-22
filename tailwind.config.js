@@ -23,6 +23,7 @@ module.exports = {
         'prussian-blue': '#003049',
         'college-blue': '#012347',
         'darkblue':'#001731',
+        'lightblue':'#394a5e',
         'lavaorange': '#f24922',
       },
       borderWidth: {

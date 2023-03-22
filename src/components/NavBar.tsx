@@ -5,14 +5,11 @@ import SocialServiceLogo from "./SocialServiceLogo";
 
 const NavBar = () => {
     return (
-        <div className="bg-sky-blue ">
-            <div className="px-12 pt-12 pb-8 flex justify-between">
+        <div className="bg-darkblue ">
+            <div className="px-6 sm:px-12 pt-6 pb-6 flex justify-between items-center">
                 {/* Left side */}
                 <div>
-                    <Link
-                        href="/LandingPage"
-                        //className="italic text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-cyan-700"
-                    >
+                    <Link href="/LandingPage">
                         <SocialServiceLogo />
                     </Link>
                 </div>

@@ -40,13 +40,24 @@ const LandingPage: React.FC = (
                         {t("pageProgressBar.summaryPage")}
                     </p>
                 </div>
+                <div
+                    className="index pt-8 pb-8 
+                flex-col flex items-center"
+                >
+                    <p className="text-center text-prussian-blue font-bold text-4xl">
+                        {t("landingPage.title")}
+                    </p>
+                    <p className="w-5/6 sm:w-3/4 mt-8 text-left">
+                        {t("landingPage.description")}
+                    </p>
+                </div>
                 {/*Second page that shows personal information */}
-                <div className="m-2 text-center flex justify-center">
+                <div className="m-2 text-cente flex justify-center">
                     <div
                         className="w-full sm:w-3/4 
                 bg-white drop-shadow-lg py-8 sm:py-4 px-4 sm:px-16 rounded-xl flex justify-center items-center flex-col"
                     >
-                        <p className="font-semibold text-2xl py-3">
+                        <p className="text-2xl py-3">
                             {t("landingPage.dataPointsSummary.title")}
                         </p>
                         <p className="py-3 text-left lg:w-3/4">
