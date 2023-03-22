@@ -9,6 +9,17 @@ export interface ExpandableInformationBoxProps {
     buttonText: string;
 }
 
+/**
+ * An information box that displays content with an optional title. The box can be expanded to show additional information.
+ *
+ * @param content - The initial content of the information box. Can  be  a string or a JSX/TSX Element.
+ * @param expandedContentTitle - The title of the information box. A string that can be empty.
+ * @param expandedContent - The content shown when the information box is expanded. Can  be  a string or a JSX/TSX Element.
+ * @param expandedCloseButtonText - A string that is shown on the close button on the expanded content.
+ * @param buttonText - A string that is shown on the button that expands the box to reveal additional content.
+ *
+ * @returns An expandable information box as a React functional component.
+ */
 const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
     content,
     expandedContentTitle,
@@ -21,7 +32,10 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
 
     useEffect(() => {
         const handleOutsideClick = (event: MouseEvent) => {
-            if (expandedRef.current && !expandedRef.current.contains(event.target as Node)) {
+            if (
+                expandedRef.current &&
+                !expandedRef.current.contains(event.target as Node)
+            ) {
                 setExpanded(false);
             }
         };
@@ -55,21 +69,22 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
                     ></div>
                     <div
                         ref={expandedRef}
-                        className="bg-white p-14 w-3/4 rounded-xl fixed top-1/2 left-1/2 transform
-                        -translate-x-1/2 -translate-y-1/2 z-50 overflow-y-auto max-h-full mt-10
-                        max-w-5xl"
+                        className="bg-white p-4 sm:p-14 w-full sm:w-3/4 sm:rounded-xl fixed top-1/2 left-1/2 transform
+                        -translate-x-1/2 -translate-y-1/2 z-50 overflow-y-auto max-h-full sm:mt-10"
                     >
-                        <div className="font-bold mb-6 text-xl w-5/6 xl:w-full text-left text-violet">
-                            {expandedContentTitle}
-                        </div>
-                        <div className="text-black text-left">{expandedContent}</div>
                         <button
                             onClick={handleExpansion}
                             className="text-black hover:text-sky-600
-                            absolute top-14 right-14 underline"
+                            top-14 right-14 underline float-right justify-end"
                         >
                             {expandedCloseButtonText}
                         </button>
+                        <div className="font-bold mb-6 text-xl w-5/6 xl:w-full text-left text-violet">
+                            {expandedContentTitle}
+                        </div>
+                        <div className="text-black text-left">
+                            {expandedContent}
+                        </div>
                     </div>
                 </>
             )}

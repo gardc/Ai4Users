@@ -35,6 +35,14 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
         predictionChoiceTitle = t("summaryPage.titleNotConsenting");
         predictionChoiceTitle = predictionChoiceTitle.replace(/(<b>not<\/b>)/, "<b>$1</b>");
         predictionChoiceText = t("summaryPage.descriptionNotConsenting");
+        if (locale === "en") {
+            predictionChoiceTitle = predictionChoiceTitle.replace(/(not)/, "<b>not</b>");
+        } else if (locale === "no") {
+            predictionChoiceTitle = predictionChoiceTitle.replace(/(ikke)/, "<b>ikke</b>");
+        } else {
+            //TODO: Provide bold emphasis on german translation
+        }
+        predictionChoiceText = t("summaryPage.descriptionNotConsenting");
     }
 
     return (
@@ -79,9 +87,9 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
                 </div>
                 <div className="flex flex-col justify-center items-center bg-slate-50">
                     <div className="flex justify-center pt-4">
-                        {locale == "en" ? <DataTable data={exampleDataEn}/> : <></>}
-                        {locale == "no" ? <DataTable data={exampleDataNo}/> : <></>}
-                        {locale == "de" ? <DataTable data={exampleDataDe}/> : <></>}
+                        {locale == "en" ? <DataTable data={exampleDataEn} /> : <></>}
+                        {locale == "no" ? <DataTable data={exampleDataNo} /> : <></>}
+                        {locale == "de" ? <DataTable data={exampleDataDe} /> : <></>}
                     </div>
                     <p className="text-base mb-10 w-2/5 text-center">
                         {t("summaryPage.informationSummarySource")}

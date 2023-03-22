@@ -28,7 +28,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
         <Parent>
             <Content>
-                <div className="bg-gradient-to-b from-sky-blue to-slate-50 pb-16 text-center">
+                <div className="bg-gradient-to-b from-sky-blue to-slate-50 pb-8 text-center">
                     <div className="flex justify-start py-5 text-black">
                         <Link className="pl-12 px-3" href={"/LandingPage"}>
                             {t("pageProgressBar.frontpage")}
@@ -48,7 +48,9 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 <div className="text-center bg-slate-50 flex justify-center flex-col items-center">
                     <InformationDropdownBox
                         title={""}
-                        initialInfo={t("usingAiPage.aboutAiInfo.description") as string}
+                        initialInfo={
+                            t("usingAiPage.aboutAiInfo.description") as string
+                        }
                         extendedInfo={
                             <div className="lg:grid lg:grid-cols-3 lg:gap-x-10 text-sm pt-4 px-6">
                                 <ExpandableInformationBox
@@ -56,7 +58,9 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                         <div className="text-left h-full">
                                             <BookIcon />
                                             <h1 className="font-bold text-center pb-4">
-                                                {t("usingAiPage.aboutAiInfo.readMore.whatAi.title")}
+                                                {t(
+                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.title"
+                                                )}
                                             </h1>
                                             <p className="pb-4">
                                                 {t(
@@ -112,14 +116,32 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                     "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeInfo"
                                                 )}
                                             </p>
+                                            {/* { locale == "en" && } */}
                                             <Image
-                                                src={"/img/disagreeToUseFlow.jpg"}
+                                                src={
+                                                    t(
+                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageSrc"
+                                                    ) as string
+                                                }
                                                 alt={t(
                                                     "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageAlt"
                                                 )}
                                                 width={1000}
                                                 height={1000}
-                                                className="pb-8"
+                                                className="pb-8 hidden lg:block"
+                                            />
+                                            <Image
+                                                src={
+                                                    t(
+                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageMobileSrc"
+                                                    ) as string
+                                                }
+                                                alt={t(
+                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageAlt"
+                                                )}
+                                                width={1000}
+                                                height={1000}
+                                                className="pb-8 block lg:hidden"
                                             />
                                             <p className="font-bold pb-4">
                                                 {t(
@@ -132,27 +154,48 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 )}
                                             </p>
                                             <Image
-                                                src={"/img/agreeToUseFlow.jpg"}
+                                                src={
+                                                    t(
+                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeFlowImageSrc"
+                                                    ) as string
+                                                }
                                                 alt={t(
                                                     "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeFlowImageAlt"
                                                 )}
                                                 width={1000}
                                                 height={1000}
-                                                className="pb-4"
+                                                className="pb-4 hidden lg:block"
+                                            />
+                                            <Image
+                                                src={
+                                                    t(
+                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeFlowImageMobileSrc"
+                                                    ) as string
+                                                }
+                                                alt={t(
+                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeFlowImageAlt"
+                                                )}
+                                                width={1000}
+                                                height={1000}
+                                                className="pb-4 block lg:hidden"
                                             />
                                         </div>
                                     }
                                     buttonText={t(
                                         "usingAiPage.aboutAiInfo.readMore.learnMoreButtonText"
                                     )}
-                                    expandedCloseButtonText={t("expandedInfoBoxCloseButtonText")}
+                                    expandedCloseButtonText={t(
+                                        "expandedInfoBoxCloseButtonText"
+                                    )}
                                 />
                                 <ExpandableInformationBox
                                     content={
                                         <div className="text-left h-full">
                                             <CogIcon />
                                             <p className="font-bold text-center pb-4">
-                                                {t("usingAiPage.aboutAiInfo.readMore.howAi.title")}
+                                                {t(
+                                                    "usingAiPage.aboutAiInfo.readMore.howAi.title"
+                                                )}
                                             </p>
                                             <p className="pb-4">
                                                 {t(
@@ -199,13 +242,30 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 </ul>
                                             </div>
                                             <Image
-                                                src={"/img/trainingTheModel.jpg"}
+                                                src={
+                                                    t(
+                                                        "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.trainingModelImageSrc"
+                                                    ) as string
+                                                }
                                                 alt={t(
                                                     "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.trainingModelImageAlt"
                                                 )}
                                                 width={1000}
                                                 height={1000}
-                                                className="pb-8"
+                                                className="pb-8 hidden lg:block"
+                                            />
+                                            <Image
+                                                src={
+                                                    t(
+                                                        "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.trainingModelImageMobileSrc"
+                                                    ) as string
+                                                }
+                                                alt={t(
+                                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.trainingModelImageAlt"
+                                                )}
+                                                width={1000}
+                                                height={1000}
+                                                className="pb-8 block lg:hidden"
                                             />
                                             <p className="pb-4">
                                                 {t(
@@ -213,26 +273,48 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 )}
                                             </p>
                                             <Image
-                                                src={"/img/usingTheModelForPrediction.jpg"}
+                                                src={
+                                                    t(
+                                                        "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.usingModelImageSrc"
+                                                    ) as string
+                                                }
                                                 alt={t(
                                                     "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.usingModelImageAlt"
                                                 )}
                                                 width={1000}
                                                 height={1000}
+                                                className="hidden lg:block"
+                                            />
+                                            <Image
+                                                src={
+                                                    t(
+                                                        "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.usingModelImageMobileSrc"
+                                                    ) as string
+                                                }
+                                                alt={t(
+                                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.usingModelImageAlt"
+                                                )}
+                                                width={1000}
+                                                height={1000}
+                                                className="block lg:hidden"
                                             />
                                         </div>
                                     }
                                     buttonText={t(
                                         "usingAiPage.aboutAiInfo.readMore.learnMoreButtonText"
                                     )}
-                                    expandedCloseButtonText={t("expandedInfoBoxCloseButtonText")}
+                                    expandedCloseButtonText={t(
+                                        "expandedInfoBoxCloseButtonText"
+                                    )}
                                 />
                                 <ExpandableInformationBox
                                     content={
                                         <div className="text-left h-full">
                                             <FastForwardIcon />
                                             <p className="font-bold text-center pb-4">
-                                                {t("usingAiPage.aboutAiInfo.readMore.whyAi.title")}
+                                                {t(
+                                                    "usingAiPage.aboutAiInfo.readMore.whyAi.title"
+                                                )}
                                             </p>
                                             <p className="pb-4">
                                                 {t(
@@ -283,31 +365,49 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                     buttonText={t(
                                         "usingAiPage.aboutAiInfo.readMore.learnMoreButtonText"
                                     )}
-                                    expandedCloseButtonText={t("expandedInfoBoxCloseButtonText")}
+                                    expandedCloseButtonText={t(
+                                        "expandedInfoBoxCloseButtonText"
+                                    )}
                                 />
                             </div>
                         }
-                        extendInfoButtonText={t("informationDropdownBoxExtendButtonText")}
-                        closeInfoButtonText={t("informationDropdownBoxCloseButtonText")}
+                        extendInfoButtonText={t(
+                            "informationDropdownBoxExtendButtonText"
+                        )}
+                        closeInfoButtonText={t(
+                            "informationDropdownBoxCloseButtonText"
+                        )}
                     />
                     <div className="h-6"></div>
                     <InformationDropdownBox
                         title={t("usingAiPage.aboutRightsInfo.title")}
                         initialInfo={
                             <>
-                                <p>{t("usingAiPage.aboutRightsInfo.description1")}</p>
-                                <p>{t("usingAiPage.aboutRightsInfo.description2")}</p>
+                                <p>
+                                    {t(
+                                        "usingAiPage.aboutRightsInfo.description1"
+                                    )}
+                                </p>
+                                <p>
+                                    {t(
+                                        "usingAiPage.aboutRightsInfo.description2"
+                                    )}
+                                </p>
                             </>
                         }
                         extendedInfo={
                             <div className="space-y-4 ml-4 flex flex-col justify-center items-center my-6">
                                 <h2 className="font-semibold">
-                                    {t("usingAiPage.aboutRightsInfo.readMore.userRightsTitle")}
+                                    {t(
+                                        "usingAiPage.aboutRightsInfo.readMore.userRightsTitle"
+                                    )}
                                 </h2>
                                 <ul className="space-y-4 list-disc text-left">
                                     <li>
                                         <p className="">
-                                            {t("usingAiPage.aboutRightsInfo.readMore.li1")}
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.li1"
+                                            )}
                                             <a
                                                 href="https://lovdata.no/lov/2018-06-15-38/gdpr/a15"
                                                 target="_blank"
@@ -323,7 +423,9 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                     </li>
                                     <li>
                                         <p className="">
-                                            {t("usingAiPage.aboutRightsInfo.readMore.li2")}
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.li2"
+                                            )}
                                             <a
                                                 href="https://lovdata.no/lov/2018-06-15-38/gdpr/a16"
                                                 target="_blank"
@@ -339,7 +441,9 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                     </li>
                                     <li>
                                         <p className="">
-                                            {t("usingAiPage.aboutRightsInfo.readMore.li3")}
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.li3"
+                                            )}
                                             <a
                                                 href="https://lovdata.no/lov/2018-06-15-38/gdpr/a17"
                                                 target="_blank"
@@ -355,7 +459,9 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                     </li>
                                     <li>
                                         <p className="">
-                                            {t("usingAiPage.aboutRightsInfo.readMore.li4")}
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.li4"
+                                            )}
                                             <a
                                                 href="https://lovdata.no/lov/2018-06-15-38/gdpr/a18"
                                                 target="_blank"
@@ -371,7 +477,9 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                     </li>
                                     <li>
                                         <p className="">
-                                            {t("usingAiPage.aboutRightsInfo.readMore.li5")}
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.li5"
+                                            )}
                                             <a
                                                 href=" https://lovdata.no/lov/2018-06-15-38/gdpr/a20"
                                                 target="_blank"
@@ -387,7 +495,9 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                     </li>
                                     <li>
                                         <p className="">
-                                            {t("usingAiPage.aboutRightsInfo.readMore.li6")}
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.li6"
+                                            )}
                                             <a
                                                 href="https://lovdata.no/lov/2018-06-15-38/gdpr/a21"
                                                 target="_blank"
@@ -404,8 +514,12 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                 </ul>
                             </div>
                         }
-                        extendInfoButtonText={t("informationDropdownBoxExtendButtonText")}
-                        closeInfoButtonText={t("informationDropdownBoxCloseButtonText")}
+                        extendInfoButtonText={t(
+                            "informationDropdownBoxExtendButtonText"
+                        )}
+                        closeInfoButtonText={t(
+                            "informationDropdownBoxCloseButtonText"
+                        )}
                     />
                     <p className="mt-16 font-semibold text-lg">
                         {t("usingAiPage.consentQuestion")}
