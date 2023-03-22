@@ -36,7 +36,7 @@
     "usingAiPage": {
         "title": "Using Artificial Intelligence for prediction",
         "aboutAiInfo": {
-            "description": "In order to provide you with the most appropriate support given your situation, we offer the use of an artificial intelligence (AI) model to aid the case handler in predicting the duration of your sick leave. You can read more about what this entails and how the model works by expanding this box. Whether you wish to use the AI model for prediction is completely up to you.",
+            "description": "In order to provide you with the most appropriate support given your situation, we offer the use of an artificial intelligence (AI) model to aid the case handler in predicting the duration of your sick leave. You can read more about what this entails and how the model works by expanding this box. Whether you wish to use the AI model for prediction is completely up to you, and regardless of your choice a casehandler will still make the final decision regarding support.",
             "readMore": {
                 "whatAi": {
                     "title": "What agreeing to the use entails",
