@@ -58,9 +58,9 @@ const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticP
                             {t("landingPage.dataPointsSummary.description2")}
                         </p>
                         {/*Here there will be a component with information about the user */}
-                        {locale == "en" ? <DataTable data={exampleDataEn}/> : <></>}
-                        {locale == "no" ? <DataTable data={exampleDataNo}/> : <></>}
-                        {locale == "de" ? <DataTable data={exampleDataDe}/> : <></>}
+                        {locale == "en" ? <DataTable data={exampleDataEn} /> : <></>}
+                        {locale == "no" ? <DataTable data={exampleDataNo} /> : <></>}
+                        {locale == "de" ? <DataTable data={exampleDataDe} /> : <></>}
                         <div className="flex-col justify-center flex">
                             {/* <div className="flex justify-center mt-4">
                                 <Button color="black" href="/%">

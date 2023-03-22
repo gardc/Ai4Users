@@ -1,6 +1,5 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import ArrowRightIcon from "@/components/Assets/arrowRightIcon";
 import BookIcon from "@/components/Assets/bookIcon";
@@ -24,8 +23,6 @@ import React from "react";
  */
 const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { t } = useTranslation("common");
-    const router = useRouter();
-    const { locale } = router;
 
     let imagePath: string = t(
         "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageAlt"

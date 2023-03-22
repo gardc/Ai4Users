@@ -1,6 +1,11 @@
 import React from "react";
 import DocumentApprovedIcon from "./Assets/documentApprovedIcon";
 
+/**
+ * A logo for a generic social service entity.
+ *
+ * @returns A logo as a React functional component.
+ */
 const SocialServiceLogo = () => {
     return (
         <div className="flex flex-row">

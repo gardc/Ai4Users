@@ -9,6 +9,17 @@ export interface ExpandableInformationBoxProps {
     buttonText: string;
 }
 
+/**
+ * An information box that displays content with an optional title. The box can be expanded to show additional information.
+ *
+ * @param content - The initial content of the information box. Can  be  a string or a JSX/TSX Element.
+ * @param expandedContentTitle - The title of the information box. A string that can be empty.
+ * @param expandedContent - The content shown when the information box is expanded. Can  be  a string or a JSX/TSX Element.
+ * @param expandedCloseButtonText - A string that is shown on the close button on the expanded content.
+ * @param buttonText - A string that is shown on the button that expands the box to reveal additional content.
+ *
+ * @returns An expandable information box as a React functional component.
+ */
 const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
     content,
     expandedContentTitle,
