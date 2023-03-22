@@ -9,7 +9,7 @@
         "summaryPage": "Summary"
     },
 
-    "landingPageTesting": {
+    "UserTestingLandingPage": {
         "title": "Thank you for wanting to test our web application",
         "description": "The test involves navigating through our web application, and answering a questionnaire at the end.",
         "beforeTestingTitle": "Before you begin testing",

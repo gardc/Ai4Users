@@ -17,7 +17,9 @@ import React from "react";
  *
  * @returns A React functional component representing the summary page.
  */
-const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Summary: React.FC = (
+    _props: InferGetStaticPropsType<typeof getStaticProps>
+) => {
     const router = useRouter();
     const { consent } = router.query;
     const { locale } = router;
@@ -33,12 +35,21 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
         predictionChoiceText = t("summaryPage.descriptionConsenting");
     } else if (consent === "false") {
         predictionChoiceTitle = t("summaryPage.titleNotConsenting");
-        predictionChoiceTitle = predictionChoiceTitle.replace(/(<b>not<\/b>)/, "<b>$1</b>");
+        predictionChoiceTitle = predictionChoiceTitle.replace(
+            /(<b>not<\/b>)/,
+            "<b>$1</b>"
+        );
         predictionChoiceText = t("summaryPage.descriptionNotConsenting");
         if (locale === "en") {
-            predictionChoiceTitle = predictionChoiceTitle.replace(/(not)/, "<b>not</b>");
+            predictionChoiceTitle = predictionChoiceTitle.replace(
+                /(not)/,
+                "<b>not</b>"
+            );
         } else if (locale === "no") {
-            predictionChoiceTitle = predictionChoiceTitle.replace(/(ikke)/, "<b>ikke</b>");
+            predictionChoiceTitle = predictionChoiceTitle.replace(
+                /(ikke)/,
+                "<b>ikke</b>"
+            );
         } else {
             //TODO: Provide bold emphasis on german translation
         }
@@ -47,63 +58,73 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
 
     return (
         <Parent>
-            <div className="bg-slate-50 h-screen">
-                <div className="bg-gradient-to-b from-sky-blue to-slate-50">
-                    <div className="flex justify-start py-5 text-black">
-                        <Link className="pl-12 px-3" href={"/LandingPage"}>
-                            {t("pageProgressBar.frontpage")}
-                        </Link>
-                        {">"}
-                        <Link className="px-3" href={"/UsingAi"}>
-                            {t("pageProgressBar.usingAiPage")}
-                        </Link>
-                        {">"}
-                        <p className="underline underline-offset-4 px-3">
-                            {t("pageProgressBar.summaryPage")}
-                        </p>
-                    </div>
-                    <div className="flex flex-col justify-center text-2xl items-center text-center">
-                        <h1
-                            dangerouslySetInnerHTML={{
-                                __html: predictionChoiceTitle,
-                            }}
-                        />
-                        <p
-                            className="text-base mt-2 w-1/2 text-center"
-                            dangerouslySetInnerHTML={{
-                                __html: predictionChoiceText,
-                            }}
-                        />
-                        <p className="text-base mt-10 w-1/2 text-center">
-                            {t("summaryPage.changeCoice")}
-                        </p>
-                    </div>
-
-                    <div className="flex justify-center mt-16">
-                        <h2 className="text-base font-bold text-prussian-blue text-center">
-                            {t("summaryPage.informationSummaryTitle")}
-                        </h2>
-                    </div>
-                </div>
-                <div className="flex flex-col justify-center items-center bg-slate-50">
-                    <div className="flex justify-center pt-4">
-                        {locale == "en" ? <DataTable data={exampleDataEn} /> : <></>}
-                        {locale == "no" ? <DataTable data={exampleDataNo} /> : <></>}
-                        {locale == "de" ? <DataTable data={exampleDataDe} /> : <></>}
-                    </div>
-                    <p className="text-base mb-10 w-2/5 text-center">
-                        {t("summaryPage.informationSummarySource")}
+            <div>
+                <div className="flex justify-start py-5 text-black">
+                    <Link className="pl-12 px-3" href={"/LandingPage"}>
+                        {t("pageProgressBar.frontpage")}
+                    </Link>
+                    {">"}
+                    <Link className="px-3" href={"/UsingAi"}>
+                        {t("pageProgressBar.usingAiPage")}
+                    </Link>
+                    {">"}
+                    <p className="underline underline-offset-4 px-3">
+                        {t("pageProgressBar.summaryPage")}
                     </p>
-                    {/* <div className="flex justify-center mt-4">
+                </div>
+                <div className="flex flex-col justify-center text-2xl items-center text-center">
+                    <h1
+                        dangerouslySetInnerHTML={{
+                            __html: predictionChoiceTitle,
+                        }}
+                    />
+                    <p
+                        className="text-base mt-2 w-1/2 text-center"
+                        dangerouslySetInnerHTML={{
+                            __html: predictionChoiceText,
+                        }}
+                    />
+                    <p className="text-base mt-10 w-1/2 text-center">
+                        {t("summaryPage.changeCoice")}
+                    </p>
+                </div>
+
+                <div className="flex justify-center mt-16">
+                    <h2 className="text-base font-bold text-prussian-blue text-center">
+                        {t("summaryPage.informationSummaryTitle")}
+                    </h2>
+                </div>
+            </div>
+            <div className="flex flex-col justify-center items-center">
+                <div className="flex justify-center pt-4">
+                    {locale == "en" ? (
+                        <DataTable data={exampleDataEn} />
+                    ) : (
+                        <></>
+                    )}
+                    {locale == "no" ? (
+                        <DataTable data={exampleDataNo} />
+                    ) : (
+                        <></>
+                    )}
+                    {locale == "de" ? (
+                        <DataTable data={exampleDataDe} />
+                    ) : (
+                        <></>
+                    )}
+                </div>
+                <p className="text-base mb-10 w-2/5 text-center">
+                    {t("summaryPage.informationSummarySource")}
+                </p>
+                {/* <div className="flex justify-center mt-4">
                         <Button color="black" onClick={() => alert("Okay")}>
                             Is this information incorrect?
                         </Button>
                     </div> */}
-                    <div className="flex justify-center mt-4 pb-16">
-                        <Button color="black" href="/TestingFinishedPage">
-                            {t("summaryPage.submitChoiceButtonText")}
-                        </Button>
-                    </div>
+                <div className="flex justify-center mt-4 pb-16">
+                    <Button color="black" href="/TestingFinishedPage">
+                        {t("summaryPage.submitChoiceButtonText")}
+                    </Button>
                 </div>
             </div>
         </Parent>

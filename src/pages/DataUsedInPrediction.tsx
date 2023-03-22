@@ -27,7 +27,7 @@ const LandingPage: React.FC = (
     return (
         <Parent>
             <Content>
-                <div className="bg-sky-blue flex justify-start py-5 text-black">
+                <div className="flex justify-start py-5 text-black">
                     <p className="underline underline-offset-4 pl-12 px-3">
                         {t("pageProgressBar.frontpage")}
                     </p>
@@ -41,10 +41,10 @@ const LandingPage: React.FC = (
                     </p>
                 </div>
                 <div
-                    className="index bg-gradient-to-b from-sky-blue to-slate-50 pt-8 pb-8 
+                    className="index pt-8 pb-8 
                 flex-col flex items-center"
                 >
-                    <p className="text-center text-prussian-blue font-semibold text-3xl">
+                    <p className="text-center text-prussian-blue font-bold text-3xl">
                         {t("landingPage.title")}
                     </p>
                     <p className="w-5/6 sm:w-3/4 mt-8 text-left">
@@ -52,12 +52,12 @@ const LandingPage: React.FC = (
                     </p>
                 </div>
                 {/*Second page that shows personal information */}
-                <div className="m-2 text-center bg-slate-50 flex justify-center">
+                <div className="m-2 text-center flex justify-center">
                     <div
                         className="w-full sm:w-3/4 
                 bg-white drop-shadow-lg py-8 sm:py-4 px-4 sm:px-16 rounded-xl flex justify-center items-center flex-col"
                     >
-                        <p className="text-2xl py-3">
+                        <p className="font-semibold text-2xl py-3">
                             {t("landingPage.dataPointsSummary.title")}
                         </p>
                         <p className="py-3 text-left lg:w-3/4">

@@ -27,7 +27,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
         <Parent>
             <Content>
-                <div className="bg-gradient-to-b from-sky-blue to-slate-50 pb-8 text-center">
+                <div className="pb-8 text-center">
                     <div className="flex justify-start py-5 text-black">
                         <Link className="pl-12 px-3" href={"/LandingPage"}>
                             {t("pageProgressBar.frontpage")}
@@ -40,11 +40,11 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                         <p className="text-gray-500 px-3">Summary</p>
                     </div>
 
-                    <p className="text-center text-prussian-blue font-semibold text-3xl m-3">
+                    <p className="text-center text-prussian-blue font-bold text-3xl m-3">
                         {t("usingAiPage.title")}
                     </p>
                 </div>
-                <div className="text-center bg-slate-50 flex justify-center flex-col items-center">
+                <div className="text-center flex justify-center flex-col items-center">
                     <InformationDropdownBox
                         title={""}
                         initialInfo={

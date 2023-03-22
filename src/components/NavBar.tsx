@@ -4,13 +4,13 @@ import React from "react";
 
 const NavBar = () => {
     return (
-        <div className="bg-sky-blue ">
+        <div>
             <div className="px-12 pt-8 pb-2 flex justify-between">
                 {/* Left side */}
                 <div>
                     <Link
                         href="/"
-                        className="italic text-xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-cyan-600 to-cyan-700"
+                        className="text-xl font-bold text-transparent bg-clip-text bg-blue-900"
                     >
                         LeaveEstimation
                     </Link>

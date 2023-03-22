@@ -21,6 +21,9 @@ module.exports = {
         'battleship-gray': '#7A918D',
         'sky-blue': '#8ECAE6',
         'prussian-blue': '#003049',
+        'college-blue': '#012347',
+        'darkblue':'#001731',
+        'lavaorange': '#f24922',
       },
       borderWidth: {
         '1': '1px', 
