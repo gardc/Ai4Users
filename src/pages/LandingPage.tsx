@@ -6,7 +6,14 @@ import { GetStaticProps, InferGetStaticPropsType } from "next";
 import React from "react";
 import Link from "next/link";
 
-const LandingPage = (
+/**
+ * The landing page component that displays initial information about the web
+ * application.
+ * Supports i18next translation.
+ *
+ * @returns A React functional component representing the landing page.
+ */
+const LandingPage: React.FC = (
     _props: InferGetStaticPropsType<typeof getStaticProps>
 ) => {
     const { t } = useTranslation("common");

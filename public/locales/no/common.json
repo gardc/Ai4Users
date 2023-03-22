@@ -1,4 +1,7 @@
 {
+    "nationalSocialServiceEntityNameLine1": "Den Nasjonale",
+    "nationalSocialServiceEntityNameLine2": "Sosialtjenesten",
+
     "expandedInfoBoxCloseButtonText": "Lukk",
     "informationDropdownBoxExtendButtonText": "Les mer",
     "informationDropdownBoxCloseButtonText": "Lukk",
@@ -24,10 +27,10 @@
 
     "landingPage": {
         "title": "Prediksjon av sykefraværets varighet",
-        "description": "For å kunne gi støtte tilpasset din situasjon under sykefraværet ditt, utfører vi en prediksjon av sykefraværets varighet basert på din informasjon. Dette er behjelpelig i planleggingen av støttetiltak som oppfølgingsmøter og økonomisk støtte under en lengre periode.",
+        "description": "For å kunne gi støtte tilpasset din situasjon under sykefraværet ditt, utfører Den Nasjonale Sosialtjenesten en prediksjon av sykefraværets varighet basert på din informasjon. Dette er behjelpelig i planleggingen av støttetiltak under en lengre periode, som for eksempel oppfølgingsmøter og økonomisk støtte.",
         "dataPointsSummary": {
             "title": "Data som blir brukt i predikeringen",
-            "description1": "Nedenfor finner du all informasjon om deg som vil bli brukt i predikeringen av varigheten av sykefraværet ditt. Denne informasjonen er hentet fra det nasjonale folkeregisteret og våre registre.",
+            "description1": "Nedenfor finner du all informasjon om deg som vil bli brukt i predikeringen av varigheten av sykefraværet ditt. Denne informasjonen er hentet fra det nasjonale folkeregisteret og Den Nasjonale Sosialtjenestens registre.",
             "description2": "Klikk på \"?\"-symbolet ved siden av hvert informasjonspunkt for å se hvorfor det brukes."
         },
         "continueButtonText": "Fortsett"
@@ -36,7 +39,7 @@
     "usingAiPage": {
         "title": "Bruk av kunstig intelligens for prediksjon",
         "aboutAiInfo": {
-            "description": "For å kunne tilby deg støtte best tilpasset din situasjon tilbyr vi bruken av en kunstig intelligens-modell (KI-modell) for å støtte saksbehandleren i prediksjonen av varigheten av ditt sykefravær. Du kan lese mer om hva dette innebærer og hvordan modellen fungerer ved å klikke på \"Les mer\". Om KI-modellen skal benyttes for predikering er fullstendig opp til deg, og uavhengig av ditt valg vil en saksbehandler fortsatt ta den endelige avgjørelsen angående støtte.",
+            "description": "For å kunne tilby deg støtte best tilpasset din situasjon tilbyr Den Nasjonale Sosialtjenesten bruken av en kunstig intelligens-modell (KI-modell) for å støtte saksbehandleren i prediksjonen av varigheten av ditt sykefravær. Du kan lese mer om hva dette innebærer og hvordan modellen fungerer ved å klikke på \"Les mer\". Om KI-modellen skal benyttes for predikering er fullstendig opp til deg.",
             "readMore": {
                 "whatAi": {
                     "title": "Hva samtykke av bruken innebærer",
@@ -71,7 +74,7 @@
                         "title": "Hvordan KI-modellen fungerer",
                         "description": "Kunstig intelligens er et paraplybegrep som beskriver datasystemer som kan løse komplekse problemer og lære fra tidligere erfaring.",
                         "machineLearningModelTraitList": {
-                            "title": "Typen kunstig intelligens vi bruker for predikering er en såkalt \"maskinlæringsmodell\", som har følgende egenskaper:",
+                            "title": "Typen kunstig intelligens Den Nasjonale Sosialtjenesten bruker for predikering er en såkalt \"maskinlæringsmodell\", som har følgende egenskaper:",
                             "li1": "Initielt lærer den ved å prosessere en selektert samling av treningsdata som inneholder mønster eller likheter",
                             "li2": "Mønsterene blir synlige gjennom prosesseringen",
                             "li3": "En modell blir generert som kan gjenkjenne disse mønstrene i annen data innen samme kategori"
@@ -87,12 +90,12 @@
                 },
                 "whyAi": {
                     "title": "Hvorfor vi tilbyr bruken av en KI-modell",
-                    "description1": "Vårt mål er å sikre den mest hjelpsomme støtten for flest mulig.",
+                    "description1": "Den Nasjonale Sosialtjenestens mål er å sikre den mest hjelpsomme støtten for flest mulig.",
                     "description2": "KI-modellen kan hjelpe saksbehandlere i å gjøre mer nøyaktige prediksjoner angående varigheten av sykefravær, og dens bruk kan derfor bidra til at en høyere andel av mennesker får støtten som er riktig tilpasset for deres situasjon.",
                     "learnMore": {
                         "title": "Hvorfor vi tilbyr bruken av KI-modellen i prediksjon av sykefraværets varighet",
                         "reasonForUseList": {
-                            "title": "Vårt mål er å sikre den mest hjelpsomme støtten for flest mulig. For å hjelpe våre saksbehandlere i å oppnå dette målet, tilbyr vi bruken av en KI-modell for prediksjon for å:",
+                            "title": "Den Nasjonale Sosialtjenestens mål er å sikre den mest hjelpsomme støtten for flest mulig. For å hjelpe våre saksbehandlere i å oppnå dette målet, tilbyr vi bruken av en KI-modell for prediksjon for å:",
                             "li1": "hjelpe saksbehandlere i å gjøre mer nøyaktige vurderinger",
                             "li2": "hjelpe til med å sikre tilpasset støtte for den enkelte",
                             "li3": "spare ressurser og tid, noe som gir saksbehandlere mer tid til å hjelpe flere"
@@ -130,7 +133,7 @@
         "descriptionConsenting": "Saksbehandleren vil bruke KI-modellen for å predikere varigheten av ditt sykefravær.",
         "changeCoice": "Dersom du ønsker å endre på valget ditt, klikk på \"Bruk av KI\" øverst i venstre hjørne.",
         "informationSummaryTitle": "Sammendrag av dine personlige opplysninger som blir brukt til å predikere varigheten av ditt sykefravær",
-        "informationSummarySource": "Denne informasjonen er hentet fra det nasjonale folkeregiseteret og våre registre.",
+        "informationSummarySource": "Denne informasjonen er hentet fra det nasjonale folkeregiseteret og Den Nasjonale Sosialtjenestens registre.",
         "submitChoiceButtonText": "Send inn valget ditt"
     },
 

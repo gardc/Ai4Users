@@ -5,6 +5,13 @@ interface TooltipProps {
     extendedInfo: string | JSX.Element;
 }
 
+/**
+ * A component for a tooltip with an expandable information section.
+ *
+ * @param extendedInfo The information shown when the tooltip is clicked.
+ *
+ * @returns A tooltip as a React functional component.
+ */
 const Tooltip: React.FC<TooltipProps> = ({ extendedInfo }) => {
     const [open, setOpen] = React.useState(false);
     const ref = useRef<HTMLInputElement>(null);

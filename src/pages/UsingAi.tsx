@@ -115,6 +115,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                     "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeInfo"
                                                 )}
                                             </p>
+                                            {/* { locale == "en" && } */}
                                             <Image
                                                 src={
                                                     t(
