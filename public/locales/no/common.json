@@ -36,7 +36,7 @@
     "usingAiPage": {
         "title": "Bruk av Kunstig Intelligens for prediksjon",
         "aboutAiInfo": {
-            "description": "For å kunne tilby deg støtte best tilpasset din situasjon tilbyr vi bruken av en kunstig intelligens-modell (KI-modell) for å støtte saksbehandleren i prediksjonen av varigheten av ditt sykefravær. Du kan lese mer om hva dette innebærer og hvordan modellen fungerer ved å klikke på \"Les mer\". Om KI-modellen skal benyttes for predikering er fullstendig opp til deg.",
+            "description": "For å kunne tilby deg støtte best tilpasset din situasjon tilbyr vi bruken av en kunstig intelligens-modell (KI-modell) for å støtte saksbehandleren i prediksjonen av varigheten av ditt sykefravær. Du kan lese mer om hva dette innebærer og hvordan modellen fungerer ved å klikke på \"Les mer\". Om KI-modellen skal benyttes for predikering er fullstendig opp til deg, og uavhengig av ditt valg vil en saksbehandler fortsatt ta den endelige avgjørelsen angående støtte.",
             "readMore": {
                 "whatAi": {
                     "title": "Hva samtykke av bruken innebærer",
