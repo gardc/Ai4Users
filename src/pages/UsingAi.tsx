@@ -13,7 +13,8 @@ import InformationDropdownBox from "@/components/InformationDropdownBox";
 import Link from "next/link";
 import Parent from "@/components/Parent";
 import React from "react";
-import ModelAi from "@/components/Assets/modelAiIllustration";
+import Sandbox from "@/components/Sandbox";
+import {sandboxParametersEn} from "@/pages/api/sandboxParametersEn";
 
 /**
  * The page component for explaining the use of an AI model for the tester of the web application.
@@ -380,6 +381,21 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                     />
                     <div className="h-6"></div>
                     <InformationDropdownBox
+                        title={t("usingAiPage.sandbox.title")}
+                        initialInfo={t("usingAiPage.sandbox.shortDescription") as string}
+                        extendInfoButtonText={t("usingAiPage.sandbox.expandButtonText")}
+                        extendedInfo={
+                            <Sandbox
+                                description={t("usingAiPage.sandbox.mainDescription")}
+                                parameters=
+                                    {
+                                        sandboxParametersEn
+                                    }
+                            />}
+                        closeInfoButtonText={t("informationDropdownBoxCloseButtonText")}
+                    />
+                    <div className="h-6"></div>
+                    <InformationDropdownBox
                         title={t("usingAiPage.aboutRightsInfo.title")}
                         initialInfo={
                             <>
@@ -417,7 +433,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon />
+                                                <ArrowRightIcon/>
                                             </a>
                                         </p>
                                     </li>
@@ -435,7 +451,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon />
+                                                <ArrowRightIcon/>
                                             </a>
                                         </p>
                                     </li>
@@ -453,7 +469,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon />
+                                                <ArrowRightIcon/>
                                             </a>
                                         </p>
                                     </li>
@@ -471,7 +487,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon />
+                                                <ArrowRightIcon/>
                                             </a>
                                         </p>
                                     </li>
@@ -489,7 +505,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon />
+                                                <ArrowRightIcon/>
                                             </a>
                                         </p>
                                     </li>
@@ -507,7 +523,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon />
+                                                <ArrowRightIcon/>
                                             </a>
                                         </p>
                                     </li>

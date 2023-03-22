@@ -11,7 +11,7 @@ const ModelAiIllustration: React.FC = () => (
             points="2.42 2.17 36.14 2.15 36.14 68.4 69.14 68.4 69.14 35.4 118.14 35.4 118.14 18.88 69.14 18.88 69.14 2.15"
             fill="none"
             stroke="#3fa9f5"
-            stroke-linecap="round"
+            strokeLinecap="round"
             stroke-linejoin="round"
             stroke-width="4"
         />
@@ -19,7 +19,7 @@ const ModelAiIllustration: React.FC = () => (
             points="36.14 84.4 36.14 100.57 85.14 100.57 85.14 68.4 118.14 68.4 118.14 100.57 101.14 100.57 101.14 117.4 69.14 117.4 69.14 150.12"
             fill="none"
             stroke="#3fa9f5"
-            stroke-linecap="round"
+            strokeLinecap="round"
             stroke-linejoin="round"
             stroke-width="4"
         />
@@ -27,7 +27,7 @@ const ModelAiIllustration: React.FC = () => (
             points="85.14 51.4 101.14 51.4 101.14 35.4"
             fill="none"
             stroke="#3fa9f5"
-            stroke-linecap="round"
+            strokeLinecap="round"
             stroke-linejoin="round"
             stroke-width="4"
         />
@@ -35,7 +35,7 @@ const ModelAiIllustration: React.FC = () => (
             points="2.16 68.4 19.62 68.4 19.62 18.88 2.15 18.88"
             fill="none"
             stroke="#3fa9f5"
-            stroke-linecap="round"
+            strokeLinecap="round"
             stroke-linejoin="round"
             stroke-width="4"
         />
@@ -43,7 +43,7 @@ const ModelAiIllustration: React.FC = () => (
             points="2.16 84.4 19.62 84.4 19.62 117.4 2.16 117.4 2 150.14 52.14 150.12 52.14 100.57"
             fill="none"
             stroke="#3fa9f5"
-            stroke-linecap="round"
+            strokeLinecap="round"
             stroke-linejoin="round"
             stroke-width="4"
         />
@@ -51,7 +51,7 @@ const ModelAiIllustration: React.FC = () => (
             points="36.14 100.57 36.14 133.4 19.62 133.4"
             fill="none"
             stroke="#3fa9f5"
-            stroke-linecap="round"
+            strokeLinecap="round"
             stroke-linejoin="round"
             stroke-width="4"
         />
@@ -59,7 +59,7 @@ const ModelAiIllustration: React.FC = () => (
             points="52.14 68.4 52.14 84.4 69.14 84.4"
             fill="none"
             stroke="#3fa9f5"
-            stroke-linecap="round"
+            strokeLinecap="round"
             stroke-linejoin="round"
             stroke-width="4"
         />
@@ -70,7 +70,7 @@ const ModelAiIllustration: React.FC = () => (
             y2="51.4"
             fill="none"
             stroke="#3fa9f5"
-            stroke-linecap="round"
+            strokeLinecap="round"
             stroke-linejoin="round"
             stroke-width="4"
         />
@@ -81,7 +81,7 @@ const ModelAiIllustration: React.FC = () => (
             y2="84.4"
             fill="none"
             stroke="#3fa9f5"
-            stroke-linecap="round"
+            strokeLinecap="round"
             stroke-linejoin="round"
             stroke-width="4"
         />
@@ -89,7 +89,7 @@ const ModelAiIllustration: React.FC = () => (
             points="134.14 68.4 134.14 84.4 150.13 84.4 150.13 35.4 134.14 35.28 134.14 18.88 150.11 18.88 150.14 2 134.14 2.15 85.14 2.15"
             fill="none"
             stroke="#3fa9f5"
-            stroke-linecap="round"
+            strokeLinecap="round"
             stroke-linejoin="round"
             stroke-width="4"
         />
@@ -97,7 +97,7 @@ const ModelAiIllustration: React.FC = () => (
             points="134.14 35.28 134.14 51.4 117.92 51.4"
             fill="none"
             stroke="#3fa9f5"
-            stroke-linecap="round"
+            strokeLinecap="round"
             stroke-linejoin="round"
             stroke-width="4"
         />
@@ -105,7 +105,7 @@ const ModelAiIllustration: React.FC = () => (
             points="85.14 150.12 85.14 133.4 101.14 133.4 118.14 133.4 118.14 117.27"
             fill="none"
             stroke="#3fa9f5"
-            stroke-linecap="round"
+            strokeLinecap="round"
             stroke-linejoin="round"
             stroke-width="4"
         />
@@ -113,7 +113,7 @@ const ModelAiIllustration: React.FC = () => (
             points="150.13 100.4 134.14 100.4 134.14 117.27 149.51 117.27 150.14 150.28 134.14 150.12 134.14 133.4 118.14 133.4"
             fill="none"
             stroke="#3fa9f5"
-            stroke-linecap="round"
+            strokeLinecap="round"
             stroke-linejoin="round"
             stroke-width="4"
         />
