@@ -1,5 +1,6 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import ArrowRightIcon from "@/components/Assets/arrowRightIcon";
 import BookIcon from "@/components/Assets/bookIcon";
@@ -23,6 +24,12 @@ import React from "react";
  */
 const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { t } = useTranslation("common");
+    const router = useRouter();
+    const { locale } = router;
+
+    let imagePath: string = t(
+        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageAlt"
+    );
 
     return (
         <Parent>
@@ -111,11 +118,10 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                     "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeInfo"
                                                 )}
                                             </p>
+                                            {/* { locale == "en" && } */}
                                             <Image
-                                                src={"/img/disagreeToUseFlow.jpg"}
-                                                alt={t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageAlt"
-                                                )}
+                                                src={"/img/disagreeToUseFlow.png"}
+                                                alt={imagePath}
                                                 width={1000}
                                                 height={1000}
                                                 className="pb-8"
@@ -316,7 +322,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon/>
+                                                <ArrowRightIcon />
                                             </a>
                                         </p>
                                     </li>
@@ -332,7 +338,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon/>
+                                                <ArrowRightIcon />
                                             </a>
                                         </p>
                                     </li>
@@ -348,7 +354,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon/>
+                                                <ArrowRightIcon />
                                             </a>
                                         </p>
                                     </li>
@@ -364,7 +370,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon/>
+                                                <ArrowRightIcon />
                                             </a>
                                         </p>
                                     </li>
@@ -380,7 +386,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon/>
+                                                <ArrowRightIcon />
                                             </a>
                                         </p>
                                     </li>
@@ -396,7 +402,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 {t(
                                                     "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                                 )}
-                                                <ArrowRightIcon/>
+                                                <ArrowRightIcon />
                                             </a>
                                         </p>
                                     </li>
