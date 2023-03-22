@@ -24,7 +24,7 @@ interface ButtonProps {
  * @param href - The URL to navigate to when the button is clicked. If provided, the button will be a Link component.
  * @param onClick - The function to call when the button is clicked. If provided, the button will be a regular button element.
  * @param children - The child elements to display inside the button. This will usually be text.
- * @param type - Defults to button, set to "submit" if the component is to be used in a form.
+ * @param type - Defaults to button, set to "submit" if the component is to be used in a form.
  *
  * @returns A React functional component representing a button element or a Link component.
  */

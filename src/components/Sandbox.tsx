@@ -1,20 +1,76 @@
 import Button from "@/components/Button";
-import ModelAiIllustration from "@/components/Assets/modelAiIllustration";
 import CaseHandlerIcon from "@/components/Assets/caseHandlerIcon";
 import {useTranslation} from "next-i18next";
-import React, {FormEvent, useState} from "react";
+import React, {FormEvent, useState, useRef} from "react";
 
+/**
+ * The type definition for the `Sandbox` component's props.
+ */
 interface SandboxProps {
+    /**
+     * The description text for the sandbox.
+     */
     description: string
+
+    /**
+     * The parameters that the user can select values for.
+     */
     parameters: {
+
+        /**
+         * The human-readable and translated label for the parameter.
+         */
         label: string
+
+        /**
+         * The label value to be sent to the model. This is separated for the purposes of translation.
+         */
         labelValueForModel: string
+
+        /**
+         * The list of selectable arguments for the parameter.
+         */
         argument: {
+
+            /**
+             * The human-readable and translated name of the argument.
+             */
             itemName: string
+
+            /**
+             * The value to be sent to the model for the argument. This is separated for the purposes of translation.
+             */
             itemValueForModel: string
         }[]
     }[]
 }
+
+/**
+ * Sandbox component, allowing users to input parameters and get a predicted sick-leave duration.
+ *
+ * @component
+ * @example
+ * description = "Some description text";
+ * const parameters = [
+ *   {
+ *     label: "Parameter 1",
+ *     labelValueForModel: "param1",
+ *     argument: [
+ *       { itemName: "Option 1", itemValueForModel: "option1" },
+ *       { itemName: "Option 2", itemValueForModel: "option2" },
+ *     ],
+ *   },
+ *   {
+ *     label: "Parameter 2",
+ *     labelValueForModel: "param2",
+ *     argument: [
+ *       { itemName: "Option 1", itemValueForModel: "option1" },
+ *       { itemName: "Option 2", itemValueForModel: "option2" },
+ *     ],
+ *   },
+ * ];
+ * Usage <Sandbox description={description} parameters={parameters} />
+ */
 
 const Sandbox: React.FC<SandboxProps> = (
     {
@@ -31,6 +87,8 @@ const Sandbox: React.FC<SandboxProps> = (
     const {t} = useTranslation("common");
     const [selectedValues, setSelectedValues] = useState(initialState);
     const [weeks, setWeeks] = useState(t("usingAiPage.sandbox.initialPredictionText"));
+    const [updatedWeeks, setUpdatedWeeks] = useState(t("usingAiPage.sandbox.initialPredictionText"));
+    const videoRef = useRef<HTMLVideoElement>(null);
 
     const handleChange = (parameterLabel: string, itemValueForModel: string) => {
         setSelectedValues((prevState) => ({
@@ -50,13 +108,21 @@ const Sandbox: React.FC<SandboxProps> = (
             body: JSON.stringify(selectedValues),
         });
         const data = await response.json();
-        setWeeks(data.weeks + " " + t("usingAiPage.sandbox.weeks"));
+        setUpdatedWeeks(data.weeks + " " + t("usingAiPage.sandbox.weeks"));
         console.log(data)
+    };
+
+    const handleButtonClick = () => {
+        videoRef.current?.play();
+    };
+
+    const handleVideoEnd = () => {
+        setWeeks(updatedWeeks);
     };
 
     return (
         <div className={"flex"}>
-            <div className={"flex-col w-3/4 md:w-4/6"}>
+            <div className={"flex-col w-1/2 md:w-4/6"}>
                 <p className={"md:px-8"}>{description}</p>
                 <form className={"md:m-6 md:p-6 border rounded-[20px] shadow-2xl"} onSubmit={handleSubmit}>
                     {
@@ -65,7 +131,7 @@ const Sandbox: React.FC<SandboxProps> = (
                                 <label htmlFor={parameter.label} className={"mb-1"}>{parameter.label}:</label>
                                 <select id={parameter.labelValueForModel} key={parameter.labelValueForModel}
                                         className={"p-2 border rounded-lg shadow-md w-full"}
-                                onChange={(e) => handleChange(parameter.labelValueForModel.toLowerCase(), e.target.value.toLowerCase())}>
+                                        onChange={(e) => handleChange(parameter.labelValueForModel.toLowerCase(), e.target.value.toLowerCase())}>
                                     {parameter.argument.map(argument => (
                                         <option key={argument.itemValueForModel} value={argument.itemValueForModel}>
                                             {argument.itemName}
@@ -75,23 +141,30 @@ const Sandbox: React.FC<SandboxProps> = (
                             </div>
                         ))}
                     <div className={"flex justify-center"}>
-                        <Button type={"submit"}>
+                        <Button type={"submit"} onClick={handleButtonClick}>
                             {t("usingAiPage.sandbox.calculate")}
                         </Button>
                     </div>
                 </form>
             </div>
-            <div className={"flex-row md:flex-col align-center w-1/4 md:w-2/6 lg:py-8"}>
-                <div className={"px-5 md:10 lg:px-15"}>
-                    <ModelAiIllustration/>
+            <div className={"flex-row md:flex-col align-center w-1/2 md:w-2/6 lg:py-8"}>
+                <div className={"px-5 md:px-10 lg:px-15"}>
+                    <video
+                        ref={videoRef}
+                        src={"/mp4/sandboxModelAnimation.mp4"}
+                        onEnded={handleVideoEnd}
+                        loop={false}
+                        muted
+                        playsInline
+                    />
                 </div>
                 <div>
                     <div className={"m-1 p-2 md:m-3 md:p-4 lg:m-6 lg:p-6 border rounded-[20px] shadow-2xl"}>
-                        <h2 className={"font-bold text-sm md:text-lg"}>{t("usingAiPage.sandbox.sickLeaveDescription")}:</h2>
-                        <p>{weeks}</p>
+                        <h2 className={"font-bold text-xs md:text-lg"}>{t("usingAiPage.sandbox.sickLeaveDescription")}:</h2>
+                        <p className={"text-sm md:text-md"}>{weeks}</p>
                     </div>
                 </div>
-                <div className={"px-5 md:10 lg:px-15"}>
+                <div className={"px-5 md:px-10 lg:px-15"}>
                     <CaseHandlerIcon/>
                 </div>
             </div>
