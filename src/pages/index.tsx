@@ -4,7 +4,7 @@ import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 function index(_props: InferGetStaticPropsType<typeof getStaticProps>) {
-    return <LandingPageTesting></LandingPageTesting>;
+    return <LandingPageTesting />
 }
 
 export default index;
