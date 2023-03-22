@@ -44,11 +44,11 @@ const InformationDropdownBox: React.FC<InformationDropdownBoxProps> = ({
     return (
         <div className="bg-white rounded-xl shadow-lg sm:w-19/20 md:w-3/4 text-left justify-center items-center m-2">
             {title.length !== 0 && (
-                <h2 className="font-bold px-12 pt-8 sm:pt-14 text-xl">
+                <h2 className="font-bold px-4 sm:px-12 pt-8 sm:pt-14 text-xl">
                     {title}
                 </h2>
             )}
-            <div className="p-4 sm:p-8">{initialInfo}</div>
+            <div className="p-4 sm:p-8 md:px-12">{initialInfo}</div>
             {!open && (
                 <div className="flex justify-center pb-4">
                     <button onClick={handleOpen}>

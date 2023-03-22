@@ -64,7 +64,7 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
                         <button
                             onClick={handleExpansion}
                             className="text-black hover:text-sky-600
-                            top-14 right-14 underline justify-end"
+                            top-14 right-14 underline float-right justify-end"
                         >
                             {expandedCloseButtonText}
                         </button>
