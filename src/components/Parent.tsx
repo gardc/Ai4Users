@@ -1,6 +1,5 @@
 import NavBar from "./NavBar";
 
-//Parent is
 /**
  * A container component which includes a NavBar for each page.
  *
