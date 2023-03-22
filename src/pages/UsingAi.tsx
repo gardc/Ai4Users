@@ -15,6 +15,8 @@ import Parent from "@/components/Parent";
 import React from "react";
 import Sandbox from "@/components/Sandbox";
 import {sandboxParametersEn} from "@/pages/api/sandboxParametersEn";
+import {sandboxParametersNo} from "@/pages/api/sandboxParametersNo";
+import {useRouter} from "next/router";
 
 /**
  * The page component for explaining the use of an AI model for the tester of the web application.
@@ -25,6 +27,8 @@ import {sandboxParametersEn} from "@/pages/api/sandboxParametersEn";
  */
 const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { t } = useTranslation("common");
+    const router = useRouter();
+    const { locale } = router;
 
     return (
         <Parent>
@@ -39,7 +43,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                             {t("pageProgressBar.usingAiPage")}
                         </p>
                         <p className="text-gray-500">{">"}</p>
-                        <p className="text-gray-500 px-3">Summary</p>
+                        <p className="text-gray-500 px-3">{t("pageProgressBar.summaryPage")}</p>
                     </div>
 
                     <p className="text-center text-prussian-blue font-semibold text-3xl m-3">
@@ -389,7 +393,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                 description={t("usingAiPage.sandbox.mainDescription")}
                                 parameters=
                                     {
-                                        sandboxParametersEn
+                                        locale == "no" ? sandboxParametersNo : sandboxParametersEn
                                     }
                             />}
                         closeInfoButtonText={t("informationDropdownBoxCloseButtonText")}

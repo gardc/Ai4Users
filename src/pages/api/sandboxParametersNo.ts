@@ -1,6 +1,6 @@
-export const sandboxParametersEn = [
+export const sandboxParametersNo = [
     {
-        label: "Age",
+        label: "Alder",
         labelValueForModel: "age",
         argument: [
             {
@@ -49,7 +49,7 @@ export const sandboxParametersEn = [
             }]
     },
     {
-        label: "County",
+        label: "Fylke",
         labelValueForModel: "region",
         argument: [
             {
@@ -94,44 +94,44 @@ export const sandboxParametersEn = [
             }]
     },
     {
-        label: "Gender",
+        label: "Kjønn",
         labelValueForModel: "gender",
         argument: [
             {
-                itemName: "Male",
+                itemName: "Mann",
                 itemValueForModel: "Male"
             },
             {
-                itemName: "Female",
+                itemName: "Kvinne",
                 itemValueForModel: "Female"
             }]
     },
     {
-        label: "Diagnosis",
+        label: "Diagnose",
         labelValueForModel: "disorder",
         argument: [
             {
-                itemName: "Cardiovascular diseases",
+                itemName: "Hjerte- og karsykdommer",
                 itemValueForModel: "Cardiovascular diseases"
             },
             {
-                itemName: "Muscle/skeleton disorders",
+                itemName: "Muskel- og skjelettplager",
                 itemValueForModel: "Muscle/skeleton disorders"
             },
             {
-                itemName: "Mental disorders",
+                itemName: "Psykiske lidelser",
                 itemValueForModel: "Mental disorders"
             },
             {
-                itemName: "Pregnancy disorders",
+                itemName: "Svangerskapskomplikasjoner",
                 itemValueForModel: "Pregnancy disorders"
             },
             {
-                itemName: "Diseases in the digestive organs",
+                itemName: "Fordøyelsessykdommer",
                 itemValueForModel: "Diseases in the digestive organs"
             },
             {
-                itemName: "Diseases in the respiratory tract",
+                itemName: "Respirasjonssykdommer",
                 itemValueForModel: "Diseases in the respiratory tract"
             },
             {
