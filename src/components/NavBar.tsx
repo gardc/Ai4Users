@@ -1,21 +1,23 @@
 import Link from "next/link";
+import LocaleSelection from "./LocaleSelection";
 import React from "react";
+import SocialServiceLogo from "./SocialServiceLogo";
 
 const NavBar = () => {
-    return {
-        /*
-        <div className="flex bg-purple-300 text-xl p-12 pb-2 justify-between">
-            <div className="text-end">
-                <Link className="px-8" href={"/UsingAi"}>
-                    Use of AI
-                </Link>
-                <Link className="px-8" href={"/Sandbox"}>
-                    Sandbox
-                </Link>
-            </div> 
+    return (
+        <div className="bg-darkblue ">
+            <div className="px-6 sm:px-12 pt-6 pb-6 flex justify-between items-center">
+                {/* Left side */}
+                <div>
+                    <Link href="/LandingPage">
+                        <SocialServiceLogo />
+                    </Link>
+                </div>
+                {/* Right side */}
+                <LocaleSelection />
             </div>
-        */
-    };
+        </div>
+    );
 };
 
 export default NavBar;

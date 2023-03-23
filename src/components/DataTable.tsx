@@ -40,16 +40,14 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
                 {data.map((row, index) => {
                     return (
                         <tr key={index} className="border-t border-b">
-                            <td className="p-2 px-6 font-bold border-r border-gray-200 text-left">
+                            <td className="p-2 pr-6 text-sm lg:text-base font-bold border-r border-gray-200 text-left">
                                 {row.label}
                             </td>
-                            <td className="p-2 px-6 text-gray-600 border-gray-200 text-left ">
+                            <td className="p-2 pr-6 text-sm lg:text-base text-gray-500 border-gray-200 text-left ">
                                 {row.value}
                             </td>
                             <td className="p-2">
-                                {row.extendedInfo && (
-                                    <Tooltip extendedInfo={row.extendedInfo} />
-                                )}
+                                {row.extendedInfo && <Tooltip extendedInfo={row.extendedInfo} />}
                             </td>
                         </tr>
                     );
@@ -59,7 +57,7 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
     };
     return (
         <table
-            className="m-5 p-6 border rounded-[20px] shadow-[1px_1px_6px_rgba(0,0,0,0.25)]"
+            className="bg-white m-5 p-2 sm:p-6 border rounded-[20px]" //shadow-[1px_1px_6px_rgba(0,0,0,0.25)]
             style={{ borderCollapse: "separate" }}
         >
             {renderTableHeader()}

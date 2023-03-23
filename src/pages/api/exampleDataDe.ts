@@ -1,4 +1,5 @@
-export const exampleData = [
+// TODO: MUST BE TRANSLATED
+export const exampleDataDe = [
     {
         label: "Age",
         value: "46",
@@ -14,8 +15,7 @@ export const exampleData = [
     {
         label: "Profession",
         value: "Carpenter",
-        extendedInfo:
-            "Your profession is a relevant factor paired with diagnosis.",
+        extendedInfo: "Your profession is a relevant factor paired with diagnosis.",
     },
     {
         label: "Diagnosis",
