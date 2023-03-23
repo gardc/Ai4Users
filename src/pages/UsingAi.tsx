@@ -27,13 +27,19 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
         <Parent>
             <Content>
-                <div className="pb-8 text-center">
+                <div className="pb-4 sm:pb-8 text-center">
                     <div className="flex justify-start py-5 text-black">
-                        <Link className="pl-12 px-3" href={"/LandingPage"}>
+                        <Link
+                            className="hover:font-bold pl-12 px-3"
+                            href={"/LandingPage"}
+                        >
                             {t("pageProgressBar.home")}
                         </Link>
                         {">"}
-                        <Link className="px-3" href={"/UseOfData"}>
+                        <Link
+                            className="hover:font-bold px-3"
+                            href={"/UseOfData"}
+                        >
                             {t("pageProgressBar.useOfData")}
                         </Link>
                         {">"}
@@ -528,7 +534,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                         {t("usingAiPage.consentQuestion")}
                     </p>
                 </div>
-                <div className="flex justify-center justify-evenly mt-16 m-5 mb-24">
+                <div className="flex justify-center justify-evenly mt-8 m-5 mb-16">
                     <Button color="black" href="/Summary?consent=false">
                         {t("usingAiPage.disagreeButtonText")}
                     </Button>

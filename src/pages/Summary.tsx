@@ -60,15 +60,18 @@ const Summary: React.FC = (
         <Parent>
             <div>
                 <div className="flex justify-start py-5 text-black">
-                    <Link className="pl-12 px-3" href={"/LandingPage"}>
+                    <Link
+                        className="hover:font-bold pl-12 px-3"
+                        href={"/LandingPage"}
+                    >
                         {t("pageProgressBar.home")}
                     </Link>
                     {">"}
-                    <Link className="px-3" href={"/UseOfData"}>
+                    <Link className="hover:font-bold px-3" href={"/UseOfData"}>
                         {t("pageProgressBar.useOfData")}
                     </Link>
                     {">"}
-                    <Link className="px-3" href={"/UsingAi"}>
+                    <Link className="hover:font-bold px-3" href={"/UsingAi"}>
                         {t("pageProgressBar.usingAiPage")}
                     </Link>
                     {">"}

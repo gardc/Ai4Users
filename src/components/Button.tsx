@@ -32,7 +32,7 @@ const Button: React.FC<ButtonProps> = ({
     onClick,
     children,
 }) => {
-    const baseClasses = "text-white rounded-full px-8 py-2 m-2 mt-16";
+    const baseClasses = "text-white rounded-full px-8 py-2 m-2";
 
     let colorClasses;
     switch (color) {

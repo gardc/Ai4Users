@@ -20,10 +20,10 @@ const LandingPage: React.FC = (
     const { t } = useTranslation("common");
 
     return (
-        <div className="bg-darkblue">
+        <div className="h-screen bg-darkblue">
             <Parent>
                 <Content>
-                    <div className="h-screen">
+                    <div className="bg-darkblue">
                         <div
                             className="index pt-8 pb-8 
                 flex-col flex items-center text-white"
@@ -31,7 +31,7 @@ const LandingPage: React.FC = (
                             <p className="text-center font-bold text-3xl sm:text-5xl tracking-wide sm:mt-16 ">
                                 {t("landingPage.title")}
                             </p>
-                            <p className="w-5/6 sm:w-3/4 mt-10 text-left tracking-wide leading-6 text-lg">
+                            <p className="w-5/6 sm:w-3/4 my-10 text-left tracking-wide leading-6 text-lg">
                                 {t("landingPage.description")}
                             </p>
                             <Button color="lavaorange" href="/UseOfData">
