@@ -7,7 +7,7 @@ const DocumentApprovedIcon = () => {
             fill="none"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
-            stroke="rgb(14 116 144)"
+            stroke="white"
             className="w-14 h-14"
         >
             <path

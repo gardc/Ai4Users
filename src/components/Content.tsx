@@ -11,7 +11,7 @@ import React from "react";
 const Content = (props: any) => {
     return (
         <div className="flex justify-center">
-            <div className="w-full bg-slate-50 sm:mb-6">{props.children}</div>
+            <div className="w-full">{props.children}</div>
         </div>
     );
 };

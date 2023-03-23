@@ -9,7 +9,7 @@ import NavBar from "./NavBar";
  */
 const Parent = (props: any) => {
     return (
-        <div className="font-sans bg-slate-50">
+        <div className="font-sans bg-zinc-100">
             <NavBar />
             {props.children}
         </div>

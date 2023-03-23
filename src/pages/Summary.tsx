@@ -47,63 +47,67 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
 
     return (
         <Parent>
-            <div className="bg-slate-50 h-screen">
-                <div className="bg-gradient-to-b from-sky-blue to-slate-50">
-                    <div className="flex justify-start py-5 text-black">
-                        <Link className="pl-12 px-3" href={"/LandingPage"}>
-                            {t("pageProgressBar.frontpage")}
-                        </Link>
-                        {">"}
-                        <Link className="px-3" href={"/UsingAi"}>
-                            {t("pageProgressBar.usingAiPage")}
-                        </Link>
-                        {">"}
-                        <p className="underline underline-offset-4 px-3">
-                            {t("pageProgressBar.summaryPage")}
-                        </p>
-                    </div>
-                    <div className="flex flex-col justify-center text-2xl items-center text-center">
-                        <h1
-                            dangerouslySetInnerHTML={{
-                                __html: predictionChoiceTitle,
-                            }}
-                        />
-                        <p
-                            className="text-base mt-2 w-1/2 text-center"
-                            dangerouslySetInnerHTML={{
-                                __html: predictionChoiceText,
-                            }}
-                        />
-                        <p className="text-base mt-10 w-1/2 text-center">
-                            {t("summaryPage.changeCoice")}
-                        </p>
-                    </div>
-
-                    <div className="flex justify-center mt-16">
-                        <h2 className="text-base font-bold text-prussian-blue text-center">
-                            {t("summaryPage.informationSummaryTitle")}
-                        </h2>
-                    </div>
-                </div>
-                <div className="flex flex-col justify-center items-center bg-slate-50">
-                    <div className="flex justify-center pt-4">
-                        {locale == "en" ? <DataTable data={exampleDataEn} /> : <></>}
-                        {locale == "no" ? <DataTable data={exampleDataNo} /> : <></>}
-                        {locale == "de" ? <DataTable data={exampleDataDe} /> : <></>}
-                    </div>
-                    <p className="text-base mb-10 w-2/5 text-center">
-                        {t("summaryPage.informationSummarySource")}
+            <div>
+                <div className="flex justify-start py-5 text-black">
+                    <Link
+                        className="hover:font-bold text-sm lg:text-base pl-12 px-3"
+                        href={"/LandingPage"}
+                    >
+                        {t("pageProgressBar.home")}
+                    </Link>
+                    {">"}
+                    <Link className="hover:font-bold text-sm lg:text-base px-3" href={"/UseOfData"}>
+                        {t("pageProgressBar.useOfData")}
+                    </Link>
+                    {">"}
+                    <Link className="hover:font-bold text-sm lg:text-base px-3" href={"/UsingAi"}>
+                        {t("pageProgressBar.usingAiPage")}
+                    </Link>
+                    {">"}
+                    <p className="font-bold text-sm lg:text-base underline underline-offset-4 px-3">
+                        {t("pageProgressBar.summaryPage")}
                     </p>
-                    {/* <div className="flex justify-center mt-4">
+                </div>
+
+                <div className="flex flex-col justify-center text-2xl items-center text-center">
+                    <h1
+                        className="text-prussian-blue font-bold text-3xl m-3"
+                        dangerouslySetInnerHTML={{
+                            __html: predictionChoiceTitle,
+                        }}
+                    />
+                    <p
+                        className="text-base mt-2 px-4 lg:w-1/2 text-center"
+                        dangerouslySetInnerHTML={{
+                            __html: predictionChoiceText,
+                        }}
+                    />
+                    <p className="text-base mt-4 px-4 lg:w-1/2 text-center">
+                        {t("summaryPage.changeCoice")}
+                    </p>
+                </div>
+            </div>
+            <div className="flex flex-col justify-center mb-32 items-center">
+                <p className="mt-20 px-4 font-bold text-prussian-blue text-2xl">
+                    {t("summaryPage.informationSummaryTitle")}
+                </p>
+                <div className="flex justify-center">
+                    {locale == "en" ? <DataTable data={exampleDataEn} /> : <></>}
+                    {locale == "no" ? <DataTable data={exampleDataNo} /> : <></>}
+                    {locale == "de" ? <DataTable data={exampleDataDe} /> : <></>}
+                </div>
+                <p className="text-base px-4 lg:w-2/5 mb-10 text-center">
+                    {t("summaryPage.informationSummarySource")}
+                </p>
+                {/* <div className="flex justify-center mt-4">
                         <Button color="black" onClick={() => alert("Okay")}>
                             Is this information incorrect?
                         </Button>
                     </div> */}
-                    <div className="flex justify-center mt-4 pb-16">
-                        <Button color="black" href="/TestingFinishedPage">
-                            {t("summaryPage.submitChoiceButtonText")}
-                        </Button>
-                    </div>
+                <div className="flex justify-center mt-4 pb-32">
+                    <Button color="lavaorange" href="/UserTestingFinishedPage">
+                        {t("summaryPage.submitChoiceButtonText")}
+                    </Button>
                 </div>
             </div>
         </Parent>
