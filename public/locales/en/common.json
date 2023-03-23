@@ -106,15 +106,19 @@
                 "learnMoreButtonText": "Learn more"
             }
         },
-        "sandbox":  {
+        "sandbox": {
             "title": "Explore how the AI-model works with the sandbox",
             "shortDescription": "Use the interactive sandbox to explore how different factors can affect how the AI-model predicts your sick-leave duration.",
-            "mainDescription": "By changing the values listed below, you can explore how they each impact the sick leave prediction that our case handlers will receive.",
+            "mainDescription": "By changing the values listed below, you can explore how they each impact the sick leave prediction that our case handlers will receive. This sandbox uses a simplified model and illustrates the actual models functionality.",
             "expandButtonText": "Try it here",
             "sickLeaveDescription": "Predicted sick-leave duration",
             "calculate": "Calculate",
             "weeks": "weeks",
-            "initialPredictionText": "Press \"Calculate\" to predict"
+            "weeksThree": "weeks or less",
+            "weeksEight": "weeks or more",
+            "initialPredictionText": "Press \"Calculate\" to predict",
+            "caseHandlerText1": "Case handler receiving",
+            "caseHandlerText2": "the prediction"
         },
         "aboutRightsInfo": {
             "title": "Your rights as a user",

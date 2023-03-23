@@ -3,7 +3,6 @@ import CaseHandlerIcon from "@/components/Assets/caseHandlerIcon";
 import { useTranslation } from "next-i18next";
 import React, { FormEvent, useState, useRef } from "react";
 import ArrowToModelIcon from "./Assets/arrowToModelIcon";
-import CogIcon from "./Assets/cogIcon";
 import CogIconLarge from "./Assets/cogIconLarge";
 
 /**
@@ -84,9 +83,9 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
     const { t } = useTranslation("common");
     const [selectedValues, setSelectedValues] = useState(initialState);
     const [weeks, setWeeks] = useState(t("usingAiPage.sandbox.initialPredictionText"));
-    const [updatedWeeks, setUpdatedWeeks] = useState(
+    /* const [updatedWeeks, setUpdatedWeeks] = useState(
         t("usingAiPage.sandbox.initialPredictionText")
-    );
+    ); */
     const videoRef = useRef<HTMLVideoElement>(null);
 
     const handleChange = (parameterLabel: string, itemValueForModel: string) => {
@@ -107,20 +106,27 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
             body: JSON.stringify(selectedValues),
         });
         const data = await response.json();
-        setUpdatedWeeks(data.weeks + " " + t("usingAiPage.sandbox.weeks"));
+        let weeksText: string = t("usingAiPage.sandbox.weeks");
+        if (data.weeks == 8) {
+            weeksText = t("usingAiPage.sandbox.weeksEight");
+        } else if (data.weeks == 3) {
+            weeksText = t("usingAiPage.sandbox.weeksThree");
+        }
+        weeksText = data.weeks + " " + weeksText;
         console.log(data);
+        setCalculatedWeeksWithAnimation(weeksText);
     };
 
     const [calculateClicked, setCalculateClicked] = useState(false);
 
     const [resultPulse, setResultPulse] = useState(false);
 
-    async function handleButtonClick() {
+    async function setCalculatedWeeksWithAnimation(weeksText: string) {
         setCalculateClicked(true);
         await new Promise((resolve) => setTimeout(resolve, 800));
         setCalculateClicked(false);
         setResultPulse(true);
-        setWeeks(updatedWeeks);
+        setWeeks(weeksText);
         await new Promise((resolve) => setTimeout(resolve, 400));
         setResultPulse(false);
     }
@@ -132,10 +138,10 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
     return (
         <div>
             <p className={"md:px-8"}>{description}</p>
-            <div className={"flex justify-center"}>
-                <div className={"flex-col w-1/2 md:w-1/2"}>
+            <div className={"flex flex-col mt-12 lg:flex-row justify-center"}>
+                <div className={"flex-col lg:w-1/2"}>
                     <form
-                        className={"md:m-6 md:p-6 border rounded-[20px] shadow-2xl"}
+                        className={"m-6 p-6 border rounded-[20px] shadow-2xl"}
                         onSubmit={handleSubmit}
                     >
                         {parameters.map((parameter) => (
@@ -169,15 +175,12 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                             </div>
                         ))}
                         <div className={"flex justify-center"}>
-                            <Button type={"submit"} onClick={handleButtonClick}>
-                                {t("usingAiPage.sandbox.calculate")}
-                            </Button>
+                            <Button type={"submit"}>{t("usingAiPage.sandbox.calculate")}</Button>
                         </div>
                     </form>
                 </div>
-                <div className="">
-                    <div className={"flex-row md:flex-col align-center w-1/2 md:w-2/6 lg:py-8"}>
-                        {/* <div className={"px-5 md:px-10 lg:px-15"}>
+                <div className={"flex flex-col items-center py-8"}>
+                    {/* <div className={"px-5 md:px-10 lg:px-15"}>
                     <video
                         ref={videoRef}
                         src={"/mp4/sandboxModelAnimation.mp4"}
@@ -187,45 +190,43 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                         playsInline
                     />
                 </div> */}
-                        <div>
-                            {calculateClicked ? (
-                                <div className="animate-spin w-28 ml-32">
-                                    <CogIconLarge />
-                                </div>
-                            ) : (
-                                <div className="w-28 ml-32">
-                                    <CogIconLarge />
-                                </div>
-                            )}
-
-                            <div
-                                className={
-                                    "m-1 p-2 md:m-3 md:p-4 lg:m-6 lg:p-6 lg:mt-2 w-80 border text-center rounded-[20px] shadow-2xl"
-                                }
-                            >
-                                <h2 className={"font-bold text-xs md:text-lg"}>
-                                    {t("usingAiPage.sandbox.sickLeaveDescription")}:
-                                </h2>
-                                {resultPulse ? (
-                                    <p
-                                        className={
-                                            "text-sm animate-bounce text-sky-blue md:text-md"
-                                        }
-                                    >
-                                        {weeks}
-                                    </p>
-                                ) : (
-                                    <p className={"text-sm md:text-md"}>{weeks}</p>
-                                )}
+                    <div>
+                        {calculateClicked ? (
+                            <div className="animate-spin">
+                                <CogIconLarge />
                             </div>
-                        </div>
-                        <div className="w-28 ml-32 rotate-90">
-                            <ArrowToModelIcon />
-                        </div>
-                        <div className={"w-28 ml-32"}>
-                            <CaseHandlerIcon />
+                        ) : (
+                            <CogIconLarge />
+                        )}
+                        <div
+                            className={
+                                "m-1 p-2 md:m-3 md:p-4 lg:m-6 lg:p-6 lg:mt-2 w-80 border text-center rounded-[20px] shadow-2xl"
+                            }
+                        >
+                            <h2 className={" text-xs md:text-lg"}>
+                                {t("usingAiPage.sandbox.sickLeaveDescription")}:
+                            </h2>
+                            {resultPulse ? (
+                                <p
+                                    className={
+                                        "text-md font-bold animate-bounce text-sky-blue md:text-lg"
+                                    }
+                                >
+                                    {weeks}
+                                </p>
+                            ) : (
+                                <p className={"text-md font-bold md:text-lg"}>{weeks}</p>
+                            )}
                         </div>
                     </div>
+                    <div className="w-28 rotate-90">
+                        <ArrowToModelIcon />
+                    </div>
+                    <div className={"w-28"}>
+                        <CaseHandlerIcon />
+                    </div>
+                    <p className="mt-4 text-sm"> {t("usingAiPage.sandbox.caseHandlerText1")} </p>
+                    <p className="text-sm">{t("usingAiPage.sandbox.caseHandlerText2")}</p>
                 </div>
             </div>
         </div>

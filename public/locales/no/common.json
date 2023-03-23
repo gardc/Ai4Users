@@ -106,15 +106,19 @@
                 "learnMoreButtonText": "Lær mer"
             }
         },
-        "sandbox":  {
+        "sandbox": {
             "title": "Utforsk hvordan KI-modellen fungerer med sandkassen",
             "shortDescription": "Bruk den interaktive sandkassen for å utforske hvordan ulike faktorer kan påvirke hvordan KI-modellen predikerer ditt sykefravær.",
-            "mainDescription": "Ved å endre verdiene nedenfor, kan du utforske hvordan hver av dem påvirker prediksjonen av sykefravære som våre saksbehandlere vil motta.",
+            "mainDescription": "Ved å endre verdiene nedenfor, kan du utforske hvordan hver av dem påvirker prediksjonen av sykefraværet som våre saksbehandlere vil motta. Denne sandkassen bruker en forenklet modell og illustrerer den faktiske modellens virkemåte.",
             "expandButtonText": "Prøv den her",
             "sickLeaveDescription": "Predikert sykefravær",
-            "calculate": "Prediker",
+            "calculate": "Predikér",
             "weeks": "uker",
-            "initialPredictionText": "Trykk \"Prediker\" for å beregne"
+            "weeksThree": "uker eller mindre",
+            "weeksEight": "uker eller mer",
+            "initialPredictionText": "Trykk \"Predikér\" for å beregne",
+            "caseHandlerText1": "Saksbehandler som",
+            "caseHandlerText2": "mottar prediksjonen"
         },
         "aboutRightsInfo": {
             "title": "Dine rettigheter",
