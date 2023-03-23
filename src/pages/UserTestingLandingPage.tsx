@@ -12,7 +12,7 @@ import LocaleSelection from "@/components/LocaleSelection";
  *
  * @returns A React functional component representing the landing page for testing.
  */
-const userTestingLandingPage: React.FC = (
+const UserTestingLandingPage: React.FC = (
     _props: InferGetStaticPropsType<typeof getStaticProps>
 ) => {
     const { t } = useTranslation("common");
@@ -49,7 +49,7 @@ const userTestingLandingPage: React.FC = (
     );
 };
 
-export default userTestingLandingPage;
+export default UserTestingLandingPage;
 
 type Props = {};
 
