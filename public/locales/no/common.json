@@ -45,7 +45,7 @@
                 "whatAi": {
                     "title": "Hva samtykke av bruken innebærer",
                     "description1": "Støtten du får blir avgjort av en saksbehandler, og en av faktorene i denne avgjørelsen er prediskjonen av varigheten av sykefraværet ditt.",
-                    "description2": "KI-modellen er et hjelpemiddel saksbehandleren kan bruke i predikeringen, så lenge du har gitt ditt samtykke til dette",
+                    "description2": "KI-modellen er et hjelpemiddel saksbehandleren kan bruke i predikeringen, så lenge du har gitt ditt samtykke til dette.",
                     "learnMore": {
                         "title": "Hva samtykke av bruken av KI-modellen innebærer",
                         "description": "Du står fritt til å velge om du tillater bruken av KI-modellen som et hjelpemiddel i prediksjonen av varigheten av ditt sykefravær eller ikke.",
@@ -133,7 +133,7 @@
         "descriptionNotConsenting": "Saksbehandleren vil utføre en prediksjon av varigheten av ditt sykefravær uten bruk av KI-modellen. Dette kan resultere i lengre saksbehandlingstid.",
         "descriptionConsenting": "Saksbehandleren vil bruke KI-modellen for å predikere varigheten av ditt sykefravær.",
         "changeCoice": "Dersom du ønsker å endre på valget ditt, klikk på \"Bruk av KI\" øverst i venstre hjørne.",
-        "informationSummaryTitle": "Sammendrag av dine personlige opplysninger som blir brukt til å predikere varigheten av ditt sykefravær",
+        "informationSummaryTitle": "Dine data",
         "informationSummarySource": "Denne informasjonen er hentet fra det nasjonale folkeregiseteret og Den Nasjonale Sosialtjenestens registre.",
         "submitChoiceButtonText": "Send inn valget ditt"
     },

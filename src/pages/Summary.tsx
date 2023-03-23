@@ -79,8 +79,10 @@ const Summary: React.FC = (
                         {t("pageProgressBar.summaryPage")}
                     </p>
                 </div>
+
                 <div className="flex flex-col justify-center text-2xl items-center text-center">
                     <h1
+                        className="text-prussian-blue font-bold text-3xl m-3"
                         dangerouslySetInnerHTML={{
                             __html: predictionChoiceTitle,
                         }}
@@ -91,19 +93,16 @@ const Summary: React.FC = (
                             __html: predictionChoiceText,
                         }}
                     />
-                    <p className="text-base mt-10 w-1/2 text-center">
+                    <p className="text-base mt-4 w-1/2 text-center">
                         {t("summaryPage.changeCoice")}
                     </p>
                 </div>
-
-                <div className="flex justify-center mt-16">
-                    <h2 className="text-base font-bold text-prussian-blue text-center">
-                        {t("summaryPage.informationSummaryTitle")}
-                    </h2>
-                </div>
             </div>
             <div className="flex flex-col justify-center items-center">
-                <div className="flex justify-center pt-4">
+                <p className="mt-20 font-bold text-prussian-blue text-2xl">
+                    {t("summaryPage.informationSummaryTitle")}
+                </p>
+                <div className="flex justify-center">
                     {locale == "en" ? (
                         <DataTable data={exampleDataEn} />
                     ) : (

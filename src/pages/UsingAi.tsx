@@ -532,19 +532,19 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                     />
                 </div>
                 <div className="mb-16"></div>
-                <div className="h-96 flex flex-col justify-center bg-white text-center py-8 sm:p-6">
+                <div className="h-450 flex flex-col justify-center bg-white text-center py-8 sm:p-6">
                     <p className="font-semibold text-2xl">
                         {t("usingAiPage.consentQuestion")}
                     </p>
                     <div className="flex justify-center mt-8 mb-10 sm:m-5">
                         <Link
-                            className="bg-neutral-300 rounded-2xl text-center m-2 sm:m-3 px-6 sm:py-3"
+                            className="bg-neutral-300 hover:bg-neutral-400 font-semibold text-neutral-600 rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3"
                             href="/Summary?consent=false"
                         >
                             {t("usingAiPage.disagreeButtonText")}
                         </Link>
                         <Link
-                            className="bg-lavaorange text-white rounded-2xl text-center m-2 sm:m-3 px-6 sm:py-3"
+                            className="bg-lavaorange hover:bg-darkerorange font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3"
                             href="/Summary?consent=true"
                         >
                             {t("usingAiPage.agreeButtonText")}

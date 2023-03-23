@@ -25,13 +25,18 @@ module.exports = {
         'darkblue':'#001731',
         'lightblue':'#394a5e',
         'lavaorange': '#f24922',
+        'darkerorange':'#c14922',
         'grassgreen': '#4db862',
       },
       borderWidth: {
         '1': '1px', 
       },
       spacing: {
-        '19/20': '95%'
+        '19/20': '95%',
+      },
+      height: {
+        '350': '350px',
+        '450': '450px',
       }
     },
   },
