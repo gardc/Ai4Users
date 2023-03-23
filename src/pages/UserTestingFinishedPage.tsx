@@ -18,23 +18,17 @@ export default function UserTestingFinishedPage(
         <div className="w-full h-screen flex flex-col justify-center items-center bg-white">
             {/* Infobox */}
             <div className="max-w-xl flex flex-col justify-center items-center rounded-md bg-zinc-800 gap-5 px-8 py-5 shadow-md border border-gray-600 text-white text-center">
-                <h1 className="text-xl font-semibold">
-                    {t("userTestingFinishedPage.title")}
-                </h1>
-                <p className="text-neutral-200">
-                    {t("userTestingFinishedPage.information")}
-                </p>
+                <h1 className="text-xl font-semibold">{t("userTestingFinishedPage.title")}</h1>
+                <p className="text-neutral-200">{t("userTestingFinishedPage.information")}</p>
                 {/* Buttons */}
                 <div className="flex gap-5">
                     <InfoButton
                         href={"/"}
-                        text={t(
-                            "userTestingFinishedPage.toFrontPageButtonText"
-                        )}
+                        text={t("userTestingFinishedPage.toFrontPageButtonText")}
                         bg={"bg-neutral-600 bg-opacity-25"}
                     />
                     <a
-                        href="https://forms.gle/wF7tcB194UTanhwD6"
+                        href={t("userTestingSurvey") as string}
                         target="_blank"
                         rel="noreferrer"
                         className="px-4 py-1 cursor-pointer border border-neutral-700 bg-purple-600 bg-opacity-25 rounded-md hover:px-5 transition-all"
@@ -47,15 +41,7 @@ export default function UserTestingFinishedPage(
     );
 }
 
-const InfoButton = ({
-    href,
-    text,
-    bg,
-}: {
-    href: string;
-    text: string;
-    bg: string;
-}) => {
+const InfoButton = ({ href, text, bg }: { href: string; text: string; bg: string }) => {
     return (
         <Link
             href={href}

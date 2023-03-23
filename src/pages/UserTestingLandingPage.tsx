@@ -19,36 +19,26 @@ const userTestingLandingPage: React.FC = (
 
     return (
         <div className="break-words text-black bg-white">
-            <div className="float-right mt-10 mr-10">
-                <LocaleSelection />
+            <div className="w-full h-20 bg-darkblue">
+                <div className=" float-right pt-8 mr-10">
+                    <LocaleSelection />
+                </div>
             </div>
 
-            <div className="py-28 px-10 lg:px-40">
+            <div className="py-28 px-10 mb-48 lg:px-40">
                 <h1 className="text-2xl text-cyan-900 font-bold">
                     {t("userTestingLandingPage.title")}
                 </h1>
-                <p className="mt-8">
-                    {t("userTestingLandingPage.description")}
-                </p>
-                <p className="mt-12 font-bold">
-                    {t("userTestingLandingPage.beforeTestingTitle")}
-                </p>
-                <p className="mt-4">
-                    {t("userTestingLandingPage.beforeTestingDescription")}
-                </p>
-                <p className="mt-12 font-bold">
-                    {t("userTestingLandingPage.disclaimerTitle")}
-                </p>
+                <p className="mt-8">{t("userTestingLandingPage.description")}</p>
+                <p className="mt-12 font-bold">{t("userTestingLandingPage.beforeTestingTitle")}</p>
+                <p className="mt-4">{t("userTestingLandingPage.beforeTestingDescription")}</p>
+                <p className="mt-12 font-bold">{t("userTestingLandingPage.disclaimerTitle")}</p>
                 <ul className="mt-4 list-disc list-inside">
                     <li>{t("userTestingLandingPage.disclaimer1")}</li>
                     <li>{t("userTestingLandingPage.disclaimer2")}</li>
                 </ul>
-                <p className="mt-12 font-bold">
-                    {t("userTestingLandingPage.questionsTitle")}
-                </p>
-                <p className="mt-4">
-                    {t("userTestingLandingPage.questionsEmailAddress")}
-                </p>
+                <p className="mt-12 font-bold">{t("userTestingLandingPage.questionsTitle")}</p>
+                <p className="mt-4">{t("userTestingLandingPage.questionsEmailAddress")}</p>
                 <div className="mt-20">
                     <Button color="lavaorange" href={"/LandingPage"}>
                         {t("userTestingLandingPage.beginTestingButtonText")}

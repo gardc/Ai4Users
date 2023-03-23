@@ -18,9 +18,7 @@ import Link from "next/link";
  *
  * @returns A React functional component representing the landing page.
  */
-const UseOfData: React.FC = (
-    _props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { t } = useTranslation("common");
     const router = useRouter();
     const { locale } = router;
@@ -30,21 +28,21 @@ const UseOfData: React.FC = (
             <Content>
                 <div className="flex justify-start py-5 text-black">
                     <Link
-                        className="hover:font-bold sm:pl-12 px-3"
+                        className="hover:font-bold text-sm lg:text-base sm:pl-12 px-3"
                         href={"/LandingPage"}
                     >
                         {t("pageProgressBar.home")}
                     </Link>
                     <p className="text-black">{">"}</p>
-                    <p className="font-bold underline underline-offset-4 text-black px-3">
+                    <p className="font-bold text-sm lg:text-base underline underline-offset-4 text-black px-3">
                         {t("pageProgressBar.useOfData")}
                     </p>
                     <p className="text-gray-500">{">"}</p>
-                    <p className="text-gray-500 px-3">
+                    <p className="text-gray-500 text-sm lg:text-base px-3">
                         {t("pageProgressBar.usingAiPage")}
                     </p>
                     <p className="text-gray-500">{">"}</p>
-                    <p className="text-gray-500 px-3">
+                    <p className="text-gray-500 text-sm lg:text-base px-3">
                         {t("pageProgressBar.summaryPage")}
                     </p>
                 </div>
@@ -65,28 +63,16 @@ const UseOfData: React.FC = (
                             {t("landingPage.dataPointsSummary.description2")}
                         </p>
                         {/*Here there will be a component with information about the user */}
-                        {locale == "en" ? (
-                            <DataTable data={exampleDataEn} />
-                        ) : (
-                            <></>
-                        )}
-                        {locale == "no" ? (
-                            <DataTable data={exampleDataNo} />
-                        ) : (
-                            <></>
-                        )}
-                        {locale == "de" ? (
-                            <DataTable data={exampleDataDe} />
-                        ) : (
-                            <></>
-                        )}
+                        {locale == "en" ? <DataTable data={exampleDataEn} /> : <></>}
+                        {locale == "no" ? <DataTable data={exampleDataNo} /> : <></>}
+                        {locale == "de" ? <DataTable data={exampleDataDe} /> : <></>}
                         <div className="flex-col justify-center flex">
                             {/* <div className="flex justify-center mt-4">
                                 <Button color="black" href="/%">
                                     Is this information incorrect?
                                 </Button>
                             </div> */}
-                            <div className="flex justify-center">
+                            <div className="flex justify-center mb-48">
                                 <Button color="lavaorange" href="/UsingAi">
                                     {t("landingPage.continueButtonText")}
                                 </Button>

@@ -17,9 +17,7 @@ import React from "react";
  *
  * @returns A React functional component representing the summary page.
  */
-const Summary: React.FC = (
-    _props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const router = useRouter();
     const { consent } = router.query;
     const { locale } = router;
@@ -35,21 +33,12 @@ const Summary: React.FC = (
         predictionChoiceText = t("summaryPage.descriptionConsenting");
     } else if (consent === "false") {
         predictionChoiceTitle = t("summaryPage.titleNotConsenting");
-        predictionChoiceTitle = predictionChoiceTitle.replace(
-            /(<b>not<\/b>)/,
-            "<b>$1</b>"
-        );
+        predictionChoiceTitle = predictionChoiceTitle.replace(/(<b>not<\/b>)/, "<b>$1</b>");
         predictionChoiceText = t("summaryPage.descriptionNotConsenting");
         if (locale === "en") {
-            predictionChoiceTitle = predictionChoiceTitle.replace(
-                /(not)/,
-                "<b>not</b>"
-            );
+            predictionChoiceTitle = predictionChoiceTitle.replace(/(not)/, "<b>not</b>");
         } else if (locale === "no") {
-            predictionChoiceTitle = predictionChoiceTitle.replace(
-                /(ikke)/,
-                "<b>ikke</b>"
-            );
+            predictionChoiceTitle = predictionChoiceTitle.replace(/(ikke)/, "<b>ikke</b>");
         } else {
             //TODO: Provide bold emphasis on german translation
         }
@@ -61,21 +50,21 @@ const Summary: React.FC = (
             <div>
                 <div className="flex justify-start py-5 text-black">
                     <Link
-                        className="hover:font-bold pl-12 px-3"
+                        className="hover:font-bold text-sm lg:text-base pl-12 px-3"
                         href={"/LandingPage"}
                     >
                         {t("pageProgressBar.home")}
                     </Link>
                     {">"}
-                    <Link className="hover:font-bold px-3" href={"/UseOfData"}>
+                    <Link className="hover:font-bold text-sm lg:text-base px-3" href={"/UseOfData"}>
                         {t("pageProgressBar.useOfData")}
                     </Link>
                     {">"}
-                    <Link className="hover:font-bold px-3" href={"/UsingAi"}>
+                    <Link className="hover:font-bold text-sm lg:text-base px-3" href={"/UsingAi"}>
                         {t("pageProgressBar.usingAiPage")}
                     </Link>
                     {">"}
-                    <p className="font-bold underline underline-offset-4 px-3">
+                    <p className="font-bold text-sm lg:text-base underline underline-offset-4 px-3">
                         {t("pageProgressBar.summaryPage")}
                     </p>
                 </div>
@@ -88,38 +77,26 @@ const Summary: React.FC = (
                         }}
                     />
                     <p
-                        className="text-base mt-2 w-1/2 text-center"
+                        className="text-base mt-2 px-4 lg:w-1/2 text-center"
                         dangerouslySetInnerHTML={{
                             __html: predictionChoiceText,
                         }}
                     />
-                    <p className="text-base mt-4 w-1/2 text-center">
+                    <p className="text-base mt-4 px-4 lg:w-1/2 text-center">
                         {t("summaryPage.changeCoice")}
                     </p>
                 </div>
             </div>
-            <div className="flex flex-col justify-center items-center">
-                <p className="mt-20 font-bold text-prussian-blue text-2xl">
+            <div className="flex flex-col justify-center mb-32 items-center">
+                <p className="mt-20 px-4 font-bold text-prussian-blue text-2xl">
                     {t("summaryPage.informationSummaryTitle")}
                 </p>
                 <div className="flex justify-center">
-                    {locale == "en" ? (
-                        <DataTable data={exampleDataEn} />
-                    ) : (
-                        <></>
-                    )}
-                    {locale == "no" ? (
-                        <DataTable data={exampleDataNo} />
-                    ) : (
-                        <></>
-                    )}
-                    {locale == "de" ? (
-                        <DataTable data={exampleDataDe} />
-                    ) : (
-                        <></>
-                    )}
+                    {locale == "en" ? <DataTable data={exampleDataEn} /> : <></>}
+                    {locale == "no" ? <DataTable data={exampleDataNo} /> : <></>}
+                    {locale == "de" ? <DataTable data={exampleDataDe} /> : <></>}
                 </div>
-                <p className="text-base mb-10 w-2/5 text-center">
+                <p className="text-base px-4 lg:w-2/5 mb-10 text-center">
                     {t("summaryPage.informationSummarySource")}
                 </p>
                 {/* <div className="flex justify-center mt-4">
@@ -127,8 +104,8 @@ const Summary: React.FC = (
                             Is this information incorrect?
                         </Button>
                     </div> */}
-                <div className="flex justify-center mt-4 pb-16">
-                    <Button color="lavaorange" href="/TestingFinishedPage">
+                <div className="flex justify-center mt-4 pb-32">
+                    <Button color="lavaorange" href="/UserTestingFinishedPage">
                         {t("summaryPage.submitChoiceButtonText")}
                     </Button>
                 </div>
