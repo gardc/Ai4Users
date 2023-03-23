@@ -25,6 +25,7 @@ module.exports = {
         'darkblue':'#001731',
         'lightblue':'#394a5e',
         'lavaorange': '#f24922',
+        'grassgreen': '#4db862',
       },
       borderWidth: {
         '1': '1px', 

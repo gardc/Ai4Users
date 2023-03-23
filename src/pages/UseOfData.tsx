@@ -86,7 +86,7 @@ const UseOfData: React.FC = (
                                 </Button>
                             </div> */}
                             <div className="flex justify-center">
-                                <Button color="black" href="/UsingAi">
+                                <Button color="lavaorange" href="/UsingAi">
                                     {t("landingPage.continueButtonText")}
                                 </Button>
                             </div>

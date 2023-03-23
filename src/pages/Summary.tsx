@@ -129,7 +129,7 @@ const Summary: React.FC = (
                         </Button>
                     </div> */}
                 <div className="flex justify-center mt-4 pb-16">
-                    <Button color="black" href="/TestingFinishedPage">
+                    <Button color="lavaorange" href="/TestingFinishedPage">
                         {t("summaryPage.submitChoiceButtonText")}
                     </Button>
                 </div>

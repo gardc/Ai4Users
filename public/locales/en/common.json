@@ -7,7 +7,8 @@
     "informationDropdownBoxCloseButtonText": "Close",
 
     "pageProgressBar": {
-        "frontpage": "Home",
+        "home": "Home",
+        "useOfData": "Use of Data",
         "usingAiPage": "Using AI",
         "summaryPage": "Summary"
     },

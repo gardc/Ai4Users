@@ -55,7 +55,7 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
         <div className="flex flex-col">
             {content}
             <div className="flex justify-self-end justify-center mb-16 lg:mb-0 pt-2 mt-6">
-                <Button color="violet" onClick={handleExpansion}>
+                <Button color="darkblue" onClick={handleExpansion}>
                     {buttonText}
                 </Button>
             </div>
