@@ -30,7 +30,7 @@ const UseOfData: React.FC = (
             <Content>
                 <div className="flex justify-start py-5 text-black">
                     <Link
-                        className="hover:font-bold pl-12 px-3"
+                        className="hover:font-bold sm:pl-12 px-3"
                         href={"/LandingPage"}
                     >
                         {t("pageProgressBar.home")}
@@ -48,13 +48,14 @@ const UseOfData: React.FC = (
                         {t("pageProgressBar.summaryPage")}
                     </p>
                 </div>
+
                 {/*Second page that shows personal information */}
                 <div className="m-4 text-cente flex justify-center">
                     <div
                         className="w-full sm:w-3/4 
                 bg-white drop-shadow-lg py-4 sm:py-8 px-4 sm:px-16 rounded-xl flex justify-center items-center flex-col"
                     >
-                        <p className="text-center text-prussian-blue font-bold text-4xl">
+                        <p className="text-center text-prussian-blue font-bold text-3xl sm:text-4xl">
                             {t("landingPage.dataPointsSummary.title")}
                         </p>
                         <p className="py-3 mt-5 text-left lg:w-3/4">
