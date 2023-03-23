@@ -4,7 +4,6 @@ import { useTranslation } from "next-i18next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import React from "react";
-import Link from "next/link";
 import Button from "@/components/Button";
 
 /**
@@ -35,7 +34,7 @@ const LandingPage: React.FC = (
                                 {t("landingPage.description")}
                             </p>
                             <Button color="lavaorange" href="/UseOfData">
-                                Continue
+                                {t("landingPage.continueButtonText")}
                             </Button>
                         </div>
                     </div>
