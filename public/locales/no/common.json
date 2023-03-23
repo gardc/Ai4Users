@@ -14,8 +14,8 @@
     },
 
     "userTestingLandingPage": {
-        "title": "Takk for at du ønsker å teste web applikasjonen vår",
-        "description": "Testen går ut på at du skal navigere deg gjennom web applikasjonen, og deretter svare på noen spørsmål.",
+        "title": "Takk for at du ønsker å teste nettapplikasjonen vår",
+        "description": "Testen går ut på at du skal navigere deg gjennom nettapplikasjonen, og deretter svare på noen spørsmål.",
         "beforeTestingTitle": "Før du begynner å teste",
         "beforeTestingDescription": "Se for deg at du er sykmeldt for en lengre periode, og du har behov for støtte. På grunn av dette har legen din henvist deg til nettsiden du nå skal teste.",
         "disclaimerTitle": "Ansvarsfraskrivelse",
@@ -23,7 +23,7 @@
         "disclaimer2": "Ingen data blir lagret om deg som bruker, og brukerinformasjonen som er presentert på web appliksajonen er fiktiv",
         "questionsTitle": "Hvis du har spørsmål, send en e-post til",
         "questionsEmailAddress": "jjsterke@stud.ntnu.no",
-        "beginTestingButtonText": "Begynn å teste web applikasjonen"
+        "beginTestingButtonText": "Begynn å teste nettapplikasjonen"
     },
 
     "landingPage": {
@@ -153,9 +153,11 @@
     },
 
     "userTestingFinishedPage": {
-        "title": "Takk for at du testet vår web applikasjon!",
-        "information": "Du har nå fullført testingen. Du kan enten gå tilbake til forsiden for å teste en gang til, eller fortsette videre til en spørreundersøkelse (Google Forms) for å svare på noen spørsmål om ditt inntyrkk av web applikasjonen.",
+        "title": "Takk for at du testet vår nettapplikasjon!",
+        "information": "Du har nå fullført testingen. Du kan enten gå tilbake til forsiden for å teste en gang til, eller fortsette videre til en spørreundersøkelse (Google Forms) for å svare på noen spørsmål om ditt inntyrkk av nettapplikasjonen.",
         "toFrontPageButtonText": "Forside",
         "toQuestionnaireButtonText": "Spørreundersøkelse"
-    }
+    },
+
+    "userTestingSurvey": "https://forms.gle/onbxX2qzC2aKYHwL6"
 }

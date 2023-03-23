@@ -15,7 +15,7 @@
 
     "userTestingLandingPage": {
         "title": "Thank you for wanting to test our web application",
-        "description": "The test involves navigating through our web application, and answering a questionnaire at the end.",
+        "description": "The test involves navigating through our web application, and answering a survey at the end.",
         "beforeTestingTitle": "Before you begin testing",
         "beforeTestingDescription": "Imagine that you are on sick leave for an extended period of time, and you are in need of support. Because of this, your doctor has directed you to the web site you are about to test.",
         "disclaimerTitle": "Disclaimer",
@@ -154,8 +154,10 @@
 
     "userTestingFinishedPage": {
         "title": "Thank you for testing our web application!",
-        "information": "You have now completed the demo. You can either go back to the beginning of the demo (front page), or continue to our questionnaire (Google Forms) to answer some questions.",
+        "information": "You have now completed the demo. You can either go back to the beginning of the demo (front page), or continue to our survey (Google Forms) to answer some questions.",
         "toFrontPageButtonText": "Front page",
-        "toQuestionnaireButtonText": "Questionnaire"
-    }
+        "toQuestionnaireButtonText": "Survey"
+    },
+
+    "userTestingSurvey": "https://forms.gle/DqZhEF398ZPs56zDA"
 }
