@@ -136,7 +136,7 @@
                 "learnMoreLinkText": "Learn more"
             }
         },
-        "consentQuestion": "Do you consent to the use of the AI model for predicting your sick leave duration?",
+        "consentQuestion": "Do you consent to the use of the AI model to predict your sick leave duration?",
         "disagreeButtonText": "I do NOT consent to usage of the AI model",
         "agreeButtonText": "I consent to usage of the AI model"
     },

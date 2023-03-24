@@ -10,6 +10,7 @@ import DataTable from "@/components/DataTable";
 import Link from "next/link";
 import Parent from "@/components/Parent";
 import React from "react";
+import ProfileIcon from "@/components/Assets/profileIcon";
 
 /**
  * The summary page component that displays a summary of information used to estimate sick leave
@@ -17,7 +18,9 @@ import React from "react";
  *
  * @returns A React functional component representing the summary page.
  */
-const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Summary: React.FC = (
+    _props: InferGetStaticPropsType<typeof getStaticProps>
+) => {
     const router = useRouter();
     const { consent } = router.query;
     const { locale } = router;
@@ -33,12 +36,21 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
         predictionChoiceText = t("summaryPage.descriptionConsenting");
     } else if (consent === "false") {
         predictionChoiceTitle = t("summaryPage.titleNotConsenting");
-        predictionChoiceTitle = predictionChoiceTitle.replace(/(<b>not<\/b>)/, "<b>$1</b>");
+        predictionChoiceTitle = predictionChoiceTitle.replace(
+            /(<b>not<\/b>)/,
+            "<b>$1</b>"
+        );
         predictionChoiceText = t("summaryPage.descriptionNotConsenting");
         if (locale === "en") {
-            predictionChoiceTitle = predictionChoiceTitle.replace(/(not)/, "<b>not</b>");
+            predictionChoiceTitle = predictionChoiceTitle.replace(
+                /(not)/,
+                "<b>not</b>"
+            );
         } else if (locale === "no") {
-            predictionChoiceTitle = predictionChoiceTitle.replace(/(ikke)/, "<b>ikke</b>");
+            predictionChoiceTitle = predictionChoiceTitle.replace(
+                /(ikke)/,
+                "<b>ikke</b>"
+            );
         } else {
             //TODO: Provide bold emphasis on german translation
         }
@@ -56,11 +68,17 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
                         {t("pageProgressBar.home")}
                     </Link>
                     {">"}
-                    <Link className="hover:font-bold text-sm lg:text-base px-3" href={"/UseOfData"}>
+                    <Link
+                        className="hover:font-bold text-sm lg:text-base px-3"
+                        href={"/UseOfData"}
+                    >
                         {t("pageProgressBar.useOfData")}
                     </Link>
                     {">"}
-                    <Link className="hover:font-bold text-sm lg:text-base px-3" href={"/UsingAi"}>
+                    <Link
+                        className="hover:font-bold text-sm lg:text-base px-3"
+                        href={"/UsingAi"}
+                    >
                         {t("pageProgressBar.usingAiPage")}
                     </Link>
                     {">"}
@@ -69,32 +87,49 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
                     </p>
                 </div>
 
-                <div className="flex flex-col justify-center text-2xl items-center text-center">
+                <div className="flex flex-col justify-center text-2xl items-center">
                     <h1
                         className="text-prussian-blue font-bold text-3xl m-3"
                         dangerouslySetInnerHTML={{
                             __html: predictionChoiceTitle,
                         }}
                     />
-                    <p
-                        className="text-base mt-2 px-4 lg:w-1/2 text-center"
-                        dangerouslySetInnerHTML={{
-                            __html: predictionChoiceText,
-                        }}
-                    />
-                    <p className="text-base mt-4 px-4 lg:w-1/2 text-center">
-                        {t("summaryPage.changeCoice")}
-                    </p>
+                    <div className="justify-center m-6">
+                        <p
+                            className="text-base px-4 text-left"
+                            dangerouslySetInnerHTML={{
+                                __html: predictionChoiceText,
+                            }}
+                        />
+                        <p className="text-base mt-4 px-4 text-left">
+                            {t("summaryPage.changeCoice")}
+                        </p>
+                    </div>
                 </div>
             </div>
-            <div className="flex flex-col justify-center items-center">
-                <p className="mt-20 px-4 font-bold text-prussian-blue text-2xl">
-                    {t("summaryPage.informationSummaryTitle")}
-                </p>
-                <div className="flex justify-center">
-                    {locale == "en" ? <DataTable data={exampleDataEn} /> : <></>}
-                    {locale == "no" ? <DataTable data={exampleDataNo} /> : <></>}
-                    {locale == "de" ? <DataTable data={exampleDataDe} /> : <></>}
+            <div className="flex flex-col items-center mt-20">
+                <div className="flex flex-col justify-center">
+                    <div className="flex flex-row items-center w-full mx-4">
+                        <ProfileIcon />
+                        <p className="px-2 font-bold text-prussian-blue text-xl">
+                            {t("summaryPage.informationSummaryTitle")}
+                        </p>
+                    </div>
+                    {locale == "en" ? (
+                        <DataTable data={exampleDataEn} />
+                    ) : (
+                        <></>
+                    )}
+                    {locale == "no" ? (
+                        <DataTable data={exampleDataNo} />
+                    ) : (
+                        <></>
+                    )}
+                    {locale == "de" ? (
+                        <DataTable data={exampleDataDe} />
+                    ) : (
+                        <></>
+                    )}
                 </div>
                 <p className="text-base px-4 lg:w-2/5 mb-10 text-center">
                     {t("summaryPage.informationSummarySource")}
