@@ -107,11 +107,11 @@ const Summary: React.FC = (
                     </div>
                 </div>
             </div>
-            <div className="flex flex-col items-center mt-20">
+            <div className="flex flex-col items-center mt-10">
                 <div className="flex flex-col justify-center">
                     <div className="flex flex-row items-center w-full mx-4">
                         <ProfileIcon />
-                        <p className="px-2 font-bold text-prussian-blue text-xl">
+                        <p className="px-2 font-bold text-prussian-blue text-lg">
                             {t("summaryPage.informationSummaryTitle")}
                         </p>
                     </div>

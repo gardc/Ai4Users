@@ -147,7 +147,7 @@
         "descriptionNotConsenting": "The case handler will make a prediction of the total duration of your sick leave without the use of the AI model. This may result in a longer processing time.",
         "descriptionConsenting": "The case handler will use the AI model to predict the total duration of your sick leave.",
         "changeCoice": "If you would like to change your choice, click on \"Using AI\" in the top left corner.",
-        "informationSummaryTitle": "Summary of the information used to predict your sick leave duration",
+        "informationSummaryTitle": "Your personal information",
         "informationSummarySource": "This information is gathered from the national population register and The National Social Service's registers.",
         "submitChoiceButtonText": "Submit your choice"
     },
