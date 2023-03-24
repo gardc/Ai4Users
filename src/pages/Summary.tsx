@@ -87,7 +87,7 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
                     </p>
                 </div>
             </div>
-            <div className="flex flex-col justify-center mb-32 items-center">
+            <div className="flex flex-col justify-center items-center">
                 <p className="mt-20 px-4 font-bold text-prussian-blue text-2xl">
                     {t("summaryPage.informationSummaryTitle")}
                 </p>

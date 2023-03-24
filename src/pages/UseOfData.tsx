@@ -72,7 +72,7 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
                                     Is this information incorrect?
                                 </Button>
                             </div> */}
-                            <div className="flex justify-center mb-48">
+                            <div className="flex justify-center mb-16">
                                 <Button color="lavaorange" href="/UsingAi">
                                     {t("landingPage.continueButtonText")}
                                 </Button>
