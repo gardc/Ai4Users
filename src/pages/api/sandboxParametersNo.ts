@@ -135,7 +135,7 @@ export const sandboxParametersNo = [
                 itemValueForModel: "Diseases in the respiratory tract"
             },
             {
-                itemName: "Diseases in the nervous system",
+                itemName: "Sykdommer i nervesystemet",
                 itemValueForModel: "Diseases in the nervous system"
             }]
     }
