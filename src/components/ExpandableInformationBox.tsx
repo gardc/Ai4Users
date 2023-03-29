@@ -31,10 +31,12 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
 
     const handleExpansion = () => {
         setExpanded(true);
+        document.body.style.overflow = "hidden";
     };
 
     const handleExpansionClose = () => {
         setExpanded(false);
+        document.body.style.overflow = "";
     };
 
     return (
