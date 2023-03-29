@@ -8,6 +8,7 @@ import CogIconLarge from "./Assets/cogIconLarge";
 /**
  * The type definition for the `Sandbox` component's props.
  */
+
 interface SandboxProps {
     /**
      * The description text for the sandbox.
@@ -73,27 +74,84 @@ interface SandboxProps {
  */
 
 const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
-    const initialState = parameters.reduce<Record<string, string>>((acc, param) => {
-        const firstItemValueForModel = param.argument[0]?.itemValueForModel;
-        if (firstItemValueForModel) {
-            acc[param.labelValueForModel] = firstItemValueForModel;
-        }
-        return acc;
-    }, {});
+    const initialState = parameters.reduce<Record<string, string>>(
+        (acc, param) => {
+            const firstItemValueForModel = param.argument[0]?.itemValueForModel;
+            if (firstItemValueForModel) {
+                acc[param.labelValueForModel] = firstItemValueForModel;
+            }
+            return acc;
+        },
+        {}
+    );
     const { t } = useTranslation("common");
     const [selectedValues, setSelectedValues] = useState(initialState);
-    const [weeks, setWeeks] = useState(t("usingAiPage.sandbox.initialPredictionText"));
+    const [weeks, setWeeks] = useState(
+        t("usingAiPage.sandbox.initialPredictionText")
+    );
     /* const [updatedWeeks, setUpdatedWeeks] = useState(
         t("usingAiPage.sandbox.initialPredictionText")
     ); */
     const videoRef = useRef<HTMLVideoElement>(null);
 
-    const handleChange = (parameterLabel: string, itemValueForModel: string) => {
+    const [isMan, setIsMan] = useState(true);
+    const [isPregnant, setIsPregnant] = useState(true);
+    const handleChange = (
+        parameterLabel: string,
+        itemValueForModel: string
+    ) => {
         setSelectedValues((prevState) => ({
             ...prevState,
             [parameterLabel]: itemValueForModel,
         }));
+
+        if (parameterLabel === "gender") {
+            const isMale = itemValueForModel.toLowerCase() === "male";
+            const diagnosisOptions = parameters.find(
+                (p) => p.labelValueForModel.toLowerCase() === "disorder"
+            )?.argument;
+
+            if (diagnosisOptions) {
+                const updatedOptions = isMale
+                    ? diagnosisOptions.filter(
+                          (option) =>
+                              option.itemValueForModel.toLowerCase() !==
+                              "pregnancy disorder"
+                      )
+                    : diagnosisOptions;
+                parameters.find(
+                    (p) => p.labelValueForModel.toLowerCase() === "disorder"
+                )!.argument = updatedOptions;
+            }
+            console.log();
+        }
+
+        /*
+        if (parameterLabel == "gender") {
+            if (itemValueForModel == "male") {
+                setIsMan(true);
+            } else {
+                setIsMan(false);
+            }
+        } else if (parameterLabel == "disorder" && itemValueForModel) {
+            if (itemValueForModel == "pregnancy disorder") {
+                setIsPregnant(true);
+            } else {
+                setIsPregnant(false);
+            }
+        }
+        console.log(parameterLabel + ", " + itemValueForModel + ", " + isMan); */
     };
+
+    function pregnantMen(itemValueForModel: string) {
+        if (itemValueForModel == "Pregnancy disorders" && isMan) {
+            return true;
+        } else if (itemValueForModel == "male" && isPregnant) {
+            return true;
+        } else {
+            return false;
+        }
+    }
 
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
@@ -149,13 +207,18 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                                 key={"div-" + parameter.label}
                                 className={"m-3 flex flex-col items-start mb-5"}
                             >
-                                <label htmlFor={parameter.label} className={"mb-1"}>
+                                <label
+                                    htmlFor={parameter.label}
+                                    className={"mb-1"}
+                                >
                                     {parameter.label}:
                                 </label>
                                 <select
                                     id={parameter.labelValueForModel}
                                     key={parameter.labelValueForModel}
-                                    className={"p-2 border rounded-lg shadow-md w-full"}
+                                    className={
+                                        "p-2 border rounded-lg shadow-md w-full"
+                                    }
                                     onChange={(e) =>
                                         handleChange(
                                             parameter.labelValueForModel.toLowerCase(),
@@ -167,6 +230,9 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                                         <option
                                             key={argument.itemValueForModel}
                                             value={argument.itemValueForModel}
+                                            /*disabled={pregnantMen(
+                                                argument.itemValueForModel.toLowerCase()
+                                            )}*/
                                         >
                                             {argument.itemName}
                                         </option>
@@ -175,7 +241,9 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                             </div>
                         ))}
                         <div className={"flex justify-center"}>
-                            <Button type={"submit"}>{t("usingAiPage.sandbox.calculate")}</Button>
+                            <Button type={"submit"}>
+                                {t("usingAiPage.sandbox.calculate")}
+                            </Button>
                         </div>
                     </form>
                 </div>
@@ -215,7 +283,9 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                                     {weeks}
                                 </p>
                             ) : (
-                                <p className={"text-md font-bold md:text-lg"}>{weeks}</p>
+                                <p className={"text-md font-bold md:text-lg"}>
+                                    {weeks}
+                                </p>
                             )}
                         </div>
                     </div>
@@ -225,8 +295,13 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                     <div className={"w-28"}>
                         <CaseHandlerIcon />
                     </div>
-                    <p className="mt-4 text-sm"> {t("usingAiPage.sandbox.caseHandlerText1")} </p>
-                    <p className="text-sm">{t("usingAiPage.sandbox.caseHandlerText2")}</p>
+                    <p className="mt-4 text-sm">
+                        {" "}
+                        {t("usingAiPage.sandbox.caseHandlerText1")}{" "}
+                    </p>
+                    <p className="text-sm">
+                        {t("usingAiPage.sandbox.caseHandlerText2")}
+                    </p>
                 </div>
             </div>
         </div>
