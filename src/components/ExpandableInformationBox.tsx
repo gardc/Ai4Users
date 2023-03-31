@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import Button from "@/components/Button";
+import InformationSignIcon from "./Assets/informationSignIcon";
 
 export interface ExpandableInformationBoxProps {
     content: string | JSX.Element;
@@ -32,10 +33,7 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
 
     useEffect(() => {
         const handleOutsideClick = (event: MouseEvent) => {
-            if (
-                expandedRef.current &&
-                !expandedRef.current.contains(event.target as Node)
-            ) {
+            if (expandedRef.current && !expandedRef.current.contains(event.target as Node)) {
                 setExpanded(false);
             }
         };
@@ -69,22 +67,22 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
                     ></div>
                     <div
                         ref={expandedRef}
-                        className="bg-white p-4 sm:p-14 w-full sm:w-3/4 sm:rounded-xl fixed top-1/2 left-1/2 transform
+                        className="bg-white w-full sm:w-3/4 sm:rounded-xl fixed top-1/2 left-1/2 transform
                         -translate-x-1/2 -translate-y-1/2 z-50 overflow-y-auto max-h-full sm:mt-10"
                     >
-                        <button
-                            onClick={handleExpansion}
-                            className="text-black hover:text-sky-600
-                            top-14 right-14 underline float-right justify-end"
-                        >
-                            {expandedCloseButtonText}
-                        </button>
-                        <div className="font-bold mb-6 text-xl w-5/6 xl:w-full text-left text-violet">
-                            {expandedContentTitle}
+                        <div className="w-full p-8 sm:px-14 sm:py-8 bg-prussian-blue sticky top-0">
+                            <button
+                                onClick={handleExpansion}
+                                className="text-white hover:text-sky-600 mt-4 underline float-right justify-end"
+                            >
+                                {expandedCloseButtonText}
+                            </button>
+                            <div className="font-bold flex text-xl w-5/6 text-left text-white">
+                                <InformationSignIcon />
+                                <p className="ml-4 mt-3">{expandedContentTitle}</p>
+                            </div>
                         </div>
-                        <div className="text-black text-left">
-                            {expandedContent}
-                        </div>
+                        <div className="text-black text-left p-8 sm:p-14">{expandedContent}</div>
                     </div>
                 </>
             )}
