@@ -8,8 +8,8 @@ import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
 import Content from "@/components/Content";
 import DataTable from "@/components/DataTable";
-import Parent from "@/components/Parent";
 import Link from "next/link";
+import Parent from "@/components/Parent";
 
 /**
  * The landing page component that displays initial information about the web

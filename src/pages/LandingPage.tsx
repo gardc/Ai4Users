@@ -1,11 +1,11 @@
-import Content from "@/components/Content";
-import Parent from "@/components/Parent";
-import { useTranslation } from "next-i18next";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import React from "react";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
-import InformationSignIcon from "@/components/Assets/InformationSignIcon";
+import Content from "@/components/Content";
+import InformationSignIcon from "@/components/Assets/informationSignIcon";
+import Parent from "@/components/Parent";
+import React from "react";
 
 /**
  * The landing page component that displays initial information about the web
