@@ -24,12 +24,11 @@ const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticP
                     <div className="bg-darkblue">
                         <div className="index pb-16 flex-col flex items-center">
                             <p
-                                className="text-center font-bold px-8 text-3xl lg:text-5xl lg:px-32
+                                className="text-center font-bold px-8 text-3xl lg:text-4xl lg:px-32
                                     tracking-wide mt-16 text-white"
                             >
                                 {t("landingPage.title")}
                             </p>
-                            <p className="font-bold text-white w-4/6 px-28 mt-12"></p>
                             <div
                                 className="w-full md:w-2/3 lg:w-1/2 mt-12
                                     bg-white drop-shadow-lg py-4 sm:py-8 px-4 sm:px-16 rounded-xl 
