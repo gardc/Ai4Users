@@ -12,6 +12,7 @@ import ExpandableInformationBox from "@/components/ExpandableInformationBox";
 import FastForwardIcon from "@/components/Assets/fastForwardIcon";
 import Image from "next/image";
 import InformationDropdownBox from "@/components/InformationDropdownBox";
+import InformationSignIcon from "@/components/Assets/informationSignIcon";
 import Link from "next/link";
 import Parent from "@/components/Parent";
 import React from "react";
@@ -32,7 +33,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     return (
         <Parent>
             <Content>
-                <div className="pb-4 sm:pb-8 text-center">
+                <div className="pb-2 text-center">
                     <div className="flex justify-start py-5 text-black">
                         <Link
                             className="hover:font-bold text-sm lg:text-base pl-12 px-3"
@@ -57,86 +58,89 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                         </p>
                     </div>
 
-                    <p className="text-center text-prussian-blue font-bold text-3xl m-3">
+                    <p className="text-center text-prussian-blue font-bold text-3xl m-3 pt-4">
                         {t("usingAiPage.title")}
                     </p>
                 </div>
                 <div className="text-center flex justify-center flex-col items-center">
-                    <InformationDropdownBox
-                        title={""}
-                        initialInfo={t("usingAiPage.aboutAiInfo.description") as string}
-                        extendedInfo={
+                    <div
+                        className="sm:w-19/20 md:w-3/4 mt-12
+                                    bg-white drop-shadow-lg rounded-xl 
+                                    flex justify-center items-center flex-col text-black m-2"
+                    >
+                        <div className="bg-prussian-blue w-full rounded-t-xl text-white flex justify-center py-2">
+                            <InformationSignIcon />
+                        </div>
+                        <div className="p-4 sm:p-8 md:px-12 text-left text-lg">
+                            {t("usingAiPage.aboutAiInfo.description")}
+                        </div>
+                        <div className="bg-slate-50 rounded-b-xl p-6 pb-0 lg:pb-12">
                             <div className="lg:grid lg:grid-cols-3 lg:gap-x-10 text-sm pt-4 px-6">
                                 <ExpandableInformationBox
                                     content={
                                         <div className="text-left h-full">
-                                            <BookIcon />
+                                            <div className="text-prussian-blue">
+                                                <BookIcon />
+                                            </div>
                                             <h1 className="font-bold text-center pb-4">
-                                                {t("usingAiPage.aboutAiInfo.readMore.whatAi.title")}
+                                                {t("usingAiPage.aboutAiInfo.whatAi.title")}
                                             </h1>
                                             <p className="pb-4">
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.description1"
-                                                )}
-                                            </p>
-                                            <p>
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.description2"
-                                                )}
+                                                {t("usingAiPage.aboutAiInfo.whatAi.description")}
                                             </p>
                                         </div>
                                     }
                                     expandedContentTitle={t(
-                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.title"
+                                        "usingAiPage.aboutAiInfo.whatAi.learnMore.title"
                                     )}
                                     expandedContent={
                                         <div className="text-base pb-4">
                                             <p className="pb-4">
                                                 {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.description"
+                                                    "usingAiPage.aboutAiInfo.whatAi.learnMore.description"
                                                 )}
                                             </p>
                                             <ul className="list-disc list-inside pb-6">
                                                 <p className="font-bold pb-4">
                                                     {t(
-                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.regardlessOfChoiceList.title"
+                                                        "usingAiPage.aboutAiInfo.whatAi.learnMore.regardlessOfChoiceList.title"
                                                     )}
                                                 </p>
                                                 <li>
                                                     {t(
-                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.regardlessOfChoiceList.li1"
+                                                        "usingAiPage.aboutAiInfo.whatAi.learnMore.regardlessOfChoiceList.li1"
                                                     )}
                                                 </li>
                                                 <li>
                                                     {t(
-                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.regardlessOfChoiceList.li2"
+                                                        "usingAiPage.aboutAiInfo.whatAi.learnMore.regardlessOfChoiceList.li2"
                                                     )}
                                                 </li>
                                                 <li>
                                                     {t(
-                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.regardlessOfChoiceList.li3"
+                                                        "usingAiPage.aboutAiInfo.whatAi.learnMore.regardlessOfChoiceList.li3"
                                                     )}
                                                 </li>
                                             </ul>
                                             <p className="font-bold pb-4">
                                                 {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeTitle"
+                                                    "usingAiPage.aboutAiInfo.whatAi.learnMore.disagreeTitle"
                                                 )}
                                             </p>
                                             <p className="pb-4">
                                                 {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeInfo"
+                                                    "usingAiPage.aboutAiInfo.whatAi.learnMore.disagreeInfo"
                                                 )}
                                             </p>
                                             {/* { locale == "en" && } */}
                                             <Image
                                                 src={
                                                     t(
-                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageSrc"
+                                                        "usingAiPage.aboutAiInfo.whatAi.learnMore.disagreeFlowImageSrc"
                                                     ) as string
                                                 }
                                                 alt={t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageAlt"
+                                                    "usingAiPage.aboutAiInfo.whatAi.learnMore.disagreeFlowImageAlt"
                                                 )}
                                                 width={1000}
                                                 height={1000}
@@ -145,11 +149,11 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             <Image
                                                 src={
                                                     t(
-                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageMobileSrc"
+                                                        "usingAiPage.aboutAiInfo.whatAi.learnMore.disagreeFlowImageMobileSrc"
                                                     ) as string
                                                 }
                                                 alt={t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageAlt"
+                                                    "usingAiPage.aboutAiInfo.whatAi.learnMore.disagreeFlowImageAlt"
                                                 )}
                                                 width={1000}
                                                 height={1000}
@@ -157,22 +161,22 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             />
                                             <p className="font-bold pb-4">
                                                 {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeTitle"
+                                                    "usingAiPage.aboutAiInfo.whatAi.learnMore.agreeTitle"
                                                 )}
                                             </p>
                                             <p className="pb-4">
                                                 {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeInfo"
+                                                    "usingAiPage.aboutAiInfo.whatAi.learnMore.agreeInfo"
                                                 )}
                                             </p>
                                             <Image
                                                 src={
                                                     t(
-                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeFlowImageSrc"
+                                                        "usingAiPage.aboutAiInfo.whatAi.learnMore.agreeFlowImageSrc"
                                                     ) as string
                                                 }
                                                 alt={t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeFlowImageAlt"
+                                                    "usingAiPage.aboutAiInfo.whatAi.learnMore.agreeFlowImageAlt"
                                                 )}
                                                 width={1000}
                                                 height={1000}
@@ -181,11 +185,11 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             <Image
                                                 src={
                                                     t(
-                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeFlowImageMobileSrc"
+                                                        "usingAiPage.aboutAiInfo.whatAi.learnMore.agreeFlowImageMobileSrc"
                                                     ) as string
                                                 }
                                                 alt={t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeFlowImageAlt"
+                                                    "usingAiPage.aboutAiInfo.whatAi.learnMore.agreeFlowImageAlt"
                                                 )}
                                                 width={1000}
                                                 height={1000}
@@ -193,58 +197,51 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             />
                                         </div>
                                     }
-                                    buttonText={t(
-                                        "usingAiPage.aboutAiInfo.readMore.learnMoreButtonText"
-                                    )}
+                                    buttonText={t("usingAiPage.aboutAiInfo.learnMoreButtonText")}
                                     expandedCloseButtonText={t("expandedInfoBoxCloseButtonText")}
                                 />
                                 <ExpandableInformationBox
                                     content={
                                         <div className="text-left h-full">
-                                            <CogIcon />
+                                            <div className="text-prussian-blue">
+                                                <CogIcon />
+                                            </div>
                                             <p className="font-bold text-center pb-4">
-                                                {t("usingAiPage.aboutAiInfo.readMore.howAi.title")}
+                                                {t("usingAiPage.aboutAiInfo.howAi.title")}
                                             </p>
                                             <p className="pb-4">
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.howAi.description1"
-                                                )}
-                                            </p>
-                                            <p>
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.howAi.description2"
-                                                )}
+                                                {t("usingAiPage.aboutAiInfo.howAi.description")}
                                             </p>
                                         </div>
                                     }
                                     expandedContentTitle={t(
-                                        "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.title"
+                                        "usingAiPage.aboutAiInfo.howAi.learnMore.title"
                                     )}
                                     expandedContent={
                                         <div className="text-base pb-4">
                                             <p className="font-bold pb-4">
                                                 {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.description"
+                                                    "usingAiPage.aboutAiInfo.howAi.learnMore.description"
                                                 )}
                                             </p>
                                             <div className="pb-4">
                                                 {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.machineLearningModelTraitList.title"
+                                                    "usingAiPage.aboutAiInfo.howAi.learnMore.machineLearningModelTraitList.title"
                                                 )}
                                                 <ul className="list-disc list-inside pt-4">
                                                     <li>
                                                         {t(
-                                                            "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.machineLearningModelTraitList.li1"
+                                                            "usingAiPage.aboutAiInfo.howAi.learnMore.machineLearningModelTraitList.li1"
                                                         )}
                                                     </li>
                                                     <li>
                                                         {t(
-                                                            "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.machineLearningModelTraitList.li2"
+                                                            "usingAiPage.aboutAiInfo.howAi.learnMore.machineLearningModelTraitList.li2"
                                                         )}
                                                     </li>
                                                     <li>
                                                         {t(
-                                                            "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.machineLearningModelTraitList.li3"
+                                                            "usingAiPage.aboutAiInfo.howAi.learnMore.machineLearningModelTraitList.li3"
                                                         )}
                                                     </li>
                                                 </ul>
@@ -252,11 +249,11 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             <Image
                                                 src={
                                                     t(
-                                                        "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.trainingModelImageSrc"
+                                                        "usingAiPage.aboutAiInfo.howAi.learnMore.trainingModelImageSrc"
                                                     ) as string
                                                 }
                                                 alt={t(
-                                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.trainingModelImageAlt"
+                                                    "usingAiPage.aboutAiInfo.howAi.learnMore.trainingModelImageAlt"
                                                 )}
                                                 width={1000}
                                                 height={1000}
@@ -265,11 +262,11 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             <Image
                                                 src={
                                                     t(
-                                                        "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.trainingModelImageMobileSrc"
+                                                        "usingAiPage.aboutAiInfo.howAi.learnMore.trainingModelImageMobileSrc"
                                                     ) as string
                                                 }
                                                 alt={t(
-                                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.trainingModelImageAlt"
+                                                    "usingAiPage.aboutAiInfo.howAi.learnMore.trainingModelImageAlt"
                                                 )}
                                                 width={1000}
                                                 height={1000}
@@ -277,17 +274,17 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             />
                                             <p className="pb-4">
                                                 {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.descriptionPatternMatching"
+                                                    "usingAiPage.aboutAiInfo.howAi.learnMore.descriptionPatternMatching"
                                                 )}
                                             </p>
                                             <Image
                                                 src={
                                                     t(
-                                                        "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.usingModelImageSrc"
+                                                        "usingAiPage.aboutAiInfo.howAi.learnMore.usingModelImageSrc"
                                                     ) as string
                                                 }
                                                 alt={t(
-                                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.usingModelImageAlt"
+                                                    "usingAiPage.aboutAiInfo.howAi.learnMore.usingModelImageAlt"
                                                 )}
                                                 width={1000}
                                                 height={1000}
@@ -296,11 +293,11 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             <Image
                                                 src={
                                                     t(
-                                                        "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.usingModelImageMobileSrc"
+                                                        "usingAiPage.aboutAiInfo.howAi.learnMore.usingModelImageMobileSrc"
                                                     ) as string
                                                 }
                                                 alt={t(
-                                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.usingModelImageAlt"
+                                                    "usingAiPage.aboutAiInfo.howAi.learnMore.usingModelImageAlt"
                                                 )}
                                                 width={1000}
                                                 height={1000}
@@ -308,74 +305,63 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             />
                                         </div>
                                     }
-                                    buttonText={t(
-                                        "usingAiPage.aboutAiInfo.readMore.learnMoreButtonText"
-                                    )}
+                                    buttonText={t("usingAiPage.aboutAiInfo.learnMoreButtonText")}
                                     expandedCloseButtonText={t("expandedInfoBoxCloseButtonText")}
                                 />
                                 <ExpandableInformationBox
                                     content={
                                         <div className="text-left h-full">
-                                            <FastForwardIcon />
+                                            <div className="text-prussian-blue">
+                                                <FastForwardIcon />
+                                            </div>
                                             <p className="font-bold text-center pb-4">
-                                                {t("usingAiPage.aboutAiInfo.readMore.whyAi.title")}
+                                                {t("usingAiPage.aboutAiInfo.whyAi.title")}
                                             </p>
                                             <p className="pb-4">
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whyAi.description1"
-                                                )}
-                                            </p>
-                                            <p>
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whyAi.description2"
-                                                )}
+                                                {t("usingAiPage.aboutAiInfo.whyAi.description")}
                                             </p>
                                         </div>
                                     }
                                     expandedContentTitle={t(
-                                        "usingAiPage.aboutAiInfo.readMore.whyAi.learnMore.title"
+                                        "usingAiPage.aboutAiInfo.whyAi.learnMore.title"
                                     )}
                                     expandedContent={
                                         <div className="text-base pb-4">
                                             <p className="font-bold pb-4">
                                                 {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whyAi.learnMore.reasonForUseList.title"
+                                                    "usingAiPage.aboutAiInfo.whyAi.learnMore.reasonForUseList.title"
                                                 )}
                                             </p>
                                             <ul className="list-disc list-inside pb-4">
                                                 <li>
                                                     {t(
-                                                        "usingAiPage.aboutAiInfo.readMore.whyAi.learnMore.reasonForUseList.li1"
+                                                        "usingAiPage.aboutAiInfo.whyAi.learnMore.reasonForUseList.li1"
                                                     )}
                                                 </li>
                                                 <li>
                                                     {t(
-                                                        "usingAiPage.aboutAiInfo.readMore.whyAi.learnMore.reasonForUseList.li2"
+                                                        "usingAiPage.aboutAiInfo.whyAi.learnMore.reasonForUseList.li2"
                                                     )}
                                                 </li>
                                                 <li>
                                                     {t(
-                                                        "usingAiPage.aboutAiInfo.readMore.whyAi.learnMore.reasonForUseList.li3"
+                                                        "usingAiPage.aboutAiInfo.whyAi.learnMore.reasonForUseList.li3"
                                                     )}
                                                 </li>
                                             </ul>
                                             <p>
                                                 {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whyAi.learnMore.rightToChoose"
+                                                    "usingAiPage.aboutAiInfo.whyAi.learnMore.rightToChoose"
                                                 )}
                                             </p>
                                         </div>
                                     }
-                                    buttonText={t(
-                                        "usingAiPage.aboutAiInfo.readMore.learnMoreButtonText"
-                                    )}
+                                    buttonText={t("usingAiPage.aboutAiInfo.learnMoreButtonText")}
                                     expandedCloseButtonText={t("expandedInfoBoxCloseButtonText")}
                                 />
                             </div>
-                        }
-                        extendInfoButtonText={t("informationDropdownBoxExtendButtonText")}
-                        closeInfoButtonText={t("informationDropdownBoxCloseButtonText")}
-                    />
+                        </div>
+                    </div>
                     <div className="h-6"></div>
                     <InformationDropdownBox
                         title={t("usingAiPage.sandbox.title")}
