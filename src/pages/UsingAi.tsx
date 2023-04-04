@@ -31,559 +31,496 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
 
     return (
         <Parent>
-            <Content>
-                <div className="pb-4 sm:pb-8 text-center">
-                    <div className="flex justify-start py-5 text-black">
-                        <Link
-                            className="hover:font-bold text-sm lg:text-base pl-12 px-3"
-                            href={"/LandingPage"}
-                        >
-                            {t("pageProgressBar.home")}
-                        </Link>
-                        {">"}
-                        <Link
-                            className="hover:font-bold text-sm lg:text-base px-3"
-                            href={"/UseOfData"}
-                        >
-                            {t("pageProgressBar.useOfData")}
-                        </Link>
-                        {">"}
-                        <p className="font-bold underline text-sm lg:text-base underline-offset-4 px-3">
-                            {t("pageProgressBar.usingAiPage")}
-                        </p>
-                        <p className="text-gray-500 ">{">"}</p>
-                        <p className="text-gray-500 text-sm lg:text-base px-3">
-                            {t("pageProgressBar.summaryPage")}
-                        </p>
-                    </div>
+            <div className="pb-4 sm:pb-8 text-center">
+                <div className="flex justify-start py-5 text-black">
+                    <Link
+                        className="hover:font-bold text-sm lg:text-base pl-12 px-3"
+                        href={"/LandingPage"}
+                    >
+                        {t("pageProgressBar.home")}
+                    </Link>
+                    {">"}
+                    <Link className="hover:font-bold text-sm lg:text-base px-3" href={"/UseOfData"}>
+                        {t("pageProgressBar.useOfData")}
+                    </Link>
+                    {">"}
+                    <p className="font-bold underline text-sm lg:text-base underline-offset-4 px-3">
+                        {t("pageProgressBar.usingAiPage")}
+                    </p>
+                    <p className="text-gray-500 ">{">"}</p>
+                    <p className="text-gray-500 text-sm lg:text-base px-3">
+                        {t("pageProgressBar.summaryPage")}
+                    </p>
+                </div>
 
-                    <p className="text-center text-prussian-blue font-bold text-3xl m-3">
-                        {t("usingAiPage.title")}
-                    </p>
-                </div>
-                <div className="text-center flex justify-center flex-col items-center">
-                    <InformationDropdownBox
-                        title={""}
-                        initialInfo={
-                            t("usingAiPage.aboutAiInfo.description") as string
-                        }
-                        extendedInfo={
-                            <div className="lg:grid lg:grid-cols-3 lg:gap-x-10 text-sm pt-4 px-6">
-                                <ExpandableInformationBox
-                                    content={
-                                        <div className="text-left h-full">
-                                            <BookIcon />
-                                            <h1 className="font-bold text-center pb-4">
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.title"
-                                                )}
-                                            </h1>
-                                            <p className="pb-4">
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.description1"
-                                                )}
-                                            </p>
-                                            <p>
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.description2"
-                                                )}
-                                            </p>
-                                        </div>
-                                    }
-                                    expandedContentTitle={t(
-                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.title"
-                                    )}
-                                    expandedContent={
-                                        <div className="text-base pb-4">
-                                            <p className="pb-4">
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.description"
-                                                )}
-                                            </p>
-                                            <ul className="list-disc list-inside pb-6">
-                                                <p className="font-bold pb-4">
-                                                    {t(
-                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.regardlessOfChoiceList.title"
-                                                    )}
-                                                </p>
-                                                <li>
-                                                    {t(
-                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.regardlessOfChoiceList.li1"
-                                                    )}
-                                                </li>
-                                                <li>
-                                                    {t(
-                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.regardlessOfChoiceList.li2"
-                                                    )}
-                                                </li>
-                                                <li>
-                                                    {t(
-                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.regardlessOfChoiceList.li3"
-                                                    )}
-                                                </li>
-                                            </ul>
-                                            <p className="font-bold pb-4">
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeTitle"
-                                                )}
-                                            </p>
-                                            <p className="pb-4">
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeInfo"
-                                                )}
-                                            </p>
-                                            {/* { locale == "en" && } */}
-                                            <Image
-                                                src={
-                                                    t(
-                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageSrc"
-                                                    ) as string
-                                                }
-                                                alt={t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageAlt"
-                                                )}
-                                                width={1000}
-                                                height={1000}
-                                                className="pb-8 hidden lg:block"
-                                            />
-                                            <Image
-                                                src={
-                                                    t(
-                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageMobileSrc"
-                                                    ) as string
-                                                }
-                                                alt={t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageAlt"
-                                                )}
-                                                width={1000}
-                                                height={1000}
-                                                className="pb-8 block lg:hidden"
-                                            />
-                                            <p className="font-bold pb-4">
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeTitle"
-                                                )}
-                                            </p>
-                                            <p className="pb-4">
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeInfo"
-                                                )}
-                                            </p>
-                                            <Image
-                                                src={
-                                                    t(
-                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeFlowImageSrc"
-                                                    ) as string
-                                                }
-                                                alt={t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeFlowImageAlt"
-                                                )}
-                                                width={1000}
-                                                height={1000}
-                                                className="pb-4 hidden lg:block"
-                                            />
-                                            <Image
-                                                src={
-                                                    t(
-                                                        "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeFlowImageMobileSrc"
-                                                    ) as string
-                                                }
-                                                alt={t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeFlowImageAlt"
-                                                )}
-                                                width={1000}
-                                                height={1000}
-                                                className="pb-4 block lg:hidden"
-                                            />
-                                        </div>
-                                    }
-                                    buttonText={t(
-                                        "usingAiPage.aboutAiInfo.readMore.learnMoreButtonText"
-                                    )}
-                                    expandedCloseButtonText={t(
-                                        "expandedInfoBoxCloseButtonText"
-                                    )}
-                                />
-                                <ExpandableInformationBox
-                                    content={
-                                        <div className="text-left h-full">
-                                            <CogIcon />
-                                            <p className="font-bold text-center pb-4">
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.howAi.title"
-                                                )}
-                                            </p>
-                                            <p className="pb-4">
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.howAi.description1"
-                                                )}
-                                            </p>
-                                            <p>
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.howAi.description2"
-                                                )}
-                                            </p>
-                                        </div>
-                                    }
-                                    expandedContentTitle={t(
-                                        "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.title"
-                                    )}
-                                    expandedContent={
-                                        <div className="text-base pb-4">
-                                            <p className="font-bold pb-4">
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.description"
-                                                )}
-                                            </p>
-                                            <div className="pb-4">
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.machineLearningModelTraitList.title"
-                                                )}
-                                                <ul className="list-disc list-inside pt-4">
-                                                    <li>
-                                                        {t(
-                                                            "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.machineLearningModelTraitList.li1"
-                                                        )}
-                                                    </li>
-                                                    <li>
-                                                        {t(
-                                                            "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.machineLearningModelTraitList.li2"
-                                                        )}
-                                                    </li>
-                                                    <li>
-                                                        {t(
-                                                            "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.machineLearningModelTraitList.li3"
-                                                        )}
-                                                    </li>
-                                                </ul>
-                                            </div>
-                                            <Image
-                                                src={
-                                                    t(
-                                                        "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.trainingModelImageSrc"
-                                                    ) as string
-                                                }
-                                                alt={t(
-                                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.trainingModelImageAlt"
-                                                )}
-                                                width={1000}
-                                                height={1000}
-                                                className="pb-8 hidden lg:block"
-                                            />
-                                            <Image
-                                                src={
-                                                    t(
-                                                        "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.trainingModelImageMobileSrc"
-                                                    ) as string
-                                                }
-                                                alt={t(
-                                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.trainingModelImageAlt"
-                                                )}
-                                                width={1000}
-                                                height={1000}
-                                                className="pb-8 block lg:hidden"
-                                            />
-                                            <p className="pb-4">
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.descriptionPatternMatching"
-                                                )}
-                                            </p>
-                                            <Image
-                                                src={
-                                                    t(
-                                                        "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.usingModelImageSrc"
-                                                    ) as string
-                                                }
-                                                alt={t(
-                                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.usingModelImageAlt"
-                                                )}
-                                                width={1000}
-                                                height={1000}
-                                                className="hidden lg:block"
-                                            />
-                                            <Image
-                                                src={
-                                                    t(
-                                                        "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.usingModelImageMobileSrc"
-                                                    ) as string
-                                                }
-                                                alt={t(
-                                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.usingModelImageAlt"
-                                                )}
-                                                width={1000}
-                                                height={1000}
-                                                className="block lg:hidden"
-                                            />
-                                        </div>
-                                    }
-                                    buttonText={t(
-                                        "usingAiPage.aboutAiInfo.readMore.learnMoreButtonText"
-                                    )}
-                                    expandedCloseButtonText={t(
-                                        "expandedInfoBoxCloseButtonText"
-                                    )}
-                                />
-                                <ExpandableInformationBox
-                                    content={
-                                        <div className="text-left h-full">
-                                            <FastForwardIcon />
-                                            <p className="font-bold text-center pb-4">
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whyAi.title"
-                                                )}
-                                            </p>
-                                            <p className="pb-4">
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whyAi.description1"
-                                                )}
-                                            </p>
-                                            <p>
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whyAi.description2"
-                                                )}
-                                            </p>
-                                        </div>
-                                    }
-                                    expandedContentTitle={t(
-                                        "usingAiPage.aboutAiInfo.readMore.whyAi.learnMore.title"
-                                    )}
-                                    expandedContent={
-                                        <div className="text-base pb-4">
-                                            <p className="font-bold pb-4">
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whyAi.learnMore.reasonForUseList.title"
-                                                )}
-                                            </p>
-                                            <ul className="list-disc list-inside pb-4">
-                                                <li>
-                                                    {t(
-                                                        "usingAiPage.aboutAiInfo.readMore.whyAi.learnMore.reasonForUseList.li1"
-                                                    )}
-                                                </li>
-                                                <li>
-                                                    {t(
-                                                        "usingAiPage.aboutAiInfo.readMore.whyAi.learnMore.reasonForUseList.li2"
-                                                    )}
-                                                </li>
-                                                <li>
-                                                    {t(
-                                                        "usingAiPage.aboutAiInfo.readMore.whyAi.learnMore.reasonForUseList.li3"
-                                                    )}
-                                                </li>
-                                            </ul>
-                                            <p>
-                                                {t(
-                                                    "usingAiPage.aboutAiInfo.readMore.whyAi.learnMore.rightToChoose"
-                                                )}
-                                            </p>
-                                        </div>
-                                    }
-                                    buttonText={t(
-                                        "usingAiPage.aboutAiInfo.readMore.learnMoreButtonText"
-                                    )}
-                                    expandedCloseButtonText={t(
-                                        "expandedInfoBoxCloseButtonText"
-                                    )}
-                                />
-                            </div>
-                        }
-                        extendInfoButtonText={t(
-                            "informationDropdownBoxExtendButtonText"
-                        )}
-                        closeInfoButtonText={t(
-                            "informationDropdownBoxCloseButtonText"
-                        )}
-                    />
-                    <div className="h-6"></div>
-                    <InformationDropdownBox
-                        title={t("usingAiPage.sandbox.title")}
-                        initialInfo={
-                            t("usingAiPage.sandbox.shortDescription") as string
-                        }
-                        extendInfoButtonText={t(
-                            "usingAiPage.sandbox.expandButtonText"
-                        )}
-                        extendedInfo={
-                            <Sandbox
-                                description={t(
-                                    "usingAiPage.sandbox.mainDescription"
-                                )}
-                                parameters={
-                                    locale == "no"
-                                        ? sandboxParametersNo
-                                        : sandboxParametersEn
+                <p className="text-center text-prussian-blue font-bold text-3xl m-3">
+                    {t("usingAiPage.title")}
+                </p>
+            </div>
+            <div className="text-center flex justify-center flex-col items-center">
+                <InformationDropdownBox
+                    title={""}
+                    initialInfo={t("usingAiPage.aboutAiInfo.description") as string}
+                    extendedInfo={
+                        <div className="lg:grid lg:grid-cols-3 lg:gap-x-10 text-sm pt-4 px-6">
+                            <ExpandableInformationBox
+                                content={
+                                    <div className="text-left h-full">
+                                        <BookIcon />
+                                        <h1 className="font-bold text-center pb-4">
+                                            {t("usingAiPage.aboutAiInfo.readMore.whatAi.title")}
+                                        </h1>
+                                        <p className="pb-4">
+                                            {t(
+                                                "usingAiPage.aboutAiInfo.readMore.whatAi.description1"
+                                            )}
+                                        </p>
+                                        <p>
+                                            {t(
+                                                "usingAiPage.aboutAiInfo.readMore.whatAi.description2"
+                                            )}
+                                        </p>
+                                    </div>
                                 }
+                                expandedContentTitle={t(
+                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.title"
+                                )}
+                                expandedContent={
+                                    <div className="text-base pb-4">
+                                        <p className="pb-4">
+                                            {t(
+                                                "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.description"
+                                            )}
+                                        </p>
+                                        <ul className="list-disc list-inside pb-6">
+                                            <p className="font-bold pb-4">
+                                                {t(
+                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.regardlessOfChoiceList.title"
+                                                )}
+                                            </p>
+                                            <li>
+                                                {t(
+                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.regardlessOfChoiceList.li1"
+                                                )}
+                                            </li>
+                                            <li>
+                                                {t(
+                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.regardlessOfChoiceList.li2"
+                                                )}
+                                            </li>
+                                            <li>
+                                                {t(
+                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.regardlessOfChoiceList.li3"
+                                                )}
+                                            </li>
+                                        </ul>
+                                        <p className="font-bold pb-4">
+                                            {t(
+                                                "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeTitle"
+                                            )}
+                                        </p>
+                                        <p className="pb-4">
+                                            {t(
+                                                "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeInfo"
+                                            )}
+                                        </p>
+                                        {/* { locale == "en" && } */}
+                                        <Image
+                                            src={
+                                                t(
+                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageSrc"
+                                                ) as string
+                                            }
+                                            alt={t(
+                                                "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageAlt"
+                                            )}
+                                            width={1000}
+                                            height={1000}
+                                            className="pb-8 hidden lg:block"
+                                        />
+                                        <Image
+                                            src={
+                                                t(
+                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageMobileSrc"
+                                                ) as string
+                                            }
+                                            alt={t(
+                                                "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.disagreeFlowImageAlt"
+                                            )}
+                                            width={1000}
+                                            height={1000}
+                                            className="pb-8 block lg:hidden"
+                                        />
+                                        <p className="font-bold pb-4">
+                                            {t(
+                                                "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeTitle"
+                                            )}
+                                        </p>
+                                        <p className="pb-4">
+                                            {t(
+                                                "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeInfo"
+                                            )}
+                                        </p>
+                                        <Image
+                                            src={
+                                                t(
+                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeFlowImageSrc"
+                                                ) as string
+                                            }
+                                            alt={t(
+                                                "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeFlowImageAlt"
+                                            )}
+                                            width={1000}
+                                            height={1000}
+                                            className="pb-4 hidden lg:block"
+                                        />
+                                        <Image
+                                            src={
+                                                t(
+                                                    "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeFlowImageMobileSrc"
+                                                ) as string
+                                            }
+                                            alt={t(
+                                                "usingAiPage.aboutAiInfo.readMore.whatAi.learnMore.agreeFlowImageAlt"
+                                            )}
+                                            width={1000}
+                                            height={1000}
+                                            className="pb-4 block lg:hidden"
+                                        />
+                                    </div>
+                                }
+                                buttonText={t(
+                                    "usingAiPage.aboutAiInfo.readMore.learnMoreButtonText"
+                                )}
+                                expandedCloseButtonText={t("expandedInfoBoxCloseButtonText")}
                             />
-                        }
-                        closeInfoButtonText={t(
-                            "informationDropdownBoxCloseButtonText"
-                        )}
-                    />
-                    <div className="h-6"></div>
-                    <InformationDropdownBox
-                        title={t("usingAiPage.aboutRightsInfo.title")}
-                        initialInfo={
-                            <>
-                                <p>
-                                    {t(
-                                        "usingAiPage.aboutRightsInfo.description1"
-                                    )}
-                                </p>
-                                <p>
-                                    {t(
-                                        "usingAiPage.aboutRightsInfo.description2"
-                                    )}
-                                </p>
-                            </>
-                        }
-                        extendedInfo={
-                            <div className="space-y-4 ml-4 flex flex-col justify-center items-center my-6">
-                                <h2 className="font-semibold">
-                                    {t(
-                                        "usingAiPage.aboutRightsInfo.readMore.userRightsTitle"
-                                    )}
-                                </h2>
-                                <ul className="space-y-4 list-disc text-left">
-                                    <li>
-                                        <p className="">
-                                            {t(
-                                                "usingAiPage.aboutRightsInfo.readMore.li1"
-                                            )}
-                                            <a
-                                                href="https://lovdata.no/lov/2018-06-15-38/gdpr/a15"
-                                                target="_blank"
-                                                rel="noreferrer"
-                                                className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                                            >
-                                                {t(
-                                                    "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
-                                                )}
-                                                <ArrowRightIcon />
-                                            </a>
+                            <ExpandableInformationBox
+                                content={
+                                    <div className="text-left h-full">
+                                        <CogIcon />
+                                        <p className="font-bold text-center pb-4">
+                                            {t("usingAiPage.aboutAiInfo.readMore.howAi.title")}
                                         </p>
-                                    </li>
-                                    <li>
-                                        <p className="">
+                                        <p className="pb-4">
                                             {t(
-                                                "usingAiPage.aboutRightsInfo.readMore.li2"
+                                                "usingAiPage.aboutAiInfo.readMore.howAi.description1"
                                             )}
-                                            <a
-                                                href="https://lovdata.no/lov/2018-06-15-38/gdpr/a16"
-                                                target="_blank"
-                                                rel="noreferrer"
-                                                className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                                            >
-                                                {t(
-                                                    "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
-                                                )}
-                                                <ArrowRightIcon />
-                                            </a>
                                         </p>
-                                    </li>
-                                    <li>
-                                        <p className="">
+                                        <p>
                                             {t(
-                                                "usingAiPage.aboutRightsInfo.readMore.li3"
+                                                "usingAiPage.aboutAiInfo.readMore.howAi.description2"
                                             )}
-                                            <a
-                                                href="https://lovdata.no/lov/2018-06-15-38/gdpr/a17"
-                                                target="_blank"
-                                                rel="noreferrer"
-                                                className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                                            >
-                                                {t(
-                                                    "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
-                                                )}
-                                                <ArrowRightIcon />
-                                            </a>
                                         </p>
-                                    </li>
-                                    <li>
-                                        <p className="">
+                                    </div>
+                                }
+                                expandedContentTitle={t(
+                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.title"
+                                )}
+                                expandedContent={
+                                    <div className="text-base pb-4">
+                                        <p className="font-bold pb-4">
                                             {t(
-                                                "usingAiPage.aboutRightsInfo.readMore.li4"
+                                                "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.description"
                                             )}
-                                            <a
-                                                href="https://lovdata.no/lov/2018-06-15-38/gdpr/a18"
-                                                target="_blank"
-                                                rel="noreferrer"
-                                                className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                                            >
-                                                {t(
-                                                    "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
-                                                )}
-                                                <ArrowRightIcon />
-                                            </a>
                                         </p>
-                                    </li>
-                                    <li>
-                                        <p className="">
+                                        <div className="pb-4">
                                             {t(
-                                                "usingAiPage.aboutRightsInfo.readMore.li5"
+                                                "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.machineLearningModelTraitList.title"
                                             )}
-                                            <a
-                                                href=" https://lovdata.no/lov/2018-06-15-38/gdpr/a20"
-                                                target="_blank"
-                                                rel="noreferrer"
-                                                className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                                            >
-                                                {t(
-                                                    "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
-                                                )}
-                                                <ArrowRightIcon />
-                                            </a>
-                                        </p>
-                                    </li>
-                                    <li>
-                                        <p className="">
+                                            <ul className="list-disc list-inside pt-4">
+                                                <li>
+                                                    {t(
+                                                        "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.machineLearningModelTraitList.li1"
+                                                    )}
+                                                </li>
+                                                <li>
+                                                    {t(
+                                                        "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.machineLearningModelTraitList.li2"
+                                                    )}
+                                                </li>
+                                                <li>
+                                                    {t(
+                                                        "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.machineLearningModelTraitList.li3"
+                                                    )}
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <Image
+                                            src={
+                                                t(
+                                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.trainingModelImageSrc"
+                                                ) as string
+                                            }
+                                            alt={t(
+                                                "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.trainingModelImageAlt"
+                                            )}
+                                            width={1000}
+                                            height={1000}
+                                            className="pb-8 hidden lg:block"
+                                        />
+                                        <Image
+                                            src={
+                                                t(
+                                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.trainingModelImageMobileSrc"
+                                                ) as string
+                                            }
+                                            alt={t(
+                                                "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.trainingModelImageAlt"
+                                            )}
+                                            width={1000}
+                                            height={1000}
+                                            className="pb-8 block lg:hidden"
+                                        />
+                                        <p className="pb-4">
                                             {t(
-                                                "usingAiPage.aboutRightsInfo.readMore.li6"
+                                                "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.descriptionPatternMatching"
                                             )}
-                                            <a
-                                                href="https://lovdata.no/lov/2018-06-15-38/gdpr/a21"
-                                                target="_blank"
-                                                rel="noreferrer"
-                                                className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
-                                            >
-                                                {t(
-                                                    "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
-                                                )}
-                                                <ArrowRightIcon />
-                                            </a>
                                         </p>
-                                    </li>
-                                </ul>
-                            </div>
-                        }
-                        extendInfoButtonText={t(
-                            "informationDropdownBoxExtendButtonText"
-                        )}
-                        closeInfoButtonText={t(
-                            "informationDropdownBoxCloseButtonText"
-                        )}
-                    />
+                                        <Image
+                                            src={
+                                                t(
+                                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.usingModelImageSrc"
+                                                ) as string
+                                            }
+                                            alt={t(
+                                                "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.usingModelImageAlt"
+                                            )}
+                                            width={1000}
+                                            height={1000}
+                                            className="hidden lg:block"
+                                        />
+                                        <Image
+                                            src={
+                                                t(
+                                                    "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.usingModelImageMobileSrc"
+                                                ) as string
+                                            }
+                                            alt={t(
+                                                "usingAiPage.aboutAiInfo.readMore.howAi.learnMore.usingModelImageAlt"
+                                            )}
+                                            width={1000}
+                                            height={1000}
+                                            className="block lg:hidden"
+                                        />
+                                    </div>
+                                }
+                                buttonText={t(
+                                    "usingAiPage.aboutAiInfo.readMore.learnMoreButtonText"
+                                )}
+                                expandedCloseButtonText={t("expandedInfoBoxCloseButtonText")}
+                            />
+                            <ExpandableInformationBox
+                                content={
+                                    <div className="text-left h-full">
+                                        <FastForwardIcon />
+                                        <p className="font-bold text-center pb-4">
+                                            {t("usingAiPage.aboutAiInfo.readMore.whyAi.title")}
+                                        </p>
+                                        <p className="pb-4">
+                                            {t(
+                                                "usingAiPage.aboutAiInfo.readMore.whyAi.description1"
+                                            )}
+                                        </p>
+                                        <p>
+                                            {t(
+                                                "usingAiPage.aboutAiInfo.readMore.whyAi.description2"
+                                            )}
+                                        </p>
+                                    </div>
+                                }
+                                expandedContentTitle={t(
+                                    "usingAiPage.aboutAiInfo.readMore.whyAi.learnMore.title"
+                                )}
+                                expandedContent={
+                                    <div className="text-base pb-4">
+                                        <p className="font-bold pb-4">
+                                            {t(
+                                                "usingAiPage.aboutAiInfo.readMore.whyAi.learnMore.reasonForUseList.title"
+                                            )}
+                                        </p>
+                                        <ul className="list-disc list-inside pb-4">
+                                            <li>
+                                                {t(
+                                                    "usingAiPage.aboutAiInfo.readMore.whyAi.learnMore.reasonForUseList.li1"
+                                                )}
+                                            </li>
+                                            <li>
+                                                {t(
+                                                    "usingAiPage.aboutAiInfo.readMore.whyAi.learnMore.reasonForUseList.li2"
+                                                )}
+                                            </li>
+                                            <li>
+                                                {t(
+                                                    "usingAiPage.aboutAiInfo.readMore.whyAi.learnMore.reasonForUseList.li3"
+                                                )}
+                                            </li>
+                                        </ul>
+                                        <p>
+                                            {t(
+                                                "usingAiPage.aboutAiInfo.readMore.whyAi.learnMore.rightToChoose"
+                                            )}
+                                        </p>
+                                    </div>
+                                }
+                                buttonText={t(
+                                    "usingAiPage.aboutAiInfo.readMore.learnMoreButtonText"
+                                )}
+                                expandedCloseButtonText={t("expandedInfoBoxCloseButtonText")}
+                            />
+                        </div>
+                    }
+                    extendInfoButtonText={t("informationDropdownBoxExtendButtonText")}
+                    closeInfoButtonText={t("informationDropdownBoxCloseButtonText")}
+                />
+                <div className="h-6"></div>
+                <InformationDropdownBox
+                    title={t("usingAiPage.sandbox.title")}
+                    initialInfo={t("usingAiPage.sandbox.shortDescription") as string}
+                    extendInfoButtonText={t("usingAiPage.sandbox.expandButtonText")}
+                    extendedInfo={
+                        <Sandbox
+                            description={t("usingAiPage.sandbox.mainDescription")}
+                            parameters={locale == "no" ? sandboxParametersNo : sandboxParametersEn}
+                        />
+                    }
+                    closeInfoButtonText={t("informationDropdownBoxCloseButtonText")}
+                />
+                <div className="h-6"></div>
+                <InformationDropdownBox
+                    title={t("usingAiPage.aboutRightsInfo.title")}
+                    initialInfo={
+                        <>
+                            <p>{t("usingAiPage.aboutRightsInfo.description1")}</p>
+                            <p>{t("usingAiPage.aboutRightsInfo.description2")}</p>
+                        </>
+                    }
+                    extendedInfo={
+                        <div className="space-y-4 ml-4 flex flex-col justify-center items-center my-6">
+                            <h2 className="font-semibold">
+                                {t("usingAiPage.aboutRightsInfo.readMore.userRightsTitle")}
+                            </h2>
+                            <ul className="space-y-4 list-disc text-left">
+                                <li>
+                                    <p className="">
+                                        {t("usingAiPage.aboutRightsInfo.readMore.li1")}
+                                        <a
+                                            href="https://lovdata.no/lov/2018-06-15-38/gdpr/a15"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                        >
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
+                                            )}
+                                            <ArrowRightIcon />
+                                        </a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p className="">
+                                        {t("usingAiPage.aboutRightsInfo.readMore.li2")}
+                                        <a
+                                            href="https://lovdata.no/lov/2018-06-15-38/gdpr/a16"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                        >
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
+                                            )}
+                                            <ArrowRightIcon />
+                                        </a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p className="">
+                                        {t("usingAiPage.aboutRightsInfo.readMore.li3")}
+                                        <a
+                                            href="https://lovdata.no/lov/2018-06-15-38/gdpr/a17"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                        >
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
+                                            )}
+                                            <ArrowRightIcon />
+                                        </a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p className="">
+                                        {t("usingAiPage.aboutRightsInfo.readMore.li4")}
+                                        <a
+                                            href="https://lovdata.no/lov/2018-06-15-38/gdpr/a18"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                        >
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
+                                            )}
+                                            <ArrowRightIcon />
+                                        </a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p className="">
+                                        {t("usingAiPage.aboutRightsInfo.readMore.li5")}
+                                        <a
+                                            href=" https://lovdata.no/lov/2018-06-15-38/gdpr/a20"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                        >
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
+                                            )}
+                                            <ArrowRightIcon />
+                                        </a>
+                                    </p>
+                                </li>
+                                <li>
+                                    <p className="">
+                                        {t("usingAiPage.aboutRightsInfo.readMore.li6")}
+                                        <a
+                                            href="https://lovdata.no/lov/2018-06-15-38/gdpr/a21"
+                                            target="_blank"
+                                            rel="noreferrer"
+                                            className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                        >
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
+                                            )}
+                                            <ArrowRightIcon />
+                                        </a>
+                                    </p>
+                                </li>
+                            </ul>
+                        </div>
+                    }
+                    extendInfoButtonText={t("informationDropdownBoxExtendButtonText")}
+                    closeInfoButtonText={t("informationDropdownBoxCloseButtonText")}
+                />
+            </div>
+            <div className="mb-16"></div>
+            <div className="h-96 mb-48 pt-20 flex flex-col justify-center bg-white text-center py-8 sm:p-6">
+                <p className="font-semibold p-3 text-2xl">{t("usingAiPage.consentQuestion")}</p>
+                <div className="flex justify-center mt-8 mb-10 sm:m-5">
+                    <Link
+                        className="bg-neutral-300 hover:bg-neutral-400 font-semibold text-neutral-600 rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3"
+                        href="/Summary?consent=false"
+                    >
+                        {t("usingAiPage.disagreeButtonText")}
+                    </Link>
+                    <Link
+                        className="bg-lavaorange hover:bg-darkerorange font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3"
+                        href="/Summary?consent=true"
+                    >
+                        {t("usingAiPage.agreeButtonText")}
+                    </Link>
                 </div>
-                <div className="mb-16"></div>
-                <div className="h-96 mb-48 pt-20 flex flex-col justify-center bg-white text-center py-8 sm:p-6">
-                    <p className="font-semibold p-3 text-2xl">
-                        {t("usingAiPage.consentQuestion")}
-                    </p>
-                    <div className="flex justify-center mt-8 mb-10 sm:m-5">
-                        <Link
-                            className="bg-neutral-300 hover:bg-neutral-400 font-semibold text-neutral-600 rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3"
-                            href="/Summary?consent=false"
-                        >
-                            {t("usingAiPage.disagreeButtonText")}
-                        </Link>
-                        <Link
-                            className="bg-lavaorange hover:bg-darkerorange font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3"
-                            href="/Summary?consent=true"
-                        >
-                            {t("usingAiPage.agreeButtonText")}
-                        </Link>
-                    </div>
-                </div>
-            </Content>
+            </div>
         </Parent>
     );
 };
