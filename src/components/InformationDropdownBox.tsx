@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import "@fortawesome/fontawesome-free/css/all.css";
 
 /**
@@ -36,13 +36,23 @@ const InformationDropdownBox: React.FC<InformationDropdownBoxProps> = ({
     closeInfoButtonText,
 }) => {
     const [open, setOpen] = useState<Boolean>(false);
+    const containerRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        if (!open && containerRef.current) {
+            containerRef.current.scrollIntoView({ behavior: "smooth" });
+        }
+    }, [open]);
 
     const handleOpen = () => {
         setOpen(!open);
     };
 
     return (
-        <div className="bg-white rounded-xl shadow-lg sm:w-19/20 md:w-3/4 text-left justify-center items-center m-2">
+        <div
+            ref={containerRef}
+            className="bg-white rounded-xl shadow-lg sm:w-19/20 md:w-3/4 text-left justify-center items-center m-2"
+        >
             {title.length !== 0 && (
                 <h2
                     className={
