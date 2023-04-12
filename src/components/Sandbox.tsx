@@ -108,54 +108,7 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
             ...prevState,
             [parameterLabel]: itemValueForModel,
         }));
-
-        if (parameterLabel === "gender") {
-            const isMale = itemValueForModel.toLowerCase() === "male";
-            const diagnosisOptions = parameters.find(
-                (p) => p.labelValueForModel.toLowerCase() === "disorder"
-            )?.argument;
-
-            if (diagnosisOptions) {
-                const updatedOptions = isMale
-                    ? diagnosisOptions.filter(
-                          (option) =>
-                              option.itemValueForModel.toLowerCase() !==
-                              "pregnancy disorder"
-                      )
-                    : diagnosisOptions;
-                parameters.find(
-                    (p) => p.labelValueForModel.toLowerCase() === "disorder"
-                )!.argument = updatedOptions;
-            }
-            console.log();
-        }
-
-        /*
-        if (parameterLabel == "gender") {
-            if (itemValueForModel == "male") {
-                setIsMan(true);
-            } else {
-                setIsMan(false);
-            }
-        } else if (parameterLabel == "disorder" && itemValueForModel) {
-            if (itemValueForModel == "pregnancy disorder") {
-                setIsPregnant(true);
-            } else {
-                setIsPregnant(false);
-            }
-        }
-        console.log(parameterLabel + ", " + itemValueForModel + ", " + isMan); */
     };
-
-    function pregnantMen(itemValueForModel: string) {
-        if (itemValueForModel == "Pregnancy disorders" && isMan) {
-            return true;
-        } else if (itemValueForModel == "male" && isPregnant) {
-            return true;
-        } else {
-            return false;
-        }
-    }
 
     /**
      * Submits the form data of selected values to the server for processing and updates the state
@@ -237,9 +190,6 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                                         <option
                                             key={argument.itemValueForModel}
                                             value={argument.itemValueForModel}
-                                            /*disabled={pregnantMen(
-                                                argument.itemValueForModel.toLowerCase()
-                                            )}*/
                                         >
                                             {argument.itemName}
                                         </option>
