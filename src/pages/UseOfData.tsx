@@ -56,13 +56,13 @@ const UseOfData: React.FC = (
                 bg-white drop-shadow-lg py-4 sm:py-8 px-4 sm:px-16 rounded-xl flex justify-center items-center flex-col"
                 >
                     <p className="text-center text-prussian-blue font-bold text-3xl sm:text-4xl">
-                        {t("landingPage.dataPointsSummary.title")}
+                        {t("landingPage.title")}
                     </p>
                     <p className="py-3 mt-5 text-left lg:w-3/4">
-                        {t("landingPage.dataPointsSummary.description1")}
+                        {t("landingPage.description1")}
                     </p>
                     <p className="py-3 text-left mb-4 lg:w-3/4">
-                        {t("landingPage.dataPointsSummary.description2")}
+                        {t("landingPage.description2")}
                     </p>
                     <div className="mt-6">
                         <div className="flex flex-row items-center w-full mx-4">
@@ -95,7 +95,7 @@ const UseOfData: React.FC = (
                                     Is this information incorrect?
                                 </Button>
                             </div> */}
-                        <div className="flex justify-center mb-16">
+                        <div className="flex justify-center mt-5 mb-16">
                             <Button color="lavaorange" href="/UsingAi">
                                 {t("landingPage.continueButtonText")}
                             </Button>
