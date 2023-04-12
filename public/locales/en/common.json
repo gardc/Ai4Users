@@ -45,7 +45,8 @@
         "title": "Data that is used in the prediction",
         "description1": "Below you will find all the information about you that will be used in predicting the duration of your sick leave. This information is gathered from the national population register and The National Social Service registers.",
         "description2": "Click the \"?\" symbol beside each data point to see why it is used.",
-        "continueButtonText": "Continue"
+        "continueButtonText": "Continue",
+        "informationSummaryTitle": "Your personal information"
     },
 
     "usingAiPage": {
