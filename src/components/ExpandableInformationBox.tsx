@@ -29,24 +29,6 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
     buttonText,
 }) => {
     const [expanded, setExpanded] = useState<boolean>(false);
-    const expandedRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const handleOutsideClick = (event: MouseEvent) => {
-            if (
-                expandedRef.current &&
-                !expandedRef.current.contains(event.target as Node)
-            ) {
-                setExpanded(false);
-            }
-        };
-
-        document.addEventListener("mousedown", handleOutsideClick);
-
-        return () => {
-            document.removeEventListener("mousedown", handleOutsideClick);
-        };
-    }, [expandedRef]);
 
     const handleExpansion = () => {
         setExpanded(true);
@@ -75,7 +57,6 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
                         onClick={handleExpansionClose}
                     ></div>
                     <div
-                        ref={expandedRef}
                         className="bg-white w-full sm:w-3/4 sm:rounded-xl fixed top-1/2 left-1/2 transform
                         -translate-x-1/2 -translate-y-1/2 z-50 overflow-y-auto max-h-[80%] sm:mt-10"
                     >
