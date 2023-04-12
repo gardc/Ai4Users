@@ -58,6 +58,10 @@ export const sandboxParametersEn = [
                 itemValueForModel: "Agder",
             },
             {
+                itemName: "Innlandet",
+                itemValueForModel: "Innlandet",
+            },
+            {
                 itemName: "Møre og Romsdal",
                 itemValueForModel: "Møre og Romsdal",
             },
@@ -124,10 +128,6 @@ export const sandboxParametersEn = [
             {
                 itemName: "Mental disorders",
                 itemValueForModel: "Mental disorders",
-            },
-            {
-                itemName: "Pregnancy disorders",
-                itemValueForModel: "Pregnancy disorders",
             },
             {
                 itemName: "Diseases in the digestive organs",

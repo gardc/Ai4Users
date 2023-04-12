@@ -33,7 +33,10 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
 
     useEffect(() => {
         const handleOutsideClick = (event: MouseEvent) => {
-            if (expandedRef.current && !expandedRef.current.contains(event.target as Node)) {
+            if (
+                expandedRef.current &&
+                !expandedRef.current.contains(event.target as Node)
+            ) {
                 setExpanded(false);
             }
         };
@@ -46,7 +49,13 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
     }, [expandedRef]);
 
     const handleExpansion = () => {
-        setExpanded(!expanded);
+        setExpanded(true);
+        document.body.style.overflow = "hidden";
+    };
+
+    const handleExpansionClose = () => {
+        setExpanded(false);
+        document.body.style.overflow = "";
     };
 
     return (
@@ -63,7 +72,7 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
                 <>
                     <div
                         className="fixed inset-0 bg-black opacity-25 z-10"
-                        onClick={handleExpansion}
+                        onClick={handleExpansionClose}
                     ></div>
                     <div
                         ref={expandedRef}
@@ -79,10 +88,14 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
                             </button>
                             <div className="font-bold flex text-xl w-5/6 text-left text-white">
                                 <InformationSignIcon />
-                                <p className="ml-4 mt-3">{expandedContentTitle}</p>
+                                <p className="ml-4 mt-3">
+                                    {expandedContentTitle}
+                                </p>
                             </div>
                         </div>
-                        <div className="text-black text-left p-8 sm:p-14">{expandedContent}</div>
+                        <div className="text-black text-left p-8 sm:p-14">
+                            {expandedContent}
+                        </div>
                     </div>
                 </>
             )}

@@ -47,7 +47,9 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
                                 {row.value}
                             </td>
                             <td className="p-2">
-                                {row.extendedInfo && <Tooltip extendedInfo={row.extendedInfo} />}
+                                {row.extendedInfo && (
+                                    <Tooltip extendedInfo={row.extendedInfo} />
+                                )}
                             </td>
                         </tr>
                     );
@@ -57,7 +59,7 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
     };
     return (
         <table
-            className="bg-white m-5 p-2 sm:p-6 border rounded-[20px]" //shadow-[1px_1px_6px_rgba(0,0,0,0.25)]
+            className="bg-white m-2 p-2 sm:p-6 border-2  rounded-[20px]" //shadow-[1px_1px_6px_rgba(0,0,0,0.25)]
             style={{ borderCollapse: "separate" }}
         >
             {renderTableHeader()}
