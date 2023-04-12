@@ -19,7 +19,9 @@ import Parent from "@/components/Parent";
  *
  * @returns A React functional component representing the landing page.
  */
-const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const UseOfData: React.FC = (
+    _props: InferGetStaticPropsType<typeof getStaticProps>
+) => {
     const { t } = useTranslation("common");
     const router = useRouter();
     const { locale } = router;
@@ -70,9 +72,21 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
                             </p>
                         </div>
                         {/*Here there will be a component with information about the user */}
-                        {locale == "en" ? <DataTable data={exampleDataEn} /> : <></>}
-                        {locale == "no" ? <DataTable data={exampleDataNo} /> : <></>}
-                        {locale == "de" ? <DataTable data={exampleDataDe} /> : <></>}
+                        {locale == "en" ? (
+                            <DataTable data={exampleDataEn} />
+                        ) : (
+                            <></>
+                        )}
+                        {locale == "no" ? (
+                            <DataTable data={exampleDataNo} />
+                        ) : (
+                            <></>
+                        )}
+                        {locale == "de" ? (
+                            <DataTable data={exampleDataDe} />
+                        ) : (
+                            <></>
+                        )}
                     </div>
 
                     <div className="flex-col justify-center flex">
@@ -81,7 +95,7 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
                                     Is this information incorrect?
                                 </Button>
                             </div> */}
-                        <div className="flex justify-center mt-5 mb-16">
+                        <div className="flex justify-center mt-5 mb-10">
                             <Button color="lavaorange" href="/UsingAi">
                                 {t("landingPage.continueButtonText")}
                             </Button>

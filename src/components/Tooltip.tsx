@@ -37,7 +37,7 @@ const Tooltip: React.FC<TooltipProps> = ({ extendedInfo }) => {
     };
 
     return (
-        <div className="flex items-center">
+        <div className="flex relative items-center">
             <button
                 className=" w-1/100 h-1/100 bg-white focus:outline-none focus:ring focus:ring-black rounded-full flex justify-center items-center text-center p-3 shadow-xl border-black border-1"
                 onClick={handleOpen}
@@ -48,7 +48,7 @@ const Tooltip: React.FC<TooltipProps> = ({ extendedInfo }) => {
                 {open ? (
                     <div
                         ref={ref}
-                        className="absolute max-w-xs text-left bg-black z-50 text-white bg-opacity-80 rounded p-2 text-sm"
+                        className="absolute origin-bottom-right right-full bottom-full sm:left-full w-48 sm:w-28 md:w-40 text-left bg-black z-50 text-white bg-opacity-80 rounded p-2 text-xs"
                     >
                         {extendedInfo}
                     </div>
