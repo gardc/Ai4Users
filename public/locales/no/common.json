@@ -26,6 +26,14 @@
         "beginTestingButtonText": "Begynn å teste nettapplikasjonen"
     },
 
+    "feedback": {
+        "title": "Tilbakemelding",
+        "description": "Vi er interessert i å få tilbakemelding på hvorfor du ikke samtykket til bruken av AI-modellen vår, for å forbedre tjenesten vår ytterligere. Dette er selvsagt valgfritt.",
+        "submit": "Send inn",
+        "skip": "Hopp over",
+        "placeholder": "Skriv dine tanker her..."
+    },
+    
     "landingPage": {
         "title": "Prediksjon av sykefraværets varighet",
         "description1": "Som sykmeldt har du ofte rett til en eller flere typer støtte fra Den Nasjonale Sosialtjenesten. Dette kan være støttetiltak som økonomisk støtte eller oppfølgingsmøter.",
@@ -45,78 +53,74 @@
         "title": "Data som blir brukt i predikeringen",
         "description1": "Nedenfor finner du all informasjon om deg som vil bli brukt i predikeringen av varigheten av sykefraværet ditt. Denne informasjonen er hentet fra det nasjonale folkeregisteret og Den Nasjonale Sosialtjenestens registre.",
         "description2": "Klikk på \"?\"-symbolet ved siden av hvert informasjonspunkt for å se hvorfor det brukes.",
-        "continueButtonText": "Fortsett"
+        "continueButtonText": "Fortsett",
+        "informationSummaryTitle": "Dine data"
     },
 
     "usingAiPage": {
         "title": "Bruk av kunstig intelligens for prediksjon",
         "aboutAiInfo": {
-            "description": "For å kunne tilby deg støtte best tilpasset din situasjon tilbyr Den Nasjonale Sosialtjenesten bruken av en kunstig intelligens-modell (KI-modell) for å støtte saksbehandleren i prediksjonen av varigheten av ditt sykefravær. Du kan lese mer om hva dette innebærer og hvordan modellen fungerer ved å klikke på \"Les mer\". Om KI-modellen skal benyttes for predikering er fullstendig opp til deg.",
-            "readMore": {
-                "whatAi": {
-                    "title": "Hva samtykke av bruken innebærer",
-                    "description1": "Støtten du får blir avgjort av en saksbehandler, og en av faktorene i denne avgjørelsen er prediskjonen av varigheten av sykefraværet ditt.",
-                    "description2": "KI-modellen er et hjelpemiddel saksbehandleren kan bruke i predikeringen, så lenge du har gitt ditt samtykke til dette.",
-                    "learnMore": {
-                        "title": "Hva samtykke av bruken av KI-modellen innebærer",
-                        "description": "Du står fritt til å velge om du tillater bruken av KI-modellen som et hjelpemiddel i prediksjonen av varigheten av ditt sykefravær eller ikke.",
-                        "regardlessOfChoiceList": {
-                            "title": "Uavhengig av hva du velger, så vil det være tilfellet at",
-                            "li1": "nøyaktig samme informasjon om deg vil bli brukt",
-                            "li2": "en saksbehandler tar beslutningen om støtten du blir gitt",
-                            "li3": "du har nøyaktig samme rettigheter angående dine personopplysninger"
-                        },
-                        "disagreeTitle": "Dersom du ikke samtykker til bruken av KI-modellen",
-                        "disagreeInfo": "Dersom du velger å ikke samtykke til bruken av KI-modellen i predikeringen av varigheten av ditt sykefravær, vil saksbehandleren din behandle dine personopplysninger uten bruk av modellen. Dette kan resultere i lengre saksbenahndligstid.",
-                        "disagreeFlowImageSrc": "/img/disagreeToUseFlowNo.png",
-                        "disagreeFlowImageMobileSrc": "/img/disagreeToUseFlowMobileNo.png",
-                        "disagreeFlowImageAlt": "Prosessen dersom du ikke samtykker til bruk av KI-modellen",
-                        "agreeTitle": "Dersom du samtykker til bruken av KI-modellen",
-                        "agreeInfo": "Dersom du velger å samtykke til bruken av KI-modellen i predikeringen av varigheten av ditt sykefravær, vil dine personopplysninger først bli prosessert av modellen, og resultatet av prediksjonen vil gis til saksbehandleren. Saksbehandleren vil så bruke dette resultatet, sammen med andre faktorer, for å bestemme hva slags støtte er passende for deg i din situasjon.",
-                        "agreeFlowImageSrc": "/img/agreeToUseFlowNo.png",
-                        "agreeFlowImageMobileSrc": "/img/agreeToUseFlowMobileNo.png",
-                        "agreeFlowImageAlt": "Prosessen dersom du samtykker til bruk av KI-modellen"
-                    }
-                },
-                "howAi": {
+            "description": "Den Nasjonale Sosialtjenesten tilbyr bruken av en kunstig intelligens-modell (KI-modell) for å støtte saksbehandleren i prediksjonen av varigheten av ditt sykefravær. Du har rett til å velge om KI-modellen skal benyttes eller ikke. Du finner mer informasjon nedenfor.",
+            "whatAi": {
+                "title": "Hva samtykke av bruken innebærer",
+                "description": "Dersom du velger å tillate bruken av KI-modellen til predikering vil saksbehandleren kun benytte den til dette formålet. Dersom du velger å ikke tillate bruken vil saksbehandleren utføre predikeringen uten bruken av modellen.",
+                "learnMore": {
+                    "title": "Hva samtykke av bruken av KI-modellen innebærer",
+                    "description": "Du står fritt til å velge om du tillater bruken av KI-modellen som et hjelpemiddel i prediksjonen av varigheten av ditt sykefravær eller ikke.",
+                    "regardlessOfChoiceList": {
+                        "title": "Uavhengig av hva du velger, så vil det være tilfellet at",
+                        "li1": "nøyaktig samme informasjon om deg vil bli brukt",
+                        "li2": "en saksbehandler tar beslutningen om støtten du blir gitt",
+                        "li3": "du har nøyaktig samme rettigheter angående dine personopplysninger"
+                    },
+                    "disagreeTitle": "Dersom du ikke samtykker til bruken av KI-modellen",
+                    "disagreeInfo": "Dersom du velger å ikke samtykke til bruken av KI-modellen i predikeringen av varigheten av ditt sykefravær, vil saksbehandleren din prosessere dine personopplysninger uten bruk av modellen. Dette kan resultere i lengre saksbenahndligstid.",
+                    "disagreeFlowImageSrc": "/img/disagreeToUseFlowNo.png",
+                    "disagreeFlowImageMobileSrc": "/img/disagreeToUseFlowMobileNo.png",
+                    "disagreeFlowImageAlt": "Prosessen dersom du ikke samtykker til bruk av KI-modellen",
+                    "agreeTitle": "Dersom du samtykker til bruken av KI-modellen",
+                    "agreeInfo": "Dersom du velger å samtykke til bruken av KI-modellen i predikeringen av varigheten av ditt sykefravær, vil dine personopplysninger først bli prosessert av modellen, og resultatet av prediksjonen vil gis til saksbehandleren. Saksbehandleren vil så bruke dette resultatet, sammen med andre faktorer, for å bestemme hva slags støtte er passende for deg i din situasjon.",
+                    "agreeFlowImageSrc": "/img/agreeToUseFlowNo.png",
+                    "agreeFlowImageMobileSrc": "/img/agreeToUseFlowMobileNo.png",
+                    "agreeFlowImageAlt": "Prosessen dersom du samtykker til bruk av KI-modellen"
+                }
+            },
+            "howAi": {
+                "title": "Hvordan KI-modellen fungerer",
+                "description": "KI-modellen er et beregningsverktøy som er trent til å utføre en prediksjon av varigheten av ditt sykefravær. Resultatet den gir til saksbehandleren er antallet uker den predikerer at sykefraværet ditt vil vare.",
+                "learnMore": {
                     "title": "Hvordan KI-modellen fungerer",
-                    "description1": "KI-modellen er et beregningsverktøy som predikerer varigheten av ditt sykefravær basert på dens kunnskap fra tidligere prediksjoner.",
-                    "description2": "Resultatet den gir til saksbehandleren er antallet uker den predikerer at sykefraværet ditt vil vare, og hvilke personopplysninger som bidro mest til dette resultatet.",
-                    "learnMore": {
-                        "title": "Hvordan KI-modellen fungerer",
-                        "description": "Kunstig intelligens er et paraplybegrep som beskriver datasystemer som kan løse komplekse problemer og lære fra tidligere erfaring.",
-                        "machineLearningModelTraitList": {
-                            "title": "Typen kunstig intelligens Den Nasjonale Sosialtjenesten bruker for predikering er en såkalt \"maskinlæringsmodell\", som har følgende egenskaper:",
-                            "li1": "Initielt lærer den ved å behandle en selektert samling av treningsdata som inneholder mønster eller likheter",
-                            "li2": "Mønsterene blir synlige gjennom prosesseringen",
-                            "li3": "En modell blir generert som kan gjenkjenne disse mønstrene i annen data innen samme kategori"
-                        },
-                        "trainingModelImageSrc": "/img/trainingTheModelNo.png",
-                        "trainingModelImageMobileSrc": "/img/trainingTheModelMobileNo.png",
-                        "trainingModelImageAlt": "Illustasjon av hvordan modellen blir trent",
-                        "descriptionPatternMatching": "Modellen er det resulterende programmet som kan gjenkjenne mønstrene, og det er dette som blir brukt for predikering. Når en prediksjon skal utføres, gis modellen ny data som inneholder samme parametere som treningsdataene.",
-                        "usingModelImageSrc": "/img/usingTheModelForPredictionsNo.png",
-                        "usingModelImageMobileSrc": "/img/usingTheModelForPredictionsMobileNo.png",
-                        "usingModelImageAlt": "Illustrasjon av hvordan modellen blir brukt"
-                    }
-                },
-                "whyAi": {
-                    "title": "Hvorfor vi tilbyr bruken av en KI-modell",
-                    "description1": "Den Nasjonale Sosialtjenestens mål er å sikre den mest hjelpsomme støtten for flest mulig.",
-                    "description2": "KI-modellen kan hjelpe saksbehandlere i å gjøre mer nøyaktige prediksjoner angående varigheten av sykefravær, og dens bruk kan derfor bidra til at en høyere andel av mennesker får støtten som er riktig tilpasset for deres situasjon.",
-                    "learnMore": {
-                        "title": "Hvorfor vi tilbyr bruken av KI-modellen i prediksjon av sykefraværets varighet",
-                        "reasonForUseList": {
-                            "title": "Den Nasjonale Sosialtjenestens mål er å sikre den mest hjelpsomme støtten for flest mulig. For å hjelpe våre saksbehandlere i å oppnå dette målet, tilbyr vi bruken av en KI-modell for prediksjon for å:",
-                            "li1": "hjelpe saksbehandlere i å gjøre mer nøyaktige vurderinger",
-                            "li2": "hjelpe til med å sikre tilpasset støtte for den enkelte",
-                            "li3": "spare ressurser og tid, noe som gir saksbehandlere mer tid til å hjelpe flere"
-                        },
-                        "rightToChoose": "Det er din rett å velge om saksbehandleren din skal benytte seg av KI-modellen for predikering eller ikke."
-                    }
-                },
-                "learnMoreButtonText": "Lær mer"
-            }
+                    "description": "Kunstig intelligens er et paraplybegrep som beskriver datasystemer som kan løse komplekse problemer og lære fra tidligere erfaring.",
+                    "machineLearningModelTraitList": {
+                        "title": "Typen kunstig intelligens Den Nasjonale Sosialtjenesten bruker for predikering er en såkalt \"maskinlæringsmodell\", som har følgende egenskaper:",
+                        "li1": "Initielt lærer den ved å prosessere en selektert samling av treningsdata som inneholder mønster eller likheter",
+                        "li2": "Mønsterene blir synlige gjennom prosesseringen",
+                        "li3": "En modell blir generert som kan gjenkjenne disse mønstrene i annen data innen samme kategori"
+                    },
+                    "trainingModelImageSrc": "/img/trainingTheModelNo.png",
+                    "trainingModelImageMobileSrc": "/img/trainingTheModelMobileNo.png",
+                    "trainingModelImageAlt": "Illustasjon av hvordan modellen blir trent",
+                    "descriptionPatternMatching": "Modellen er det resulterende programmet som kan gjenkjenne mønstrene, og det er dette som blir brukt for predikering. Når en prediksjon skal utføres, gis modellen ny data som inneholder samme parametere som treningsdataene.",
+                    "usingModelImageSrc": "/img/usingTheModelForPredictionsNo.png",
+                    "usingModelImageMobileSrc": "/img/usingTheModelForPredictionsMobileNo.png",
+                    "usingModelImageAlt": "Illustrasjon av hvordan modellen blir brukt"
+                }
+            },
+            "whyAi": {
+                "title": "Hvorfor vi tilbyr bruken av en KI-modell",
+                "description": "KI-modellen kan hjelpe saksbehandlere i å gjøre mer nøyaktige prediksjoner angående varigheten av sykefravær. Dette kan bidra til å sikre støtte for flere, raskere.",
+                "learnMore": {
+                    "title": "Hvorfor vi tilbyr bruken av KI-modellen i prediksjon av sykefraværets varighet",
+                    "reasonForUseList": {
+                        "title": "Den Nasjonale Sosialtjenestens mål er å sikre den mest hjelpsomme støtten for flest mulig. For å hjelpe våre saksbehandlere i å oppnå dette målet, tilbyr vi bruken av en KI-modell for prediksjon for å:",
+                        "li1": "hjelpe saksbehandlere i å gjøre mer nøyaktige vurderinger",
+                        "li2": "hjelpe til med å sikre tilpasset støtte for den enkelte",
+                        "li3": "spare ressurser og tid, noe som gir saksbehandlere mer tid til å hjelpe flere"
+                    },
+                    "rightToChoose": "Det er din rett å velge om saksbehandleren din skal benytte seg av KI-modellen for predikering eller ikke."
+                }
+            },
+            "learnMoreButtonText": "Lær mer"
         },
         "sandbox": {
             "title": "Utforsk hvordan KI-modellen fungerer med sandkassen",
