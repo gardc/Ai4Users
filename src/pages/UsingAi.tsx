@@ -31,31 +31,27 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
 
     return (
         <Parent>
-            <Content>
-                <div className="pb-4 sm:pb-8 text-center">
-                    <div className="flex justify-start py-5 text-black">
-                        <Link
-                            className="hover:font-bold text-sm lg:text-base pl-12 px-3"
-                            href={"/LandingPage"}
-                        >
-                            {t("pageProgressBar.home")}
-                        </Link>
-                        {">"}
-                        <Link
-                            className="hover:font-bold text-sm lg:text-base px-3"
-                            href={"/UseOfData"}
-                        >
-                            {t("pageProgressBar.useOfData")}
-                        </Link>
-                        {">"}
-                        <p className="font-bold underline text-sm lg:text-base underline-offset-4 px-3">
-                            {t("pageProgressBar.usingAiPage")}
-                        </p>
-                        <p className="text-gray-500 ">{">"}</p>
-                        <p className="text-gray-500 text-sm lg:text-base px-3">
-                            {t("pageProgressBar.summaryPage")}
-                        </p>
-                    </div>
+            <div className="pb-4 sm:pb-8 text-center">
+                <div className="flex justify-start py-5 text-black">
+                    <Link
+                        className="hover:font-bold text-sm lg:text-base pl-12 px-3"
+                        href={"/LandingPage"}
+                    >
+                        {t("pageProgressBar.home")}
+                    </Link>
+                    {">"}
+                    <Link className="hover:font-bold text-sm lg:text-base px-3" href={"/UseOfData"}>
+                        {t("pageProgressBar.useOfData")}
+                    </Link>
+                    {">"}
+                    <p className="font-bold underline text-sm lg:text-base underline-offset-4 px-3">
+                        {t("pageProgressBar.usingAiPage")}
+                    </p>
+                    <p className="text-gray-500 ">{">"}</p>
+                    <p className="text-gray-500 text-sm lg:text-base px-3">
+                        {t("pageProgressBar.summaryPage")}
+                    </p>
+                </div>
 
                     <p className="text-center text-prussian-blue font-bold text-3xl m-3">
                         {t("usingAiPage.title")}

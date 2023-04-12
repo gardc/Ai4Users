@@ -1,3 +1,4 @@
+import Content from "./Content";
 import NavBar from "./NavBar";
 
 /**
@@ -11,7 +12,7 @@ const Parent = (props: any) => {
     return (
         <div className="font-sans bg-zinc-100">
             <NavBar />
-            {props.children}
+            <Content>{props.children}</Content>
         </div>
     );
 };

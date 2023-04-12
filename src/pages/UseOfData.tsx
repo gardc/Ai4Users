@@ -25,32 +25,31 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
 
     return (
         <Parent>
-            <Content>
-                <div className="flex justify-start py-5 text-black">
-                    <Link
-                        className="hover:font-bold text-sm lg:text-base sm:pl-12 px-3"
-                        href={"/LandingPage"}
-                    >
-                        {t("pageProgressBar.home")}
-                    </Link>
-                    <p className="text-black">{">"}</p>
-                    <p className="font-bold text-sm lg:text-base underline underline-offset-4 text-black px-3">
-                        {t("pageProgressBar.useOfData")}
-                    </p>
-                    <p className="text-gray-500">{">"}</p>
-                    <p className="text-gray-500 text-sm lg:text-base px-3">
-                        {t("pageProgressBar.usingAiPage")}
-                    </p>
-                    <p className="text-gray-500">{">"}</p>
-                    <p className="text-gray-500 text-sm lg:text-base px-3">
-                        {t("pageProgressBar.summaryPage")}
-                    </p>
-                </div>
+            <div className="flex justify-start py-5 text-black">
+                <Link
+                    className="hover:font-bold text-sm lg:text-base sm:pl-12 px-3"
+                    href={"/LandingPage"}
+                >
+                    {t("pageProgressBar.home")}
+                </Link>
+                <p className="text-black">{">"}</p>
+                <p className="font-bold text-sm lg:text-base underline underline-offset-4 text-black px-3">
+                    {t("pageProgressBar.useOfData")}
+                </p>
+                <p className="text-gray-500">{">"}</p>
+                <p className="text-gray-500 text-sm lg:text-base px-3">
+                    {t("pageProgressBar.usingAiPage")}
+                </p>
+                <p className="text-gray-500">{">"}</p>
+                <p className="text-gray-500 text-sm lg:text-base px-3">
+                    {t("pageProgressBar.summaryPage")}
+                </p>
+            </div>
 
-                {/*Second page that shows personal information */}
-                <div className="m-4 text-cente flex justify-center">
-                    <div
-                        className="w-full sm:w-3/4 
+            {/*Second page that shows personal information */}
+            <div className="m-4 text-cente flex justify-center">
+                <div
+                    className="w-full sm:w-3/4 
                 bg-white drop-shadow-lg py-4 sm:py-8 px-4 sm:px-16 rounded-xl flex justify-center items-center flex-col"
                     >
                         <p className="text-center text-prussian-blue font-bold text-3xl sm:text-4xl">

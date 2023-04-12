@@ -58,6 +58,10 @@ export const sandboxParametersEn = [
                 itemValueForModel: "Agder",
             },
             {
+                itemName: "Innlandet",
+                itemValueForModel: "Innlandet",
+            },
+            {
                 itemName: "Møre og Romsdal",
                 itemValueForModel: "Møre og Romsdal",
             },
