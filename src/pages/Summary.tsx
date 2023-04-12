@@ -89,7 +89,7 @@ const Summary: React.FC = (
 
                 <div className="flex flex-col justify-center text-2xl items-center">
                     <h1
-                        className="text-prussian-blue font-bold text-3xl m-3"
+                        className="text-prussian-blue text-center font-bold text-3xl m-3"
                         dangerouslySetInnerHTML={{
                             __html: predictionChoiceTitle,
                         }}
