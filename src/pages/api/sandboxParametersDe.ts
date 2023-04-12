@@ -130,10 +130,6 @@ export const sandboxParametersDe = [
                 itemValueForModel: "Mental disorders",
             },
             {
-                itemName: "Pregnancy disorders",
-                itemValueForModel: "Pregnancy disorders",
-            },
-            {
                 itemName: "Diseases in the digestive organs",
                 itemValueForModel: "Diseases in the digestive organs",
             },

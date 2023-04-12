@@ -130,10 +130,6 @@ export const sandboxParametersNo = [
                 itemValueForModel: "Mental disorders",
             },
             {
-                itemName: "Svangerskapskomplikasjoner",
-                itemValueForModel: "Pregnancy disorders",
-            },
-            {
                 itemName: "Fordøyelsessykdommer",
                 itemValueForModel: "Diseases in the digestive organs",
             },
