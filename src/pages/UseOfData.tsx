@@ -51,35 +51,34 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
                 <div
                     className="w-full sm:w-3/4 
                 bg-white drop-shadow-lg py-4 sm:py-8 px-4 sm:px-16 rounded-xl flex justify-center items-center flex-col"
-                    >
-                        <p className="text-center text-prussian-blue font-bold text-3xl sm:text-4xl">
-                            {t("useOfDataPage.title")}
-                        </p>
-                        <p className="py-3 mt-5 text-left lg:w-3/4">
-                            {t("useOfDataPage.description1")}
-                        </p>
-                        <p className="py-3 text-left mb-4 lg:w-3/4">
-                            {t("useOfDataPage.description2")}
-                        </p>
-                        {/*Here there will be a component with information about the user */}
-                        {locale == "en" ? <DataTable data={exampleDataEn} /> : <></>}
-                        {locale == "no" ? <DataTable data={exampleDataNo} /> : <></>}
-                        {locale == "de" ? <DataTable data={exampleDataDe} /> : <></>}
-                        <div className="flex-col justify-center flex">
-                            {/* <div className="flex justify-center mt-4">
+                >
+                    <p className="text-center text-prussian-blue font-bold text-3xl sm:text-4xl">
+                        {t("useOfDataPage.title")}
+                    </p>
+                    <p className="py-3 mt-5 text-left lg:w-3/4">
+                        {t("useOfDataPage.description1")}
+                    </p>
+                    <p className="py-3 text-left mb-4 lg:w-3/4">
+                        {t("useOfDataPage.description2")}
+                    </p>
+                    {/*Here there will be a component with information about the user */}
+                    {locale == "en" ? <DataTable data={exampleDataEn} /> : <></>}
+                    {locale == "no" ? <DataTable data={exampleDataNo} /> : <></>}
+                    {locale == "de" ? <DataTable data={exampleDataDe} /> : <></>}
+                    <div className="flex-col justify-center flex">
+                        {/* <div className="flex justify-center mt-4">
                                 <Button color="black" href="/%">
                                     Is this information incorrect?
                                 </Button>
                             </div> */}
-                            <div className="flex justify-center mb-48">
-                                <Button color="lavaorange" href="/UsingAi">
-                                    {t("useOfDataPage.continueButtonText")}
-                                </Button>
-                            </div>
+                        <div className="flex justify-center mb-48">
+                            <Button color="lavaorange" href="/UsingAi">
+                                {t("useOfDataPage.continueButtonText")}
+                            </Button>
                         </div>
                     </div>
                 </div>
-            </Content>
+            </div>
         </Parent>
     );
 };
