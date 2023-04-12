@@ -25,7 +25,7 @@ const UserTestingLandingPage: React.FC = (
                 </div>
             </div>
 
-            <div className="py-28 px-10 mb-48 lg:px-40">
+            <div className="py-28 px-10 lg:px-40">
                 <h1 className="text-2xl text-cyan-900 font-bold">
                     {t("userTestingLandingPage.title")}
                 </h1>

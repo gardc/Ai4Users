@@ -66,10 +66,12 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
                         >
                             {expandedCloseButtonText}
                         </button>
-                        <div className="font-bold mb-6 text-xl w-5/6 xl:w-full text-left text-violet">
+                        <div className="font-bold mb-6 text-2xl w-5/6 xl:w-full text-left text-prussian-blue">
                             {expandedContentTitle}
                         </div>
-                        <div className="text-black text-left">{expandedContent}</div>
+                        <div className="text-black text-left font-normal">
+                            {expandedContent}
+                        </div>
                     </div>
                 </>
             )}

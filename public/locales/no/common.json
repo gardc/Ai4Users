@@ -147,7 +147,7 @@
                 "learnMoreLinkText": "Lær mer"
             }
         },
-        "consentQuestion": "Samtykker du til bruken av en kunstig intelligens-modell for å predikere varigheten av ditt sykefravær?",
+        "consentQuestion": "Samtykker du til å bruke en kunstig intelligens-modell for å predikere varigheten av ditt sykefravær?",
         "disagreeButtonText": "Jeg samtykker IKKE til bruken av KI-modellen",
         "agreeButtonText": "Jeg samtykker til bruken av KI-modellen"
     },
