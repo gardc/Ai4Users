@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 
 const BookIcon: React.FC = () => (
     <svg
@@ -20,17 +20,17 @@ const BookIcon: React.FC = () => (
         20.5825C10.3823 20.3083 9.44764 20 8.7 20C7.74624 20 6.48807 20.5017 5.83516 
         20.7943C5.54598 20.924 5.23383 21.0048 4.91729 20.9896C3.35289 20.9142 3 20.4039 
         3 18.6V6.39995Z"
-            stroke="#323232"
+            stroke="currentColor"
             strokeWidth="2"
         />
         <path
             d="M12 4V20"
-            stroke="#323232"
+            stroke="currentColor"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
         />
     </svg>
-)
+);
 
-export default BookIcon
+export default BookIcon;

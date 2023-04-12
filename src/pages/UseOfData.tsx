@@ -19,9 +19,7 @@ import Parent from "@/components/Parent";
  *
  * @returns A React functional component representing the landing page.
  */
-const UseOfData: React.FC = (
-    _props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { t } = useTranslation("common");
     const router = useRouter();
     const { locale } = router;
@@ -56,37 +54,25 @@ const UseOfData: React.FC = (
                 bg-white drop-shadow-lg py-4 sm:py-8 px-4 sm:px-16 rounded-xl flex justify-center items-center flex-col"
                 >
                     <p className="text-center text-prussian-blue font-bold text-3xl sm:text-4xl">
-                        {t("landingPage.title")}
+                        {t("useOfDataPage.title")}
                     </p>
                     <p className="py-3 mt-5 text-left lg:w-3/4">
-                        {t("landingPage.description1")}
+                        {t("useOfDataPage.description1")}
                     </p>
                     <p className="py-3 text-left mb-4 lg:w-3/4">
-                        {t("landingPage.description2")}
+                        {t("useOfDataPage.description2")}
                     </p>
                     <div className="mt-6">
                         <div className="flex flex-row items-center w-full mx-4">
                             <ProfileIcon />
                             <p className="px-2 font-bold text-prussian-blue text-lg">
-                                {t("summaryPage.informationSummaryTitle")}
+                                {t("useOfDataPage.informationSummaryTitle")}
                             </p>
                         </div>
                         {/*Here there will be a component with information about the user */}
-                        {locale == "en" ? (
-                            <DataTable data={exampleDataEn} />
-                        ) : (
-                            <></>
-                        )}
-                        {locale == "no" ? (
-                            <DataTable data={exampleDataNo} />
-                        ) : (
-                            <></>
-                        )}
-                        {locale == "de" ? (
-                            <DataTable data={exampleDataDe} />
-                        ) : (
-                            <></>
-                        )}
+                        {locale == "en" ? <DataTable data={exampleDataEn} /> : <></>}
+                        {locale == "no" ? <DataTable data={exampleDataNo} /> : <></>}
+                        {locale == "de" ? <DataTable data={exampleDataDe} /> : <></>}
                     </div>
 
                     <div className="flex-col justify-center flex">
