@@ -8,8 +8,8 @@ import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
 import Content from "@/components/Content";
 import DataTable from "@/components/DataTable";
-import Parent from "@/components/Parent";
 import Link from "next/link";
+import Parent from "@/components/Parent";
 
 /**
  * The landing page component that displays initial information about the web
@@ -53,13 +53,13 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
                 bg-white drop-shadow-lg py-4 sm:py-8 px-4 sm:px-16 rounded-xl flex justify-center items-center flex-col"
                 >
                     <p className="text-center text-prussian-blue font-bold text-3xl sm:text-4xl">
-                        {t("landingPage.dataPointsSummary.title")}
+                        {t("useOfDataPage.title")}
                     </p>
                     <p className="py-3 mt-5 text-left lg:w-3/4">
-                        {t("landingPage.dataPointsSummary.description1")}
+                        {t("useOfDataPage.description1")}
                     </p>
                     <p className="py-3 text-left mb-4 lg:w-3/4">
-                        {t("landingPage.dataPointsSummary.description2")}
+                        {t("useOfDataPage.description2")}
                     </p>
                     {/*Here there will be a component with information about the user */}
                     {locale == "en" ? <DataTable data={exampleDataEn} /> : <></>}
@@ -73,7 +73,7 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
                             </div> */}
                         <div className="flex justify-center mb-48">
                             <Button color="lavaorange" href="/UsingAi">
-                                {t("landingPage.continueButtonText")}
+                                {t("useOfDataPage.continueButtonText")}
                             </Button>
                         </div>
                     </div>

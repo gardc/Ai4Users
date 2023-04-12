@@ -1,5 +1,8 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { sandboxParametersEn } from "@/pages/api/sandboxParametersEn";
+import { sandboxParametersNo } from "@/pages/api/sandboxParametersNo";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import ArrowRightIcon from "@/components/Assets/arrowRightIcon";
 import BookIcon from "@/components/Assets/bookIcon";
@@ -13,9 +16,6 @@ import Link from "next/link";
 import Parent from "@/components/Parent";
 import React from "react";
 import Sandbox from "@/components/Sandbox";
-import { sandboxParametersEn } from "@/pages/api/sandboxParametersEn";
-import { sandboxParametersNo } from "@/pages/api/sandboxParametersNo";
-import { useRouter } from "next/router";
 
 /**
  * The page component for explaining the use of an AI model for the tester of the web application.

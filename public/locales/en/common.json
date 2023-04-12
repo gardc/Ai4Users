@@ -28,12 +28,23 @@
 
     "landingPage": {
         "title": "Prediction of sick leave duration",
-        "description": "In order to provide you with appropriate support during your sick leave, The National Social Service will make a prediction of its duration based on your data. This is helpful in planning for support measures such as follow-up meetings and economical support for a longer period of time.",
-        "dataPointsSummary": {
-            "title": "Data that is used in the prediction",
-            "description1": "Below is all the information about you that will be used in predicting your sick leave duration. This information is gathered from the national population register and The National Social Service registers.",
-            "description2": "Click on the \"?\" beside each piece of information to see why it is used."
+        "description1": "When you are on sick leave, you often have the right to one or more types of support from the National Social Service. This can be support measures such as economical support or follow up meetings.",
+        "description2": "In order to provide support suitable for your situation, a case handler at The National Social Service will evaluate your case based on a number of factors. One of these factors is a prediction of your sick leave duration, which makes it easier to plan for support measures over a longer period of time.",
+        "description3": "The case handler has the option of using an artificial intelligence model for performing this prediction, but only if you accept its use. Either way, it will be the case handler that makes the final decision regarding the support you will be granted.",
+        "description4": "To perform a prediction of the duration of your sick leave, we need to process some of your personal information.",
+        "stepsOfPageList": {
+            "title": "You will now go through three steps:",
+            "li1": "Verify that the personal information we have of you is correct",
+            "li2": "Accept or decline the use of an artificial intelligence model",
+            "li3": "Verify your choice and your personal information before submitting"
         },
+        "continueButtonText": "Go to the first step"
+    },
+
+    "useOfDataPage": {
+        "title": "Data that is used in the prediction",
+        "description1": "Below you will find all the information about you that will be used in predicting the duration of your sick leave. This information is gathered from the national population register and The National Social Service registers.",
+        "description2": "Click the \"?\" symbol beside each data point to see why it is used.",
         "continueButtonText": "Continue"
     },
 
