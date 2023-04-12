@@ -26,6 +26,14 @@
         "beginTestingButtonText": "Begin testing the web application"
     },
 
+    "feedback": {
+        "title": "Feedback",
+        "description": "We are interested in getting feedback on why you didn't consent to the usage of our AI-model, to further improve our service. This is of course optional.",
+        "submit": "Submit",
+        "skip": "Skip",
+        "placeholder": "Write your thoughts here..."
+    },
+
     "landingPage": {
         "title": "Prediction of sick leave duration",
         "description1": "When you are on sick leave, you often have the right to one or more types of support from the National Social Service. This can be support measures such as economical support or follow up meetings.",
