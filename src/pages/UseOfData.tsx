@@ -61,9 +61,15 @@ const UseOfData: React.FC = (
                     <p className="py-3 mt-5 text-left lg:w-3/4">
                         {t("useOfDataPage.description1")}
                     </p>
-                    <p className="py-3 text-left mb-4 lg:w-3/4">
-                        {t("useOfDataPage.description2")}
-                    </p>
+                    <div className="row flex flex-wrap py-3 text-left mb-4 lg:w-3/4">
+                        <p>{t("useOfDataPage.description2")}</p>
+                        <div className="w-5 h-1/100 bg-white focus:outline-none focus:ring focus:ring-black rounded-full flex justify-center items-center text-center p-3 shadow-xl border-black border-1">
+                            <div className="absolute text-sm font-medium">
+                                ?
+                            </div>
+                        </div>
+                        <p>{t("useOfDataPage.description22")}</p>
+                    </div>
                     <div className="mt-6">
                         <div className="flex flex-row items-center w-full mx-4">
                             <ProfileIcon />

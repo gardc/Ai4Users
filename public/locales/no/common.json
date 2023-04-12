@@ -52,7 +52,8 @@
     "useOfDataPage": {
         "title": "Data som blir brukt i predikeringen",
         "description1": "Nedenfor finner du all informasjon om deg som vil bli brukt i predikeringen av varigheten av sykefraværet ditt. Denne informasjonen er hentet fra det nasjonale folkeregisteret og Den Nasjonale Sosialtjenestens registre.",
-        "description2": "Klikk på \"?\"-symbolet ved siden av hvert informasjonspunkt for å se hvorfor det brukes.",
+        "description2": "Klikk på ",
+        "description22": "-symbolet ved siden av hvert informasjonspunkt for å se hvorfor det brukes.",
         "continueButtonText": "Fortsett",
         "informationSummaryTitle": "Dine data"
     },
