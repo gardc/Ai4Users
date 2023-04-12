@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import Button from "@/components/Button";
 import InformationSignIcon from "./Assets/informationSignIcon";
 
@@ -77,11 +77,11 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
                     <div
                         ref={expandedRef}
                         className="bg-white w-full sm:w-3/4 sm:rounded-xl fixed top-1/2 left-1/2 transform
-                        -translate-x-1/2 -translate-y-1/2 z-50 overflow-y-auto max-h-full sm:mt-10"
+                        -translate-x-1/2 -translate-y-1/2 z-50 overflow-y-auto max-h-[80%] sm:mt-10"
                     >
                         <div className="w-full p-8 sm:px-14 sm:py-8 bg-prussian-blue sticky top-0">
                             <button
-                                onClick={handleExpansion}
+                                onClick={handleExpansionClose}
                                 className="text-white hover:text-sky-600 mt-4 underline float-right justify-end"
                             >
                                 {expandedCloseButtonText}
