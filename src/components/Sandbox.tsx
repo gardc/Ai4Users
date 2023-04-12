@@ -8,6 +8,7 @@ import CogIconLarge from "./Assets/cogIconLarge";
 /**
  * The type definition for the `Sandbox` component's props.
  */
+
 interface SandboxProps {
     /**
      * The description text for the sandbox.
@@ -71,8 +72,8 @@ interface SandboxProps {
  * ];
  * Usage <Sandbox description={description} parameters={parameters} />
  */
-const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
 
+const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
     const initialState = parameters.reduce<Record<string, string>>((acc, param) => {
         const firstItemValueForModel = param.argument[0]?.itemValueForModel;
         if (firstItemValueForModel) {
@@ -80,19 +81,19 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
         }
         return acc;
     }, {});
-    
     const { t } = useTranslation("common");
-    const [selectedValues, setSelectedValues] = useState(initialState);
-    const [weeksOfPredictedSickLeave, setWeeksOfPredictedSickLeave] = 
-        useState(t("usingAiPage.sandbox.initialPredictionText"));
     const [cogSpin, setCogSpin] = useState(false);
     const [resultPulse, setResultPulse] = useState(false);
+    const [selectedValues, setSelectedValues] = useState(initialState);
+    const [weeksOfPredictedSickLeave, setWeeksOfPredictedSickLeave] = useState(
+        t("usingAiPage.sandbox.initialPredictionText")
+    );
 
     /**
      * Updates the values in the selected values state based on the user's input.
      *
      * @param event - The event object triggered by the input element.
-     */  
+     */
     const handleChangeOfValues = (parameterLabel: string, itemValueForModel: string) => {
         setSelectedValues((prevState) => ({
             ...prevState,
@@ -101,7 +102,7 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
     };
 
     /**
-     * Submits the form data of selected values to the server for processing and updates the state 
+     * Submits the form data of selected values to the server for processing and updates the state
      * with the predicted weeks of sick leave.
      *
      * @param e - The form event triggered by clicking the submit button.
@@ -132,7 +133,7 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
      * Disables the spinning animation of the cog after 600 milliseconds, sets the predicted weeks
      * to the right value, enables a bounce and color change animation for the text showing the
      * predicted weeks, and disables it after 400 milliseconds.
-     * 
+     *
      * @param weeksText - A string showing the predicted number of weeks of sick leave.
      */
     async function setCalculatedWeeksWithAnimation(weeksText: string) {
@@ -143,7 +144,6 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
         await new Promise((resolve) => setTimeout(resolve, 400));
         setResultPulse(false);
     }
-
     return (
         <div>
             <p className={"md:px-8"}>{description}</p>
@@ -214,7 +214,9 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                                     {weeksOfPredictedSickLeave}
                                 </p>
                             ) : (
-                                <p className={"text-md font-bold md:text-lg"}>{weeksOfPredictedSickLeave}</p>
+                                <p className={"text-md font-bold md:text-lg"}>
+                                    {weeksOfPredictedSickLeave}
+                                </p>
                             )}
                         </div>
                     </div>
@@ -231,5 +233,4 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
         </div>
     );
 };
-
 export default Sandbox;
