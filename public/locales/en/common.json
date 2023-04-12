@@ -26,6 +26,14 @@
         "beginTestingButtonText": "Begin testing the web application"
     },
 
+    "feedback": {
+        "title": "Feedback",
+        "description": "We are interested in getting feedback on why you didn't consent to the usage of our AI-model, to further improve our service. This is of course optional.",
+        "submit": "Submit",
+        "skip": "Skip",
+        "placeholder": "Write your thoughts here..."
+    },
+
     "landingPage": {
         "title": "Prediction of sick leave duration",
         "description": "In order to provide you with appropriate support during your sick leave, The National Social Service will make a prediction of its duration based on your data. This is helpful in planning for support measures such as follow-up meetings and economical support for a longer period of time.",

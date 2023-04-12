@@ -26,6 +26,14 @@
         "beginTestingButtonText": "Begynn å teste nettapplikasjonen"
     },
 
+    "feedback": {
+        "title": "Tilbakemelding",
+        "description": "Vi er interessert i å få tilbakemelding på hvorfor du ikke samtykket til bruken av AI-modellen vår, for å forbedre tjenesten vår ytterligere. Dette er selvsagt valgfritt.",
+        "submit": "Send inn",
+        "skip": "Hopp over",
+        "placeholder": "Skriv dine tanker her..."
+    },
+    
     "landingPage": {
         "title": "Prediksjon av sykefraværets varighet",
         "description": "For å kunne gi støtte tilpasset din situasjon under sykefraværet ditt, utfører Den Nasjonale Sosialtjenesten en prediksjon av sykefraværets varighet basert på din informasjon. Dette er behjelpelig i planleggingen av støttetiltak under en lengre periode, som for eksempel oppfølgingsmøter og økonomisk støtte.",

@@ -28,10 +28,13 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
      */
     let predictionChoiceTitle = "";
     let predictionChoiceText = "";
+    let nextPage = "";
     if (consent === "true") {
+        nextPage = "/UserTestingFinishedPage";
         predictionChoiceTitle = t("summaryPage.titleConsenting");
         predictionChoiceText = t("summaryPage.descriptionConsenting");
     } else if (consent === "false") {
+        nextPage = "/Feedback";
         predictionChoiceTitle = t("summaryPage.titleNotConsenting");
         predictionChoiceTitle = predictionChoiceTitle.replace(/(<b>not<\/b>)/, "<b>$1</b>");
         predictionChoiceText = t("summaryPage.descriptionNotConsenting");
@@ -104,8 +107,9 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
                             Is this information incorrect?
                         </Button>
                     </div> */}
+                
                 <div className="flex justify-center mt-4 pb-32">
-                    <Button color="lavaorange" href="/UserTestingFinishedPage">
+                    <Button color="lavaorange" href={nextPage}>
                         {t("summaryPage.submitChoiceButtonText")}
                     </Button>
                 </div>
