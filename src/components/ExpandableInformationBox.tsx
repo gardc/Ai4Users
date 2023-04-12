@@ -28,27 +28,15 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
     buttonText,
 }) => {
     const [expanded, setExpanded] = useState<boolean>(false);
-    const expandedRef = useRef<HTMLDivElement>(null);
-
-    useEffect(() => {
-        const handleOutsideClick = (event: MouseEvent) => {
-            if (
-                expandedRef.current &&
-                !expandedRef.current.contains(event.target as Node)
-            ) {
-                setExpanded(false);
-            }
-        };
-
-        document.addEventListener("mousedown", handleOutsideClick);
-
-        return () => {
-            document.removeEventListener("mousedown", handleOutsideClick);
-        };
-    }, [expandedRef]);
 
     const handleExpansion = () => {
-        setExpanded(!expanded);
+        setExpanded(true);
+        document.body.style.overflow = "hidden";
+    };
+
+    const handleExpansionClose = () => {
+        setExpanded(false);
+        document.body.style.overflow = "";
     };
 
     return (
@@ -65,15 +53,14 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
                 <>
                     <div
                         className="fixed inset-0 bg-black opacity-25 z-10"
-                        onClick={handleExpansion}
+                        onClick={handleExpansionClose}
                     ></div>
                     <div
-                        ref={expandedRef}
                         className="bg-white p-4 sm:p-14 w-full sm:w-3/4 sm:rounded-xl fixed top-1/2 left-1/2 transform
                         -translate-x-1/2 -translate-y-1/2 z-50 overflow-y-auto max-h-full sm:mt-10"
                     >
                         <button
-                            onClick={handleExpansion}
+                            onClick={handleExpansionClose}
                             className="text-black hover:text-sky-600
                             top-14 right-14 underline float-right justify-end"
                         >

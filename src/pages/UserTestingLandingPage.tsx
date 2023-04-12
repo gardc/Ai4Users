@@ -2,8 +2,8 @@ import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
-import React from "react";
 import LocaleSelection from "@/components/LocaleSelection";
+import React from "react";
 
 /**
  * The landing page for testing component that displays information relevant
