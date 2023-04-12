@@ -13,32 +13,28 @@ import Button from "@/components/Button";
  *
  * @returns A React functional component representing the landing page.
  */
-const LandingPage: React.FC = (
-    _props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { t } = useTranslation("common");
 
     return (
         <div className="h-screen bg-darkblue">
             <Parent>
-                <Content>
-                    <div className="bg-darkblue">
-                        <div
-                            className="index pt-8 pb-8 
+                <div className="bg-darkblue">
+                    <div
+                        className="index pt-8 pb-8 
                 flex-col flex items-center text-white"
-                        >
-                            <p className="text-center font-bold text-3xl sm:text-5xl tracking-wide sm:mt-16 ">
-                                {t("landingPage.title")}
-                            </p>
-                            <p className="w-5/6 sm:w-3/4 my-10 font-light text-left tracking-wide leading-6 text-lg">
-                                {t("landingPage.description")}
-                            </p>
-                            <Button color="lavaorange" href="/UseOfData">
-                                {t("landingPage.continueButtonText")}
-                            </Button>
-                        </div>
+                    >
+                        <p className="text-center font-bold text-3xl sm:text-5xl tracking-wide sm:mt-16 ">
+                            {t("landingPage.title")}
+                        </p>
+                        <p className="w-5/6 sm:w-3/4 my-10 font-light text-left tracking-wide leading-6 text-lg">
+                            {t("landingPage.description")}
+                        </p>
+                        <Button color="lavaorange" href="/UseOfData">
+                            {t("landingPage.continueButtonText")}
+                        </Button>
                     </div>
-                </Content>
+                </div>
             </Parent>
         </div>
     );

@@ -72,7 +72,6 @@ interface SandboxProps {
  * ];
  * Usage <Sandbox description={description} parameters={parameters} />
  */
-
 const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
     const initialState = parameters.reduce<Record<string, string>>(
         (acc, param) => {
@@ -100,6 +99,28 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
         parameterLabel: string,
         itemValueForModel: string
     ) => {
+
+    const initialState = parameters.reduce<Record<string, string>>((acc, param) => {
+        const firstItemValueForModel = param.argument[0]?.itemValueForModel;
+        if (firstItemValueForModel) {
+            acc[param.labelValueForModel] = firstItemValueForModel;
+        }
+        return acc;
+    }, {});
+    
+    const { t } = useTranslation("common");
+    const [selectedValues, setSelectedValues] = useState(initialState);
+    const [weeksOfPredictedSickLeave, setWeeksOfPredictedSickLeave] = 
+        useState(t("usingAiPage.sandbox.initialPredictionText"));
+    const [cogSpin, setCogSpin] = useState(false);
+    const [resultPulse, setResultPulse] = useState(false);
+
+    /**
+     * Updates the values in the selected values state based on the user's input.
+     *
+     * @param event - The event object triggered by the input element.
+     */  
+    const handleChangeOfValues = (parameterLabel: string, itemValueForModel: string) => {
         setSelectedValues((prevState) => ({
             ...prevState,
             [parameterLabel]: itemValueForModel,
@@ -143,6 +164,7 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
         console.log(parameterLabel + ", " + itemValueForModel + ", " + isMan); */
     };
 
+<<<<<<< HEAD
     function pregnantMen(itemValueForModel: string) {
         if (itemValueForModel == "Pregnancy disorders" && isMan) {
             return true;
@@ -153,9 +175,17 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
         }
     }
 
+=======
+    /**
+     * Submits the form data of selected values to the server for processing and updates the state 
+     * with the predicted weeks of sick leave.
+     *
+     * @param e - The form event triggered by clicking the submit button.
+     */
+>>>>>>> 480f9bc3071a3a2c38e8c566842ed115845c2185
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
-        console.log(selectedValues);
+        setCogSpin(true);
         const response = await fetch("/api/processData", {
             method: "POST",
             headers: {
@@ -175,23 +205,21 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
         setCalculatedWeeksWithAnimation(weeksText);
     };
 
-    const [calculateClicked, setCalculateClicked] = useState(false);
-
-    const [resultPulse, setResultPulse] = useState(false);
-
+    /**
+     * Disables the spinning animation of the cog after 600 milliseconds, sets the predicted weeks
+     * to the right value, enables a bounce and color change animation for the text showing the
+     * predicted weeks, and disables it after 400 milliseconds.
+     * 
+     * @param weeksText - A string showing the predicted number of weeks of sick leave.
+     */
     async function setCalculatedWeeksWithAnimation(weeksText: string) {
-        setCalculateClicked(true);
-        await new Promise((resolve) => setTimeout(resolve, 800));
-        setCalculateClicked(false);
+        await new Promise((resolve) => setTimeout(resolve, 600));
+        setCogSpin(false);
+        setWeeksOfPredictedSickLeave(weeksText);
         setResultPulse(true);
-        setWeeks(weeksText);
         await new Promise((resolve) => setTimeout(resolve, 400));
         setResultPulse(false);
     }
-
-    /* const handleVideoEnd = () => {
-        setWeeks(updatedWeeks);
-    }; */
 
     return (
         <div>
@@ -220,7 +248,7 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                                         "p-2 border rounded-lg shadow-md w-full"
                                     }
                                     onChange={(e) =>
-                                        handleChange(
+                                        handleChangeOfValues(
                                             parameter.labelValueForModel.toLowerCase(),
                                             e.target.value.toLowerCase()
                                         )
@@ -248,18 +276,8 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                     </form>
                 </div>
                 <div className={"flex flex-col items-center py-8"}>
-                    {/* <div className={"px-5 md:px-10 lg:px-15"}>
-                    <video
-                        ref={videoRef}
-                        src={"/mp4/sandboxModelAnimation.mp4"}
-                        onEnded={handleVideoEnd}
-                        loop={false}
-                        muted
-                        playsInline
-                    />
-                </div> */}
                     <div>
-                        {calculateClicked ? (
+                        {cogSpin ? (
                             <div className="animate-spin">
                                 <CogIconLarge />
                             </div>
@@ -280,12 +298,16 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                                         "text-md font-bold animate-bounce text-sky-blue md:text-lg"
                                     }
                                 >
-                                    {weeks}
+                                    {weeksOfPredictedSickLeave}
                                 </p>
                             ) : (
+<<<<<<< HEAD
                                 <p className={"text-md font-bold md:text-lg"}>
                                     {weeks}
                                 </p>
+=======
+                                <p className={"text-md font-bold md:text-lg"}>{weeksOfPredictedSickLeave}</p>
+>>>>>>> 480f9bc3071a3a2c38e8c566842ed115845c2185
                             )}
                         </div>
                     </div>
