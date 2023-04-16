@@ -128,6 +128,12 @@
             "caseHandlerText1": "Case handler receiving",
             "caseHandlerText2": "the prediction"
         },
+        "featureImportance": {
+            "title": "Feature importance",
+            "description1": "Feature importance refers to how much each factor (such as age or diagnosis) contributes to the AI model's prediction of your sick leave duration. The value of one feature, such as your age, will impact the feature importance of all features.",
+            "description2": "To better understand how important different features are when the AI model is making the prediction, you can change the age above the chart to see an example of how age influences the importance of each feature in relation to the prediction.",
+            "description3": "The larger a feature's weight is, the more important the feature is for the prediction, given the provided age."
+        },
         "aboutRightsInfo": {
             "title": "Your rights",
             "description1": "As a user of this service you have certain rights, especially related to your personal data.",

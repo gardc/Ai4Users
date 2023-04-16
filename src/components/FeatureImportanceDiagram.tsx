@@ -2,7 +2,8 @@ import { useState, useEffect, useRef } from "react";
 import * as d3 from "d3";
 
 interface FeatureImportanceDiagramProps {
-    description: string;
+    title: string;
+    description: string | JSX.Element;
     parameters: {
         label: string;
         argument: {
@@ -16,6 +17,7 @@ interface FeatureImportanceDiagramProps {
 }
 
 const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
+    title,
     description,
     parameters,
 }) => {
@@ -108,15 +110,18 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
 
     return (
         <div className="md:px-8 pt-12">
-            <div className="lg:flex">
-                <div className="bg-prussian-blue lg:w-1/2 text-white p-8 rounded-t-xl lg:rounded-r-none lg:rounded-l-xl flex flex-col">
-                    <p className="text-lg font-bold">Feature importance</p>
-                    <p className="pt-4 text-lg">{description}</p>
+            <div className="lg:flex shadow-2xl rounded-xl">
+                <div className="bg-prussian-blue rounded-t-xl lg:rounded-r-none lg:rounded-l-xl lg:w-1/2 text-white p-8  flex flex-col">
+                    <p className="text-lg font-bold">{title}</p>
+                    <p className="mt-8 text-lg">{description}</p>
                 </div>
 
-                <div className="flex flex-col lg:w-1/2 bg-white rounded-r-xl pl-12 p-8 mx-auto">
+                <div className="flex flex-col lg:w-1/2 bg-white rounded-xl pl-12 p-8 mx-auto">
                     <label className="text-xl font-bold">{parameters.label}</label>
-                    <select className="mt-2 p-2 border rounded-lg shadow-md w-full" onChange={handleParameterSelection}>
+                    <select
+                        className="mt-2 p-2 border rounded-lg shadow-md w-full"
+                        onChange={handleParameterSelection}
+                    >
                         {parameters.argument.map((argument) => (
                             <option key={argument.itemName} value={argument.itemName}>
                                 {argument.itemName}
@@ -133,7 +138,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                         <div className="flex">
                             <div
                                 className={`mt-1 h-4 w-4 rounded-xl`}
-                                style={{ backgroundColor: `${colorsForDiagram[index]}`}}
+                                style={{ backgroundColor: `${colorsForDiagram[index]}` }}
                             ></div>
                             <p className="ml-2 text-lg">{name}</p>
                         </div>
