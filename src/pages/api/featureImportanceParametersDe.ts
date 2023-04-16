@@ -2,7 +2,7 @@
  * As of now only manages one parameter that can be changed.
  */
 
-export const featureImportanceParametersEn = {
+export const featureImportanceParametersDe = {
     label: "Age",
     argument: [
         {

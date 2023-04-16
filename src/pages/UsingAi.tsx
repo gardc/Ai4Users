@@ -1,4 +1,6 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { featureImportanceParametersEn } from "./api/featureImportanceParametersEn";
+import { featureImportanceParametersNo } from "./api/featureImportanceParametersNo";
 import { sandboxParametersEn } from "@/pages/api/sandboxParametersEn";
 import { sandboxParametersNo } from "@/pages/api/sandboxParametersNo";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -7,9 +9,9 @@ import { useTranslation } from "next-i18next";
 import ArrowRightIcon from "@/components/Assets/arrowRightIcon";
 import BookIcon from "@/components/Assets/bookIcon";
 import CogIcon from "@/components/Assets/cogIcon";
-import Content from "@/components/Content";
 import ExpandableInformationBox from "@/components/ExpandableInformationBox";
 import FastForwardIcon from "@/components/Assets/fastForwardIcon";
+import FeatureImportanceDiagram from "@/components/FeatureImportanceDiagram";
 import Image from "next/image";
 import InformationDropdownBox from "@/components/InformationDropdownBox";
 import InformationSignIcon from "@/components/Assets/informationSignIcon";
@@ -364,10 +366,24 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                     initialInfo={t("usingAiPage.sandbox.shortDescription") as string}
                     extendInfoButtonText={t("usingAiPage.sandbox.expandButtonText")}
                     extendedInfo={
-                        <Sandbox
-                            description={t("usingAiPage.sandbox.mainDescription")}
-                            parameters={locale == "no" ? sandboxParametersNo : sandboxParametersEn}
-                        />
+                        <div>
+                            <Sandbox
+                                description={t("usingAiPage.sandbox.mainDescription")}
+                                parameters={
+                                    locale == "no" ? sandboxParametersNo : sandboxParametersEn
+                                }
+                            />
+                            <FeatureImportanceDiagram
+                                description={
+                                    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+                                }
+                                parameters={
+                                    locale == "no"
+                                        ? featureImportanceParametersNo
+                                        : featureImportanceParametersEn
+                                }
+                            />
+                        </div>
                     }
                     closeInfoButtonText={t("informationDropdownBoxCloseButtonText")}
                 />

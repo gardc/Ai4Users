@@ -2,7 +2,7 @@
  * As of now only manAlders one parameter that can be changed.
  */
 
-export const featureImportanceParametersEn = {
+export const featureImportanceParametersNo = {
     label: "Alder",
     argument: [
         {
