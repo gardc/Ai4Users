@@ -28,6 +28,21 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
 
     const pieChartRef = useRef<SVGSVGElement>(null);
 
+    const colorsForDiagram = [
+        "#003049",
+        "#9B2226",
+        "#EE9B00",
+        "#0A9396",
+        "#AE2012",
+        "#CA6702",
+        "#94D2BD",
+        "#BB3E03",
+        "#E9D8A6",
+        "#005F73",
+    ];
+
+    const featureNames = importanceValuesOfFeatures.map((d) => d.feature);
+
     useEffect(() => {
         if (importanceValuesOfFeatures.length === 0) {
             console.log([parameters.argument[0].relativeImportance[0]]);
@@ -36,13 +51,11 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
 
         const svg = d3.select(pieChartRef.current);
 
-        const colorScale = d3.scaleOrdinal(d3.schemeCategory10); //ONLY SUPPORTS 10 COLORS
+        const colorScale = d3.scaleOrdinal().domain(featureNames).range(colorsForDiagram);
 
-        const featureNames = importanceValuesOfFeatures.map((d) => d.feature);
-
-        const colorMapping: { [key: string]: string } = {};
-        featureNames.forEach((name, i) => {
-            colorMapping[name] = colorScale(i.toString());
+        const colorMapping: { [key: string]: any } = {};
+        featureNames.forEach((name) => {
+            colorMapping[name] = colorScale(name);
         });
 
         const pieChartLayout = d3.pie<{ feature: string; value: number }>().value((d) => d.value);
@@ -76,7 +89,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
             .append("text")
             .attr("transform", (d) => `translate(${arcGenerator.centroid(d)})`)
             .attr("dy", "0.35em")
-            .text((d) => d.data.feature)
+            .text((d) => d.data.value)
             .style("fill", "white")
             .style("text-anchor", "middle");
     }, [importanceValuesOfFeatures]);
@@ -103,7 +116,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
 
                 <div className="flex flex-col w-1/2 bg-white rounded-r-xl pl-12 p-8 mx-auto">
                     <label className="text-xl font-bold">{parameters.label}</label>
-                    <select className="mt-2" onChange={handleParameterSelection}>
+                    <select className="mt-2 p-2 border rounded-lg shadow-md w-full" onChange={handleParameterSelection}>
                         {parameters.argument.map((argument) => (
                             <option key={argument.itemName} value={argument.itemName}>
                                 {argument.itemName}
@@ -116,6 +129,15 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                         viewBox="-200 -200 400 400"
                         preserveAspectRatio="xMidYMid meet"
                     ></svg>
+                    {featureNames.map((name, index) => (
+                        <div className="flex">
+                            <div
+                                className={`mt-1 h-4 w-4 rounded-xl`}
+                                style={{ backgroundColor: `${colorsForDiagram[index]}`}}
+                            ></div>
+                            <p className="ml-2 text-lg">{name}</p>
+                        </div>
+                    ))}
                 </div>
             </div>
         </div>
