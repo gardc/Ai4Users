@@ -110,7 +110,12 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                             </option>
                         ))}
                     </select>
-                    <svg className="mx-auto" ref={pieChartRef} width={400} height={400}></svg>
+                    <svg
+                        className="mx-auto my-auto"
+                        ref={pieChartRef}
+                        viewBox="-200 -200 400 400"
+                        preserveAspectRatio="xMidYMid meet"
+                    ></svg>
                 </div>
             </div>
         </div>
