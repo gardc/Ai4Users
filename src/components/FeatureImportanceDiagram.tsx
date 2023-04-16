@@ -108,13 +108,13 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
 
     return (
         <div className="md:px-8 pt-12">
-            <div className="flex">
-                <div className="bg-prussian-blue w-1/2 text-white p-8 rounded-l-xl flex flex-col">
+            <div className="lg:flex">
+                <div className="bg-prussian-blue lg:w-1/2 text-white p-8 rounded-t-xl lg:rounded-r-none lg:rounded-l-xl flex flex-col">
                     <p className="text-lg font-bold">Feature importance</p>
                     <p className="pt-4 text-lg">{description}</p>
                 </div>
 
-                <div className="flex flex-col w-1/2 bg-white rounded-r-xl pl-12 p-8 mx-auto">
+                <div className="flex flex-col lg:w-1/2 bg-white rounded-r-xl pl-12 p-8 mx-auto">
                     <label className="text-xl font-bold">{parameters.label}</label>
                     <select className="mt-2 p-2 border rounded-lg shadow-md w-full" onChange={handleParameterSelection}>
                         {parameters.argument.map((argument) => (
@@ -124,7 +124,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                         ))}
                     </select>
                     <svg
-                        className="mx-auto my-auto"
+                        className="mx-auto my-auto w-4/5 lg:w-full"
                         ref={pieChartRef}
                         viewBox="-200 -200 400 400"
                         preserveAspectRatio="xMidYMid meet"
