@@ -1,9 +1,9 @@
+import { useTranslation } from "next-i18next";
+import ArrowToModelIcon from "./Assets/arrowToModelIcon";
 import Button from "@/components/Button";
 import CaseHandlerIcon from "@/components/Assets/caseHandlerIcon";
-import { useTranslation } from "next-i18next";
-import React, { FormEvent, useState, useRef } from "react";
-import ArrowToModelIcon from "./Assets/arrowToModelIcon";
 import CogIconLarge from "./Assets/cogIconLarge";
+import React, { FormEvent, useState } from "react";
 
 /**
  * The type definition for the `Sandbox` component's props.
