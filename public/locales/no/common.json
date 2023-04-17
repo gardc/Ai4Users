@@ -31,7 +31,10 @@
         "description": "Vi er interessert i å få tilbakemelding på hvorfor du ikke samtykket til bruken av AI-modellen vår, for å forbedre tjenesten vår ytterligere. Dette er selvsagt valgfritt.",
         "submit": "Send inn",
         "skip": "Hopp over",
-        "placeholder": "Skriv dine tanker her..."
+        "placeholder": "Skriv dine tanker her...",
+        "success": "Din tilbakemelding ble mottat. Takk!",
+        "error:": "Det oppstod følgende problemer:",
+        "continue": "Fortsett"
     },
     
     "landingPage": {

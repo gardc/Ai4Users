@@ -31,7 +31,10 @@
         "description": "We are interested in getting feedback on why you didn't consent to the usage of our AI-model, to further improve our service. This is of course optional.",
         "submit": "Submit",
         "skip": "Skip",
-        "placeholder": "Write your thoughts here..."
+        "placeholder": "Write your thoughts here...",
+        "success": "Your feedback was submitted, thank you.",
+        "error:": "There was a problem submitting your feedback:",
+        "continue": "Continue"
     },
 
     "landingPage": {
