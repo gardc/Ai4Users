@@ -108,34 +108,98 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
     >([]);
 
     const pieChartRef = useRef<SVGSVGElement>(null);
+    const barPlotRef = useRef<SVGSVGElement>(null);
     const featureNames = importanceWeightsOfFeatures.map((d) => d.feature);
-    const colorsForDiagram = [
-        "#003049",
-        "#9B2226",
-        "#EE9B00",
-        "#0A9396",
-        "#AE2012",
-        "#CA6702",
-        "#94D2BD",
-        "#BB3E03",
-        "#E9D8A6",
-        "#005F73",
-    ];
+    const colorsForDiagram = ["#003049", "#9B2226", "#EE9B00", "#0A9396", "#E9D8A6"]; //ONLY 5 COLORS
 
     useEffect(() => {
-        drawPieChart();
+        if (importanceWeightsOfFeatures.length === 0) {
+            console.log([parameter.arguments[0].featureImportanceGivenArgument[0]]);
+            setImportanceWeightsOfFeatures(parameter.arguments[0].featureImportanceGivenArgument);
+        }
+        //drawPieChart();
+        drawBarPlot();
     });
+
+    const drawBarPlot = () => {
+        const svg = d3.select(barPlotRef.current);
+        svg.selectAll("*").remove();
+
+        const margin = { top: 20, right: 20, bottom: 30, left: 40 };
+        const width = +svg.attr("width") - margin.left - margin.right;
+        const height = +svg.attr("height") - margin.top - margin.bottom;
+
+        const maxWeight = d3.max(
+            importanceWeightsOfFeatures.filter((d) => d.weight !== undefined),
+            (d) => d.weight as number
+        )!;
+
+        const tickValues = d3.ticks(0, maxWeight, 5);
+
+        const x = d3.scaleLinear().range([0, width]).domain([0, maxWeight]);
+
+        const y = d3
+            .scaleBand()
+            .range([height, 0])
+            .padding(0.25)
+            .domain(importanceWeightsOfFeatures.map((d) => d.feature));
+
+        const g = svg
+            .append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+        g.append("g")
+            .attr("class", "axis axis--x")
+            .attr("transform", "translate(0," + height + ")")
+            .call(d3.axisBottom(x).tickValues(tickValues))
+            .selectAll("text")
+            .style("font-size", "20px");
+
+        g.append("g")
+            .attr("class", "axis axis--y")
+            .call(d3.axisLeft(y).ticks(10, "%"))
+            .selectAll("text")
+            .remove();
+
+        const bars = g
+            .selectAll(".bar")
+            .data(importanceWeightsOfFeatures)
+            .enter()
+            .append("g")
+            .attr("class", "bar");
+
+        bars.append("rect")
+            .attr("x", 0)
+            .attr("height", y?.bandwidth())
+            .attr("y", (d: { feature?: string }) =>
+                d && d.feature
+                    ? (y?.(d.feature) ?? 0) + y?.bandwidth() / 2 - 0.5 * y?.bandwidth()
+                    : null
+            )
+            .attr("width", (d: { weight?: number }) => (d && d.weight ? x(d.weight) : null))
+            .attr("fill", "#c14922");
+
+        bars.append("text")
+            .text((d) => d.feature)
+            .attr("x", 5)
+            .attr("y", (d: { feature?: string }) =>
+                d && d.feature ? (y?.(d.feature) ?? 0) + y?.bandwidth() / 2 + 5 : null
+            )
+            .attr("fill", "white")
+            .style("font-size", "20px");
+
+        svg.attr("viewBox", `0 0 ${+svg.attr("width")} ${+svg.attr("height")}`);
+
+        svg.style("width", "100%");
+        svg.style("height", "auto");
+    };
 
     /**
      * Draws the pie chart as an SVG based on the selected value for thechangable parameter.
      */
     const drawPieChart = () => {
-        if (importanceWeightsOfFeatures.length === 0) {
-            console.log([parameter.arguments[0].featureImportanceGivenArgument[0]]);
-            setImportanceWeightsOfFeatures(parameter.arguments[0].featureImportanceGivenArgument);
-        }
-
         const svg = d3.select(pieChartRef.current);
+        svg.selectAll("*").remove();
 
         const colorScale = d3.scaleOrdinal().domain(featureNames).range(colorsForDiagram);
 
@@ -218,13 +282,20 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                             </option>
                         ))}
                     </select>
-                    <svg
+                    {/* <svg
                         className="mx-auto my-auto w-4/5 lg:w-full"
                         ref={pieChartRef}
                         viewBox="-200 -200 400 400"
                         preserveAspectRatio="xMidYMid meet"
+                    ></svg> */}
+                    <svg
+                        className="mx-auto my-auto py-4"
+                        ref={barPlotRef}
+                        width="480"
+                        height="500"
                     ></svg>
-                    {featureNames.map((name, index) => (
+
+                    {/* {featureNames.map((name, index) => (
                         <div className="flex">
                             <div
                                 className={`mt-1 h-4 w-4 rounded-xl`}
@@ -232,7 +303,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                             ></div>
                             <p className="ml-2 text-lg">{name}</p>
                         </div>
-                    ))}
+                    ))} */}
                 </div>
             </div>
         </div>
