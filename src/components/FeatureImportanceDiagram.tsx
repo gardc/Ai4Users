@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import * as d3 from "d3";
 import BarChartIcon from "./Assets/barChartIcon";
 import PieChartIcon from "./Assets/pieChartIcon";
@@ -144,27 +144,10 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
      * A list of HEX-values for colors used in the pie chart. Only five colors are defined as the
      * pie chart will not show if more than five features are provided.
      */
-    const colorsForDiagram = ["#003049", "#9B2226", "#EE9B00", "#0A9396", "#E9D8A6"]; //ONLY 5 COLORS
-
-    useEffect(() => {
-        //  Sets the initial contents of the "importanceWeightsOfFeatures" state.
-        if (importanceWeightsOfFeatures.length === 0) {
-            setImportanceWeightsOfFeatures(parameter.arguments[0].featureImportanceGivenArgument);
-        }
-
-        // Disables the pie chart if the number of features saved in the
-        // "importanceWeightsOfFeatures" state is more than 5.
-        if (importanceWeightsOfFeatures.length > 5) {
-            setMoreThanFiveFeatures(true);
-            setPieChartVisible(false);
-        } else setMoreThanFiveFeatures(false);
-
-        if (pieChartVisible) {
-            drawPieChart();
-        } else {
-            drawBarPlot();
-        }
-    });
+    const colorsForDiagram = useMemo(
+        () => ["#003049", "#9B2226", "#EE9B00", "#0A9396", "#E9D8A6"],
+        []
+    );
 
     /**
      * Sets the state of the boolean pieChartVisible to its opposite, effectively switching
@@ -177,7 +160,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
     /**
      * Draws the bar plot as an SVG based on the selected value for the changable parameter.
      */
-    const drawBarPlot = () => {
+    const drawBarPlot = useCallback(() => {
         const svg = d3.select(barPlotRef.current);
         svg.selectAll("*").remove();
 
@@ -246,12 +229,12 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
         svg.attr("viewBox", `0 0 ${+svg.attr("width")} ${+svg.attr("height")}`);
         svg.style("width", "100%");
         svg.style("height", "auto");
-    };
+    }, [importanceWeightsOfFeatures]);
 
     /**
      * Draws the pie chart as an SVG based on the selected value for thec hangable parameter.
      */
-    const drawPieChart = () => {
+    const drawPieChart = useCallback(() => {
         const svg = d3.select(pieChartRef.current);
         svg.selectAll("*").remove();
 
@@ -295,7 +278,33 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
             .text((d) => d.data.weight)
             .style("fill", "white")
             .style("text-anchor", "middle");
-    };
+    }, [importanceWeightsOfFeatures, colorsForDiagram, featureNames]);
+
+    useEffect(() => {
+        //  Sets the initial contents of the "importanceWeightsOfFeatures" state.
+        if (importanceWeightsOfFeatures.length === 0) {
+            setImportanceWeightsOfFeatures(parameter.arguments[0].featureImportanceGivenArgument);
+        }
+
+        // Disables the pie chart if the number of features saved in the
+        // "importanceWeightsOfFeatures" state is more than 5.
+        if (importanceWeightsOfFeatures.length > 5) {
+            setMoreThanFiveFeatures(true);
+            setPieChartVisible(false);
+        } else setMoreThanFiveFeatures(false);
+
+        if (pieChartVisible) {
+            drawPieChart();
+        } else {
+            drawBarPlot();
+        }
+    }, [
+        importanceWeightsOfFeatures.length,
+        pieChartVisible,
+        parameter.arguments,
+        drawPieChart,
+        drawBarPlot,
+    ]);
 
     /**
      * Sets the state holding the feature importance weights of the features, given the selected
@@ -363,7 +372,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                         {pieChartVisible &&
                             !moreThanFiveFeatures &&
                             featureNames.map((name, index) => (
-                                <div className="flex">
+                                <div key={name} className="flex">
                                     <div
                                         className={`mt-1 h-4 w-4 rounded-xl`}
                                         style={{ backgroundColor: `${colorsForDiagram[index]}` }}
