@@ -1,3 +1,5 @@
+import feedback from "@/db/models/feedback";
+import dbConnect from "@/db/dbConnect";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type FeedbackData = {
@@ -16,9 +18,12 @@ export default async function handler(
       return;
     }
 
-    // TODO: Add implementation for storing the data in our mongoDB database.
+    // Create and store new feedback to db.
 
-    console.log("Testing: received", message, "as a feedback message.");
+    await dbConnect(); // connect to db
+    const newFeedback = new feedback({feedback: message});
+    await newFeedback.save();
+
     res.status(200).json({ message: "Feedback submitted successfully." });
   } else {
     res.setHeader("Allow", "POST");

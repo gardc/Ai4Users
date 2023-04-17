@@ -24,21 +24,30 @@ const Feedback: React.FC = (
   _props: InferGetStaticPropsType<typeof getStaticProps>
 ) => {
   const { t } = useTranslation("common");
-  const [message, setMessage] = useState("");
+  const [feedbackString, setFeedbackString] = useState("");
+  const [waiting, setWaiting] = useState(false);
+  const [finished, setFinished] = useState(false);
+  const [resultMessage, setResultMessage] = useState("");
 
   const handleSubmit = async () => {
     try {
+      setWaiting(true);
       const response = await sendApiRequest("/api/feedback", "POST", {
-        message,
+        message: feedbackString,
       });
       console.log(response);
+      setWaiting(false);
+      setFinished(true);
+      setResultMessage(`${t("feedback.success")}`);
     } catch (error) {
       console.error("Error submitting feedback:", error);
+      setWaiting(false);
+      setResultMessage(`${t("feedback.error")} ${error}`);
     }
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
-    setMessage(event.target.value);
+    setFeedbackString(event.target.value);
   };
 
   return (
@@ -55,7 +64,7 @@ const Feedback: React.FC = (
           <textarea
             id="message"
             rows={6}
-            value={message}
+            value={feedbackString}
             onChange={handleInputChange}
             className="block p-2.5 w-[50%] text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
             placeholder={t("feedback.placeholder")!}
@@ -63,15 +72,18 @@ const Feedback: React.FC = (
           <div className="flex justify-center mt-8 mb-10 sm:m-5">
             <Button
               color="lavaorange"
-              //href="/UserTestingFinishedPage"
               onClick={handleSubmit}
+              disabled={finished}
+              loading={waiting}
             >
               {t("feedback.submit")}
             </Button>
-            <Button color="lavaorange" href="/UserTestingFinishedPage">
-              {t("feedback.skip")}
+            <Button color="lavaorange" href="/UserTestingFinishedPage" loading={waiting}>
+              {/* If finished, show continue button, else show skip */}
+              {finished ? t("feedback.continue") : t("feedback.skip")}
             </Button>
           </div>
+          <p className="">{resultMessage}</p>
         </div>
       </Parent>
     </div>
