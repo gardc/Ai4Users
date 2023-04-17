@@ -386,7 +386,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                         </p>
                                     </>
                                 }
-                                parameters={
+                                parameter={
                                     locale == "no"
                                         ? featureImportanceParametersNo
                                         : featureImportanceParametersEn
