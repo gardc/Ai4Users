@@ -19,7 +19,9 @@ import Parent from "@/components/Parent";
  *
  * @returns A React functional component representing the landing page.
  */
-const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const UseOfData: React.FC = (
+    _props: InferGetStaticPropsType<typeof getStaticProps>
+) => {
     const { t } = useTranslation("common");
     const router = useRouter();
     const { locale } = router;
@@ -59,9 +61,16 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
                     <p className="py-3 mt-5 text-left lg:w-3/4">
                         {t("useOfDataPage.description1")}
                     </p>
-                    <p className="py-3 text-left mb-4 lg:w-3/4">
+
+                    <p className="lg:w-3/4">
                         {t("useOfDataPage.description2")}
+                        <span className="absolute text-sm font-medium border-black border-1 rounded-full shadow-xl py-0.5 px-9px">
+                            ?
+                        </span>
+                        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                        {t("useOfDataPage.description22")}
                     </p>
+
                     <div className="mt-6">
                         <div className="flex flex-row items-center w-full mx-4">
                             <ProfileIcon />
@@ -70,9 +79,21 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
                             </p>
                         </div>
                         {/*Here there will be a component with information about the user */}
-                        {locale == "en" ? <DataTable data={exampleDataEn} /> : <></>}
-                        {locale == "no" ? <DataTable data={exampleDataNo} /> : <></>}
-                        {locale == "de" ? <DataTable data={exampleDataDe} /> : <></>}
+                        {locale == "en" ? (
+                            <DataTable data={exampleDataEn} />
+                        ) : (
+                            <></>
+                        )}
+                        {locale == "no" ? (
+                            <DataTable data={exampleDataNo} />
+                        ) : (
+                            <></>
+                        )}
+                        {locale == "de" ? (
+                            <DataTable data={exampleDataDe} />
+                        ) : (
+                            <></>
+                        )}
                     </div>
 
                     <div className="flex-col justify-center flex">
@@ -81,7 +102,7 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
                                     Is this information incorrect?
                                 </Button>
                             </div> */}
-                        <div className="flex justify-center mt-5 mb-16">
+                        <div className="flex justify-center mt-5 mb-10">
                             <Button color="lavaorange" href="/UsingAi">
                                 {t("landingPage.continueButtonText")}
                             </Button>

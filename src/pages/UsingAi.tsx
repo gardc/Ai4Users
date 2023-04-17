@@ -515,7 +515,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 />
             </div>
             <div className="mb-16"></div>
-            <div className="h-96 mb-48 pt-20 flex flex-col justify-center bg-white text-center py-8 sm:p-6">
+            <div className="h-96 mb-20 pt-20 flex flex-col justify-center bg-white text-center py-8 sm:p-6">
                 <p className="font-semibold p-3 text-2xl">{t("usingAiPage.consentQuestion")}</p>
                 <div className="flex justify-center mt-8 mb-10 sm:m-5">
                     <Link

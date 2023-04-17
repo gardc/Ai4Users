@@ -26,6 +26,17 @@
         "beginTestingButtonText": "Begynn å teste nettapplikasjonen"
     },
 
+    "feedback": {
+        "title": "Tilbakemelding",
+        "description": "Vi er interessert i å få tilbakemelding på hvorfor du ikke samtykket til bruken av AI-modellen vår, for å forbedre tjenesten vår ytterligere. Dette er selvsagt valgfritt.",
+        "submit": "Send inn",
+        "skip": "Hopp over",
+        "placeholder": "Skriv dine tanker her...",
+        "success": "Din tilbakemelding ble mottat. Takk!",
+        "error:": "Det oppstod følgende problemer:",
+        "continue": "Fortsett"
+    },
+    
     "landingPage": {
         "title": "Prediksjon av sykefraværets varighet",
         "description1": "Som sykmeldt har du ofte rett til en eller flere typer støtte fra Den Nasjonale Sosialtjenesten. Dette kan være støttetiltak som økonomisk støtte eller oppfølgingsmøter.",
@@ -44,7 +55,8 @@
     "useOfDataPage": {
         "title": "Data som blir brukt i predikeringen",
         "description1": "Nedenfor finner du all informasjon om deg som vil bli brukt i predikeringen av varigheten av sykefraværet ditt. Denne informasjonen er hentet fra det nasjonale folkeregisteret og Den Nasjonale Sosialtjenestens registre.",
-        "description2": "Klikk på \"?\"-symbolet ved siden av hvert informasjonspunkt for å se hvorfor det brukes.",
+        "description2": "Klikk på ",
+        "description22": "-symbolet ved siden av hvert informasjonspunkt for å se hvorfor det brukes.",
         "continueButtonText": "Fortsett",
         "informationSummaryTitle": "Dine data"
     },

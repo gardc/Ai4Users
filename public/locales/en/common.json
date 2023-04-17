@@ -26,6 +26,17 @@
         "beginTestingButtonText": "Begin testing the web application"
     },
 
+    "feedback": {
+        "title": "Feedback",
+        "description": "We are interested in getting feedback on why you didn't consent to the usage of our AI-model, to further improve our service. This is of course optional.",
+        "submit": "Submit",
+        "skip": "Skip",
+        "placeholder": "Write your thoughts here...",
+        "success": "Your feedback was submitted, thank you.",
+        "error:": "There was a problem submitting your feedback:",
+        "continue": "Continue"
+    },
+
     "landingPage": {
         "title": "Prediction of sick leave duration",
         "description1": "When you are on sick leave, you often have the right to one or more types of support from the National Social Service. This can be support measures such as economical support or follow up meetings.",
@@ -44,7 +55,8 @@
     "useOfDataPage": {
         "title": "Data that is used in the prediction",
         "description1": "Below you will find all the information about you that will be used in predicting the duration of your sick leave. This information is gathered from the national population register and The National Social Service registers.",
-        "description2": "Click the \"?\" symbol beside each data point to see why it is used.",
+        "description2": "Click on the ",
+        "description22": "-symbol beside each data point to see why it is used.",
         "continueButtonText": "Continue",
         "informationSummaryTitle": "Your personal information"
     },

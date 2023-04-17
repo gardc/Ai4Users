@@ -23,6 +23,7 @@
     "flowbite-react": "^0.3.8",
     "i18next": "^22.4.11",
     "i18next-browser-languagedetector": "^7.0.1",
+    "mongoose": "^7.0.3",
     "next": "13.1.6",
     "next-i18next": "^13.2.2",
     "node-fetch": "^3.3.1",
