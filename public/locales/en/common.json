@@ -115,8 +115,8 @@
             "learnMoreButtonText": "Learn more"
         },
         "sandbox": {
-            "title": "Explore how the AI-model works with the sandbox",
-            "shortDescription": "Use the interactive sandbox to explore how different factors can affect how the AI-model predicts your sick-leave duration.",
+            "title": "Explore how the AI-model works",
+            "shortDescription": "Use the interactive sandbox to explore how different factors affect the AI-model prediction of sick-leave duration, and to better understand the importance of the features.",
             "mainDescription": "By changing the values listed below, you can explore how they each impact the sick leave prediction that our case handlers will receive. This sandbox uses a simplified model and illustrates the actual models functionality.",
             "expandButtonText": "Try it here",
             "sickLeaveDescription": "Predicted sick-leave duration",

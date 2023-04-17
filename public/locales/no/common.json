@@ -115,8 +115,8 @@
             "learnMoreButtonText": "Lær mer"
         },
         "sandbox": {
-            "title": "Utforsk hvordan KI-modellen fungerer med sandkassen",
-            "shortDescription": "Bruk den interaktive sandkassen for å utforske hvordan ulike faktorer kan påvirke hvordan KI-modellen predikerer ditt sykefravær.",
+            "title": "Utforsk hvordan KI-modellen fungerer",
+            "shortDescription": "Bruk den interaktive sandkassen for å utforske hvordan ulike faktorer påvirker KI-modellens prediksjon av varigheten av sykefravær, og for å bedre forstå viktigheten av faktorene.",
             "mainDescription": "Ved å endre verdiene nedenfor, kan du utforske hvordan hver av dem påvirker prediksjonen av sykefraværet som våre saksbehandlere vil motta. Denne sandkassen bruker en forenklet modell og illustrerer den faktiske modellens virkemåte.",
             "expandButtonText": "Prøv den her",
             "sickLeaveDescription": "Predikert sykefravær",
