@@ -1,7 +1,7 @@
 import { useState, useEffect, useRef } from "react";
 import * as d3 from "d3";
-import PieChartIcon from "./Assets/pieChartIcon";
 import BarChartIcon from "./Assets/barChartIcon";
+import PieChartIcon from "./Assets/pieChartIcon";
 import TransparentBoxIcon from "./Assets/transparentBoxIcon";
 
 /**
@@ -103,28 +103,62 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
     description,
     parameter,
 }) => {
+    /**
+     * Holds a list of the current features and feature  importance weights, given the selected
+     * value of the changable parameter.
+     */
     const [importanceWeightsOfFeatures, setImportanceWeightsOfFeatures] = useState<
         {
             feature: string;
             weight: number;
         }[]
     >([]);
+
+    /**
+     * Holds a boolean representing whether the pie chart should be visible or not.
+     */
     const [pieChartVisible, setPieChartVisible] = useState(true);
+
+    /**
+     * Holds a boolean representing whether there are more than five features with weights
+     * currently saved in the "importanceWeightsOfFeatures" state.
+     */
     const [moreThanFiveFeatures, setMoreThanFiveFeatures] = useState(false);
+
+    /**
+     * The ref of the pie chart SVG.
+     */
     const pieChartRef = useRef<SVGSVGElement>(null);
+
+    /**
+     * The ref of the bar plot SVG.
+     */
     const barPlotRef = useRef<SVGSVGElement>(null);
-    const featureNames = importanceWeightsOfFeatures.map((d) => d.feature);
+
+    /**
+     * The names of the saved features in the "importanceWeightsOfFeatures" state.
+     */
+    let featureNames = importanceWeightsOfFeatures.map((d) => d.feature);
+
+    /**
+     * A list of HEX-values for colors used in the pie chart. Only five colors are defined as the
+     * pie chart will not show if more than five features are provided.
+     */
     const colorsForDiagram = ["#003049", "#9B2226", "#EE9B00", "#0A9396", "#E9D8A6"]; //ONLY 5 COLORS
 
     useEffect(() => {
+        //  Sets the initial contents of the "importanceWeightsOfFeatures" state.
         if (importanceWeightsOfFeatures.length === 0) {
-            console.log([parameter.arguments[0].featureImportanceGivenArgument[0]]);
             setImportanceWeightsOfFeatures(parameter.arguments[0].featureImportanceGivenArgument);
         }
+
+        // Disables the pie chart if the number of features saved in the
+        // "importanceWeightsOfFeatures" state is more than 5.
         if (importanceWeightsOfFeatures.length > 5) {
             setMoreThanFiveFeatures(true);
             setPieChartVisible(false);
         } else setMoreThanFiveFeatures(false);
+
         if (pieChartVisible) {
             drawPieChart();
         } else {
@@ -132,10 +166,17 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
         }
     });
 
+    /**
+     * Sets the state of the boolean pieChartVisible to its opposite, effectively switching
+     * between showing the pie chart and the bar plot.
+     */
     const switchDiagram = () => {
         setPieChartVisible(!pieChartVisible);
     };
 
+    /**
+     * Draws the bar plot as an SVG based on the selected value for the changable parameter.
+     */
     const drawBarPlot = () => {
         const svg = d3.select(barPlotRef.current);
         svg.selectAll("*").remove();
@@ -148,7 +189,6 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
             importanceWeightsOfFeatures.filter((d) => d.weight !== undefined),
             (d) => d.weight as number
         )!;
-
         const tickValues = d3.ticks(0, maxWeight, 5);
 
         const x = d3.scaleLinear().range([0, width]).domain([0, maxWeight]);
@@ -204,20 +244,18 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
             .style("font-size", "20px");
 
         svg.attr("viewBox", `0 0 ${+svg.attr("width")} ${+svg.attr("height")}`);
-
         svg.style("width", "100%");
         svg.style("height", "auto");
     };
 
     /**
-     * Draws the pie chart as an SVG based on the selected value for thechangable parameter.
+     * Draws the pie chart as an SVG based on the selected value for thec hangable parameter.
      */
     const drawPieChart = () => {
         const svg = d3.select(pieChartRef.current);
         svg.selectAll("*").remove();
 
         const colorScale = d3.scaleOrdinal().domain(featureNames).range(colorsForDiagram);
-
         const colorMapping: { [key: string]: any } = {};
         featureNames.forEach((name) => {
             colorMapping[name] = colorScale(name);
@@ -265,7 +303,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
      *
      * @param event The event that triggered the change of value for the changable parameter.
      */
-    const handleparameterelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    const handleParameterSelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const targetValue: string = event.target.value;
         const importanceWeightsOfFeaturesFromParam: { feature: string; weight: number }[] =
             parameter.arguments
@@ -275,6 +313,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                     weight: ri.weight,
                 })) ?? [];
         setImportanceWeightsOfFeatures(importanceWeightsOfFeaturesFromParam);
+        featureNames = importanceWeightsOfFeatures.map((d) => d.feature);
     };
 
     return (
@@ -296,7 +335,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                     </div>
                     <select
                         className="mt-2 p-2 border rounded-lg shadow-md w-full"
-                        onChange={handleparameterelection}
+                        onChange={handleParameterSelection}
                     >
                         {parameter.arguments.map((argument) => (
                             <option key={argument.argumentName} value={argument.argumentName}>
@@ -306,7 +345,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                     </select>
                     {!pieChartVisible && (
                         <svg
-                            className="mx-auto my-auto py-4"
+                            className="mx-auto mb-4 my-auto py-4"
                             ref={barPlotRef}
                             width="480"
                             height="500"
