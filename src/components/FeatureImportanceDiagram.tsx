@@ -1,5 +1,8 @@
 import { useState, useEffect, useRef } from "react";
 import * as d3 from "d3";
+import PieChartIcon from "./Assets/pieChartIcon";
+import BarChartIcon from "./Assets/barChartIcon";
+import TransparentBoxIcon from "./Assets/transparentBoxIcon";
 
 /**
  * The type definition for the `FeatureImportanceDiagram` component's props.
@@ -106,7 +109,8 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
             weight: number;
         }[]
     >([]);
-
+    const [pieChartVisible, setPieChartVisible] = useState(true);
+    const [moreThanFiveFeatures, setMoreThanFiveFeatures] = useState(false);
     const pieChartRef = useRef<SVGSVGElement>(null);
     const barPlotRef = useRef<SVGSVGElement>(null);
     const featureNames = importanceWeightsOfFeatures.map((d) => d.feature);
@@ -117,9 +121,20 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
             console.log([parameter.arguments[0].featureImportanceGivenArgument[0]]);
             setImportanceWeightsOfFeatures(parameter.arguments[0].featureImportanceGivenArgument);
         }
-        //drawPieChart();
-        drawBarPlot();
+        if (importanceWeightsOfFeatures.length > 5) {
+            setMoreThanFiveFeatures(true);
+            setPieChartVisible(false);
+        } else setMoreThanFiveFeatures(false);
+        if (pieChartVisible) {
+            drawPieChart();
+        } else {
+            drawBarPlot();
+        }
     });
+
+    const switchDiagram = () => {
+        setPieChartVisible(!pieChartVisible);
+    };
 
     const drawBarPlot = () => {
         const svg = d3.select(barPlotRef.current);
@@ -252,26 +267,33 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
      */
     const handleparameterelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const targetValue: string = event.target.value;
-        const importanceWeightsOfFeatures: { feature: string; weight: number }[] =
+        const importanceWeightsOfFeaturesFromParam: { feature: string; weight: number }[] =
             parameter.arguments
                 .find((arg) => arg.argumentName === targetValue)
                 ?.featureImportanceGivenArgument?.map((ri) => ({
                     feature: ri.feature,
                     weight: ri.weight,
                 })) ?? [];
-        setImportanceWeightsOfFeatures(importanceWeightsOfFeatures);
+        setImportanceWeightsOfFeatures(importanceWeightsOfFeaturesFromParam);
     };
 
     return (
         <div className="md:px-8 pt-12">
             <div className="lg:flex shadow-2xl rounded-xl">
                 <div className="bg-prussian-blue rounded-t-xl lg:rounded-r-none lg:rounded-l-xl lg:w-1/2 text-white p-8  flex flex-col">
-                    <p className="text-lg font-bold">{title}</p>
+                    <div className="flex">
+                        <div className="w-10">
+                            <TransparentBoxIcon />
+                        </div>
+                        <p className="text-lg mt-1 font-bold">{title}</p>
+                    </div>
                     <p className="mt-8 text-lg">{description}</p>
                 </div>
 
                 <div className="flex flex-col lg:w-1/2 bg-white rounded-xl pl-12 p-8 mx-auto">
-                    <label className="text-xl font-bold">{parameter.label}</label>
+                    <div>
+                        <label className="text-xl font-bold">{parameter.label}</label>
+                    </div>
                     <select
                         className="mt-2 p-2 border rounded-lg shadow-md w-full"
                         onChange={handleparameterelection}
@@ -282,28 +304,45 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                             </option>
                         ))}
                     </select>
-                    {/* <svg
-                        className="mx-auto my-auto w-4/5 lg:w-full"
-                        ref={pieChartRef}
-                        viewBox="-200 -200 400 400"
-                        preserveAspectRatio="xMidYMid meet"
-                    ></svg> */}
-                    <svg
-                        className="mx-auto my-auto py-4"
-                        ref={barPlotRef}
-                        width="480"
-                        height="500"
-                    ></svg>
-
-                    {/* {featureNames.map((name, index) => (
-                        <div className="flex">
-                            <div
-                                className={`mt-1 h-4 w-4 rounded-xl`}
-                                style={{ backgroundColor: `${colorsForDiagram[index]}` }}
-                            ></div>
-                            <p className="ml-2 text-lg">{name}</p>
-                        </div>
-                    ))} */}
+                    {!pieChartVisible && (
+                        <svg
+                            className="mx-auto my-auto py-4"
+                            ref={barPlotRef}
+                            width="480"
+                            height="500"
+                        ></svg>
+                    )}
+                    {pieChartVisible && !moreThanFiveFeatures && (
+                        <svg
+                            className="mx-auto my-auto w-4/5 lg:w-full"
+                            ref={pieChartRef}
+                            viewBox="-200 -200 400 400"
+                            preserveAspectRatio="xMidYMid meet"
+                        ></svg>
+                    )}
+                    <div>
+                        {pieChartVisible &&
+                            !moreThanFiveFeatures &&
+                            featureNames.map((name, index) => (
+                                <div className="flex">
+                                    <div
+                                        className={`mt-1 h-4 w-4 rounded-xl`}
+                                        style={{ backgroundColor: `${colorsForDiagram[index]}` }}
+                                    ></div>
+                                    <p className="ml-2 text-lg">{name}</p>
+                                </div>
+                            ))}
+                    </div>
+                    <div>
+                        {!moreThanFiveFeatures && (
+                            <button
+                                className="text-white rounded-md bg-prussian-blue p-1 float-right"
+                                onClick={switchDiagram}
+                            >
+                                {pieChartVisible ? <BarChartIcon /> : <PieChartIcon />}
+                            </button>
+                        )}
+                    </div>
                 </div>
             </div>
         </div>
