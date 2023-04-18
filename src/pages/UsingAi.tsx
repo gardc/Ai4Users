@@ -7,7 +7,6 @@ import { useTranslation } from "next-i18next";
 import ArrowRightIcon from "@/components/Assets/arrowRightIcon";
 import BookIcon from "@/components/Assets/bookIcon";
 import CogIcon from "@/components/Assets/cogIcon";
-import Content from "@/components/Content";
 import ExpandableInformationBox from "@/components/ExpandableInformationBox";
 import FastForwardIcon from "@/components/Assets/fastForwardIcon";
 import Image from "next/image";
@@ -61,13 +60,9 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                     {t("usingAiPage.title")}
                 </p>
             </div>
-            <div className="text-center flex justify-center flex-col items-center">
-                <div
-                    className="sm:w-19/20 md:w-3/4 mt-12
-                                    bg-white drop-shadow-lg rounded-xl 
-                                    flex justify-center items-center flex-col text-black m-2"
-                >
-                    <div className="bg-prussian-blue w-full rounded-t-xl text-white flex justify-center py-2">
+            <div className="text-center flex flex-col items-center">
+                <div className="sm:w-19/20 md:w-3/4 mt-12 bg-white drop-shadow-lg rounded-xl flex-col text-black m-2">
+                    <div className="bg-prussian-blue rounded-t-xl text-white py-2">
                         <InformationSignIcon />
                     </div>
                     <div className="p-4 sm:p-8 md:px-12 text-left text-lg">
