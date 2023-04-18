@@ -58,7 +58,7 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
                     ></div>
                     <div
                         className="bg-white w-full sm:w-3/4 sm:rounded-xl fixed top-[40%] left-1/2 transform
-                        -translate-x-1/2 -translate-y-1/2 z-50 overflow-y-auto max-h-[90%] sm:mt-10"
+                        -translate-x-1/2 -translate-y-1/2 z-50 overflow-y-auto max-h-[85%] sm:mt-10"
                     >
                         <div className="w-full p-8 sm:px-14 sm:py-8 bg-prussian-blue sticky top-0">
                             <button
