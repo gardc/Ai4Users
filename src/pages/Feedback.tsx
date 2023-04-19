@@ -1,18 +1,11 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { exampleDataDe } from "./api/exampleDataDe";
-import { exampleDataEn } from "./api/exampleDataEn";
-import { exampleDataNo } from "./api/exampleDataNo";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
-import DataTable from "@/components/DataTable";
-import Link from "next/link";
+import NavBar from "@/components/NavBar";
 import Parent from "@/components/Parent";
 import React, { useState } from "react";
-import Content from "@/components/Content";
 import sendApiRequest from "@/util/sendApiRequest";
-import NavBar from "@/components/NavBar";
 
 /**
  * The feedback page component that takes in feedback from users that did not consent to the usage
@@ -60,24 +53,28 @@ const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProp
                     <p className="w-2/4 sm:w-2/4 my-10 font-light text-left tracking-wide leading-6 text-lg">
                         {t("feedback.description")}
                     </p>
-
-                    <textarea
-                        id="message"
-                        rows={6}
-                        value={feedbackString}
-                        onChange={handleInputChange}
-                        className="block p-2.5 w-[50%] text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
-                        placeholder={t("feedback.placeholder")!}
-                    ></textarea>
+                    {!finished && (
+                        <textarea
+                            id="message"
+                            rows={6}
+                            value={feedbackString}
+                            onChange={handleInputChange}
+                            className="block p-2.5 w-[50%] text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            placeholder={t("feedback.placeholder")!}
+                        ></textarea>
+                    )}
+                    <p className="text-lg font-bold">{resultMessage}</p>
                     <div className="flex justify-center mt-8 mb-10 sm:m-5">
-                        <Button
-                            color="lavaorange"
-                            onClick={handleSubmit}
-                            disabled={finished || feedbackString.length === 0}
-                            loading={waiting}
-                        >
-                            {t("feedback.submit")}
-                        </Button>
+                        {!finished && (
+                            <Button
+                                color="lavaorange"
+                                onClick={handleSubmit}
+                                disabled={feedbackString.length === 0}
+                                loading={waiting}
+                            >
+                                {t("feedback.submit")}
+                            </Button>
+                        )}
                         <Button
                             color="lavaorange"
                             href="/UserTestingFinishedPage"
@@ -87,7 +84,6 @@ const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProp
                             {finished ? t("feedback.continue") : t("feedback.skip")}
                         </Button>
                     </div>
-                    <p className="">{resultMessage}</p>
                 </div>
             </Parent>
         </div>
