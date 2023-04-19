@@ -386,7 +386,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                                         className={`mt-1 h-4 w-4 rounded-xl`}
                                         style={{ backgroundColor: `${colorsForDiagram[index]}` }}
                                     ></div>
-                                    <p className="ml-2 text-lg">{name}</p>
+                                    <p className="ml-2 text-lg font-light">{name}</p>
                                 </div>
                             ))}
                     </div>
