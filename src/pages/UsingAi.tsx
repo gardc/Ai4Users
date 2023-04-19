@@ -8,6 +8,7 @@ import ArrowRightIcon from "@/components/Assets/arrowRightIcon";
 import BookIcon from "@/components/Assets/bookIcon";
 import CogIcon from "@/components/Assets/cogIcon";
 import ScaleIcon from "@/components/Assets/scaleIcon";
+import PuzzleIcon from "@/components/Assets/puzzleIcon";
 import Content from "@/components/Content";
 import ExpandableInformationBox from "@/components/ExpandableInformationBox";
 import FastForwardIcon from "@/components/Assets/fastForwardIcon";
@@ -389,6 +390,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 </div>
                 <div className="h-6"></div>
                 <InformationDropdownBox
+                    icon={<PuzzleIcon />}
                     title={t("usingAiPage.sandbox.title")}
                     initialInfo={
                         t("usingAiPage.sandbox.shortDescription") as string
