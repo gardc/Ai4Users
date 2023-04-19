@@ -56,15 +56,16 @@ const InformationDropdownBox: React.FC<InformationDropdownBoxProps> = ({
             <div className="row flex px-4 sm:px-12 pt-8 sm:pt-14">
                 {icon}
                 {title.length !== 0 && (
-                    <h2 className={"font-bold text-xl text-prussian-blue px-2"}>
-                        {title}
-                    </h2>
+                    <h2 className={"font-bold text-xl text-prussian-blue px-2"}>{title}</h2>
                 )}
             </div>
             <div className="p-4 sm:p-8 md:px-12">{initialInfo}</div>
             {!open && (
                 <div className="flex flex-col justify-center pb-6">
-                    <p className="flex justify-center text-xs pb-2">
+                    <p
+                        onClick={handleOpen}
+                        className="flex justify-center text-xs pb-2 cursor-pointer"
+                    >
                         {extendInfoButtonText}
                     </p>
                     <m.button
