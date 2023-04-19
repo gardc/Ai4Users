@@ -451,7 +451,14 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                             )}
-                                            <ArrowRightIcon />
+                                            <m.div
+                                                whileHover={{
+                                                    scale: 1.1,
+                                                    x: 5,
+                                                }}
+                                            >
+                                                <ArrowRightIcon />
+                                            </m.div>
                                         </a>
                                     </p>
                                 </li>
@@ -469,7 +476,14 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                             )}
-                                            <ArrowRightIcon />
+                                            <m.div
+                                                whileHover={{
+                                                    scale: 1.1,
+                                                    x: 5,
+                                                }}
+                                            >
+                                                <ArrowRightIcon />
+                                            </m.div>
                                         </a>
                                     </p>
                                 </li>
@@ -487,7 +501,14 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                             )}
-                                            <ArrowRightIcon />
+                                            <m.div
+                                                whileHover={{
+                                                    scale: 1.1,
+                                                    x: 5,
+                                                }}
+                                            >
+                                                <ArrowRightIcon />
+                                            </m.div>{" "}
                                         </a>
                                     </p>
                                 </li>
@@ -505,7 +526,14 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                             )}
-                                            <ArrowRightIcon />
+                                            <m.div
+                                                whileHover={{
+                                                    scale: 1.1,
+                                                    x: 5,
+                                                }}
+                                            >
+                                                <ArrowRightIcon />
+                                            </m.div>
                                         </a>
                                     </p>
                                 </li>
@@ -523,7 +551,14 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                             )}
-                                            <ArrowRightIcon />
+                                            <m.div
+                                                whileHover={{
+                                                    scale: 1.1,
+                                                    x: 5,
+                                                }}
+                                            >
+                                                <ArrowRightIcon />
+                                            </m.div>
                                         </a>
                                     </p>
                                 </li>
@@ -541,7 +576,14 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                             )}
-                                            <ArrowRightIcon />
+                                            <m.div
+                                                whileHover={{
+                                                    scale: 1.1,
+                                                    x: 5,
+                                                }}
+                                            >
+                                                <ArrowRightIcon />
+                                            </m.div>
                                         </a>
                                     </p>
                                 </li>
