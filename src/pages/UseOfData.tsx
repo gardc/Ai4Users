@@ -6,7 +6,6 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
-import Content from "@/components/Content";
 import DataTable from "@/components/DataTable";
 import Link from "next/link";
 import ProfileIcon from "@/components/Assets/profileIcon";
@@ -19,9 +18,7 @@ import Parent from "@/components/Parent";
  *
  * @returns A React functional component representing the landing page.
  */
-const UseOfData: React.FC = (
-    _props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { t } = useTranslation("common");
     const router = useRouter();
     const { locale } = router;
@@ -50,7 +47,7 @@ const UseOfData: React.FC = (
             </div>
 
             {/*Second page that shows personal information */}
-            <div className="m-4 text-cente flex justify-center">
+            <div className="m-4 mb-20 flex justify-center">
                 <div
                     className="w-full sm:w-3/4 
                 bg-white drop-shadow-lg py-4 sm:py-8 px-4 sm:px-16 rounded-xl flex justify-center items-center flex-col"
@@ -78,30 +75,12 @@ const UseOfData: React.FC = (
                                 {t("useOfDataPage.informationSummaryTitle")}
                             </p>
                         </div>
-                        {/*Here there will be a component with information about the user */}
-                        {locale == "en" ? (
-                            <DataTable data={exampleDataEn} />
-                        ) : (
-                            <></>
-                        )}
-                        {locale == "no" ? (
-                            <DataTable data={exampleDataNo} />
-                        ) : (
-                            <></>
-                        )}
-                        {locale == "de" ? (
-                            <DataTable data={exampleDataDe} />
-                        ) : (
-                            <></>
-                        )}
+                        {locale == "en" ? <DataTable data={exampleDataEn} /> : <></>}
+                        {locale == "no" ? <DataTable data={exampleDataNo} /> : <></>}
+                        {locale == "de" ? <DataTable data={exampleDataDe} /> : <></>}
                     </div>
 
                     <div className="flex-col justify-center flex">
-                        {/* <div className="flex justify-center mt-4">
-                                <Button color="black" href="/%">
-                                    Is this information incorrect?
-                                </Button>
-                            </div> */}
                         <div className="flex justify-center mt-5 mb-10">
                             <Button color="lavaorange" href="/UsingAi">
                                 {t("landingPage.continueButtonText")}

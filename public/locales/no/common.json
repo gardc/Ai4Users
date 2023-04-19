@@ -127,8 +127,8 @@
             "learnMoreButtonText": "Lær mer"
         },
         "sandbox": {
-            "title": "Utforsk hvordan KI-modellen fungerer med sandkassen",
-            "shortDescription": "Bruk den interaktive sandkassen for å utforske hvordan ulike faktorer kan påvirke hvordan KI-modellen predikerer ditt sykefravær.",
+            "title": "Utforsk hvordan KI-modellen fungerer",
+            "shortDescription": "Bruk den interaktive sandkassen for å utforske hvordan ulike faktorer påvirker KI-modellens prediksjon av varigheten av sykefravær, og for å bedre forstå viktigheten av faktorene.",
             "mainDescription": "Ved å endre verdiene nedenfor, kan du utforske hvordan hver av dem påvirker prediksjonen av sykefraværet som våre saksbehandlere vil motta. Denne sandkassen bruker en forenklet modell og illustrerer den faktiske modellens virkemåte.",
             "expandButtonText": "Lær mer",
             "sickLeaveDescription": "Predikert sykefravær",
@@ -139,6 +139,12 @@
             "initialPredictionText": "Trykk \"Predikér\" for å beregne",
             "caseHandlerText1": "Saksbehandler som",
             "caseHandlerText2": "mottar prediksjonen"
+        },
+        "featureImportance": {
+            "title": "Faktorenes viktighet",
+            "description1": "Når en prediksjon gjennomføres vil hver faktor (som alder eller diagnose) ha en vekt som tilsier hvor mye den bidrar til KI-modellens prediskjon av varigheten av ditt sykefravær. Verdien av en faktor, som alderen din, vil påvirke grad av viktighet for alle faktorer",
+            "description2": "For å bedre forstå hvor viktig hver faktor er når KI-modellen utfører en prediksjon, kan du endre alderen over diagrammet for å se et eksempel på hvordan alder påvirker viktigheten av hver faktor i relasjon til den helhetlige prediksjonen.",
+            "description3": "Jo større en faktors vekt er, jo viktigere er faktoren for prediksjonen, gitt den angitte alderen."
         },
         "aboutRightsInfo": {
             "title": "Dine rettigheter",

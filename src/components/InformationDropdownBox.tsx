@@ -86,7 +86,7 @@ const InformationDropdownBox: React.FC<InformationDropdownBoxProps> = ({
                 <div className="bg-slate-50 rounded-b-xl">
                     <div className="px-6 pt-6">{extendedInfo}</div>
                     {open && (
-                        <div className="flex justify-center sm:pt-6 pb-4">
+                        <div className="flex justify-center pt-6 pb-4">
                             <button onClick={handleOpen}>
                                 <i className="fas fa-chevron-up pb-4" />
                                 <p className="text-xs">{closeInfoButtonText}</p>

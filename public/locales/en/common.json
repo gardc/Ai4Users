@@ -127,8 +127,8 @@
             "learnMoreButtonText": "Learn more"
         },
         "sandbox": {
-            "title": "Explore how the AI-model works with the sandbox",
-            "shortDescription": "Use the interactive sandbox to explore how different factors can affect how the AI-model predicts your sick-leave duration.",
+            "title": "Explore how the AI-model works",
+            "shortDescription": "Use the interactive sandbox to explore how different factors affect the AI-model prediction of sick-leave duration, and to better understand the importance of the features.",
             "mainDescription": "By changing the values listed below, you can explore how they each impact the sick leave prediction that our case handlers will receive. This sandbox uses a simplified model and illustrates the actual models functionality.",
             "expandButtonText": "Learn more",
             "sickLeaveDescription": "Predicted sick-leave duration",
@@ -139,6 +139,12 @@
             "initialPredictionText": "Press \"Calculate\" to predict",
             "caseHandlerText1": "Case handler receiving",
             "caseHandlerText2": "the prediction"
+        },
+        "featureImportance": {
+            "title": "Feature importance",
+            "description1": "Feature importance refers to how much each feature (such as age or diagnosis) contributes to the AI model's prediction of your sick leave duration. The value of one feature, such as your age, will impact the feature importance of all features.",
+            "description2": "To better understand how important different features are when the AI model is making the prediction, you can change the age above the chart to see an example of how age influences the importance of each feature in relation to the prediction.",
+            "description3": "The larger a feature's weight is, the more important the feature is for the prediction, given the provided age."
         },
         "aboutRightsInfo": {
             "title": "Your rights",
