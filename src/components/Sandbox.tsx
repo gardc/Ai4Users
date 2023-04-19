@@ -1,14 +1,13 @@
+import { useTranslation } from "next-i18next";
+import ArrowToModelIcon from "./Assets/arrowToModelIcon";
 import Button from "@/components/Button";
 import CaseHandlerIcon from "@/components/Assets/caseHandlerIcon";
-import { useTranslation } from "next-i18next";
-import React, { FormEvent, useState, useRef } from "react";
-import ArrowToModelIcon from "./Assets/arrowToModelIcon";
 import CogIconLarge from "./Assets/cogIconLarge";
+import React, { FormEvent, useState } from "react";
 
 /**
  * The type definition for the `Sandbox` component's props.
  */
-
 interface SandboxProps {
     /**
      * The description text for the sandbox.
@@ -52,7 +51,7 @@ interface SandboxProps {
  * @component
  * @example
  * description = "Some description text";
- * const parameters = [
+ * parameters = [
  *   {
  *     label: "Parameter 1",
  *     labelValueForModel: "param1",
@@ -72,7 +71,6 @@ interface SandboxProps {
  * ];
  * Usage <Sandbox description={description} parameters={parameters} />
  */
-
 const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
     const initialState = parameters.reduce<Record<string, string>>((acc, param) => {
         const firstItemValueForModel = param.argument[0]?.itemValueForModel;
@@ -144,6 +142,7 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
         await new Promise((resolve) => setTimeout(resolve, 400));
         setResultPulse(false);
     }
+
     return (
         <div>
             <p className={"md:px-8"}>{description}</p>
@@ -233,4 +232,5 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
         </div>
     );
 };
+
 export default Sandbox;
