@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import "@fortawesome/fontawesome-free/css/all.css";
 
 /**
@@ -38,13 +38,10 @@ const InformationDropdownBox: React.FC<InformationDropdownBoxProps> = ({
     const [open, setOpen] = useState<Boolean>(false);
     const containerRef = useRef<HTMLDivElement>(null);
 
-    useEffect(() => {
-        if (!open && containerRef.current) {
+    const handleOpen = () => {
+        if (open && containerRef.current) {
             containerRef.current.scrollIntoView({ behavior: "smooth" });
         }
-    }, [open]);
-
-    const handleOpen = () => {
         setOpen(!open);
     };
 
