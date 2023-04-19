@@ -77,6 +77,8 @@
                         "li2": "a case handler makes the final decision",
                         "li3": "you have the exact same rights regarding your personal data"
                     },
+                    "accuracyTitle": "Regarding the model's accuracy",
+                    "accuracyInfo": "While we cannot guarantee that the AI model's predictions will always be accurate, we can assure you that our case handlers are trained to identify any potential inaccuracies and correct them promptly.",
                     "disagreeTitle": "If you disagree to the use of the AI model",
                     "disagreeInfo": "If you choose to disagree to the use of the AI model in predicating you sick leave, your case handler will process the data without its use. This might result in longer processing time.",
                     "disagreeFlowImageSrc": "/img/disagreeToUseFlowEn.png",
