@@ -60,7 +60,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                     {t("usingAiPage.title")}
                 </p>
             </div>
-            <div className="text-center flex flex-col items-center">
+            <div className="text-center flex flex-col items-center mb-16">
                 <div className="sm:w-19/20 md:w-3/4 mt-12 bg-white drop-shadow-lg rounded-xl flex-col text-black m-2">
                     <div className="bg-prussian-blue rounded-t-xl text-white py-2 flex justify-center">
                         <InformationSignIcon />
@@ -509,24 +509,24 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                     closeInfoButtonText={t("informationDropdownBoxCloseButtonText")}
                 />
             </div>
-            <div className="mb-16"></div>
-            <div className="h-96 mb-20 pt-20 flex flex-col justify-center bg-white text-center py-8 sm:p-6">
+            <div className="my-4  pt-20 flex flex-col justify-center bg-white text-center py-8">
                 <p className="font-semibold p-3 text-2xl">{t("usingAiPage.consentQuestion")}</p>
                 <div className="flex justify-center mt-8 mb-10 sm:m-5">
                     <Link
-                        className="bg-prussian-blue hover:bg-darkblue font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3"
+                        className="bg-prussian-blue hover:bg-darkblue font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3 w-96"
                         href="/Summary?consent=false"
                     >
                         {t("usingAiPage.disagreeButtonText")}
                     </Link>
                     <Link
-                        className="bg-prussian-blue hover:bg-darkblue font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3"
+                        className="bg-prussian-blue hover:bg-darkblue font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3 w-96"
                         href="/Summary?consent=true"
                     >
                         {t("usingAiPage.agreeButtonText")}
                     </Link>
                 </div>
             </div>
+            <div className="p-12" />
         </Parent>
     );
 };
