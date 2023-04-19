@@ -1,6 +1,6 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { featureImportanceParametersEn } from "./api/featureImportanceParametersEn";
-import { featureImportanceParametersNo } from "./api/featureImportanceParametersNo";
+import { featureImportanceDataEn } from "./api/featureImportanceDataEn";
+import { featureImportanceDataNo } from "./api/featureImportanceDataNo";
 import { sandboxParametersEn } from "@/pages/api/sandboxParametersEn";
 import { sandboxParametersNo } from "@/pages/api/sandboxParametersNo";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -388,8 +388,8 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                 }
                                 parameter={
                                     locale == "no"
-                                        ? featureImportanceParametersNo
-                                        : featureImportanceParametersEn
+                                        ? featureImportanceDataNo
+                                        : featureImportanceDataEn
                                 }
                             />
                         </div>

@@ -1,8 +1,48 @@
 /**
- * As of now only manAlders one parameter that can be changed.
+ * Data for the feature importance component, Norwegian translation. Gives the component one
+ * changable parameter/feature, arguments for this parameter, and the weights for every feature
+ * given an argument. Can be modified to show feature importance of different models.
+ *
+ * NB! In order for the diagrams in the feature importance component to show correclty, the
+ * weights in this file need to be normalized, meaning that they must be  in  the range [0,1] and
+ * the sum of all weights for a given featureImportanceGivenArgument must be 1.
+ *
+ * @example
+ * {
+ *  label: "Changable feature"
+ *  arguments: [
+ *      {
+ *          argumentName: "Value 1 for changable feature",
+ *          featureImportanceGivenArgument: [
+ *              {
+ *                  feature: "Feature 1"
+ *                  weight: 0.25
+ *              },
+ *              {
+ *                  feature: "Feature 2"
+ *                  weight: 0.25
+ *              },
+ *              ...
+ *          ]
+ *      },
+ *      {
+ *          argumentName: "Value 2 for changable feature",
+ *          featureImportanceGivenArgument: [
+ *              {
+ *                  feature: "Feature 1"
+ *                  weight: 0.4
+ *              },
+ *              {
+ *                  feature: "Feature 2"
+ *                  weight: 0.6
+ *              },
+ *          ]
+ *      },
+ *      ...
+ *  ],
+ * };
  */
-
-export const featureImportanceParametersNo = {
+export const featureImportanceDataNo = {
     label: "Alder",
     arguments: [
         {
@@ -10,19 +50,19 @@ export const featureImportanceParametersNo = {
             featureImportanceGivenArgument: [
                 {
                     feature: "Alder",
-                    weight: 0.35,
+                    weight: 0.41,
                 },
                 {
                     feature: "Fylke",
-                    weight: 0.18,
+                    weight: 0.12,
                 },
                 {
                     feature: "Kjønn",
-                    weight: 0.21,
+                    weight: 0.13,
                 },
                 {
                     feature: "Diagnose",
-                    weight: 0.26,
+                    weight: 0.34,
                 },
             ],
         },
@@ -31,19 +71,19 @@ export const featureImportanceParametersNo = {
             featureImportanceGivenArgument: [
                 {
                     feature: "Alder",
-                    weight: 0.21,
+                    weight: 0.35,
                 },
                 {
                     feature: "Fylke",
-                    weight: 0.11,
+                    weight: 0.14,
                 },
                 {
                     feature: "Kjønn",
-                    weight: 0.2,
+                    weight: 0.14,
                 },
                 {
                     feature: "Diagnose",
-                    weight: 0.48,
+                    weight: 0.37,
                 },
             ],
         },
@@ -52,19 +92,19 @@ export const featureImportanceParametersNo = {
             featureImportanceGivenArgument: [
                 {
                     feature: "Alder",
-                    weight: 0.3,
+                    weight: 0.29,
                 },
                 {
                     feature: "Fylke",
-                    weight: 0.2,
+                    weight: 0.15,
                 },
                 {
                     feature: "Kjønn",
-                    weight: 0.4,
+                    weight: 0.16,
                 },
                 {
                     feature: "Diagnose",
-                    weight: 0.1,
+                    weight: 0.4,
                 },
             ],
         },
@@ -73,19 +113,19 @@ export const featureImportanceParametersNo = {
             featureImportanceGivenArgument: [
                 {
                     feature: "Alder",
-                    weight: 0.15,
+                    weight: 0.26,
                 },
                 {
                     feature: "Fylke",
-                    weight: 0.15,
+                    weight: 0.16,
                 },
                 {
                     feature: "Kjønn",
-                    weight: 0.4,
+                    weight: 0.16,
                 },
                 {
                     feature: "Diagnose",
-                    weight: 0.3,
+                    weight: 0.42,
                 },
             ],
         },
@@ -98,15 +138,15 @@ export const featureImportanceParametersNo = {
                 },
                 {
                     feature: "Fylke",
-                    weight: 0.25,
+                    weight: 0.15,
                 },
                 {
                     feature: "Kjønn",
-                    weight: 0.25,
+                    weight: 0.17,
                 },
                 {
                     feature: "Diagnose",
-                    weight: 0.25,
+                    weight: 0.43,
                 },
             ],
         },
@@ -115,19 +155,19 @@ export const featureImportanceParametersNo = {
             featureImportanceGivenArgument: [
                 {
                     feature: "Alder",
-                    weight: 0.25,
+                    weight: 0.24,
                 },
                 {
                     feature: "Fylke",
-                    weight: 0.1,
+                    weight: 0.16,
                 },
                 {
                     feature: "Kjønn",
-                    weight: 0.1,
+                    weight: 0.17,
                 },
                 {
                     feature: "Diagnose",
-                    weight: 0.55,
+                    weight: 0.43,
                 },
             ],
         },
@@ -136,19 +176,19 @@ export const featureImportanceParametersNo = {
             featureImportanceGivenArgument: [
                 {
                     feature: "Alder",
-                    weight: 0.3,
+                    weight: 0.25,
                 },
                 {
                     feature: "Fylke",
-                    weight: 0.25,
+                    weight: 0.15,
                 },
                 {
                     feature: "Kjønn",
-                    weight: 0.2,
+                    weight: 0.17,
                 },
                 {
                     feature: "Diagnose",
-                    weight: 0.25,
+                    weight: 0.43,
                 },
             ],
         },
@@ -157,19 +197,19 @@ export const featureImportanceParametersNo = {
             featureImportanceGivenArgument: [
                 {
                     feature: "Alder",
-                    weight: 0.1,
+                    weight: 0.26,
                 },
                 {
                     feature: "Fylke",
-                    weight: 0.1,
+                    weight: 0.16,
                 },
                 {
                     feature: "Kjønn",
-                    weight: 0.1,
+                    weight: 0.16,
                 },
                 {
                     feature: "Diagnose",
-                    weight: 0.6,
+                    weight: 0.42,
                 },
             ],
         },
@@ -178,19 +218,19 @@ export const featureImportanceParametersNo = {
             featureImportanceGivenArgument: [
                 {
                     feature: "Alder",
-                    weight: 0.05,
+                    weight: 0.28,
                 },
                 {
                     feature: "Fylke",
-                    weight: 0.25,
+                    weight: 0.15,
                 },
                 {
                     feature: "Kjønn",
-                    weight: 0.4,
+                    weight: 0.16,
                 },
                 {
                     feature: "Diagnose",
-                    weight: 0.3,
+                    weight: 0.41,
                 },
             ],
         },
@@ -199,19 +239,19 @@ export const featureImportanceParametersNo = {
             featureImportanceGivenArgument: [
                 {
                     feature: "Alder",
-                    weight: 0.2,
+                    weight: 0.35,
                 },
                 {
                     feature: "Fylke",
-                    weight: 0.2,
+                    weight: 0.13,
                 },
                 {
                     feature: "Kjønn",
-                    weight: 0.2,
+                    weight: 0.15,
                 },
                 {
                     feature: "Diagnose",
-                    weight: 0.4,
+                    weight: 0.37,
                 },
             ],
         },
@@ -220,19 +260,19 @@ export const featureImportanceParametersNo = {
             featureImportanceGivenArgument: [
                 {
                     feature: "Alder",
-                    weight: 0.3,
+                    weight: 0.38,
                 },
                 {
                     feature: "Fylke",
-                    weight: 0.1,
+                    weight: 0.13,
                 },
                 {
                     feature: "Kjønn",
-                    weight: 0.1,
+                    weight: 0.14,
                 },
                 {
                     feature: "Diagnose",
-                    weight: 0.5,
+                    weight: 0.35,
                 },
             ],
         },
