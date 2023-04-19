@@ -73,11 +73,11 @@ interface FeatureImportanceDiagramProps {
  *          featureImportanceGivenArgument: [
  *              {
  *                  feature: "Feature 1"
- *                  weight: 0.25
+ *                  weight: 0.5
  *              },
  *              {
  *                  feature: "Feature 2"
- *                  weight: 0.25
+ *                  weight: 0.5
  *              },
  *          ]
  *      },
