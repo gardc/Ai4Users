@@ -15,6 +15,7 @@ import FastForwardIcon from "@/components/Assets/fastForwardIcon";
 import Image from "next/image";
 import InformationDropdownBox from "@/components/InformationDropdownBox";
 import InformationSignIcon from "@/components/Assets/informationSignIcon";
+import { motion as m } from "framer-motion";
 import Link from "next/link";
 import Parent from "@/components/Parent";
 import React from "react";

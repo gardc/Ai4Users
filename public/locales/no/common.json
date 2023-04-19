@@ -3,7 +3,7 @@
     "nationalSocialServiceEntityNameLine2": "Sosialtjenesten",
 
     "expandedInfoBoxCloseButtonText": "Lukk",
-    "informationDropdownBoxExtendButtonText": "Les mer",
+    "informationDropdownBoxExtendButtonText": "Lær mer",
     "informationDropdownBoxCloseButtonText": "Lukk",
 
     "pageProgressBar": {
@@ -130,7 +130,7 @@
             "title": "Utforsk hvordan KI-modellen fungerer med sandkassen",
             "shortDescription": "Bruk den interaktive sandkassen for å utforske hvordan ulike faktorer kan påvirke hvordan KI-modellen predikerer ditt sykefravær.",
             "mainDescription": "Ved å endre verdiene nedenfor, kan du utforske hvordan hver av dem påvirker prediksjonen av sykefraværet som våre saksbehandlere vil motta. Denne sandkassen bruker en forenklet modell og illustrerer den faktiske modellens virkemåte.",
-            "expandButtonText": "Prøv den her",
+            "expandButtonText": "Lær mer",
             "sickLeaveDescription": "Predikert sykefravær",
             "calculate": "Predikér",
             "weeks": "uker",

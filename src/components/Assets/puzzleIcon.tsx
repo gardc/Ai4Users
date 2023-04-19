@@ -5,10 +5,11 @@ function puzzleIcon() {
         <div>
             <svg
                 xmlns="http://www.w3.org/2000/svg"
-                fill="#003049"
+                fill="none"
                 height="30"
                 viewBox="0 0 24 24"
-                stroke="#001731"
+                stroke="#003049"
+                strokeWidth={1.5}
                 className="min-h-[30px]"
             >
                 <path

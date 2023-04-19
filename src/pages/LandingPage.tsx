@@ -5,6 +5,7 @@ import Button from "@/components/Button";
 import Content from "@/components/Content";
 import InformationSignIcon from "@/components/Assets/informationSignIcon";
 import Parent from "@/components/Parent";
+import { motion as m } from "framer-motion";
 import React from "react";
 
 /**
@@ -14,11 +15,18 @@ import React from "react";
  *
  * @returns A React functional component representing the landing page.
  */
-const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const LandingPage: React.FC = (
+    _props: InferGetStaticPropsType<typeof getStaticProps>
+) => {
     const { t } = useTranslation("common");
 
     return (
-        <div className="h-screen bg-darkblue">
+        <m.div
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.2, ease: "easeOut" }}
+            className="h-screen bg-darkblue"
+        >
             <Parent>
                 <div className="bg-darkblue">
                     <div className="index pb-16 flex-col flex items-center">
@@ -41,20 +49,30 @@ const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticP
                                 tracking-wide leading-6 text-lg"
                             >
                                 <p>{t("landingPage.description1")}</p>
-                                <p className="mt-8">{t("landingPage.description2")}</p>
-                                <p className="mt-8">{t("landingPage.description3")}</p>
+                                <p className="mt-8">
+                                    {t("landingPage.description2")}
+                                </p>
+                                <p className="mt-8">
+                                    {t("landingPage.description3")}
+                                </p>
                                 <p className="mt-8">
                                     {t("landingPage.description4")}
                                     <ol className="mt-8 list-decimal list-inside">
                                         {t("landingPage.stepsOfPageList.title")}
                                         <li className="pt-2 pl-2 text-sm">
-                                            {t("landingPage.stepsOfPageList.li1")}
+                                            {t(
+                                                "landingPage.stepsOfPageList.li1"
+                                            )}
                                         </li>
                                         <li className="pt-2 pl-2 text-sm">
-                                            {t("landingPage.stepsOfPageList.li2")}
+                                            {t(
+                                                "landingPage.stepsOfPageList.li2"
+                                            )}
                                         </li>
                                         <li className="pt-2 pl-2 text-sm">
-                                            {t("landingPage.stepsOfPageList.li3")}
+                                            {t(
+                                                "landingPage.stepsOfPageList.li3"
+                                            )}
                                         </li>
                                     </ol>
                                 </p>
@@ -68,7 +86,7 @@ const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticP
                     </div>
                 </div>
             </Parent>
-        </div>
+        </m.div>
     );
 };
 
