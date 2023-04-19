@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import Button from "@/components/Button";
 import InformationSignIcon from "./Assets/informationSignIcon";
+import { createPortal } from "react-dom";
 
 export interface ExpandableInformationBoxProps {
     content: string | JSX.Element;
@@ -43,7 +44,7 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
     return (
         <div className="flex flex-col">
             {content}
-            <div className="flex justify-self-end justify-center mb-16 lg:mb-0 pt-2 mt-6">
+            <div className="justify-self-end justify-center mb-16 lg:mb-0 pt-2 mt-6">
                 <Button color="darkblue" onClick={handleExpansion}>
                     {buttonText}
                 </Button>
@@ -52,32 +53,37 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
                 <></>
             ) : (
                 <>
-                    <div
-                        className="fixed inset-0 bg-black opacity-25 z-10"
-                        onClick={handleExpansionClose}
-                    ></div>
-                    <div
-                        className="bg-white w-full sm:w-3/4 sm:rounded-xl fixed top-[40%] left-1/2 transform
-                        -translate-x-1/2 -translate-y-1/2 z-50 overflow-y-auto max-h-[85%] sm:mt-10"
-                    >
-                        <div className="w-full p-8 sm:px-14 sm:py-8 bg-prussian-blue sticky top-0">
-                            <button
+                    {createPortal(
+                        <div>
+                            <div
+                                className="fixed inset-0 bg-black opacity-25"
                                 onClick={handleExpansionClose}
-                                className="text-white hover:text-sky-600 mt-4 underline float-right justify-end"
+                            ></div>
+                            <div
+                                className="bg-white w-full sm:w-3/4 sm:rounded-xl fixed top-[40%] left-1/2
+                        -translate-x-1/2 -translate-y-1/2 overflow-y-auto max-h-[85%] sm:mt-10"
                             >
-                                {expandedCloseButtonText}
-                            </button>
-                            <div className="font-bold flex text-xl w-5/6 text-left text-white">
-                                <InformationSignIcon />
-                                <p className="ml-4 mt-3">
-                                    {expandedContentTitle}
-                                </p>
+                                <div className="p-8 sm:px-14 sm:py-8 bg-prussian-blue sticky top-0">
+                                    <button
+                                        onClick={handleExpansionClose}
+                                        className="text-white hover:text-sky-600 mt-4 underline float-right justify-end"
+                                    >
+                                        {expandedCloseButtonText}
+                                    </button>
+                                    <div className="font-bold flex text-xl w-5/6 text-left text-white">
+                                        <div className="my-auto">
+                                            <InformationSignIcon />
+                                        </div>
+                                        <p className="ml-4 mt-3">{expandedContentTitle}</p>
+                                    </div>
+                                </div>
+                                <div className="text-black text-left p-8 sm:p-14">
+                                    {expandedContent}
+                                </div>
                             </div>
-                        </div>
-                        <div className="text-black text-left p-8 sm:p-14">
-                            {expandedContent}
-                        </div>
-                    </div>
+                        </div>,
+                        document.body
+                    )}
                 </>
             )}
         </div>
