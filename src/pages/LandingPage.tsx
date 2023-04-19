@@ -13,15 +13,13 @@ import React from "react";
  *
  * @returns A React functional component representing the landing page.
  */
-const LandingPage: React.FC = (
-    _props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { t } = useTranslation("common");
 
     return (
         <Parent>
             <div className="bg-darkblue">
-                <div className="index flex-col flex items-center">
+                <div className="index flex-col flex items-center pb-20">
                     <p className="text-center font-bold px-8 text-3xl lg:text-4xl lg:px-32 tracking-wide mt-16 text-white">
                         {t("landingPage.title")}
                     </p>
@@ -31,12 +29,8 @@ const LandingPage: React.FC = (
                         </div>
                         <div className="w-full px-12 sm:px-6 my-10 font-light text-left tracking-wide leading-6 text-lg">
                             <p>{t("landingPage.description1")}</p>
-                            <p className="mt-8">
-                                {t("landingPage.description2")}
-                            </p>
-                            <p className="mt-8">
-                                {t("landingPage.description3")}
-                            </p>
+                            <p className="mt-8">{t("landingPage.description2")}</p>
+                            <p className="mt-8">{t("landingPage.description3")}</p>
                             <p className="mt-8">
                                 {t("landingPage.description4")}
                                 <ol className="mt-8 list-decimal list-inside">
@@ -61,7 +55,6 @@ const LandingPage: React.FC = (
                     </div>
                 </div>
             </div>
-            <div className={"p-12 bg-darkblue"} />
         </Parent>
     );
 };

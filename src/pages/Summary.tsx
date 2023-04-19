@@ -18,9 +18,7 @@ import ProfileIcon from "@/components/Assets/profileIcon";
  *
  * @returns A React functional component representing the summary page.
  */
-const Summary: React.FC = (
-    _props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const router = useRouter();
     const { consent } = router.query;
     const { locale } = router;
@@ -39,21 +37,12 @@ const Summary: React.FC = (
     } else if (consent === "false") {
         nextPage = "/Feedback";
         predictionChoiceTitle = t("summaryPage.titleNotConsenting");
-        predictionChoiceTitle = predictionChoiceTitle.replace(
-            /(<b>not<\/b>)/,
-            "<b>$1</b>"
-        );
+        predictionChoiceTitle = predictionChoiceTitle.replace(/(<b>not<\/b>)/, "<b>$1</b>");
         predictionChoiceText = t("summaryPage.descriptionNotConsenting");
         if (locale === "en") {
-            predictionChoiceTitle = predictionChoiceTitle.replace(
-                /(not)/,
-                "<b>not</b>"
-            );
+            predictionChoiceTitle = predictionChoiceTitle.replace(/(not)/, "<b>not</b>");
         } else if (locale === "no") {
-            predictionChoiceTitle = predictionChoiceTitle.replace(
-                /(ikke)/,
-                "<b>ikke</b>"
-            );
+            predictionChoiceTitle = predictionChoiceTitle.replace(/(ikke)/, "<b>ikke</b>");
         } else {
             //TODO: Provide bold emphasis on german translation
         }
@@ -70,17 +59,11 @@ const Summary: React.FC = (
                     {t("pageProgressBar.home")}
                 </Link>
                 {">"}
-                <Link
-                    className="hover:font-bold text-sm lg:text-base px-3"
-                    href={"/UseOfData"}
-                >
+                <Link className="hover:font-bold text-sm lg:text-base px-3" href={"/UseOfData"}>
                     {t("pageProgressBar.useOfData")}
                 </Link>
                 {">"}
-                <Link
-                    className="hover:font-bold text-sm lg:text-base px-3"
-                    href={"/UsingAi"}
-                >
+                <Link className="hover:font-bold text-sm lg:text-base px-3" href={"/UsingAi"}>
                     {t("pageProgressBar.usingAiPage")}
                 </Link>
                 {">"}
@@ -88,7 +71,7 @@ const Summary: React.FC = (
                     {t("pageProgressBar.summaryPage")}
                 </p>
             </div>
-            <div className="m-4 flex justify-center">
+            <div className="m-4 flex justify-center mb-20">
                 <div
                     className="w-full sm:w-3/4
                 bg-white drop-shadow-lg py-4 sm:py-8 px-4 sm:px-16 rounded-xl flex justify-center items-center flex-col"
@@ -120,21 +103,9 @@ const Summary: React.FC = (
                                     {t("summaryPage.informationSummaryTitle")}
                                 </p>
                             </div>
-                            {locale == "en" ? (
-                                <DataTable data={exampleDataEn} />
-                            ) : (
-                                <></>
-                            )}
-                            {locale == "no" ? (
-                                <DataTable data={exampleDataNo} />
-                            ) : (
-                                <></>
-                            )}
-                            {locale == "de" ? (
-                                <DataTable data={exampleDataDe} />
-                            ) : (
-                                <></>
-                            )}
+                            {locale == "en" ? <DataTable data={exampleDataEn} /> : <></>}
+                            {locale == "no" ? <DataTable data={exampleDataNo} /> : <></>}
+                            {locale == "de" ? <DataTable data={exampleDataDe} /> : <></>}
                         </div>
                         <p className="text-base px-4 lg:w-2/5 mb-10 text-center">
                             {t("summaryPage.informationSummarySource")}
@@ -147,7 +118,6 @@ const Summary: React.FC = (
                     </div>
                 </div>
             </div>
-            <div className={"p-12 bg-zinc-100"} />
         </Parent>
     );
 };

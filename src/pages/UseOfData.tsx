@@ -18,9 +18,7 @@ import Parent from "@/components/Parent";
  *
  * @returns A React functional component representing the landing page.
  */
-const UseOfData: React.FC = (
-    _props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { t } = useTranslation("common");
     const router = useRouter();
     const { locale } = router;
@@ -49,7 +47,7 @@ const UseOfData: React.FC = (
             </div>
 
             {/*Second page that shows personal information */}
-            <div className="m-4 flex justify-center">
+            <div className="m-4 mb-20 flex justify-center">
                 <div
                     className="w-full sm:w-3/4 
                 bg-white drop-shadow-lg py-4 sm:py-8 px-4 sm:px-16 rounded-xl flex justify-center items-center flex-col"
@@ -77,21 +75,9 @@ const UseOfData: React.FC = (
                                 {t("useOfDataPage.informationSummaryTitle")}
                             </p>
                         </div>
-                        {locale == "en" ? (
-                            <DataTable data={exampleDataEn} />
-                        ) : (
-                            <></>
-                        )}
-                        {locale == "no" ? (
-                            <DataTable data={exampleDataNo} />
-                        ) : (
-                            <></>
-                        )}
-                        {locale == "de" ? (
-                            <DataTable data={exampleDataDe} />
-                        ) : (
-                            <></>
-                        )}
+                        {locale == "en" ? <DataTable data={exampleDataEn} /> : <></>}
+                        {locale == "no" ? <DataTable data={exampleDataNo} /> : <></>}
+                        {locale == "de" ? <DataTable data={exampleDataDe} /> : <></>}
                     </div>
 
                     <div className="flex-col justify-center flex">
@@ -103,7 +89,6 @@ const UseOfData: React.FC = (
                     </div>
                 </div>
             </div>
-            <div className={"p-12 bg-zinc-100"} />
         </Parent>
     );
 };
