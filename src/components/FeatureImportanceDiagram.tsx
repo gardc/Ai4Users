@@ -219,7 +219,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
 
         bars.append("text")
             .text((d) => d.feature)
-            .attr("x", 5)
+            .attr("x", 10)
             .attr("y", (d: { feature?: string }) =>
                 d && d.feature ? (y?.(d.feature) ?? 0) + y?.bandwidth() / 2 + 5 : null
             )
@@ -244,7 +244,14 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
             colorMapping[name] = colorScale(name);
         });
 
-        const pieChartLayout = d3.pie<{ feature: string; weight: number }>().value((d) => d.weight);
+        const pieChartLayout = d3
+            .pie<{ feature: string; weight: number }>()
+            .value((d) => d.weight)
+            .sort((a, b) => {
+                const aIndex = featureNames.indexOf(a.feature);
+                const bIndex = featureNames.indexOf(b.feature);
+                return aIndex - bIndex;
+            });
 
         const pieChartData = pieChartLayout(importanceWeightsOfFeatures);
 
@@ -327,8 +334,8 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
 
     return (
         <div className="md:px-8 pt-12">
-            <div className="lg:flex shadow-2xl rounded-xl">
-                <div className="bg-prussian-blue rounded-t-xl lg:rounded-r-none lg:rounded-l-xl lg:w-1/2 text-white p-8  flex flex-col">
+            <div className="xl:flex shadow-2xl rounded-xl">
+                <div className="bg-prussian-blue rounded-t-xl xl:rounded-r-none xl:rounded-l-xl xl:w-1/2 text-white p-8 flex flex-col">
                     <div className="flex">
                         <div className="w-10">
                             <TransparentBoxIcon />
@@ -338,7 +345,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                     <p className="mt-8 text-lg">{description}</p>
                 </div>
 
-                <div className="flex flex-col lg:w-1/2 bg-white rounded-xl pl-12 p-8 mx-auto">
+                <div className="flex flex-col xl:w-1/2 bg-white rounded-xl pl-12 p-8 mx-auto">
                     <div>
                         <label className="text-xl font-bold">{parameter.label}</label>
                     </div>
@@ -353,16 +360,18 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                         ))}
                     </select>
                     {!pieChartVisible && (
-                        <svg
-                            className="mx-auto mt-0 lg:mt-8 mb-8 my-auto py-4"
-                            ref={barPlotRef}
-                            width="480"
-                            height="500"
-                        ></svg>
+                        <div className="w-3/4 xl:w-full mx-auto">
+                            <svg
+                                className="mx-auto mt-0 xl:mt-8 mb-8 my-auto py-4"
+                                ref={barPlotRef}
+                                width="480"
+                                height="500"
+                            ></svg>
+                        </div>
                     )}
                     {pieChartVisible && !moreThanFiveFeatures && (
                         <svg
-                            className="mx-auto my-auto w-4/5 lg:w-full"
+                            className="mx-auto my-auto w-3/4 lg:w-1/2 xl:w-full"
                             ref={pieChartRef}
                             viewBox="-200 -200 400 400"
                             preserveAspectRatio="xMidYMid meet"
