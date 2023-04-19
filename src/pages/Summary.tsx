@@ -11,6 +11,7 @@ import Link from "next/link";
 import Parent from "@/components/Parent";
 import React from "react";
 import ProfileIcon from "@/components/Assets/profileIcon";
+import NavBar from "@/components/NavBar";
 
 /**
  * The summary page component that displays a summary of information used to estimate sick leave
@@ -18,9 +19,7 @@ import ProfileIcon from "@/components/Assets/profileIcon";
  *
  * @returns A React functional component representing the summary page.
  */
-const Summary: React.FC = (
-    _props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const router = useRouter();
     const { consent } = router.query;
     const { locale } = router;
@@ -39,21 +38,12 @@ const Summary: React.FC = (
     } else if (consent === "false") {
         nextPage = "/Feedback";
         predictionChoiceTitle = t("summaryPage.titleNotConsenting");
-        predictionChoiceTitle = predictionChoiceTitle.replace(
-            /(<b>not<\/b>)/,
-            "<b>$1</b>"
-        );
+        predictionChoiceTitle = predictionChoiceTitle.replace(/(<b>not<\/b>)/, "<b>$1</b>");
         predictionChoiceText = t("summaryPage.descriptionNotConsenting");
         if (locale === "en") {
-            predictionChoiceTitle = predictionChoiceTitle.replace(
-                /(not)/,
-                "<b>not</b>"
-            );
+            predictionChoiceTitle = predictionChoiceTitle.replace(/(not)/, "<b>not</b>");
         } else if (locale === "no") {
-            predictionChoiceTitle = predictionChoiceTitle.replace(
-                /(ikke)/,
-                "<b>ikke</b>"
-            );
+            predictionChoiceTitle = predictionChoiceTitle.replace(/(ikke)/, "<b>ikke</b>");
         } else {
             //TODO: Provide bold emphasis on german translation
         }
@@ -62,6 +52,7 @@ const Summary: React.FC = (
 
     return (
         <Parent>
+            <NavBar enableLinkToFrontPage={true} />
             <div>
                 <div className="flex justify-start py-5 text-black">
                     <Link
@@ -71,17 +62,11 @@ const Summary: React.FC = (
                         {t("pageProgressBar.home")}
                     </Link>
                     {">"}
-                    <Link
-                        className="hover:font-bold text-sm lg:text-base px-3"
-                        href={"/UseOfData"}
-                    >
+                    <Link className="hover:font-bold text-sm lg:text-base px-3" href={"/UseOfData"}>
                         {t("pageProgressBar.useOfData")}
                     </Link>
                     {">"}
-                    <Link
-                        className="hover:font-bold text-sm lg:text-base px-3"
-                        href={"/UsingAi"}
-                    >
+                    <Link className="hover:font-bold text-sm lg:text-base px-3" href={"/UsingAi"}>
                         {t("pageProgressBar.usingAiPage")}
                     </Link>
                     {">"}
@@ -118,21 +103,9 @@ const Summary: React.FC = (
                             {t("summaryPage.informationSummaryTitle")}
                         </p>
                     </div>
-                    {locale == "en" ? (
-                        <DataTable data={exampleDataEn} />
-                    ) : (
-                        <></>
-                    )}
-                    {locale == "no" ? (
-                        <DataTable data={exampleDataNo} />
-                    ) : (
-                        <></>
-                    )}
-                    {locale == "de" ? (
-                        <DataTable data={exampleDataDe} />
-                    ) : (
-                        <></>
-                    )}
+                    {locale == "en" ? <DataTable data={exampleDataEn} /> : <></>}
+                    {locale == "no" ? <DataTable data={exampleDataNo} /> : <></>}
+                    {locale == "de" ? <DataTable data={exampleDataDe} /> : <></>}
                 </div>
                 <p className="text-base px-4 lg:w-2/5 mb-10 text-center">
                     {t("summaryPage.informationSummarySource")}
@@ -142,7 +115,7 @@ const Summary: React.FC = (
                             Is this information incorrect?
                         </Button>
                     </div> */}
-                
+
                 <div className="flex justify-center mt-4 pb-32">
                     <Button color="lavaorange" href={nextPage}>
                         {t("summaryPage.submitChoiceButtonText")}

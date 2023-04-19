@@ -6,6 +6,7 @@ import Content from "@/components/Content";
 import InformationSignIcon from "@/components/Assets/informationSignIcon";
 import Parent from "@/components/Parent";
 import React from "react";
+import NavBar from "@/components/NavBar";
 
 /**
  * The landing page component that displays initial information about the web
@@ -20,6 +21,7 @@ const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticP
     return (
         <div className="h-screen bg-darkblue">
             <Parent>
+                <NavBar enableLinkToFrontPage={true} />
                 <div className="bg-darkblue">
                     <div className="index pb-16 flex-col flex items-center">
                         <p

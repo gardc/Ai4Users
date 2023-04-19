@@ -52,6 +52,7 @@ const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProp
     return (
         <div className="bg-darkblue">
             <Parent>
+                <NavBar enableLinkToFrontPage={false} />
                 <div className="index pt-8 pb-8 flex-col flex items-center text-black">
                     <p className="text-center font-bold text-3xl sm:text-5xl tracking-wide sm:mt-16 ">
                         {t("feedback.title")}
