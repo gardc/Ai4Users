@@ -13,9 +13,7 @@ import sendApiRequest from "@/util/sendApiRequest";
  *
  * @returns A React functional component representing the landing page.
  */
-const Feedback: React.FC = (
-    _props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { t } = useTranslation("common");
     const [feedbackString, setFeedbackString] = useState("");
     const [waiting, setWaiting] = useState(false);
@@ -39,21 +37,19 @@ const Feedback: React.FC = (
         }
     };
 
-    const handleInputChange = (
-        event: React.ChangeEvent<HTMLTextAreaElement>
-    ) => {
+    const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         setFeedbackString(event.target.value);
     };
 
     return (
         <Parent>
-            <div className="m-4 mb-12 flex justify-center">
+            <div className="m-4 mt-20 flex justify-center">
                 <div
-                    className="w-full sm:w-2/4
+                    className="w-full md:w-3/4 lg:w-1/2
                 bg-white drop-shadow-lg px-4 rounded-xl flex justify-center items-center flex-col"
                 >
                     <div className="index flex-col flex items-center text-black">
-                        <p className="text-center font-bold text-3xl sm:text-5xl tracking-wide sm:mt-8 ">
+                        <p className="text-center font-bold text-3xl sm:text-5xl tracking-wide mt-8 ">
                             {t("feedback.title")}
                         </p>
                         <p className="w-5/6 my-10 font-light text-left tracking-wide leading-6 text-lg">
@@ -83,9 +79,7 @@ const Feedback: React.FC = (
                                 loading={waiting}
                             >
                                 {/* If finished, show continue button, else show skip */}
-                                {finished
-                                    ? t("feedback.continue")
-                                    : t("feedback.skip")}
+                                {finished ? t("feedback.continue") : t("feedback.skip")}
                             </Button>
                         </div>
                         <p className="">{resultMessage}</p>
