@@ -1,4 +1,6 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { featureImportanceDataEn } from "./api/featureImportanceDataEn";
+import { featureImportanceDataNo } from "./api/featureImportanceDataNo";
 import { sandboxParametersEn } from "@/pages/api/sandboxParametersEn";
 import { sandboxParametersNo } from "@/pages/api/sandboxParametersNo";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -9,6 +11,7 @@ import BookIcon from "@/components/Assets/bookIcon";
 import CogIcon from "@/components/Assets/cogIcon";
 import ExpandableInformationBox from "@/components/ExpandableInformationBox";
 import FastForwardIcon from "@/components/Assets/fastForwardIcon";
+import FeatureImportanceDiagram from "@/components/FeatureImportanceDiagram";
 import Image from "next/image";
 import InformationDropdownBox from "@/components/InformationDropdownBox";
 import InformationSignIcon from "@/components/Assets/informationSignIcon";
@@ -358,10 +361,33 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                     initialInfo={t("usingAiPage.sandbox.shortDescription") as string}
                     extendInfoButtonText={t("usingAiPage.sandbox.expandButtonText")}
                     extendedInfo={
-                        <Sandbox
-                            description={t("usingAiPage.sandbox.mainDescription")}
-                            parameters={locale == "no" ? sandboxParametersNo : sandboxParametersEn}
-                        />
+                        <div>
+                            <Sandbox
+                                description={t("usingAiPage.sandbox.mainDescription")}
+                                parameters={
+                                    locale == "no" ? sandboxParametersNo : sandboxParametersEn
+                                }
+                            />
+                            <FeatureImportanceDiagram
+                                title={t("usingAiPage.featureImportance.title")}
+                                description={
+                                    <>
+                                        <p>{t("usingAiPage.featureImportance.description1")}</p>
+                                        <p className="mt-8">
+                                            {t("usingAiPage.featureImportance.description2")}
+                                        </p>
+                                        <p className="mt-8">
+                                            {t("usingAiPage.featureImportance.description3")}
+                                        </p>
+                                    </>
+                                }
+                                parameter={
+                                    locale == "no"
+                                        ? featureImportanceDataNo
+                                        : featureImportanceDataEn
+                                }
+                            />
+                        </div>
                     }
                     closeInfoButtonText={t("informationDropdownBoxCloseButtonText")}
                 />
