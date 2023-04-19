@@ -4,6 +4,7 @@ import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
 import InformationSignIcon from "@/components/Assets/informationSignIcon";
 import Parent from "@/components/Parent";
+import { motion as m } from "framer-motion";
 import React from "react";
 
 /**
