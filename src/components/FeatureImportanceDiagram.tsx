@@ -232,7 +232,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
     }, [importanceWeightsOfFeatures]);
 
     /**
-     * Draws the pie chart as an SVG based on the selected value for thec hangable parameter.
+     * Draws the pie chart as an SVG based on the selected value for the hangable parameter.
      */
     const drawPieChart = useCallback(() => {
         const svg = d3.select(pieChartRef.current);
