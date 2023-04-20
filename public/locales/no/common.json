@@ -78,7 +78,7 @@
                         "li3": "du har nøyaktig samme rettigheter angående dine personopplysninger"
                     },
                     "accuracyTitle": "Vedrørende modellens presisjon",
-                    "accuracyInfo": "Selv om vi ikke kan garantere at AI-modellens prediksjoner alltid vil være nøyaktige, kan vi forsikre deg om at våre saksbehandlere er opplært til å identifisere potensielle unøyaktigheter og korrigere dem umiddelbart.",
+                    "accuracyInfo": "Selv om vi ikke kan garantere at AI-modellens prediksjoner alltid vil være nøyaktige, er våre saksbehandlere opplært til å identifisere potensielle unøyaktigheter og korrigere dem umiddelbart.",
                     "disagreeTitle": "Dersom du ikke samtykker til bruken av KI-modellen",
                     "disagreeInfo": "Dersom du velger å ikke samtykke til bruken av KI-modellen i predikeringen av varigheten av ditt sykefravær, vil saksbehandleren din prosessere dine personopplysninger uten bruk av modellen. Dette kan resultere i lengre saksbenahndligstid.",
                     "disagreeFlowImageSrc": "/img/disagreeToUseFlowNo.png",
