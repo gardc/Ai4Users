@@ -10,8 +10,8 @@ import NavBar from "./NavBar";
  */
 const Parent = (props: any) => {
     return (
-        <div className="font-sans bg-zinc-100">
-            <Content>{props.children}</Content>
+        <div className="font-sans bg-zinc-100 min-h-screen flex flex-col">
+            <Content className="flex-grow">{props.children}</Content>
         </div>
     );
 };

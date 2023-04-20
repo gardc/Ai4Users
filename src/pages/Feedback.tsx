@@ -50,7 +50,7 @@ const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProp
                     <p className="text-center font-bold text-3xl sm:text-5xl tracking-wide sm:mt-16 ">
                         {t("feedback.title")}
                     </p>
-                    <p className="w-2/4 sm:w-2/4 my-10 font-light text-left tracking-wide leading-6 text-lg">
+                    <p className="w-4/5 sm:w-1/2 my-10 font-light text-left tracking-wide leading-6 text-lg">
                         {t("feedback.description")}
                     </p>
                     {!finished && (
@@ -59,7 +59,7 @@ const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProp
                             rows={6}
                             value={feedbackString}
                             onChange={handleInputChange}
-                            className="block p-2.5 w-[50%] text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            className="w-4/5 sm:w-1/2 block p-2.5 w-[50%] text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                             placeholder={t("feedback.placeholder")!}
                         ></textarea>
                     )}
