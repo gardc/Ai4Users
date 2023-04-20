@@ -3,7 +3,7 @@
     "nationalSocialServiceEntityNameLine2": "Social Service",
 
     "expandedInfoBoxCloseButtonText": "Close",
-    "informationDropdownBoxExtendButtonText": "Read more",
+    "informationDropdownBoxExtendButtonText": "Learn more",
     "informationDropdownBoxCloseButtonText": "Close",
 
     "pageProgressBar": {
@@ -130,7 +130,7 @@
             "title": "Explore how the AI-model works",
             "shortDescription": "Use the interactive sandbox to explore how different factors affect the AI-model prediction of sick-leave duration, and to better understand the importance of the features.",
             "mainDescription": "By changing the values listed below, you can explore how they each impact the sick leave prediction that our case handlers will receive. This sandbox uses a simplified model and illustrates the actual models functionality.",
-            "expandButtonText": "Try it here",
+            "expandButtonText": "Learn more",
             "sickLeaveDescription": "Predicted sick-leave duration",
             "calculate": "Calculate",
             "weeks": "weeks",

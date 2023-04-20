@@ -145,7 +145,7 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
 
     return (
         <div>
-            <p className={"md:px-8"}>{description}</p>
+            <p className={"md:px-8 lg:px-24 font-light mt-8"}>{description}</p>
             <div className={"flex flex-col mt-12 lg:flex-row justify-center"}>
                 <div className={"flex-col lg:w-1/2"}>
                     <form
@@ -157,7 +157,7 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                                 key={"div-" + parameter.label}
                                 className={"m-3 flex flex-col items-start mb-5"}
                             >
-                                <label htmlFor={parameter.label} className={"mb-1"}>
+                                <label htmlFor={parameter.label} className={"mb-1 font-bold"}>
                                     {parameter.label}:
                                 </label>
                                 <select
@@ -201,7 +201,7 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                                 "m-1 p-2 md:m-3 md:p-4 lg:m-6 lg:p-6 lg:mt-2 w-80 border text-center rounded-[20px] shadow-2xl"
                             }
                         >
-                            <h2 className={" text-xs md:text-lg"}>
+                            <h2 className={"text-xs md:text-lg font-light"}>
                                 {t("usingAiPage.sandbox.sickLeaveDescription")}:
                             </h2>
                             {resultPulse ? (

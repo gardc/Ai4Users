@@ -2,9 +2,9 @@ import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
-import Content from "@/components/Content";
 import InformationSignIcon from "@/components/Assets/informationSignIcon";
 import Parent from "@/components/Parent";
+import { motion as m } from "framer-motion";
 import React from "react";
 import NavBar from "@/components/NavBar";
 

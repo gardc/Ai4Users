@@ -9,17 +9,22 @@ import { useTranslation } from "next-i18next";
 import ArrowRightIcon from "@/components/Assets/arrowRightIcon";
 import BookIcon from "@/components/Assets/bookIcon";
 import CogIcon from "@/components/Assets/cogIcon";
+import ScaleIcon from "@/components/Assets/scaleIcon";
+import PuzzleIcon from "@/components/Assets/puzzleIcon";
+import Content from "@/components/Content";
 import ExpandableInformationBox from "@/components/ExpandableInformationBox";
 import FastForwardIcon from "@/components/Assets/fastForwardIcon";
 import FeatureImportanceDiagram from "@/components/FeatureImportanceDiagram";
 import Image from "next/image";
 import InformationDropdownBox from "@/components/InformationDropdownBox";
 import InformationSignIcon from "@/components/Assets/informationSignIcon";
+import { motion as m } from "framer-motion";
 import Link from "next/link";
 import Parent from "@/components/Parent";
 import React from "react";
 import Sandbox from "@/components/Sandbox";
 import NavBar from "@/components/NavBar";
+import scaleIcon from "@/components/Assets/scaleIcon";
 
 /**
  * The page component for explaining the use of an AI model for the tester of the web application.
@@ -62,16 +67,16 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                     {t("usingAiPage.title")}
                 </p>
             </div>
-            <div className="text-center flex flex-col items-center">
+            <div className="text-center flex flex-col items-center mb-16">
                 <div className="sm:w-19/20 md:w-3/4 mt-12 bg-white drop-shadow-lg rounded-xl flex-col text-black m-2">
                     <div className="bg-prussian-blue rounded-t-xl text-white py-2 flex justify-center">
                         <InformationSignIcon />
                     </div>
-                    <div className="p-4 sm:p-8 md:px-12 text-left text-lg">
+                    <div className="p-4 sm:p-8 md:px-12 text-left text-lg font-light">
                         {t("usingAiPage.aboutAiInfo.description")}
                     </div>
                     <div className="bg-slate-50 rounded-b-xl p-6 pb-0 lg:pb-12">
-                        <div className="lg:grid lg:grid-cols-3 lg:gap-x-10 text-sm pt-4 px-6">
+                        <div className="lg:grid lg:grid-cols-3 lg:gap-x-10 font-light pt-4 px-6">
                             <ExpandableInformationBox
                                 content={
                                     <div className="text-left h-full">
@@ -359,8 +364,13 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 </div>
                 <div className="h-6"></div>
                 <InformationDropdownBox
+                    icon={<PuzzleIcon />}
                     title={t("usingAiPage.sandbox.title")}
-                    initialInfo={t("usingAiPage.sandbox.shortDescription") as string}
+                    initialInfo={
+                        <p className="font-light text-lg">
+                            {t("usingAiPage.sandbox.shortDescription")}{" "}
+                        </p>
+                    }
                     extendInfoButtonText={t("usingAiPage.sandbox.expandButtonText")}
                     extendedInfo={
                         <div>
@@ -373,7 +383,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                             <FeatureImportanceDiagram
                                 title={t("usingAiPage.featureImportance.title")}
                                 description={
-                                    <>
+                                    <div className="font-light">
                                         <p>{t("usingAiPage.featureImportance.description1")}</p>
                                         <p className="mt-8">
                                             {t("usingAiPage.featureImportance.description2")}
@@ -381,7 +391,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                         <p className="mt-8">
                                             {t("usingAiPage.featureImportance.description3")}
                                         </p>
-                                    </>
+                                    </div>
                                 }
                                 parameter={
                                     locale == "no"
@@ -395,21 +405,22 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 />
                 <div className="h-6"></div>
                 <InformationDropdownBox
+                    icon={<ScaleIcon />}
                     title={t("usingAiPage.aboutRightsInfo.title")}
                     initialInfo={
-                        <>
+                        <div className="font-light text-lg">
                             <p>{t("usingAiPage.aboutRightsInfo.description1")}</p>
                             <p>{t("usingAiPage.aboutRightsInfo.description2")}</p>
-                        </>
+                        </div>
                     }
                     extendedInfo={
                         <div className="space-y-4 ml-4 flex flex-col justify-center items-center my-6">
                             <h2 className="font-semibold">
                                 {t("usingAiPage.aboutRightsInfo.readMore.userRightsTitle")}
                             </h2>
-                            <ul className="space-y-4 list-disc text-left">
+                            <ul className="space-y-4 list-disc font-light text-left">
                                 <li>
-                                    <p className="">
+                                    <p>
                                         {t("usingAiPage.aboutRightsInfo.readMore.li1")}
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a15"
@@ -420,12 +431,19 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                             )}
-                                            <ArrowRightIcon />
+                                            <m.div
+                                                whileHover={{
+                                                    scale: 1.1,
+                                                    x: 5,
+                                                }}
+                                            >
+                                                <ArrowRightIcon />
+                                            </m.div>
                                         </a>
                                     </p>
                                 </li>
                                 <li>
-                                    <p className="">
+                                    <p>
                                         {t("usingAiPage.aboutRightsInfo.readMore.li2")}
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a16"
@@ -436,12 +454,19 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                             )}
-                                            <ArrowRightIcon />
+                                            <m.div
+                                                whileHover={{
+                                                    scale: 1.1,
+                                                    x: 5,
+                                                }}
+                                            >
+                                                <ArrowRightIcon />
+                                            </m.div>
                                         </a>
                                     </p>
                                 </li>
                                 <li>
-                                    <p className="">
+                                    <p>
                                         {t("usingAiPage.aboutRightsInfo.readMore.li3")}
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a17"
@@ -452,12 +477,19 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                             )}
-                                            <ArrowRightIcon />
+                                            <m.div
+                                                whileHover={{
+                                                    scale: 1.1,
+                                                    x: 5,
+                                                }}
+                                            >
+                                                <ArrowRightIcon />
+                                            </m.div>{" "}
                                         </a>
                                     </p>
                                 </li>
                                 <li>
-                                    <p className="">
+                                    <p>
                                         {t("usingAiPage.aboutRightsInfo.readMore.li4")}
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a18"
@@ -468,12 +500,19 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                             )}
-                                            <ArrowRightIcon />
+                                            <m.div
+                                                whileHover={{
+                                                    scale: 1.1,
+                                                    x: 5,
+                                                }}
+                                            >
+                                                <ArrowRightIcon />
+                                            </m.div>
                                         </a>
                                     </p>
                                 </li>
                                 <li>
-                                    <p className="">
+                                    <p>
                                         {t("usingAiPage.aboutRightsInfo.readMore.li5")}
                                         <a
                                             href=" https://lovdata.no/lov/2018-06-15-38/gdpr/a20"
@@ -484,12 +523,19 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                             )}
-                                            <ArrowRightIcon />
+                                            <m.div
+                                                whileHover={{
+                                                    scale: 1.1,
+                                                    x: 5,
+                                                }}
+                                            >
+                                                <ArrowRightIcon />
+                                            </m.div>
                                         </a>
                                     </p>
                                 </li>
                                 <li>
-                                    <p className="">
+                                    <p>
                                         {t("usingAiPage.aboutRightsInfo.readMore.li6")}
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a21"
@@ -500,7 +546,14 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
                                             )}
-                                            <ArrowRightIcon />
+                                            <m.div
+                                                whileHover={{
+                                                    scale: 1.1,
+                                                    x: 5,
+                                                }}
+                                            >
+                                                <ArrowRightIcon />
+                                            </m.div>
                                         </a>
                                     </p>
                                 </li>
@@ -511,24 +564,24 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                     closeInfoButtonText={t("informationDropdownBoxCloseButtonText")}
                 />
             </div>
-            <div className="mb-16"></div>
-            <div className="h-96 mb-20 pt-20 flex flex-col justify-center bg-white text-center py-8 sm:p-6">
+            <div className="my-4  pt-20 flex flex-col justify-center bg-white text-center py-8">
                 <p className="font-semibold p-3 text-2xl">{t("usingAiPage.consentQuestion")}</p>
                 <div className="flex justify-center mt-8 mb-10 sm:m-5">
                     <Link
-                        className="bg-prussian-blue hover:bg-darkblue font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3"
+                        className="bg-prussian-blue hover:bg-darkblue font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3 w-96"
                         href="/Summary?consent=false"
                     >
                         {t("usingAiPage.disagreeButtonText")}
                     </Link>
                     <Link
-                        className="bg-prussian-blue hover:bg-darkblue font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3"
+                        className="bg-prussian-blue hover:bg-darkblue font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3 w-96"
                         href="/Summary?consent=true"
                     >
                         {t("usingAiPage.agreeButtonText")}
                     </Link>
                 </div>
             </div>
+            <div className="p-12" />
         </Parent>
     );
 };

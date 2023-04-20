@@ -1,4 +1,5 @@
-import React, { useRef, useState } from "react";
+import React, { ReactNode, useRef, useState } from "react";
+import { motion as m } from "framer-motion";
 import "@fortawesome/fontawesome-free/css/all.css";
 
 /**
@@ -14,6 +15,7 @@ export interface InformationDropdownBoxProps {
     extendInfoButtonText: string;
     extendedInfo: string | JSX.Element;
     closeInfoButtonText: string;
+    icon?: JSX.Element;
 }
 
 /**
@@ -34,6 +36,7 @@ const InformationDropdownBox: React.FC<InformationDropdownBoxProps> = ({
     extendInfoButtonText,
     extendedInfo,
     closeInfoButtonText,
+    icon,
 }) => {
     const [open, setOpen] = useState<Boolean>(false);
     const containerRef = useRef<HTMLDivElement>(null);
@@ -50,18 +53,33 @@ const InformationDropdownBox: React.FC<InformationDropdownBoxProps> = ({
             ref={containerRef}
             className="bg-white rounded-xl shadow-lg sm:w-19/20 md:w-3/4 text-left justify-center items-center m-2"
         >
-            {title.length !== 0 && (
-                <h2 className={"font-bold px-4 sm:px-12 pt-8 sm:pt-14 text-xl text-prussian-blue"}>
-                    {title}
-                </h2>
-            )}
+            <div className="row flex px-4 sm:px-12 pt-8 sm:pt-14">
+                {icon}
+                {title.length !== 0 && (
+                    <h2 className={"font-bold text-xl text-prussian-blue px-2"}>{title}</h2>
+                )}
+            </div>
             <div className="p-4 sm:p-8 md:px-12">{initialInfo}</div>
             {!open && (
-                <div className="flex justify-center pb-4">
-                    <button onClick={handleOpen}>
-                        <p className="text-xs">{extendInfoButtonText}</p>
+                <div className="flex flex-col justify-center pb-6">
+                    <p
+                        onClick={handleOpen}
+                        className="flex justify-center text-xs pb-2 cursor-pointer"
+                    >
+                        {extendInfoButtonText}
+                    </p>
+                    <m.button
+                        initial={false}
+                        whileHover={{
+                            scale: 1.2,
+                            transition: { duration: 0.3 },
+                            y: 5,
+                        }}
+                        onClick={handleOpen}
+                    >
+                        <p className="text-xs"></p>
                         <i className="fas fa-chevron-down"></i>
-                    </button>
+                    </m.button>
                 </div>
             )}
             {open ? (
