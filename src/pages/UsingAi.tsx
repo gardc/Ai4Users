@@ -125,6 +125,16 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                         </ul>
                                         <p className="font-bold pb-4">
                                             {t(
+                                                "usingAiPage.aboutAiInfo.whatAi.learnMore.accuracyTitle"
+                                            )}
+                                        </p>
+                                        <p className="pb-4">
+                                            {t(
+                                                "usingAiPage.aboutAiInfo.whatAi.learnMore.accuracyInfo"
+                                            )}
+                                        </p>
+                                        <p className="font-bold pb-4">
+                                            {t(
                                                 "usingAiPage.aboutAiInfo.whatAi.learnMore.disagreeTitle"
                                             )}
                                         </p>
@@ -169,6 +179,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 "usingAiPage.aboutAiInfo.whatAi.learnMore.agreeInfo"
                                             )}
                                         </p>
+                                        
                                         <Image
                                             src={
                                                 t(
@@ -194,7 +205,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             width={1000}
                                             height={1000}
                                             className="pb-4 block lg:hidden"
-                                        />
+                                        />    
                                     </div>
                                 }
                                 buttonText={t("usingAiPage.aboutAiInfo.learnMoreButtonText")}
