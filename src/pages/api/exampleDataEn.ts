@@ -26,7 +26,7 @@ export const exampleDataEn = [
         label: "Start date of current sick leave",
         value: "01.03.2023",
         extendedInfo:
-            "The start date of the current sick leave is relevant for the prediction as the length of the current sick leave absence can provide valuable insight into the expected duration of the absence.",
+            "The start date of the current sick leave is relevant for the prediction as the current length of the sick leave absence can provide valuable insight into the expected remaining duration of the absence.",
     },
     {
         label: "Number of previous sick leaves",
@@ -38,12 +38,12 @@ export const exampleDataEn = [
         label: "Start date of last sick leave",
         value: "05.01.2020",
         extendedInfo:
-            "The start date of the previous sick leave is relevant for the prediction as, in combination with the end date, it allows us to determine the duration of the previous sick leave. It is not uncommon for individuals to require a longer absence period the next time around.",
+            "The start date of the previous sick leave is relevant for the prediction as, in combination with the end date, it allows us to determine the duration of the previous sick leave. It is not uncommon for individuals to require a longer absence period in a consecutive sick leave.",
     },
     {
         label: "End date of last sick leave",
         value: "25.03.2020",
         extendedInfo:
-            "The end date of the previous sick leave is relevant for the prediction as, in combination with the start date, it allows us to determine the duration of the previous sick leave. It is not uncommon for individuals to require a longer absence period the next time around.",
+            "The end date of the previous sick leave is relevant for the prediction as, in combination with the start date, it allows us to determine the duration of the previous sick leave. It is not uncommon for individuals to require a longer absence period in a consecutive sick leave.",
     },
 ];
