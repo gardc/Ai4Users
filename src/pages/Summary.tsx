@@ -76,23 +76,21 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
                     className="w-full sm:w-3/4
                 bg-white drop-shadow-lg py-4 sm:py-8 px-4 sm:px-16 rounded-xl flex justify-center items-center flex-col"
                 >
-                    <div className="flex flex-col justify-center text-2xl items-center">
+                    <div className="w-full flex flex-col justify-center text-2xl items-center">
                         <h1
                             className="text-prussian-blue text-center font-bold text-3xl m-3"
                             dangerouslySetInnerHTML={{
                                 __html: predictionChoiceTitle,
                             }}
                         />
-                        <div className="justify-center m-6">
+                        <div className="justify-center w-3/4 mx-auto m-6 text-lg font-light">
                             <p
-                                className="text-base px-4 text-left"
+                                className="px-4 text-left"
                                 dangerouslySetInnerHTML={{
                                     __html: predictionChoiceText,
                                 }}
                             />
-                            <p className="text-base mt-4 px-4 text-left">
-                                {t("summaryPage.changeCoice")}
-                            </p>
+                            <p className="mt-4 px-4 text-left">{t("summaryPage.changeCoice")}</p>
                         </div>
                     </div>
                     <div className="flex flex-col items-center mt-10">
@@ -107,7 +105,7 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
                             {locale == "no" ? <DataTable data={exampleDataNo} /> : <></>}
                             {locale == "de" ? <DataTable data={exampleDataDe} /> : <></>}
                         </div>
-                        <p className="text-base px-4 lg:w-2/5 mb-10 text-center">
+                        <p className="text-base px-4 w-3/4 lg:w-7/12 mb-10 text-left font-light">
                             {t("summaryPage.informationSummarySource")}
                         </p>
                         <div className="flex justify-center mt-4">
