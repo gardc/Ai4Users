@@ -34,8 +34,15 @@ const UserTestingLandingPage: React.FC = (
                 <p className="mt-4">{t("userTestingLandingPage.beforeTestingDescription")}</p>
                 <p className="mt-12 font-bold">{t("userTestingLandingPage.disclaimerTitle")}</p>
                 <ul className="mt-4 list-disc list-inside">
-                    <li>{t("userTestingLandingPage.disclaimer1")}</li>
-                    <li>{t("userTestingLandingPage.disclaimer2")}</li>
+                    <li className="pb-1">{t("userTestingLandingPage.disclaimer1")}</li>
+                    <li className="pb-1">{t("userTestingLandingPage.disclaimer2")}</li>
+                    <li>
+                        <p className="pb-1">{t("userTestingLandingPage.disclaimer3.title")}</p>
+                        <ul className="list-disc list-inside ml-8">
+                            <li className="pb-1">{t("userTestingLandingPage.disclaimer3.li1")}</li>
+                            <li>{t("userTestingLandingPage.disclaimer3.li2")}</li>
+                        </ul>
+                    </li>
                 </ul>
                 <p className="mt-12 font-bold">{t("userTestingLandingPage.questionsTitle")}</p>
                 <p className="mt-4">{t("userTestingLandingPage.questionsEmailAddress")}</p>

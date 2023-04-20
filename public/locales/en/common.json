@@ -19,8 +19,13 @@
         "beforeTestingTitle": "Before you begin testing",
         "beforeTestingDescription": "Imagine that you are on sick leave for an extended period of time, and you are in need of support. Because of this, your doctor has directed you to the web site you are about to test.",
         "disclaimerTitle": "Disclaimer",
-        "disclaimer1": "This is a student project only intended for testing a user interface.",
-        "disclaimer2": "No data is gathered from users, and the user data presented in the web application is fictional.",
+        "disclaimer1": "This is a student project only intended for testing a user interface",
+        "disclaimer2": "The data about the user presented in the web application is fictional",
+        "disclaimer3": {
+            "title": "No data about you is saved by testing the web site, EXCEPT:",
+            "li1": "The answers you may provide to us in a feedback form when testing the web application",
+            "li2": "The feedback you provide in the user survey at the end"
+        },
         "questionsTitle": "If you have any questions, please send an e-mail to",
         "questionsEmailAddress": "jjsterke@stud.ntnu.no",
         "beginTestingButtonText": "Begin testing the web application"
@@ -162,8 +167,8 @@
             }
         },
         "consentQuestion": "Do you consent to the use of the AI model to predict your sick leave duration?",
-        "disagreeButtonText": "I do NOT consent to usage of the AI model",
-        "agreeButtonText": "I consent to usage of the AI model"
+        "disagreeButtonText": "I do NOT consent",
+        "agreeButtonText": "I consent"
     },
 
     "summaryPage": {
@@ -184,5 +189,5 @@
         "toQuestionnaireButtonText": "Survey"
     },
 
-    "userTestingSurvey": "https://forms.gle/DqZhEF398ZPs56zDA"
+    "userTestingSurvey": "https://forms.gle/tiTeibKn9FJccgwbA"
 }

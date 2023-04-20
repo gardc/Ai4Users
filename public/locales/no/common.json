@@ -20,7 +20,12 @@
         "beforeTestingDescription": "Se for deg at du er sykmeldt for en lengre periode, og du har behov for støtte. På grunn av dette har legen din henvist deg til nettsiden du nå skal teste.",
         "disclaimerTitle": "Ansvarsfraskrivelse",
         "disclaimer1": "Dette er et studentprosjekt, kun tiltenkt for å teste et brukergrensesnitt",
-        "disclaimer2": "Ingen data blir lagret om deg som bruker, og brukerinformasjonen som er presentert på web appliksajonen er fiktiv",
+        "disclaimer2": "Dataene om brukeren presentert i nettapllikasjonen er fiksjonelle",
+        "disclaimer3": {
+            "title": "Ingen data om deg blir lagret ved testingen, UNNTATT:",
+            "li1": "Svarene du eventuelt oppgir i et tilbakemeldingsskjema under testingen av nettapplikasjonen",
+            "li2": "Tilbakemeldingene du gir oss i spørreundersøkelsen på slutten"
+        },
         "questionsTitle": "Hvis du har spørsmål, send en e-post til",
         "questionsEmailAddress": "jjsterke@stud.ntnu.no",
         "beginTestingButtonText": "Begynn å teste nettapplikasjonen"
@@ -36,7 +41,7 @@
         "error:": "Det oppstod følgende problemer:",
         "continue": "Fortsett"
     },
-    
+
     "landingPage": {
         "title": "Prediksjon av sykefraværets varighet",
         "description1": "Som sykmeldt har du ofte rett til en eller flere typer støtte fra Den Nasjonale Sosialtjenesten. Dette kan være støttetiltak som økonomisk støtte eller oppfølgingsmøter.",
@@ -162,8 +167,8 @@
             }
         },
         "consentQuestion": "Samtykker du til å bruke en kunstig intelligens-modell for å predikere varigheten av ditt sykefravær?",
-        "disagreeButtonText": "Jeg samtykker IKKE til bruken av KI-modellen",
-        "agreeButtonText": "Jeg samtykker til bruken av KI-modellen"
+        "disagreeButtonText": "Jeg samtykker IKKE",
+        "agreeButtonText": "Jeg samtykker"
     },
 
     "summaryPage": {
@@ -184,5 +189,5 @@
         "toQuestionnaireButtonText": "Spørreundersøkelse"
     },
 
-    "userTestingSurvey": "https://forms.gle/onbxX2qzC2aKYHwL6"
+    "userTestingSurvey": "https://forms.gle/tiTeibKn9FJccgwbA"
 }
