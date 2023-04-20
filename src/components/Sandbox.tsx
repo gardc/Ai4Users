@@ -1,9 +1,9 @@
+import { useTranslation } from "next-i18next";
+import ArrowToModelIcon from "./Assets/arrowToModelIcon";
 import Button from "@/components/Button";
 import CaseHandlerIcon from "@/components/Assets/caseHandlerIcon";
-import { useTranslation } from "next-i18next";
-import React, { FormEvent, useState, useRef } from "react";
-import ArrowToModelIcon from "./Assets/arrowToModelIcon";
 import CogIconLarge from "./Assets/cogIconLarge";
+import React, { FormEvent, useState } from "react";
 
 /**
  * The type definition for the `Sandbox` component's props.
@@ -51,7 +51,7 @@ interface SandboxProps {
  * @component
  * @example
  * description = "Some description text";
- * const parameters = [
+ * parameters = [
  *   {
  *     label: "Parameter 1",
  *     labelValueForModel: "param1",
@@ -71,7 +71,6 @@ interface SandboxProps {
  * ];
  * Usage <Sandbox description={description} parameters={parameters} />
  */
-
 const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
     const initialState = parameters.reduce<Record<string, string>>((acc, param) => {
         const firstItemValueForModel = param.argument[0]?.itemValueForModel;
@@ -81,23 +80,34 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
         return acc;
     }, {});
     const { t } = useTranslation("common");
+    const [cogSpin, setCogSpin] = useState(false);
+    const [resultPulse, setResultPulse] = useState(false);
     const [selectedValues, setSelectedValues] = useState(initialState);
-    const [weeks, setWeeks] = useState(t("usingAiPage.sandbox.initialPredictionText"));
-    /* const [updatedWeeks, setUpdatedWeeks] = useState(
+    const [weeksOfPredictedSickLeave, setWeeksOfPredictedSickLeave] = useState(
         t("usingAiPage.sandbox.initialPredictionText")
-    ); */
-    const videoRef = useRef<HTMLVideoElement>(null);
+    );
 
-    const handleChange = (parameterLabel: string, itemValueForModel: string) => {
+    /**
+     * Updates the values in the selected values state based on the user's input.
+     *
+     * @param event - The event object triggered by the input element.
+     */
+    const handleChangeOfValues = (parameterLabel: string, itemValueForModel: string) => {
         setSelectedValues((prevState) => ({
             ...prevState,
             [parameterLabel]: itemValueForModel,
         }));
     };
 
+    /**
+     * Submits the form data of selected values to the server for processing and updates the state
+     * with the predicted weeks of sick leave.
+     *
+     * @param e - The form event triggered by clicking the submit button.
+     */
     const handleSubmit = async (e: FormEvent) => {
         e.preventDefault();
-        console.log(selectedValues);
+        setCogSpin(true);
         const response = await fetch("/api/processData", {
             method: "POST",
             headers: {
@@ -117,27 +127,25 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
         setCalculatedWeeksWithAnimation(weeksText);
     };
 
-    const [calculateClicked, setCalculateClicked] = useState(false);
-
-    const [resultPulse, setResultPulse] = useState(false);
-
+    /**
+     * Disables the spinning animation of the cog after 600 milliseconds, sets the predicted weeks
+     * to the right value, enables a bounce and color change animation for the text showing the
+     * predicted weeks, and disables it after 400 milliseconds.
+     *
+     * @param weeksText - A string showing the predicted number of weeks of sick leave.
+     */
     async function setCalculatedWeeksWithAnimation(weeksText: string) {
-        setCalculateClicked(true);
-        await new Promise((resolve) => setTimeout(resolve, 800));
-        setCalculateClicked(false);
+        await new Promise((resolve) => setTimeout(resolve, 600));
+        setCogSpin(false);
+        setWeeksOfPredictedSickLeave(weeksText);
         setResultPulse(true);
-        setWeeks(weeksText);
         await new Promise((resolve) => setTimeout(resolve, 400));
         setResultPulse(false);
     }
 
-    /* const handleVideoEnd = () => {
-        setWeeks(updatedWeeks);
-    }; */
-
     return (
         <div>
-            <p className={"md:px-8"}>{description}</p>
+            <p className={"md:px-8 lg:px-24 font-light mt-8"}>{description}</p>
             <div className={"flex flex-col mt-12 lg:flex-row justify-center"}>
                 <div className={"flex-col lg:w-1/2"}>
                     <form
@@ -149,7 +157,7 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                                 key={"div-" + parameter.label}
                                 className={"m-3 flex flex-col items-start mb-5"}
                             >
-                                <label htmlFor={parameter.label} className={"mb-1"}>
+                                <label htmlFor={parameter.label} className={"mb-1 font-bold"}>
                                     {parameter.label}:
                                 </label>
                                 <select
@@ -157,7 +165,7 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                                     key={parameter.labelValueForModel}
                                     className={"p-2 border rounded-lg shadow-md w-full"}
                                     onChange={(e) =>
-                                        handleChange(
+                                        handleChangeOfValues(
                                             parameter.labelValueForModel.toLowerCase(),
                                             e.target.value.toLowerCase()
                                         )
@@ -180,18 +188,8 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                     </form>
                 </div>
                 <div className={"flex flex-col items-center py-8"}>
-                    {/* <div className={"px-5 md:px-10 lg:px-15"}>
-                    <video
-                        ref={videoRef}
-                        src={"/mp4/sandboxModelAnimation.mp4"}
-                        onEnded={handleVideoEnd}
-                        loop={false}
-                        muted
-                        playsInline
-                    />
-                </div> */}
                     <div>
-                        {calculateClicked ? (
+                        {cogSpin ? (
                             <div className="animate-spin">
                                 <CogIconLarge />
                             </div>
@@ -203,7 +201,7 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                                 "m-1 p-2 md:m-3 md:p-4 lg:m-6 lg:p-6 lg:mt-2 w-80 border text-center rounded-[20px] shadow-2xl"
                             }
                         >
-                            <h2 className={" text-xs md:text-lg"}>
+                            <h2 className={"text-xs md:text-lg font-light"}>
                                 {t("usingAiPage.sandbox.sickLeaveDescription")}:
                             </h2>
                             {resultPulse ? (
@@ -212,10 +210,12 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                                         "text-md font-bold animate-bounce text-sky-blue md:text-lg"
                                     }
                                 >
-                                    {weeks}
+                                    {weeksOfPredictedSickLeave}
                                 </p>
                             ) : (
-                                <p className={"text-md font-bold md:text-lg"}>{weeks}</p>
+                                <p className={"text-md font-bold md:text-lg"}>
+                                    {weeksOfPredictedSickLeave}
+                                </p>
                             )}
                         </div>
                     </div>

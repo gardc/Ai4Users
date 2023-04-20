@@ -2,8 +2,8 @@ import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
-import React from "react";
 import LocaleSelection from "@/components/LocaleSelection";
+import React from "react";
 
 /**
  * The landing page for testing component that displays information relevant
@@ -25,7 +25,7 @@ const UserTestingLandingPage: React.FC = (
                 </div>
             </div>
 
-            <div className="py-28 px-10 mb-48 lg:px-40">
+            <div className="py-28 px-10 lg:px-40">
                 <h1 className="text-2xl text-cyan-900 font-bold">
                     {t("userTestingLandingPage.title")}
                 </h1>
@@ -34,8 +34,15 @@ const UserTestingLandingPage: React.FC = (
                 <p className="mt-4">{t("userTestingLandingPage.beforeTestingDescription")}</p>
                 <p className="mt-12 font-bold">{t("userTestingLandingPage.disclaimerTitle")}</p>
                 <ul className="mt-4 list-disc list-inside">
-                    <li>{t("userTestingLandingPage.disclaimer1")}</li>
-                    <li>{t("userTestingLandingPage.disclaimer2")}</li>
+                    <li className="pb-1">{t("userTestingLandingPage.disclaimer1")}</li>
+                    <li className="pb-1">{t("userTestingLandingPage.disclaimer2")}</li>
+                    <li>
+                        <p className="pb-1">{t("userTestingLandingPage.disclaimer3.title")}</p>
+                        <ul className="list-disc list-inside ml-8">
+                            <li className="pb-1">{t("userTestingLandingPage.disclaimer3.li1")}</li>
+                            <li>{t("userTestingLandingPage.disclaimer3.li2")}</li>
+                        </ul>
+                    </li>
                 </ul>
                 <p className="mt-12 font-bold">{t("userTestingLandingPage.questionsTitle")}</p>
                 <p className="mt-4">{t("userTestingLandingPage.questionsEmailAddress")}</p>
