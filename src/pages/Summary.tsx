@@ -11,6 +11,7 @@ import Link from "next/link";
 import Parent from "@/components/Parent";
 import React from "react";
 import ProfileIcon from "@/components/Assets/profileIcon";
+import NavBar from "@/components/NavBar";
 
 /**
  * The summary page component that displays a summary of information used to estimate sick leave
@@ -51,6 +52,7 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
 
     return (
         <Parent>
+            <NavBar enableLinkToFrontPage={true} />
             <div className="flex justify-start py-5 text-black">
                 <Link
                     className="hover:font-bold text-sm lg:text-base pl-12 px-3"

@@ -10,6 +10,7 @@ import DataTable from "@/components/DataTable";
 import Link from "next/link";
 import ProfileIcon from "@/components/Assets/profileIcon";
 import Parent from "@/components/Parent";
+import NavBar from "@/components/NavBar";
 
 /**
  * The landing page component that displays initial information about the web
@@ -25,6 +26,7 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
 
     return (
         <Parent>
+            <NavBar enableLinkToFrontPage={true} />
             <div className="flex justify-start py-5 text-black">
                 <Link
                     className="hover:font-bold text-sm lg:text-base sm:pl-12 px-3"
@@ -75,6 +77,7 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
                                 {t("useOfDataPage.informationSummaryTitle")}
                             </p>
                         </div>
+                        {/*Here there will be a component with information about the user */}
                         {locale == "en" ? <DataTable data={exampleDataEn} /> : <></>}
                         {locale == "no" ? <DataTable data={exampleDataNo} /> : <></>}
                         {locale == "de" ? <DataTable data={exampleDataDe} /> : <></>}

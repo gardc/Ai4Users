@@ -23,6 +23,7 @@ import Link from "next/link";
 import Parent from "@/components/Parent";
 import React from "react";
 import Sandbox from "@/components/Sandbox";
+import NavBar from "@/components/NavBar";
 import scaleIcon from "@/components/Assets/scaleIcon";
 
 /**
@@ -39,6 +40,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
 
     return (
         <Parent>
+            <NavBar enableLinkToFrontPage={true} />
             <div className="pb-2 text-center">
                 <div className="flex justify-start py-5 text-black">
                     <Link
