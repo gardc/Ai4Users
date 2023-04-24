@@ -179,7 +179,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 "usingAiPage.aboutAiInfo.whatAi.learnMore.agreeInfo"
                                             )}
                                         </p>
-                                        
+
                                         <Image
                                             src={
                                                 t(
@@ -205,7 +205,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             width={1000}
                                             height={1000}
                                             className="pb-4 block lg:hidden"
-                                        />    
+                                        />
                                     </div>
                                 }
                                 buttonText={t("usingAiPage.aboutAiInfo.learnMoreButtonText")}

@@ -47,9 +47,7 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
                                 {row.value}
                             </td>
                             <td className="p-2">
-                                {row.extendedInfo && (
-                                    <Tooltip extendedInfo={row.extendedInfo} />
-                                )}
+                                {row.extendedInfo && <Tooltip extendedInfo={row.extendedInfo} />}
                             </td>
                         </tr>
                     );

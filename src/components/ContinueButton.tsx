@@ -25,8 +25,7 @@ const ContinueButton: React.FC<ButtonProps> = ({
     onClick,
     children,
 }) => {
-    const baseClasses =
-        "text-center  py-1 px-2 m-2 lg:py-3 lg:px-4 lg:m-0 rounded-md";
+    const baseClasses = "text-center  py-1 px-2 m-2 lg:py-3 lg:px-4 lg:m-0 rounded-md";
 
     let colorClasses;
     switch (color) {

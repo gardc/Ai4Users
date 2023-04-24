@@ -15,7 +15,7 @@ export const exampleDataNo = [
     {
         label: "Yrke",
         value: "Snekker",
-        extendedInfo: 
+        extendedInfo:
             "Yrke er relevant for prediksjonen fordi forskjellige yrker har ulike faktorer som påvirker risikoen for sykefravær, eksempelvis arbeidsmengde, skaderisiko, fysisk krevende arbeid eller mentalt krevende arbeid.",
     },
     {
