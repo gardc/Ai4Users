@@ -13,47 +13,47 @@ import React from "react";
  * @returns A React functional component representing the landing page for testing.
  */
 const UserTestingLandingPage: React.FC = (
-	_props: InferGetStaticPropsType<typeof getStaticProps>
+    _props: InferGetStaticPropsType<typeof getStaticProps>
 ) => {
-	const { t } = useTranslation("common");
+    const { t } = useTranslation("common");
 
-	return (
-		<div className="break-words text-black bg-white">
-			<div className="w-full h-20 bg-darkblue">
-				<div className=" float-right pt-8 mr-10">
-					<LocaleSelection />
-				</div>
-			</div>
+    return (
+        <div className="break-words text-black bg-white">
+            <div className="w-full h-20 bg-darkblue">
+                <div className=" float-right pt-8 mr-10">
+                    <LocaleSelection />
+                </div>
+            </div>
 
-			<div className="py-28 px-10 lg:px-40">
-				<h1 className="text-2xl text-cyan-900 font-bold">
-					{t("userTestingLandingPage.title")}
-				</h1>
-				<p className="mt-8">{t("userTestingLandingPage.description")}</p>
-				<p className="mt-12 font-bold">{t("userTestingLandingPage.beforeTestingTitle")}</p>
-				<p className="mt-4">{t("userTestingLandingPage.beforeTestingDescription")}</p>
-				<p className="mt-12 font-bold">{t("userTestingLandingPage.disclaimerTitle")}</p>
-				<ul className="mt-4 list-disc list-inside">
-					<li className="pb-1">{t("userTestingLandingPage.disclaimer1")}</li>
-					<li className="pb-1">{t("userTestingLandingPage.disclaimer2")}</li>
-					<li>
-						<p className="pb-1">{t("userTestingLandingPage.disclaimer3.title")}</p>
-						<ul className="list-disc list-inside ml-8">
-							<li className="pb-1">{t("userTestingLandingPage.disclaimer3.li1")}</li>
-							<li>{t("userTestingLandingPage.disclaimer3.li2")}</li>
-						</ul>
-					</li>
-				</ul>
-				<p className="mt-12 font-bold">{t("userTestingLandingPage.questionsTitle")}</p>
-				<p className="mt-4">{t("userTestingLandingPage.questionsEmailAddress")}</p>
-				<div className="mt-20">
-					<Button color="lavaorange" href={"/LandingPage"}>
-						{t("userTestingLandingPage.beginTestingButtonText")}
-					</Button>
-				</div>
-			</div>
-		</div>
-	);
+            <div className="py-28 px-10 lg:px-40">
+                <h1 className="text-2xl text-cyan-900 font-bold">
+                    {t("userTestingLandingPage.title")}
+                </h1>
+                <p className="mt-8">{t("userTestingLandingPage.description")}</p>
+                <p className="mt-12 font-bold">{t("userTestingLandingPage.beforeTestingTitle")}</p>
+                <p className="mt-4">{t("userTestingLandingPage.beforeTestingDescription")}</p>
+                <p className="mt-12 font-bold">{t("userTestingLandingPage.disclaimerTitle")}</p>
+                <ul className="mt-4 list-disc list-inside">
+                    <li className="pb-1">{t("userTestingLandingPage.disclaimer1")}</li>
+                    <li className="pb-1">{t("userTestingLandingPage.disclaimer2")}</li>
+                    <li>
+                        <p className="pb-1">{t("userTestingLandingPage.disclaimer3.title")}</p>
+                        <ul className="list-disc list-inside ml-8">
+                            <li className="pb-1">{t("userTestingLandingPage.disclaimer3.li1")}</li>
+                            <li>{t("userTestingLandingPage.disclaimer3.li2")}</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p className="mt-12 font-bold">{t("userTestingLandingPage.questionsTitle")}</p>
+                <p className="mt-4">{t("userTestingLandingPage.questionsEmailAddress")}</p>
+                <div className="mt-20">
+                    <Button color="lavaorange" href={"/LandingPage"}>
+                        {t("userTestingLandingPage.beginTestingButtonText")}
+                    </Button>
+                </div>
+            </div>
+        </div>
+    );
 };
 
 export default UserTestingLandingPage;
@@ -61,7 +61,7 @@ export default UserTestingLandingPage;
 type Props = {};
 
 export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => ({
-	props: {
-		...(await serverSideTranslations(locale ?? "en", ["common"])),
-	},
+    props: {
+        ...(await serverSideTranslations(locale ?? "en", ["common"])),
+    },
 });

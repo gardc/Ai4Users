@@ -9,11 +9,11 @@ import React from "react";
  * @returns A React funcional component for ensuring content uniformity on different pages.
  */
 const Content = (props: any) => {
-	return (
-		<div className="flex justify-center">
-			<div className="w-full">{props.children}</div>
-		</div>
-	);
+    return (
+        <div className="flex justify-center">
+            <div className="w-full">{props.children}</div>
+        </div>
+    );
 };
 
 export default Content;

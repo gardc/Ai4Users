@@ -43,238 +43,238 @@
  * };
  */
 export const featureImportanceDataEn = {
-	label: "Age",
-	arguments: [
-		{
-			argumentName: "16-19",
-			featureImportanceGivenArgument: [
-				{
-					feature: "Age",
-					weight: 0.41,
-				},
-				{
-					feature: "County",
-					weight: 0.12,
-				},
-				{
-					feature: "Gender",
-					weight: 0.13,
-				},
-				{
-					feature: "Diagnosis",
-					weight: 0.34,
-				},
-			],
-		},
-		{
-			argumentName: "20-24",
-			featureImportanceGivenArgument: [
-				{
-					feature: "Age",
-					weight: 0.35,
-				},
-				{
-					feature: "County",
-					weight: 0.14,
-				},
-				{
-					feature: "Gender",
-					weight: 0.14,
-				},
-				{
-					feature: "Diagnosis",
-					weight: 0.37,
-				},
-			],
-		},
-		{
-			argumentName: "25-29",
-			featureImportanceGivenArgument: [
-				{
-					feature: "Age",
-					weight: 0.29,
-				},
-				{
-					feature: "County",
-					weight: 0.15,
-				},
-				{
-					feature: "Gender",
-					weight: 0.16,
-				},
-				{
-					feature: "Diagnosis",
-					weight: 0.4,
-				},
-			],
-		},
-		{
-			argumentName: "30-34",
-			featureImportanceGivenArgument: [
-				{
-					feature: "Age",
-					weight: 0.26,
-				},
-				{
-					feature: "County",
-					weight: 0.16,
-				},
-				{
-					feature: "Gender",
-					weight: 0.16,
-				},
-				{
-					feature: "Diagnosis",
-					weight: 0.42,
-				},
-			],
-		},
-		{
-			argumentName: "35-39",
-			featureImportanceGivenArgument: [
-				{
-					feature: "Age",
-					weight: 0.25,
-				},
-				{
-					feature: "County",
-					weight: 0.15,
-				},
-				{
-					feature: "Gender",
-					weight: 0.17,
-				},
-				{
-					feature: "Diagnosis",
-					weight: 0.43,
-				},
-			],
-		},
-		{
-			argumentName: "40-44",
-			featureImportanceGivenArgument: [
-				{
-					feature: "Age",
-					weight: 0.24,
-				},
-				{
-					feature: "County",
-					weight: 0.16,
-				},
-				{
-					feature: "Gender",
-					weight: 0.17,
-				},
-				{
-					feature: "Diagnosis",
-					weight: 0.43,
-				},
-			],
-		},
-		{
-			argumentName: "45-49",
-			featureImportanceGivenArgument: [
-				{
-					feature: "Age",
-					weight: 0.25,
-				},
-				{
-					feature: "County",
-					weight: 0.15,
-				},
-				{
-					feature: "Gender",
-					weight: 0.17,
-				},
-				{
-					feature: "Diagnosis",
-					weight: 0.43,
-				},
-			],
-		},
-		{
-			argumentName: "50-54",
-			featureImportanceGivenArgument: [
-				{
-					feature: "Age",
-					weight: 0.26,
-				},
-				{
-					feature: "County",
-					weight: 0.16,
-				},
-				{
-					feature: "Gender",
-					weight: 0.16,
-				},
-				{
-					feature: "Diagnosis",
-					weight: 0.42,
-				},
-			],
-		},
-		{
-			argumentName: "55-59",
-			featureImportanceGivenArgument: [
-				{
-					feature: "Age",
-					weight: 0.28,
-				},
-				{
-					feature: "County",
-					weight: 0.15,
-				},
-				{
-					feature: "Gender",
-					weight: 0.16,
-				},
-				{
-					feature: "Diagnosis",
-					weight: 0.41,
-				},
-			],
-		},
-		{
-			argumentName: "60-64",
-			featureImportanceGivenArgument: [
-				{
-					feature: "Age",
-					weight: 0.35,
-				},
-				{
-					feature: "County",
-					weight: 0.13,
-				},
-				{
-					feature: "Gender",
-					weight: 0.15,
-				},
-				{
-					feature: "Diagnosis",
-					weight: 0.37,
-				},
-			],
-		},
-		{
-			argumentName: "65-69",
-			featureImportanceGivenArgument: [
-				{
-					feature: "Age",
-					weight: 0.38,
-				},
-				{
-					feature: "County",
-					weight: 0.13,
-				},
-				{
-					feature: "Gender",
-					weight: 0.14,
-				},
-				{
-					feature: "Diagnosis",
-					weight: 0.35,
-				},
-			],
-		},
-	],
+    label: "Age",
+    arguments: [
+        {
+            argumentName: "16-19",
+            featureImportanceGivenArgument: [
+                {
+                    feature: "Age",
+                    weight: 0.41,
+                },
+                {
+                    feature: "County",
+                    weight: 0.12,
+                },
+                {
+                    feature: "Gender",
+                    weight: 0.13,
+                },
+                {
+                    feature: "Diagnosis",
+                    weight: 0.34,
+                },
+            ],
+        },
+        {
+            argumentName: "20-24",
+            featureImportanceGivenArgument: [
+                {
+                    feature: "Age",
+                    weight: 0.35,
+                },
+                {
+                    feature: "County",
+                    weight: 0.14,
+                },
+                {
+                    feature: "Gender",
+                    weight: 0.14,
+                },
+                {
+                    feature: "Diagnosis",
+                    weight: 0.37,
+                },
+            ],
+        },
+        {
+            argumentName: "25-29",
+            featureImportanceGivenArgument: [
+                {
+                    feature: "Age",
+                    weight: 0.29,
+                },
+                {
+                    feature: "County",
+                    weight: 0.15,
+                },
+                {
+                    feature: "Gender",
+                    weight: 0.16,
+                },
+                {
+                    feature: "Diagnosis",
+                    weight: 0.4,
+                },
+            ],
+        },
+        {
+            argumentName: "30-34",
+            featureImportanceGivenArgument: [
+                {
+                    feature: "Age",
+                    weight: 0.26,
+                },
+                {
+                    feature: "County",
+                    weight: 0.16,
+                },
+                {
+                    feature: "Gender",
+                    weight: 0.16,
+                },
+                {
+                    feature: "Diagnosis",
+                    weight: 0.42,
+                },
+            ],
+        },
+        {
+            argumentName: "35-39",
+            featureImportanceGivenArgument: [
+                {
+                    feature: "Age",
+                    weight: 0.25,
+                },
+                {
+                    feature: "County",
+                    weight: 0.15,
+                },
+                {
+                    feature: "Gender",
+                    weight: 0.17,
+                },
+                {
+                    feature: "Diagnosis",
+                    weight: 0.43,
+                },
+            ],
+        },
+        {
+            argumentName: "40-44",
+            featureImportanceGivenArgument: [
+                {
+                    feature: "Age",
+                    weight: 0.24,
+                },
+                {
+                    feature: "County",
+                    weight: 0.16,
+                },
+                {
+                    feature: "Gender",
+                    weight: 0.17,
+                },
+                {
+                    feature: "Diagnosis",
+                    weight: 0.43,
+                },
+            ],
+        },
+        {
+            argumentName: "45-49",
+            featureImportanceGivenArgument: [
+                {
+                    feature: "Age",
+                    weight: 0.25,
+                },
+                {
+                    feature: "County",
+                    weight: 0.15,
+                },
+                {
+                    feature: "Gender",
+                    weight: 0.17,
+                },
+                {
+                    feature: "Diagnosis",
+                    weight: 0.43,
+                },
+            ],
+        },
+        {
+            argumentName: "50-54",
+            featureImportanceGivenArgument: [
+                {
+                    feature: "Age",
+                    weight: 0.26,
+                },
+                {
+                    feature: "County",
+                    weight: 0.16,
+                },
+                {
+                    feature: "Gender",
+                    weight: 0.16,
+                },
+                {
+                    feature: "Diagnosis",
+                    weight: 0.42,
+                },
+            ],
+        },
+        {
+            argumentName: "55-59",
+            featureImportanceGivenArgument: [
+                {
+                    feature: "Age",
+                    weight: 0.28,
+                },
+                {
+                    feature: "County",
+                    weight: 0.15,
+                },
+                {
+                    feature: "Gender",
+                    weight: 0.16,
+                },
+                {
+                    feature: "Diagnosis",
+                    weight: 0.41,
+                },
+            ],
+        },
+        {
+            argumentName: "60-64",
+            featureImportanceGivenArgument: [
+                {
+                    feature: "Age",
+                    weight: 0.35,
+                },
+                {
+                    feature: "County",
+                    weight: 0.13,
+                },
+                {
+                    feature: "Gender",
+                    weight: 0.15,
+                },
+                {
+                    feature: "Diagnosis",
+                    weight: 0.37,
+                },
+            ],
+        },
+        {
+            argumentName: "65-69",
+            featureImportanceGivenArgument: [
+                {
+                    feature: "Age",
+                    weight: 0.38,
+                },
+                {
+                    feature: "County",
+                    weight: 0.13,
+                },
+                {
+                    feature: "Gender",
+                    weight: 0.14,
+                },
+                {
+                    feature: "Diagnosis",
+                    weight: 0.35,
+                },
+            ],
+        },
+    ],
 };

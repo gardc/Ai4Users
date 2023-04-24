@@ -10,13 +10,13 @@ import Link from "next/link";
  * @param children - The child elements to display inside the button.
  */
 interface ButtonProps {
-	color?: "lavaorange" | "darkblue" | "beaver" | "primary" | "black";
-	href?: string;
-	onClick?: () => void;
-	children: React.ReactNode;
-	type?: "button" | "submit" | "reset" | undefined;
-	disabled?: boolean;
-	loading?: boolean;
+    color?: "lavaorange" | "darkblue" | "beaver" | "primary" | "black";
+    href?: string;
+    onClick?: () => void;
+    children: React.ReactNode;
+    type?: "button" | "submit" | "reset" | undefined;
+    disabled?: boolean;
+    loading?: boolean;
 }
 
 /**
@@ -33,55 +33,55 @@ interface ButtonProps {
  * @returns A React functional component representing a button element or a Link component.
  */
 const Button: React.FC<ButtonProps> = ({
-	color = "lavaorange",
-	href,
-	onClick,
-	children,
-	type = "button",
-	disabled = false,
-	loading = false,
+    color = "lavaorange",
+    href,
+    onClick,
+    children,
+    type = "button",
+    disabled = false,
+    loading = false,
 }) => {
-	const baseClasses = "text-white rounded-full px-8 py-2 m-2";
+    const baseClasses = "text-white rounded-full px-8 py-2 m-2";
 
-	let colorClasses;
-	switch (color) {
-		case "lavaorange":
-			colorClasses = "bg-lavaorange hover:bg-opacity-50 text-white";
-			break;
-		case "darkblue":
-			colorClasses = "bg-prussian-blue hover:bg-darkblue text-white";
-			break;
-		case "primary":
-			colorClasses = "bg-primary text-black border-primary border";
-			break;
-		case "black":
-			colorClasses = "bg-black text-white";
-			break;
-		default:
-			colorClasses = "bg-blue-500 text-white";
-	}
+    let colorClasses;
+    switch (color) {
+        case "lavaorange":
+            colorClasses = "bg-lavaorange hover:bg-opacity-50 text-white";
+            break;
+        case "darkblue":
+            colorClasses = "bg-prussian-blue hover:bg-darkblue text-white";
+            break;
+        case "primary":
+            colorClasses = "bg-primary text-black border-primary border";
+            break;
+        case "black":
+            colorClasses = "bg-black text-white";
+            break;
+        default:
+            colorClasses = "bg-blue-500 text-white";
+    }
 
-	let statusClass;
-	if (disabled) statusClass = `bg-opacity-50 cursor-not-allowed`;
-	if (loading) statusClass = `bg-opacity-50 cursor-wait`;
+    let statusClass;
+    if (disabled) statusClass = `bg-opacity-50 cursor-not-allowed`;
+    if (loading) statusClass = `bg-opacity-50 cursor-wait`;
 
-	const classes = `${baseClasses} ${colorClasses} ${statusClass}`;
+    const classes = `${baseClasses} ${colorClasses} ${statusClass}`;
 
-	if (href) {
-		return (
-			<div className={"flex"}>
-				<Link href={href} className={classes}>
-					{children}
-				</Link>
-			</div>
-		);
-	}
+    if (href) {
+        return (
+            <div className={"flex"}>
+                <Link href={href} className={classes}>
+                    {children}
+                </Link>
+            </div>
+        );
+    }
 
-	return (
-		<button className={classes} onClick={onClick} type={type} disabled={disabled}>
-			{children}
-		</button>
-	);
+    return (
+        <button className={classes} onClick={onClick} type={type} disabled={disabled}>
+            {children}
+        </button>
+    );
 };
 
 export default Button;

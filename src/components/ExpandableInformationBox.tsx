@@ -4,11 +4,11 @@ import InformationSignIcon from "./Assets/informationSignIcon";
 import { createPortal } from "react-dom";
 
 export interface ExpandableInformationBoxProps {
-	content: string | JSX.Element;
-	expandedContentTitle: string;
-	expandedContent: string | JSX.Element;
-	expandedCloseButtonText: string;
-	buttonText: string;
+    content: string | JSX.Element;
+    expandedContentTitle: string;
+    expandedContent: string | JSX.Element;
+    expandedCloseButtonText: string;
+    buttonText: string;
 }
 
 /**
@@ -23,71 +23,71 @@ export interface ExpandableInformationBoxProps {
  * @returns An expandable information box as a React functional component.
  */
 const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
-	content,
-	expandedContentTitle,
-	expandedContent,
-	expandedCloseButtonText,
-	buttonText,
+    content,
+    expandedContentTitle,
+    expandedContent,
+    expandedCloseButtonText,
+    buttonText,
 }) => {
-	const [expanded, setExpanded] = useState<boolean>(false);
+    const [expanded, setExpanded] = useState<boolean>(false);
 
-	const handleExpansion = () => {
-		setExpanded(true);
-		document.body.style.overflow = "hidden";
-	};
+    const handleExpansion = () => {
+        setExpanded(true);
+        document.body.style.overflow = "hidden";
+    };
 
-	const handleExpansionClose = () => {
-		setExpanded(false);
-		document.body.style.overflow = "";
-	};
+    const handleExpansionClose = () => {
+        setExpanded(false);
+        document.body.style.overflow = "";
+    };
 
-	return (
-		<div className="flex flex-col">
-			{content}
-			<div className="justify-self-end justify-center mb-16 lg:mb-0 pt-2 mt-6">
-				<Button color="darkblue" onClick={handleExpansion}>
-					{buttonText}
-				</Button>
-			</div>
-			{!expanded ? (
-				<></>
-			) : (
-				<>
-					{createPortal(
-						<div>
-							<div
-								className="fixed inset-0 bg-black opacity-25"
-								onClick={handleExpansionClose}
-							></div>
-							<div
-								className="bg-white w-full md:w-3/4 sm:rounded-xl fixed top-[40%] left-1/2
+    return (
+        <div className="flex flex-col">
+            {content}
+            <div className="justify-self-end justify-center mb-16 lg:mb-0 pt-2 mt-6">
+                <Button color="darkblue" onClick={handleExpansion}>
+                    {buttonText}
+                </Button>
+            </div>
+            {!expanded ? (
+                <></>
+            ) : (
+                <>
+                    {createPortal(
+                        <div>
+                            <div
+                                className="fixed inset-0 bg-black opacity-25"
+                                onClick={handleExpansionClose}
+                            ></div>
+                            <div
+                                className="bg-white w-full md:w-3/4 sm:rounded-xl fixed top-[40%] left-1/2
                         -translate-x-1/2 -translate-y-1/2 overflow-y-auto max-h-[85%] sm:mt-10"
-							>
-								<div className="p-8 sm:px-14 sm:py-8 bg-prussian-blue sticky top-0">
-									<button
-										onClick={handleExpansionClose}
-										className="text-white hover:text-sky-600 mt-4 underline float-right justify-end"
-									>
-										{expandedCloseButtonText}
-									</button>
-									<div className="font-bold flex text-xl w-5/6 text-left text-white">
-										<div className="my-auto">
-											<InformationSignIcon />
-										</div>
-										<p className="ml-4 mt-3">{expandedContentTitle}</p>
-									</div>
-								</div>
-								<div className="text-black text-left font-light w-5/6 mx-auto p-8 sm:p-14">
-									{expandedContent}
-								</div>
-							</div>
-						</div>,
-						document.body
-					)}
-				</>
-			)}
-		</div>
-	);
+                            >
+                                <div className="p-8 sm:px-14 sm:py-8 bg-prussian-blue sticky top-0">
+                                    <button
+                                        onClick={handleExpansionClose}
+                                        className="text-white hover:text-sky-600 mt-4 underline float-right justify-end"
+                                    >
+                                        {expandedCloseButtonText}
+                                    </button>
+                                    <div className="font-bold flex text-xl w-5/6 text-left text-white">
+                                        <div className="my-auto">
+                                            <InformationSignIcon />
+                                        </div>
+                                        <p className="ml-4 mt-3">{expandedContentTitle}</p>
+                                    </div>
+                                </div>
+                                <div className="text-black text-left font-light w-5/6 mx-auto p-8 sm:p-14">
+                                    {expandedContent}
+                                </div>
+                            </div>
+                        </div>,
+                        document.body
+                    )}
+                </>
+            )}
+        </div>
+    );
 };
 
 export default ExpandableInformationBox;
