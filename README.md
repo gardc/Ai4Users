@@ -14,7 +14,8 @@ pnpm dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-***Remember to add the mongoDB connection URI to your .env.local file like this:***
+**_Remember to add the mongoDB connection URI to your .env.local file like this:_**
+
 ```bash
 MONGODB_URI="mongodb://localhost:27017"
 ```

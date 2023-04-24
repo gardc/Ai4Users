@@ -7,42 +7,42 @@ import { useRouter } from "next/router";
  * @returns A React functional component for language selection
  */
 const LocaleSelection = () => {
-    const router = useRouter();
-    const { locale } = router;
+	const router = useRouter();
+	const { locale } = router;
 
-    /**
-     * Modifies the path to include the preferred language. This will change the language of the
-     * enabled parts of the web application with the help of i18next.
-     *
-     * @param newLocale string, defining the locale of the preferred language
-     */
-    const changeLocale = (newLocale: string) => {
-        const { pathname, asPath, query } = router;
-        router.push({ pathname, query }, asPath, { locale: newLocale });
-    };
+	/**
+	 * Modifies the path to include the preferred language. This will change the language of the
+	 * enabled parts of the web application with the help of i18next.
+	 *
+	 * @param newLocale string, defining the locale of the preferred language
+	 */
+	const changeLocale = (newLocale: string) => {
+		const { pathname, asPath, query } = router;
+		router.push({ pathname, query }, asPath, { locale: newLocale });
+	};
 
-    return (
-        <div>
-            <select
-                className="px-2 py-1 bg-neutral-200/25 rounded-md border border-neutral-200/25
+	return (
+		<div>
+			<select
+				className="px-2 py-1 bg-neutral-200/25 rounded-md border border-neutral-200/25
                 cursor-pointer text-white"
-                name="Language"
-                onChange={(e) => changeLocale(e.target.value)}
-                defaultValue={locale}
-            >
-                <option value="en" key="en" className="bg-lightblue">
-                    🇬🇧 English
-                </option>
-                <option value="no" key="no" className="bg-lightblue">
-                    🇳🇴 Norsk
-                </option>
-                {/* German will be added at a later stage */}
-                {/* <option value="de" key="de">
+				name="Language"
+				onChange={(e) => changeLocale(e.target.value)}
+				defaultValue={locale}
+			>
+				<option value="en" key="en" className="bg-lightblue">
+					🇬🇧 English
+				</option>
+				<option value="no" key="no" className="bg-lightblue">
+					🇳🇴 Norsk
+				</option>
+				{/* German will be added at a later stage */}
+				{/* <option value="de" key="de">
                     🇩🇪 Deutsch
                 </option> */}
-            </select>
-        </div>
-    );
+			</select>
+		</div>
+	);
 };
 
 export default LocaleSelection;

@@ -9,11 +9,11 @@ import NavBar from "./NavBar";
  * @returns A parent element with a NavBar as a React functional component.
  */
 const Parent = (props: any) => {
-    return (
-        <div className="font-sans bg-zinc-100 min-h-screen flex flex-col">
-            <Content className="flex-grow">{props.children}</Content>
-        </div>
-    );
+	return (
+		<div className="font-sans bg-zinc-100 min-h-screen flex flex-col">
+			<Content className="flex-grow">{props.children}</Content>
+		</div>
+	);
 };
 
 export default Parent;
