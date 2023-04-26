@@ -42,6 +42,13 @@
         "continue": "Continue"
     },
 
+    "loginPage": {
+        "caseHandlerLogin": "Case handler login",
+        "caseHandlerDescription": "If you are a case handler you can click here to log into your case handler account.",
+        "predictSickLeave": "Predict sick leave",
+        "predictSickLeaveDescription": "If you are a citizen on a sick leave, you can click here to predict your sick leave duration."
+    },
+
     "landingPage": {
         "title": "Prediction of sick leave duration",
         "description1": "When you are on sick leave, you often have the right to one or more types of support from the National Social Service. This can be support measures such as economical support or follow up meetings.",

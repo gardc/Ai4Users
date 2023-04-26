@@ -42,6 +42,13 @@
         "continue": "Fortsett"
     },
 
+    "loginPage": {
+        "caseHandlerLogin": "Saksbehandler innlogging",
+        "caseHandlerDescription": "Dersom du er en saksbehandler hos Den Nasjonale Sosialtjenesten kan du trykke her for å logge inn på saksbehandler kontoen din.",
+        "predictSickLeave": "Prediker sykefravær",
+        "predictSickLeaveDescription": "Dersom du er sykemeldt, kan du trykke her for å predikere ditt sykefravær."
+    },
+
     "landingPage": {
         "title": "Prediksjon av sykefraværets varighet",
         "description1": "Som sykmeldt har du ofte rett til en eller flere typer støtte fra Den Nasjonale Sosialtjenesten. Dette kan være støttetiltak som økonomisk støtte eller oppfølgingsmøter.",
