@@ -11,7 +11,7 @@ import NavBar from "@/components/NavBar";
  *
  * @returns A React functional component representing the summary page.
  */
-const submittedPage: React.FC = (
+const SubmittedPage: React.FC = (
     _props: InferGetStaticPropsType<typeof getStaticProps>
 ) => {
     const { t } = useTranslation("common");
@@ -43,7 +43,7 @@ const submittedPage: React.FC = (
     );
 };
 
-export default submittedPage;
+export default SubmittedPage;
 
 type Props = {};
 
