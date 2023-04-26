@@ -63,7 +63,8 @@
         "description2": "Click on the ",
         "description22": "-symbol beside each data point to see why it is used.",
         "continueButtonText": "Continue",
-        "informationSummaryTitle": "Your personal information"
+        "informationSummaryTitle": "Your personal information",
+        "incorrectData": "Incorrect data? Click here"
     },
 
     "usingAiPage": {

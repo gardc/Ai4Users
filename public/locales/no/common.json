@@ -63,7 +63,8 @@
         "description2": "Klikk på ",
         "description22": "-symbolet ved siden av hvert informasjonspunkt for å se hvorfor det brukes.",
         "continueButtonText": "Fortsett",
-        "informationSummaryTitle": "Dine data"
+        "informationSummaryTitle": "Dine data",
+        "incorrectData": "Feil data? Klikk her"
     },
 
     "usingAiPage": {
