@@ -52,7 +52,8 @@
         "description2": "Klikk på ",
         "description3": "-symbolet ved siden av hver opplysning for å se hvorfor opplysningen brukes.",
         "continueButtonText": "Fortsett",
-        "informationSummaryTitle": "Dine personopplysninger"
+        "informationSummaryTitle": "Dine personopplysninger",
+        "incorrectData": "Feil i personopplysningene? Klikk her"
     },
 
     "usingAiPage": {
