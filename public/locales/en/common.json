@@ -20,7 +20,7 @@
         "beforeTestingDescription": "Imagine that you are on sick leave for an extended period of time, and you are in need of support. Because of this, your doctor has directed you to the website you are about to test.",
         "disclaimerTitle": "Disclaimer",
         "disclaimer1": "This is a student project, only intended for testing a user interface",
-        "disclaimer2": "The personal information about the user presented in the web application are fictional",
+        "disclaimer2": "The personal information about the user presented in the web application is fictional",
         "disclaimer3": {
             "title": "No personal information about you is saved by testing the website, EXCEPT:",
             "li1": "The answers you may provide to us in a feedback form when testing the web application",
@@ -52,7 +52,7 @@
         "description2": "Click on the ",
         "description3": "-symbol beside each row to see why the personal information is used.",
         "continueButtonText": "Continue",
-        "informationSummaryTitle": "Your personal information",
+        "informationSummaryTitle": "Your personal personal information",
         "incorrectData": "Incorrect information? Click here"
     },
 

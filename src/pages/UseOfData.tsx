@@ -67,7 +67,7 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
                             ?
                         </span>
                         &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                        {t("useOfDataPage.description22")}
+                        {t("useOfDataPage.description3")}
                     </p>
 
                     <div className="mt-10">
