@@ -191,6 +191,11 @@
         "submitChoiceButtonText": "Send inn valget ditt"
     },
 
+    "submittedPage": {
+        "title": "Takk for at du sendte inn valget ditt!",
+        "description": "Saksbehandler vil nå motta informasjonen som er relevant til din sak, og vil gi oppfølging basert på dine behov."
+    },
+
     "userTestingFinishedPage": {
         "title": "Takk for at du testet vår nettapplikasjon!",
         "information": "Du har nå fullført testingen. Du kan enten gå tilbake til forsiden for å teste en gang til, eller fortsette videre til en spørreundersøkelse (Google Forms) for å svare på noen spørsmål om ditt inntyrkk av nettapplikasjonen.",

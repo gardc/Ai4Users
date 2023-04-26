@@ -191,6 +191,11 @@
         "submitChoiceButtonText": "Submit your choice"
     },
 
+    "submittedPage": {
+        "title": "Thank you for submitting your choice!",
+        "description": "The case handler will now receive the data relevant to your case, and will follow up on your case based on your needs."
+    },
+
     "userTestingFinishedPage": {
         "title": "Thank you for testing our web application!",
         "information": "You have now completed the demo. You can either go back to the beginning of the demo (front page), or continue to our survey (Google Forms) to answer some questions.",
