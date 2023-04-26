@@ -84,10 +84,8 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
                     </div>
 
                     <div className="flex-col justify-center flex">
-                        <div className="flex justify-center mt-4">
-                            <Button color="darkblue" href={"/incorrectInformation"}>
-                                {t("useOfDataPage.incorrectData")}
-                            </Button>
+                        <div className="flex justify-center mt-1 hover:text-sky-600 underline text-sm">
+                            <a href="/incorrectInformation">{t("useOfDataPage.incorrectData")}</a>
                         </div>
                         <div className="flex justify-center mt-5 mb-10">
                             <Button color="lavaorange" href="/UsingAi">
