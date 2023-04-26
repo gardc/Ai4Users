@@ -17,29 +17,18 @@
         "title": "Thank you for wanting to test our web application",
         "description": "The test involves navigating through our web application, and answering a survey at the end.",
         "beforeTestingTitle": "Before you begin testing",
-        "beforeTestingDescription": "Imagine that you are on sick leave for an extended period of time, and you are in need of support. Because of this, your doctor has directed you to the web site you are about to test.",
+        "beforeTestingDescription": "Imagine that you are on sick leave for an extended period of time, and you are in need of support. Because of this, your doctor has directed you to the website you are about to test.",
         "disclaimerTitle": "Disclaimer",
-        "disclaimer1": "This is a student project only intended for testing a user interface",
-        "disclaimer2": "The data about the user presented in the web application is fictional",
+        "disclaimer1": "This is a student project, only intended for testing a user interface",
+        "disclaimer2": "The data about the user presented in the web application are fictional",
         "disclaimer3": {
-            "title": "No data about you is saved by testing the web site, EXCEPT:",
+            "title": "No data about you are saved by testing the website, EXCEPT:",
             "li1": "The answers you may provide to us in a feedback form when testing the web application",
             "li2": "The feedback you provide in the user survey at the end"
         },
         "questionsTitle": "If you have any questions, please send an e-mail to",
         "questionsEmailAddress": "jjsterke@stud.ntnu.no",
         "beginTestingButtonText": "Begin testing the web application"
-    },
-
-    "feedback": {
-        "title": "Feedback",
-        "description": "We are interested in getting feedback on why you didn't consent to the usage of our AI-model, to further improve our service. This is of course optional.",
-        "submit": "Submit",
-        "skip": "Skip",
-        "placeholder": "Write your thoughts here...",
-        "success": "Your feedback was submitted, thank you.",
-        "error:": "There was a problem submitting your feedback:",
-        "continue": "Continue"
     },
 
     "landingPage": {
@@ -59,11 +48,11 @@
 
     "useOfDataPage": {
         "title": "Data that is used in the prediction",
-        "description1": "Below you will find all the information about you that will be used in predicting the duration of your sick leave. This information is gathered from the national population register and The National Social Service registers.",
+        "description1": "Below is all the data about you that will be used in predicting the duration of your sick leave. This information is gathered from the national population register and The National Social Service registers.",
         "description2": "Click on the ",
-        "description22": "-symbol beside each data point to see why it is used.",
+        "description3": "-symbol beside each data point to see why the data is used.",
         "continueButtonText": "Continue",
-        "informationSummaryTitle": "Your personal information"
+        "informationSummaryTitle": "Your personal data"
     },
 
     "usingAiPage": {
@@ -72,25 +61,25 @@
             "description": "The National Social Service offers the use of an artificial intelligence (AI) model to aid the case handler in predicting the duration of your sick leave. You have the right to choose whether the AI model should be used or not. You can find more information below.",
             "whatAi": {
                 "title": "What your choice entails",
-                "description": "If you choose to allow the use of the AI model for prediction the case handler will use it only for this purpose. If you choose to not allow it, the case handler will perform the prediction without using the model.",
+                "description": "If you choose to allow the use of the AI model for prediction, the case handler will use it only for this purpose. If you choose to not allow it, the case handler will perform the prediction without using the model.",
                 "learnMore": {
                     "title": "What allowing and not allowing the use of the AI model entails",
                     "description": "You are free to choose whether you would like to have the AI model used as an aid in predicting the duration of your sick leave or not.",
                     "regardlessOfChoiceList": {
                         "title": "No matter your choice, it will be the case that",
-                        "li1": "the exact same personal data is used",
-                        "li2": "a case handler makes the final decision",
-                        "li3": "you have the exact same rights regarding your personal data"
+                        "li1": "The exact same personal data is used",
+                        "li2": "A case handler makes the final decision",
+                        "li3": "You have the exact same rights regarding your personal data"
                     },
                     "accuracyTitle": "Regarding the model's accuracy",
                     "accuracyInfo": "While we cannot guarantee that the AI model's predictions will always be accurate, our case handlers are trained to identify any potential inaccuracies and correct them promptly.",
                     "disagreeTitle": "If you disagree to the use of the AI model",
-                    "disagreeInfo": "If you choose to disagree to the use of the AI model in predicating you sick leave, your case handler will process the data without its use.",
+                    "disagreeInfo": "If you choose to disagree to the use of the AI model in predicating your sick leave, your case handler will process the data without its use.",
                     "disagreeFlowImageSrc": "/img/disagreeToUseFlowEn.png",
                     "disagreeFlowImageMobileSrc": "/img/disagreeToUseFlowMobileEn.png",
                     "disagreeFlowImageAlt": "Process when declining the use of the AI model",
                     "agreeTitle": "If you agree to the use of the AI model",
-                    "agreeInfo": "If you choose to agree to the use of the AI model in predicating your sick leave duration, the data will first be processed by the model, and the result of the prediction will be handed to a case handler. This will most likely result in a shorter proccesing time. The case handler then uses this prediction, along with other factors, to decide what support is appropriate for you in your situation.",
+                    "agreeInfo": "If you choose to agree to the use of the AI model in predicting your sick leave duration, the data will first be processed by the model, and the result of the prediction will be handed to your case handler. This will most likely result in a shorter proccesing time. The case handler then uses this prediction, along with other factors, to decide what support is appropriate for you in your situation.",
                     "agreeFlowImageSrc": "/img/agreeToUseFlowEn.png",
                     "agreeFlowImageMobileSrc": "/img/agreeToUseFlowMobileEn.png",
                     "agreeFlowImageAlt": "Process when agreeing to the use of the AI model"
@@ -98,7 +87,7 @@
             },
             "howAi": {
                 "title": "How the AI model works",
-                "description": "The AI model is a computational tool that is spesifically trained to make a prediction of your total sick leave duration. The output it provides to the case handler is the number of weeks it predicts that your sick leave duration will be.",
+                "description": "The AI model is a computational tool that is specifically trained to make a prediction of your total sick leave duration. The output it provides to the case handler is the number of weeks it predicts that your sick leave duration will be.",
                 "learnMore": {
                     "title": "How the AI model works",
                     "description": "Artificial intelligence is an umbrella term that describes computer systems that can solve complex problems and learn from previous experiences.",
@@ -111,7 +100,7 @@
                     "trainingModelImageSrc": "/img/trainingTheModelEn.png",
                     "trainingModelImageMobileSrc": "/img/trainingTheModelMobileEn.png",
                     "trainingModelImageAlt": "Illustration of how the model is trained",
-                    "descriptionPatternMatching": "The model is the resulting pattern matching program, and it is this that is used for prediction. New data of the same category is used as input, meaning the data has the same data points and the same domain (for example prediction of sick leave duration), and the result is the prediction.",
+                    "descriptionPatternMatching": "The model is the resulting pattern matching program, and it is this that is used for prediction. New data of the same category is used as input, which means it has the same data points (for example age and diagnosis), and the result is the prediction.",
                     "usingModelImageSrc": "/img/usingTheModelForPredictionsEn.png",
                     "usingModelImageMobileSrc": "/img/usingTheModelForPredictionsMobileEn.png",
                     "usingModelImageAlt": "Illustration of how the model is used"
@@ -119,14 +108,14 @@
             },
             "whyAi": {
                 "title": "Why we offer use of an AI model",
-                "description": "The AI model may help case workers in making more accurate predictions of sick leave duration. This may contribute to ensure support for more people, faster.",
+                "description": "The AI model may help case handlers in making more accurate predictions of sick leave duration. This may contribute to ensure support for more people, faster.",
                 "learnMore": {
                     "title": "Why we offer the use of the AI model in predicting sick leave duration",
                     "reasonForUseList": {
-                        "title": "The goal of The National Social Service is to ensure the most helpful support for the highest number of people. To help our case handlers achieve this aim, we offer the use of an AI model for estimation to:",
-                        "li1": "help case handlers make more accurate assessments",
-                        "li2": "help in ensuring appropriate support where it is needed",
-                        "li3": "save resources and time, letting the case handlers help more people"
+                        "title": "The goal of The National Social Service is to ensure the most helpful support for the highest number of people. To help our case handlers achieve this aim, we offer the use of an AI model for predictions to:",
+                        "li1": "Help case handlers make more accurate assessments",
+                        "li2": "Contribute to ensuring appropriate support where it is needed",
+                        "li3": "Save resources and time, letting the case handlers help more people"
                     },
                     "rightToChoose": "It is your right to choose whether the case handler should use the AI model for prediction or not."
                 }
@@ -134,9 +123,9 @@
             "learnMoreButtonText": "Learn more"
         },
         "sandbox": {
-            "title": "Explore how the AI-model works",
-            "shortDescription": "Use the interactive sandbox to explore how different factors affect the AI-model prediction of sick-leave duration, and to better understand the importance of the features.",
-            "mainDescription": "By changing the values listed below, you can explore how they each impact the sick leave prediction that our case handlers will receive. This sandbox uses a simplified model and illustrates the actual models functionality.",
+            "title": "Explore how the AI model works",
+            "shortDescription": "Use the interactive sandbox to explore how different features affect the AI-model prediction of sick-leave duration, and to better understand the relative importance of these features.",
+            "mainDescription": "By changing the values listed below, you can explore how they each impact the sick leave prediction that our case handlers will receive. This sandbox uses a simplified model and is only an example of the actual model's functionality.",
             "expandButtonText": "Learn more",
             "sickLeaveDescription": "Predicted sick-leave duration",
             "calculate": "Calculate",
@@ -149,9 +138,9 @@
         },
         "featureImportance": {
             "title": "Feature importance",
-            "description1": "Feature importance refers to how much each feature (such as age or diagnosis) contributes to the AI model's prediction of your sick leave duration. The value of one feature, such as your age, will impact the feature importance of all features.",
-            "description2": "To better understand how important different features are when the AI model is making the prediction, you can change the age above the chart to see an example of how age influences the importance of each feature in relation to the prediction.",
-            "description3": "The larger a feature's weight is, the more important the feature is for the prediction, given the provided age."
+            "description1": "Feature importance refers to how much each feature (such as age or diagnosis) contributes to the AI model's prediction of sick leave duration. The value of one feature, such as your age, will impact the feature importance of all features.",
+            "description2": "To better understand how important different features are when the AI model is making the prediction, you can change the age above the chart to see an example of how age influences the importance of each feature.",
+            "description3": "The larger a feature's relative weight is, the more important the feature is for the prediction, given the provided age."
         },
         "aboutRightsInfo": {
             "title": "Your rights",
@@ -168,20 +157,31 @@
                 "learnMoreLinkText": "Learn more"
             }
         },
-        "consentQuestion": "Do you consent to the use of the AI model to predict your sick leave duration?",
+        "consentQuestion": "Do you consent to the useage of the AI model to predict your sick leave duration?",
         "disagreeButtonText": "I do NOT consent",
         "agreeButtonText": "I consent"
     },
 
     "summaryPage": {
-        "titleNotConsenting": "You have chosen not to use the AI model for prediction",
-        "titleConsenting": "You have chosen to use the AI model for prediction",
-        "descriptionNotConsenting": "The case handler will make a prediction of the total duration of your sick leave without the use of the AI model. This may result in a longer processing time.",
+        "titleNotConsenting": "You have chosen to not consent to useage of the AI model for prediction",
+        "titleConsenting": "You have chosen to consent to the usage of the AI model for prediction",
+        "descriptionNotConsenting": "The case handler will make a prediction of the total duration of your sick leave without the use of the AI model.",
         "descriptionConsenting": "The case handler will use the AI model to predict the total duration of your sick leave.",
         "changeCoice": "If you would like to change your choice, click on \"Using AI\" in the top left corner.",
-        "informationSummaryTitle": "Your personal information",
+        "informationSummaryTitle": "Your personal data",
         "informationSummarySource": "This information is gathered from the national population register and The National Social Service's registers.",
         "submitChoiceButtonText": "Submit your choice"
+    },
+
+    "feedback": {
+        "title": "Feedback",
+        "description": "We are interested in getting feedback on why you didn't consent to the usage of the AI model, to further improve our service. This is of course optional.",
+        "submit": "Submit",
+        "skip": "Skip",
+        "placeholder": "Write your thoughts here...",
+        "success": "Your feedback was submitted, thank you.",
+        "error:": "There was a problem submitting your feedback:",
+        "continue": "Continue"
     },
 
     "userTestingFinishedPage": {
