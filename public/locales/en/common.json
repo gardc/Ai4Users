@@ -8,7 +8,7 @@
 
     "pageProgressBar": {
         "home": "Home",
-        "useOfData": "Use of Data",
+        "useOfData": "Use of Information",
         "usingAiPage": "Using AI",
         "summaryPage": "Summary"
     },
@@ -20,9 +20,9 @@
         "beforeTestingDescription": "Imagine that you are on sick leave for an extended period of time, and you are in need of support. Because of this, your doctor has directed you to the website you are about to test.",
         "disclaimerTitle": "Disclaimer",
         "disclaimer1": "This is a student project, only intended for testing a user interface",
-        "disclaimer2": "The data about the user presented in the web application are fictional",
+        "disclaimer2": "The personal information about the user presented in the web application are fictional",
         "disclaimer3": {
-            "title": "No data about you are saved by testing the website, EXCEPT:",
+            "title": "No personal information about you are saved by testing the website, EXCEPT:",
             "li1": "The answers you may provide to us in a feedback form when testing the web application",
             "li2": "The feedback you provide in the user survey at the end"
         },
@@ -47,12 +47,12 @@
     },
 
     "useOfDataPage": {
-        "title": "Data that is used in the prediction",
-        "description1": "Below is all the data about you that will be used in predicting the duration of your sick leave. This information is gathered from the national population register and The National Social Service registers.",
+        "title": "Personal information that is used in the prediction",
+        "description1": "Below is all the personal information about you that will be used in predicting the duration of your sick leave. This information is gathered from the national population register and The National Social Service registers.",
         "description2": "Click on the ",
-        "description3": "-symbol beside each data point to see why the data is used.",
+        "description3": "-symbol beside each row to see why the personal information is used.",
         "continueButtonText": "Continue",
-        "informationSummaryTitle": "Your personal data"
+        "informationSummaryTitle": "Your personal personal information"
     },
 
     "usingAiPage": {
@@ -67,19 +67,19 @@
                     "description": "You are free to choose whether you would like to have the AI model used as an aid in predicting the duration of your sick leave or not.",
                     "regardlessOfChoiceList": {
                         "title": "No matter your choice, it will be the case that",
-                        "li1": "The exact same personal data is used",
+                        "li1": "The exact same personal information is used",
                         "li2": "A case handler makes the final decision",
-                        "li3": "You have the exact same rights regarding your personal data"
+                        "li3": "You have the exact same rights regarding your personal information"
                     },
                     "accuracyTitle": "Regarding the model's accuracy",
                     "accuracyInfo": "While we cannot guarantee that the AI model's predictions will always be accurate, our case handlers are trained to identify any potential inaccuracies and correct them promptly.",
                     "disagreeTitle": "If you disagree to the use of the AI model",
-                    "disagreeInfo": "If you choose to disagree to the use of the AI model in predicating your sick leave, your case handler will process the data without its use.",
+                    "disagreeInfo": "If you choose to disagree to the use of the AI model in predicating your sick leave, your case handler will process your personal information without its use.",
                     "disagreeFlowImageSrc": "/img/disagreeToUseFlowEn.png",
                     "disagreeFlowImageMobileSrc": "/img/disagreeToUseFlowMobileEn.png",
                     "disagreeFlowImageAlt": "Process when declining the use of the AI model",
                     "agreeTitle": "If you agree to the use of the AI model",
-                    "agreeInfo": "If you choose to agree to the use of the AI model in predicting your sick leave duration, the data will first be processed by the model, and the result of the prediction will be handed to your case handler. This will most likely result in a shorter proccesing time. The case handler then uses this prediction, along with other factors, to decide what support is appropriate for you in your situation.",
+                    "agreeInfo": "If you choose to agree to the use of the AI model in predicting your sick leave duration, your personal information will first be processed by the model, and the result of the prediction will be handed to your case handler. This will most likely result in a shorter proccesing time. The case handler then uses this prediction, along with other factors, to decide what support is appropriate for you in your situation.",
                     "agreeFlowImageSrc": "/img/agreeToUseFlowEn.png",
                     "agreeFlowImageMobileSrc": "/img/agreeToUseFlowMobileEn.png",
                     "agreeFlowImageAlt": "Process when agreeing to the use of the AI model"
@@ -144,16 +144,16 @@
         },
         "aboutRightsInfo": {
             "title": "Your rights",
-            "description1": "As a user of this service you have certain rights, especially related to your personal data.",
+            "description1": "As a user of this service you have certain rights, especially related to your personal information.",
             "description2": "You can read more about your rights as a user by expanding this box.",
             "readMore": {
                 "userRightsTitle": "As a user you have the right to:",
-                "li1": "Get information on which of your personal data is being used and why ",
-                "li2": "Correct faulty data about yourself ",
-                "li3": "At any time request the removal of your personal data from The National Social Service's registers ",
-                "li4": "Request that the process which is using your data is canceled ",
+                "li1": "Get information on which of your personal information is being used and why ",
+                "li2": "Correct faulty information about yourself ",
+                "li3": "At any time request the removal of your personal information from The National Social Service's registers ",
+                "li4": "Request that the process which is using your personal information is canceled ",
                 "li5": "Be presented with your personal information in an understandable way ",
-                "li6": "At any time protest against processing of your personal data ",
+                "li6": "At any time protest against processing of your personal information ",
                 "learnMoreLinkText": "Learn more"
             }
         },
@@ -168,7 +168,7 @@
         "descriptionNotConsenting": "The case handler will make a prediction of the total duration of your sick leave without the use of the AI model.",
         "descriptionConsenting": "The case handler will use the AI model to predict the total duration of your sick leave.",
         "changeCoice": "If you would like to change your choice, click on \"Using AI\" in the top left corner.",
-        "informationSummaryTitle": "Your personal data",
+        "informationSummaryTitle": "Your personal information",
         "informationSummarySource": "This information is gathered from the national population register and The National Social Service's registers.",
         "submitChoiceButtonText": "Submit your choice"
     },
