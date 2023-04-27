@@ -2,6 +2,8 @@ import Link from "next/link";
 import LocaleSelection from "./LocaleSelection";
 import React from "react";
 import SocialServiceLogo from "./SocialServiceLogo";
+import AiModelChangelog from "./AiModelChangelog";
+import { changeLogItemsEn } from "@/pages/api/changelogItemsEn";
 
 interface NavBarProps {
     enableLinkToFrontPage: boolean;
@@ -23,7 +25,15 @@ const NavBar = ({ enableLinkToFrontPage }: NavBarProps) => {
                 )}
 
                 {/* Right side */}
-                <LocaleSelection />
+                <div className="flex items-center">
+                    <div className="hidden lg:block">
+                        <AiModelChangelog
+                            title={"Recent changes to the AI model"}
+                            listOfChanges={changeLogItemsEn}
+                        />
+                    </div>
+                    <LocaleSelection />
+                </div>
             </div>
         </div>
     );
