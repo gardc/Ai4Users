@@ -48,7 +48,7 @@ const AiModelChangelog: React.FC<AiModelChangelogProps> = ({
                         <p className="hidden lg:block">{title}</p>
                         <p className="ml-auto pl-2 fas fa-chevron-up"></p>
                     </div>
-                    <div className="absolute border-prussian-blue max-h-96 right-0 top-10 w-96 lg:w-full p-6 z-20 bg-prussian-blue rounded-b-xl rounded-l-xl lg:rounded-t-none text-white text-sm">
+                    <div className="absolute border-prussian-blue max-h-96 right-0 top-10 w-80 lg:w-full p-6 z-20 bg-prussian-blue rounded-b-xl rounded-l-xl lg:rounded-t-none text-white text-sm">
                         <p className="lg:hidden sticky text-base font-light mb-4">{title}</p>
                         <div className="max-h-72 overflow-y-scroll">
                             {listOfChanges.map((listOfChanges) => (
