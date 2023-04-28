@@ -8,10 +8,16 @@
 
     "pageProgressBar": {
         "home": "Home",
-        "useOfData": "Use of Data",
+        "homeCompressed": "Home",
+        "useOfData": "Use of data",
+        "useOfDataCompressed": "Data",
         "usingAiPage": "Using AI",
-        "summaryPage": "Summary"
+        "usingAiPageCompressed": "AI",
+        "summaryPage": "Summary",
+        "summaryPageCompressed": "Summary"
     },
+
+    "changelogTitle": "Recent changes to the AI model",
 
     "userTestingLandingPage": {
         "title": "Thank you for wanting to test our web application",

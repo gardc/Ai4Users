@@ -3,7 +3,7 @@ import Link from "next/link";
 interface ProgressBarProps {
     pages: {
         title: string;
-        titleSmall: string;
+        titleCompressed: string;
         href: string;
         currentPage: boolean;
     }[];
@@ -11,22 +11,16 @@ interface ProgressBarProps {
 
 const ProgressBar = ({ pages }: ProgressBarProps) => {
     return (
-        <div className="flex justify-start py-5 text-black">
+        <div className="flex justify-start py-5 pl-4 sm:pl-8 text-black">
             {pages.map(
                 (page, index) =>
                     (page.href.length > 0 && (
                         <div className="flex text-xs lg:text-sm">
-                            <Link
-                                className="hover:font-bold hidden sm:block sm:pl-12 px-2"
-                                href={page.href}
-                            >
+                            <Link className="hover:font-bold hidden sm:block px-2" href={page.href}>
                                 {page.title}
                             </Link>
-                            <Link
-                                className="hover:font-bold block sm:hidden sm:pl-12 px-2"
-                                href={page.href}
-                            >
-                                {page.titleSmall}
+                            <Link className="hover:font-bold block sm:hidden px-2" href={page.href}>
+                                {page.titleCompressed}
                             </Link>
                             {index != pages.length - 1 && ">"}
                         </div>
@@ -37,7 +31,7 @@ const ProgressBar = ({ pages }: ProgressBarProps) => {
                                 {page.title}
                             </p>
                             <p className="font-bold block sm:hidden underline underline-offset-4 text-black px-2">
-                                {page.titleSmall}
+                                {page.titleCompressed}
                             </p>
                             {index != pages.length - 1 && ">"}
                         </div>
@@ -45,7 +39,9 @@ const ProgressBar = ({ pages }: ProgressBarProps) => {
                     (!page.currentPage && page.href.length === 0 && (
                         <div className="flex text-xs lg:text-sm">
                             <p className="text-gray-500 hidden sm:block px-2">{page.title}</p>
-                            <p className="text-gray-500 block sm:hidden px-2">{page.titleSmall}</p>
+                            <p className="text-gray-500 block sm:hidden px-2">
+                                {page.titleCompressed}
+                            </p>
                             {index != pages.length - 1 && ">"}
                         </div>
                     ))
