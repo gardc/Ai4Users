@@ -3,10 +3,9 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
 import InformationSignIcon from "@/components/Assets/informationSignIcon";
-import Parent from "@/components/Parent";
-import { motion as m } from "framer-motion";
-import React from "react";
 import NavBar from "@/components/NavBar";
+import Parent from "@/components/Parent";
+import React from "react";
 
 /**
  * The landing page component that displays initial information about the web
@@ -21,7 +20,12 @@ const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticP
     return (
         <div className="h-screen bg-darkblue">
             <Parent>
-                <NavBar enableLinkToFrontPage={true} />
+                <NavBar
+                    enableLinkToFrontPage={true}
+                    enableChangelog={false}
+                    changelogTitle=""
+                    changelogItems={[]}
+                />
                 <div className="bg-darkblue">
                     <div className="index pb-16 flex-col flex items-center">
                         <p
