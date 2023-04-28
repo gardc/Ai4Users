@@ -1,6 +1,6 @@
 import React from "react";
 
-function scaleIcon() {
+function ScaleIcon() {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -17,4 +17,4 @@ function scaleIcon() {
     );
 }
 
-export default scaleIcon;
+export default ScaleIcon;
