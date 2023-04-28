@@ -15,7 +15,7 @@ interface NavBarProps {
     changelogItems: {
         dateOfChange: string;
         titleOfChange: string;
-        change: string;
+        changeDescription: string;
         readMoreLink: string;
     }[];
 }
