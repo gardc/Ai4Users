@@ -1,22 +1,77 @@
 import { useEffect, useRef, useState } from "react";
-import ChangelogIcon from "./Assets/changelogIcon";
 import "@fortawesome/fontawesome-free/css/all.css";
+import ChangelogIcon from "./Assets/changelogIcon";
 import Link from "next/link";
 
+/**
+ * The type definition for the `Changelog` component's props.
+ */
 interface ChangelogProps {
+    /**
+     * The title of the changelog.
+     */
     title: string;
+
+    /**
+     * An array of objects reperesenting changes to display.
+     */
     listOfChanges: {
+        /**
+         * The date of the change.
+         */
         dateOfChange: string;
+
+        /**
+         * The title of the change.
+         */
         titleOfChange: string;
-        change: string;
+
+        /**
+         * Some text describing the change.
+         */
+        changeDescription: string;
+
+        /**
+         * The link for a page where the user can read more about the change. Can be an empty
+         * string if there is no other place to read more about the change.
+         */
         readMoreLink: string;
     }[];
 }
 
+/**
+ * A component for a changelog, displaying a list of changes defined in an array.
+ *
+ * @param title the title of the changelog.
+ * @param listOfChanges the array of change objects
+ * @returns a React functional component for a changelog.
+ *
+ * @component
+ * @example
+ * title = "A title for the changelog"
+ * listOfChanges = [
+ *  {
+ *      dateOfChange: "12.03.2023",
+ *      titleOfChange: "A title of the most recent change",
+ *      changeDescription: "A description of the most recent change",
+ *      readMoreLink: "/Change12032023",
+ *  },
+ *  {
+ *      dateOfChange: "22.02.2023",
+ *      titleOfChange: "A title of the second recent change",
+ *      changeDescription: "A description second recent change",
+ *      readMoreLink: "",
+ *  },
+ * ]
+ *
+ * Usage <Changelog title={title} listOfChanges={listOfChanges} />
+ */
 const Changelog: React.FC<ChangelogProps> = ({ title, listOfChanges }: ChangelogProps) => {
     const [changelogOpen, setChangelogOpen] = useState(false);
     const ref = useRef<HTMLInputElement>(null);
 
+    // Adds and removes an event listener to/fro the document enabling closing of the changelog
+    // when clicking outside of it.
     useEffect(() => {
         function handleClickOutside(event: { target: any }) {
             if (ref.current && !ref.current.contains(event.target)) {
@@ -29,6 +84,9 @@ const Changelog: React.FC<ChangelogProps> = ({ title, listOfChanges }: Changelog
         };
     }, [ref]);
 
+    /**
+     * Toggles the visibility of the changelog.
+     */
     const toggleChangelogOpen = () => {
         setChangelogOpen(!changelogOpen);
     };
@@ -70,7 +128,9 @@ const Changelog: React.FC<ChangelogProps> = ({ title, listOfChanges }: Changelog
                                 <>
                                     <p className="pb-2">{changeItem.dateOfChange}</p>
                                     <p className="pb-1">{changeItem.titleOfChange}</p>
-                                    <p className="font-light text-xs pb-2">{changeItem.change}</p>
+                                    <p className="font-light text-xs pb-2">
+                                        {changeItem.changeDescription}
+                                    </p>
                                     {changeItem.readMoreLink.length > 0 && (
                                         <Link
                                             href={changeItem.readMoreLink}
