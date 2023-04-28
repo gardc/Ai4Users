@@ -1,21 +1,33 @@
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import ChangelogIcon from "./Assets/changelogIcon";
 import "@fortawesome/fontawesome-free/css/all.css";
+import Link from "next/link";
 
-interface AiModelChangelogProps {
+interface ChangelogProps {
     title: string;
     listOfChanges: {
         dateOfChange: string;
         titleOfChange: string;
         change: string;
+        readMoreLink: string;
     }[];
 }
 
-const AiModelChangelog: React.FC<AiModelChangelogProps> = ({
-    title,
-    listOfChanges,
-}: AiModelChangelogProps) => {
+const Changelog: React.FC<ChangelogProps> = ({ title, listOfChanges }: ChangelogProps) => {
     const [changelogOpen, setChangelogOpen] = useState(false);
+    const ref = useRef<HTMLInputElement>(null);
+
+    useEffect(() => {
+        function handleClickOutside(event: { target: any }) {
+            if (ref.current && !ref.current.contains(event.target)) {
+                setChangelogOpen(false);
+            }
+        }
+        document.addEventListener("mousedown", handleClickOutside);
+        return () => {
+            document.removeEventListener("mousedown", handleClickOutside);
+        };
+    }, [ref]);
 
     const toggleChangelogOpen = () => {
         setChangelogOpen(!changelogOpen);
@@ -48,17 +60,26 @@ const AiModelChangelog: React.FC<AiModelChangelogProps> = ({
                         <p className="hidden lg:block">{title}</p>
                         <p className="ml-auto pl-2 fas fa-chevron-up"></p>
                     </div>
-                    <div className="absolute border-prussian-blue max-h-96 right-0 top-10 w-80 lg:w-full p-6 z-20 bg-prussian-blue rounded-b-xl rounded-l-xl lg:rounded-t-none text-white text-sm">
+                    <div
+                        ref={ref}
+                        className="absolute drop-shadow-xl border-prussian-blue max-h-96 right-0 top-10 w-80 lg:w-full p-6 z-20 bg-prussian-blue rounded-b-xl rounded-l-xl lg:rounded-t-none text-white text-sm"
+                    >
                         <p className="lg:hidden sticky text-base font-light mb-4">{title}</p>
                         <div className="max-h-72 overflow-y-scroll">
-                            {listOfChanges.map((listOfChanges) => (
+                            {listOfChanges.map((changeItem) => (
                                 <>
-                                    <p className="pb-2">{listOfChanges.dateOfChange}</p>
-                                    <p className="pb-1">{listOfChanges.titleOfChange}</p>
-                                    <p className="font-light text-xs pb-4">
-                                        {listOfChanges.change}
-                                    </p>
-                                    <div className="w-full bg-white h-[1px] mb-6"></div>
+                                    <p className="pb-2">{changeItem.dateOfChange}</p>
+                                    <p className="pb-1">{changeItem.titleOfChange}</p>
+                                    <p className="font-light text-xs pb-2">{changeItem.change}</p>
+                                    {changeItem.readMoreLink.length > 0 && (
+                                        <Link
+                                            href={changeItem.readMoreLink}
+                                            className="underline hover:text-sky-600 font-light"
+                                        >
+                                            Read more
+                                        </Link>
+                                    )}
+                                    <div className="w-full mt-4 bg-white h-[1px] mb-6"></div>
                                 </>
                             ))}
                         </div>
@@ -69,4 +90,4 @@ const AiModelChangelog: React.FC<AiModelChangelogProps> = ({
     );
 };
 
-export default AiModelChangelog;
+export default Changelog;
