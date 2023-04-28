@@ -37,6 +37,24 @@
         "beginTestingButtonText": "Begin testing the web application"
     },
 
+    "feedback": {
+        "title": "Feedback",
+        "description": "We are interested in getting feedback on why you didn't consent to the usage of our AI-model, to further improve our service. This is of course optional.",
+        "submit": "Submit",
+        "skip": "Skip",
+        "placeholder": "Write your thoughts here...",
+        "success": "Your feedback was submitted, thank you.",
+        "error:": "There was a problem submitting your feedback:",
+        "continue": "Continue"
+    },
+
+    "loginPage": {
+        "caseHandlerLogin": "Case handler login",
+        "caseHandlerDescription": "If you are a case handler you can click here to log into your case handler account.",
+        "predictSickLeave": "Predict sick leave",
+        "predictSickLeaveDescription": "If you are a citizen on a sick leave, you can click here to predict your sick leave duration."
+    },
+
     "landingPage": {
         "title": "Prediction of sick leave duration",
         "description1": "When you are on sick leave, you often have the right to one or more types of support from the National Social Service. This can be support measures such as economical support or follow up meetings.",
@@ -180,15 +198,9 @@
         "submitChoiceButtonText": "Submit your choice"
     },
 
-    "feedback": {
-        "title": "Feedback",
-        "description": "We are interested in getting feedback on why you didn't consent to the usage of the AI model, to further improve our service. This is of course optional.",
-        "submit": "Submit",
-        "skip": "Skip",
-        "placeholder": "Write your thoughts here...",
-        "success": "Your feedback was submitted, thank you.",
-        "error:": "There was a problem submitting your feedback:",
-        "continue": "Continue"
+    "submittedPage": {
+        "title": "Thank you for submitting your choice!",
+        "description": "The case handler will now receive the data relevant to your case, and will follow up on your case based on your needs."
     },
 
     "userTestingFinishedPage": {

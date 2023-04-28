@@ -4,7 +4,8 @@ import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
 import InformationSignIcon from "@/components/Assets/informationSignIcon";
 import NavBar from "@/components/NavBar";
-import Parent from "@/components/Parent";
+import Container from "@/components/Container";
+import { motion as m } from "framer-motion";
 import React from "react";
 
 /**
@@ -19,7 +20,7 @@ const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticP
 
     return (
         <div className="h-screen bg-darkblue">
-            <Parent>
+            <Container>
                 <NavBar
                     enableLinkToFrontPage={true}
                     enableChangelog={false}
@@ -73,7 +74,7 @@ const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticP
                         </div>
                     </div>
                 </div>
-            </Parent>
+            </Container>
         </div>
     );
 };

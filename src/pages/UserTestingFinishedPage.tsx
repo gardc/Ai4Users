@@ -7,6 +7,8 @@ import Link from "next/link";
  * The end page for userTesting component that displays some information and buttons for restarting
  * the demo and for navigating to a questionnaire. Supports i18next translation.
  *
+ * If user testing is desired, change the end of the flow to redirect to this page.
+ *
  * @returns A React functional component representing the end page for userTesting.
  */
 export default function UserTestingFinishedPage(
@@ -18,13 +20,19 @@ export default function UserTestingFinishedPage(
         <div className="w-full h-screen flex flex-col justify-center items-center bg-white">
             {/* Infobox */}
             <div className="max-w-xl flex flex-col justify-center items-center rounded-md bg-zinc-800 gap-5 px-8 py-5 shadow-md border border-gray-600 text-white text-center">
-                <h1 className="text-xl font-semibold">{t("userTestingFinishedPage.title")}</h1>
-                <p className="text-neutral-200">{t("userTestingFinishedPage.information")}</p>
+                <h1 className="text-xl font-semibold">
+                    {t("userTestingFinishedPage.title")}
+                </h1>
+                <p className="text-neutral-200">
+                    {t("userTestingFinishedPage.information")}
+                </p>
                 {/* Buttons */}
                 <div className="flex gap-5">
                     <InfoButton
                         href={"/"}
-                        text={t("userTestingFinishedPage.toFrontPageButtonText")}
+                        text={t(
+                            "userTestingFinishedPage.toFrontPageButtonText"
+                        )}
                         bg={"bg-neutral-600 bg-opacity-25"}
                     />
                     <a
@@ -41,7 +49,15 @@ export default function UserTestingFinishedPage(
     );
 }
 
-const InfoButton = ({ href, text, bg }: { href: string; text: string; bg: string }) => {
+const InfoButton = ({
+    href,
+    text,
+    bg,
+}: {
+    href: string;
+    text: string;
+    bg: string;
+}) => {
     return (
         <Link
             href={href}

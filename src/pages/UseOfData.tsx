@@ -10,9 +10,9 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
 import Changelog from "@/components/Changelog";
+import Container from "@/components/Container";
 import DataTable from "@/components/DataTable";
 import NavBar from "@/components/NavBar";
-import Parent from "@/components/Parent";
 import ProfileIcon from "@/components/Assets/profileIcon";
 import ProgressBar from "@/components/ProgressBar";
 
@@ -29,7 +29,7 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
     const { locale } = router;
 
     return (
-        <Parent>
+        <Container>
             <NavBar
                 enableLinkToFrontPage={true}
                 enableChangelog={true}
@@ -135,7 +135,7 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
                     </div>
                 </div>
             </div>
-        </Parent>
+        </Container>
     );
 };
 

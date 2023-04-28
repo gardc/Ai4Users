@@ -3,7 +3,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
 import NavBar from "@/components/NavBar";
-import Parent from "@/components/Parent";
+import Container from "@/components/Container";
 import React, { useState } from "react";
 import sendApiRequest from "@/util/sendApiRequest";
 
@@ -44,7 +44,7 @@ const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProp
 
     return (
         <div className="bg-darkblue">
-            <Parent>
+            <Container>
                 <NavBar
                     enableLinkToFrontPage={false}
                     enableChangelog={false}
@@ -80,17 +80,13 @@ const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProp
                                 {t("feedback.submit")}
                             </Button>
                         )}
-                        <Button
-                            color="lavaorange"
-                            href="/UserTestingFinishedPage"
-                            loading={waiting}
-                        >
+                        <Button color="lavaorange" href="/submittedPage" loading={waiting}>
                             {/* If finished, show continue button, else show skip */}
                             {finished ? t("feedback.continue") : t("feedback.skip")}
                         </Button>
                     </div>
                 </div>
-            </Parent>
+            </Container>
         </div>
     );
 };

@@ -10,9 +10,9 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
 import Changelog from "@/components/Changelog";
+import Container from "@/components/Container";
 import DataTable from "@/components/DataTable";
 import NavBar from "@/components/NavBar";
-import Parent from "@/components/Parent";
 import ProfileIcon from "@/components/Assets/profileIcon";
 import ProgressBar from "@/components/ProgressBar";
 import React from "react";
@@ -36,7 +36,7 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
     let predictionChoiceText = "";
     let nextPage = "";
     if (consent === "true") {
-        nextPage = "/UserTestingFinishedPage";
+        nextPage = "/submittedPage";
         predictionChoiceTitle = t("summaryPage.titleConsenting");
         predictionChoiceText = t("summaryPage.descriptionConsenting");
     } else if (consent === "false") {
@@ -55,7 +55,7 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
     }
 
     return (
-        <Parent>
+        <Container>
             <NavBar
                 enableLinkToFrontPage={true}
                 enableChangelog={true}
@@ -161,7 +161,7 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
                     </div>
                 </div>
             </div>
-        </Parent>
+        </Container>
     );
 };
 

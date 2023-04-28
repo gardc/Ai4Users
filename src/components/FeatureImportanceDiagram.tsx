@@ -1,4 +1,4 @@
-import { useState, useEffect, useRef, useCallback, useMemo } from "react";
+import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import * as d3 from "d3";
 import BarChartIcon from "./Assets/barChartIcon";
 import PieChartIcon from "./Assets/pieChartIcon";
@@ -28,7 +28,7 @@ interface FeatureImportanceDiagramProps {
         label: string;
 
         /**
-         * A list of objects for the arguments (values) the changable parameter may have.
+         * A list of objects for the arguments (values) the changeable parameter may have.
          */
         arguments: {
             /**
@@ -47,7 +47,7 @@ interface FeatureImportanceDiagramProps {
 
                 /**
                  * The weight of the feature importance, given the chosen argument/value for the
-                 * changable parameter. The sum of all weights for a given
+                 * changeable parameter. The sum of all weights for a given
                  * featureImportanceGivenArgument object should be 1 to display the intended
                  * charts.
                  */
@@ -66,10 +66,10 @@ interface FeatureImportanceDiagramProps {
  * title = "A title"
  * description = "Some description text";
  * parameter = {
- *  label: "Changable Feature"
+ *  label: "Changeable Feature"
  *  arguments: [
  *      {
- *          argumentName: "Value 1 for changable feature",
+ *          argumentName: "Value 1 for changeable feature",
  *          featureImportanceGivenArgument: [
  *              {
  *                  feature: "Feature 1"
@@ -82,7 +82,7 @@ interface FeatureImportanceDiagramProps {
  *          ]
  *      },
  *      {
- *          argumentName: "Value 2 for changable feature",
+ *          argumentName: "Value 2 for changeable feature",
  *          featureImportanceGivenArgument: [
  *              {
  *                  feature: "Feature 1"
@@ -105,13 +105,10 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
 }) => {
     /**
      * Holds a list of the current features and feature  importance weights, given the selected
-     * value of the changable parameter.
+     * value of the changeable parameter.
      */
     const [importanceWeightsOfFeatures, setImportanceWeightsOfFeatures] = useState<
-        {
-            feature: string;
-            weight: number;
-        }[]
+        { feature: string; weight: number }[]
     >([]);
 
     /**
@@ -158,7 +155,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
     };
 
     /**
-     * Draws the bar plot as an SVG based on the selected value for the changable parameter.
+     * Draws the bar plot as an SVG based on the selected value for the changeable parameter.
      */
     const drawBarPlot = useCallback(() => {
         const svg = d3.select(barPlotRef.current);
@@ -168,10 +165,11 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
         const width = +svg.attr("width") - margin.left - margin.right;
         const height = +svg.attr("height") - margin.top - margin.bottom;
 
-        const maxWeight = d3.max(
-            importanceWeightsOfFeatures.filter((d) => d.weight !== undefined),
-            (d) => d.weight as number
-        )!;
+        const maxWeight =
+            d3.max(
+                importanceWeightsOfFeatures.filter((d) => d.weight !== undefined),
+                (d) => d.weight as number
+            )! * 100;
         const tickValues = d3.ticks(0, maxWeight, 5);
 
         const x = d3.scaleLinear().range([0, width]).domain([0, maxWeight]);
@@ -189,7 +187,14 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
         g.append("g")
             .attr("class", "axis axis--x")
             .attr("transform", "translate(0," + height + ")")
-            .call(d3.axisBottom(x).tickValues(tickValues))
+            .call(
+                d3
+                    .axisBottom(x)
+                    .tickValues(tickValues)
+                    .tickFormat(function (d) {
+                        return d + "%";
+                    })
+            )
             .selectAll("text")
             .style("font-size", "20px");
 
@@ -214,7 +219,9 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                     ? (y?.(d.feature) ?? 0) + y?.bandwidth() / 2 - 0.5 * y?.bandwidth()
                     : null
             )
-            .attr("width", (d: { weight?: number }) => (d && d.weight ? x(d.weight) : null))
+            .attr("width", (d: { weight: number }) =>
+                d && d.weight * 100 ? x(d.weight * 100) : null
+            )
             .attr("fill", "#c14922");
 
         bars.append("text")
@@ -232,7 +239,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
     }, [importanceWeightsOfFeatures]);
 
     /**
-     * Draws the pie chart as an SVG based on the selected value for the hangable parameter.
+     * Draws the pie chart as an SVG based on the selected value for the changeable parameter.
      */
     const drawPieChart = useCallback(() => {
         const svg = d3.select(pieChartRef.current);
@@ -282,7 +289,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
             .append("text")
             .attr("transform", (d) => `translate(${arcGenerator.centroid(d)})`)
             .attr("dy", "0.35em")
-            .text((d) => d.data.weight)
+            .text((d) => Math.floor(d.data.weight * 100) + "%")
             .style("fill", "white")
             .style("text-anchor", "middle");
     }, [importanceWeightsOfFeatures, colorsForDiagram, featureNames]);
@@ -315,13 +322,16 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
 
     /**
      * Sets the state holding the feature importance weights of the features, given the selected
-     * value of the changable parameter.
+     * value of the changeable parameter.
      *
-     * @param event The event that triggered the change of value for the changable parameter.
+     * @param event The event that triggered the change of value for the changeable parameter.
      */
     const handleParameterSelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const targetValue: string = event.target.value;
-        const importanceWeightsOfFeaturesFromParam: { feature: string; weight: number }[] =
+        const importanceWeightsOfFeaturesFromParam: {
+            feature: string;
+            weight: number;
+        }[] =
             parameter.arguments
                 .find((arg) => arg.argumentName === targetValue)
                 ?.featureImportanceGivenArgument?.map((ri) => ({
@@ -384,7 +394,9 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                                 <div key={name} className="flex">
                                     <div
                                         className={`mt-1 h-4 w-4 rounded-xl`}
-                                        style={{ backgroundColor: `${colorsForDiagram[index]}` }}
+                                        style={{
+                                            backgroundColor: `${colorsForDiagram[index]}`,
+                                        }}
                                     ></div>
                                     <p className="ml-2 text-lg font-light">{name}</p>
                                 </div>

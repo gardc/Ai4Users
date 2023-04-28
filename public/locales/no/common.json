@@ -37,6 +37,24 @@
         "beginTestingButtonText": "Begynn å teste nettapplikasjonen"
     },
 
+    "feedback": {
+        "title": "Tilbakemelding",
+        "description": "Vi er interessert i å få tilbakemelding på hvorfor du ikke samtykket til bruken av AI-modellen vår, for å forbedre tjenesten vår ytterligere. Dette er selvsagt valgfritt.",
+        "submit": "Send inn",
+        "skip": "Hopp over",
+        "placeholder": "Skriv dine tanker her...",
+        "success": "Din tilbakemelding ble mottatt. Takk!",
+        "error:": "Det oppstod følgende problemer:",
+        "continue": "Fortsett"
+    },
+
+    "loginPage": {
+        "caseHandlerLogin": "Saksbehandler innlogging",
+        "caseHandlerDescription": "Dersom du er en saksbehandler hos Den Nasjonale Sosialtjenesten kan du trykke her for å logge inn på saksbehandler kontoen din.",
+        "predictSickLeave": "Prediker sykefravær",
+        "predictSickLeaveDescription": "Dersom du er sykemeldt, kan du trykke her for å predikere ditt sykefravær."
+    },
+
     "landingPage": {
         "title": "Prediksjon av sykefraværets varighet",
         "description1": "Som sykmeldt har du ofte rett til en eller flere typer støtte fra Den Nasjonale Sosialtjenesten. Dette kan være støttetiltak som økonomisk støtte eller oppfølgingsmøter.",
@@ -180,15 +198,9 @@
         "submitChoiceButtonText": "Send inn valget ditt"
     },
 
-    "feedback": {
-        "title": "Tilbakemelding",
-        "description": "Vi er interessert i å få tilbakemelding på hvorfor du valgte å ikke samtykke til bruken av KI-modellen, for å forbedre tjenesten vår ytterligere. Dette er selvsagt valgfritt.",
-        "submit": "Send inn",
-        "skip": "Hopp over",
-        "placeholder": "Skriv dine tanker her...",
-        "success": "Din tilbakemelding ble mottatt. Takk!",
-        "error:": "Det oppstod følgende problemer:",
-        "continue": "Fortsett"
+    "submittedPage": {
+        "title": "Takk for at du sendte inn valget ditt!",
+        "description": "Saksbehandler vil nå motta informasjonen som er relevant til din sak, og vil gi oppfølging basert på dine behov."
     },
 
     "userTestingFinishedPage": {

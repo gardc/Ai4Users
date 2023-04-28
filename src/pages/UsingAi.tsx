@@ -14,6 +14,7 @@ import ArrowRightIcon from "@/components/Assets/arrowRightIcon";
 import BookIcon from "@/components/Assets/bookIcon";
 import Changelog from "@/components/Changelog";
 import CogIcon from "@/components/Assets/cogIcon";
+import Container from "@/components/Container";
 import ExpandableInformationBox from "@/components/ExpandableInformationBox";
 import FastForwardIcon from "@/components/Assets/fastForwardIcon";
 import FeatureImportanceDiagram from "@/components/FeatureImportanceDiagram";
@@ -22,7 +23,6 @@ import InformationDropdownBox from "@/components/InformationDropdownBox";
 import InformationSignIcon from "@/components/Assets/informationSignIcon";
 import Link from "next/link";
 import NavBar from "@/components/NavBar";
-import Parent from "@/components/Parent";
 import ProgressBar from "@/components/ProgressBar";
 import PuzzleIcon from "@/components/Assets/puzzleIcon";
 import React from "react";
@@ -42,7 +42,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { locale } = router;
 
     return (
-        <Parent>
+        <Container>
             <NavBar
                 enableLinkToFrontPage={true}
                 enableChangelog={true}
@@ -629,7 +629,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 </div>
             </div>
             <div className="p-12" />
-        </Parent>
+        </Container>
     );
 };
 

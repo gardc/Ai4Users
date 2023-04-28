@@ -1,10 +1,10 @@
-import UserTestingLandingPage from "./UserTestingLandingPage";
 import React from "react";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import Login from "@/pages/login";
 
 function index(_props: InferGetStaticPropsType<typeof getStaticProps>) {
-    return <UserTestingLandingPage />;
+    return <Login />;
 }
 
 export default index;
