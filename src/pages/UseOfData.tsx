@@ -8,7 +8,7 @@ import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
 import DataTable from "@/components/DataTable";
 import Link from "next/link";
-import ProfileIcon from "@/components/Assets/profileIcon";
+import ProfileIcon from "@/components/Assets/ProfileIcon";
 import Container from "@/components/Container";
 import NavBar from "@/components/NavBar";
 

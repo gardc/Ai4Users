@@ -2,7 +2,7 @@ import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
-import InformationSignIcon from "@/components/Assets/informationSignIcon";
+import InformationSignIcon from "@/components/Assets/InformationSignIcon";
 import Container from "@/components/Container";
 import { motion as m } from "framer-motion";
 import React from "react";
