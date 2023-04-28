@@ -53,30 +53,31 @@
         "title": "Prediksjon av sykefraværets varighet",
         "description1": "Som sykmeldt har du ofte rett til en eller flere typer støtte fra Den Nasjonale Sosialtjenesten. Dette kan være støttetiltak som økonomisk støtte eller oppfølgingsmøter.",
         "description2": "For å kunne gi støtte tilpasset din situasjon, vil en saksbehandler hos Den Nasjonale Sosialtjenesten vurdere saken ut ifra en rekke faktorer. En av disse faktorene er en prediksjon av sykefraværets varighet, som gjør det lettere å planlegge støtte over lengre tid.",
-        "description3": "Saksbehandler har mulighet til å bruke en kunstig intelligens-modell til å utføre denne prediksjonen, men kun om du tillater dette. Det vil uansett være saksbehandler som tar siste avgjørelse angående hvilken støtte du får innvilget, gitt din situasjon.",
-        "description4": "For å utføre en prediksjonen av sykefraværets varighet, trenger vi å behandle personlig informasjon om deg.",
+        "description3": "Saksbehandler har mulighet til å bruke en kunstig-intelligens-modell til å utføre denne prediksjonen, men kun om du tillater dette. Det vil uansett være saksbehandler som tar siste avgjørelse angående hvilken støtte du får innvilget, gitt din situasjon.",
+        "description4": "For å utføre en prediksjon av sykefraværets varighet, trenger vi å behandle personopplysninger om deg.",
         "stepsOfPageList": {
             "title": "Du vil nå gjennomgå tre steg:",
-            "li1": "Se over at den personlige informasjonen vi har om deg stemmer",
-            "li2": "Tillate eller avslå bruken av en kunstig intelligens-modell",
-            "li3": "Bekrefte ditt valg og din personlige informasjon før videresending"
+            "li1": "Se over at den personopplysningene vi har om deg stemmer",
+            "li2": "Tillate eller avslå bruken av en kunstig-intelligens-modell",
+            "li3": "Bekrefte ditt valg og dine personopplysninger før videresending"
         },
         "continueButtonText": "Fortsett"
     },
 
     "useOfDataPage": {
-        "title": "Data som blir brukt i predikeringen",
-        "description1": "Nedenfor finner du all informasjon om deg som vil bli brukt i predikeringen av varigheten av sykefraværet ditt. Denne informasjonen er hentet fra det nasjonale folkeregisteret og Den Nasjonale Sosialtjenestens registre.",
+        "title": "Personopplysninger som blir brukt i predikeringen",
+        "description1": "Nedenfor finner du alle personopplysninger som vil bli brukt i predikeringen av varigheten av sykefraværet ditt. Disse personopplysningene er hentet fra det nasjonale folkeregisteret og Den Nasjonale Sosialtjenestens registre.",
         "description2": "Klikk på ",
-        "description22": "-symbolet ved siden av hvert informasjonspunkt for å se hvorfor det brukes.",
+        "description3": "-symbolet ved siden av hver opplysning for å se hvorfor opplysningen brukes.",
         "continueButtonText": "Fortsett",
-        "informationSummaryTitle": "Dine data"
+        "informationSummaryTitle": "Dine personopplysninger",
+        "incorrectData": "Feil i personopplysningene? Klikk her"
     },
 
     "usingAiPage": {
         "title": "Bruk av kunstig intelligens for prediksjon",
         "aboutAiInfo": {
-            "description": "Den Nasjonale Sosialtjenesten tilbyr bruken av en kunstig intelligens-modell (KI-modell) for å støtte saksbehandleren i prediksjonen av varigheten av ditt sykefravær. Du har rett til å velge om KI-modellen skal benyttes eller ikke. Du finner mer informasjon nedenfor.",
+            "description": "Den Nasjonale Sosialtjenesten tilbyr bruken av en kunstig-intelligens-modell (KI-modell) for å støtte saksbehandleren i prediksjonen av varigheten av ditt sykefravær. Du har rett til å velge om KI-modellen skal benyttes eller ikke. Du finner mer informasjon nedenfor.",
             "whatAi": {
                 "title": "Hva samtykke av bruken innebærer",
                 "description": "Dersom du velger å tillate bruken av KI-modellen til predikering vil saksbehandleren kun benytte den til dette formålet. Dersom du velger å ikke tillate bruken vil saksbehandleren utføre predikeringen uten bruken av modellen.",
@@ -85,19 +86,19 @@
                     "description": "Du står fritt til å velge om du tillater bruken av KI-modellen som et hjelpemiddel i prediksjonen av varigheten av ditt sykefravær eller ikke.",
                     "regardlessOfChoiceList": {
                         "title": "Uavhengig av hva du velger, så vil det være tilfellet at",
-                        "li1": "nøyaktig samme informasjon om deg vil bli brukt",
-                        "li2": "en saksbehandler tar beslutningen om støtten du blir gitt",
-                        "li3": "du har nøyaktig samme rettigheter angående dine personopplysninger"
+                        "li1": "Nøyaktig samme personopplysninger om deg vil bli brukt",
+                        "li2": "En saksbehandler tar beslutningen om støtten du blir gitt",
+                        "li3": "Du har nøyaktig samme rettigheter angående dine personopplysninger"
                     },
                     "accuracyTitle": "Vedrørende modellens presisjon",
-                    "accuracyInfo": "Selv om vi ikke kan garantere at AI-modellens prediksjoner alltid vil være nøyaktige, er våre saksbehandlere opplært til å identifisere potensielle unøyaktigheter og korrigere dem umiddelbart.",
+                    "accuracyInfo": "Selv om vi ikke kan garantere at KI-modellens prediksjoner alltid vil være nøyaktige, er våre saksbehandlere opplært til å identifisere potensielle unøyaktigheter og korrigere dem umiddelbart.",
                     "disagreeTitle": "Dersom du ikke samtykker til bruken av KI-modellen",
-                    "disagreeInfo": "Dersom du ikke gir ditt samtykke til å benytte KI-modellen for å predikere varigheten av ditt sykefravær, vil saksbehandleren din prosessere dine personopplysninger uten bruk av modellen.",
+                    "disagreeInfo": "Dersom du ikke gir ditt samtykke til bruken av KI-modellen for å predikere varigheten av ditt sykefravær, vil saksbehandleren din prosessere dine personopplysninger uten bruk av modellen.",
                     "disagreeFlowImageSrc": "/img/disagreeToUseFlowNo.png",
                     "disagreeFlowImageMobileSrc": "/img/disagreeToUseFlowMobileNo.png",
                     "disagreeFlowImageAlt": "Prosessen dersom du ikke samtykker til bruk av KI-modellen",
                     "agreeTitle": "Dersom du samtykker til bruken av KI-modellen",
-                    "agreeInfo": "Dersom du gir ditt samtykke til å benytte KI-modellen for å predikere varigheten av ditt sykefravær, vil dine personopplysninger først bli prosessert av modellen, og resultatet av prediksjonen vil gis til saksbehandleren. Dette vil sannsynligvis føre til en kortere saksbehandlingstid. Saksbehandleren vil så bruke dette resultatet, sammen med andre faktorer, for å bestemme hva slags støtte er passende for deg i din situasjon.",
+                    "agreeInfo": "Dersom du gir ditt samtykke til bruken av KI-modellen for å predikere varigheten av ditt sykefravær, vil dine personopplysninger først bli prosessert av modellen, og resultatet av prediksjonen vil gis til saksbehandleren. Dette vil sannsynligvis føre til en kortere saksbehandlingstid. Saksbehandleren vil så bruke dette resultatet, sammen med andre faktorer, for å bestemme hva slags støtte er passende for deg i din situasjon.",
                     "agreeFlowImageSrc": "/img/agreeToUseFlowNo.png",
                     "agreeFlowImageMobileSrc": "/img/agreeToUseFlowMobileNo.png",
                     "agreeFlowImageAlt": "Prosessen dersom du samtykker til bruk av KI-modellen"
@@ -105,20 +106,20 @@
             },
             "howAi": {
                 "title": "Hvordan KI-modellen fungerer",
-                "description": "KI-modellen er et beregningsverktøy som er trent til å utføre en prediksjon av varigheten av ditt sykefravær. Resultatet den gir til saksbehandleren er antallet uker den predikerer at sykefraværet ditt vil vare.",
+                "description": "KI-modellen er et beregningsverktøy som er trent til å utføre en prediksjon av varigheten av ditt sykefravær. Resultatet den gir til saksbehandleren er antallet uker den anslår at sykefraværet ditt vil vare.",
                 "learnMore": {
                     "title": "Hvordan KI-modellen fungerer",
                     "description": "Kunstig intelligens er et paraplybegrep som beskriver datasystemer som kan løse komplekse problemer og lære fra tidligere erfaring.",
                     "machineLearningModelTraitList": {
                         "title": "Typen kunstig intelligens Den Nasjonale Sosialtjenesten bruker for predikering er en såkalt \"maskinlæringsmodell\", som har følgende egenskaper:",
-                        "li1": "Initielt lærer den ved å prosessere en selektert samling av treningsdata som inneholder mønster eller likheter",
+                        "li1": "Initielt lærer den ved å prosessere en selektert samling av treningsdata som inneholder mønster",
                         "li2": "Mønsterene blir synlige gjennom prosesseringen",
                         "li3": "En modell blir generert som kan gjenkjenne disse mønstrene i annen data innen samme kategori"
                     },
                     "trainingModelImageSrc": "/img/trainingTheModelNo.png",
                     "trainingModelImageMobileSrc": "/img/trainingTheModelMobileNo.png",
                     "trainingModelImageAlt": "Illustasjon av hvordan modellen blir trent",
-                    "descriptionPatternMatching": "Modellen er det resulterende programmet som kan gjenkjenne mønstrene, og det er dette som blir brukt for predikering. Når en prediksjon skal utføres, gis modellen ny data som inneholder samme parametere som treningsdataene.",
+                    "descriptionPatternMatching": "Modellen er det resulterende programmet som kan gjenkjenne mønstrene, og det er dette som blir brukt for predikering. Når en prediksjon skal utføres, gis modellen ny data som inneholder samme parametere som treningsdataene (som for eksempel alder og diagnose), og resultatet er prediksjonen.",
                     "usingModelImageSrc": "/img/usingTheModelForPredictionsNo.png",
                     "usingModelImageMobileSrc": "/img/usingTheModelForPredictionsMobileNo.png",
                     "usingModelImageAlt": "Illustrasjon av hvordan modellen blir brukt"
@@ -131,9 +132,9 @@
                     "title": "Hvorfor vi tilbyr bruken av KI-modellen i prediksjon av sykefraværets varighet",
                     "reasonForUseList": {
                         "title": "Den Nasjonale Sosialtjenestens mål er å sikre den mest hjelpsomme støtten for flest mulig. For å hjelpe våre saksbehandlere i å oppnå dette målet, tilbyr vi bruken av en KI-modell for prediksjon for å:",
-                        "li1": "hjelpe saksbehandlere i å gjøre mer nøyaktige vurderinger",
-                        "li2": "hjelpe til med å sikre tilpasset støtte for den enkelte",
-                        "li3": "spare ressurser og tid, noe som gir saksbehandlere mer tid til å hjelpe flere"
+                        "li1": "Hjelpe saksbehandlere i å gjøre mer nøyaktige vurderinger",
+                        "li2": "Bidra til å sikre tilpasset støtte for den enkelte",
+                        "li3": "Spare ressurser og tid, noe som gir saksbehandlere mer tid til å hjelpe flere"
                     },
                     "rightToChoose": "Det er din rett å velge om saksbehandleren din skal benytte seg av KI-modellen for predikering eller ikke."
                 }
@@ -142,8 +143,8 @@
         },
         "sandbox": {
             "title": "Utforsk hvordan KI-modellen fungerer",
-            "shortDescription": "Bruk den interaktive sandkassen for å utforske hvordan ulike faktorer påvirker KI-modellens prediksjon av varigheten av sykefravær, og for å bedre forstå viktigheten av faktorene.",
-            "mainDescription": "Ved å endre verdiene nedenfor, kan du utforske hvordan hver av dem påvirker prediksjonen av sykefraværet som våre saksbehandlere vil motta. Denne sandkassen bruker en forenklet modell og illustrerer den faktiske modellens virkemåte.",
+            "shortDescription": "Bruk den interaktive sandkassen for å utforske hvordan ulike faktorer påvirker KI-modellens prediksjon av varigheten av sykefravær, og for å bedre forstå den relative viktigheten av disse faktorene.",
+            "mainDescription": "Ved å endre verdiene nedenfor, kan du utforske hvordan hver av dem påvirker prediksjonen av sykefraværet som våre saksbehandlere vil motta. Denne sandkassen bruker en forenklet modell og er et eksempel på den faktiske modellens virkemåte.",
             "expandButtonText": "Lær mer",
             "sickLeaveDescription": "Predikert sykefravær",
             "calculate": "Predikér",
@@ -156,38 +157,38 @@
         },
         "featureImportance": {
             "title": "Faktorenes viktighet",
-            "description1": "Når en prediksjon gjennomføres vil hver faktor (som alder eller diagnose) ha en vekt som tilsier hvor mye den bidrar til KI-modellens prediskjon av varigheten av ditt sykefravær. Verdien av en faktor, som alderen din, vil påvirke grad av viktighet for alle faktorer",
-            "description2": "For å bedre forstå hvor viktig hver faktor er når KI-modellen utfører en prediksjon, kan du endre alderen over diagrammet for å se et eksempel på hvordan alder påvirker viktigheten av hver faktor i relasjon til den helhetlige prediksjonen.",
-            "description3": "Jo større en faktors vekt er, jo viktigere er faktoren for prediksjonen, gitt den angitte alderen."
+            "description1": "Når en prediksjon gjennomføres vil hver faktor (som alder eller diagnose) ha en vekt som tilsier hvor mye den bidrar til KI-modellens prediskjon av varigheten av ditt sykefravær. Verdien av en faktor, som for eksempel alderen din, vil påvirke grad av viktighet for alle faktorer.",
+            "description2": "For å bedre forstå hvor viktig hver faktor er når KI-modellen utfører en prediksjon, kan du endre alderen over diagrammet for å se et eksempel på hvordan alder påvirker viktigheten av hver faktor.",
+            "description3": "Jo større en faktors relative vekt er, jo viktigere er faktoren for prediksjonen, gitt den angitte alderen."
         },
         "aboutRightsInfo": {
             "title": "Dine rettigheter",
-            "description1": "Som en bruker av denne tjenesten har du visse rettigheter, særlig knyttet til dine personlige opplysninger",
+            "description1": "Som en bruker av denne tjenesten har du visse rettigheter, særlig knyttet til dine personopplysninger.",
             "description2": "Du kan lese mer om dine rettigheter ved å klikke på \"Les mer\".",
             "readMore": {
-                "userRightsTitle": "Som en bruker av denne tjenesten har du rett til:",
-                "li1": "Å få informasjon om hvilken personlig informasjon om deg brukes og hvorfor ",
-                "li2": "Å få korrigert data om deg selv som er feil ",
-                "li3": "Å ved hvilket som helst tidspunkt be om at dine personlige opplysninger fjernes fra vårt system ",
-                "li4": "Å be om at prosessen hvor dine personlige opplysninger blir brukt avbrytes ",
-                "li5": "Å få dine personlige opplysninger presentert på en forståelig måte ",
-                "li6": "Å ved hvilket som helst tidspunkt protestere mot prosesseringen av dine personlige opplysninger ",
+                "userRightsTitle": "Som en bruker av denne tjenesten har du rett til å:",
+                "li1": "Få informasjon om hvilke personopplysninger om deg som brukes og hvorfor ",
+                "li2": "Få korrigert personopplysninger om deg selv som er feil ",
+                "li3": "Ved hvilket som helst tidspunkt be om at dine personopplysninger fjernes fra vårt system ",
+                "li4": "Be om at prosessen hvor dine personopplysninger brukes avbrytes ",
+                "li5": "Få dine personopplysninger presentert på en forståelig måte ",
+                "li6": "Ved hvilket som helst tidspunkt protestere mot prosesseringen av dine personopplysninger ",
                 "learnMoreLinkText": "Lær mer"
             }
         },
-        "consentQuestion": "Samtykker du til å bruke en kunstig intelligens-modell for å predikere varigheten av ditt sykefravær?",
+        "consentQuestion": "Samtykker du til bruken av en kunstig intelligens-modell for å predikere varigheten av ditt sykefravær?",
         "disagreeButtonText": "Jeg samtykker IKKE",
         "agreeButtonText": "Jeg samtykker"
     },
 
     "summaryPage": {
-        "titleNotConsenting": "Du har valgt å ikke bruke KI-modellen for predikering",
-        "titleConsenting": "Du har valgt å bruke KI-modellen for predikering",
-        "descriptionNotConsenting": "Saksbehandleren vil utføre en prediksjon av varigheten av ditt sykefravær uten bruk av KI-modellen. Dette kan resultere i lengre saksbehandlingstid.",
+        "titleNotConsenting": "Du har valgt å ikke tillate bruken av KI-modellen for predikering",
+        "titleConsenting": "Du har valgt å tillate bruken av KI-modellen for predikering",
+        "descriptionNotConsenting": "Saksbehandleren vil utføre en prediksjon av varigheten av ditt sykefravær uten bruk av KI-modellen.",
         "descriptionConsenting": "Saksbehandleren vil bruke KI-modellen for å predikere varigheten av ditt sykefravær.",
         "changeCoice": "Dersom du ønsker å endre på valget ditt, klikk på \"Bruk av KI\" øverst i venstre hjørne.",
-        "informationSummaryTitle": "Dine data",
-        "informationSummarySource": "Denne informasjonen er hentet fra det nasjonale folkeregiseteret og Den Nasjonale Sosialtjenestens registre.",
+        "informationSummaryTitle": "Dine personopplysninger",
+        "informationSummarySource": "Disse personopplysningene er hentet fra det nasjonale folkeregiseteret og Den Nasjonale Sosialtjenestens registre.",
         "submitChoiceButtonText": "Send inn valget ditt"
     },
 
