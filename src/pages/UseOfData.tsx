@@ -9,7 +9,7 @@ import Button from "@/components/Button";
 import DataTable from "@/components/DataTable";
 import Link from "next/link";
 import ProfileIcon from "@/components/Assets/profileIcon";
-import Parent from "@/components/Parent";
+import Container from "@/components/Container";
 import NavBar from "@/components/NavBar";
 
 /**
@@ -19,13 +19,15 @@ import NavBar from "@/components/NavBar";
  *
  * @returns A React functional component representing the landing page.
  */
-const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const UseOfData: React.FC = (
+    _props: InferGetStaticPropsType<typeof getStaticProps>
+) => {
     const { t } = useTranslation("common");
     const router = useRouter();
     const { locale } = router;
 
     return (
-        <Parent>
+        <Container>
             <NavBar enableLinkToFrontPage={true} />
             <div className="flex justify-start py-5 text-black">
                 <Link
@@ -78,14 +80,28 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
                             </p>
                         </div>
                         {/*Here there will be a component with information about the user */}
-                        {locale == "en" ? <DataTable data={exampleDataEn} /> : <></>}
-                        {locale == "no" ? <DataTable data={exampleDataNo} /> : <></>}
-                        {locale == "de" ? <DataTable data={exampleDataDe} /> : <></>}
+                        {locale == "en" ? (
+                            <DataTable data={exampleDataEn} />
+                        ) : (
+                            <></>
+                        )}
+                        {locale == "no" ? (
+                            <DataTable data={exampleDataNo} />
+                        ) : (
+                            <></>
+                        )}
+                        {locale == "de" ? (
+                            <DataTable data={exampleDataDe} />
+                        ) : (
+                            <></>
+                        )}
                     </div>
 
                     <div className="flex-col justify-center flex">
                         <div className="flex justify-center mt-1 hover:text-sky-600 underline text-sm">
-                            <a href="/incorrectInformation">{t("useOfDataPage.incorrectData")}</a>
+                            <a href="/incorrectInformation">
+                                {t("useOfDataPage.incorrectData")}
+                            </a>
                         </div>
                         <div className="flex justify-center mt-5 mb-10">
                             <Button color="lavaorange" href="/UsingAi">
@@ -95,7 +111,7 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
                     </div>
                 </div>
             </div>
-        </Parent>
+        </Container>
     );
 };
 

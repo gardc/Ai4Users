@@ -1,7 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import Parent from "@/components/Parent";
+import Container from "@/components/Container";
 import React from "react";
 import NavBar from "@/components/NavBar";
 
@@ -17,7 +17,7 @@ const SubmittedPage: React.FC = (
     const { t } = useTranslation("common");
 
     return (
-        <Parent>
+        <Container>
             <NavBar enableLinkToFrontPage={false} />
             <div className="m-4 flex justify-center mb-20">
                 <div
@@ -39,7 +39,7 @@ const SubmittedPage: React.FC = (
                     </div>
                 </div>
             </div>
-        </Parent>
+        </Container>
     );
 };
 

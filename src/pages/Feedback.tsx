@@ -3,7 +3,7 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
 import NavBar from "@/components/NavBar";
-import Parent from "@/components/Parent";
+import Container from "@/components/Container";
 import React, { useState } from "react";
 import sendApiRequest from "@/util/sendApiRequest";
 
@@ -48,7 +48,7 @@ const Feedback: React.FC = (
 
     return (
         <div className="bg-darkblue">
-            <Parent>
+            <Container>
                 <NavBar enableLinkToFrontPage={false} />
                 <div className="index pt-8 pb-8 flex-col flex items-center text-black">
                     <p className="text-center font-bold text-3xl sm:text-5xl tracking-wide sm:mt-16 ">
@@ -91,7 +91,7 @@ const Feedback: React.FC = (
                         </Button>
                     </div>
                 </div>
-            </Parent>
+            </Container>
         </div>
     );
 };
