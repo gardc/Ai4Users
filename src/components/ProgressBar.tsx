@@ -1,14 +1,60 @@
 import Link from "next/link";
 
+/**
+ * The type definition for the `ProgressBar` component's props.
+ */
 interface ProgressBarProps {
+    /**
+     * A list of objects reperesenting the pages to be displayed in the progress bar
+     */
     pages: {
+        /**
+         * The title of the page
+         */
         title: string;
+
+        /**
+         * A compressed version of the title, used for smaller screen sizes to avoid collisions.
+         */
         titleCompressed: string;
+
+        /**
+         * A link to the page. Can be empty if the link should be disabled.
+         */
         href: string;
+
+        /**
+         * A boolean for if the page is the current one, i.e. whether this page is the same as the
+         * page where the component is used.
+         */
         currentPage: boolean;
     }[];
 }
 
+/**
+ * A component for displaying a progress bar indicating how far a user is in the process of
+ * navigating through the website.
+ *
+ * @component
+ * @example
+ * pages = {
+ *  [
+ *      {
+ *          title: "Home",
+ *          titleCompressed: "Home",
+ *          href: "/LandingPage",
+ *          currentPage: false,
+ *      },
+ *      {
+ *          title: "Use of data",
+ *          titleCompressed: "Data",
+ *          href: "",
+ *          currentPage: true,
+ *      },
+ *  ]
+ * }
+ * Usage <ProgressBar pages={pages} />
+ */
 const ProgressBar = ({ pages }: ProgressBarProps) => {
     return (
         <div className="flex justify-start py-5 pl-4 sm:pl-8 text-black">
