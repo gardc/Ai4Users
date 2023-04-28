@@ -1,6 +1,6 @@
 import React from "react";
 
-function profileIcon() {
+function ProfileIcon() {
     return (
         <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -20,4 +20,4 @@ function profileIcon() {
     );
 }
 
-export default profileIcon;
+export default ProfileIcon;
