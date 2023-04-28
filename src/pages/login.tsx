@@ -1,7 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import Parent from "@/components/Parent";
+import Container from "@/components/Container";
 import React from "react";
 import NavBar from "@/components/NavBar";
 import LoginButton from "@/components/LoginButton";
@@ -19,7 +19,7 @@ const Login: React.FC = (
     const { t } = useTranslation("common");
 
     return (
-        <Parent>
+        <Container>
             <div className="bg-darkblue h-screen">
                 <NavBar enableLinkToFrontPage={false} />
                 <div className="index pb-16 flex-col flex items-center h-5/6">
@@ -63,7 +63,7 @@ const Login: React.FC = (
                     </div>
                 </div>
             </div>
-        </Parent>
+        </Container>
     );
 };
 

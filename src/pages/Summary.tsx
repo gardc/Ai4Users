@@ -8,7 +8,7 @@ import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
 import DataTable from "@/components/DataTable";
 import Link from "next/link";
-import Parent from "@/components/Parent";
+import Container from "@/components/Container";
 import React from "react";
 import ProfileIcon from "@/components/Assets/profileIcon";
 import NavBar from "@/components/NavBar";
@@ -62,7 +62,7 @@ const Summary: React.FC = (
     }
 
     return (
-        <Parent>
+        <Container>
             <NavBar enableLinkToFrontPage={true} />
             <div className="flex justify-start py-5 text-black">
                 <Link
@@ -149,7 +149,7 @@ const Summary: React.FC = (
                     </div>
                 </div>
             </div>
-        </Parent>
+        </Container>
     );
 };
 

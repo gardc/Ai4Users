@@ -8,7 +8,7 @@ import NavBar from "./NavBar";
  *
  * @returns A parent element with a NavBar as a React functional component.
  */
-const Parent = (props: any) => {
+const Container = (props: any) => {
     return (
         <div className="font-sans bg-zinc-100 min-h-screen flex flex-col">
             <Content className="flex-grow">{props.children}</Content>
@@ -16,4 +16,4 @@ const Parent = (props: any) => {
     );
 };
 
-export default Parent;
+export default Container;
