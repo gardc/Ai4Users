@@ -37,22 +37,20 @@ interface ProgressBarProps {
  *
  * @component
  * @example
- * pages = {
- *  [
- *      {
- *          title: "Home",
- *          titleCompressed: "Home",
- *          href: "/LandingPage",
- *          currentPage: false,
- *      },
- *      {
- *          title: "Use of data",
- *          titleCompressed: "Data",
- *          href: "",
- *          currentPage: true,
- *      },
- *  ]
- * }
+ * pages = [
+ *  {
+ *      title: "Home",
+ *      titleCompressed: "Home",
+ *      href: "/LandingPage",
+ *      currentPage: false,
+ *  },
+ *  {
+ *      title: "Use of data",
+ *      titleCompressed: "Data",
+ *      href: "",
+ *      currentPage: true,
+ *  },
+ * ]
  * Usage <ProgressBar pages={pages} />
  */
 const ProgressBar = ({ pages }: ProgressBarProps) => {
