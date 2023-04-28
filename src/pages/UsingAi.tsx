@@ -1,6 +1,10 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { changeLogItemsDe } from "./api/changelogItemsDe";
+import { changeLogItemsEn } from "./api/changelogItemsEn";
+import { changeLogItemsNo } from "./api/changelogItemsNo";
 import { featureImportanceDataEn } from "./api/featureImportanceDataEn";
 import { featureImportanceDataNo } from "./api/featureImportanceDataNo";
+import { motion as m } from "framer-motion";
 import { sandboxParametersEn } from "@/pages/api/sandboxParametersEn";
 import { sandboxParametersNo } from "@/pages/api/sandboxParametersNo";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -8,23 +12,22 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import ArrowRightIcon from "@/components/Assets/arrowRightIcon";
 import BookIcon from "@/components/Assets/bookIcon";
+import Changelog from "@/components/Changelog";
 import CogIcon from "@/components/Assets/cogIcon";
-import ScaleIcon from "@/components/Assets/scaleIcon";
-import PuzzleIcon from "@/components/Assets/puzzleIcon";
-import Content from "@/components/Content";
 import ExpandableInformationBox from "@/components/ExpandableInformationBox";
 import FastForwardIcon from "@/components/Assets/fastForwardIcon";
 import FeatureImportanceDiagram from "@/components/FeatureImportanceDiagram";
 import Image from "next/image";
 import InformationDropdownBox from "@/components/InformationDropdownBox";
 import InformationSignIcon from "@/components/Assets/informationSignIcon";
-import { motion as m } from "framer-motion";
 import Link from "next/link";
+import NavBar from "@/components/NavBar";
 import Parent from "@/components/Parent";
+import ProgressBar from "@/components/ProgressBar";
+import PuzzleIcon from "@/components/Assets/puzzleIcon";
 import React from "react";
 import Sandbox from "@/components/Sandbox";
-import NavBar from "@/components/NavBar";
-import scaleIcon from "@/components/Assets/scaleIcon";
+import ScaleIcon from "@/components/Assets/scaleIcon";
 
 /**
  * The page component for explaining the use of an AI model for the tester of the web application.
@@ -40,27 +43,60 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
 
     return (
         <Parent>
-            <NavBar enableLinkToFrontPage={true} />
+            <NavBar
+                enableLinkToFrontPage={true}
+                enableChangelog={true}
+                changelogTitle={t("changelogTitle")}
+                changelogItems={
+                    locale == "no"
+                        ? changeLogItemsNo
+                        : locale == "de"
+                        ? changeLogItemsDe
+                        : changeLogItemsEn
+                }
+            />
             <div className="pb-2 text-center">
-                <div className="flex justify-start py-5 text-black">
-                    <Link
-                        className="hover:font-bold text-sm lg:text-base pl-12 px-3"
-                        href={"/LandingPage"}
-                    >
-                        {t("pageProgressBar.home")}
-                    </Link>
-                    {">"}
-                    <Link className="hover:font-bold text-sm lg:text-base px-3" href={"/UseOfData"}>
-                        {t("pageProgressBar.useOfData")}
-                    </Link>
-                    {">"}
-                    <p className="font-bold underline text-sm lg:text-base underline-offset-4 px-3">
-                        {t("pageProgressBar.usingAiPage")}
-                    </p>
-                    <p className="text-gray-500 ">{">"}</p>
-                    <p className="text-gray-500 text-sm lg:text-base px-3">
-                        {t("pageProgressBar.summaryPage")}
-                    </p>
+                <div className="flex justify-between items-center text-left pt-2">
+                    <ProgressBar
+                        pages={[
+                            {
+                                title: t("pageProgressBar.home"),
+                                titleCompressed: t("pageProgressBar.homeCompressed"),
+                                href: "/LandingPage",
+                                currentPage: false,
+                            },
+                            {
+                                title: t("pageProgressBar.useOfData"),
+                                titleCompressed: t("pageProgressBar.useOfDataCompressed"),
+                                href: "/UseOfData",
+                                currentPage: false,
+                            },
+                            {
+                                title: t("pageProgressBar.usingAiPage"),
+                                titleCompressed: t("pageProgressBar.usingAiPageCompressed"),
+                                href: "",
+                                currentPage: true,
+                            },
+                            {
+                                title: t("pageProgressBar.summaryPage"),
+                                titleCompressed: t("pageProgressBar.summaryPageCompressed"),
+                                href: "",
+                                currentPage: false,
+                            },
+                        ]}
+                    />
+                    <div className="flex justify-end block lg:hidden pb-4 pr-2 sm:pr-8">
+                        <Changelog
+                            title={t("changelogTitle")}
+                            listOfChanges={
+                                locale == "no"
+                                    ? changeLogItemsNo
+                                    : locale == "de"
+                                    ? changeLogItemsDe
+                                    : changeLogItemsEn
+                            }
+                        />
+                    </div>
                 </div>
 
                 <p className="text-center text-prussian-blue font-bold text-3xl m-3 pt-4">
@@ -179,7 +215,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 "usingAiPage.aboutAiInfo.whatAi.learnMore.agreeInfo"
                                             )}
                                         </p>
-                                        
+
                                         <Image
                                             src={
                                                 t(
@@ -205,7 +241,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             width={1000}
                                             height={1000}
                                             className="pb-4 block lg:hidden"
-                                        />    
+                                        />
                                     </div>
                                 }
                                 buttonText={t("usingAiPage.aboutAiInfo.learnMoreButtonText")}
