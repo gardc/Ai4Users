@@ -1,8 +1,30 @@
+/**
+ * Data for the changelog component, English translation. Gives the component a list of objects,
+ * each object containing a date, title, the text of the change, and a link to another page (can
+ * be left empty). These objects represent changes, for example to the AI model, that can be
+ * displayed by the changelog component.
+ *
+ * @example
+ * [
+ *  {
+ *      dateOfChange: "12.03.2023",
+ *      titleOfChange: "Improved training data for county feature",
+ *      change: "The AI model has been retrained with ...",
+ *      readMoreLink: "/Changes12032023",
+ *  },
+ *  {
+ *      dateOfChange: "22.02.2023",
+ *      titleOfChange: "Increased training data",
+ *      change: "The AI model now has access to a larger dataset ...",
+ *      readMoreLink: "",
+ *  },
+ * ]
+ */
 export const changeLogItemsEn = [
     {
         dateOfChange: "12.03.2023",
         titleOfChange: "Improved training data for county feature",
-        change: 'The AI model has been retrained with a more diverse and up-to-date dataset for the "County" feature. This should result in more accurate predictions of sick leave duration, as the model can better capture regional differences in health outcomes and medical practices.',
+        change: "The AI model has been retrained with a more diverse and up-to-date dataset for the county feature. This should result in more accurate predictions of sick leave duration, as the model can better capture regional differences in health outcomes and medical practices.",
         readMoreLink: "",
     },
     {

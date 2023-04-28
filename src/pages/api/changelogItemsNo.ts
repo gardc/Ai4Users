@@ -1,3 +1,25 @@
+/**
+ * Data for the changelog component, Norwegian translation. Gives the component a list of objects,
+ * each object containing a date, title, the text of the change, and a link to another page (can
+ * be left empty). These objects represent changes, for example to the AI model, that can be
+ * displayed by the changelog component.
+ *
+ * @example
+ * [
+ *  {
+ *      dateOfChange: "12.03.2023",
+ *      titleOfChange: "Forbedret treningsdata for fylkes-faktor",
+ *      change: "KI-modellen har blitt trent på nytt med ...",
+ *      readMoreLink: "/Changes12032023",
+ *  },
+ *  {
+ *      dateOfChange: "22.02.2023",
+ *      titleOfChange: "Økt mengde treningsdata",
+ *      change: "KI-modellen har nå tilgang til et større datasett ...",
+ *      readMoreLink: "",
+ *  },
+ * ]
+ */
 export const changeLogItemsNo = [
     {
         dateOfChange: "12.03.2023",
