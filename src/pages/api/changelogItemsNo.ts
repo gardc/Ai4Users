@@ -1,32 +1,26 @@
-export const changeLogItemsEn = [
+export const changeLogItemsNo = [
     {
-        dateOfChange: "26.04.2023",
-        titleOfChange: "Included County feature",
-        change: 'The AI model now includes the feature "County", meaning that information about where you live will be used in the prediction.',
+        dateOfChange: "12.03.2023",
+        titleOfChange: "Forbedret treningsdata for fylkes-faktor",
+        change: "KI-modellen har blitt trent på nytt med et mer variert og oppdatert datasett for fylke-faktoren. Dette bør resultere i mer nøyaktige prediksjoner om sykefraværets varighet, ettersom modellen bedre kan fange regionale forskjeller i helseutfall og medisinske praksiser.",
+        readMoreLink: "",
     },
     {
-        dateOfChange: "02.03.2023",
-        titleOfChange: "Parameter adjustments",
-        change: "Some random changes, this is just  to test how the text looks.",
+        dateOfChange: "22.02.2023",
+        titleOfChange: "Økt mengde treningsdata",
+        change: "KI-modellen har nå tilgang til et større datasett med flere varierte tilfeller, noe som bør forbedre nøyaktigheten i å predikere sykefraværets varighet.",
+        readMoreLink: "",
     },
     {
-        dateOfChange: "02.03.2023",
-        titleOfChange: "Parameter adjustments",
-        change: "Some random changes, this is just  to test how the text looks.",
+        dateOfChange: "15.01.2023",
+        titleOfChange: "Forbedret normaliseringsteknikk",
+        change: "Vi har oppdatert normaliseringsteknikken som brukes i KI-modellen for å forbedre dens evne til å håndtere uvanlige tilfeller.",
+        readMoreLink: "",
     },
     {
-        dateOfChange: "02.03.2023",
-        titleOfChange: "Parameter adjustments",
-        change: "Some random changes, this is just  to test how the text looks.",
-    },
-    {
-        dateOfChange: "02.03.2023",
-        titleOfChange: "Parameter adjustments",
-        change: "Some random changes, this is just  to test how the text looks.",
-    },
-    {
-        dateOfChange: "02.03.2023",
-        titleOfChange: "Parameter adjustments",
-        change: "Some random changes, this is just  to test how the text looks.",
+        dateOfChange: "30.11.2022",
+        titleOfChange: "Lagt til ny faktor",
+        change: "Vi har lagt til en ny faktor i KI-modellen, som tar hensyn til pasientens yrke. Dette bør forbedre modellens nøyaktighet i å predikere sykefraværets varighet for enkeltpersoner i bestemte yrker.",
+        readMoreLink: "",
     },
 ];

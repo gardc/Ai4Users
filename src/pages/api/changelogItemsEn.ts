@@ -1,32 +1,26 @@
 export const changeLogItemsEn = [
     {
-        dateOfChange: "26.04.2023",
-        titleOfChange: "Included County feature",
-        change: 'The AI model now includes the feature "County", meaning that information about where you live will be used in the prediction.',
+        dateOfChange: "12.03.2023",
+        titleOfChange: "Improved training data for county feature",
+        change: 'The AI model has been retrained with a more diverse and up-to-date dataset for the "County" feature. This should result in more accurate predictions of sick leave duration, as the model can better capture regional differences in health outcomes and medical practices.',
+        readMoreLink: "",
     },
     {
-        dateOfChange: "02.03.2023",
-        titleOfChange: "Parameter adjustments",
-        change: "Some random changes, this is just  to test how the text looks.",
+        dateOfChange: "22.02.2023",
+        titleOfChange: "Increased training data",
+        change: "The AI model now has access to a larger dataset with more diverse cases, which should improve its accuracy in predicting sick leave durations.",
+        readMoreLink: "",
     },
     {
-        dateOfChange: "02.03.2023",
-        titleOfChange: "Parameter adjustments",
-        change: "Some random changes, this is just  to test how the text looks.",
+        dateOfChange: "15.01.2023",
+        titleOfChange: "Improved normalization technique",
+        change: "We have updated the normalization technique used in the AI model to better account for outliers and improve its ability to handle non-standard cases.",
+        readMoreLink: "",
     },
     {
-        dateOfChange: "02.03.2023",
-        titleOfChange: "Parameter adjustments",
-        change: "Some random changes, this is just  to test how the text looks.",
-    },
-    {
-        dateOfChange: "02.03.2023",
-        titleOfChange: "Parameter adjustments",
-        change: "Some random changes, this is just  to test how the text looks.",
-    },
-    {
-        dateOfChange: "02.03.2023",
-        titleOfChange: "Parameter adjustments",
-        change: "Some random changes, this is just  to test how the text looks.",
+        dateOfChange: "30.11.2022",
+        titleOfChange: "Added new input feature",
+        change: "We have added a new input feature to the AI model, which takes into account the patient's occupation. This should improve the model's accuracy in predicting sick leave durations for individuals in specific professions.",
+        readMoreLink: "",
     },
 ];
