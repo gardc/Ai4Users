@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from "@/components/Button";
-import InformationSignIcon from "./Assets/InformationSignIcon";
+import InformationSignIcon from "@/components/Assets/InformationSignIcon";
 import { createPortal } from "react-dom";
 
 export interface ExpandableInformationBoxProps {

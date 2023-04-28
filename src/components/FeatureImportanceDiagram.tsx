@@ -6,9 +6,9 @@ import React, {
     useMemo,
 } from "react";
 import * as d3 from "d3";
-import BarChartIcon from "./Assets/BarChartIcon";
-import PieChartIcon from "./Assets/PieChartIcon";
-import TransparentBoxIcon from "./Assets/TransparentBoxIcon";
+import BarChartIcon from "@/components/Assets/BarChartIcon";
+import PieChartIcon from "@/components/Assets/PieChartIcon";
+import TransparentBoxIcon from "@/components/Assets/TransparentBoxIcon";
 
 /**
  * The type definition for the `FeatureImportanceDiagram` component's props.
