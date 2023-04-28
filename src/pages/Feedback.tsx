@@ -14,7 +14,9 @@ import sendApiRequest from "@/util/sendApiRequest";
  *
  * @returns A React functional component representing the landing page.
  */
-const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Feedback: React.FC = (
+    _props: InferGetStaticPropsType<typeof getStaticProps>
+) => {
     const { t } = useTranslation("common");
     const [feedbackString, setFeedbackString] = useState("");
     const [waiting, setWaiting] = useState(false);
@@ -38,7 +40,9 @@ const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProp
         }
     };
 
-    const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const handleInputChange = (
+        event: React.ChangeEvent<HTMLTextAreaElement>
+    ) => {
         setFeedbackString(event.target.value);
     };
 
@@ -77,11 +81,13 @@ const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProp
                         )}
                         <Button
                             color="lavaorange"
-                            href="/UserTestingFinishedPage"
+                            href="/submittedPage"
                             loading={waiting}
                         >
                             {/* If finished, show continue button, else show skip */}
-                            {finished ? t("feedback.continue") : t("feedback.skip")}
+                            {finished
+                                ? t("feedback.continue")
+                                : t("feedback.skip")}
                         </Button>
                     </div>
                 </div>
