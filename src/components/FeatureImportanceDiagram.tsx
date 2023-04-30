@@ -436,7 +436,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                             </option>
                         ))}
                     </select>
-                    <div className="w-3/4 xl:w-full mx-auto">
+                    <div className="w-full sm:w-3/4 md:w-full lg:w-3/4 xl:w-full mx-auto">
                         <svg
                             className={`mx-auto mt-0 xl:mt-8 mb-8 my-auto py-4 ${
                                 !pieChartVisible ? "block" : "hidden"
@@ -446,14 +446,16 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                             height="500"
                         ></svg>
                     </div>
-                    <svg
-                        className={`mx-auto my-auto w-3/4 lg:w-1/2 xl:w-full ${
-                            pieChartVisible && !moreThanFiveFeatures ? "block" : "hidden"
-                        }`}
-                        ref={pieChartRef}
-                        viewBox="-200 -200 400 400"
-                        preserveAspectRatio="xMidYMid meet"
-                    ></svg>
+                    <div className="w-full mx-auto">
+                        <svg
+                            className={`mx-auto my-auto w-3/4 lg:w-1/2 xl:w-full ${
+                                pieChartVisible && !moreThanFiveFeatures ? "block" : "hidden"
+                            }`}
+                            ref={pieChartRef}
+                            viewBox="-200 -200 400 400"
+                            preserveAspectRatio="xMidYMid meet"
+                        ></svg>
+                    </div>
                     <div>
                         {pieChartVisible &&
                             !moreThanFiveFeatures &&
