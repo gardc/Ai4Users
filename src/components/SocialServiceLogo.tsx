@@ -1,5 +1,5 @@
 import { useTranslation } from "next-i18next";
-import DocumentApprovedIcon from "@/components/Assets/DocumentApprovedIcon";
+import DocumentApprovedIcon from "@/components/Assets/documentApprovedIcon";
 import React from "react";
 
 /**

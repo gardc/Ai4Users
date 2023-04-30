@@ -1,8 +1,8 @@
 import { useTranslation } from "next-i18next";
-import ArrowToModelIcon from "@/components/Assets/ArrowToModelIcon";
+import ArrowToModelIcon from "@/components/Assets/arrowToModelIcon";
 import Button from "@/components/Button";
-import CaseHandlerIcon from "@/components/Assets/CaseHandlerIcon";
-import CogIconLarge from "@/components/Assets/CogIconLarge";
+import CaseHandlerIcon from "@/components/Assets/caseHandlerIcon";
+import CogIconLarge from "@/components/Assets/cogIconLarge";
 import React, { FormEvent, useState } from "react";
 
 /**
