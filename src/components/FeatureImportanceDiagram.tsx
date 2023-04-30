@@ -163,11 +163,16 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
      */
     const drawBarPlot = useCallback(() => {
         const svg = d3.select(barPlotRef.current);
-        svg.selectAll("*").remove();
 
         const margin = { top: 20, right: 20, bottom: 30, left: 40 };
         const width = +svg.attr("width") - margin.left - margin.right;
         const height = +svg.attr("height") - margin.top - margin.bottom;
+
+        // Check if the number of existing bars is higher than the length of importanceWeightsOfFeatures
+        const existingBars = svg.selectAll(".bar").size();
+        if (existingBars != importanceWeightsOfFeatures.length) {
+            svg.selectAll("*").remove(); // Remove all elements from the SVG
+        }
 
         const maxWeight =
             d3.max(
@@ -184,12 +189,28 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
             .padding(0.25)
             .domain(importanceWeightsOfFeatures.map((d) => d.feature));
 
-        const g = svg
-            .append("g")
-            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        let g = svg.select<SVGGElement>("g");
 
-        g.append("g")
-            .attr("class", "axis axis--x")
+        if (g.empty()) {
+            g = svg
+                .append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        }
+
+        let xAxis = g.select<SVGGElement>(".axis.axis--x");
+        let yAxis = g.select<SVGGElement>(".axis.axis--y");
+
+        if (xAxis.empty()) {
+            g.append("g").attr("class", "axis axis--x");
+            xAxis = g.select<SVGGElement>(".axis.axis--x");
+        }
+
+        if (yAxis.empty()) {
+            g.append("g").attr("class", "axis axis--y");
+            yAxis = g.select<SVGGElement>(".axis.axis--y");
+        }
+
+        xAxis
             .attr("transform", "translate(0," + height + ")")
             .call(
                 d3
@@ -202,20 +223,11 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
             .selectAll("text")
             .style("font-size", "20px");
 
-        g.append("g")
-            .attr("class", "axis axis--y")
-            .call(d3.axisLeft(y).ticks(10, "%"))
-            .selectAll("text")
-            .remove();
+        yAxis.call(d3.axisLeft(y).ticks(10, "%")).selectAll("text").remove();
 
-        const bars = g
-            .selectAll(".bar")
-            .data(importanceWeightsOfFeatures)
-            .enter()
-            .append("g")
-            .attr("class", "bar");
+        const bars = g.selectAll(".bar").data(importanceWeightsOfFeatures);
 
-        bars.append("rect")
+        bars.select("rect")
             .attr("x", 0)
             .attr("height", y?.bandwidth())
             .attr("y", (d: { feature?: string }) =>
@@ -230,7 +242,36 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
             )
             .attr("fill", "#c14922");
 
-        bars.append("text")
+        bars.select("text")
+            .text((d) => d.feature)
+            .attr("x", 10)
+            .attr("y", (d: { feature?: string }) =>
+                d && d.feature ? (y?.(d.feature) ?? 0) + y?.bandwidth() / 2 + 5 : null
+            )
+            .attr("fill", "white")
+            .style("font-size", "20px");
+
+        const newBars = bars.enter().append("g").attr("class", "bar");
+
+        newBars
+            .append("rect")
+            .attr("x", 0)
+            .attr("height", y?.bandwidth())
+            .attr("y", (d: { feature?: string }) =>
+                d && d.feature
+                    ? (y?.(d.feature) ?? 0) + y?.bandwidth() / 2 - 0.5 * y?.bandwidth()
+                    : null
+            )
+            .attr("fill", "#c14922")
+            .attr("width", 0)
+            .transition()
+            .duration(700)
+            .attr("width", (d: { weight: number }) =>
+                d && d.weight * 100 ? x(d.weight * 100) : null
+            );
+
+        newBars
+            .append("text")
             .text((d) => d.feature)
             .attr("x", 10)
             .attr("y", (d: { feature?: string }) =>
