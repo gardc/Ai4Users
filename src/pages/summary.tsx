@@ -10,7 +10,7 @@ import DataTable from "@/components/DataTable";
 import Link from "next/link";
 import Container from "@/components/Container";
 import React from "react";
-import ProfileIcon from "@/components/Assets/ProfileIcon";
+import ProfileIcon from "@/components/Assets/profileIcon";
 import NavBar from "@/components/NavBar";
 
 /**
@@ -38,7 +38,7 @@ const Summary: React.FC = (
         predictionChoiceTitle = t("summaryPage.titleConsenting");
         predictionChoiceText = t("summaryPage.descriptionConsenting");
     } else if (consent === "false") {
-        nextPage = "/Feedback";
+        nextPage = "/feedback";
         predictionChoiceTitle = t("summaryPage.titleNotConsenting");
         predictionChoiceTitle = predictionChoiceTitle.replace(
             /(<b>not<\/b>)/,
@@ -67,21 +67,21 @@ const Summary: React.FC = (
             <div className="flex justify-start py-5 text-black">
                 <Link
                     className="hover:font-bold text-sm lg:text-base pl-12 px-3"
-                    href={"/LandingPage"}
+                    href={"/landingPage"}
                 >
                     {t("pageProgressBar.home")}
                 </Link>
                 {">"}
                 <Link
                     className="hover:font-bold text-sm lg:text-base px-3"
-                    href={"/UseOfData"}
+                    href={"/useOfData"}
                 >
                     {t("pageProgressBar.useOfData")}
                 </Link>
                 {">"}
                 <Link
                     className="hover:font-bold text-sm lg:text-base px-3"
-                    href={"/UsingAi"}
+                    href={"/usingAi"}
                 >
                     {t("pageProgressBar.usingAiPage")}
                 </Link>

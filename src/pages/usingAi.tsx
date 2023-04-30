@@ -6,18 +6,18 @@ import { sandboxParametersNo } from "@/pages/api/sandboxParametersNo";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import ArrowRightIcon from "@/components/Assets/ArrowRightIcon";
-import BookIcon from "@/components/Assets/BookIcon";
-import CogIcon from "@/components/Assets/CogIcon";
-import ScaleIcon from "@/components/Assets/ScaleIcon";
-import PuzzleIcon from "@/components/Assets/PuzzleIcon";
+import ArrowRightIcon from "@/components/Assets/arrowRightIcon";
+import BookIcon from "@/components/Assets/bookIcon";
+import CogIcon from "@/components/Assets/cogIcon";
+import ScaleIcon from "@/components/Assets/scaleIcon";
+import PuzzleIcon from "@/components/Assets/puzzleIcon";
 import Content from "@/components/Content";
 import ExpandableInformationBox from "@/components/ExpandableInformationBox";
-import FastForwardIcon from "@/components/Assets/FastForwardIcon";
+import FastForwardIcon from "@/components/Assets/fastForwardIcon";
 import FeatureImportanceDiagram from "@/components/FeatureImportanceDiagram";
 import Image from "next/image";
 import InformationDropdownBox from "@/components/InformationDropdownBox";
-import InformationSignIcon from "@/components/Assets/InformationSignIcon";
+import InformationSignIcon from "@/components/Assets/informationSignIcon";
 import { motion as m } from "framer-motion";
 import Link from "next/link";
 import Container from "@/components/Container";
@@ -43,14 +43,14 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 <div className="flex justify-start py-5 text-black">
                     <Link
                         className="hover:font-bold text-sm lg:text-base pl-12 px-3"
-                        href={"/LandingPage"}
+                        href={"/landingPage"}
                     >
                         {t("pageProgressBar.home")}
                     </Link>
                     {">"}
                     <Link
                         className="hover:font-bold text-sm lg:text-base px-3"
-                        href={"/UseOfData"}
+                        href={"/useOfData"}
                     >
                         {t("pageProgressBar.useOfData")}
                     </Link>
@@ -645,13 +645,13 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 <div className="flex justify-center mt-8 mb-10 sm:m-5">
                     <Link
                         className="bg-prussian-blue hover:bg-darkblue font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3 w-56"
-                        href="/Summary?consent=false"
+                        href="/summary?consent=false"
                     >
                         {t("usingAiPage.disagreeButtonText")}
                     </Link>
                     <Link
                         className="bg-prussian-blue hover:bg-darkblue font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3 w-56"
-                        href="/Summary?consent=true"
+                        href="/summary?consent=true"
                     >
                         {t("usingAiPage.agreeButtonText")}
                     </Link>

@@ -54,7 +54,7 @@ const Login: React.FC = (
                                 </LoginButton>
                                 <LoginButton
                                     color="lavaorange"
-                                    href="/LandingPage"
+                                    href="/landingPage"
                                 >
                                     {t("loginPage.predictSickLeave")}
                                 </LoginButton>

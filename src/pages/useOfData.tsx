@@ -8,7 +8,7 @@ import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
 import DataTable from "@/components/DataTable";
 import Link from "next/link";
-import ProfileIcon from "@/components/Assets/ProfileIcon";
+import ProfileIcon from "@/components/Assets/profileIcon";
 import Container from "@/components/Container";
 import NavBar from "@/components/NavBar";
 
@@ -32,7 +32,7 @@ const UseOfData: React.FC = (
             <div className="flex justify-start py-5 text-black">
                 <Link
                     className="hover:font-bold text-sm lg:text-base sm:pl-12 px-3"
-                    href={"/LandingPage"}
+                    href={"/landingPage"}
                 >
                     {t("pageProgressBar.home")}
                 </Link>
@@ -104,7 +104,7 @@ const UseOfData: React.FC = (
                             </a>
                         </div>
                         <div className="flex justify-center mt-5 mb-10">
-                            <Button color="lavaorange" href="/UsingAi">
+                            <Button color="lavaorange" href="/usingAi">
                                 {t("landingPage.continueButtonText")}
                             </Button>
                         </div>
