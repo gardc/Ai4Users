@@ -32,8 +32,7 @@ const LoginButton: React.FC<ButtonProps> = ({
     let colorClasses;
     switch (color) {
         case "lavaorange":
-            colorClasses =
-                "bg-lavaorange text-white hover:bg-darkerorange hover:drop-shadow-lg";
+            colorClasses = "bg-lavaorange text-white hover:bg-opacity-50 hover:drop-shadow-lg";
             break;
         case "lightblue":
             colorClasses =
@@ -45,10 +44,7 @@ const LoginButton: React.FC<ButtonProps> = ({
         positionClass = positionClass.concat(" order-", String(positionSmall));
     }
     if (positionLarge != null) {
-        positionClass = positionClass.concat(
-            " md:order-",
-            String(positionLarge)
-        );
+        positionClass = positionClass.concat(" md:order-", String(positionLarge));
     }
 
     const classes = `${baseClasses} ${colorClasses} ${positionClass}`;
