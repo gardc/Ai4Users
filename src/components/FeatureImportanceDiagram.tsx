@@ -107,9 +107,9 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
      * Holds a list of the current features and feature  importance weights, given the selected
      * value of the changeable parameter.
      */
-    const [importanceWeightsOfFeatures, setImportanceWeightsOfFeatures] = useState<
-        { feature: string; weight: number }[]
-    >([]);
+    const [importanceWeightsOfFeatures, setImportanceWeightsOfFeatures] = useState(
+        parameter.arguments[0].featureImportanceGivenArgument
+    );
 
     /**
      * Holds a boolean representing whether the pie chart should be visible or not.
@@ -135,7 +135,11 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
     /**
      * The names of the saved features in the "importanceWeightsOfFeatures" state.
      */
-    let featureNames = importanceWeightsOfFeatures.map((d) => d.feature);
+    const [featureNames, setFeatureNames] = useState<string[]>([]);
+
+    useEffect(() => {
+        setFeatureNames(importanceWeightsOfFeatures.map((d) => d.feature));
+    }, [importanceWeightsOfFeatures]);
 
     /**
      * A list of HEX-values for colors used in the pie chart. Only five colors are defined as the
@@ -219,6 +223,8 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                     ? (y?.(d.feature) ?? 0) + y?.bandwidth() / 2 - 0.5 * y?.bandwidth()
                     : null
             )
+            .transition()
+            .duration(700)
             .attr("width", (d: { weight: number }) =>
                 d && d.weight * 100 ? x(d.weight * 100) : null
             )
@@ -243,10 +249,10 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
      */
     const drawPieChart = useCallback(() => {
         const svg = d3.select(pieChartRef.current);
-        svg.selectAll("*").remove();
 
         const colorScale = d3.scaleOrdinal().domain(featureNames).range(colorsForDiagram);
         const colorMapping: { [key: string]: any } = {};
+
         featureNames.forEach((name) => {
             colorMapping[name] = colorScale(name);
         });
@@ -267,37 +273,57 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
             .innerRadius(0)
             .outerRadius(150);
 
-        const g = svg
-            .append("g")
-            .attr(
-                "transform",
-                `translate(${parseInt(svg.attr("width")) / 2}, ${parseInt(svg.attr("height")) / 2})`
-            );
+        let g = svg.select<SVGGElement>("g");
 
-        g.selectAll("path")
-            .data(pieChartData)
+        if (g.empty()) {
+            g = svg
+                .append("g")
+                .attr(
+                    "transform",
+                    `translate(${parseInt(svg.attr("width")) / 2}, ${
+                        parseInt(svg.attr("height")) / 2
+                    })`
+                );
+        }
+
+        const paths = g.selectAll("path").data(pieChartData);
+
+        paths
             .enter()
             .append("path")
-            .attr("d", arcGenerator)
             .attr("fill", (d) => colorMapping[d.data.feature])
             .append("title")
             .text((d) => `${d.data.feature}: ${d.data.weight}`);
 
-        g.selectAll("text")
-            .data(pieChartData)
-            .enter()
-            .append("text")
+        paths
+            .transition()
+            .duration(700)
+            .attr("d", arcGenerator)
+            .attr("fill", (d) => colorMapping[d.data.feature])
+            .select("title")
+            .text((d) => `${d.data.feature}: ${d.data.weight}`);
+
+        paths.exit().remove();
+
+        const labels = g.selectAll("text").data(pieChartData);
+
+        labels.enter().append("text").style("fill", "white").style("text-anchor", "middle");
+
+        labels
+            .transition()
+            .duration(700)
             .attr("transform", (d) => `translate(${arcGenerator.centroid(d)})`)
             .attr("dy", "0.35em")
-            .text((d) => Math.floor(d.data.weight * 100) + "%")
-            .style("fill", "white")
-            .style("text-anchor", "middle");
+            .text((d) => Math.floor(d.data.weight * 100) + "%");
+
+        labels.exit().remove();
     }, [importanceWeightsOfFeatures, colorsForDiagram, featureNames]);
 
     useEffect(() => {
         //  Sets the initial contents of the "importanceWeightsOfFeatures" state.
         if (importanceWeightsOfFeatures.length === 0) {
             setImportanceWeightsOfFeatures(parameter.arguments[0].featureImportanceGivenArgument);
+            //Her virker det som om setImportanceWeightsOfFeatures ikke er definert enda? importanceWeightsOfFeatures er tom selv etter denne linjen
         }
 
         // Disables the pie chart if the number of features saved in the
@@ -339,7 +365,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                     weight: ri.weight,
                 })) ?? [];
         setImportanceWeightsOfFeatures(importanceWeightsOfFeaturesFromParam);
-        featureNames = importanceWeightsOfFeatures.map((d) => d.feature);
+        setFeatureNames(importanceWeightsOfFeatures.map((d) => d.feature));
     };
 
     return (
@@ -369,24 +395,24 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                             </option>
                         ))}
                     </select>
-                    {!pieChartVisible && (
-                        <div className="w-3/4 xl:w-full mx-auto">
-                            <svg
-                                className="mx-auto mt-0 xl:mt-8 mb-8 my-auto py-4"
-                                ref={barPlotRef}
-                                width="480"
-                                height="500"
-                            ></svg>
-                        </div>
-                    )}
-                    {pieChartVisible && !moreThanFiveFeatures && (
+                    <div className="w-3/4 xl:w-full mx-auto">
                         <svg
-                            className="mx-auto my-auto w-3/4 lg:w-1/2 xl:w-full"
-                            ref={pieChartRef}
-                            viewBox="-200 -200 400 400"
-                            preserveAspectRatio="xMidYMid meet"
+                            className={`mx-auto mt-0 xl:mt-8 mb-8 my-auto py-4 ${
+                                !pieChartVisible ? "block" : "hidden"
+                            }`}
+                            ref={barPlotRef}
+                            width="480"
+                            height="500"
                         ></svg>
-                    )}
+                    </div>
+                    <svg
+                        className={`mx-auto my-auto w-3/4 lg:w-1/2 xl:w-full ${
+                            pieChartVisible && !moreThanFiveFeatures ? "block" : "hidden"
+                        }`}
+                        ref={pieChartRef}
+                        viewBox="-200 -200 400 400"
+                        preserveAspectRatio="xMidYMid meet"
+                    ></svg>
                     <div>
                         {pieChartVisible &&
                             !moreThanFiveFeatures &&
