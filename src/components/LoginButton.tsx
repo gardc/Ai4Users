@@ -15,12 +15,16 @@ interface ButtonProps {
     color?: "lavaorange" | "lightblue";
     href: string;
     children: React.ReactNode;
+    positionSmall?: number;
+    positionLarge?: number;
 }
 
 const LoginButton: React.FC<ButtonProps> = ({
     color = "lavaorange",
     href,
     children,
+    positionSmall,
+    positionLarge,
 }) => {
     const baseClasses =
         "flex items-center justify-center text-center break-words text-2xl w-full y-full py-8 px-4 rounded-3xl";
@@ -28,14 +32,22 @@ const LoginButton: React.FC<ButtonProps> = ({
     let colorClasses;
     switch (color) {
         case "lavaorange":
-            colorClasses = "bg-lavaorange text-white";
+            colorClasses = "bg-lavaorange text-white hover:bg-opacity-50 hover:drop-shadow-lg";
             break;
         case "lightblue":
-            colorClasses = "bg-lightblue text-white border-primary border";
+            colorClasses =
+                "bg-lightblue text-white border-primary border hover:bg-darkblue hover:drop-shadow-lg";
             break;
     }
+    let positionClass = "";
+    if (positionSmall != null) {
+        positionClass = positionClass.concat(" order-", String(positionSmall));
+    }
+    if (positionLarge != null) {
+        positionClass = positionClass.concat(" md:order-", String(positionLarge));
+    }
 
-    const classes = `${baseClasses} ${colorClasses}`;
+    const classes = `${baseClasses} ${colorClasses} ${positionClass}`;
 
     return (
         <Link href={href} className={classes}>
