@@ -104,12 +104,17 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
     parameter,
 }) => {
     /**
-     * Holds a list of the current features and feature  importance weights, given the selected
+     * Holds an array of the current features and feature  importance weights, given the selected
      * value of the changeable parameter.
      */
     const [importanceWeightsOfFeatures, setImportanceWeightsOfFeatures] = useState(
         parameter.arguments[0].featureImportanceGivenArgument
     );
+
+    /**
+     * The names of the saved features in the "importanceWeightsOfFeatures" state.
+     */
+    const [featureNames, setFeatureNames] = useState<string[]>([]);
 
     /**
      * Holds a boolean representing whether the pie chart should be visible or not.
@@ -133,15 +138,6 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
     const barPlotRef = useRef<SVGSVGElement>(null);
 
     /**
-     * The names of the saved features in the "importanceWeightsOfFeatures" state.
-     */
-    const [featureNames, setFeatureNames] = useState<string[]>([]);
-
-    useEffect(() => {
-        setFeatureNames(importanceWeightsOfFeatures.map((d) => d.feature));
-    }, [importanceWeightsOfFeatures]);
-
-    /**
      * A list of HEX-values for colors used in the pie chart. Only five colors are defined as the
      * pie chart will not show if more than five features are provided.
      */
@@ -159,7 +155,8 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
     };
 
     /**
-     * Draws the bar plot as an SVG based on the selected value for the changeable parameter.
+     * Draws or updates the bar plot as an SVG based on the selected value for the changeable
+     * parameter.
      */
     const drawBarPlot = useCallback(() => {
         const svg = d3.select(barPlotRef.current);
@@ -168,10 +165,12 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
         const width = +svg.attr("width") - margin.left - margin.right;
         const height = +svg.attr("height") - margin.top - margin.bottom;
 
-        // Check if the number of existing bars is higher than the length of importanceWeightsOfFeatures
+        // Checks if the number of existing bars is not equal to the length of
+        // importanceWeightsOfFeatures, meaning that the SVG needs to be redrawn to avoid
+        // overlapping bars.
         const existingBars = svg.selectAll(".bar").size();
         if (existingBars != importanceWeightsOfFeatures.length) {
-            svg.selectAll("*").remove(); // Remove all elements from the SVG
+            svg.selectAll("*").remove();
         }
 
         const maxWeight =
@@ -286,7 +285,8 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
     }, [importanceWeightsOfFeatures]);
 
     /**
-     * Draws the pie chart as an SVG based on the selected value for the changeable parameter.
+     * Draws or updates the pie chart as an SVG based on the selected value for the changeable
+     * parameter.
      */
     const drawPieChart = useCallback(() => {
         const svg = d3.select(pieChartRef.current);
@@ -364,7 +364,6 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
         //  Sets the initial contents of the "importanceWeightsOfFeatures" state.
         if (importanceWeightsOfFeatures.length === 0) {
             setImportanceWeightsOfFeatures(parameter.arguments[0].featureImportanceGivenArgument);
-            //Her virker det som om setImportanceWeightsOfFeatures ikke er definert enda? importanceWeightsOfFeatures er tom selv etter denne linjen
         }
 
         // Disables the pie chart if the number of features saved in the
@@ -386,6 +385,12 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
         drawPieChart,
         drawBarPlot,
     ]);
+
+    useEffect(() => {
+        // Sets the contents of the "featureNames" every time the "importanceWeightsOfFeatures"
+        // state is altered.
+        setFeatureNames(importanceWeightsOfFeatures.map((d) => d.feature));
+    }, [importanceWeightsOfFeatures]);
 
     /**
      * Sets the state holding the feature importance weights of the features, given the selected
