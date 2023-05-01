@@ -23,9 +23,7 @@ import React from "react";
  *
  * @returns A React functional component representing the summary page.
  */
-const Summary: React.FC = (
-    _props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const router = useRouter();
     const { consent } = router.query;
     const { locale } = router;
@@ -44,21 +42,12 @@ const Summary: React.FC = (
     } else if (consent === "false") {
         nextPage = "/feedback";
         predictionChoiceTitle = t("summaryPage.titleNotConsenting");
-        predictionChoiceTitle = predictionChoiceTitle.replace(
-            /(<b>not<\/b>)/,
-            "<b>$1</b>"
-        );
+        predictionChoiceTitle = predictionChoiceTitle.replace(/(<b>not<\/b>)/, "<b>$1</b>");
         predictionChoiceText = t("summaryPage.descriptionNotConsenting");
         if (locale === "en") {
-            predictionChoiceTitle = predictionChoiceTitle.replace(
-                /(not)/,
-                "<b>not</b>"
-            );
+            predictionChoiceTitle = predictionChoiceTitle.replace(/(not)/, "<b>not</b>");
         } else if (locale === "no") {
-            predictionChoiceTitle = predictionChoiceTitle.replace(
-                /(ikke)/,
-                "<b>ikke</b>"
-            );
+            predictionChoiceTitle = predictionChoiceTitle.replace(/(ikke)/, "<b>ikke</b>");
         } else {
             //TODO: Provide bold emphasis on german translation
         }
@@ -84,33 +73,25 @@ const Summary: React.FC = (
                     pages={[
                         {
                             title: t("pageProgressBar.home"),
-                            titleCompressed: t(
-                                "pageProgressBar.homeCompressed"
-                            ),
+                            titleCompressed: t("pageProgressBar.homeCompressed"),
                             href: "/landingPage",
                             currentPage: false,
                         },
                         {
                             title: t("pageProgressBar.useOfData"),
-                            titleCompressed: t(
-                                "pageProgressBar.useOfDataCompressed"
-                            ),
+                            titleCompressed: t("pageProgressBar.useOfDataCompressed"),
                             href: "/useOfData",
                             currentPage: false,
                         },
                         {
                             title: t("pageProgressBar.usingAiPage"),
-                            titleCompressed: t(
-                                "pageProgressBar.usingAiPageCompressed"
-                            ),
+                            titleCompressed: t("pageProgressBar.usingAiPageCompressed"),
                             href: "/usingAi",
                             currentPage: false,
                         },
                         {
                             title: t("pageProgressBar.summaryPage"),
-                            titleCompressed: t(
-                                "pageProgressBar.summaryPageCompressed"
-                            ),
+                            titleCompressed: t("pageProgressBar.summaryPageCompressed"),
                             href: "",
                             currentPage: true,
                         },
@@ -118,7 +99,7 @@ const Summary: React.FC = (
                 />
                 <div className="flex justify-end block lg:hidden pb-4 pr-2 sm:pr-8">
                     <Changelog
-                        title={t("changelogTitle")}
+                        title={t("changelog.title")}
                         listOfChanges={
                             locale == "no"
                                 ? changeLogItemsNo
@@ -148,9 +129,7 @@ const Summary: React.FC = (
                                     __html: predictionChoiceText,
                                 }}
                             />
-                            <p className="mt-4 px-4 text-left">
-                                {t("summaryPage.changeCoice")}
-                            </p>
+                            <p className="mt-4 px-4 text-left">{t("summaryPage.changeCoice")}</p>
                         </div>
                     </div>
                     <div className="flex flex-col items-center mt-10">
