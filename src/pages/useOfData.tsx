@@ -48,7 +48,7 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
                         {
                             title: t("pageProgressBar.home"),
                             titleCompressed: t("pageProgressBar.homeCompressed"),
-                            href: "/LandingPage",
+                            href: "/landingPage",
                             currentPage: false,
                         },
                         {
@@ -128,7 +128,7 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
                             <a href="/incorrectInformation">{t("useOfDataPage.incorrectData")}</a>
                         </div>
                         <div className="flex justify-center mt-5 mb-10">
-                            <Button color="lavaorange" href="/UsingAi">
+                            <Button color="lavaorange" href="/usingAi">
                                 {t("landingPage.continueButtonText")}
                             </Button>
                         </div>

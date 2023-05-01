@@ -1,8 +1,8 @@
 import { useTranslation } from "next-i18next";
-import ArrowToModelIcon from "./Assets/arrowToModelIcon";
+import ArrowToModelIcon from "@/components/Assets/arrowToModelIcon";
 import Button from "@/components/Button";
 import CaseHandlerIcon from "@/components/Assets/caseHandlerIcon";
-import CogIconLarge from "./Assets/cogIconLarge";
+import CogIconLarge from "@/components/Assets/cogIconLarge";
 import React, { FormEvent, useState } from "react";
 
 /**
@@ -72,13 +72,16 @@ interface SandboxProps {
  * Usage <Sandbox description={description} parameters={parameters} />
  */
 const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
-    const initialState = parameters.reduce<Record<string, string>>((acc, param) => {
-        const firstItemValueForModel = param.argument[0]?.itemValueForModel;
-        if (firstItemValueForModel) {
-            acc[param.labelValueForModel] = firstItemValueForModel;
-        }
-        return acc;
-    }, {});
+    const initialState = parameters.reduce<Record<string, string>>(
+        (acc, param) => {
+            const firstItemValueForModel = param.argument[0]?.itemValueForModel;
+            if (firstItemValueForModel) {
+                acc[param.labelValueForModel] = firstItemValueForModel;
+            }
+            return acc;
+        },
+        {}
+    );
     const { t } = useTranslation("common");
     const [cogSpin, setCogSpin] = useState(false);
     const [resultPulse, setResultPulse] = useState(false);
@@ -92,7 +95,10 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
      *
      * @param event - The event object triggered by the input element.
      */
-    const handleChangeOfValues = (parameterLabel: string, itemValueForModel: string) => {
+    const handleChangeOfValues = (
+        parameterLabel: string,
+        itemValueForModel: string
+    ) => {
         setSelectedValues((prevState) => ({
             ...prevState,
             [parameterLabel]: itemValueForModel,
@@ -157,13 +163,18 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                                 key={"div-" + parameter.label}
                                 className={"m-3 flex flex-col items-start mb-5"}
                             >
-                                <label htmlFor={parameter.label} className={"mb-1 font-bold"}>
+                                <label
+                                    htmlFor={parameter.label}
+                                    className={"mb-1 font-bold"}
+                                >
                                     {parameter.label}:
                                 </label>
                                 <select
                                     id={parameter.labelValueForModel}
                                     key={parameter.labelValueForModel}
-                                    className={"p-2 border rounded-lg shadow-md w-full"}
+                                    className={
+                                        "p-2 border rounded-lg shadow-md w-full"
+                                    }
                                     onChange={(e) =>
                                         handleChangeOfValues(
                                             parameter.labelValueForModel.toLowerCase(),
@@ -183,7 +194,9 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                             </div>
                         ))}
                         <div className={"flex justify-center"}>
-                            <Button type={"submit"}>{t("usingAiPage.sandbox.calculate")}</Button>
+                            <Button type={"submit"}>
+                                {t("usingAiPage.sandbox.calculate")}
+                            </Button>
                         </div>
                     </form>
                 </div>
@@ -225,8 +238,13 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                     <div className={"w-28"}>
                         <CaseHandlerIcon />
                     </div>
-                    <p className="mt-4 text-sm"> {t("usingAiPage.sandbox.caseHandlerText1")} </p>
-                    <p className="text-sm">{t("usingAiPage.sandbox.caseHandlerText2")}</p>
+                    <p className="mt-4 text-sm">
+                        {" "}
+                        {t("usingAiPage.sandbox.caseHandlerText1")}{" "}
+                    </p>
+                    <p className="text-sm">
+                        {t("usingAiPage.sandbox.caseHandlerText2")}
+                    </p>
                 </div>
             </div>
         </div>

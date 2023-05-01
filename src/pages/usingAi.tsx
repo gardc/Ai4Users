@@ -62,13 +62,13 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                             {
                                 title: t("pageProgressBar.home"),
                                 titleCompressed: t("pageProgressBar.homeCompressed"),
-                                href: "/LandingPage",
+                                href: "/landingPage",
                                 currentPage: false,
                             },
                             {
                                 title: t("pageProgressBar.useOfData"),
                                 titleCompressed: t("pageProgressBar.useOfDataCompressed"),
-                                href: "/UseOfData",
+                                href: "/useOfData",
                                 currentPage: false,
                             },
                             {
@@ -616,13 +616,13 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 <div className="flex justify-center mt-8 mb-10 sm:m-5">
                     <Link
                         className="bg-prussian-blue hover:bg-darkblue font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3 w-56"
-                        href="/Summary?consent=false"
+                        href="/summary?consent=false"
                     >
                         {t("usingAiPage.disagreeButtonText")}
                     </Link>
                     <Link
                         className="bg-prussian-blue hover:bg-darkblue font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3 w-56"
-                        href="/Summary?consent=true"
+                        href="/summary?consent=true"
                     >
                         {t("usingAiPage.agreeButtonText")}
                     </Link>

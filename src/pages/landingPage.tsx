@@ -67,7 +67,7 @@ const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticP
                                 </p>
                             </div>
                             <div className="mt-4 mb-8">
-                                <Button color="lavaorange" href="/UseOfData">
+                                <Button color="lavaorange" href="/useOfData">
                                     {t("landingPage.continueButtonText")}
                                 </Button>
                             </div>

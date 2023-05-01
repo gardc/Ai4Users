@@ -1,6 +1,6 @@
 import React from "react";
 
-function puzzleIcon() {
+function PuzzleIcon() {
     return (
         <div>
             <svg
@@ -22,4 +22,4 @@ function puzzleIcon() {
     );
 }
 
-export default puzzleIcon;
+export default PuzzleIcon;

@@ -40,7 +40,7 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
         predictionChoiceTitle = t("summaryPage.titleConsenting");
         predictionChoiceText = t("summaryPage.descriptionConsenting");
     } else if (consent === "false") {
-        nextPage = "/Feedback";
+        nextPage = "/feedback";
         predictionChoiceTitle = t("summaryPage.titleNotConsenting");
         predictionChoiceTitle = predictionChoiceTitle.replace(/(<b>not<\/b>)/, "<b>$1</b>");
         predictionChoiceText = t("summaryPage.descriptionNotConsenting");
@@ -74,19 +74,19 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
                         {
                             title: t("pageProgressBar.home"),
                             titleCompressed: t("pageProgressBar.homeCompressed"),
-                            href: "/LandingPage",
+                            href: "/landingPage",
                             currentPage: false,
                         },
                         {
                             title: t("pageProgressBar.useOfData"),
                             titleCompressed: t("pageProgressBar.useOfDataCompressed"),
-                            href: "/UseOfData",
+                            href: "/useOfData",
                             currentPage: false,
                         },
                         {
                             title: t("pageProgressBar.usingAiPage"),
                             titleCompressed: t("pageProgressBar.usingAiPageCompressed"),
-                            href: "/UsingAi",
+                            href: "/usingAi",
                             currentPage: false,
                         },
                         {
