@@ -24,8 +24,6 @@ import Container from "@/components/Container";
 import React from "react";
 import Sandbox from "@/components/Sandbox";
 import NavBar from "@/components/NavBar";
-import scaleIcon from "@/components/Assets/scaleIcon";
-
 /**
  * The page component for explaining the use of an AI model for the tester of the web application.
  * Supports i18next translation.
@@ -45,14 +43,14 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 <div className="flex justify-start py-5 text-black">
                     <Link
                         className="hover:font-bold text-sm lg:text-base pl-12 px-3"
-                        href={"/LandingPage"}
+                        href={"/landingPage"}
                     >
                         {t("pageProgressBar.home")}
                     </Link>
                     {">"}
                     <Link
                         className="hover:font-bold text-sm lg:text-base px-3"
-                        href={"/UseOfData"}
+                        href={"/useOfData"}
                     >
                         {t("pageProgressBar.useOfData")}
                     </Link>
@@ -647,13 +645,13 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 <div className="flex justify-center mt-8 mb-10 sm:m-5">
                     <Link
                         className="bg-prussian-blue hover:bg-darkblue font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3 w-56"
-                        href="/Summary?consent=false"
+                        href="/summary?consent=false"
                     >
                         {t("usingAiPage.disagreeButtonText")}
                     </Link>
                     <Link
                         className="bg-prussian-blue hover:bg-darkblue font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3 w-56"
-                        href="/Summary?consent=true"
+                        href="/summary?consent=true"
                     >
                         {t("usingAiPage.agreeButtonText")}
                     </Link>

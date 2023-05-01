@@ -1,7 +1,7 @@
 import React from "react";
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
-import Login from "@/pages/login";
+import Login from "./login";
 
 function index(_props: InferGetStaticPropsType<typeof getStaticProps>) {
     return <Login />;
