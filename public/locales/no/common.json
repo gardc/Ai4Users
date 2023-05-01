@@ -8,10 +8,16 @@
 
     "pageProgressBar": {
         "home": "Hjem",
+        "homeCompressed": "Hjem",
         "useOfData": "Bruk av data",
+        "useOfDataCompressed": "Data",
         "usingAiPage": "Bruk av KI",
-        "summaryPage": "Sammendrag"
+        "usingAiPageCompressed": "KI",
+        "summaryPage": "Sammendrag",
+        "summaryPageCompressed": "Sammendrag"
     },
+
+    "changelogTitle": "Siste endringer i KI-modellen",
 
     "userTestingLandingPage": {
         "title": "Takk for at du ønsker å teste nettapplikasjonen vår",

@@ -14,9 +14,7 @@ import sendApiRequest from "@/util/sendApiRequest";
  *
  * @returns A React functional component representing the landing page.
  */
-const Feedback: React.FC = (
-    _props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { t } = useTranslation("common");
     const [feedbackString, setFeedbackString] = useState("");
     const [waiting, setWaiting] = useState(false);
@@ -40,16 +38,19 @@ const Feedback: React.FC = (
         }
     };
 
-    const handleInputChange = (
-        event: React.ChangeEvent<HTMLTextAreaElement>
-    ) => {
+    const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         setFeedbackString(event.target.value);
     };
 
     return (
         <div className="bg-darkblue">
             <Container>
-                <NavBar enableLinkToFrontPage={false} />
+                <NavBar
+                    enableLinkToFrontPage={false}
+                    enableChangelog={false}
+                    changelogTitle={""}
+                    changelogItems={[]}
+                />
                 <div className="index pt-8 pb-8 flex-col flex items-center text-black">
                     <p className="text-center font-bold text-3xl sm:text-5xl tracking-wide sm:mt-16 ">
                         {t("feedback.title")}
@@ -79,15 +80,9 @@ const Feedback: React.FC = (
                                 {t("feedback.submit")}
                             </Button>
                         )}
-                        <Button
-                            color="lavaorange"
-                            href="/submittedPage"
-                            loading={waiting}
-                        >
+                        <Button color="lavaorange" href="/submittedPage" loading={waiting}>
                             {/* If finished, show continue button, else show skip */}
-                            {finished
-                                ? t("feedback.continue")
-                                : t("feedback.skip")}
+                            {finished ? t("feedback.continue") : t("feedback.skip")}
                         </Button>
                     </div>
                 </div>

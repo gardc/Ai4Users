@@ -21,7 +21,12 @@ const Login: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>)
     return (
         <Container>
             <div className="bg-darkblue h-screen">
-                <NavBar enableLinkToFrontPage={false} />
+                <NavBar
+                    enableLinkToFrontPage={false}
+                    enableChangelog={false}
+                    changelogTitle={""}
+                    changelogItems={[]}
+                />
                 <div className="index pb-16 flex-col flex items-center h-2/3">
                     <div
                         className="w-full md:w-5/6 mt-12 md:mt-24

@@ -1,4 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { changeLogItemsDe } from "./api/changelogItemsDe";
+import { changeLogItemsEn } from "./api/changelogItemsEn";
+import { changeLogItemsNo } from "./api/changelogItemsNo";
 import { exampleDataDe } from "./api/exampleDataDe";
 import { exampleDataEn } from "./api/exampleDataEn";
 import { exampleDataNo } from "./api/exampleDataNo";
@@ -6,11 +9,12 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
-import DataTable from "@/components/DataTable";
-import Link from "next/link";
-import ProfileIcon from "@/components/Assets/profileIcon";
+import Changelog from "@/components/Changelog";
 import Container from "@/components/Container";
+import DataTable from "@/components/DataTable";
 import NavBar from "@/components/NavBar";
+import ProfileIcon from "@/components/Assets/profileIcon";
+import ProgressBar from "@/components/ProgressBar";
 
 /**
  * The landing page component that displays initial information about the web
@@ -19,38 +23,67 @@ import NavBar from "@/components/NavBar";
  *
  * @returns A React functional component representing the landing page.
  */
-const UseOfData: React.FC = (
-    _props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { t } = useTranslation("common");
     const router = useRouter();
     const { locale } = router;
 
     return (
         <Container>
-            <NavBar enableLinkToFrontPage={true} />
-            <div className="flex justify-start py-5 text-black">
-                <Link
-                    className="hover:font-bold text-sm lg:text-base sm:pl-12 px-3"
-                    href={"/landingPage"}
-                >
-                    {t("pageProgressBar.home")}
-                </Link>
-                <p className="text-black">{">"}</p>
-                <p className="font-bold text-sm lg:text-base underline underline-offset-4 text-black px-3">
-                    {t("pageProgressBar.useOfData")}
-                </p>
-                <p className="text-gray-500">{">"}</p>
-                <p className="text-gray-500 text-sm lg:text-base px-3">
-                    {t("pageProgressBar.usingAiPage")}
-                </p>
-                <p className="text-gray-500">{">"}</p>
-                <p className="text-gray-500 text-sm lg:text-base px-3">
-                    {t("pageProgressBar.summaryPage")}
-                </p>
+            <NavBar
+                enableLinkToFrontPage={true}
+                enableChangelog={true}
+                changelogTitle={t("changelogTitle")}
+                changelogItems={
+                    locale == "no"
+                        ? changeLogItemsNo
+                        : locale == "de"
+                        ? changeLogItemsDe
+                        : changeLogItemsEn
+                }
+            />
+            <div className="flex justify-between items-center pt-2">
+                <ProgressBar
+                    pages={[
+                        {
+                            title: t("pageProgressBar.home"),
+                            titleCompressed: t("pageProgressBar.homeCompressed"),
+                            href: "/landingPage",
+                            currentPage: false,
+                        },
+                        {
+                            title: t("pageProgressBar.useOfData"),
+                            titleCompressed: t("pageProgressBar.useOfDataCompressed"),
+                            href: "",
+                            currentPage: true,
+                        },
+                        {
+                            title: t("pageProgressBar.usingAiPage"),
+                            titleCompressed: t("pageProgressBar.usingAiPageCompressed"),
+                            href: "",
+                            currentPage: false,
+                        },
+                        {
+                            title: t("pageProgressBar.summaryPage"),
+                            titleCompressed: t("pageProgressBar.summaryPageCompressed"),
+                            href: "",
+                            currentPage: false,
+                        },
+                    ]}
+                />
+                <div className="flex justify-end block lg:hidden pb-4 pr-2 sm:pr-8">
+                    <Changelog
+                        title={t("changelogTitle")}
+                        listOfChanges={
+                            locale == "no"
+                                ? changeLogItemsNo
+                                : locale == "de"
+                                ? changeLogItemsDe
+                                : changeLogItemsEn
+                        }
+                    />
+                </div>
             </div>
-
-            {/*Second page that shows personal information */}
             <div className="m-4 mb-20 flex justify-center">
                 <div
                     className="w-full sm:w-3/4 
@@ -79,29 +112,20 @@ const UseOfData: React.FC = (
                                 {t("useOfDataPage.informationSummaryTitle")}
                             </p>
                         </div>
-                        {/*Here there will be a component with information about the user */}
-                        {locale == "en" ? (
-                            <DataTable data={exampleDataEn} />
-                        ) : (
-                            <></>
-                        )}
-                        {locale == "no" ? (
-                            <DataTable data={exampleDataNo} />
-                        ) : (
-                            <></>
-                        )}
-                        {locale == "de" ? (
-                            <DataTable data={exampleDataDe} />
-                        ) : (
-                            <></>
-                        )}
+                        <DataTable
+                            data={
+                                locale == "no"
+                                    ? exampleDataNo
+                                    : locale == "de"
+                                    ? exampleDataDe
+                                    : exampleDataEn
+                            }
+                        />
                     </div>
 
                     <div className="flex-col justify-center flex">
                         <div className="flex justify-center mt-1 hover:text-sky-600 underline text-sm">
-                            <a href="/incorrectInformation">
-                                {t("useOfDataPage.incorrectData")}
-                            </a>
+                            <a href="/incorrectInformation">{t("useOfDataPage.incorrectData")}</a>
                         </div>
                         <div className="flex justify-center mt-5 mb-10">
                             <Button color="lavaorange" href="/usingAi">
