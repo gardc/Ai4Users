@@ -55,7 +55,7 @@ const Login: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>)
                             </div>
                             <LoginButton
                                 color="lavaorange"
-                                href="/LandingPage"
+                                href="/landingPage"
                                 positionSmall={1}
                                 positionLarge={2}
                             >

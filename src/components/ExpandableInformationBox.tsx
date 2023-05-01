@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Button from "@/components/Button";
-import InformationSignIcon from "./Assets/informationSignIcon";
+import InformationSignIcon from "@/components/Assets/informationSignIcon";
 import { createPortal } from "react-dom";
 
 export interface ExpandableInformationBoxProps {
@@ -74,7 +74,9 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
                                         <div className="my-auto">
                                             <InformationSignIcon />
                                         </div>
-                                        <p className="ml-4 mt-3">{expandedContentTitle}</p>
+                                        <p className="ml-4 mt-3">
+                                            {expandedContentTitle}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="text-black text-left font-light w-5/6 mx-auto p-8 sm:p-14">
