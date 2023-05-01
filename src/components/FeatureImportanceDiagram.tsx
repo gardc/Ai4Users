@@ -1,14 +1,8 @@
-import React, {
-    useState,
-    useEffect,
-    useRef,
-    useCallback,
-    useMemo,
-} from "react";
+import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import * as d3 from "d3";
-import BarChartIcon from "@/components/Assets/barChartIcon";
-import PieChartIcon from "@/components/Assets/pieChartIcon";
-import TransparentBoxIcon from "@/components/Assets/transparentBoxIcon";
+import BarChartIcon from "./Assets/barChartIcon";
+import PieChartIcon from "./Assets/pieChartIcon";
+import TransparentBoxIcon from "./Assets/transparentBoxIcon";
 
 /**
  * The type definition for the `FeatureImportanceDiagram` component's props.
@@ -110,11 +104,17 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
     parameter,
 }) => {
     /**
-     * Holds a list of the current features and feature  importance weights, given the selected
+     * Holds an array of the current features and feature  importance weights, given the selected
      * value of the changeable parameter.
      */
-    const [importanceWeightsOfFeatures, setImportanceWeightsOfFeatures] =
-        useState<{ feature: string; weight: number }[]>([]);
+    const [importanceWeightsOfFeatures, setImportanceWeightsOfFeatures] = useState(
+        parameter.arguments[0].featureImportanceGivenArgument
+    );
+
+    /**
+     * The names of the saved features in the "importanceWeightsOfFeatures" state.
+     */
+    const [featureNames, setFeatureNames] = useState<string[]>([]);
 
     /**
      * Holds a boolean representing whether the pie chart should be visible or not.
@@ -138,11 +138,6 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
     const barPlotRef = useRef<SVGSVGElement>(null);
 
     /**
-     * The names of the saved features in the "importanceWeightsOfFeatures" state.
-     */
-    let featureNames = importanceWeightsOfFeatures.map((d) => d.feature);
-
-    /**
      * A list of HEX-values for colors used in the pie chart. Only five colors are defined as the
      * pie chart will not show if more than five features are provided.
      */
@@ -160,21 +155,27 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
     };
 
     /**
-     * Draws the bar plot as an SVG based on the selected value for the changeable parameter.
+     * Draws or updates the bar plot as an SVG based on the selected value for the changeable
+     * parameter.
      */
     const drawBarPlot = useCallback(() => {
         const svg = d3.select(barPlotRef.current);
-        svg.selectAll("*").remove();
 
         const margin = { top: 20, right: 20, bottom: 30, left: 40 };
         const width = +svg.attr("width") - margin.left - margin.right;
         const height = +svg.attr("height") - margin.top - margin.bottom;
 
+        // Checks if the number of existing bars is not equal to the length of
+        // importanceWeightsOfFeatures, meaning that the SVG needs to be redrawn to avoid
+        // overlapping bars.
+        const existingBars = svg.selectAll(".bar").size();
+        if (existingBars != importanceWeightsOfFeatures.length) {
+            svg.selectAll("*").remove();
+        }
+
         const maxWeight =
             d3.max(
-                importanceWeightsOfFeatures.filter(
-                    (d) => d.weight !== undefined
-                ),
+                importanceWeightsOfFeatures.filter((d) => d.weight !== undefined),
                 (d) => d.weight as number
             )! * 100;
         const tickValues = d3.ticks(0, maxWeight, 5);
@@ -187,15 +188,28 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
             .padding(0.25)
             .domain(importanceWeightsOfFeatures.map((d) => d.feature));
 
-        const g = svg
-            .append("g")
-            .attr(
-                "transform",
-                "translate(" + margin.left + "," + margin.top + ")"
-            );
+        let g = svg.select<SVGGElement>("g");
 
-        g.append("g")
-            .attr("class", "axis axis--x")
+        if (g.empty()) {
+            g = svg
+                .append("g")
+                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+        }
+
+        let xAxis = g.select<SVGGElement>(".axis.axis--x");
+        let yAxis = g.select<SVGGElement>(".axis.axis--y");
+
+        if (xAxis.empty()) {
+            g.append("g").attr("class", "axis axis--x");
+            xAxis = g.select<SVGGElement>(".axis.axis--x");
+        }
+
+        if (yAxis.empty()) {
+            g.append("g").attr("class", "axis axis--y");
+            yAxis = g.select<SVGGElement>(".axis.axis--y");
+        }
+
+        xAxis
             .attr("transform", "translate(0," + height + ")")
             .call(
                 d3
@@ -208,41 +222,59 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
             .selectAll("text")
             .style("font-size", "20px");
 
-        g.append("g")
-            .attr("class", "axis axis--y")
-            .call(d3.axisLeft(y).ticks(10, "%"))
-            .selectAll("text")
-            .remove();
+        yAxis.call(d3.axisLeft(y).ticks(10, "%")).selectAll("text").remove();
 
-        const bars = g
-            .selectAll(".bar")
-            .data(importanceWeightsOfFeatures)
-            .enter()
-            .append("g")
-            .attr("class", "bar");
+        const bars = g.selectAll(".bar").data(importanceWeightsOfFeatures);
 
-        bars.append("rect")
+        bars.select("rect")
             .attr("x", 0)
             .attr("height", y?.bandwidth())
             .attr("y", (d: { feature?: string }) =>
                 d && d.feature
-                    ? (y?.(d.feature) ?? 0) +
-                      y?.bandwidth() / 2 -
-                      0.5 * y?.bandwidth()
+                    ? (y?.(d.feature) ?? 0) + y?.bandwidth() / 2 - 0.5 * y?.bandwidth()
                     : null
             )
+            .transition()
+            .duration(700)
             .attr("width", (d: { weight: number }) =>
                 d && d.weight * 100 ? x(d.weight * 100) : null
             )
             .attr("fill", "#c14922");
 
-        bars.append("text")
+        bars.select("text")
             .text((d) => d.feature)
             .attr("x", 10)
             .attr("y", (d: { feature?: string }) =>
+                d && d.feature ? (y?.(d.feature) ?? 0) + y?.bandwidth() / 2 + 5 : null
+            )
+            .attr("fill", "white")
+            .style("font-size", "20px");
+
+        const newBars = bars.enter().append("g").attr("class", "bar");
+
+        newBars
+            .append("rect")
+            .attr("x", 0)
+            .attr("height", y?.bandwidth())
+            .attr("y", (d: { feature?: string }) =>
                 d && d.feature
-                    ? (y?.(d.feature) ?? 0) + y?.bandwidth() / 2 + 5
+                    ? (y?.(d.feature) ?? 0) + y?.bandwidth() / 2 - 0.5 * y?.bandwidth()
                     : null
+            )
+            .attr("fill", "#c14922")
+            .attr("width", 0)
+            .transition()
+            .duration(700)
+            .attr("width", (d: { weight: number }) =>
+                d && d.weight * 100 ? x(d.weight * 100) : null
+            );
+
+        newBars
+            .append("text")
+            .text((d) => d.feature)
+            .attr("x", 10)
+            .attr("y", (d: { feature?: string }) =>
+                d && d.feature ? (y?.(d.feature) ?? 0) + y?.bandwidth() / 2 + 5 : null
             )
             .attr("fill", "white")
             .style("font-size", "20px");
@@ -253,17 +285,15 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
     }, [importanceWeightsOfFeatures]);
 
     /**
-     * Draws the pie chart as an SVG based on the selected value for the changeable parameter.
+     * Draws or updates the pie chart as an SVG based on the selected value for the changeable
+     * parameter.
      */
     const drawPieChart = useCallback(() => {
         const svg = d3.select(pieChartRef.current);
-        svg.selectAll("*").remove();
 
-        const colorScale = d3
-            .scaleOrdinal()
-            .domain(featureNames)
-            .range(colorsForDiagram);
+        const colorScale = d3.scaleOrdinal().domain(featureNames).range(colorsForDiagram);
         const colorMapping: { [key: string]: any } = {};
+
         featureNames.forEach((name) => {
             colorMapping[name] = colorScale(name);
         });
@@ -284,41 +314,56 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
             .innerRadius(0)
             .outerRadius(150);
 
-        const g = svg
-            .append("g")
-            .attr(
-                "transform",
-                `translate(${parseInt(svg.attr("width")) / 2}, ${
-                    parseInt(svg.attr("height")) / 2
-                })`
-            );
+        let g = svg.select<SVGGElement>("g");
 
-        g.selectAll("path")
-            .data(pieChartData)
+        if (g.empty()) {
+            g = svg
+                .append("g")
+                .attr(
+                    "transform",
+                    `translate(${parseInt(svg.attr("width")) / 2}, ${
+                        parseInt(svg.attr("height")) / 2
+                    })`
+                );
+        }
+
+        const paths = g.selectAll("path").data(pieChartData);
+
+        paths
             .enter()
             .append("path")
-            .attr("d", arcGenerator)
             .attr("fill", (d) => colorMapping[d.data.feature])
             .append("title")
             .text((d) => `${d.data.feature}: ${d.data.weight}`);
 
-        g.selectAll("text")
-            .data(pieChartData)
-            .enter()
-            .append("text")
+        paths
+            .transition()
+            .duration(700)
+            .attr("d", arcGenerator)
+            .attr("fill", (d) => colorMapping[d.data.feature])
+            .select("title")
+            .text((d) => `${d.data.feature}: ${d.data.weight}`);
+
+        paths.exit().remove();
+
+        const labels = g.selectAll("text").data(pieChartData);
+
+        labels.enter().append("text").style("fill", "white").style("text-anchor", "middle");
+
+        labels
+            .transition()
+            .duration(700)
             .attr("transform", (d) => `translate(${arcGenerator.centroid(d)})`)
             .attr("dy", "0.35em")
-            .text((d) => Math.floor(d.data.weight * 100) + "%")
-            .style("fill", "white")
-            .style("text-anchor", "middle");
+            .text((d) => Math.floor(d.data.weight * 100) + "%");
+
+        labels.exit().remove();
     }, [importanceWeightsOfFeatures, colorsForDiagram, featureNames]);
 
     useEffect(() => {
         //  Sets the initial contents of the "importanceWeightsOfFeatures" state.
         if (importanceWeightsOfFeatures.length === 0) {
-            setImportanceWeightsOfFeatures(
-                parameter.arguments[0].featureImportanceGivenArgument
-            );
+            setImportanceWeightsOfFeatures(parameter.arguments[0].featureImportanceGivenArgument);
         }
 
         // Disables the pie chart if the number of features saved in the
@@ -341,15 +386,19 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
         drawBarPlot,
     ]);
 
+    useEffect(() => {
+        // Sets the contents of the "featureNames" every time the "importanceWeightsOfFeatures"
+        // state is altered.
+        setFeatureNames(importanceWeightsOfFeatures.map((d) => d.feature));
+    }, [importanceWeightsOfFeatures]);
+
     /**
      * Sets the state holding the feature importance weights of the features, given the selected
      * value of the changeable parameter.
      *
      * @param event The event that triggered the change of value for the changeable parameter.
      */
-    const handleParameterSelection = (
-        event: React.ChangeEvent<HTMLSelectElement>
-    ) => {
+    const handleParameterSelection = (event: React.ChangeEvent<HTMLSelectElement>) => {
         const targetValue: string = event.target.value;
         const importanceWeightsOfFeaturesFromParam: {
             feature: string;
@@ -362,7 +411,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                     weight: ri.weight,
                 })) ?? [];
         setImportanceWeightsOfFeatures(importanceWeightsOfFeaturesFromParam);
-        featureNames = importanceWeightsOfFeatures.map((d) => d.feature);
+        setFeatureNames(importanceWeightsOfFeatures.map((d) => d.feature));
     };
 
     return (
@@ -380,41 +429,38 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
 
                 <div className="flex flex-col xl:w-1/2 bg-white rounded-xl pl-12 p-8 mx-auto">
                     <div>
-                        <label className="text-xl font-bold">
-                            {parameter.label}
-                        </label>
+                        <label className="text-xl font-bold">{parameter.label}</label>
                     </div>
                     <select
                         className="mt-2 p-2 border rounded-lg shadow-md w-full"
                         onChange={handleParameterSelection}
                     >
                         {parameter.arguments.map((argument) => (
-                            <option
-                                key={argument.argumentName}
-                                value={argument.argumentName}
-                            >
+                            <option key={argument.argumentName} value={argument.argumentName}>
                                 {argument.argumentName}
                             </option>
                         ))}
                     </select>
-                    {!pieChartVisible && (
-                        <div className="w-3/4 xl:w-full mx-auto">
-                            <svg
-                                className="mx-auto mt-0 xl:mt-8 mb-8 my-auto py-4"
-                                ref={barPlotRef}
-                                width="480"
-                                height="500"
-                            ></svg>
-                        </div>
-                    )}
-                    {pieChartVisible && !moreThanFiveFeatures && (
+                    <div className="w-full sm:w-3/4 md:w-full lg:w-3/4 xl:w-full mx-auto">
                         <svg
-                            className="mx-auto my-auto w-3/4 lg:w-1/2 xl:w-full"
+                            className={`mx-auto mt-0 xl:mt-8 mb-8 my-auto py-4 ${
+                                !pieChartVisible ? "block" : "hidden"
+                            }`}
+                            ref={barPlotRef}
+                            width="480"
+                            height="500"
+                        ></svg>
+                    </div>
+                    <div className="w-full mx-auto">
+                        <svg
+                            className={`mx-auto my-auto w-3/4 lg:w-1/2 xl:w-full ${
+                                pieChartVisible && !moreThanFiveFeatures ? "block" : "hidden"
+                            }`}
                             ref={pieChartRef}
                             viewBox="-200 -200 400 400"
                             preserveAspectRatio="xMidYMid meet"
                         ></svg>
-                    )}
+                    </div>
                     <div>
                         {pieChartVisible &&
                             !moreThanFiveFeatures &&
@@ -426,9 +472,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                                             backgroundColor: `${colorsForDiagram[index]}`,
                                         }}
                                     ></div>
-                                    <p className="ml-2 text-lg font-light">
-                                        {name}
-                                    </p>
+                                    <p className="ml-2 text-lg font-light">{name}</p>
                                 </div>
                             ))}
                     </div>
@@ -438,11 +482,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                                 className="text-white rounded-md bg-prussian-blue p-3 float-right hover:bg-lightblue"
                                 onClick={switchDiagram}
                             >
-                                {pieChartVisible ? (
-                                    <BarChartIcon />
-                                ) : (
-                                    <PieChartIcon />
-                                )}
+                                {pieChartVisible ? <BarChartIcon /> : <PieChartIcon />}
                             </button>
                         )}
                     </div>
