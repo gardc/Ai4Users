@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useRef, useCallback, useMemo } from "react";
 import * as d3 from "d3";
-import BarChartIcon from "@/components/Assets/barChartIcon";
-import PieChartIcon from "@/components/Assets/pieChartIcon";
-import TransparentBoxIcon from "@/components/Assets/transparentBoxIcon";
+import BarChartIcon from "./Assets/barChartIcon";
+import PieChartIcon from "./Assets/pieChartIcon";
+import TransparentBoxIcon from "./Assets/transparentBoxIcon";
 
 /**
  * The type definition for the `FeatureImportanceDiagram` component's props.
@@ -242,35 +242,6 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
             .attr("fill", "#c14922");
 
         bars.select("text")
-            .text((d) => d.feature)
-            .attr("x", 10)
-            .attr("y", (d: { feature?: string }) =>
-                d && d.feature ? (y?.(d.feature) ?? 0) + y?.bandwidth() / 2 + 5 : null
-            )
-            .attr("fill", "white")
-            .style("font-size", "20px");
-
-        const newBars = bars.enter().append("g").attr("class", "bar");
-
-        newBars
-            .append("rect")
-            .attr("x", 0)
-            .attr("height", y?.bandwidth())
-            .attr("y", (d: { feature?: string }) =>
-                d && d.feature
-                    ? (y?.(d.feature) ?? 0) + y?.bandwidth() / 2 - 0.5 * y?.bandwidth()
-                    : null
-            )
-            .attr("fill", "#c14922")
-            .attr("width", 0)
-            .transition()
-            .duration(700)
-            .attr("width", (d: { weight: number }) =>
-                d && d.weight * 100 ? x(d.weight * 100) : null
-            );
-
-        newBars
-            .append("text")
             .text((d) => d.feature)
             .attr("x", 10)
             .attr("y", (d: { feature?: string }) =>
