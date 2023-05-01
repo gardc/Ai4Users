@@ -11,14 +11,17 @@ import NavBar from "@/components/NavBar";
  *
  * @returns A React functional component representing the summary page.
  */
-const SubmittedPage: React.FC = (
-    _props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+const SubmittedPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { t } = useTranslation("common");
 
     return (
         <Container>
-            <NavBar enableLinkToFrontPage={false} />
+            <NavBar
+                enableLinkToFrontPage={false}
+                enableChangelog={false}
+                changelogTitle={""}
+                changelogItems={[]}
+            />
             <div className="m-4 flex justify-center mb-20">
                 <div
                     className="w-full sm:w-3/4

@@ -1,4 +1,7 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
+import { changeLogItemsDe } from "./api/changelogItemsDe";
+import { changeLogItemsEn } from "./api/changelogItemsEn";
+import { changeLogItemsNo } from "./api/changelogItemsNo";
 import { exampleDataDe } from "./api/exampleDataDe";
 import { exampleDataEn } from "./api/exampleDataEn";
 import { exampleDataNo } from "./api/exampleDataNo";
@@ -6,12 +9,13 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
-import DataTable from "@/components/DataTable";
-import Link from "next/link";
+import Changelog from "@/components/Changelog";
 import Container from "@/components/Container";
-import React from "react";
-import ProfileIcon from "@/components/Assets/profileIcon";
+import DataTable from "@/components/DataTable";
 import NavBar from "@/components/NavBar";
+import ProfileIcon from "@/components/Assets/profileIcon";
+import ProgressBar from "@/components/ProgressBar";
+import React from "react";
 
 /**
  * The summary page component that displays a summary of information used to estimate sick leave
@@ -19,9 +23,7 @@ import NavBar from "@/components/NavBar";
  *
  * @returns A React functional component representing the summary page.
  */
-const Summary: React.FC = (
-    _props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const router = useRouter();
     const { consent } = router.query;
     const { locale } = router;
@@ -40,21 +42,12 @@ const Summary: React.FC = (
     } else if (consent === "false") {
         nextPage = "/feedback";
         predictionChoiceTitle = t("summaryPage.titleNotConsenting");
-        predictionChoiceTitle = predictionChoiceTitle.replace(
-            /(<b>not<\/b>)/,
-            "<b>$1</b>"
-        );
+        predictionChoiceTitle = predictionChoiceTitle.replace(/(<b>not<\/b>)/, "<b>$1</b>");
         predictionChoiceText = t("summaryPage.descriptionNotConsenting");
         if (locale === "en") {
-            predictionChoiceTitle = predictionChoiceTitle.replace(
-                /(not)/,
-                "<b>not</b>"
-            );
+            predictionChoiceTitle = predictionChoiceTitle.replace(/(not)/, "<b>not</b>");
         } else if (locale === "no") {
-            predictionChoiceTitle = predictionChoiceTitle.replace(
-                /(ikke)/,
-                "<b>ikke</b>"
-            );
+            predictionChoiceTitle = predictionChoiceTitle.replace(/(ikke)/, "<b>ikke</b>");
         } else {
             //TODO: Provide bold emphasis on german translation
         }
@@ -63,32 +56,59 @@ const Summary: React.FC = (
 
     return (
         <Container>
-            <NavBar enableLinkToFrontPage={true} />
-            <div className="flex justify-start py-5 text-black">
-                <Link
-                    className="hover:font-bold text-sm lg:text-base pl-12 px-3"
-                    href={"/landingPage"}
-                >
-                    {t("pageProgressBar.home")}
-                </Link>
-                {">"}
-                <Link
-                    className="hover:font-bold text-sm lg:text-base px-3"
-                    href={"/useOfData"}
-                >
-                    {t("pageProgressBar.useOfData")}
-                </Link>
-                {">"}
-                <Link
-                    className="hover:font-bold text-sm lg:text-base px-3"
-                    href={"/usingAi"}
-                >
-                    {t("pageProgressBar.usingAiPage")}
-                </Link>
-                {">"}
-                <p className="font-bold text-sm lg:text-base underline underline-offset-4 px-3">
-                    {t("pageProgressBar.summaryPage")}
-                </p>
+            <NavBar
+                enableLinkToFrontPage={true}
+                enableChangelog={true}
+                changelogTitle={t("changelogTitle")}
+                changelogItems={
+                    locale == "no"
+                        ? changeLogItemsNo
+                        : locale == "de"
+                        ? changeLogItemsDe
+                        : changeLogItemsEn
+                }
+            />
+            <div className="flex justify-between items-center pt-2">
+                <ProgressBar
+                    pages={[
+                        {
+                            title: t("pageProgressBar.home"),
+                            titleCompressed: t("pageProgressBar.homeCompressed"),
+                            href: "/landingPage",
+                            currentPage: false,
+                        },
+                        {
+                            title: t("pageProgressBar.useOfData"),
+                            titleCompressed: t("pageProgressBar.useOfDataCompressed"),
+                            href: "/useOfData",
+                            currentPage: false,
+                        },
+                        {
+                            title: t("pageProgressBar.usingAiPage"),
+                            titleCompressed: t("pageProgressBar.usingAiPageCompressed"),
+                            href: "/usingAi",
+                            currentPage: false,
+                        },
+                        {
+                            title: t("pageProgressBar.summaryPage"),
+                            titleCompressed: t("pageProgressBar.summaryPageCompressed"),
+                            href: "",
+                            currentPage: true,
+                        },
+                    ]}
+                />
+                <div className="flex justify-end block lg:hidden pb-4 pr-2 sm:pr-8">
+                    <Changelog
+                        title={t("changelogTitle")}
+                        listOfChanges={
+                            locale == "no"
+                                ? changeLogItemsNo
+                                : locale == "de"
+                                ? changeLogItemsDe
+                                : changeLogItemsEn
+                        }
+                    />
+                </div>
             </div>
             <div className="m-4 flex justify-center mb-20">
                 <div
@@ -109,9 +129,7 @@ const Summary: React.FC = (
                                     __html: predictionChoiceText,
                                 }}
                             />
-                            <p className="mt-4 px-4 text-left">
-                                {t("summaryPage.changeCoice")}
-                            </p>
+                            <p className="mt-4 px-4 text-left">{t("summaryPage.changeCoice")}</p>
                         </div>
                     </div>
                     <div className="flex flex-col items-center mt-10">
@@ -122,21 +140,15 @@ const Summary: React.FC = (
                                     {t("summaryPage.informationSummaryTitle")}
                                 </p>
                             </div>
-                            {locale == "en" ? (
-                                <DataTable data={exampleDataEn} />
-                            ) : (
-                                <></>
-                            )}
-                            {locale == "no" ? (
-                                <DataTable data={exampleDataNo} />
-                            ) : (
-                                <></>
-                            )}
-                            {locale == "de" ? (
-                                <DataTable data={exampleDataDe} />
-                            ) : (
-                                <></>
-                            )}
+                            <DataTable
+                                data={
+                                    locale == "no"
+                                        ? exampleDataNo
+                                        : locale == "de"
+                                        ? exampleDataDe
+                                        : exampleDataEn
+                                }
+                            />
                         </div>
                         <p className="text-base px-4 w-3/4 lg:w-7/12 mb-10 text-left font-light">
                             {t("summaryPage.informationSummarySource")}
