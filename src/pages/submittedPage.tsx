@@ -4,6 +4,7 @@ import { useTranslation } from "next-i18next";
 import Container from "@/components/Container";
 import React from "react";
 import NavBar from "@/components/NavBar";
+import { useRouter } from "next/router";
 
 /**
  * The summary page component that displays a summary of information used to estimate sick leave
@@ -13,6 +14,15 @@ import NavBar from "@/components/NavBar";
  */
 const SubmittedPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { t } = useTranslation("common");
+    const router = useRouter();
+    const { consent } = router.query;
+    let descriptionText = "";
+
+    if (consent === "true") {
+        descriptionText = t("submittedPage.descriptionConsent");
+    } else if (consent === "false") {
+        descriptionText = t("submittedPage.descriptionNonConsent");
+    }
 
     return (
         <Container>
@@ -36,7 +46,7 @@ const SubmittedPage: React.FC = (_props: InferGetStaticPropsType<typeof getStati
                     </div>
                     <div className="flex flex-col items-center mt-10">
                         <p className="text-base px-4 w-3/4 lg:w-7/12 mb-10 text-left font-light">
-                            {t("submittedPage.description")}
+                            {descriptionText}
                         </p>
                         <div className="flex justify-center mt-4"></div>
                     </div>
@@ -51,7 +61,7 @@ export default SubmittedPage;
 type Props = {};
 
 export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => ({
-    props: {
-        ...(await serverSideTranslations(locale ?? "en", ["common"])),
-    },
+  props: {
+    ...(await serverSideTranslations(locale ?? "en", ["common"])),
+  },
 });

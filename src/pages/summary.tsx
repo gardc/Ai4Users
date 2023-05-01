@@ -36,7 +36,7 @@ const Summary: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps
     let predictionChoiceText = "";
     let nextPage = "";
     if (consent === "true") {
-        nextPage = "/submittedPage";
+        nextPage = "/submittedPage?consent=true";
         predictionChoiceTitle = t("summaryPage.titleConsenting");
         predictionChoiceText = t("summaryPage.descriptionConsenting");
     } else if (consent === "false") {

@@ -203,7 +203,8 @@
 
     "submittedPage": {
         "title": "Thank you for submitting your choice!",
-        "description": "The case handler will now receive the data relevant to your case, and will follow up on your case based on your needs."
+        "descriptionConsent": "The case handler will now receive the data relevant to your case and a prediction based on the AI model, and will follow up on your case based on your needs.",
+        "descriptionNonConsent": "The case handler will now receive the data relevant to your case, and will follow up on your case based on your needs without the use of the AI model."
     },
 
     "userTestingFinishedPage": {
