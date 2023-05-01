@@ -33,7 +33,7 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
             <NavBar
                 enableLinkToFrontPage={true}
                 enableChangelog={true}
-                changelogTitle={t("changelogTitle")}
+                changelogTitle={t("changelog.title")}
                 changelogItems={
                     locale == "no"
                         ? changeLogItemsNo
@@ -73,7 +73,7 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
                 />
                 <div className="flex justify-end block lg:hidden pb-4 pr-2 sm:pr-8">
                     <Changelog
-                        title={t("changelogTitle")}
+                        title={t("changelog.title")}
                         listOfChanges={
                             locale == "no"
                                 ? changeLogItemsNo

@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from "react";
 import "@fortawesome/fontawesome-free/css/all.css";
 import ChangelogIcon from "./Assets/changelogIcon";
 import Link from "next/link";
+import { useTranslation } from "next-i18next";
 
 /**
  * The type definition for the `Changelog` component's props.
@@ -66,9 +67,13 @@ interface ChangelogProps {
  *
  * Usage <Changelog title={title} listOfChanges={listOfChanges} />
  */
-const Changelog: React.FC<ChangelogProps> = ({ title, listOfChanges }: ChangelogProps) => {
+const Changelog: React.FC<ChangelogProps> = ({
+    title,
+    listOfChanges,
+}: ChangelogProps) => {
     const [changelogOpen, setChangelogOpen] = useState(false);
     const ref = useRef<HTMLInputElement>(null);
+    const { t } = useTranslation("common");
 
     // Adds and removes an event listener to/fro the document enabling closing of the changelog
     // when clicking outside of it.
@@ -122,12 +127,18 @@ const Changelog: React.FC<ChangelogProps> = ({ title, listOfChanges }: Changelog
                         ref={ref}
                         className="absolute drop-shadow-xl border-prussian-blue max-h-96 right-0 top-10 w-80 lg:w-full p-6 z-20 bg-prussian-blue rounded-b-xl rounded-l-xl lg:rounded-t-none text-white text-sm"
                     >
-                        <p className="lg:hidden sticky text-base font-light mb-4">{title}</p>
+                        <p className="lg:hidden sticky text-base font-light mb-4">
+                            {title}
+                        </p>
                         <div className="max-h-72 overflow-y-scroll">
                             {listOfChanges.map((changeItem) => (
                                 <>
-                                    <p className="pb-2">{changeItem.dateOfChange}</p>
-                                    <p className="pb-1">{changeItem.titleOfChange}</p>
+                                    <p className="pb-2">
+                                        {changeItem.dateOfChange}
+                                    </p>
+                                    <p className="pb-1">
+                                        {changeItem.titleOfChange}
+                                    </p>
                                     <p className="font-light text-xs pb-2">
                                         {changeItem.changeDescription}
                                     </p>
@@ -136,7 +147,7 @@ const Changelog: React.FC<ChangelogProps> = ({ title, listOfChanges }: Changelog
                                             href={changeItem.readMoreLink}
                                             className="underline hover:text-sky-600 font-light"
                                         >
-                                            Read more
+                                            {t("changelog.readMore")}
                                         </Link>
                                     )}
                                     <div className="w-full mt-4 bg-white h-[1px] mb-6"></div>
