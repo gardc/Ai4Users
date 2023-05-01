@@ -23,7 +23,9 @@ import ProgressBar from "@/components/ProgressBar";
  *
  * @returns A React functional component representing the landing page.
  */
-const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const UseOfData: React.FC = (
+    _props: InferGetStaticPropsType<typeof getStaticProps>
+) => {
     const { t } = useTranslation("common");
     const router = useRouter();
     const { locale } = router;
@@ -33,7 +35,7 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
             <NavBar
                 enableLinkToFrontPage={true}
                 enableChangelog={true}
-                changelogTitle={t("changelogTitle")}
+                changelogTitle={t("changelog.title")}
                 changelogItems={
                     locale == "no"
                         ? changeLogItemsNo
@@ -47,25 +49,33 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
                     pages={[
                         {
                             title: t("pageProgressBar.home"),
-                            titleCompressed: t("pageProgressBar.homeCompressed"),
+                            titleCompressed: t(
+                                "pageProgressBar.homeCompressed"
+                            ),
                             href: "/landingPage",
                             currentPage: false,
                         },
                         {
                             title: t("pageProgressBar.useOfData"),
-                            titleCompressed: t("pageProgressBar.useOfDataCompressed"),
+                            titleCompressed: t(
+                                "pageProgressBar.useOfDataCompressed"
+                            ),
                             href: "",
                             currentPage: true,
                         },
                         {
                             title: t("pageProgressBar.usingAiPage"),
-                            titleCompressed: t("pageProgressBar.usingAiPageCompressed"),
+                            titleCompressed: t(
+                                "pageProgressBar.usingAiPageCompressed"
+                            ),
                             href: "",
                             currentPage: false,
                         },
                         {
                             title: t("pageProgressBar.summaryPage"),
-                            titleCompressed: t("pageProgressBar.summaryPageCompressed"),
+                            titleCompressed: t(
+                                "pageProgressBar.summaryPageCompressed"
+                            ),
                             href: "",
                             currentPage: false,
                         },
@@ -125,7 +135,9 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
 
                     <div className="flex-col justify-center flex">
                         <div className="flex justify-center mt-1 hover:text-sky-600 underline text-sm">
-                            <a href="/incorrectInformation">{t("useOfDataPage.incorrectData")}</a>
+                            <a href="/incorrectInformation">
+                                {t("useOfDataPage.incorrectData")}
+                            </a>
                         </div>
                         <div className="flex justify-center mt-5 mb-10">
                             <Button color="lavaorange" href="/usingAi">
