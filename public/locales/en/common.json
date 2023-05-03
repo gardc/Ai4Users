@@ -53,9 +53,9 @@
 
     "loginPage": {
         "caseHandlerLogin": "Case handler login",
-        "caseHandlerDescription": "If you are a case handler you can click here to log into your case handler account.",
-        "predictSickLeave": "Predict sick leave",
-        "predictSickLeaveDescription": "If you are a citizen on a sick leave, you can click here to predict your sick leave duration."
+        "caseHandlerDescription": "If you are a case handler at The National Social Service, click here to log in.",
+        "predictSickLeave": "User login",
+        "predictSickLeaveDescription": "If you are on a sick leave, click here to go through the necessary steps to receive support."
     },
 
     "landingPage": {

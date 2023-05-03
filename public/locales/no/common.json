@@ -52,10 +52,10 @@
     },
 
     "loginPage": {
-        "caseHandlerLogin": "Saksbehandler innlogging",
-        "caseHandlerDescription": "Dersom du er en saksbehandler hos Den Nasjonale Sosialtjenesten kan du trykke her for å logge inn på saksbehandler kontoen din.",
-        "predictSickLeave": "Prediker sykefravær",
-        "predictSickLeaveDescription": "Dersom du er sykemeldt, kan du trykke her for å predikere ditt sykefravær."
+        "caseHandlerLogin": "Saksbehandler-innlogging",
+        "caseHandlerDescription": "Dersom du er en saksbehandler hos Den Nasjonale Sosialtjenesten, trykk her for å logge inn.",
+        "predictSickLeave": "Bruker-innlogging",
+        "predictSickLeaveDescription": "Dersom du er sykemeldt, trykk her for å gå gjennomgå de nødvendige stegene for å motta støtte."
     },
 
     "landingPage": {
