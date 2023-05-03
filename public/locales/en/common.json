@@ -203,7 +203,8 @@
 
     "submittedPage": {
         "title": "Thank you for submitting your choice!",
-        "description": "The case handler will now receive the data relevant to your case, and will follow up on your case based on your needs."
+        "descriptionConsent": "The case handler will now receive the data relevant to your case and a prediction based on the AI model. You will receive the decision regarding support measures within 1-2 weeks.",
+        "descriptionNonConsent": "The case handler will now receive the data relevant to your case and will make the decision without the use of the AI model. You will receive the decision regarding support measures within 1-2 weeks."
     },
 
     "userTestingFinishedPage": {

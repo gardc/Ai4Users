@@ -80,7 +80,7 @@ const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProp
                                 {t("feedback.submit")}
                             </Button>
                         )}
-                        <Button color="lavaorange" href="/submittedPage" loading={waiting}>
+                        <Button color="lavaorange" href="/submittedPage?consent=false" loading={waiting}>
                             {/* If finished, show continue button, else show skip */}
                             {finished ? t("feedback.continue") : t("feedback.skip")}
                         </Button>
