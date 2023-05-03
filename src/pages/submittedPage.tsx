@@ -34,18 +34,18 @@ const SubmittedPage: React.FC = (_props: InferGetStaticPropsType<typeof getStati
             />
             <div className="m-4 flex justify-center mb-20">
                 <div
-                    className="w-full sm:w-3/4
+                    className="w-full md:w-3/4 xl:w-1/2 mt-12
                 bg-white drop-shadow-lg py-4 sm:py-8 px-4 sm:px-16 rounded-xl flex justify-center items-center flex-col"
                 >
                     <div className="w-full flex flex-col justify-center text-2xl items-center">
-                        <div className="justify-center w-3/4 mx-auto m-6 text-lg font-light">
+                        <div className="justify-center w-4/5 mx-auto m-6 text-lg font-light">
                             <p className="text-prussian-blue text-center font-bold text-3xl m-3">
                                 {t("submittedPage.title")}
                             </p>
                         </div>
                     </div>
                     <div className="flex flex-col items-center mt-10">
-                        <p className="text-base px-4 w-3/4 lg:w-7/12 mb-10 text-left font-light">
+                        <p className="text-lg md:px-4 w-3/4 mb-10 text-left font-light">
                             {descriptionText}
                         </p>
                         <div className="flex justify-center mt-4"></div>
@@ -61,7 +61,7 @@ export default SubmittedPage;
 type Props = {};
 
 export const getStaticProps: GetStaticProps<Props> = async ({ locale }) => ({
-  props: {
-    ...(await serverSideTranslations(locale ?? "en", ["common"])),
-  },
+    props: {
+        ...(await serverSideTranslations(locale ?? "en", ["common"])),
+    },
 });
