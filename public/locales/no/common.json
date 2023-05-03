@@ -204,7 +204,7 @@
     "submittedPage": {
         "title": "Takk for at du sendte inn valget ditt!",
         "descriptionConsent": "Saksbehandler vil nå motta informasjonen som er relevant til din sak og en prediksjon basert på KI-modellen. Du vil motta et svar angående støtte innen 1-2 uker.",
-        "descriptionNonConsent": "Saksbehandler vil nå motta informasjonen som er relevant til din sak, og vil gjøre beslutningen uten bruk av KI-modellen. Du vil motta et svar angående støtte innen 1-2 uker"
+        "descriptionNonConsent": "Saksbehandler vil nå motta informasjonen som er relevant til din sak, og vil ta beslutningen uten bruk av KI-modellen. Du vil motta et svar angående støtte innen 1-2 uker"
     },
 
     "userTestingFinishedPage": {
