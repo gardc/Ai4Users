@@ -13,7 +13,7 @@ import Changelog from "@/components/Changelog";
 import Container from "@/components/Container";
 import DataTable from "@/components/DataTable";
 import NavBar from "@/components/NavBar";
-import ProfileIcon from "@/components/Assets/ProfileIcon";
+import ProfileIcon from "@/components/Assets/profileIcon";
 import ProgressBar from "@/components/ProgressBar";
 import React from "react";
 
