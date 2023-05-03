@@ -52,10 +52,10 @@
     },
 
     "loginPage": {
-        "caseHandlerLogin": "Saksbehandler innlogging",
-        "caseHandlerDescription": "Dersom du er en saksbehandler hos Den Nasjonale Sosialtjenesten kan du trykke her for å logge inn på saksbehandler kontoen din.",
-        "predictSickLeave": "Prediker sykefravær",
-        "predictSickLeaveDescription": "Dersom du er sykemeldt, kan du trykke her for å predikere ditt sykefravær."
+        "caseHandlerLogin": "Saksbehandler-innlogging",
+        "caseHandlerDescription": "Dersom du er en saksbehandler hos Den Nasjonale Sosialtjenesten, trykk her for å logge inn.",
+        "predictSickLeave": "Bruker-innlogging",
+        "predictSickLeaveDescription": "Dersom du er sykemeldt, trykk her for å gå gjennomgå de nødvendige stegene for å motta støtte."
     },
 
     "landingPage": {
@@ -185,9 +185,14 @@
                 "learnMoreLinkText": "Lær mer"
             }
         },
-        "consentQuestion": "Samtykker du til bruken av en kunstig intelligens-modell for å predikere varigheten av ditt sykefravær?",
-        "disagreeButtonText": "Jeg samtykker IKKE",
-        "agreeButtonText": "Jeg samtykker"
+        "consent": {
+            "title": "Du må nå velge om du vil samtykke til bruken av KI-modellen",
+            "disagreeDescription": "Dersom du velger å IKKE samtykke til bruken av KI-modellen, vil saksbehandleren prosessere personopplysningene dine for å avgjøre passende støtte uten bruk av modellen.",
+            "agreeDescription": "Dersom du velger å samtykke til bruken av KI-modellen, vil personopplysningene dine først bli behandlet at KI-modellen. Saksbehandleren vil så avgjøre passende støtte. Bruken av KI-modellen kan resultere i kortere behandlingstid.",
+            "question": "Samtykker du til bruken av en kunstig intelligens-modell for å predikere varigheten av ditt sykefravær?",
+            "disagreeButtonText": "Jeg samtykker IKKE",
+            "agreeButtonText": "Jeg samtykker"
+        }
     },
 
     "summaryPage": {
