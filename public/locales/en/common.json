@@ -185,9 +185,14 @@
                 "learnMoreLinkText": "Learn more"
             }
         },
-        "consentQuestion": "Do you consent to the usage of the AI model to predict your sick leave duration?",
-        "disagreeButtonText": "I do NOT consent",
-        "agreeButtonText": "I consent"
+        "consent": {
+            "title": "You will now have to choose whether you wish to consent to the usage of the AI model",
+            "disagreeDescription": "If you choose to NOT concent to the usage of the AI model, the case handler will process your information to decide appropriate support without the use of the model.",
+            "agreeDescription": "If you choose to consent to the usage of the AI model, your information will first be processed by the AI model. The case handler will then decide appropriate support. The usage of the AI model might result in shorter processing time.",
+            "question": "Do you consent to the usage of the AI model to predict your sick leave duration?",
+            "disagreeButtonText": "I do NOT consent",
+            "agreeButtonText": "I consent"
+        }
     },
 
     "summaryPage": {
