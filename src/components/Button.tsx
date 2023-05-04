@@ -46,18 +46,18 @@ const Button: React.FC<ButtonProps> = ({
     let colorClasses;
     switch (color) {
         case "orange":
-            colorClasses = "bg-lavaorange hover:bg-opacity-50 text-white";
+            colorClasses = "bg-orange hover:bg-opacity-70 text-white";
             break;
         case "blue":
-            colorClasses = "bg-prussian-blue hover:bg-darkblue text-white";
+            colorClasses = "bg-prussian-blue hover:bg-opacity-70 text-white";
             break;
         default:
-            colorClasses = "bg-black text-white";
+            colorClasses = "bg-black hover:bg-opacity-70 text-white";
     }
 
     let statusClass;
-    if (disabled) statusClass = `bg-opacity-50 cursor-not-allowed`;
-    if (loading) statusClass = `bg-opacity-50 cursor-wait`;
+    if (disabled) statusClass = `bg-lightgray hover:bg-opacity-100 cursor-not-allowed`;
+    if (loading) statusClass = `bg-opacity-70 cursor-wait`;
 
     const classes = `${baseClasses} ${colorClasses} ${statusClass}`;
 
