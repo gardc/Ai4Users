@@ -239,7 +239,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
             .attr("width", (d: { weight: number }) =>
                 d && d.weight * 100 ? x(d.weight * 100) : null
             )
-            .attr("fill", "#c14922");
+            .attr("fill", "currentColor");
 
         bars.select("text")
             .text((d) => d.feature)
@@ -261,7 +261,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                     ? (y?.(d.feature) ?? 0) + y?.bandwidth() / 2 - 0.5 * y?.bandwidth()
                     : null
             )
-            .attr("fill", "#c14922")
+            .attr("fill", "currentColor")
             .attr("width", 0)
             .transition()
             .duration(700)
@@ -278,6 +278,13 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
             )
             .attr("fill", "white")
             .style("font-size", "20px");
+
+        xAxis.selectAll("path").style("stroke", "black");
+        xAxis.selectAll("line").style("stroke", "black");
+        xAxis.selectAll("text").style("fill", "black");
+
+        yAxis.selectAll("path").style("stroke", "black");
+        yAxis.selectAll("line").style("stroke", "black");
 
         svg.attr("viewBox", `0 0 ${+svg.attr("width")} ${+svg.attr("height")}`);
         svg.style("width", "100%");
@@ -443,7 +450,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                     </select>
                     <div className="w-full sm:w-3/4 md:w-full lg:w-3/4 xl:w-full mx-auto">
                         <svg
-                            className={`mx-auto mt-0 xl:mt-8 mb-8 my-auto py-4 ${
+                            className={`mx-auto mt-0 xl:mt-8 mb-8 my-auto py-4 text-darkerorange ${
                                 !pieChartVisible ? "block" : "hidden"
                             }`}
                             ref={barPlotRef}
@@ -479,7 +486,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                     <div>
                         {!moreThanFiveFeatures && (
                             <button
-                                className="text-white rounded-md bg-prussian-blue p-3 float-right hover:bg-lightblue"
+                                className="text-white rounded-md bg-prussian-blue p-3 float-right hover:bg-darkblue"
                                 onClick={switchDiagram}
                             >
                                 {pieChartVisible ? <BarChartIcon /> : <PieChartIcon />}
