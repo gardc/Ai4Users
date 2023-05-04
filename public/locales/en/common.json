@@ -156,11 +156,11 @@
             "mainDescription": "By changing the values listed below, you can explore how they each impact the sick leave prediction that our case handlers will receive. This sandbox uses a simplified model and is only an example of the actual model's functionality.",
             "expandButtonText": "Learn more",
             "sickLeaveDescription": "Predicted sick-leave duration",
-            "calculate": "Calculate",
+            "calculate": "Predict",
             "weeks": "weeks",
             "weeksThree": "weeks or less",
             "weeksEight": "weeks or more",
-            "initialPredictionText": "Press \"Calculate\" to predict",
+            "initialPredictionText": "Press \"Predict\" to process",
             "caseHandlerText1": "Case handler receiving",
             "caseHandlerText2": "the prediction"
         },
