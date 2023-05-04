@@ -216,7 +216,7 @@
         "title": "Thank you for testing our web application!",
         "information": "You have now completed the demo. You can either go back to the beginning of the demo (front page), or continue to our survey (Google Forms) to answer some questions.",
         "toFrontPageButtonText": "Front page",
-        "toQuestionnaireButtonText": "Survey"
+        "toSurveyButtonText": "Survey"
     },
 
     "userTestingSurvey": "https://forms.gle/tiTeibKn9FJccgwbA"
