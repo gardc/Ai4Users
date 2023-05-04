@@ -107,7 +107,9 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
 
                     <div className="mt-10">
                         <div className="flex flex-row items-center w-full mx-4">
-                            <ProfileIcon />
+                            <div className="text-prussian-blue">
+                                <ProfileIcon />
+                            </div>
                             <p className="px-2 font-bold text-prussian-blue text-lg">
                                 {t("useOfDataPage.informationSummaryTitle")}
                             </p>
@@ -128,7 +130,7 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
                             <a href="/incorrectInformation">{t("useOfDataPage.incorrectData")}</a>
                         </div>
                         <div className="flex justify-center mt-5 mb-10">
-                            <Button color="lavaorange" href="/usingAi">
+                            <Button color="orange" href="/usingAi">
                                 {t("landingPage.continueButtonText")}
                             </Button>
                         </div>

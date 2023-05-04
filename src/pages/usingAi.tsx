@@ -113,7 +113,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                     <div className="p-4 sm:p-8 md:px-12 text-left text-lg font-light">
                         {t("usingAiPage.aboutAiInfo.description")}
                     </div>
-                    <div className="bg-slate-50 rounded-b-xl p-6 pb-0 lg:pb-12">
+                    <div className="bg-slate-light rounded-b-xl p-6 pb-0 lg:pb-12">
                         <div className="lg:grid lg:grid-cols-3 lg:gap-x-10 font-light pt-4 px-6">
                             <ExpandableInformationBox
                                 content={

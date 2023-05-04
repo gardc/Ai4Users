@@ -24,16 +24,16 @@ const LocaleSelection = () => {
     return (
         <div>
             <select
-                className="px-2 py-1 bg-neutral-200/25 rounded-md border border-neutral-200/25
+                className="px-2 py-1 bg-darkblue rounded-md border border-prussian-blue hover:bg-prussian-blue
                 cursor-pointer text-white"
                 name="Language"
                 onChange={(e) => changeLocale(e.target.value)}
                 defaultValue={locale}
             >
-                <option value="en" key="en" className="bg-lightblue">
+                <option value="en" key="en">
                     🇬🇧 English
                 </option>
-                <option value="no" key="no" className="bg-lightblue">
+                <option value="no" key="no">
                     🇳🇴 Norsk
                 </option>
                 {/* German will be added at a later stage */}
