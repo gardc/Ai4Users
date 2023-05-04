@@ -8,7 +8,7 @@ function ProfileIcon() {
             height="35"
             viewBox="0 0 24 24"
             strokeWidth={1.5}
-            stroke="#1c475d"
+            stroke="currentColor"
             className="w-10 h-10"
         >
             <path

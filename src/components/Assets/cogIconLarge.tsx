@@ -20,7 +20,7 @@ const CogIconLarge: React.FC = () => (
         9.84269 18.3754 8.68655 18.8246 7.71327C19.5679 6.10289 17.8971 4.4321 16.2867 
         5.17535C15.3135 5.62456 14.1573 5.17755 13.745 4.18806C13.0987 2.63693 10.9013 2.63693 
         10.255 4.18806Z"
-            stroke="#323232"
+            stroke="currentColor"
             strokeWidth="2"
             strokeLinecap="round"
             strokeLinejoin="round"
@@ -28,7 +28,7 @@ const CogIconLarge: React.FC = () => (
         <path
             d="M15 12C15 13.6569 13.6569 15 12 15C10.3431 15 9 13.6569 9 12C9 10.3431 10.3431 9 
         12 9C13.6569 9 15 10.3431 15 12Z"
-            stroke="#323232"
+            stroke="currentColor"
             strokeWidth="2"
         />
     </svg>
