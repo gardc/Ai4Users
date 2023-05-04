@@ -82,7 +82,7 @@ const LandingPage: React.FC = (
                             </div>
                         </div>
                         <div className="mt-6 mb-8">
-                            <Button color="lavaorange" href="/useOfData">
+                            <Button color="orange" href="/useOfData">
                                 {t("landingPage.continueButtonText")}
                             </Button>
                         </div>
