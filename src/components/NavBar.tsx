@@ -2,11 +2,8 @@ import Link from "next/link";
 import LocaleSelection from "./LocaleSelection";
 import React from "react";
 import SocialServiceLogo from "./SocialServiceLogo";
-import AiModelChangelog from "./Changelog";
-import { changeLogItemsEn } from "@/pages/api/changelogItemsEn";
-import router from "next/router";
-import { changeLogItemsNo } from "@/pages/api/changelogItemsNo";
-import { changeLogItemsDe } from "@/pages/api/changelogItemsDe";
+import Changelog from "./Changelog";
+
 
 interface NavBarProps {
     enableLinkToFrontPage: boolean;
@@ -44,7 +41,7 @@ const NavBar = ({
                 <div className="flex items-center">
                     {enableChangelog && (
                         <div className="hidden lg:block">
-                            <AiModelChangelog
+                            <Changelog
                                 title={changelogTitle}
                                 listOfChanges={changelogItems}
                             />
