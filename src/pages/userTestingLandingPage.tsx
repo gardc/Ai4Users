@@ -71,7 +71,7 @@ const UserTestingLandingPage: React.FC = (
                     {t("userTestingLandingPage.questionsEmailAddress")}
                 </p>
                 <div className="mt-20">
-                    <Button color="lavaorange" href={"/login"}>
+                    <Button color="orange" href={"/login"}>
                         {t("userTestingLandingPage.beginTestingButtonText")}
                     </Button>
                 </div>
