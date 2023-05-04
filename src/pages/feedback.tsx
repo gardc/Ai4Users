@@ -64,7 +64,7 @@ const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProp
                             rows={6}
                             value={feedbackString}
                             onChange={handleInputChange}
-                            className="w-4/5 sm:w-1/2 block p-2.5 w-[50%] text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                            className="w-4/5 sm:w-1/2 p-2.5 text-sm bg-slate-light rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
                             placeholder={t("feedback.placeholder")!}
                         ></textarea>
                     )}
@@ -72,7 +72,7 @@ const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProp
                     <div className="flex justify-center mt-8 mb-10 sm:m-5">
                         {!finished && (
                             <Button
-                                color="lavaorange"
+                                color="orange"
                                 onClick={handleSubmit}
                                 disabled={feedbackString.length === 0}
                                 loading={waiting}
@@ -80,7 +80,7 @@ const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProp
                                 {t("feedback.submit")}
                             </Button>
                         )}
-                        <Button color="lavaorange" href="/submittedPage?consent=false" loading={waiting}>
+                        <Button color="orange" href="/submittedPage?consent=false" loading={waiting}>
                             {/* If finished, show continue button, else show skip */}
                             {finished ? t("feedback.continue") : t("feedback.skip")}
                         </Button>
