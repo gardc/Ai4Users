@@ -450,7 +450,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                     </select>
                     <div className="w-full sm:w-3/4 md:w-full lg:w-3/4 xl:w-full mx-auto">
                         <svg
-                            className={`mx-auto mt-0 xl:mt-8 mb-8 my-auto py-4 text-darkerorange ${
+                            className={`mx-auto mt-0 xl:mt-8 mb-8 my-auto py-4 text-darkorange ${
                                 !pieChartVisible ? "block" : "hidden"
                             }`}
                             ref={barPlotRef}
@@ -486,7 +486,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                     <div>
                         {!moreThanFiveFeatures && (
                             <button
-                                className="text-white rounded-md bg-prussian-blue p-3 float-right hover:bg-darkblue"
+                                className="text-white rounded-md bg-prussian-blue p-3 float-right hover:bg-opacity-70"
                                 onClick={switchDiagram}
                             >
                                 {pieChartVisible ? <BarChartIcon /> : <PieChartIcon />}

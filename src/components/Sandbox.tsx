@@ -209,7 +209,7 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                             {resultPulse ? (
                                 <p
                                     className={
-                                        "text-md font-bold animate-bounce text-sky-blue md:text-lg"
+                                        "text-md font-bold animate-bounce text-skyblue md:text-lg"
                                     }
                                 >
                                     {weeksOfPredictedSickLeave}
@@ -221,7 +221,7 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                             )}
                         </div>
                     </div>
-                    <div className="w-28 rotate-90 text-lavaorange">
+                    <div className="w-28 rotate-90 text-orange">
                         <ArrowToModelIcon />
                     </div>
                     <div className="w-28 text-darkblue">

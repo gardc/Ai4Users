@@ -83,7 +83,7 @@ const InformationDropdownBox: React.FC<InformationDropdownBoxProps> = ({
                 </div>
             )}
             {open ? (
-                <div className="bg-slate-light rounded-b-xl">
+                <div className="bg-lightslate rounded-b-xl">
                     <div className="px-6 pt-6">{extendedInfo}</div>
                     {open && (
                         <div className="flex justify-center pt-6 pb-4">

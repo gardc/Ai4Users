@@ -64,7 +64,7 @@ const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProp
                             rows={6}
                             value={feedbackString}
                             onChange={handleInputChange}
-                            className="w-4/5 sm:w-1/2 p-2.5 text-sm bg-slate-light rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500"
+                            className="w-4/5 sm:w-1/2 p-2.5 text-sm bg-lightslate rounded-lg border border-darkgray focus:ring-skyblue focus:border-skyblue"
                             placeholder={t("feedback.placeholder")!}
                         ></textarea>
                     )}

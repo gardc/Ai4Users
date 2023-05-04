@@ -1,11 +1,11 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useTranslation } from "next-i18next";
-import Link from "next/link";
+import Button from "@/components/Button";
 
 /**
  * The end page for userTesting component that displays some information and buttons for restarting
- * the demo and for navigating to a questionnaire. Supports i18next translation.
+ * the demo and for navigating to a survey. Supports i18next translation.
  *
  * If user testing is desired, change the end of the flow to redirect to this page.
  *
@@ -19,54 +19,22 @@ export default function UserTestingFinishedPage(
     return (
         <div className="w-full h-screen flex flex-col justify-center items-center bg-white">
             {/* Infobox */}
-            <div className="max-w-xl flex flex-col justify-center items-center rounded-md bg-darkblue gap-5 px-8 py-5 shadow-md border border-gray-600 text-white text-center">
-                <h1 className="text-xl font-semibold">
-                    {t("userTestingFinishedPage.title")}
-                </h1>
-                <p className="text-neutral-200">
-                    {t("userTestingFinishedPage.information")}
-                </p>
+            <div className="max-w-xl flex flex-col justify-center items-center rounded-md bg-darkblue gap-5 px-8 py-5 shadow-md text-white text-center">
+                <h1 className="text-xl font-semibold">{t("userTestingFinishedPage.title")}</h1>
+                <p className="text-white">{t("userTestingFinishedPage.information")}</p>
                 {/* Buttons */}
                 <div className="flex gap-5">
-                    <InfoButton
-                        href={"/"}
-                        text={t(
-                            "userTestingFinishedPage.toFrontPageButtonText"
-                        )}
-                        bg={"bg-white bg-opacity-25"}
-                    />
-                    <a
-                        href={t("userTestingSurvey") as string}
-                        target="_blank"
-                        rel="noreferrer"
-                        className="px-4 py-1 cursor-pointer bg-white bg-opacity-25 rounded-md hover:px-5 transition-all"
-                    >
-                        {t("userTestingFinishedPage.toQuestionnaireButtonText")}
-                    </a>
+                    <Button href="/" color="orange">
+                        {t("userTestingFinishedPage.toFrontPageButtonText")}
+                    </Button>
+                    <Button href={t("userTestingSurvey") as string} color="orange">
+                        {t("userTestingFinishedPage.toSurveyButtonText")}
+                    </Button>
                 </div>
             </div>
         </div>
     );
 }
-
-const InfoButton = ({
-    href,
-    text,
-    bg,
-}: {
-    href: string;
-    text: string;
-    bg: string;
-}) => {
-    return (
-        <Link
-            href={href}
-            className={`px-4 py-1 cursor-pointer border border-neutral-700 ${bg} rounded-md hover:px-5 transition-all`}
-        >
-            {text}
-        </Link>
-    );
-};
 
 type Props = {};
 
