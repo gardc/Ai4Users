@@ -15,12 +15,14 @@ module.exports = {
     extend: {
       colors: {
         'zinc': '#F4F4F5',
-        'slate-light': '#F8FAFC',
+        'lightslate': '#F8FAFC',
+        'lightgray': '#E5E7EB',
+        'darkgray': '#6B7280',
         'prussian-blue': '#003049',
         'darkblue':'#001731',
-        'sky-blue': '#8ECAE6',
-        'lavaorange': '#f24922',
-        'darkerorange':'#c14922',
+        'skyblue': '#0284C7',
+        'orange': '#f24922',
+        'darkorange':'#c14922',
       },
       borderWidth: {
         '1': '1px', 
