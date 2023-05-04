@@ -183,7 +183,9 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                             </div>
                         ))}
                         <div className={"flex justify-center"}>
-                            <Button type={"submit"}>{t("usingAiPage.sandbox.calculate")}</Button>
+                            <Button color="orange" type={"submit"}>
+                                {t("usingAiPage.sandbox.calculate")}
+                            </Button>
                         </div>
                     </form>
                 </div>
