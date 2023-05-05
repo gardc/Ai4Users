@@ -1,4 +1,5 @@
 import Content from "./Content";
+import Footer from "./Footer";
 import NavBar from "./NavBar";
 
 /**
@@ -10,8 +11,11 @@ import NavBar from "./NavBar";
  */
 const Container = (props: any) => {
     return (
-        <div className="font-sans bg-zinc min-h-screen flex flex-col">
+        <div className="flex flex-col min-h-screen font-sans bg-zinc">
             <Content className="flex-grow">{props.children}</Content>
+            <div className="mt-auto">
+                <Footer />
+            </div>
         </div>
     );
 };
