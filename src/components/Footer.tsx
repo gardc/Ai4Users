@@ -3,8 +3,7 @@ import { changeLogItemsEn } from "@/pages/api/changelogItemsEn";
 import { changeLogItemsNo } from "@/pages/api/changelogItemsNo";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
-import ExpandableInformationBox from "./ExpandableInformationBox";
-import Link from "next/link";
+import Changelog from "./Changelog";
 import React from "react";
 
 /**
@@ -18,46 +17,21 @@ const Footer = () => {
     const router = useRouter();
     const { locale } = router;
 
-    const changelogItems =
-        locale == "no" ? changeLogItemsNo : locale == "de" ? changeLogItemsDe : changeLogItemsEn;
-
     return (
-        <div className="bg-darkblue w-full flex flex-col pt-10 pb-1 text-white font-light">
-            <p className="mx-auto text-sm">{t("changelog.currentVersion")}</p>
-            <div className="mx-auto mt-[-40px]">
-                <ExpandableInformationBox
-                    content={""}
-                    expandedContentTitle={t("changelog.title")}
-                    expandedContent={
-                        <>
-                            {changelogItems.map((changeItem) => (
-                                <>
-                                    <p className="pb-2 text-base">{changeItem.dateOfChange}</p>
-                                    <p className="pb-4 text-xl font-bold text-prussian-blue">
-                                        {changeItem.titleOfChange}
-                                    </p>
-                                    <p className="font-light text-lg pb-6">
-                                        {changeItem.changeDescription}
-                                    </p>
-                                    {changeItem.readMoreLink.length > 0 && (
-                                        <div className="mb-8">
-                                            <Link
-                                                href={changeItem.readMoreLink}
-                                                className="underline hover:text-sky-600 font-light"
-                                            >
-                                                {t("changelog.readMore")}
-                                            </Link>
-                                        </div>
-                                    )}
-                                    <div className="w-full mt-4 bg-prussian-blue h-[2px] mb-8"></div>
-                                </>
-                            ))}
-                        </>
+        <div className="bg-darkblue w-full flex items-center py-10 text-white font-light flex-row">
+            <p className="mx-0 ml-6 sm:ml-8 text-sm">{t("changelog.currentVersion")}</p>
+            <div className="ml-auto mr-6 sm:mr-8">
+                <Changelog
+                    title={t("changelog.title")}
+                    listOfChanges={
+                        locale == "no"
+                            ? changeLogItemsNo
+                            : locale == "de"
+                            ? changeLogItemsDe
+                            : changeLogItemsEn
                     }
-                    expandedCloseButtonText={"Close"}
-                    buttonText={t("changelog.title")}
-                    buttonColor="transparentWhiteText"
-                ></ExpandableInformationBox>
+                    linkText={t("changelog.readMore")}
+                />
             </div>
         </div>
     );
