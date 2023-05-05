@@ -9,7 +9,6 @@ export interface ExpandableInformationBoxProps {
     expandedContent: string | JSX.Element;
     expandedCloseButtonText: string;
     buttonText: string;
-    buttonColor?: "orange" | "blue" | "transparentWhiteText";
 }
 
 /**
@@ -25,8 +24,6 @@ export interface ExpandableInformationBoxProps {
  * content.
  * @param buttonText - A string that is shown on the button that expands the box to reveal
  * additional content.
- * @param buttonColor - Optional. Can either be "orange", "blue", or "transparentWhiteText".
- * Defaults to "blue" if argument not provided.
  * @returns An expandable information box as a React functional component.
  */
 const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
@@ -35,7 +32,6 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
     expandedContent,
     expandedCloseButtonText,
     buttonText,
-    buttonColor = "blue",
 }) => {
     const [expanded, setExpanded] = useState<boolean>(false);
 
@@ -53,7 +49,7 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
         <div className="flex flex-col">
             {content}
             <div className="justify-self-end justify-center mb-16 lg:mb-0 pt-2 mt-6">
-                <Button color={buttonColor} onClick={handleExpansion}>
+                <Button color={"blue"} onClick={handleExpansion}>
                     {buttonText}
                 </Button>
             </div>
