@@ -18,6 +18,7 @@
     },
 
     "changelog": {
+        "currentVersion": "AI model version: 1.0.3",
         "title": "Latest changes to the AI model",
         "readMore": "Read more"
     },
