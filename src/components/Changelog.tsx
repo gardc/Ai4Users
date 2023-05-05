@@ -131,12 +131,12 @@ const Changelog: React.FC<ChangelogProps> = ({
                     </div>
                     <div
                         ref={ref}
-                        className="absolute drop-shadow-xl border-prussian-blue right-0 bottom-0 w-80 md:w-full z-20 bg-prussian-blue rounded-t-xl rounded-l-xl md:rounded-l-none md:rounded-t-xl text-white text-sm"
+                        className="absolute border border-darkblue right-0 bottom-0 w-80 md:w-full z-20 bg-prussian-blue rounded-t-xl rounded-l-xl md:rounded-l-none md:rounded-t-xl text-white text-sm"
                     >
                         <p className="md:hidden px-6 pt-6 sticky text-base font-light mb-4">
                             {title}
                         </p>
-                        <div className="max-h-96 md:max-h-[500px] pt-6 px-6 w-full overflow-y-scroll">
+                        <div className="max-h-96 md:max-h-[480px] pt-6 px-6 w-full overflow-y-scroll">
                             {listOfChanges.map((changeItem) => (
                                 <>
                                     <p className="pb-2">{changeItem.dateOfChange}</p>
