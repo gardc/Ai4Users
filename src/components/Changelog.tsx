@@ -145,7 +145,7 @@ const Changelog: React.FC<ChangelogProps> = ({
                                     {changeItem.readMoreLink.length > 0 && (
                                         <Link
                                             href={changeItem.readMoreLink}
-                                            className="underline hover:text-sky-600 font-light"
+                                            className="underline hover:text-skyblue font-light"
                                         >
                                             {t("changelog.readMore")}
                                         </Link>

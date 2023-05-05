@@ -9,7 +9,7 @@ const ArrowToModelIcon: React.FC = () => (
     >
         <polyline
             points="945.26 540.42 529.44 196 529.44 387.66 160.12 387.66 159.66 692.79 528.98 692.79 528.98 884.45 944.81 540.03"
-            fill="#f24922"
+            fill="currentColor"
         />
     </svg>
 );

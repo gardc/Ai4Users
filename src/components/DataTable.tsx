@@ -40,10 +40,10 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
                 {data.map((row, index) => {
                     return (
                         <tr key={index} className="border-t border-b">
-                            <td className="p-2 pr-6 text-sm lg:text-base font-bold border-r border-gray-200 text-left">
+                            <td className="p-2 pr-6 text-sm lg:text-base font-bold border-r border-lightgray text-left">
                                 {row.label}
                             </td>
-                            <td className="p-2 pr-6 text-sm lg:text-base text-gray-500 border-gray-200 text-left ">
+                            <td className="p-2 pr-6 text-sm lg:text-base text-darkgray border-lightgray text-left ">
                                 {row.value}
                             </td>
                             <td className="p-2">

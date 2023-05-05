@@ -35,7 +35,9 @@ const Login: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>)
                     >
                         <div className={"grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4"}>
                             <div className={"order-1 flex flex-col items-center mb-4"}>
-                                <UserIcon />
+                                <div className="text-prussian-blue">
+                                    <UserIcon />
+                                </div>
                                 <p
                                     className={
                                         "font-light text-left tracking-wide leading-6 text-lg pt-4 px-2"
@@ -49,7 +51,9 @@ const Login: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>)
                                     "order-3 md:order-2 flex flex-col items-center pt-8 md:pt-0"
                                 }
                             >
-                                <ClipboardIcon />
+                                <div className="text-prussian-blue">
+                                    <ClipboardIcon />
+                                </div>
                                 <p
                                     className={
                                         "font-light text-left tracking-wide leading-6 text-lg pt-4 px-2 "
@@ -59,7 +63,7 @@ const Login: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>)
                                 </p>
                             </div>
                             <LoginButton
-                                color="lavaorange"
+                                color="orange"
                                 href="/landingPage"
                                 positionSmall={1}
                                 positionLarge={2}
@@ -67,7 +71,7 @@ const Login: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>)
                                 {t("loginPage.predictSickLeave")}
                             </LoginButton>
                             <LoginButton
-                                color="lightblue"
+                                color="prussian-blue"
                                 href="/caseHandler"
                                 positionSmall={3}
                                 positionLarge={2}

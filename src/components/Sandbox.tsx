@@ -72,16 +72,13 @@ interface SandboxProps {
  * Usage <Sandbox description={description} parameters={parameters} />
  */
 const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
-    const initialState = parameters.reduce<Record<string, string>>(
-        (acc, param) => {
-            const firstItemValueForModel = param.argument[0]?.itemValueForModel;
-            if (firstItemValueForModel) {
-                acc[param.labelValueForModel] = firstItemValueForModel;
-            }
-            return acc;
-        },
-        {}
-    );
+    const initialState = parameters.reduce<Record<string, string>>((acc, param) => {
+        const firstItemValueForModel = param.argument[0]?.itemValueForModel;
+        if (firstItemValueForModel) {
+            acc[param.labelValueForModel] = firstItemValueForModel;
+        }
+        return acc;
+    }, {});
     const { t } = useTranslation("common");
     const [cogSpin, setCogSpin] = useState(false);
     const [resultPulse, setResultPulse] = useState(false);
@@ -95,10 +92,7 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
      *
      * @param event - The event object triggered by the input element.
      */
-    const handleChangeOfValues = (
-        parameterLabel: string,
-        itemValueForModel: string
-    ) => {
+    const handleChangeOfValues = (parameterLabel: string, itemValueForModel: string) => {
         setSelectedValues((prevState) => ({
             ...prevState,
             [parameterLabel]: itemValueForModel,
@@ -163,18 +157,13 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                                 key={"div-" + parameter.label}
                                 className={"m-3 flex flex-col items-start mb-5"}
                             >
-                                <label
-                                    htmlFor={parameter.label}
-                                    className={"mb-1 font-bold"}
-                                >
+                                <label htmlFor={parameter.label} className={"mb-1 font-bold"}>
                                     {parameter.label}:
                                 </label>
                                 <select
                                     id={parameter.labelValueForModel}
                                     key={parameter.labelValueForModel}
-                                    className={
-                                        "p-2 border rounded-lg shadow-md w-full"
-                                    }
+                                    className={"p-2 border rounded-lg shadow-md w-full"}
                                     onChange={(e) =>
                                         handleChangeOfValues(
                                             parameter.labelValueForModel.toLowerCase(),
@@ -194,7 +183,7 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                             </div>
                         ))}
                         <div className={"flex justify-center"}>
-                            <Button type={"submit"}>
+                            <Button color="orange" type={"submit"}>
                                 {t("usingAiPage.sandbox.calculate")}
                             </Button>
                         </div>
@@ -203,11 +192,13 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                 <div className={"flex flex-col items-center py-8"}>
                     <div>
                         {cogSpin ? (
-                            <div className="animate-spin">
+                            <div className="animate-spin text-darkblue">
                                 <CogIconLarge />
                             </div>
                         ) : (
-                            <CogIconLarge />
+                            <div className="text-darkblue">
+                                <CogIconLarge />
+                            </div>
                         )}
                         <div
                             className={
@@ -220,7 +211,7 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                             {resultPulse ? (
                                 <p
                                     className={
-                                        "text-md font-bold animate-bounce text-sky-blue md:text-lg"
+                                        "text-md font-bold animate-bounce text-skyblue md:text-lg"
                                     }
                                 >
                                     {weeksOfPredictedSickLeave}
@@ -232,19 +223,14 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
                             )}
                         </div>
                     </div>
-                    <div className="w-28 rotate-90">
+                    <div className="w-28 rotate-90 text-orange">
                         <ArrowToModelIcon />
                     </div>
-                    <div className={"w-28"}>
+                    <div className="w-28 text-darkblue">
                         <CaseHandlerIcon />
                     </div>
-                    <p className="mt-4 text-sm">
-                        {" "}
-                        {t("usingAiPage.sandbox.caseHandlerText1")}{" "}
-                    </p>
-                    <p className="text-sm">
-                        {t("usingAiPage.sandbox.caseHandlerText2")}
-                    </p>
+                    <p className="mt-4 text-sm"> {t("usingAiPage.sandbox.caseHandlerText1")} </p>
+                    <p className="text-sm">{t("usingAiPage.sandbox.caseHandlerText2")}</p>
                 </div>
             </div>
         </div>

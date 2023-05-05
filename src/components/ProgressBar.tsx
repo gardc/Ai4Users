@@ -82,8 +82,8 @@ const ProgressBar = ({ pages }: ProgressBarProps) => {
                     )) ||
                     (!page.currentPage && page.href.length === 0 && (
                         <div className="flex text-xs lg:text-sm">
-                            <p className="text-gray-500 hidden sm:block px-2">{page.title}</p>
-                            <p className="text-gray-500 block sm:hidden px-2">
+                            <p className="text-darkgray hidden sm:block px-2">{page.title}</p>
+                            <p className="text-darkgray block sm:hidden px-2">
                                 {page.titleCompressed}
                             </p>
                             {index != pages.length - 1 && ">"}
