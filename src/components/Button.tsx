@@ -4,13 +4,16 @@ import Link from "next/link";
 /**
  * The props for the Button component.
  *
- * @param color - The color of the button. Valid options are "orange", and "blue". Defaults to black if color not provided.
- * @param href - The URL to navigate to when the button is clicked. If provided, the button will be a Link component.
- * @param onClick - The function to call when the button is clicked. If provided, the button will be a regular button element.
+ * @param color - The color of the button. Valid options are "orange", "blue" and
+ * "transparentWhiteText". Defaults to black if color not provided.
+ * @param href - The URL to navigate to when the button is clicked. If provided, the button will be
+ *  a Link component.
+ * @param onClick - The function to call when the button is clicked. If provided, the button will
+ * be a regular button element.
  * @param children - The child elements to display inside the button.
  */
 interface ButtonProps {
-    color?: "orange" | "blue";
+    color?: "orange" | "blue" | "transparentWhiteText";
     href?: string;
     onClick?: () => void;
     children: React.ReactNode;
@@ -22,9 +25,12 @@ interface ButtonProps {
 /**
  * A reusable button component with customizable styling.
  *
- * @param color - The color of the button. Valid options are "blue", "red", and "white".
- * @param href - The URL to navigate to when the button is clicked. If provided, the button will be a Link component.
- * @param onClick - The function to call when the button is clicked. If provided, the button will be a regular button element.
+ * @param color - The color of the button. Valid options are "orange", "blue" and
+ * "transparentWhiteText". Defaults to black if no color is provided.
+ * @param href - The URL to navigate to when the button is clicked. If provided, the button will be
+ *  a Link component.
+ * @param onClick - The function to call when the button is clicked. If provided, the button will
+ * be a regular button element.
  * @param children - The child elements to display inside the button. This will usually be text.
  * @param type - Defaults to button, set to "submit" if the component is to be used in a form.
  * @param disabled - Should the button be disabled (not accessible)?
@@ -50,6 +56,9 @@ const Button: React.FC<ButtonProps> = ({
             break;
         case "blue":
             colorClasses = "bg-prussian-blue hover:bg-opacity-70 text-white";
+            break;
+        case "transparentWhiteText":
+            colorClasses = "text-white text-sm hover:text-skyblue underline";
             break;
         default:
             colorClasses = "bg-black hover:bg-opacity-50 text-white";
