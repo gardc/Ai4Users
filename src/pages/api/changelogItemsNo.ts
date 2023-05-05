@@ -8,7 +8,7 @@
  * [
  *  {
  *      dateOfChange: "12.03.2023",
- *      titleOfChange: "Forbedret treningsdata for fylkes-faktor",
+ *      titleOfChange: "Forbedret treningsdata for fylke-faktor",
  *      changeDescription: "KI-modellen har blitt trent på nytt med ...",
  *      readMoreLink: "/Changes12032023",
  *  },
@@ -23,7 +23,7 @@
 export const changeLogItemsNo = [
     {
         dateOfChange: "12.03.2023",
-        titleOfChange: "Forbedret treningsdata for fylkes-faktor",
+        titleOfChange: "Forbedret treningsdata for fylke-faktor",
         changeDescription:
             "KI-modellen har blitt trent på nytt med et mer variert og oppdatert datasett for fylke-faktoren. Dette bør resultere i mer nøyaktige prediksjoner om sykefraværets varighet, ettersom modellen bedre kan fange regionale forskjeller i helseutfall og medisinske praksiser.",
         readMoreLink: "",
