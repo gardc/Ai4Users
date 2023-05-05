@@ -6,7 +6,7 @@ const UserIcon: React.FC = () => (
         fill="none"
         viewBox="0 0 24 24"
         strokeWidth={1.5}
-        stroke="#003049"
+        stroke="currentColor"
         className="w-10 h-10"
     >
         <path

@@ -113,7 +113,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                     <div className="p-4 sm:p-8 md:px-12 text-left text-lg font-light">
                         {t("usingAiPage.aboutAiInfo.description")}
                     </div>
-                    <div className="bg-slate-50 rounded-b-xl p-6 pb-0 lg:pb-12">
+                    <div className="bg-lightslate rounded-b-xl p-6 pb-0 lg:pb-12">
                         <div className="lg:grid lg:grid-cols-3 lg:gap-x-10 font-light pt-4 px-6">
                             <ExpandableInformationBox
                                 content={
@@ -475,7 +475,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a15"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -498,7 +498,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a16"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -521,7 +521,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a17"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -544,7 +544,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a18"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -567,7 +567,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             href=" https://lovdata.no/lov/2018-06-15-38/gdpr/a20"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -590,7 +590,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a21"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-blue-600 dark:text-blue-500 hover:underline"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -635,13 +635,13 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
 
                 <div className="flex justify-center mt-8 mb-10 sm:m-5">
                     <Link
-                        className="bg-prussian-blue hover:bg-darkblue font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3 w-56 flex items-center justify-center"
+                        className="bg-prussian-blue hover:bg-opacity-70 font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3 w-56 flex items-center justify-center"
                         href="/summary?consent=false"
                     >
                         <p>{t("usingAiPage.consent.disagreeButtonText")}</p>
                     </Link>
                     <Link
-                        className="bg-prussian-blue hover:bg-darkblue font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3 w-56 flex items-center justify-center"
+                        className="bg-prussian-blue hover:bg-opacity-70 font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3 w-56 flex items-center justify-center"
                         href="/summary?consent=true"
                     >
                         <p>{t("usingAiPage.consent.agreeButtonText")}</p>

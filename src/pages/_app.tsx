@@ -4,7 +4,7 @@ import { appWithTranslation } from "next-i18next";
 
 function App({ Component, pageProps }: AppProps) {
     return (
-        <div className={"bg-zinc-100"}>
+        <div className="bg-zinc">
             <Component {...pageProps} />
         </div>
     );

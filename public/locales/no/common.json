@@ -216,7 +216,7 @@
         "title": "Takk for at du testet vår nettapplikasjon!",
         "information": "Du har nå fullført testingen. Du kan enten gå tilbake til forsiden for å teste en gang til, eller fortsette videre til en spørreundersøkelse (Google Forms) for å svare på noen spørsmål om ditt inntyrkk av nettapplikasjonen.",
         "toFrontPageButtonText": "Forside",
-        "toQuestionnaireButtonText": "Spørreundersøkelse"
+        "toSurveyButtonText": "Spørreundersøkelse"
     },
 
     "userTestingSurvey": "https://forms.gle/tiTeibKn9FJccgwbA"

@@ -28,7 +28,7 @@ const UserTestingLandingPage: React.FC = (
             </div>
 
             <div className="py-28 px-10 lg:px-40">
-                <h1 className="text-2xl text-cyan-900 font-bold">
+                <h1 className="text-2xl text-prussian-blue font-bold">
                     {t("userTestingLandingPage.title")}
                 </h1>
                 <p className="mt-8">
@@ -50,10 +50,8 @@ const UserTestingLandingPage: React.FC = (
                     <li className="pb-1">
                         {t("userTestingLandingPage.disclaimer2")}
                     </li>
-                    <li>
-                        <p className="pb-1">
+                    <li className="pb-1">
                             {t("userTestingLandingPage.disclaimer3.title")}
-                        </p>
                         <ul className="list-disc list-inside ml-8">
                             <li className="pb-1">
                                 {t("userTestingLandingPage.disclaimer3.li1")}
@@ -71,7 +69,7 @@ const UserTestingLandingPage: React.FC = (
                     {t("userTestingLandingPage.questionsEmailAddress")}
                 </p>
                 <div className="mt-20">
-                    <Button color="lavaorange" href={"/login"}>
+                    <Button color="orange" href={"/login"}>
                         {t("userTestingLandingPage.beginTestingButtonText")}
                     </Button>
                 </div>

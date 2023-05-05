@@ -8,7 +8,7 @@ function PuzzleIcon() {
                 fill="none"
                 height="30"
                 viewBox="0 0 24 24"
-                stroke="#003049"
+                stroke="currentColor"
                 strokeWidth={1.5}
                 className="min-h-[30px]"
             >

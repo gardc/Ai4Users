@@ -4,7 +4,7 @@ import React from "react";
 /**
  * A reusable button component styled to suit the login page.
  *
- * @param color - The color of the button. Valid options are "lavaorange" and "lightblue".
+ * @param color - The color of the button. Valid options are "orange" and "prussian-blue".
  * @param href - The URL to navigate to when the button is clicked. If provided, the button will be a Link component.
  * @param children - The child elements to display inside the button. This will usually be text.
  *
@@ -12,7 +12,7 @@ import React from "react";
  */
 
 interface ButtonProps {
-    color?: "lavaorange" | "lightblue";
+    color?: "orange" | "prussian-blue";
     href: string;
     children: React.ReactNode;
     positionSmall?: number;
@@ -20,7 +20,7 @@ interface ButtonProps {
 }
 
 const LoginButton: React.FC<ButtonProps> = ({
-    color = "lavaorange",
+    color = "orange",
     href,
     children,
     positionSmall,
@@ -31,12 +31,11 @@ const LoginButton: React.FC<ButtonProps> = ({
 
     let colorClasses;
     switch (color) {
-        case "lavaorange":
-            colorClasses = "bg-lavaorange text-white hover:bg-opacity-50 hover:drop-shadow-lg";
+        case "orange":
+            colorClasses = "bg-orange text-white hover:bg-opacity-70 hover:drop-shadow-lg";
             break;
-        case "lightblue":
-            colorClasses =
-                "bg-lightblue text-white border-primary border hover:bg-darkblue hover:drop-shadow-lg";
+        case "prussian-blue":
+            colorClasses = "bg-prussian-blue text-white hover:bg-opacity-70 hover:drop-shadow-lg";
             break;
     }
     let positionClass = "";
