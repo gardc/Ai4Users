@@ -242,7 +242,9 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                 expandedContent={
                                     <div className="text-base pb-4">
                                         <p className="font-bold pb-4">
-                                            {t("usingAiPage.aboutAiInfo.howAi.learnMore.description")}
+                                            {t(
+                                                "usingAiPage.aboutAiInfo.howAi.learnMore.description"
+                                            )}
                                         </p>
                                         <div className="pb-4">
                                             {t(
@@ -440,15 +442,13 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                             </h2>
                             <ul className="space-y-4 list-disc font-light text-left">
                                 <li>
-                                    <div className={"flex flex-row gap-1"}>
-                                        <p>
-                                            {t("usingAiPage.aboutRightsInfo.readMore.li1")}
-                                        </p>
+                                    <div className="xl:flex">
+                                        <p>{t("usingAiPage.aboutRightsInfo.readMore.li1")}</p>
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a15"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-skyblue hover:underline"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 xl:py-0 xl:ml-2 text-sm"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -465,15 +465,13 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                     </div>
                                 </li>
                                 <li>
-                                    <div className={"flex flex-row gap-1"}>
-                                        <p>
-                                            {t("usingAiPage.aboutRightsInfo.readMore.li2")}
-                                        </p>
+                                    <div className="xl:flex">
+                                        <p>{t("usingAiPage.aboutRightsInfo.readMore.li2")}</p>
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a16"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-skyblue hover:underline"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 xl:py-0 xl:ml-2 text-sm"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -490,15 +488,13 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                     </div>
                                 </li>
                                 <li>
-                                    <div className={"flex flex-row gap-1"}>
-                                        <p>
-                                            {t("usingAiPage.aboutRightsInfo.readMore.li3")}
-                                        </p>
+                                    <div className="xl:flex">
+                                        <p>{t("usingAiPage.aboutRightsInfo.readMore.li3")}</p>
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a17"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-skyblue hover:underline"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 xl:py-0 xl:ml-2 text-sm"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -515,15 +511,13 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                     </div>
                                 </li>
                                 <li>
-                                    <div className={"flex flex-row gap-1"}>
-                                        <p>
-                                            {t("usingAiPage.aboutRightsInfo.readMore.li4")}
-                                        </p>
+                                    <div className="xl:flex">
+                                        <p>{t("usingAiPage.aboutRightsInfo.readMore.li4")}</p>
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a18"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-skyblue hover:underline"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 xl:py-0 xl:ml-2 text-sm"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -540,15 +534,13 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                     </div>
                                 </li>
                                 <li>
-                                    <div className={"flex flex-row gap-1"}>
-                                        <p>
-                                            {t("usingAiPage.aboutRightsInfo.readMore.li5")}
-                                        </p>
+                                    <div className="xl:flex">
+                                        <p>{t("usingAiPage.aboutRightsInfo.readMore.li5")}</p>
                                         <a
                                             href=" https://lovdata.no/lov/2018-06-15-38/gdpr/a20"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-skyblue hover:underline"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 xl:py-0 xl:ml-2 text-sm"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -565,15 +557,13 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                     </div>
                                 </li>
                                 <li>
-                                    <div className={"flex flex-row gap-1"}>
-                                        <p>
-                                            {t("usingAiPage.aboutRightsInfo.readMore.li6")}
-                                        </p>
+                                    <div className="xl:flex">
+                                        <p>{t("usingAiPage.aboutRightsInfo.readMore.li6")}</p>
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a21"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-skyblue hover:underline"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 xl:py-0 xl:ml-2 text-sm"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
