@@ -1,3 +1,33 @@
+/**
+ * Data for the DataTable component, English translation. Gives the component a list of objects,
+ * each object representing one parameter in the DataTable. Each parameter must have: a label, a value, and a an extendedInfo.
+ *
+ * @param label - The name of the parameter.
+ * @param value - A sting showing the value of the parameter.
+ * @param extendedInfo - A description of the parameter. This should give the user an explanation of why this parameter is included in the prediction.
+ *
+ * @example
+ * [
+ *     {
+ *         label: "Age",
+ *         value: "46",
+ *         extendedInfo:
+ *             "Age is relevant for the prediction because older age can lead to more health problems and slower recovery.",
+ *     },
+ *     {
+ *         label: "Gender",
+ *         value: "Male",
+ *         extendedInfo:
+ *             "Gender is relevant for the prediction because different genders have different risk factors, for example which diseases and disorders one is exposed to.",
+ *     },
+ *     {
+ *         label: "Diagnosis",
+ *         value: "Stroke",
+ *         extendedInfo:
+ *             "Diagnosis is relevant for the prediction because the diagnosis can give insight into the person's state of health and ability to work.",
+ *     },
+ * ]
+ */
 export const exampleDataEn = [
     {
         label: "Age",

@@ -4,13 +4,14 @@ import Link from "next/link";
 /**
  * The props for the Button component.
  *
+ * @param color - The color of the button. Valid options are "orange" and "prussian-blue".
  * @param color - The color of the button. Valid options are "orange", and "blue". Defaults to black if color not provided.
  * @param href - The URL to navigate to when the button is clicked. If provided, the button will be a Link component.
  * @param onClick - The function to call when the button is clicked. If provided, the button will be a regular button element.
  * @param children - The child elements to display inside the button.
  */
 interface ButtonProps {
-    color?: "orange" | "blue";
+    color?: "orange" | "prussian-blue";
     href?: string;
     onClick?: () => void;
     children: React.ReactNode;
@@ -48,7 +49,7 @@ const Button: React.FC<ButtonProps> = ({
         case "orange":
             colorClasses = "bg-orange hover:bg-opacity-70 text-white";
             break;
-        case "blue":
+        case "prussian-blue":
             colorClasses = "bg-prussian-blue hover:bg-opacity-70 text-white";
             break;
         default:

@@ -1,4 +1,34 @@
-// TODO: MUST BE TRANSLATED
+/**
+ * Data for the DataTable component, Norwegian translation. Gives the component a list of objects,
+ * each object representing one parameter in the DataTable. Each parameter must have: a label, a value, and a an extendedInfo.
+ *
+ * @param label - The name of the parameter.
+ * @param value - A string showing the value of the parameter.
+ * @param extendedInfo - A description of the parameter. This should give the user an explanation of why this parameter is included in the prediction.
+ *
+ * @example
+ * [
+ *     {
+ *         label: "Alder",
+ *         value: "46",
+ *         extendedInfo:
+ *             "Alder er relevant for prediksjonen fordi høyere alder kan medføre flere helseproblemer og tregere restituering.",
+ *     },
+ *     {
+ *         label: "Kjønn",
+ *         value: "Mann",
+ *         extendedInfo:
+ *             "Kjønn er relevant for prediksjonen fordi forskjellige kjønn har ulike risikofaktorer, eksempelvis hvilke sykdommer og lidelser man er utsatt for. ",
+ *     },
+ *     {
+ *         label: "Diagnose",
+ *         value: "Hjerneslag",
+ *         extendedInfo:
+ *             "Diagnose er relevant for prediksjonen fordi diagnosen kan gi innblikk i vedkommendes helsetilstand og arbeidsevne.",
+ *     },
+ * ]
+ */
+
 export const exampleDataNo = [
     {
         label: "Alder",

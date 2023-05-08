@@ -22,6 +22,7 @@ interface DataTableProps {
  * @returns A table of the data as a React functional component.
  */
 const DataTable: React.FC<DataTableProps> = ({ data }) => {
+
     /**
      * Removes the table header.
      *

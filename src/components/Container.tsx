@@ -1,9 +1,8 @@
 import Content from "./Content";
 import Footer from "./Footer";
-import NavBar from "./NavBar";
 
 /**
- * A container component which includes a NavBar for each page.
+ * A container component which includes a NavBar and Footer for each page.
  *
  * @param props The content to be displayed below the NavBar
  *

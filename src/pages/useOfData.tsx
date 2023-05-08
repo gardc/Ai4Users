@@ -1,7 +1,4 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { changeLogItemsDe } from "./api/changelogItemsDe";
-import { changeLogItemsEn } from "./api/changelogItemsEn";
-import { changeLogItemsNo } from "./api/changelogItemsNo";
 import { exampleDataDe } from "./api/exampleDataDe";
 import { exampleDataEn } from "./api/exampleDataEn";
 import { exampleDataNo } from "./api/exampleDataNo";
@@ -9,7 +6,6 @@ import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import Button from "@/components/Button";
-import Changelog from "@/components/Changelog";
 import Container from "@/components/Container";
 import DataTable from "@/components/DataTable";
 import NavBar from "@/components/NavBar";
