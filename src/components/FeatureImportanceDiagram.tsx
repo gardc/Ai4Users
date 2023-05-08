@@ -4,7 +4,6 @@ import BarChartIcon from "./Assets/barChartIcon";
 import PieChartIcon from "./Assets/pieChartIcon";
 import TransparentBoxIcon from "./Assets/transparentBoxIcon";
 
-
 /**
  * @param feature - The name of the feature.
  * @param weight - The weight of the feature importance, given the chosen argument/value for the changeable parameter.
@@ -429,7 +428,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                         </div>
                         <p className="text-lg mt-1 font-bold">{title}</p>
                     </div>
-                    {description}
+                    <div className="mt-8 xl:text-lg">{description}</div>
                 </div>
 
                 <div className="flex flex-col xl:w-1/2 bg-white rounded-xl pl-12 p-8 mx-auto">
