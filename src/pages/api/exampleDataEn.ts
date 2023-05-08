@@ -44,7 +44,8 @@ export const exampleDataEn = [
     {
         label: "Profession",
         value: "Carpenter",
-        extendedInfo: "Occupation is relevant for the prediction because different occupations have different factors that affect the risk of sickness absence, for example workload, risk of injury, physically demanding work or mentally demanding work.",
+        extendedInfo:
+            "Occupation is relevant for the prediction because different occupations have different factors that affect the risk of sickness absence, for example workload, risk of injury, physically demanding work or mentally demanding work.",
     },
     {
         label: "Diagnosis",

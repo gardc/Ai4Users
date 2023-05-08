@@ -10,7 +10,7 @@ import Link from "next/link";
  */
 interface Page {
     title: string;
-    titleCompressed: string
+    titleCompressed: string;
     href: string;
     currentPage: boolean;
 }

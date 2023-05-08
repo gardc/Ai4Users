@@ -14,13 +14,11 @@ import React from "react";
  *
  * @returns A React functional component representing the landing page.
  */
-const LandingPage: React.FC = (
-  _props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
-  const { t } = useTranslation("common");
+const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+    const { t } = useTranslation("common");
 
-  return (
-    <Container>
+    return (
+        <Container>
             <NavBar enableLinkToFrontPage={true} />
             <div className="bg-darkblue">
                 <div className="index pb-16 flex-col flex items-center">

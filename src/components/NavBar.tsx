@@ -12,7 +12,6 @@ interface NavBarProps {
     enableLinkToFrontPage: boolean;
 }
 
-
 /**
  * NavBar component that is used in the header of all pages. Contains a logo, and the LocaleSelection component.
  *

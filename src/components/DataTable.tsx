@@ -22,7 +22,6 @@ interface DataTableProps {
  * @returns A table of the data as a React functional component.
  */
 const DataTable: React.FC<DataTableProps> = ({ data }) => {
-
     /**
      * Removes the table header.
      *
@@ -48,9 +47,7 @@ const DataTable: React.FC<DataTableProps> = ({ data }) => {
                                 {row.value}
                             </td>
                             <td className="p-2">
-                                {row.extendedInfo && (
-                                    <Tooltip extendedInfo={row.extendedInfo} />
-                                )}
+                                {row.extendedInfo && <Tooltip extendedInfo={row.extendedInfo} />}
                             </td>
                         </tr>
                     );
