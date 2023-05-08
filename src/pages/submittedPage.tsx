@@ -12,7 +12,9 @@ import { useRouter } from "next/router";
  *
  * @returns A React functional component representing the summary page.
  */
-const SubmittedPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const SubmittedPage: React.FC = (
+    _props: InferGetStaticPropsType<typeof getStaticProps>
+) => {
     const { t } = useTranslation("common");
     const router = useRouter();
     const { consent } = router.query;
@@ -29,7 +31,7 @@ const SubmittedPage: React.FC = (_props: InferGetStaticPropsType<typeof getStati
             <NavBar enableLinkToFrontPage={false} />
             <div className="m-4 flex justify-center mb-20">
                 <div
-                    className="w-full md:w-3/4 xl:w-1/2 mt-12
+                    className="max-w-6xl w-full md:w-3/4 xl:w-1/2 mt-12
                 bg-white drop-shadow-lg py-4 sm:py-8 px-4 sm:px-16 rounded-xl flex justify-center items-center flex-col"
                 >
                     <div className="w-full flex flex-col justify-center text-2xl items-center">
@@ -39,7 +41,7 @@ const SubmittedPage: React.FC = (_props: InferGetStaticPropsType<typeof getStati
                             </p>
                         </div>
                     </div>
-                    <div className="flex flex-col items-center mt-10">
+                    <div className="max-w-2xl flex flex-col items-center mt-6">
                         <p className="text-lg md:px-4 w-3/4 mb-10 text-left font-light">
                             {descriptionText}
                         </p>

@@ -48,25 +48,33 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                         pages={[
                             {
                                 title: t("pageProgressBar.home"),
-                                titleCompressed: t("pageProgressBar.homeCompressed"),
+                                titleCompressed: t(
+                                    "pageProgressBar.homeCompressed"
+                                ),
                                 href: "/landingPage",
                                 currentPage: false,
                             },
                             {
                                 title: t("pageProgressBar.useOfData"),
-                                titleCompressed: t("pageProgressBar.useOfDataCompressed"),
+                                titleCompressed: t(
+                                    "pageProgressBar.useOfDataCompressed"
+                                ),
                                 href: "/useOfData",
                                 currentPage: false,
                             },
                             {
                                 title: t("pageProgressBar.usingAiPage"),
-                                titleCompressed: t("pageProgressBar.usingAiPageCompressed"),
+                                titleCompressed: t(
+                                    "pageProgressBar.usingAiPageCompressed"
+                                ),
                                 href: "",
                                 currentPage: true,
                             },
                             {
                                 title: t("pageProgressBar.summaryPage"),
-                                titleCompressed: t("pageProgressBar.summaryPageCompressed"),
+                                titleCompressed: t(
+                                    "pageProgressBar.summaryPageCompressed"
+                                ),
                                 href: "",
                                 currentPage: false,
                             },
@@ -79,7 +87,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 </p>
             </div>
             <div className="text-center flex flex-col items-center mb-16">
-                <div className="sm:w-19/20 md:w-3/4 mt-12 bg-white drop-shadow-lg rounded-xl flex-col text-black m-2">
+                <div className="max-w-7xl sm:w-19/20 md:w-3/4 mt-12 bg-white drop-shadow-lg rounded-xl flex-col text-black m-2">
                     <div className="bg-prussian-blue rounded-t-xl text-white py-2 flex justify-center">
                         <InformationSignIcon />
                     </div>
@@ -95,10 +103,14 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             <BookIcon />
                                         </div>
                                         <h1 className="font-bold text-center pb-4">
-                                            {t("usingAiPage.aboutAiInfo.whatAi.title")}
+                                            {t(
+                                                "usingAiPage.aboutAiInfo.whatAi.title"
+                                            )}
                                         </h1>
                                         <p className="pb-4">
-                                            {t("usingAiPage.aboutAiInfo.whatAi.description")}
+                                            {t(
+                                                "usingAiPage.aboutAiInfo.whatAi.description"
+                                            )}
                                         </p>
                                     </div>
                                 }
@@ -219,8 +231,12 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                         />
                                     </div>
                                 }
-                                buttonText={t("usingAiPage.aboutAiInfo.learnMoreButtonText")}
-                                expandedCloseButtonText={t("expandedInfoBoxCloseButtonText")}
+                                buttonText={t(
+                                    "usingAiPage.aboutAiInfo.learnMoreButtonText"
+                                )}
+                                expandedCloseButtonText={t(
+                                    "expandedInfoBoxCloseButtonText"
+                                )}
                             />
                             <ExpandableInformationBox
                                 content={
@@ -229,10 +245,14 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             <CogIcon />
                                         </div>
                                         <p className="font-bold text-center pb-4">
-                                            {t("usingAiPage.aboutAiInfo.howAi.title")}
+                                            {t(
+                                                "usingAiPage.aboutAiInfo.howAi.title"
+                                            )}
                                         </p>
                                         <p className="pb-4">
-                                            {t("usingAiPage.aboutAiInfo.howAi.description")}
+                                            {t(
+                                                "usingAiPage.aboutAiInfo.howAi.description"
+                                            )}
                                         </p>
                                     </div>
                                 }
@@ -327,8 +347,12 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                         />
                                     </div>
                                 }
-                                buttonText={t("usingAiPage.aboutAiInfo.learnMoreButtonText")}
-                                expandedCloseButtonText={t("expandedInfoBoxCloseButtonText")}
+                                buttonText={t(
+                                    "usingAiPage.aboutAiInfo.learnMoreButtonText"
+                                )}
+                                expandedCloseButtonText={t(
+                                    "expandedInfoBoxCloseButtonText"
+                                )}
                             />
                             <ExpandableInformationBox
                                 content={
@@ -337,10 +361,14 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             <FastForwardIcon />
                                         </div>
                                         <p className="font-bold text-center pb-4">
-                                            {t("usingAiPage.aboutAiInfo.whyAi.title")}
+                                            {t(
+                                                "usingAiPage.aboutAiInfo.whyAi.title"
+                                            )}
                                         </p>
                                         <p className="pb-4">
-                                            {t("usingAiPage.aboutAiInfo.whyAi.description")}
+                                            {t(
+                                                "usingAiPage.aboutAiInfo.whyAi.description"
+                                            )}
                                         </p>
                                     </div>
                                 }
@@ -378,8 +406,12 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                         </p>
                                     </div>
                                 }
-                                buttonText={t("usingAiPage.aboutAiInfo.learnMoreButtonText")}
-                                expandedCloseButtonText={t("expandedInfoBoxCloseButtonText")}
+                                buttonText={t(
+                                    "usingAiPage.aboutAiInfo.learnMoreButtonText"
+                                )}
+                                expandedCloseButtonText={t(
+                                    "expandedInfoBoxCloseButtonText"
+                                )}
                             />
                         </div>
                     </div>
@@ -393,25 +425,39 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                             {t("usingAiPage.sandbox.shortDescription")}{" "}
                         </p>
                     }
-                    extendInfoButtonText={t("usingAiPage.sandbox.expandButtonText")}
+                    extendInfoButtonText={t(
+                        "usingAiPage.sandbox.expandButtonText"
+                    )}
                     extendedInfo={
                         <div>
                             <Sandbox
-                                description={t("usingAiPage.sandbox.mainDescription")}
+                                description={t(
+                                    "usingAiPage.sandbox.mainDescription"
+                                )}
                                 parameters={
-                                    locale == "no" ? sandboxParametersNo : sandboxParametersEn
+                                    locale == "no"
+                                        ? sandboxParametersNo
+                                        : sandboxParametersEn
                                 }
                             />
                             <FeatureImportanceDiagram
                                 title={t("usingAiPage.featureImportance.title")}
                                 description={
                                     <div className="font-light">
-                                        <p>{t("usingAiPage.featureImportance.description1")}</p>
-                                        <p className="mt-8">
-                                            {t("usingAiPage.featureImportance.description2")}
+                                        <p>
+                                            {t(
+                                                "usingAiPage.featureImportance.description1"
+                                            )}
                                         </p>
                                         <p className="mt-8">
-                                            {t("usingAiPage.featureImportance.description3")}
+                                            {t(
+                                                "usingAiPage.featureImportance.description2"
+                                            )}
+                                        </p>
+                                        <p className="mt-8">
+                                            {t(
+                                                "usingAiPage.featureImportance.description3"
+                                            )}
                                         </p>
                                     </div>
                                 }
@@ -423,7 +469,9 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                             />
                         </div>
                     }
-                    closeInfoButtonText={t("informationDropdownBoxCloseButtonText")}
+                    closeInfoButtonText={t(
+                        "informationDropdownBoxCloseButtonText"
+                    )}
                 />
                 <div className="h-6"></div>
                 <InformationDropdownBox
@@ -431,19 +479,29 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                     title={t("usingAiPage.aboutRightsInfo.title")}
                     initialInfo={
                         <div className="font-light text-lg">
-                            <p>{t("usingAiPage.aboutRightsInfo.description1")}</p>
-                            <p>{t("usingAiPage.aboutRightsInfo.description2")}</p>
+                            <p>
+                                {t("usingAiPage.aboutRightsInfo.description1")}
+                            </p>
+                            <p>
+                                {t("usingAiPage.aboutRightsInfo.description2")}
+                            </p>
                         </div>
                     }
                     extendedInfo={
                         <div className="space-y-4 ml-4 flex flex-col justify-center items-center my-6">
                             <h2 className="font-semibold">
-                                {t("usingAiPage.aboutRightsInfo.readMore.userRightsTitle")}
+                                {t(
+                                    "usingAiPage.aboutRightsInfo.readMore.userRightsTitle"
+                                )}
                             </h2>
                             <ul className="space-y-4 list-disc font-light text-left">
                                 <li>
                                     <div className="xl:flex">
-                                        <p>{t("usingAiPage.aboutRightsInfo.readMore.li1")}</p>
+                                        <p>
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.li1"
+                                            )}
+                                        </p>
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a15"
                                             target="_blank"
@@ -466,7 +524,11 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                 </li>
                                 <li>
                                     <div className="xl:flex">
-                                        <p>{t("usingAiPage.aboutRightsInfo.readMore.li2")}</p>
+                                        <p>
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.li2"
+                                            )}
+                                        </p>
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a16"
                                             target="_blank"
@@ -489,7 +551,11 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                 </li>
                                 <li>
                                     <div className="xl:flex">
-                                        <p>{t("usingAiPage.aboutRightsInfo.readMore.li3")}</p>
+                                        <p>
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.li3"
+                                            )}
+                                        </p>
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a17"
                                             target="_blank"
@@ -512,7 +578,11 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                 </li>
                                 <li>
                                     <div className="xl:flex">
-                                        <p>{t("usingAiPage.aboutRightsInfo.readMore.li4")}</p>
+                                        <p>
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.li4"
+                                            )}
+                                        </p>
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a18"
                                             target="_blank"
@@ -535,7 +605,11 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                 </li>
                                 <li>
                                     <div className="xl:flex">
-                                        <p>{t("usingAiPage.aboutRightsInfo.readMore.li5")}</p>
+                                        <p>
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.li5"
+                                            )}
+                                        </p>
                                         <a
                                             href=" https://lovdata.no/lov/2018-06-15-38/gdpr/a20"
                                             target="_blank"
@@ -558,7 +632,11 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                 </li>
                                 <li>
                                     <div className="xl:flex">
-                                        <p>{t("usingAiPage.aboutRightsInfo.readMore.li6")}</p>
+                                        <p>
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.li6"
+                                            )}
+                                        </p>
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a21"
                                             target="_blank"
@@ -582,13 +660,19 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                             </ul>
                         </div>
                     }
-                    extendInfoButtonText={t("informationDropdownBoxExtendButtonText")}
-                    closeInfoButtonText={t("informationDropdownBoxCloseButtonText")}
+                    extendInfoButtonText={t(
+                        "informationDropdownBoxExtendButtonText"
+                    )}
+                    closeInfoButtonText={t(
+                        "informationDropdownBoxCloseButtonText"
+                    )}
                 />
             </div>
             <div className="my-4 pt-20 flex flex-col justify-center bg-white text-center py-8 font-light">
                 <div className="w-full sm:w-2/3 px-4 lg:w-1/2 text-left mx-auto text-lg">
-                    <p className="pb-12 text-xl">{t("usingAiPage.consent.title")}</p>
+                    <p className="pb-12 text-xl">
+                        {t("usingAiPage.consent.title")}
+                    </p>
                     <div className="flex pb-8">
                         <div className="my-auto mr-4">
                             <CrossIcon />
