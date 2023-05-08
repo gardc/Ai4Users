@@ -1,13 +1,18 @@
-import React, { ReactNode, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import { motion as m } from "framer-motion";
 import "@fortawesome/fontawesome-free/css/all.css";
 
 /**
  * Interface for the input props for InformationDropBox component.
  *
- * Contains:
- *
- * title: string, initialInfo: string | JSX.Element, extendedInfo: string | JSX.Element
+ * @param title - Title of the dropdown box.
+ * @param initialInfo - The first layer of information. This is displayed before the box is expanded.
+ * @param extendedInfo - The second layer of information. This content is revealed when the box is expanded.
+ * @param extendInfoButtonText - Text for the button to expand the box.
+ * @param extendedInfo - A string or a JSX element, the information that is shown when the
+ * information box is extended.
+ * @param closeInfoButtonText - Text for the button to close the box
+ * @param icon - Icon in the title line.
  */
 export interface InformationDropdownBoxProps {
     title: string;
@@ -23,11 +28,14 @@ export interface InformationDropdownBoxProps {
  * info that is always shown, and some extended info that is only shown  when the user
  * extends the box by clicking a button.
  *
- * @param title A string, the title of the information box.
- * @param initialInfo A string or a JSX element, the information that is always shown
+ * @param title - A string, the title of the information box.
+ * @param initialInfo - A string or a JSX element, the information that is always shown
  * in the box.
- * @param extendedInfo A string or a JSX element, the information that is shown when the
+ * @param extendInfoButtonText - Text for the button to expand the box.
+ * @param extendedInfo - A string or a JSX element, the information that is shown when the
  * information box is extended.
+ * @param closeInfoButtonText - Text for the button to close the box
+ * @param icon - Icon in the title line.
  * @returns HTML code for an information box component.
  */
 const InformationDropdownBox: React.FC<InformationDropdownBoxProps> = ({

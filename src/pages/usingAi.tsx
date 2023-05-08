@@ -1,7 +1,4 @@
 import { GetStaticProps, InferGetStaticPropsType } from "next";
-import { changeLogItemsDe } from "./api/changelogItemsDe";
-import { changeLogItemsEn } from "./api/changelogItemsEn";
-import { changeLogItemsNo } from "./api/changelogItemsNo";
 import { featureImportanceDataEn } from "./api/featureImportanceDataEn";
 import { featureImportanceDataNo } from "./api/featureImportanceDataNo";
 import { motion as m } from "framer-motion";
@@ -12,7 +9,6 @@ import { useRouter } from "next/router";
 import { useTranslation } from "next-i18next";
 import ArrowRightIcon from "@/components/Assets/arrowRightIcon";
 import BookIcon from "@/components/Assets/bookIcon";
-import Changelog from "@/components/Changelog";
 import CheckIcon from "@/components/Assets/checkIcon";
 import CogIcon from "@/components/Assets/cogIcon";
 import Container from "@/components/Container";
@@ -23,13 +19,13 @@ import FeatureImportanceDiagram from "@/components/FeatureImportanceDiagram";
 import Image from "next/image";
 import InformationDropdownBox from "@/components/InformationDropdownBox";
 import InformationSignIcon from "@/components/Assets/informationSignIcon";
-import Link from "next/link";
 import NavBar from "@/components/NavBar";
 import ProgressBar from "@/components/ProgressBar";
 import PuzzleIcon from "@/components/Assets/puzzleIcon";
 import React from "react";
 import Sandbox from "@/components/Sandbox";
 import ScaleIcon from "@/components/Assets/scaleIcon";
+import ConsentButton from "@/components/ConsentButton";
 
 /**
  * The page component for explaining the use of an AI model for the tester of the web application.
@@ -500,15 +496,17 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                             </h2>
                             <ul className="space-y-4 list-disc font-light text-left">
                                 <li>
-                                    <p>
-                                        {t(
-                                            "usingAiPage.aboutRightsInfo.readMore.li1"
-                                        )}
+                                    <div className="xl:flex">
+                                        <p>
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.li1"
+                                            )}
+                                        </p>
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a15"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-skyblue hover:underline"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 xl:py-0 xl:ml-2 text-sm"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -522,18 +520,20 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 <ArrowRightIcon />
                                             </m.div>
                                         </a>
-                                    </p>
+                                    </div>
                                 </li>
                                 <li>
-                                    <p>
-                                        {t(
-                                            "usingAiPage.aboutRightsInfo.readMore.li2"
-                                        )}
+                                    <div className="xl:flex">
+                                        <p>
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.li2"
+                                            )}
+                                        </p>
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a16"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-skyblue hover:underline"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 xl:py-0 xl:ml-2 text-sm"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -547,18 +547,20 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 <ArrowRightIcon />
                                             </m.div>
                                         </a>
-                                    </p>
+                                    </div>
                                 </li>
                                 <li>
-                                    <p>
-                                        {t(
-                                            "usingAiPage.aboutRightsInfo.readMore.li3"
-                                        )}
+                                    <div className="xl:flex">
+                                        <p>
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.li3"
+                                            )}
+                                        </p>
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a17"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-skyblue hover:underline"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 xl:py-0 xl:ml-2 text-sm"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -572,18 +574,20 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 <ArrowRightIcon />
                                             </m.div>{" "}
                                         </a>
-                                    </p>
+                                    </div>
                                 </li>
                                 <li>
-                                    <p>
-                                        {t(
-                                            "usingAiPage.aboutRightsInfo.readMore.li4"
-                                        )}
+                                    <div className="xl:flex">
+                                        <p>
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.li4"
+                                            )}
+                                        </p>
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a18"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-skyblue hover:underline"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 xl:py-0 xl:ml-2 text-sm"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -597,18 +601,20 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 <ArrowRightIcon />
                                             </m.div>
                                         </a>
-                                    </p>
+                                    </div>
                                 </li>
                                 <li>
-                                    <p>
-                                        {t(
-                                            "usingAiPage.aboutRightsInfo.readMore.li5"
-                                        )}
+                                    <div className="xl:flex">
+                                        <p>
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.li5"
+                                            )}
+                                        </p>
                                         <a
                                             href=" https://lovdata.no/lov/2018-06-15-38/gdpr/a20"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-skyblue hover:underline"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 xl:py-0 xl:ml-2 text-sm"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -622,18 +628,20 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 <ArrowRightIcon />
                                             </m.div>
                                         </a>
-                                    </p>
+                                    </div>
                                 </li>
                                 <li>
-                                    <p>
-                                        {t(
-                                            "usingAiPage.aboutRightsInfo.readMore.li6"
-                                        )}
+                                    <div className="xl:flex">
+                                        <p>
+                                            {t(
+                                                "usingAiPage.aboutRightsInfo.readMore.li6"
+                                            )}
+                                        </p>
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a21"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-skyblue hover:underline"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 xl:py-0 xl:ml-2 text-sm"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -647,7 +655,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 <ArrowRightIcon />
                                             </m.div>
                                         </a>
-                                    </p>
+                                    </div>
                                 </li>
                             </ul>
                         </div>
@@ -683,18 +691,12 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 </div>
 
                 <div className="flex justify-center mt-8 mb-10 sm:m-5">
-                    <Link
-                        className="bg-prussian-blue hover:bg-opacity-70 font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3 w-56 flex items-center justify-center"
-                        href="/summary?consent=false"
-                    >
+                    <ConsentButton href={"/summary?consent=false"}>
                         <p>{t("usingAiPage.consent.disagreeButtonText")}</p>
-                    </Link>
-                    <Link
-                        className="bg-prussian-blue hover:bg-opacity-70 font-semibold text-white rounded-2xl text-center m-2 sm:m-3 px-6 py-2 sm:py-3 w-56 flex items-center justify-center"
-                        href="/summary?consent=true"
-                    >
+                    </ConsentButton>
+                    <ConsentButton href={"/summary?consent=true"}>
                         <p>{t("usingAiPage.consent.agreeButtonText")}</p>
-                    </Link>
+                    </ConsentButton>
                 </div>
             </div>
             <div className="p-8" />
