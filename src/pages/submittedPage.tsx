@@ -31,7 +31,7 @@ const SubmittedPage: React.FC = (
             <NavBar enableLinkToFrontPage={false} />
             <div className="m-4 flex justify-center mb-20">
                 <div
-                    className="w-full md:w-3/4 xl:w-1/2 mt-12
+                    className="max-w-6xl w-full md:w-3/4 xl:w-1/2 mt-12
                 bg-white drop-shadow-lg py-4 sm:py-8 px-4 sm:px-16 rounded-xl flex justify-center items-center flex-col"
                 >
                     <div className="w-full flex flex-col justify-center text-2xl items-center">
