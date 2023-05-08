@@ -19,6 +19,11 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 MONGODB_URI="mongodb://localhost:27017"
 ```
 
+## Testing
+There is currently one unit test which tests the feedback API route. In order to test, do the following:
+1. Create a `.env.test` file which includes a `MONGODB_URI` definition (which can be copied from .env.local) in order to connect to the database during jest testing.
+2. Run `npm run test`.
+
 ## Conventions for working with issues, labels and milestones
 
 -   Every issue represents a child-issue.
