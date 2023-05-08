@@ -1,6 +1,11 @@
 # AI4Users
-
-AI4Users is a powerful, user-friendly AI system designed to streamline and enhance a variety of applications.
+The motivation for our project is to help customers design, prototype, and evaluate
+tools that give non-experts a better understanding of AI applications. We want to
+turn the design knowledge we gain into practical design principles that will make
+it easier to create and use responsible AI in public services. Many of these public
+services are today found online, for example, services related to taxes, unemploy-
+ment, and student loans. We aim to improve AI intelligibility and accountability for an AI
+model suggesting the expected total duration of sick leave. 
 
 ## Table of Contents
 
@@ -8,14 +13,12 @@ AI4Users is a powerful, user-friendly AI system designed to streamline and enhan
 3. [Installation](#installation)
 4. [Configuration](#configuration)
 5. [Usage](#usage)
-6. [Documentation](#documentation)
 7. [Contributing](#contributing)
-8. [License](#license)
 9. [Acknowledgements](#acknowledgements)
 
 ## Description
 
-AI4Users is an innovative AI-based project aimed at providing users with advanced features and capabilities for tasks such as natural language processing, computer vision, and data analysis. This project can be easily integrated with various applications to improve user experience and efficiency.
+In this project we developed a web application that addresses the case of ensuring AI accountability and intelligibility in an online public service using an AI model to estimate the total duration of sick leave.
 
 ## Prerequisites
 
@@ -23,7 +26,7 @@ Before installing AI4Users, ensure that you have the following software, tools, 
 
 - Python 3.x
 - Node.js (optional, for frontend development)
-- Git
+- Noe
 
 _For detailed installation instructions, please refer to the respective documentation._
 
@@ -41,13 +44,12 @@ Then, run the development server
 
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser. 
 
 ***Remember to add the mongoDB connection URI to your .env.local file like this:***
 ```bash
 MONGODB_URI="mongodb://localhost:27017"
 ```
-
 
 ## Configuration
 
@@ -59,18 +61,15 @@ _Include examples of how to use the project, such as command line examples or co
 
 ## Deployment
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+To deploy the Next.js app you can use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Check out [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
 
 ## Contributing
 
-We welcome contributions from the community! Please read our [CONTRIBUTING.md](CONTRIBUTING.md) file for more information on how to get involved.
+This project is made by a bachelor group from informatics as a part of our bachelor thesis. 
 
-## License
-
-This project is licensed under the [MIT License](LICENSE).
 
 ## Acknowledgements
 
