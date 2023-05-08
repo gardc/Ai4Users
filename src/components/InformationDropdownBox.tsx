@@ -41,9 +41,41 @@ const InformationDropdownBox: React.FC<InformationDropdownBoxProps> = ({
     const [open, setOpen] = useState<Boolean>(false);
     const containerRef = useRef<HTMLDivElement>(null);
 
+    /**
+     * Smoothly scrolls the window to a target vertical position using requestAnimationFrame.
+     *
+     * @param targetY - The target Y position (in pixels) to scroll to.
+     * @param duration - The duration (in milliseconds) of the scrolling animation. Default is
+     * 250ms.
+     */
+    const smoothScrollTo = (targetY: number, duration: number = 250) => {
+        const startY = window.scrollY;
+        const difference = targetY - startY;
+        const startTime = performance.now();
+
+        const step = (currentTime: number) => {
+            const elapsed = currentTime - startTime;
+            const progress = Math.min(elapsed / duration, 1);
+            window.scrollTo(0, startY + difference * progress);
+            if (progress < 1) {
+                window.requestAnimationFrame(step);
+            }
+        };
+
+        window.requestAnimationFrame(step);
+    };
+
+    /**
+     * Handles the opening and closing of the InformationDropdownBox. When closing the box,
+     * smoothly scrolls the window to the top of the closed InformationDropdownBox element.
+     */
     const handleOpen = () => {
         if (open && containerRef.current) {
-            containerRef.current.scrollIntoView({ behavior: "smooth" });
+            const containerTop =
+                containerRef.current.getBoundingClientRect().top + window.pageYOffset;
+            setTimeout(() => {
+                smoothScrollTo(containerTop);
+            }, 1);
         }
         setOpen(!open);
     };
