@@ -26,12 +26,7 @@ const SubmittedPage: React.FC = (_props: InferGetStaticPropsType<typeof getStati
 
     return (
         <Container>
-            <NavBar
-                enableLinkToFrontPage={false}
-                enableChangelog={false}
-                changelogTitle={""}
-                changelogItems={[]}
-            />
+            <NavBar enableLinkToFrontPage={false} />
             <div className="m-4 flex justify-center mb-20">
                 <div
                     className="w-full md:w-3/4 xl:w-1/2 mt-12

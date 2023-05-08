@@ -1,4 +1,5 @@
 import Content from "./Content";
+import Footer from "./Footer";
 import NavBar from "./NavBar";
 
 /**
@@ -12,6 +13,9 @@ const Container = (props: any) => {
     return (
         <div className="font-sans bg-zinc min-h-screen flex flex-col">
             <Content className="flex-grow">{props.children}</Content>
+            <div className="mt-auto">
+                <Footer />
+            </div>
         </div>
     );
 };
