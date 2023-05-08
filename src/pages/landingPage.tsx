@@ -15,81 +15,60 @@ import React from "react";
  *
  * @returns A React functional component representing the landing page.
  */
-const LandingPage: React.FC = (
-    _props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { t } = useTranslation("common");
 
     return (
-        <div className="h-screen bg-darkblue">
-            <Container>
-                <NavBar
-                    enableLinkToFrontPage={true}
-                    enableChangelog={false}
-                    changelogTitle=""
-                    changelogItems={[]}
-                />
-                <div className="bg-darkblue">
-                    <div className="index pb-16 flex-col flex items-center">
-                        <p
-                            className="text-center font-bold px-8 text-3xl lg:text-4xl lg:px-32
+        <Container>
+            <NavBar enableLinkToFrontPage={true} />
+            <div className="bg-darkblue">
+                <div className="index pb-16 flex-col flex items-center">
+                    <p
+                        className="text-center font-bold px-8 text-3xl lg:text-4xl lg:px-32
                                     tracking-wide mt-8 text-white"
-                        >
-                            {t("landingPage.title")}
-                        </p>
-                        <div
-                            className="w-full md:w-2/3 lg:w-55/100 mt-12
+                    >
+                        {t("landingPage.title")}
+                    </p>
+                    <div
+                        className="w-full md:w-2/3 lg:w-55/100 mt-12
                                     bg-white drop-shadow-lg py-4 sm:py-8 px-4 sm:px-8 rounded-xl 
                                     flex justify-center items-center flex-col text-black"
-                        >
-                            <div className="mt-6">
-                                <InformationSignIcon />
-                            </div>
-                            <div
-                                className="w-full sm:px-6 my-10 font-light text-left 
-                                tracking-wide leading-6 text-lg"
-                            >
-                                <p>{t("landingPage.description1")}</p>
-                                <p className="mt-8">
-                                    {t("landingPage.description2")}
-                                </p>
-                                <p className="mt-8">
-                                    {t("landingPage.description3")}
-                                </p>
-                                <p className="mt-8">
-                                    {t("landingPage.description4")}
-                                </p>
-                                <div className="justify-center items-center flex mt-6">
-                                    <ol className="mt-8 list-decimal list-inside">
-                                        {t("landingPage.stepsOfPageList.title")}
-                                        <li className="pt-2 pl-2 text-sm">
-                                            {t(
-                                                "landingPage.stepsOfPageList.li1"
-                                            )}
-                                        </li>
-                                        <li className="pt-2 pl-2 text-sm">
-                                            {t(
-                                                "landingPage.stepsOfPageList.li2"
-                                            )}
-                                        </li>
-                                        <li className="pt-2 pl-2 text-sm">
-                                            {t(
-                                                "landingPage.stepsOfPageList.li3"
-                                            )}
-                                        </li>
-                                    </ol>
-                                </div>
-                            </div>
+                    >
+                        <div className="mt-6">
+                            <InformationSignIcon />
                         </div>
-                        <div className="mt-6 mb-8">
-                            <Button color="orange" href="/useOfData">
-                                {t("landingPage.continueButtonText")}
-                            </Button>
+                        <div
+                            className="w-full sm:px-6 my-10 font-light text-left 
+                                tracking-wide leading-6 text-lg"
+                        >
+                            <p>{t("landingPage.description1")}</p>
+                            <p className="mt-8">{t("landingPage.description2")}</p>
+                            <p className="mt-8">{t("landingPage.description3")}</p>
+                            <p className="mt-8">{t("landingPage.description4")}</p>
+                            <div className="justify-center items-center flex mt-6">
+                                <ol className="mt-8 list-decimal list-inside">
+                                    {t("landingPage.stepsOfPageList.title")}
+                                    <li className="pt-2 pl-2 text-sm">
+                                        {t("landingPage.stepsOfPageList.li1")}
+                                    </li>
+                                    <li className="pt-2 pl-2 text-sm">
+                                        {t("landingPage.stepsOfPageList.li2")}
+                                    </li>
+                                    <li className="pt-2 pl-2 text-sm">
+                                        {t("landingPage.stepsOfPageList.li3")}
+                                    </li>
+                                </ol>
+                            </div>
                         </div>
                     </div>
+                    <div className="mt-6 mb-8">
+                        <Button color="orange" href="/useOfData">
+                            {t("landingPage.continueButtonText")}
+                        </Button>
+                    </div>
                 </div>
-            </Container>
-        </div>
+            </div>
+        </Container>
     );
 };
 

@@ -45,18 +45,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
 
     return (
         <Container>
-            <NavBar
-                enableLinkToFrontPage={true}
-                enableChangelog={true}
-                changelogTitle={t("changelog.title")}
-                changelogItems={
-                    locale == "no"
-                        ? changeLogItemsNo
-                        : locale == "de"
-                        ? changeLogItemsDe
-                        : changeLogItemsEn
-                }
-            />
+            <NavBar enableLinkToFrontPage={true} />
             <div className="pb-2 text-center">
                 <div className="flex justify-between items-center text-left pt-2">
                     <ProgressBar
@@ -87,18 +76,6 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                             },
                         ]}
                     />
-                    <div className="flex justify-end block lg:hidden pb-4 pr-2 sm:pr-8">
-                        <Changelog
-                            title={t("changelog.title")}
-                            listOfChanges={
-                                locale == "no"
-                                    ? changeLogItemsNo
-                                    : locale == "de"
-                                    ? changeLogItemsDe
-                                    : changeLogItemsEn
-                            }
-                        />
-                    </div>
                 </div>
 
                 <p className="text-center text-prussian-blue font-bold text-3xl m-3 pt-4">
@@ -648,7 +625,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                     </Link>
                 </div>
             </div>
-            <div className="p-12" />
+            <div className="p-8" />
         </Container>
     );
 };

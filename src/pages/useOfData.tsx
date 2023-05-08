@@ -30,18 +30,7 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
 
     return (
         <Container>
-            <NavBar
-                enableLinkToFrontPage={true}
-                enableChangelog={true}
-                changelogTitle={t("changelog.title")}
-                changelogItems={
-                    locale == "no"
-                        ? changeLogItemsNo
-                        : locale == "de"
-                        ? changeLogItemsDe
-                        : changeLogItemsEn
-                }
-            />
+            <NavBar enableLinkToFrontPage={true} />
             <div className="flex justify-between items-center pt-2">
                 <ProgressBar
                     pages={[
@@ -71,18 +60,6 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
                         },
                     ]}
                 />
-                <div className="flex justify-end block lg:hidden pb-4 pr-2 sm:pr-8">
-                    <Changelog
-                        title={t("changelog.title")}
-                        listOfChanges={
-                            locale == "no"
-                                ? changeLogItemsNo
-                                : locale == "de"
-                                ? changeLogItemsDe
-                                : changeLogItemsEn
-                        }
-                    />
-                </div>
             </div>
             <div className="m-4 mb-20 flex justify-center">
                 <div

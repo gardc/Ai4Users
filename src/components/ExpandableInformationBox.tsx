@@ -12,14 +12,18 @@ export interface ExpandableInformationBoxProps {
 }
 
 /**
- * An information box that displays content with an optional title. The box can be expanded to show additional information.
+ * An information box that displays content with an optional title. The box can be expanded to show
+ *  additional information.
  *
- * @param content - The initial content of the information box. Can  be  a string or a JSX/TSX Element.
+ * @param content - The initial content of the information box. Can  be  a string or a JSX/TSX
+ * Element.
  * @param expandedContentTitle - The title of the information box. A string that can be empty.
- * @param expandedContent - The content shown when the information box is expanded. Can  be  a string or a JSX/TSX Element.
- * @param expandedCloseButtonText - A string that is shown on the close button on the expanded content.
- * @param buttonText - A string that is shown on the button that expands the box to reveal additional content.
- *
+ * @param expandedContent - The content shown when the information box is expanded. Can be a string
+ *  or a JSX/TSX Element.
+ * @param expandedCloseButtonText - A string that is shown on the close button on the expanded
+ * content.
+ * @param buttonText - A string that is shown on the button that expands the box to reveal
+ * additional content.
  * @returns An expandable information box as a React functional component.
  */
 const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
@@ -45,7 +49,7 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
         <div className="flex flex-col">
             {content}
             <div className="justify-self-end justify-center mb-16 lg:mb-0 pt-2 mt-6">
-                <Button color="blue" onClick={handleExpansion}>
+                <Button color={"blue"} onClick={handleExpansion}>
                     {buttonText}
                 </Button>
             </div>
