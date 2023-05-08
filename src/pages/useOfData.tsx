@@ -23,7 +23,9 @@ import ProgressBar from "@/components/ProgressBar";
  *
  * @returns A React functional component representing the landing page.
  */
-const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const UseOfData: React.FC = (
+    _props: InferGetStaticPropsType<typeof getStaticProps>
+) => {
     const { t } = useTranslation("common");
     const router = useRouter();
     const { locale } = router;
@@ -36,25 +38,33 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
                     pages={[
                         {
                             title: t("pageProgressBar.home"),
-                            titleCompressed: t("pageProgressBar.homeCompressed"),
+                            titleCompressed: t(
+                                "pageProgressBar.homeCompressed"
+                            ),
                             href: "/landingPage",
                             currentPage: false,
                         },
                         {
                             title: t("pageProgressBar.useOfData"),
-                            titleCompressed: t("pageProgressBar.useOfDataCompressed"),
+                            titleCompressed: t(
+                                "pageProgressBar.useOfDataCompressed"
+                            ),
                             href: "",
                             currentPage: true,
                         },
                         {
                             title: t("pageProgressBar.usingAiPage"),
-                            titleCompressed: t("pageProgressBar.usingAiPageCompressed"),
+                            titleCompressed: t(
+                                "pageProgressBar.usingAiPageCompressed"
+                            ),
                             href: "",
                             currentPage: false,
                         },
                         {
                             title: t("pageProgressBar.summaryPage"),
-                            titleCompressed: t("pageProgressBar.summaryPageCompressed"),
+                            titleCompressed: t(
+                                "pageProgressBar.summaryPageCompressed"
+                            ),
                             href: "",
                             currentPage: false,
                         },
@@ -63,17 +73,17 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
             </div>
             <div className="m-4 mb-20 flex justify-center">
                 <div
-                    className="w-full sm:w-3/4 
+                    className="w-full max-w-6xl sm:w-3/4 
                 bg-white drop-shadow-lg py-4 sm:py-8 px-4 sm:px-16 rounded-xl flex justify-center items-center flex-col"
                 >
                     <p className="text-center text-prussian-blue font-bold text-3xl sm:text-4xl mt-8 sm:mt-4">
                         {t("useOfDataPage.title")}
                     </p>
-                    <p className="py-3 px-8 sm:px-0 mt-5 text-left lg:w-4/6 text-lg font-light">
+                    <p className="max-w-2xl py-3 px-8 sm:px-0 mt-5 text-left lg:w-4/6 text-lg font-light">
                         {t("useOfDataPage.description1")}
                     </p>
 
-                    <p className="px-8 sm:px-0 lg:w-4/6 text-lg font-light text-left">
+                    <p className="max-w-2xl px-8 sm:px-0 lg:w-4/6 text-lg font-light text-left">
                         {t("useOfDataPage.description2")}
                         <span className="absolute text-sm font-medium border-black border-1 rounded-full shadow-xl py-0.5 px-9px">
                             ?
@@ -104,7 +114,9 @@ const UseOfData: React.FC = (_props: InferGetStaticPropsType<typeof getStaticPro
 
                     <div className="flex-col justify-center flex">
                         <div className="flex justify-center mt-1 hover:text-skyblue underline text-sm">
-                            <a href="/incorrectInformation">{t("useOfDataPage.incorrectData")}</a>
+                            <a href="/incorrectInformation">
+                                {t("useOfDataPage.incorrectData")}
+                            </a>
                         </div>
                         <div className="flex justify-center mt-5 mb-10">
                             <Button color="orange" href="/usingAi">
