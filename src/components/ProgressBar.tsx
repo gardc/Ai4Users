@@ -36,7 +36,7 @@ interface ProgressBarProps {
  *  {
  *      title: "Home",
  *      titleCompressed: "Home",
- *      href: "/LandingPage",
+ *      href: "/landingPage",
  *      currentPage: false,
  *  },
  *  {

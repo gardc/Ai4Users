@@ -23,7 +23,7 @@ const NavBar = ({ enableLinkToFrontPage }: NavBarProps) => {
             <div className="px-6 sm:px-12 pt-6 pb-6 flex justify-between items-center">
                 {/* Left side */}
                 {enableLinkToFrontPage ? (
-                    <Link href="/LandingPage">
+                    <Link href="/landingPage">
                         <SocialServiceLogo />
                     </Link>
                 ) : (
