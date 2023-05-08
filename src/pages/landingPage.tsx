@@ -5,7 +5,6 @@ import Button from "@/components/Button";
 import InformationSignIcon from "@/components/Assets/informationSignIcon";
 import NavBar from "@/components/NavBar";
 import Container from "@/components/Container";
-import { motion as m } from "framer-motion";
 import React from "react";
 
 /**
@@ -31,14 +30,14 @@ const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticP
                     </p>
                     <div
                         className="w-full md:w-2/3 lg:w-55/100 mt-12
-                                    bg-white drop-shadow-lg py-4 sm:py-8 px-4 sm:px-8 rounded-xl 
+                                    bg-white drop-shadow-lg py-4 sm:py-8 px-4 sm:px-8 rounded-xl
                                     flex justify-center items-center flex-col text-black"
                     >
                         <div className="mt-6">
                             <InformationSignIcon />
                         </div>
                         <div
-                            className="w-full sm:px-6 my-10 font-light text-left 
+                            className="w-full sm:px-6 my-10 font-light text-left
                                 tracking-wide leading-6 text-lg"
                         >
                             <p>{t("landingPage.description1")}</p>

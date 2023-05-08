@@ -5,62 +5,57 @@ import PieChartIcon from "./Assets/pieChartIcon";
 import TransparentBoxIcon from "./Assets/transparentBoxIcon";
 
 /**
+ * @param feature - The name of the feature.
+ * @param weight - The weight of the feature importance, given the chosen argument/value for the changeable parameter.
+ * The sum of all weights for a given featureImportanceGivenArgument object should be 1 to display the intended charts.
+ */
+interface FeatureWithWeight {
+    feature: string;
+    weight: number;
+}
+
+/**
+ * An argument (values) with the changeable parameter of the feature.
+ *
+ * @param argumentName - The name of one of the arguments/values the parameter may have.
+ * @param featureImportanceGivenArgument - A list of features that are affected by the change of the parameter value.
+ */
+interface Argument {
+    argumentName: string;
+    featureImportanceGivenArgument: FeatureWithWeight[];
+}
+
+/**
+ * An object for the parameter the user can modify.
+ *
+ * @param label - The label of the parameter the user can modify.
+ * @param arguments - A list of objects for the arguments (values) the changeable parameter may have.
+ */
+interface Parameter {
+    label: string;
+    arguments: Argument[];
+}
+
+/**
  * The type definition for the `FeatureImportanceDiagram` component's props.
+ *
+ * @param title - The title for the feature importance section.
+ * @param description - A description of the feature importance.
+ * @param parameter - An object for the parameter the user can modify.
  */
 interface FeatureImportanceDiagramProps {
-    /**
-     * The title for the feature importance section.
-     */
     title: string;
-
-    /**
-     * A description of the feature importance.
-     */
     description: string | JSX.Element;
-
-    /**
-     * An object for the parameter the user can modify.
-     */
-    parameter: {
-        /**
-         * The label of the parameter the user can modify.
-         */
-        label: string;
-
-        /**
-         * A list of objects for the arguments (values) the changeable parameter may have.
-         */
-        arguments: {
-            /**
-             * The name of one of the arguments/values the parameter may have.
-             */
-            argumentName: string;
-
-            /**
-             * A list of features that are affected by the change of the parameter value.
-             */
-            featureImportanceGivenArgument: {
-                /**
-                 * The name of the feature.
-                 */
-                feature: string;
-
-                /**
-                 * The weight of the feature importance, given the chosen argument/value for the
-                 * changeable parameter. The sum of all weights for a given
-                 * featureImportanceGivenArgument object should be 1 to display the intended
-                 * charts.
-                 */
-                weight: number;
-            }[];
-        }[];
-    };
+    parameter: Parameter;
 }
 
 /**
  * A component for displaying feature importance with a pie chart, allowing users to modify one
  * parameter/feature to see the feature importance of all features, given the selected value.
  *
+ * @param title - Title of the component to be displayed above the description
+ * @param description - Description text for the component
+ * @param parameter - The parameter to be used for display of feature importance
  * @component
  * @example
  * title = "A title"
@@ -165,9 +160,11 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
         const width = +svg.attr("width") - margin.left - margin.right;
         const height = +svg.attr("height") - margin.top - margin.bottom;
 
-        // Checks if the number of existing bars is not equal to the length of
-        // importanceWeightsOfFeatures, meaning that the SVG needs to be redrawn to avoid
-        // overlapping bars.
+        /**
+         * * Checks if the number of existing bars is not equal to the length of
+         * importanceWeightsOfFeatures, meaning that the SVG needs to be redrawn to avoid
+         * overlapping bars.
+         */
         const existingBars = svg.selectAll(".bar").size();
         if (existingBars != importanceWeightsOfFeatures.length) {
             svg.selectAll("*").remove();
@@ -431,7 +428,7 @@ const FeatureImportanceDiagram: React.FC<FeatureImportanceDiagramProps> = ({
                         </div>
                         <p className="text-lg mt-1 font-bold">{title}</p>
                     </div>
-                    <p className="mt-8 text-lg">{description}</p>
+                    <div className="mt-8 xl:text-lg">{description}</div>
                 </div>
 
                 <div className="flex flex-col xl:w-1/2 bg-white rounded-xl pl-12 p-8 mx-auto">

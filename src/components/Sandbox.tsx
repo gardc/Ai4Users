@@ -6,43 +6,38 @@ import CogIconLarge from "@/components/Assets/cogIconLarge";
 import React, { FormEvent, useState } from "react";
 
 /**
+ * A selectable arguments for the parameter.
+ *
+ * @param itemName - The human-readable and translated name of the argument.
+ * @param itemValueForModel - The value to be sent to the model for the argument. This is separated for the purposes of translation.
+ */
+interface Argument {
+    itemName: string;
+    itemValueForModel: string;
+}
+
+/**
+ * A parameter that the user can select values for.
+ *
+ * @param label - The human-readable and translated label for the parameter.
+ * @param labelValueForModel - The label value to be sent to the model. This is separated for the purposes of translation.
+ * @param argument - The list of selectable arguments for the parameter.
+ */
+interface Parameter {
+    label: string;
+    labelValueForModel: string;
+    argument: Argument[];
+}
+
+/**
  * The type definition for the `Sandbox` component's props.
+ *
+ * @param description - The description text for the sandbox.
+ * @param parameters - The parameters that the user can select values for.
  */
 interface SandboxProps {
-    /**
-     * The description text for the sandbox.
-     */
     description: string;
-
-    /**
-     * The parameters that the user can select values for.
-     */
-    parameters: {
-        /**
-         * The human-readable and translated label for the parameter.
-         */
-        label: string;
-
-        /**
-         * The label value to be sent to the model. This is separated for the purposes of translation.
-         */
-        labelValueForModel: string;
-
-        /**
-         * The list of selectable arguments for the parameter.
-         */
-        argument: {
-            /**
-             * The human-readable and translated name of the argument.
-             */
-            itemName: string;
-
-            /**
-             * The value to be sent to the model for the argument. This is separated for the purposes of translation.
-             */
-            itemValueForModel: string;
-        }[];
-    }[];
+    parameters: Parameter[];
 }
 
 /**
@@ -90,12 +85,13 @@ const Sandbox: React.FC<SandboxProps> = ({ description, parameters }) => {
     /**
      * Updates the values in the selected values state based on the user's input.
      *
-     * @param event - The event object triggered by the input element.
+     * @param labelValueForModel - The untranslated label of the parameter that will be sent to the AI model.
+     * @param itemValueForModel - The untranslated value that will be sent to the AI model.
      */
-    const handleChangeOfValues = (parameterLabel: string, itemValueForModel: string) => {
+    const handleChangeOfValues = (labelValueForModel: string, itemValueForModel: string) => {
         setSelectedValues((prevState) => ({
             ...prevState,
-            [parameterLabel]: itemValueForModel,
+            [labelValueForModel]: itemValueForModel,
         }));
     };
 
