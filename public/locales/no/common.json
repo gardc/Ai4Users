@@ -1,5 +1,5 @@
 {
-    "nationalSocialServiceEntityNameLine1": "Den Nasjonale",
+    "nationalSocialServiceEntityNameLine1": "Den Nasjonale ",
     "nationalSocialServiceEntityNameLine2": "Sosialtjenesten",
 
     "expandedInfoBoxCloseButtonText": "Lukk",
@@ -18,8 +18,9 @@
     },
 
     "changelog": {
+        "currentVersion": "KI-modell-versjon: 1.0.3",
         "title": "Siste endringer i KI-modellen",
-        "readMore": "Les mer"
+        "linkText": "Les mer"
     },
 
     "userTestingLandingPage": {

@@ -14,7 +14,9 @@ import sendApiRequest from "@/util/sendApiRequest";
  *
  * @returns A React functional component representing the landing page.
  */
-const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Feedback: React.FC = (
+    _props: InferGetStaticPropsType<typeof getStaticProps>
+) => {
     const { t } = useTranslation("common");
     const [feedbackString, setFeedbackString] = useState("");
     const [waiting, setWaiting] = useState(false);
@@ -38,56 +40,55 @@ const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProp
         }
     };
 
-    const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const handleInputChange = (
+        event: React.ChangeEvent<HTMLTextAreaElement>
+    ) => {
         setFeedbackString(event.target.value);
     };
 
     return (
-        <div className="bg-darkblue">
-            <Container>
-                <NavBar
-                    enableLinkToFrontPage={false}
-                    enableChangelog={false}
-                    changelogTitle={""}
-                    changelogItems={[]}
-                />
-                <div className="index pt-8 pb-8 flex-col flex items-center text-black">
-                    <p className="text-center font-bold text-3xl sm:text-5xl tracking-wide sm:mt-16 ">
-                        {t("feedback.title")}
-                    </p>
-                    <p className="w-4/5 sm:w-1/2 my-10 font-light text-left tracking-wide leading-6 text-lg">
-                        {t("feedback.description")}
-                    </p>
+        <Container>
+            <NavBar enableLinkToFrontPage={false} />
+            <div className="index pt-8 pb-8 flex-col flex items-center text-black">
+                <p className="text-center font-bold text-3xl sm:text-5xl tracking-wide sm:mt-16 ">
+                    {t("feedback.title")}
+                </p>
+                <p className="max-w-2xl w-4/5 sm:w-1/2 my-10 font-light text-left tracking-wide leading-6 text-lg">
+                    {t("feedback.description")}
+                </p>
+                {!finished && (
+                    <textarea
+                        id="message"
+                        rows={6}
+                        value={feedbackString}
+                        onChange={handleInputChange}
+                        className="max-w-2xl w-4/5 sm:w-1/2 p-2.5 text-sm bg-lightslate rounded-lg border border-darkgray focus:ring-skyblue focus:border-skyblue"
+                        placeholder={t("feedback.placeholder")!}
+                    ></textarea>
+                )}
+                <p className="text-lg font-bold">{resultMessage}</p>
+                <div className="flex justify-center mt-8 mb-10 sm:m-5">
                     {!finished && (
-                        <textarea
-                            id="message"
-                            rows={6}
-                            value={feedbackString}
-                            onChange={handleInputChange}
-                            className="w-4/5 sm:w-1/2 p-2.5 text-sm bg-lightslate rounded-lg border border-darkgray focus:ring-skyblue focus:border-skyblue"
-                            placeholder={t("feedback.placeholder")!}
-                        ></textarea>
-                    )}
-                    <p className="text-lg font-bold">{resultMessage}</p>
-                    <div className="flex justify-center mt-8 mb-10 sm:m-5">
-                        {!finished && (
-                            <Button
-                                color="orange"
-                                onClick={handleSubmit}
-                                disabled={feedbackString.length === 0}
-                                loading={waiting}
-                            >
-                                {t("feedback.submit")}
-                            </Button>
-                        )}
-                        <Button color="orange" href="/submittedPage?consent=false" loading={waiting}>
-                            {/* If finished, show continue button, else show skip */}
-                            {finished ? t("feedback.continue") : t("feedback.skip")}
+                        <Button
+                            color="orange"
+                            onClick={handleSubmit}
+                            disabled={feedbackString.length === 0}
+                            loading={waiting}
+                        >
+                            {t("feedback.submit")}
                         </Button>
-                    </div>
+                    )}
+                    <Button
+                        color="orange"
+                        href="/submittedPage?consent=false"
+                        loading={waiting}
+                    >
+                        {/* If finished, show continue button, else show skip */}
+                        {finished ? t("feedback.continue") : t("feedback.skip")}
+                    </Button>
                 </div>
-            </Container>
-        </div>
+            </div>
+        </Container>
     );
 };
 

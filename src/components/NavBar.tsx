@@ -2,33 +2,28 @@ import Link from "next/link";
 import LocaleSelection from "./LocaleSelection";
 import React from "react";
 import SocialServiceLogo from "./SocialServiceLogo";
-import Changelog from "./Changelog";
 
-
+/**
+ * Interface for the input props for NavBar component.
+ *
+ * @param enableLinkToFrontPage - A boolean that determines if the NavBar logo should link to the front page or not
+ */
 interface NavBarProps {
     enableLinkToFrontPage: boolean;
-    enableChangelog: boolean;
-    changelogTitle: string;
-    changelogItems: {
-        dateOfChange: string;
-        titleOfChange: string;
-        changeDescription: string;
-        readMoreLink: string;
-    }[];
 }
 
-const NavBar = ({
-    enableLinkToFrontPage,
-    enableChangelog,
-    changelogTitle,
-    changelogItems,
-}: NavBarProps) => {
+/**
+ * NavBar component that is used in the header of all pages. Contains a logo, and the LocaleSelection component.
+ *
+ * @param enableLinkToFrontPage - A boolean that determines if the NavBar logo should link to the front page or not
+ */
+const NavBar = ({ enableLinkToFrontPage }: NavBarProps) => {
     return (
         <div className="bg-darkblue ">
             <div className="px-6 sm:px-12 pt-6 pb-6 flex justify-between items-center">
                 {/* Left side */}
                 {enableLinkToFrontPage ? (
-                    <Link href="/LandingPage">
+                    <Link href="/landingPage">
                         <SocialServiceLogo />
                     </Link>
                 ) : (
@@ -39,15 +34,6 @@ const NavBar = ({
 
                 {/* Right side */}
                 <div className="flex items-center">
-                    {enableChangelog && (
-                        <div className="hidden lg:block">
-                            <Changelog
-                                title={changelogTitle}
-                                listOfChanges={changelogItems}
-                            />
-                        </div>
-                    )}
-
                     <LocaleSelection />
                 </div>
             </div>

@@ -39,16 +39,16 @@ const Tooltip: React.FC<TooltipProps> = ({ extendedInfo }) => {
     return (
         <div ref={ref} className="flex relative items-center">
             <button
-                className=" w-1/100 h-1/100 bg-white focus:outline-none focus:ring focus:ring-black rounded-full flex justify-center items-center text-center p-3 shadow-xl border-black border-1"
+                className={`w-1/100 h-1/100 bg-white focus:outline-none ${
+                    open && "ring ring-black"
+                } rounded-full flex justify-center items-center text-center p-3 shadow-xl border-black border-1`}
                 onClick={handleOpen}
             >
                 <div className="absolute text-sm font-medium">?</div>
             </button>
             <div>
                 {open ? (
-                    <div
-                        className="absolute origin-bottom-right right-full bottom-full sm:left-full w-48 sm:w-28 md:w-40 text-left bg-black z-50 text-white bg-opacity-80 rounded p-2 text-xs"
-                    >
+                    <div className="absolute origin-bottom-right right-full bottom-full sm:left-full w-48 sm:w-28 md:w-40 text-left bg-black z-50 text-white bg-opacity-80 rounded p-2 text-xs">
                         {extendedInfo}
                     </div>
                 ) : (

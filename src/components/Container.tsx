@@ -1,8 +1,8 @@
 import Content from "./Content";
-import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 /**
- * A container component which includes a NavBar for each page.
+ * A container component which includes a NavBar and Footer for each page.
  *
  * @param props The content to be displayed below the NavBar
  *
@@ -12,6 +12,9 @@ const Container = (props: any) => {
     return (
         <div className="font-sans bg-zinc min-h-screen flex flex-col">
             <Content className="flex-grow">{props.children}</Content>
+            <div className="mt-auto">
+                <Footer />
+            </div>
         </div>
     );
 };

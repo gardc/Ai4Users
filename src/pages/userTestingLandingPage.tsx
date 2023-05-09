@@ -31,43 +31,23 @@ const UserTestingLandingPage: React.FC = (
                 <h1 className="text-2xl text-prussian-blue font-bold">
                     {t("userTestingLandingPage.title")}
                 </h1>
-                <p className="mt-8">
-                    {t("userTestingLandingPage.description")}
-                </p>
-                <p className="mt-12 font-bold">
-                    {t("userTestingLandingPage.beforeTestingTitle")}
-                </p>
-                <p className="mt-4">
-                    {t("userTestingLandingPage.beforeTestingDescription")}
-                </p>
-                <p className="mt-12 font-bold">
-                    {t("userTestingLandingPage.disclaimerTitle")}
-                </p>
+                <p className="mt-8">{t("userTestingLandingPage.description")}</p>
+                <p className="mt-12 font-bold">{t("userTestingLandingPage.beforeTestingTitle")}</p>
+                <p className="mt-4">{t("userTestingLandingPage.beforeTestingDescription")}</p>
+                <p className="mt-12 font-bold">{t("userTestingLandingPage.disclaimerTitle")}</p>
                 <ul className="mt-4 list-disc list-inside">
+                    <li className="pb-1">{t("userTestingLandingPage.disclaimer1")}</li>
+                    <li className="pb-1">{t("userTestingLandingPage.disclaimer2")}</li>
                     <li className="pb-1">
-                        {t("userTestingLandingPage.disclaimer1")}
-                    </li>
-                    <li className="pb-1">
-                        {t("userTestingLandingPage.disclaimer2")}
-                    </li>
-                    <li className="pb-1">
-                            {t("userTestingLandingPage.disclaimer3.title")}
+                        {t("userTestingLandingPage.disclaimer3.title")}
                         <ul className="list-disc list-inside ml-8">
-                            <li className="pb-1">
-                                {t("userTestingLandingPage.disclaimer3.li1")}
-                            </li>
-                            <li>
-                                {t("userTestingLandingPage.disclaimer3.li2")}
-                            </li>
+                            <li className="pb-1">{t("userTestingLandingPage.disclaimer3.li1")}</li>
+                            <li>{t("userTestingLandingPage.disclaimer3.li2")}</li>
                         </ul>
                     </li>
                 </ul>
-                <p className="mt-12 font-bold">
-                    {t("userTestingLandingPage.questionsTitle")}
-                </p>
-                <p className="mt-4">
-                    {t("userTestingLandingPage.questionsEmailAddress")}
-                </p>
+                <p className="mt-12 font-bold">{t("userTestingLandingPage.questionsTitle")}</p>
+                <p className="mt-4">{t("userTestingLandingPage.questionsEmailAddress")}</p>
                 <div className="mt-20">
                     <Button color="orange" href={"/login"}>
                         {t("userTestingLandingPage.beginTestingButtonText")}
