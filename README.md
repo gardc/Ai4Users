@@ -54,6 +54,7 @@ Here are the major folders and files, and a short description of them:
 - `tailwind.config.js`: Configuration file for Tailwind CSS.
 - `tsconfig.json`: Configuration file for TypeScript.
 
+$ tree
 ├── dir1
 │   ├── file11.ext
 │   └── file12.ext
