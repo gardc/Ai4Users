@@ -14,10 +14,11 @@ model suggesting the expected total duration of sick leave.
 3. [Installation](#installation)
 4. [Configuration](#configuration)
 5. [Running the NextJS Server](#running-the-nextjs-server)
-6. [Testing](#testing)
-7. [Usage](#usage)
-8. [Deployment](#deployment)
-9. [Contributing](#contributing)
+6. [Customizing the AI sandbox server](#customizing-the-ai-sandbox-server)
+7. [Testing](#testing)
+8. [Usage](#usage)
+9. [Deployment](#deployment)
+10. [Contributing](#contributing)
 
 ## Description
 
@@ -25,7 +26,6 @@ In this project we developed a web application that addresses the case of ensuri
 
 ## Project Structure
 Here are the major folders and files, and a short description of them:
-<<<<<<< README.md
 
 ```
 ├── __tests__:                  Jest tests
@@ -98,6 +98,10 @@ SANDBOX_URI="<sandbox API URI, e.g. http://0.0.0.0>"
 ```
 These environment variables provides the NextJS app information about how to communicate with the database and the AI sandbox server.
 
+### Optional: configuring colors
+Throughout the codebase we have strictly used predefined colors, which are defined in the tailwind config (`tailwind.config.js`). These colors can be edited if necessary to better fit the design vision. Currently we have defined color names by the colors used, but this could be changed to a priority system instead (e.g. using primary, secondary,etc.).
+
+
 ## Running the NextJS Server
 1. Make sure the configured MongoDB is available and accessible.
 2. Start the AI sandbox server [AI Sandbox Readme](sandbox-server/README.md).
@@ -108,6 +112,24 @@ npm run start
 ```
 
 4. The NextJS project should now be accessible at `http://localhost:3000`. Make sure the AI server is running in order for the sandbox functionality to work.
+
+## Customizing the AI sandbox server
+Currently the AI sandbox functionality is outsourced to a standalone Python Flask server. Due to this architecture of our project, it's easy to replace or modify the calls to any external service. For instance, here is a simple sequence diagram of a call to the AI sandbox server:
+```mermaid
+sequenceDiagram
+    participant NextJS Client
+    participant NextJS Server
+    participant Sandbox Server
+
+    NextJS Client-->>NextJS Client: User clicks "predict" button
+    NextJS Client->>NextJS Server: Request prediction with<br> selected input
+    NextJS Server->>Sandbox Server: Request prediction with<br> selected input
+    Sandbox Server-->>Sandbox Server: Generate prediction
+    Sandbox Server->>NextJS Server: Return prediction result
+    NextJS Server->>NextJS Client: Return prediction result
+    note over NextJS Client: Result is rendered
+```
+In order to replace the sandbox server found in `sandbox-server/`, the code related to HTTP calls in NextJS Client (currently `src/components/Sandbox.tsx`) and in NextJS Server (currently `src/pages/api/processData.ts`).
 
 ## Testing
 There is currently one unit test which tests the feedback API route. In order to test, do the following:
