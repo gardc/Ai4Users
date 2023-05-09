@@ -28,7 +28,6 @@
  *     },
  * ]
  */
-// TODO: MUST BE TRANSLATED
 export const exampleDataDe = [
     {
         label: "Alter",
