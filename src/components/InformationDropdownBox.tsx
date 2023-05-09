@@ -80,7 +80,8 @@ const InformationDropdownBox: React.FC<InformationDropdownBoxProps> = ({
     const handleOpen = () => {
         if (open && containerRef.current) {
             const containerTop =
-                containerRef.current.getBoundingClientRect().top + window.pageYOffset;
+                containerRef.current.getBoundingClientRect().top +
+                window.pageYOffset;
             setTimeout(() => {
                 smoothScrollTo(containerTop);
             }, 1);
@@ -91,12 +92,14 @@ const InformationDropdownBox: React.FC<InformationDropdownBoxProps> = ({
     return (
         <div
             ref={containerRef}
-            className="bg-white rounded-xl shadow-lg sm:w-19/20 md:w-3/4 text-left justify-center items-center m-2"
+            className="max-w-7xl bg-white rounded-xl shadow-lg sm:w-19/20 md:w-3/4 text-left justify-center items-center m-2"
         >
             <div className="row flex px-4 sm:px-12 pt-8 sm:pt-14 items-center">
                 <div className="text-prussian-blue">{icon}</div>
                 {title.length !== 0 && (
-                    <h2 className={"font-bold text-xl text-prussian-blue px-2"}>{title}</h2>
+                    <h2 className={"font-bold text-xl text-prussian-blue px-2"}>
+                        {title}
+                    </h2>
                 )}
             </div>
             <div className="p-4 sm:p-8 md:px-12">{initialInfo}</div>

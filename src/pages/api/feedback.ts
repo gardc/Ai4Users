@@ -1,5 +1,5 @@
-import feedback from "@/db/models/feedback";
-import dbConnect from "@/db/dbConnect";
+import feedback from "../../db/models/feedback";
+import dbConnect from "../../db/dbConnect";
 import type { NextApiRequest, NextApiResponse } from "next";
 
 type FeedbackData = {

@@ -14,7 +14,9 @@ import React from "react";
  *
  * @returns A React functional component representing the landing page.
  */
-const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const LandingPage: React.FC = (
+    _props: InferGetStaticPropsType<typeof getStaticProps>
+) => {
     const { t } = useTranslation("common");
 
     return (
@@ -29,21 +31,27 @@ const LandingPage: React.FC = (_props: InferGetStaticPropsType<typeof getStaticP
                         {t("landingPage.title")}
                     </p>
                     <div
-                        className="w-full md:w-2/3 lg:w-55/100 mt-12
-                                    bg-white drop-shadow-lg py-4 sm:py-8 px-4 sm:px-8 rounded-xl
+                        className="max-w-2xl w-full md:w-2/3 lg:w-55/100 mt-12
+                                    bg-white drop-shadow-lg py-4 sm:py-8 px-4 sm:px-8 rounded-xl 
                                     flex justify-center items-center flex-col text-black"
                     >
                         <div className="mt-6">
                             <InformationSignIcon />
                         </div>
                         <div
-                            className="w-full sm:px-6 my-10 font-light text-left
+                            className="max-w-2xl w-full sm:px-6 my-10 font-light text-left 
                                 tracking-wide leading-6 text-lg"
                         >
                             <p>{t("landingPage.description1")}</p>
-                            <p className="mt-8">{t("landingPage.description2")}</p>
-                            <p className="mt-8">{t("landingPage.description3")}</p>
-                            <p className="mt-8">{t("landingPage.description4")}</p>
+                            <p className="mt-8">
+                                {t("landingPage.description2")}
+                            </p>
+                            <p className="mt-8">
+                                {t("landingPage.description3")}
+                            </p>
+                            <p className="mt-8">
+                                {t("landingPage.description4")}
+                            </p>
                             <div className="justify-center items-center flex mt-6">
                                 <ol className="mt-8 list-decimal list-inside">
                                     {t("landingPage.stepsOfPageList.title")}

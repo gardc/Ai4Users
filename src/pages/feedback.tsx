@@ -14,7 +14,9 @@ import sendApiRequest from "@/util/sendApiRequest";
  *
  * @returns A React functional component representing the landing page.
  */
-const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Feedback: React.FC = (
+    _props: InferGetStaticPropsType<typeof getStaticProps>
+) => {
     const { t } = useTranslation("common");
     const [feedbackString, setFeedbackString] = useState("");
     const [waiting, setWaiting] = useState(false);
@@ -38,7 +40,9 @@ const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProp
         }
     };
 
-    const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
+    const handleInputChange = (
+        event: React.ChangeEvent<HTMLTextAreaElement>
+    ) => {
         setFeedbackString(event.target.value);
     };
 
@@ -49,7 +53,7 @@ const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProp
                 <p className="text-center font-bold text-3xl sm:text-5xl tracking-wide sm:mt-16 ">
                     {t("feedback.title")}
                 </p>
-                <p className="w-4/5 sm:w-1/2 my-10 font-light text-left tracking-wide leading-6 text-lg">
+                <p className="max-w-2xl w-4/5 sm:w-1/2 my-10 font-light text-left tracking-wide leading-6 text-lg">
                     {t("feedback.description")}
                 </p>
                 {!finished && (
@@ -58,7 +62,7 @@ const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProp
                         rows={6}
                         value={feedbackString}
                         onChange={handleInputChange}
-                        className="w-4/5 sm:w-1/2 p-2.5 text-sm bg-lightslate rounded-lg border border-darkgray focus:ring-skyblue focus:border-skyblue"
+                        className="max-w-2xl w-4/5 sm:w-1/2 p-2.5 text-sm bg-lightslate rounded-lg border border-darkgray focus:ring-skyblue focus:border-skyblue"
                         placeholder={t("feedback.placeholder")!}
                     ></textarea>
                 )}
@@ -74,7 +78,11 @@ const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProp
                             {t("feedback.submit")}
                         </Button>
                     )}
-                    <Button color="orange" href="/submittedPage?consent=false" loading={waiting}>
+                    <Button
+                        color="orange"
+                        href="/submittedPage?consent=false"
+                        loading={waiting}
+                    >
                         {/* If finished, show continue button, else show skip */}
                         {finished ? t("feedback.continue") : t("feedback.skip")}
                     </Button>

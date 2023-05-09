@@ -69,7 +69,7 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
                                 onClick={handleExpansionClose}
                             ></div>
                             <div
-                                className="bg-white w-full md:w-3/4 sm:rounded-xl fixed top-[40%] left-1/2
+                                className="max-w-7xl bg-white w-full md:w-3/4 sm:rounded-xl fixed top-[40%] left-1/2
                         -translate-x-1/2 -translate-y-1/2 overflow-y-auto max-h-[85%] sm:mt-10"
                             >
                                 <div className="p-8 sm:px-14 sm:py-8 bg-prussian-blue sticky top-0">
@@ -83,7 +83,9 @@ const ExpandableInformationBox: React.FC<ExpandableInformationBoxProps> = ({
                                         <div className="my-auto">
                                             <InformationSignIcon />
                                         </div>
-                                        <p className="ml-4 mt-3">{expandedContentTitle}</p>
+                                        <p className="ml-4 mt-3">
+                                            {expandedContentTitle}
+                                        </p>
                                     </div>
                                 </div>
                                 <div className="text-black text-left font-light w-5/6 mx-auto p-8 sm:p-14">

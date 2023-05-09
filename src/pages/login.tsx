@@ -15,7 +15,9 @@ import UserIcon from "@/components/Assets/userIcon";
  *
  * @returns A React functional component representing the landing page.
  */
-const Login: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
+const Login: React.FC = (
+    _props: InferGetStaticPropsType<typeof getStaticProps>
+) => {
     const { t } = useTranslation("common");
 
     return (
@@ -24,12 +26,20 @@ const Login: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>)
                 <NavBar enableLinkToFrontPage={false} />
                 <div className="flex-col flex items-center pb-48">
                     <div
-                        className="w-full md:w-5/6 mt-12 md:mt-24
+                        className="max-w-7xl w-full md:w-5/6 mt-12 md:mt-24
                                     bg-white drop-shadow-lg py-12 sm:py-8 px-4 sm:px-16 rounded-xl
                                     flex justify-center items-center flex-col text-black"
                     >
-                        <div className={"grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4"}>
-                            <div className={"order-1 flex flex-col items-center mb-4"}>
+                        <div
+                            className={
+                                "grid grid-cols-1 md:grid-cols-2 gap-x-16 gap-y-4"
+                            }
+                        >
+                            <div
+                                className={
+                                    "order-1 flex flex-col items-center mb-4"
+                                }
+                            >
                                 <div className="text-prussian-blue">
                                     <UserIcon />
                                 </div>
