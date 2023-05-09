@@ -7,8 +7,7 @@ function App({ Component, pageProps }: AppProps) {
     const { t } = useTranslation("common");
 
     const title =
-        t("nationalSocialServiceEntityNameLine1") +
-        t("nationalSocialServiceEntityNameLine2");
+        t("nationalSocialServiceEntityNameLine1") + " " + t("nationalSocialServiceEntityNameLine2");
 
     return (
         <div className="bg-zinc">

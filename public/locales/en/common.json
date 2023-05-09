@@ -1,5 +1,5 @@
 {
-    "nationalSocialServiceEntityNameLine1": "The National ",
+    "nationalSocialServiceEntityNameLine1": "The National",
     "nationalSocialServiceEntityNameLine2": "Social Service",
 
     "expandedInfoBoxCloseButtonText": "Close",
@@ -68,7 +68,7 @@
         "stepsOfPageList": {
             "title": "You will now go through three steps:",
             "li1": "Verify that the personal information we have of you is correct",
-            "li2": "Accept or decline the use of an artificial intelligence model",
+            "li2": "Accept or decline the usage of an artificial intelligence model",
             "li3": "Verify your choice and your personal information before submitting"
         },
         "continueButtonText": "Continue"
@@ -87,12 +87,12 @@
     "usingAiPage": {
         "title": "Using artificial intelligence for prediction",
         "aboutAiInfo": {
-            "description": "The National Social Service offers the use of an artificial intelligence (AI) model to aid the case handler in predicting the duration of your sick leave. You have the right to choose whether the AI model should be used or not. You can find more information below.",
+            "description": "The National Social Service offers the usage an artificial intelligence (AI) model to aid the case handler in predicting the duration of your sick leave. You have the right to choose whether the AI model should be used or not. You can find more information below.",
             "whatAi": {
                 "title": "What your choice entails",
-                "description": "If you choose to allow the use of the AI model for prediction, the case handler will use it only for this purpose. If you choose to not allow it, the case handler will perform the prediction without using the model.",
+                "description": "If you choose to allow the usage of the AI model for prediction, the case handler will use it only for this purpose. If you choose to not allow it, the case handler will perform the prediction without using the model.",
                 "learnMore": {
-                    "title": "What allowing and not allowing the use of the AI model entails",
+                    "title": "What allowing and not allowing the usage of the AI model entails",
                     "description": "You are free to choose whether you would like to have the AI model used as an aid in predicting the duration of your sick leave or not.",
                     "regardlessOfChoiceList": {
                         "title": "No matter your choice, it will be the case that",
@@ -102,16 +102,16 @@
                     },
                     "accuracyTitle": "Regarding the model's accuracy",
                     "accuracyInfo": "While we cannot guarantee that the AI model's predictions will always be accurate, our case handlers are trained to identify any potential inaccuracies and correct them promptly.",
-                    "disagreeTitle": "If you disagree to the use of the AI model",
-                    "disagreeInfo": "If you choose to disagree to the use of the AI model in predicating your sick leave, your case handler will process your personal information without its use.",
+                    "disagreeTitle": "If you disagree to the usage of the AI model",
+                    "disagreeInfo": "If you choose to disagree to the usage of the AI model in predicating your sick leave, your case handler will process your personal information without its use.",
                     "disagreeFlowImageSrc": "/img/disagreeToUseFlowEn.png",
                     "disagreeFlowImageMobileSrc": "/img/disagreeToUseFlowMobileEn.png",
-                    "disagreeFlowImageAlt": "Process when declining the use of the AI model",
-                    "agreeTitle": "If you agree to the use of the AI model",
-                    "agreeInfo": "If you choose to agree to the use of the AI model in predicting your sick leave duration, your personal information will first be processed by the model, and the result of the prediction will be handed to your case handler. This will most likely result in a shorter proccesing time. The case handler then uses this prediction, along with other factors, to decide what support is appropriate for you in your situation.",
+                    "disagreeFlowImageAlt": "Process when declining the usage of the AI model",
+                    "agreeTitle": "If you agree to the usage of the AI model",
+                    "agreeInfo": "If you choose to agree to the usage of the AI model in predicting your sick leave duration, your personal information will first be processed by the model, and the result of the prediction will be handed to your case handler. This will most likely result in a shorter proccesing time. The case handler then uses this prediction, along with other factors, to decide what support is appropriate for you in your situation.",
                     "agreeFlowImageSrc": "/img/agreeToUseFlowEn.png",
                     "agreeFlowImageMobileSrc": "/img/agreeToUseFlowMobileEn.png",
-                    "agreeFlowImageAlt": "Process when agreeing to the use of the AI model"
+                    "agreeFlowImageAlt": "Process when agreeing to the usage of the AI model"
                 }
             },
             "howAi": {
@@ -124,7 +124,7 @@
                         "title": "The type of artificial intelligence The National Social Service use for prediction is a so called machine learning model, which has the following traits:",
                         "li1": "It initially learns from a select set of training data that contains patterns or similarities",
                         "li2": "The patterns are revealed through processing",
-                        "li3": "A model is generated that can recognize these patterns in other data of the same category"
+                        "li3": "A model is generated that can recognise these patterns in other data of the same category"
                     },
                     "trainingModelImageSrc": "/img/trainingTheModelEn.png",
                     "trainingModelImageMobileSrc": "/img/trainingTheModelMobileEn.png",
@@ -136,12 +136,12 @@
                 }
             },
             "whyAi": {
-                "title": "Why we offer use of an AI model",
+                "title": "Why we offer usage of an AI model",
                 "description": "The AI model may help case handlers in making more accurate predictions of sick leave duration. This may contribute to ensure support for more people, faster.",
                 "learnMore": {
-                    "title": "Why we offer the use of the AI model in predicting sick leave duration",
+                    "title": "Why we offer the usage of the AI model in predicting sick leave duration",
                     "reasonForUseList": {
-                        "title": "The goal of The National Social Service is to ensure the most helpful support for the highest number of people. To help our case handlers achieve this aim, we offer the use of an AI model for predictions to:",
+                        "title": "The goal of The National Social Service is to ensure the most helpful support for the highest number of people. To help our case handlers achieve this aim, we offer the usage of an AI model for predictions to:",
                         "li1": "Help case handlers make more accurate assessments",
                         "li2": "Contribute to ensuring appropriate support where it is needed",
                         "li3": "Save resources and time, letting the case handlers help more people"
@@ -188,7 +188,7 @@
         },
         "consent": {
             "title": "You will now have to choose whether you wish to consent to the usage of the AI model",
-            "disagreeDescription": "If you choose to NOT concent to the usage of the AI model, the case handler will process your information to decide appropriate support without the use of the model.",
+            "disagreeDescription": "If you choose to NOT concent to the usage of the AI model, the case handler will process your information to decide appropriate support without the usage of the model.",
             "agreeDescription": "If you choose to consent to the usage of the AI model, your information will first be processed by the AI model. The case handler will then decide appropriate support. The usage of the AI model might result in shorter processing time.",
             "question": "Do you consent to the usage of the AI model to predict your sick leave duration?",
             "disagreeButtonText": "I do NOT consent",
@@ -197,9 +197,9 @@
     },
 
     "summaryPage": {
-        "titleNotConsenting": "You have chosen to not consent to usage of the AI model for prediction",
+        "titleNotConsenting": "You have chosen to not consent to the usage of the AI model for prediction",
         "titleConsenting": "You have chosen to consent to the usage of the AI model for prediction",
-        "descriptionNotConsenting": "The case handler will make a prediction of the total duration of your sick leave without the use of the AI model.",
+        "descriptionNotConsenting": "The case handler will make a prediction of the total duration of your sick leave without the usage of the AI model.",
         "descriptionConsenting": "The case handler will use the AI model to predict the total duration of your sick leave.",
         "changeCoice": "If you would like to change your choice, click on \"Using AI\" in the top left corner.",
         "informationSummaryTitle": "Your personal information",
@@ -210,7 +210,7 @@
     "submittedPage": {
         "title": "Thank you for submitting your choice!",
         "descriptionConsent": "The case handler will now receive the data relevant to your case and a prediction based on the AI model. You will receive the decision regarding support measures within 1-2 weeks.",
-        "descriptionNonConsent": "The case handler will now receive the data relevant to your case and will make the decision without the use of the AI model. You will receive the decision regarding support measures within 1-2 weeks."
+        "descriptionNonConsent": "The case handler will now receive the data relevant to your case and will make the decision without the usage of the AI model. You will receive the decision regarding support measures within 1-2 weeks."
     },
 
     "userTestingFinishedPage": {

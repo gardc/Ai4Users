@@ -30,7 +30,7 @@ const Footer = () => {
                             ? changeLogItemsDe
                             : changeLogItemsEn
                     }
-                    linkText={t("changelog.readMore")}
+                    linkText={t("changelog.linkText")}
                 />
             </div>
         </div>
