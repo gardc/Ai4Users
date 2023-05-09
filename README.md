@@ -22,12 +22,12 @@ In this project we developed a web application that addresses the case of ensuri
 
 ## Prerequisites
 
-Before installing this project, ensure that you have the following software, tools, or libraries installed:
+Before setting up this project, ensure that you have the following software, tools, or libraries installed:
 
-- Node.js (version 12.0 or higher)
-- MongoDB (version 4.0 or higher)
-- Python (version 3.7 or higher)
-- Pipenv (version 2018.11.26 or higher)
+- Node.js (version 12.0 or higher).
+- Docker (Docker Desktop on macOS and Windows).
+Optional:
+- Python (version 3.7 or higher), if you wish to run the Sandbox server locally.
 
 
 ## Installation
@@ -36,48 +36,43 @@ Before installing this project, ensure that you have the following software, too
 
 ```bash
 npm install
-
 ```
 2. Then, run the development server
 ```bash
 npm run dev
-
 ```
 
 This runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser. 
 
 
 ## Configuration
-1. Create a `.env` file in the project's root directory to store environment variables:
-```
-touch .env
-```
-2. Open the `.env` file and add the following configuration settings:
+1. Create a `.env.local` and a `.env.test` file in the project's root directory to store environment variables:
 ```bash
-MONGODB_URI="mongodb://localhost:27017"
+touch .env.local
+touch .env.test
+```
+2. In the two .env files, add the following configuration settings:
+```bash
+MONGODB_URI="<your mongoDB connection URI>"
+SANDBOX_URI="<sandbox API URI, e.g. http://0.0.0.0>"
+```
+These environment variables provides the NextJS app information about how to communicate with the database and the AI sandbox server.
+
+## Running the NextJS Server
+1. Make sure the configured MongoDB is available and accessible.
+2. Start the AI sandbox server (TODO: link to sandbox readme).
+3. Run the following commands to build and start the production server:
+```
+npm run build
+npm run start
 ```
 
-## Running the Services
-1. Start the MongoDB service:
-```
-mongod
-```
-2. In a separate terminal, navigate to the project's root directory and build the project then start the Node.js server:
-```
-next build
-npm start
-```
-3. Start the AI service (link til python README.md)
-
-4. The prototype should now be accessible at `http://localhost:3000`. The backend service and AI model server should also be running.
+4. The NextJS project should now be accessible at `http://localhost:3000`. Make sure the AI server is running in order for the sandbox functionality to work.
 
 ## Testing
 There is currently one unit test which tests the feedback API route. In order to test, do the following:
-1. Create a `.env.test` file and include 
-```bash
-MONGODB_URI="mongodb://localhost:27017"
-```
-2. Then run 
+1. Make sure you created the `.env.test` file as described in [Configuration](#configuration).
+2. Then run the tests through Jest by running:
 ```
 npm run test
 ```
@@ -88,8 +83,8 @@ npm run test
 The user will first be met by a usergroup login, divided between citizens and casehandlers. The casehandler login will lead to a dead page, while the citizen login will lead to the sickleave prediciton flow. This will take the user through mutliple steps where they are provided with information about their rights and how the AI system works. Here they are giving the option to consent or not to the use of the AI system. 
 
 
-![Image of sandbox](public/sanbox.png)
-![Image of consent](public/consent.png)
+![Image of sandbox](img/sanbox.png)
+![Image of consent](img/consent.png)
 
 
 ## Deployment
