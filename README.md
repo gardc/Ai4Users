@@ -22,42 +22,75 @@ In this project we developed a web application that addresses the case of ensuri
 
 ## Prerequisites
 
-Before installing AI4Users, ensure that you have the following software, tools, or libraries installed:
+Before installing this project, ensure that you have the following software, tools, or libraries installed:
 
-- Python 3.x
-- Node.js (optional, for frontend development)
-- Noe
+- Node.js (version 12.0 or higher)
+- MongoDB (version 4.0 or higher)
+- Python (version 3.7 or higher)
+- Pipenv (version 2018.11.26 or higher)
 
-_For detailed installation instructions, please refer to the respective documentation._
 
 ## Installation
 
-First, in the project directory run, run:
+1. To run locally, in the project directory run:
 
 ```bash
-1. npm install
+npm install
 
 ```
-Then, run the development server
+2. Then, run the development server
 ```bash
-2. npm run dev
+npm run dev
 
 ```
 
 This runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser. 
 
-***Remember to add the mongoDB connection URI to your .env.local file like this:***
+
+## Configuration
+1. Create a `.env` file in the project's root directory to store environment variables:
+```
+touch .env
+```
+2. Open the `.env` file and add the following configuration settings:
 ```bash
 MONGODB_URI="mongodb://localhost:27017"
 ```
 
-## Configuration
+## Running the Services
+1. Start the MongoDB service:
+```
+mongod
+```
+2. In a separate terminal, navigate to the project's root directory and build the project then start the Node.js server:
+```
+next build
+npm start
+```
+3. Start the AI service (link til python README.md)
 
-_Describe any required configuration details here, such as environment variables or configuration files._
+4. The prototype should now be accessible at `http://localhost:3000`. The backend service and AI model server should also be running.
+
+## Testing
+There is currently one unit test which tests the feedback API route. In order to test, do the following:
+1. Create a `.env.test` file and include 
+```bash
+MONGODB_URI="mongodb://localhost:27017"
+```
+2. Then run 
+```
+npm run test
+```
+
 
 ## Usage
 
-_Include examples of how to use the project, such as command line examples or code snippets._
+The user will first be met by a usergroup login, divided between citizens and casehandlers. The casehandler login will lead to a dead page, while the citizen login will lead to the sickleave prediciton flow. This will take the user through mutliple steps where they are provided with information about their rights and how the AI system works. Here they are giving the option to consent or not to the use of the AI system. 
+
+
+![Image of sandbox](public/sanbox.png)
+![Image of consent](public/consent.png)
+
 
 ## Deployment
 
