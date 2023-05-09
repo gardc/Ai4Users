@@ -114,23 +114,23 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                                 "usingAiPage.aboutAiInfo.whatAi.learnMore.description"
                                             )}
                                         </p>
-                                        <ul className="list-disc list-inside pb-6">
+                                        <ul className="list-disc pb-6 space-y-2">
                                             <p className="font-bold pb-4">
                                                 {t(
                                                     "usingAiPage.aboutAiInfo.whatAi.learnMore.regardlessOfChoiceList.title"
                                                 )}
                                             </p>
-                                            <li>
+                                            <li className="ml-4">
                                                 {t(
                                                     "usingAiPage.aboutAiInfo.whatAi.learnMore.regardlessOfChoiceList.li1"
                                                 )}
                                             </li>
-                                            <li>
+                                            <li className="ml-4">
                                                 {t(
                                                     "usingAiPage.aboutAiInfo.whatAi.learnMore.regardlessOfChoiceList.li2"
                                                 )}
                                             </li>
-                                            <li>
+                                            <li className="ml-4">
                                                 {t(
                                                     "usingAiPage.aboutAiInfo.whatAi.learnMore.regardlessOfChoiceList.li3"
                                                 )}
@@ -252,7 +252,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                             {t(
                                                 "usingAiPage.aboutAiInfo.howAi.learnMore.machineLearningModelTraitList.title"
                                             )}
-                                            <ul className="list-disc list-inside pt-4">
+                                            <ul className="list-disc ml-4 pt-8 space-y-2">
                                                 <li>
                                                     {t(
                                                         "usingAiPage.aboutAiInfo.howAi.learnMore.machineLearningModelTraitList.li1"
@@ -351,23 +351,23 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                 )}
                                 expandedContent={
                                     <div className="text-base pb-4">
-                                        <p className="font-bold pb-4">
+                                        <p className="font-bold pb-8">
                                             {t(
                                                 "usingAiPage.aboutAiInfo.whyAi.learnMore.reasonForUseList.title"
                                             )}
                                         </p>
-                                        <ul className="list-disc list-inside pb-4">
-                                            <li>
+                                        <ul className="list-disc pb-8 space-y-2">
+                                            <li className="ml-4">
                                                 {t(
                                                     "usingAiPage.aboutAiInfo.whyAi.learnMore.reasonForUseList.li1"
                                                 )}
                                             </li>
-                                            <li>
+                                            <li className="ml-4">
                                                 {t(
                                                     "usingAiPage.aboutAiInfo.whyAi.learnMore.reasonForUseList.li2"
                                                 )}
                                             </li>
-                                            <li>
+                                            <li className="ml-4">
                                                 {t(
                                                     "usingAiPage.aboutAiInfo.whyAi.learnMore.reasonForUseList.li3"
                                                 )}
@@ -450,13 +450,13 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                             </h2>
                             <ul className="space-y-4 list-disc font-light text-left">
                                 <li>
-                                    <div className="xl:flex">
+                                    <div>
                                         <p>{t("usingAiPage.aboutRightsInfo.readMore.li1")}</p>
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a15"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 xl:py-0 xl:ml-2 text-sm"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 text-xs"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -473,13 +473,13 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                     </div>
                                 </li>
                                 <li>
-                                    <div className="xl:flex">
+                                    <div>
                                         <p>{t("usingAiPage.aboutRightsInfo.readMore.li2")}</p>
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a16"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 xl:py-0 xl:ml-2 text-sm"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 text-xs"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -496,13 +496,13 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                     </div>
                                 </li>
                                 <li>
-                                    <div className="xl:flex">
+                                    <div>
                                         <p>{t("usingAiPage.aboutRightsInfo.readMore.li3")}</p>
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a17"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 xl:py-0 xl:ml-2 text-sm"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 text-xs"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -519,13 +519,13 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                     </div>
                                 </li>
                                 <li>
-                                    <div className="xl:flex">
+                                    <div>
                                         <p>{t("usingAiPage.aboutRightsInfo.readMore.li4")}</p>
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a18"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 xl:py-0 xl:ml-2 text-sm"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 text-xs"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -542,13 +542,13 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                     </div>
                                 </li>
                                 <li>
-                                    <div className="xl:flex">
+                                    <div>
                                         <p>{t("usingAiPage.aboutRightsInfo.readMore.li5")}</p>
                                         <a
                                             href=" https://lovdata.no/lov/2018-06-15-38/gdpr/a20"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 xl:py-0 xl:ml-2 text-sm"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 text-xs"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -565,13 +565,13 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                     </div>
                                 </li>
                                 <li>
-                                    <div className="xl:flex">
+                                    <div>
                                         <p>{t("usingAiPage.aboutRightsInfo.readMore.li6")}</p>
                                         <a
                                             href="https://lovdata.no/lov/2018-06-15-38/gdpr/a21"
                                             target="_blank"
                                             rel="noreferrer"
-                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 xl:py-0 xl:ml-2 text-sm"
+                                            className="inline-flex items-center font-medium text-skyblue hover:underline py-2 text-xs"
                                         >
                                             {t(
                                                 "usingAiPage.aboutRightsInfo.readMore.learnMoreLinkText"
@@ -595,7 +595,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                 />
             </div>
             <div className="my-4 pt-20 flex flex-col justify-center bg-white text-center py-8 font-light">
-                <div className="w-full sm:w-2/3 px-4 lg:w-1/2 text-left mx-auto text-lg">
+                <div className="w-full sm:w-2/3 px-4 lg:w-1/2 text-left mx-auto text-lg max-w-7xl">
                     <p className="pb-12 text-xl">{t("usingAiPage.consent.title")}</p>
                     <div className="flex pb-8">
                         <div className="my-auto mr-4">
