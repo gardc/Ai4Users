@@ -1,6 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import fetch from "node-fetch";
 
+const sandboxUri = process.env.SANDBOX_URI;
+
 async function handler(req: NextApiRequest, res: NextApiResponse) {
     if (req.method !== "POST") {
         res.setHeader("Allow", "POST");
@@ -9,7 +11,7 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     }
 
     try {
-        const response = await fetch("http://64.226.100.80/process_data", {
+        const response = await fetch(`${sandboxUri}/process_data`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",
