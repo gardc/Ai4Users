@@ -43,25 +43,25 @@
  * };
  */
 export const featureImportanceDataDe = {
-    label: "Age",
+    label: "Alter",
     arguments: [
         {
             argumentName: "16-19",
             featureImportanceGivenArgument: [
                 {
-                    feature: "Age",
+                    feature: "Alter",
                     weight: 0.41,
                 },
                 {
-                    feature: "County",
+                    feature: "Region",
                     weight: 0.12,
                 },
                 {
-                    feature: "Gender",
+                    feature: "Geschlecht",
                     weight: 0.13,
                 },
                 {
-                    feature: "Diagnosis",
+                    feature: "Diagnose",
                     weight: 0.34,
                 },
             ],
@@ -70,19 +70,19 @@ export const featureImportanceDataDe = {
             argumentName: "20-24",
             featureImportanceGivenArgument: [
                 {
-                    feature: "Age",
+                    feature: "Alter",
                     weight: 0.35,
                 },
                 {
-                    feature: "County",
+                    feature: "Region",
                     weight: 0.14,
                 },
                 {
-                    feature: "Gender",
+                    feature: "Geschlecht",
                     weight: 0.14,
                 },
                 {
-                    feature: "Diagnosis",
+                    feature: "Diagnose",
                     weight: 0.37,
                 },
             ],
@@ -91,19 +91,19 @@ export const featureImportanceDataDe = {
             argumentName: "25-29",
             featureImportanceGivenArgument: [
                 {
-                    feature: "Age",
+                    feature: "Alter",
                     weight: 0.29,
                 },
                 {
-                    feature: "County",
+                    feature: "Region",
                     weight: 0.15,
                 },
                 {
-                    feature: "Gender",
+                    feature: "Geschlecht",
                     weight: 0.16,
                 },
                 {
-                    feature: "Diagnosis",
+                    feature: "Diagnose",
                     weight: 0.4,
                 },
             ],
@@ -112,19 +112,19 @@ export const featureImportanceDataDe = {
             argumentName: "30-34",
             featureImportanceGivenArgument: [
                 {
-                    feature: "Age",
+                    feature: "Alter",
                     weight: 0.26,
                 },
                 {
-                    feature: "County",
+                    feature: "Region",
                     weight: 0.16,
                 },
                 {
-                    feature: "Gender",
+                    feature: "Geschlecht",
                     weight: 0.16,
                 },
                 {
-                    feature: "Diagnosis",
+                    feature: "Diagnose",
                     weight: 0.42,
                 },
             ],
@@ -133,19 +133,19 @@ export const featureImportanceDataDe = {
             argumentName: "35-39",
             featureImportanceGivenArgument: [
                 {
-                    feature: "Age",
+                    feature: "Alter",
                     weight: 0.25,
                 },
                 {
-                    feature: "County",
+                    feature: "Region",
                     weight: 0.15,
                 },
                 {
-                    feature: "Gender",
+                    feature: "Geschlecht",
                     weight: 0.17,
                 },
                 {
-                    feature: "Diagnosis",
+                    feature: "Diagnose",
                     weight: 0.43,
                 },
             ],
@@ -154,19 +154,19 @@ export const featureImportanceDataDe = {
             argumentName: "40-44",
             featureImportanceGivenArgument: [
                 {
-                    feature: "Age",
+                    feature: "Alter",
                     weight: 0.24,
                 },
                 {
-                    feature: "County",
+                    feature: "Region",
                     weight: 0.16,
                 },
                 {
-                    feature: "Gender",
+                    feature: "Geschlecht",
                     weight: 0.17,
                 },
                 {
-                    feature: "Diagnosis",
+                    feature: "Diagnose",
                     weight: 0.43,
                 },
             ],
@@ -175,19 +175,19 @@ export const featureImportanceDataDe = {
             argumentName: "45-49",
             featureImportanceGivenArgument: [
                 {
-                    feature: "Age",
+                    feature: "Alter",
                     weight: 0.25,
                 },
                 {
-                    feature: "County",
+                    feature: "Region",
                     weight: 0.15,
                 },
                 {
-                    feature: "Gender",
+                    feature: "Geschlecht",
                     weight: 0.17,
                 },
                 {
-                    feature: "Diagnosis",
+                    feature: "Diagnose",
                     weight: 0.43,
                 },
             ],
@@ -196,19 +196,19 @@ export const featureImportanceDataDe = {
             argumentName: "50-54",
             featureImportanceGivenArgument: [
                 {
-                    feature: "Age",
+                    feature: "Alter",
                     weight: 0.26,
                 },
                 {
-                    feature: "County",
+                    feature: "Region",
                     weight: 0.16,
                 },
                 {
-                    feature: "Gender",
+                    feature: "Geschlecht",
                     weight: 0.16,
                 },
                 {
-                    feature: "Diagnosis",
+                    feature: "Diagnose",
                     weight: 0.42,
                 },
             ],
@@ -217,19 +217,19 @@ export const featureImportanceDataDe = {
             argumentName: "55-59",
             featureImportanceGivenArgument: [
                 {
-                    feature: "Age",
+                    feature: "Alter",
                     weight: 0.28,
                 },
                 {
-                    feature: "County",
+                    feature: "Region",
                     weight: 0.15,
                 },
                 {
-                    feature: "Gender",
+                    feature: "Geschlecht",
                     weight: 0.16,
                 },
                 {
-                    feature: "Diagnosis",
+                    feature: "Diagnose",
                     weight: 0.41,
                 },
             ],
@@ -238,19 +238,19 @@ export const featureImportanceDataDe = {
             argumentName: "60-64",
             featureImportanceGivenArgument: [
                 {
-                    feature: "Age",
+                    feature: "Alter",
                     weight: 0.35,
                 },
                 {
-                    feature: "County",
+                    feature: "Region",
                     weight: 0.13,
                 },
                 {
-                    feature: "Gender",
+                    feature: "Geschlecht",
                     weight: 0.15,
                 },
                 {
-                    feature: "Diagnosis",
+                    feature: "Diagnose",
                     weight: 0.37,
                 },
             ],
@@ -259,19 +259,19 @@ export const featureImportanceDataDe = {
             argumentName: "65-69",
             featureImportanceGivenArgument: [
                 {
-                    feature: "Age",
+                    feature: "Alter",
                     weight: 0.38,
                 },
                 {
-                    feature: "County",
+                    feature: "Region",
                     weight: 0.13,
                 },
                 {
-                    feature: "Gender",
+                    feature: "Geschlecht",
                     weight: 0.14,
                 },
                 {
-                    feature: "Diagnosis",
+                    feature: "Diagnose",
                     weight: 0.35,
                 },
             ],

@@ -2,9 +2,11 @@ import { GetStaticProps, InferGetStaticPropsType } from "next";
 import { changeLogItemsDe } from "./api/changelogItemsDe";
 import { changeLogItemsEn } from "./api/changelogItemsEn";
 import { changeLogItemsNo } from "./api/changelogItemsNo";
+import { featureImportanceDataDe } from "./api/featureImportanceDataDe";
 import { featureImportanceDataEn } from "./api/featureImportanceDataEn";
 import { featureImportanceDataNo } from "./api/featureImportanceDataNo";
 import { motion as m } from "framer-motion";
+import { sandboxParametersDe } from "./api/sandboxParametersDe";
 import { sandboxParametersEn } from "@/pages/api/sandboxParametersEn";
 import { sandboxParametersNo } from "@/pages/api/sandboxParametersNo";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
@@ -426,7 +428,11 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                             <Sandbox
                                 description={t("usingAiPage.sandbox.mainDescription")}
                                 parameters={
-                                    locale == "no" ? sandboxParametersNo : sandboxParametersEn
+                                    locale === "no"
+                                        ? sandboxParametersNo
+                                        : locale === "de"
+                                        ? sandboxParametersDe
+                                        : sandboxParametersEn
                                 }
                             />
                             <FeatureImportanceDiagram
@@ -445,6 +451,8 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                                 parameter={
                                     locale == "no"
                                         ? featureImportanceDataNo
+                                        : locale == "de"
+                                        ? featureImportanceDataDe
                                         : featureImportanceDataEn
                                 }
                             />

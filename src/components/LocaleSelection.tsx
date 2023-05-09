@@ -36,10 +36,9 @@ const LocaleSelection = () => {
                 <option value="no" key="no">
                     🇳🇴 Norsk
                 </option>
-                {/* German will be added at a later stage */}
-                {/* <option value="de" key="de">
+                <option value="de" key="de">
                     🇩🇪 Deutsch
-                </option> */}
+                </option>
             </select>
         </div>
     );

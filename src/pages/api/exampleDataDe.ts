@@ -1,50 +1,50 @@
 // TODO: MUST BE TRANSLATED
 export const exampleDataDe = [
     {
-        label: "Age",
+        label: "Alter",
         value: "46",
         extendedInfo:
-            "Your age is important to the prediction because higher age usually indicates a longer sick leave duration.",
+            "Ihr Alter ist für die Vorhersage wichtig, denn ein höheres Alter bedeutet in der Regel eine längere Krankheitsdauer.",
     },
     {
-        label: "Gender",
-        value: "Male",
+        label: "Geschlecht",
+        value: "Männlich",
         extendedInfo:
-            "Your gender is a relevant factor when paired with factors such as diagnosis and profession.",
+            "Ihr Geschlecht ist ein wichtiger Faktor, wenn es mit Faktoren wie Diagnose und Beruf gepaart ist.",
     },
     {
-        label: "Profession",
-        value: "Carpenter",
-        extendedInfo: "Your profession is a relevant factor paired with diagnosis.",
+        label: "Beruf",
+        value: "Tischler",
+        extendedInfo: "Ihr Beruf ist ein wichtiger Faktor in Verbindung mit der Diagnose.",
     },
     {
-        label: "Diagnosis",
-        value: "Stroke",
+        label: "Diagnose",
+        value: "Schlaganfall",
         extendedInfo:
-            "The diagnosis that caused the sick leave is one of the most relevant factors when predicting sick leave duration.",
+            "Die Diagnose, die den Krankenstand verursacht hat, ist einer der wichtigsten Faktoren für die Vorhersage der Dauer des Krankenstands.",
     },
     {
-        label: "Start date of current sick leave",
+        label: "Datum des Beginns des aktuellen Krankenstands",
         value: "01.03.2023",
         extendedInfo:
-            "The start date of your current sick leave. May be relevant when paired with diagnosis and age.",
+            "Das Datum des Beginns Ihres derzeitigen Krankenstands. Kann in Verbindung mit der Diagnose und dem Alter relevant sein.",
     },
     {
-        label: "Number of previous sick leaves",
+        label: "Anzahl früherer Krankmeldungen",
         value: "1",
         extendedInfo:
-            "The number of previous sick leaves is a relevant factor, as this may give an indication of duration compared to other people with the same number of sick leaves.",
+            "Die Anzahl der früheren Krankenstände ist ein wichtiger Faktor, da dies einen Hinweis auf die Dauer im Vergleich zu anderen Personen mit der gleichen Anzahl von Krankenständen geben kann",
     },
     {
-        label: "Start date of last sick leave",
+        label: "Datum des Beginns des letzten Krankenstands",
         value: "05.01.2020",
         extendedInfo:
-            "The start date of your last sick leave is a relevant factor paired with the end date, as the duration of your last sick leave may influence the duration of your current one.",
+            "Das Datum des Beginns Ihres letzten Krankenstands ist in Verbindung mit dem Enddatum ein wichtiger Faktor, da die Dauer Ihres letzten Krankenstands die Dauer Ihres aktuellen Krankenstands beeinflussen kann.",
     },
     {
-        label: "End date of last sick leave",
+        label: "Enddatum des letzten Krankenstands",
         value: "25.03.2020",
         extendedInfo:
-            "The end date of your last sick leave is a relevant factor paired with the start date, as the duration of your last sick leave may influence the duration of your current one.",
+            "Das Enddatum Ihres letzten Krankenstands ist zusammen mit dem Anfangsdatum ein relevanter Faktor, da die Dauer Ihres letzten Krankenstands die Dauer Ihres aktuellen Krankenstands beeinflussen kann.",
     },
 ];

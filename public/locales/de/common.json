@@ -1,1 +1,210 @@
-{}
+{
+    "nationalSocialServiceEntityNameLine1": "Der öffentliche",
+    "nationalSocialServiceEntityNameLine2": "Sozialdienst",
+    "expandedInfoBoxCloseButtonText": "Schließen",
+    "informationDropdownBoxExtendButtonText": "Weitere Informationen",
+    "informationDropdownBoxCloseButtonText": "Schließen",
+    "pageProgressBar": {
+        "home": "Startseite",
+        "homeCompressed": "Startseite",
+        "useOfData": "Datennutzung",
+        "useOfDataCompressed": "Daten",
+        "usingAiPage": "Einsatz KI",
+        "usingAiPageCompressed": "KI",
+        "summaryPage": "Zusammenfassung",
+        "summaryPageCompressed": "Zusammenfassung"
+    },
+    "changelog": {
+        "title": "Letzte Änderungen am KI-Modell",
+        "readMore": "Lesen Sie mehr"
+    },
+    "userTestingLandingPage": {
+        "title": "Vielen Dank, dass Sie unsere Webanwendung testen möchten",
+        "description": "Der Test beinhaltet das Navigieren durch unsere Webanwendung und das Beantworten einer Umfrage am Ende.",
+        "beforeTestingTitle": "Bevor Sie mit dem Testen beginnen",
+        "beforeTestingDescription": "Stellen Sie sich vor, Sie sind über einen längeren Zeitraum krankgeschrieben und benötigen Unterstützung. Aus diesem Grund hat Ihr Arzt Sie auf die Website verwiesen, die Sie testen möchten.",
+        "disclaimerTitle": "Verzichtserklärung",
+        "disclaimer1": "Dies ist ein Studentenprojekt, das nur zum Testen einer Benutzeroberfläche gedacht ist",
+        "disclaimer2": "Die persönlichen Informationen über den Benutzer, die in der Webanwendung angezeigt werden, sind fiktiv",
+        "disclaimer3": {
+            "title": "Durch das Testen der Website werden keine persönlichen Informationen über Sie gespeichert, außer:",
+            "li1": "Die Antworten, die Sie uns beim Testen der Webanwendung in einem Feedback-Formular geben können",
+            "li2": "Das Feedback, das Sie in der Nutzerbefragung am Ende geben"
+        },
+        "questionsTitle": "Wenn Sie Fragen haben, senden Sie bitte eine E-Mail an",
+        "questionsEmailAddress": "jjsterke@stud.ntnu.no",
+        "beginTestingButtonText": "Beginnen Sie mit dem Testen der Webanwendung"
+    },
+    "feedback": {
+        "title": "Feedback",
+        "description": "Wir sind daran interessiert, Feedback darüber zu erhalten, warum Sie der Verwendung unseres KI-Modells nicht zugestimmt haben, um unseren Service weiter zu verbessern. Dies ist natürlich optional.",
+        "submit": "Senden",
+        "skip": "Hüpfen",
+        "placeholder": "Schreiben Sie hier Ihre Gedanken...",
+        "success": "Ihr Feedback wurde eingereicht, vielen Dank.",
+        "error:": "Beim Senden Ihres Feedbacks ist ein Problem aufgetreten:",
+        "continue": "Fortsetzen"
+    },
+    "loginPage": {
+        "caseHandlerLogin": "Anmeldung für Sachbearbeiter",
+        "caseHandlerDescription": "Wenn Sie ein Sachbearbeiter beim Nationalen Sozialdienst sind, klicken Sie hier, um sich anzumelden.",
+        "predictSickLeave": "Benutzer-Login",
+        "predictSickLeaveDescription": "Wenn Sie krankgeschrieben sind, klicken Sie hier, um die notwendigen Schritte zu durchlaufen, um Unterstützung zu erhalten."
+    },
+    "landingPage": {
+        "title": "Vorhersage der Dauer des Krankenstandes",
+        "description1": "Wenn Sie krankgeschrieben sind, haben Sie oft Anspruch auf eine oder mehrere Arten von Unterstützung durch den Nationalen Sozialdienst. Dabei kann es sich um unterstützende Maßnahmen wie wirtschaftliche Unterstützung oder Folgegespräche handeln.",
+        "description2": "Um eine für Ihre Situation geeignete Unterstützung zu bieten, bewertet ein Sachbearbeiter des Nationalen Sozialdienstes Ihren Fall anhand einer Reihe von Faktoren. Einer dieser Faktoren ist eine Vorhersage Ihrer Krankenstandsdauer, die die Planung von Unterstützungsmaßnahmen über einen längeren Zeitraum erleichtert.",
+        "description3": "Der Sachbearbeiter hat die Möglichkeit, ein Modell der künstlichen Intelligenz für die Durchführung dieser Vorhersage zu verwenden, jedoch nur, wenn Sie dessen Verwendung akzeptieren. In jedem Fall ist es der Sachbearbeiter, der die endgültige Entscheidung über die Unterstützung trifft, die Ihnen gewährt wird.",
+        "description4": "Um eine Vorhersage über die Dauer Ihres Krankheitsurlaubs zu treffen, müssen wir einige Ihrer personenbezogenen Daten verarbeiten.",
+        "stepsOfPageList": {
+            "title": "Sie durchlaufen nun drei Schritte:",
+            "li1": "Vergewissern Sie sich, dass die personenbezogenen Daten, die wir von Ihnen haben, korrekt sind",
+            "li2": "Akzeptieren oder Ablehnen der Verwendung eines Modells der künstlichen Intelligenz",
+            "li3": "Überprüfen Sie Ihre Auswahl und Ihre persönlichen Daten, bevor Sie sie absenden"
+        },
+        "continueButtonText": "Fortsetzen"
+    },
+    "useOfDataPage": {
+        "title": "Personenbezogene Daten, die in der Vorhersage verwendet werden",
+        "description1": "Nachfolgend finden Sie alle personenbezogenen Daten über Sie, die zur Vorhersage der Dauer Ihres Krankenstands verwendet werden. Diese Informationen stammen aus dem nationalen Bevölkerungsregister und den Registern des Nationalen Sozialdienstes.",
+        "description2": "Klicken Sie auf das Symbol",
+        "description3": "-Symbol neben jeder Zeile, um zu sehen, warum die persönlichen Daten verwendet werden.",
+        "continueButtonText": "Fortsetzen",
+        "informationSummaryTitle": "Ihre personenbezogenen Daten",
+        "incorrectData": "Falschinformation? Klicken Sie hier"
+    },
+    "usingAiPage": {
+        "title": "Künstliche Intelligenz für Vorhersagen nutzen",
+        "aboutAiInfo": {
+            "description": "Der Nationale Sozialdienst bietet die Verwendung eines Modells der künstlichen Intelligenz (KI) an, um den Sachbearbeiter bei der Vorhersage der Dauer Ihres Krankenstands zu unterstützen. Sie haben das Recht zu wählen, ob das KI-Modell verwendet werden soll oder nicht. Weitere Informationen finden Sie weiter unten.",
+            "whatAi": {
+                "title": "Was Ihre Wahl mit sich bringt",
+                "description": "Wenn Sie die Verwendung des KI-Modells für die Vorhersage zulassen, verwendet der Sachbearbeiter es nur für diesen Zweck. Wenn Sie dies nicht zulassen, führt der Sachbearbeiter die Vorhersage durch, ohne das Modell zu verwenden.",
+                "learnMore": {
+                    "title": "Was das Zulassen und Nichtzulassen der Verwendung des KI-Modells mit sich bringt",
+                    "description": "Sie können frei wählen, ob Sie das KI-Modell als Hilfsmittel zur Vorhersage der Dauer Ihres Krankenstandes verwenden möchten oder nicht.",
+                    "regardlessOfChoiceList": {
+                        "title": "Unabhängig von Ihrer Wahl wird es der Fall sein, dass",
+                        "li1": "Es werden genau die gleichen personenbezogenen Daten verwendet",
+                        "li2": "Ein Sachbearbeiter trifft die endgültige Entscheidung",
+                        "li3": "Sie haben genau die gleichen Rechte in Bezug auf Ihre personenbezogenen Daten"
+                    },
+                    "accuracyTitle": "In Bezug auf die Genauigkeit des Modells",
+                    "accuracyInfo": "Wir können zwar nicht garantieren, dass die Vorhersagen des KI-Modells immer korrekt sind, aber unsere Sachbearbeiter sind darin geschult, mögliche Ungenauigkeiten zu erkennen und umgehend zu korrigieren.",
+                    "disagreeTitle": "Wenn Sie mit der Verwendung des KI-Modells nicht einverstanden sind",
+                    "disagreeInfo": "Wenn Sie sich dafür entscheiden, der Verwendung des KI-Modells bei der Vorhersage Ihres Krankenstands nicht zuzustimmen, verarbeitet Ihr Sachbearbeiter Ihre personenbezogenen Daten ohne deren Verwendung.",
+                    "disagreeFlowImageSrc": "/img/disagreeToUseFlowDe.png",
+                    "disagreeFlowImageMobileSrc": "/img/disagreeToUseFlowMobileDe.png",
+                    "disagreeFlowImageAlt": "Prozess bei der Ablehnung der Nutzung des KI-Modells",
+                    "agreeTitle": "Wenn Sie mit der Verwendung des KI-Modells einverstanden sind",
+                    "agreeInfo": "Wenn Sie sich dafür entscheiden, der Verwendung des KI-Modells bei der Vorhersage Ihrer Krankenstandsdauer zuzustimmen, werden Ihre personenbezogenen Daten zunächst vom Modell verarbeitet und das Ergebnis der Vorhersage an Ihren Sachbearbeiter weitergegeben. Dies wird höchstwahrscheinlich zu einer kürzeren Bearbeitungszeit führen. Der Sachbearbeiter verwendet diese Vorhersage dann zusammen mit anderen Faktoren, um zu entscheiden, welche Unterstützung für Sie in Ihrer Situation angemessen ist.",
+                    "agreeFlowImageSrc": "/img/agreeToUseFlowDe.png",
+                    "agreeFlowImageMobileSrc": "/img/agreeToUseFlowMobileDe.png",
+                    "agreeFlowImageAlt": "Prozess bei der Zustimmung zur Nutzung des KI-Modells"
+                }
+            },
+            "howAi": {
+                "title": "So funktioniert das KI-Modell",
+                "description": "Das KI-Modell ist ein Berechnungswerkzeug, das speziell darauf trainiert wurde, eine Vorhersage Ihrer gesamten Krankenstandsdauer zu treffen. Die Ausgabe, die es dem Sachbearbeiter zur Verfügung stellt, ist die Anzahl der Wochen, die er für die Dauer Ihres Krankheitsurlaubs vorhersagt.",
+                "learnMore": {
+                    "title": "So funktioniert das KI-Modell",
+                    "description": "Künstliche Intelligenz ist ein Überbegriff, der Computersysteme beschreibt, die komplexe Probleme lösen und aus früheren Erfahrungen lernen können.",
+                    "machineLearningModelTraitList": {
+                        "title": "Die Art der künstlichen Intelligenz, die der Nationale Sozialdienst für die Vorhersage verwendet, ist ein sogenanntes maschinelles Lernmodell, das die folgenden Merkmale aufweist:",
+                        "li1": "Es lernt zunächst aus einem ausgewählten Satz von Trainingsdaten, die Muster oder Ähnlichkeiten enthalten",
+                        "li2": "Die Muster werden durch die Verarbeitung aufgedeckt",
+                        "li3": "Es wird ein Modell generiert, das diese Muster in anderen Daten der gleichen Kategorie erkennen kann"
+                    },
+                    "trainingModelImageSrc": "/img/trainingTheModelDe.png",
+                    "trainingModelImageMobileSrc": "/img/trainingTheModelMobileDe.png",
+                    "trainingModelImageAlt": "Veranschaulichung, wie das Modell trainiert wird",
+                    "descriptionPatternMatching": "Das Modell ist das resultierende Mustervergleichsprogramm, das für die Vorhersage verwendet wird. Neue Daten derselben Kategorie werden als Eingabe verwendet, was bedeutet, dass sie die gleichen Datenpunkte haben (z. B. Alter und Diagnose), und das Ergebnis ist die Vorhersage.",
+                    "usingModelImageSrc": "/img/usingTheModelForPredictionsDe.png",
+                    "usingModelImageMobileSrc": "/img/usingTheModelForPredictionsMobileDe.png",
+                    "usingModelImageAlt": "Veranschaulichung der Verwendung des Modells"
+                }
+            },
+            "whyAi": {
+                "title": "Warum wir den Einsatz eines KI-Modells anbieten",
+                "description": "Das KI-Modell kann den Sachbearbeitern dabei helfen, genauere Vorhersagen über die Dauer des Krankenstands zu treffen. Dies kann dazu beitragen, dass mehr Menschen schneller unterstützt werden.",
+                "learnMore": {
+                    "title": "Warum wir die Verwendung des KI-Modells zur Vorhersage der Krankenstandsdauer anbieten",
+                    "reasonForUseList": {
+                        "title": "Das Ziel des Nationalen Sozialdienstes ist es, die hilfreichste Unterstützung für die höchste Anzahl von Menschen zu gewährleisten. Um unseren Sachbearbeitern dabei zu helfen, dieses Ziel zu erreichen, bieten wir die Verwendung eines KI-Modells für Vorhersagen an, um:",
+                        "li1": "Helfen Sie den Sachbearbeitern, genauere Bewertungen vorzunehmen",
+                        "li2": "Tragen Sie dazu bei, eine angemessene Unterstützung dort zu gewährleisten, wo sie benötigt wird",
+                        "li3": "Sparen Sie Ressourcen und Zeit, damit die Sachbearbeiter mehr Menschen helfen können"
+                    },
+                    "rightToChoose": "Es ist Ihr Recht zu entscheiden, ob der Sachbearbeiter das KI-Modell für die Vorhersage verwenden soll oder nicht."
+                }
+            },
+            "learnMoreButtonText": "Weitere Informationen"
+        },
+        "sandbox": {
+            "title": "Erfahren Sie, wie das KI-Modell funktioniert",
+            "shortDescription": "Verwenden Sie die interaktive Sandbox, um zu untersuchen, wie sich verschiedene Funktionen auf die Vorhersage der Krankheitsdauer durch das KI-Modell auswirken, und um die relative Bedeutung dieser Funktionen besser zu verstehen.",
+            "mainDescription": "Indem Sie die unten aufgeführten Werte ändern, können Sie untersuchen, wie sie sich jeweils auf die Vorhersage des Krankenstands auswirken, die unsere Sachbearbeiter erhalten werden. Diese Sandbox verwendet ein vereinfachtes Modell und ist nur ein Beispiel für die Funktionalität des tatsächlichen Modells.",
+            "expandButtonText": "Weitere Informationen",
+            "sickLeaveDescription": "Prognostizierte Dauer des Krankenstandes",
+            "calculate": "Voraussagen",
+            "weeks": "Wochen",
+            "weeksThree": "Wochen oder weniger",
+            "weeksEight": "Wochen oder mehr",
+            "initialPredictionText": "Klicken Sie auf \"Vorhersage\", um den Vorgang zu verarbeiten",
+            "caseHandlerText1": "Entgegennahme des Sachbearbeiters",
+            "caseHandlerText2": "Die Vorhersage"
+        },
+        "featureImportance": {
+            "title": "Wichtigkeit der Funktion",
+            "description1": "Die Wichtigkeit von Merkmalen bezieht sich darauf, wie viel jedes Merkmal (z. B. Alter oder Diagnose) zur Vorhersage der Krankheitsdauer des KI-Modells beiträgt. Der Wert eines Features, z. B. Ihr Alter, wirkt sich auf die Feature-Wichtigkeit aller Features aus.",
+            "description2": "Um besser zu verstehen, wie wichtig verschiedene Merkmale sind, wenn das KI-Modell die Vorhersage trifft, können Sie das Alter über dem Diagramm ändern, um ein Beispiel dafür zu sehen, wie das Alter die Bedeutung der einzelnen Merkmale beeinflusst.",
+            "description3": "Je größer die relative Gewichtung eines Features ist, desto wichtiger ist das Feature für die Vorhersage angesichts des angegebenen Alters."
+        },
+        "aboutRightsInfo": {
+            "title": "Ihre Rechte",
+            "description1": "Als Nutzer dieses Dienstes haben Sie bestimmte Rechte, insbesondere in Bezug auf Ihre personenbezogenen Daten.",
+            "description2": "Sie können mehr über Ihre Rechte als Benutzer erfahren, indem Sie dieses Feld erweitern.",
+            "readMore": {
+                "userRightsTitle": "Als Nutzer haben Sie das Recht:",
+                "li1": "Informieren Sie sich darüber, welche Ihrer personenbezogenen Daten verwendet werden und warum",
+                "li2": "Korrigieren Sie fehlerhafte Informationen über sich selbst",
+                "li3": "Sie können jederzeit die Löschung Ihrer personenbezogenen Daten aus den Registern des Nationalen Sozialdienstes verlangen",
+                "li4": "Fordern Sie an, dass der Prozess, bei dem Ihre personenbezogenen Daten verwendet werden, abgebrochen wird",
+                "li5": "Lassen Sie sich Ihre persönlichen Daten auf verständliche Weise präsentieren",
+                "li6": "Sie können jederzeit Widerspruch gegen die Verarbeitung Ihrer personenbezogenen Daten einlegen",
+                "learnMoreLinkText": "Weitere Informationen"
+            }
+        },
+        "consent": {
+            "title": "Sie müssen jetzt entscheiden, ob Sie der Verwendung des KI -Modells zustimmen möchten",
+            "disagreeDescription": "Wenn Sie sich nicht auf die Verwendung des KI -Modells entscheiden, verarbeitet der Fallhandler Ihre Informationen, um die entsprechende Unterstützung ohne die Verwendung des Modells zu bestimmen.",
+            "agreeDescription": "Wenn Sie der Verwendung des KI -Modells zustimmen, werden Ihre Informationen zunächst vom KI -Modell verarbeitet. Der Fallhandler entscheidet dann entsprechende Unterstützung. Die Verwendung des KI -Modells kann zu einer kürzeren Verarbeitungszeit führen.",
+            "question": "Stimmen Sie der Verwendung des KI -Modells zu, um Ihre Krankheitsurlaubsdauer vorherzusagen?",
+            "disagreeButtonText": "Ich stimme nicht zu",
+            "agreeButtonText": "Ich stimme zu"
+        }
+    },
+    "summaryPage": {
+        "titleNotConsenting": "Sie haben sich dafür entschieden, der Verwendung des KI-Modells für die Vorhersage nicht zuzustimmen",
+        "titleConsenting": "Sie haben sich entschieden, der Verwendung des KI-Modells für die Vorhersage zuzustimmen",
+        "descriptionNotConsenting": "Der Sachbearbeiter wird eine Vorhersage über die Gesamtdauer Ihres Krankenstands ohne Verwendung des KI-Modells treffen.",
+        "descriptionConsenting": "Der Sachbearbeiter verwendet das KI-Modell, um die Gesamtdauer Ihres Krankenstands vorherzusagen.",
+        "changeCoice": "Wenn Sie Ihre Auswahl ändern möchten, klicken Sie oben links auf \"KI verwenden\".",
+        "informationSummaryTitle": "Ihre persönlichen Daten",
+        "informationSummarySource": "Diese Informationen stammen aus dem nationalen Bevölkerungsregister und den Registern des Nationalen Sozialdienstes.",
+        "submitChoiceButtonText": "Senden Sie Ihre Wahl"
+    },
+    "submittedPage": {
+        "title": "Vielen Dank, dass Sie Ihre Wahl eingereicht haben!",
+        "descriptionConsent": "Der Sachbearbeiter erhält nun die für Ihren Fall relevanten Daten und eine Vorhersage auf Basis des KI-Modells. Die Entscheidung über die Fördermaßnahmen erhalten Sie innerhalb von 1-2 Wochen.",
+        "descriptionNonConsent": "Der Sachbearbeiter erhält nun die für Ihren Fall relevanten Daten und trifft die Entscheidung ohne den Einsatz des KI-Modells. Die Entscheidung über die Fördermaßnahmen erhalten Sie innerhalb von 1-2 Wochen."
+    },
+    "userTestingFinishedPage": {
+        "title": "Vielen Dank, dass Sie unsere Webanwendung getestet haben!",
+        "information": "Sie haben nun die Demo abgeschlossen. Sie können entweder zum Anfang der Demo (Startseite) zurückkehren oder mit unserer Umfrage (Google Forms) fortfahren, um einige Fragen zu beantworten.",
+        "toFrontPageButtonText": "Titelseite",
+        "toSurveyButtonText": "Vermessung"
+    },
+    "userTestingSurvey": "https://forms.gle/tiTeibKn9FJccgwbA"
+}
