@@ -25,6 +25,7 @@ In this project we developed a web application that addresses the case of ensuri
 
 ## Project Structure
 Here are the major folders and files, and a short description of them:
+<<<<<<< README.md
 
 ```
 ├── __tests__:                  Jest tests
@@ -45,6 +46,8 @@ Here are the major folders and files, and a short description of them:
 │   │
 │   └── util:                   Utility
 │       └── sendApiRequest.ts   Function for sending API requests 
+├── database-dump:              Data from our MongoDB database used in testing periods.
+│    └── ...
 ├── .gitlab-ci.yml:             Specifies the GitLab continous integration pipleline.
 ├── README.md:                  This file
 ├── jest.config.mjs:            Configuration file for the Jest testing framework.
@@ -55,7 +58,6 @@ Here are the major folders and files, and a short description of them:
 ├── tailwind.config.js:         Configuration file for Tailwind CSS.
 └── tsconfig.json:              Configuration file for TypeScript
 ```
-
 
 ## Prerequisites
 
