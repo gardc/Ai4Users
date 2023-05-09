@@ -1,5 +1,5 @@
 from flask import request, jsonify
-from src.ai_model import predict
+from ai_model import predict
 
 """
 Function:
