@@ -61,7 +61,7 @@ These environment variables provides the NextJS app information about how to com
 
 ## Running the NextJS Server
 1. Make sure the configured MongoDB is available and accessible.
-2. Start the AI sandbox server [AI Sandbox Readme](sandbox-server/readme.md).
+2. Start the AI sandbox server [AI Sandbox Readme](sandbox-server/README.md).
 3. Run the following commands to build and start the production server:
 ```
 npm run build
