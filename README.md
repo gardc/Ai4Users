@@ -51,7 +51,7 @@ Here are the major folders and files, and a short description of them:
 - `next.config.js`: Configuration file for Next.js.
 - `package.json`: Specifies the Node.js package and its dependencies.
 - `postcss.config.js`: Configuration file for PostCSS used in relation to Tailwind CSS.
-- `tailwind.config.js`: Configuration file for Tailwind CSS.
+- `tailwind.config.js`: Configuration file for Tailwind CSS, including a custom color pallette and font families.
 - `tsconfig.json`: Configuration file for TypeScript.
 
 ## Prerequisites
@@ -92,6 +92,10 @@ MONGODB_URI="<your mongoDB connection URI>"
 SANDBOX_URI="<sandbox API URI, e.g. http://0.0.0.0>"
 ```
 These environment variables provides the NextJS app information about how to communicate with the database and the AI sandbox server.
+
+### Optional: configuring colors
+Throughout the codebase we have strictly used predefined colors, which are defined in the tailwind config (`tailwind.config.js`). These colors can be edited if necessary to better fit the design vision. Currently we have defined color names by the colors used, but this could be changed to a priority system instead (e.g. using primary, secondary,etc.).
+
 
 ## Running the NextJS Server
 1. Make sure the configured MongoDB is available and accessible.
