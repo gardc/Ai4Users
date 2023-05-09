@@ -54,6 +54,18 @@ Here are the major folders and files, and a short description of them:
 - `tailwind.config.js`: Configuration file for Tailwind CSS.
 - `tsconfig.json`: Configuration file for TypeScript.
 
+ * [tree-md](./tree-md)
+ * [dir2](./dir2)
+   * [file21.ext](./dir2/file21.ext)
+   * [file22.ext](./dir2/file22.ext)
+   * [file23.ext](./dir2/file23.ext)
+ * [dir1](./dir1)
+   * [file11.ext](./dir1/file11.ext)
+   * [file12.ext](./dir1/file12.ext)
+ * [file_in_root.ext](./file_in_root.ext)
+ * [README.md](./README.md)
+ * [dir3](./dir3)
+
 ## Prerequisites
 
 Before setting up this project, ensure that you have the following software, tools, or libraries installed:
