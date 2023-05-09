@@ -25,46 +25,36 @@ In this project we developed a web application that addresses the case of ensuri
 
 ## Project Structure
 Here are the major folders and files, and a short description of them:
-- `__tests__`: Jest tests.
-    - ...
-- `public`: Assets that are available publicly.
-    - ...
-- `src`:
-    - `components`: Reusable React components.
-        - ...
-    - `db`:
-        - `models`: Database models (using mongoose).
-            - `feedback.ts`: Describes the feedback data model.
-        - `dbConnect.js`: Provides database connection logic and the `dbConnect()` .function.
-    - `pages`: User accessible pages and API routes.
-        - `api`: API routes publicly available through HTTP calls.
-            - ...
-        - ...
-    - `styles`: 
-        - `globals.css`: Global CSS file used on every page.
-    - `util`: Utility.
-        - `sendApiRequest.ts`: Function for sending API requests.
-- `.gitlab-ci.yml`: Specifies the GitLab continous integration pipleline.
-- `README.md`: This file.
-- `jest.config.mjs`: Configuration file for the Jest testing framework.
-- `next-i18next.config.js`: Configuration file for i18next.
-- `next.config.js`: Configuration file for Next.js.
-- `package.json`: Specifies the Node.js package and its dependencies.
-- `postcss.config.js`: Configuration file for PostCSS used in relation to Tailwind CSS.
-- `tailwind.config.js`: Configuration file for Tailwind CSS.
-- `tsconfig.json`: Configuration file for TypeScript.
 
-
-├── dir1 \ 
-│   ├── file11.ext \
-│   └── file12.ext \
-├── dir2
-│   ├── file21.ext \
-│   ├── file22.ext \
-│   └── file23.ext \
-├── dir3 \
-├── file_in_root.ext \
-└── 'tsconfig.json': Configuration file for TypeScript.\
+```
+├── __tests__:                  Jest tests
+│   └── ...
+├── public:                     Assets that are available publicly.
+├── src
+│   ├── components:             Reusable React components
+│   ├── db: 
+│   │   ├── models:             Database models (using mongoose) 
+│   │   │   └── feedback.ts:    Describes the feedback data model
+│   │   └── dbConnect.js:       Provides database connections logic and the dbConnect() function.
+│   ├── pages:                  User accessible pages and API routes
+│   │   ├── api:                API routes publiclyc available through HTTP calls
+│   │   │   └── ...
+│   │   └── ...
+│   ├── styles:
+│   │   └── globals.css:        Global CSS file used on every page
+│   │
+│   └── util:                   Utility
+│       └── sendApiRequest.ts   Function for sending API requests 
+├── .gitlab-ci.yml:             Specifies the GitLab continous integration pipleline.
+├── README.md:                  This file
+├── jest.config.mjs:            Configuration file for the Jest testing framework.
+├── next-i18next.config.js:     Configuration file for i18next.
+├── next.config.js:             Configuration file for Next.js.
+├── package.json:               Specifies the Nodejs package and its dependencies.
+├── postcss.config.js:          Configuration file for PostCSS used in relation to Tailwind CSS.
+├── tailwind.config.js:         Configuration file for Tailwind CSS.
+└── tsconfig.json:              Configuration file for TypeScript
+```
 
 
 ## Prerequisites
