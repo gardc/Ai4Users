@@ -448,7 +448,7 @@ const UsingAI = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
                             <h2 className="font-semibold">
                                 {t("usingAiPage.aboutRightsInfo.readMore.userRightsTitle")}
                             </h2>
-                            <ul className="space-y-4 list-disc font-light text-left">
+                            <ul className="space-y-4 list-disc font-light text-left mx-8">
                                 <li>
                                     <div>
                                         <p>{t("usingAiPage.aboutRightsInfo.readMore.li1")}</p>
