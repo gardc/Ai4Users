@@ -14,9 +14,7 @@ import sendApiRequest from "@/util/sendApiRequest";
  *
  * @returns A React functional component representing the landing page.
  */
-const Feedback: React.FC = (
-    _props: InferGetStaticPropsType<typeof getStaticProps>
-) => {
+const Feedback: React.FC = (_props: InferGetStaticPropsType<typeof getStaticProps>) => {
     const { t } = useTranslation("common");
     const [feedbackString, setFeedbackString] = useState("");
     const [waiting, setWaiting] = useState(false);
@@ -40,9 +38,7 @@ const Feedback: React.FC = (
         }
     };
 
-    const handleInputChange = (
-        event: React.ChangeEvent<HTMLTextAreaElement>
-    ) => {
+    const handleInputChange = (event: React.ChangeEvent<HTMLTextAreaElement>) => {
         setFeedbackString(event.target.value);
     };
 
@@ -66,7 +62,7 @@ const Feedback: React.FC = (
                         placeholder={t("feedback.placeholder")!}
                     ></textarea>
                 )}
-                <p className="text-lg font-bold">{resultMessage}</p>
+                <p className="text-lg px-8 font-bold">{resultMessage}</p>
                 <div className="flex justify-center mt-8 mb-10 sm:m-5">
                     {!finished && (
                         <Button
@@ -78,11 +74,7 @@ const Feedback: React.FC = (
                             {t("feedback.submit")}
                         </Button>
                     )}
-                    <Button
-                        color="orange"
-                        href="/submittedPage?consent=false"
-                        loading={waiting}
-                    >
+                    <Button color="orange" href="/submittedPage?consent=false" loading={waiting}>
                         {/* If finished, show continue button, else show skip */}
                         {finished ? t("feedback.continue") : t("feedback.skip")}
                     </Button>
