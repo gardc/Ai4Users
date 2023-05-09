@@ -1,72 +1,102 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# AI4Users
+The motivation for our project is to help customers design, prototype, and evaluate
+tools that give non-experts a better understanding of AI applications. We want to
+turn the design knowledge we gain into practical design principles that will make
+it easier to create and use responsible AI in public services. Many of these public
+services are today found online, for example, services related to taxes, unemploy-
+ment, and student loans. We aim to improve AI intelligibility and accountability for an AI
+model suggesting the expected total duration of sick leave. 
 
-## Getting Started
+## Table of Contents
 
-First, run the development server:
+1. [Description](#description)
+3. [Installation](#installation)
+4. [Configuration](#configuration)
+5. [Usage](#usage)
+7. [Contributing](#contributing)
+9. [Acknowledgements](#acknowledgements)
 
+## Description
+
+In this project we developed a web application that addresses the case of ensuring AI accountability and intelligibility in an online public service using an AI model to estimate the total duration of sick leave.
+
+## Prerequisites
+
+Before setting up this project, ensure that you have the following software, tools, or libraries installed:
+
+- Node.js (version 12.0 or higher).
+- Docker (Docker Desktop on macOS and Windows).
+
+Optional:
+- Python (version 3.7 or higher), if you wish to run the Sandbox server locally.
+
+
+## Installation
+
+1. To run locally, in the project directory run:
+
+```bash
+npm install
+```
+2. Then, run the development server
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+This runs the app in the development mode. Open [http://localhost:3000](http://localhost:3000) to view it in the browser. 
 
-***Remember to add the mongoDB connection URI to your .env.local file like this:***
+
+## Configuration
+1. Create a `.env.local` and a `.env.test` file in the project's root directory to store environment variables:
 ```bash
-MONGODB_URI="mongodb://localhost:27017"
+touch .env.local
+touch .env.test
 ```
+2. In the two .env files, add the following configuration settings:
+```bash
+MONGODB_URI="<your mongoDB connection URI>"
+SANDBOX_URI="<sandbox API URI, e.g. http://0.0.0.0>"
+```
+These environment variables provides the NextJS app information about how to communicate with the database and the AI sandbox server.
+
+## Running the NextJS Server
+1. Make sure the configured MongoDB is available and accessible.
+2. Start the AI sandbox server [AI Sandbox Readme](sandbox-server/readme.md).
+3. Run the following commands to build and start the production server:
+```
+npm run build
+npm run start
+```
+
+4. The NextJS project should now be accessible at `http://localhost:3000`. Make sure the AI server is running in order for the sandbox functionality to work.
 
 ## Testing
 There is currently one unit test which tests the feedback API route. In order to test, do the following:
-1. Create a `.env.test` file which includes a `MONGODB_URI` definition (which can be copied from .env.local) in order to connect to the database during jest testing.
-2. Run `npm run test`.
+1. Make sure you created the `.env.test` file as described in [Configuration](#configuration).
+2. Then run the tests through Jest by running:
+```
+npm run test
+```
 
-## Conventions for working with issues, labels and milestones
 
--   Every issue represents a child-issue.
--   Every child-issue belongs to a user story.
--   Every user story is a label, and child issues are connected to a label.
--   When a developer has finished a issue, type "Fix #numberOfIssue" in commit-message to close given issue.
-    -   Or, click into issue and click on "create merge request". this will create a branch that is connected to given issue.
-        When this branch is merged with main, issue will automatically close.
--   Every issue is connected to a milestone.
+## Usage
 
-## Git commit and merging coventions
+The user will first be met by a usergroup login, divided between citizens and casehandlers. The casehandler login will lead to a dead page, while the citizen login will lead to the sickleave prediciton flow. This will take the user through mutliple steps where they are provided with information about their rights and how the AI system works. Here they are giving the option to consent or not to the use of the AI system. 
 
--   Conventions for creating branches, issues, and merge requests can be found in the wiki.
--   Merge mainbranch into your workingbranch locally before merging into main in gitlab.
-    -   This way there wont be any merge-issues anywhere else than on your local pc.
--   In commit message:
-    -   Subject line must be written in imperativ form, e.g. "Add (...)" or "Fix (...)"
-    -   Subject line should not have punctuation
-    -   Separate subject line andbody with a blank line (not needed in most IDE's e.g. VSCode by default)
-    -   Try to keep the subject line concise
-    -   Use the body to explain what and why
-    -   Separate body and footer with a blank line
-    -   Include "#{issue number}" in the footer of the commit-message
 
-## Project setup and running rules
+![Image of sandbox](/img/sanbox.png)
+![Image of consent](/img/consent.png)
 
-## Collaborate with your team
 
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
+## Deployment
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+To deploy the Next.js app you can use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## Learn More
+Check out [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 
-To learn more about Next.js, take a look at the following resources:
 
--   [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
--   [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Contributing
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+This project is made by a bachelor group from informatics as a part of our bachelor thesis. 
 
-## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
