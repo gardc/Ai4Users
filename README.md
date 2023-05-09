@@ -118,7 +118,7 @@ npm run test
 The user will first be met by a usergroup login, divided between citizens and casehandlers. The casehandler login will lead to a dead page, while the citizen login will lead to the sickleave prediciton flow. This will take the user through mutliple steps where they are provided with information about their rights and how the AI system works. Here they are giving the option to consent or not to the use of the AI system. 
 
 
-![Image of sandbox](/public/img/sanbox.png)
+![Image of sandbox](/public/img/sandbox.png)
 ![Image of consent](/public/img/consent.png)
 
 
