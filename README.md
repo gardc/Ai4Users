@@ -1,4 +1,4 @@
-# AI4Users
+# AI4Users - Sick leave duration prediction prototype
 The motivation for our project is to help customers design, prototype, and evaluate
 tools that give non-experts a better understanding of AI applications. We want to
 turn the design knowledge we gain into practical design principles that will make
