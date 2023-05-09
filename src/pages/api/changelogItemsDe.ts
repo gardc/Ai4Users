@@ -23,30 +23,30 @@
 export const changeLogItemsDe = [
     {
         dateOfChange: "12.03.2023",
-        titleOfChange: "Improved training data for county feature",
+        titleOfChange: "Verbesserte Trainingsdaten für Bezirksmerkmale",
         changeDescription:
-            "The AI model has been retrained with a more diverse and up-to-date dataset for the county feature. This should result in more accurate predictions of sick leave duration, as the model can better capture regional differences in health outcomes and medical practices.",
+            "Das KI-Modell wurde mit einem vielfältigeren und aktuelleren Datensatz für das Landkreismerkmal neu trainiert. Dies sollte zu genaueren Vorhersagen über die Dauer von Krankschreibungen führen, da das Modell regionale Unterschiede bei den Gesundheitsergebnissen und der medizinischen Praxis besser erfassen kann.",
         readMoreLink: "",
     },
     {
         dateOfChange: "22.02.2023",
-        titleOfChange: "Increased training data",
+        titleOfChange: "Erhöhte Trainingsdaten",
         changeDescription:
-            "The AI model now has access to a larger dataset with more diverse cases, which should improve its accuracy in predicting sick leave durations.",
+            "Das KI-Modell hat nun Zugang zu einem größeren Datensatz mit vielfältigeren Fällen, was seine Genauigkeit bei der Vorhersage der Krankheitsdauer verbessern dürfte.",
         readMoreLink: "",
     },
     {
         dateOfChange: "15.01.2023",
-        titleOfChange: "Improved normalization technique",
+        titleOfChange: "Verbesserte Normalisierungsmethode",
         changeDescription:
-            "We have updated the normalization technique used in the AI model to better account for outliers and improve its ability to handle non-standard cases.",
+            "Wir haben die im KI-Modell verwendete Normalisierungstechnik aktualisiert, um Ausreißer besser zu berücksichtigen und die Fähigkeit zur Behandlung von Nicht-Standardfällen zu verbessern.",
         readMoreLink: "",
     },
     {
         dateOfChange: "30.11.2022",
-        titleOfChange: "Added new input feature",
+        titleOfChange: "Neue Eingabefunktion hinzugefügt",
         changeDescription:
-            "We have added a new input feature to the AI model, which takes into account the patient's occupation. This should improve the model's accuracy in predicting sick leave durations for individuals in specific professions.",
+            "Wir haben dem KI-Modell eine neue Eingabefunktion hinzugefügt, die den Beruf des Patienten berücksichtigt. Dies sollte die Genauigkeit des Modells bei der Vorhersage der Krankheitsdauer für Personen in bestimmten Berufen verbessern.",
         readMoreLink: "",
     },
 ];

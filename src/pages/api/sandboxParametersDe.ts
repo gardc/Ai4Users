@@ -1,6 +1,6 @@
 export const sandboxParametersDe = [
     {
-        label: "Age",
+        label: "Alter",
         labelValueForModel: "age",
         argument: [
             {
@@ -50,7 +50,7 @@ export const sandboxParametersDe = [
         ],
     },
     {
-        label: "County",
+        label: "Region",
         labelValueForModel: "region",
         argument: [
             {
@@ -100,45 +100,45 @@ export const sandboxParametersDe = [
         ],
     },
     {
-        label: "Gender",
+        label: "Geschlecht",
         labelValueForModel: "gender",
         argument: [
             {
-                itemName: "Male",
+                itemName: "Männlich",
                 itemValueForModel: "Male",
             },
             {
-                itemName: "Female",
+                itemName: "Weiblich",
                 itemValueForModel: "Female",
             },
         ],
     },
     {
-        label: "Diagnosis",
+        label: "Diagnose",
         labelValueForModel: "disorder",
         argument: [
             {
-                itemName: "Cardiovascular diseases",
+                itemName: "Herz-Kreislauf-Erkrankung",
                 itemValueForModel: "Cardiovascular diseases",
             },
             {
-                itemName: "Muscle/skeleton disorders",
+                itemName: "Muskel-/Skeletterkrankung",
                 itemValueForModel: "Muscle/skeleton disorders",
             },
             {
-                itemName: "Mental disorders",
+                itemName: "Psychische Erkrankungen",
                 itemValueForModel: "Mental disorders",
             },
             {
-                itemName: "Diseases in the digestive organs",
+                itemName: "Krankheiten der Verdauungsorgane",
                 itemValueForModel: "Diseases in the digestive organs",
             },
             {
-                itemName: "Diseases in the respiratory tract",
+                itemName: "Atemswegerkrankungen",
                 itemValueForModel: "Diseases in the respiratory tract",
             },
             {
-                itemName: "Diseases in the nervous system",
+                itemName: "Krankheiten des Nervensystems",
                 itemValueForModel: "Diseases in the nervous system",
             },
         ],
