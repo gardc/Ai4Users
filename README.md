@@ -26,7 +26,6 @@ In this project we developed a web application that addresses the case of ensuri
 
 ## Project Structure
 Here are the major folders and files, and a short description of them:
-<<<<<<< README.md
 
 ```
 ├── __tests__:                  Jest tests
