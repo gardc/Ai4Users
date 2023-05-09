@@ -25,36 +25,39 @@ In this project we developed a web application that addresses the case of ensuri
 
 ## Project Structure
 Here are the major folders and files, and a short description of them:
-- `__tests__`: Jest tests.
-    - ...
-- `public`: Assets that are available publicly.
-    - ...
-- `src`:
-    - `components`: Reusable React components.
-        - ...
-    - `db`:
-        - `models`: Database models (using mongoose).
-            - `feedback.ts`: Describes the feedback data model.
-        - `dbConnect.js`: Provides database connection logic and the `dbConnect()` .function.
-    - `pages`: User accessible pages and API routes.
-        - `api`: API routes publicly available through HTTP calls.
-            - ...
-        - ...
-    - `styles`: 
-        - `globals.css`: Global CSS file used on every page.
-    - `util`: Utility.
-        - `sendApiRequest.ts`: Function for sending API requests.
-- `database-dump`: Data from our MongoDB database used in testing periods.
-    - ...
-- `.gitlab-ci.yml`: Specifies the GitLab continous integration pipleline.
-- `README.md`: This file.
-- `jest.config.mjs`: Configuration file for the Jest testing framework.
-- `next-i18next.config.js`: Configuration file for i18next.
-- `next.config.js`: Configuration file for Next.js.
-- `package.json`: Specifies the Node.js package and its dependencies.
-- `postcss.config.js`: Configuration file for PostCSS used in relation to Tailwind CSS.
-- `tailwind.config.js`: Configuration file for Tailwind CSS.
-- `tsconfig.json`: Configuration file for TypeScript.
+<<<<<<< README.md
+
+```
+├── __tests__:                  Jest tests
+│   └── ...
+├── public:                     Assets that are available publicly.
+├── src
+│   ├── components:             Reusable React components
+│   ├── db: 
+│   │   ├── models:             Database models (using mongoose) 
+│   │   │   └── feedback.ts:    Describes the feedback data model
+│   │   └── dbConnect.js:       Provides database connections logic and the dbConnect() function.
+│   ├── pages:                  User accessible pages and API routes
+│   │   ├── api:                API routes publiclyc available through HTTP calls
+│   │   │   └── ...
+│   │   └── ...
+│   ├── styles:
+│   │   └── globals.css:        Global CSS file used on every page
+│   │
+│   └── util:                   Utility
+│       └── sendApiRequest.ts   Function for sending API requests 
+├── database-dump:              Data from our MongoDB database used in testing periods.
+│    └── ...
+├── .gitlab-ci.yml:             Specifies the GitLab continous integration pipleline.
+├── README.md:                  This file
+├── jest.config.mjs:            Configuration file for the Jest testing framework.
+├── next-i18next.config.js:     Configuration file for i18next.
+├── next.config.js:             Configuration file for Next.js.
+├── package.json:               Specifies the Nodejs package and its dependencies.
+├── postcss.config.js:          Configuration file for PostCSS used in relation to Tailwind CSS.
+├── tailwind.config.js:         Configuration file for Tailwind CSS.
+└── tsconfig.json:              Configuration file for TypeScript
+```
 
 ## Prerequisites
 
@@ -120,8 +123,8 @@ npm run test
 The user will first be met by a usergroup login, divided between citizens and casehandlers. The casehandler login will lead to a dead page, while the citizen login will lead to the sickleave prediciton flow. This will take the user through mutliple steps where they are provided with information about their rights and how the AI system works. Here they are giving the option to consent or not to the use of the AI system. 
 
 
-![Image of sandbox](/img/sanbox.png)
-![Image of consent](/img/consent.png)
+![Image of sandbox](/public/img/sandbox.png)
+![Image of consent](/public/img/consent.png)
 
 
 ## Deployment
