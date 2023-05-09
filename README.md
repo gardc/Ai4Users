@@ -44,6 +44,8 @@ Here are the major folders and files, and a short description of them:
         - `globals.css`: Global CSS file used on every page.
     - `util`: Utility.
         - `sendApiRequest.ts`: Function for sending API requests.
+- `database-dump`: Data from our MongoDB database used in testing periods.
+    - ...
 - `.gitlab-ci.yml`: Specifies the GitLab continous integration pipleline.
 - `README.md`: This file.
 - `jest.config.mjs`: Configuration file for the Jest testing framework.
