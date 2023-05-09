@@ -26,6 +26,7 @@ Before setting up this project, ensure that you have the following software, too
 
 - Node.js (version 12.0 or higher).
 - Docker (Docker Desktop on macOS and Windows).
+
 Optional:
 - Python (version 3.7 or higher), if you wish to run the Sandbox server locally.
 
@@ -83,8 +84,8 @@ npm run test
 The user will first be met by a usergroup login, divided between citizens and casehandlers. The casehandler login will lead to a dead page, while the citizen login will lead to the sickleave prediciton flow. This will take the user through mutliple steps where they are provided with information about their rights and how the AI system works. Here they are giving the option to consent or not to the use of the AI system. 
 
 
-![Image of sandbox](img/sanbox.png)
-![Image of consent](img/consent.png)
+![Image of sandbox](/img/sanbox.png)
+![Image of consent](/img/consent.png)
 
 
 ## Deployment
@@ -98,8 +99,4 @@ Check out [Next.js deployment documentation](https://nextjs.org/docs/deployment)
 
 This project is made by a bachelor group from informatics as a part of our bachelor thesis. 
 
-
-## Acknowledgements
-
-_Include any acknowledgements or credits for third-party tools, libraries, or individuals who have contributed to the project._
 
