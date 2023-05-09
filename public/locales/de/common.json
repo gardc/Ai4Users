@@ -15,8 +15,9 @@
         "summaryPageCompressed": "Zusammenfassung"
     },
     "changelog": {
+        "currentVersion": "Version des KI-Modells: 1.0.3",
         "title": "Letzte Änderungen am KI-Modell",
-        "readMore": "Lesen Sie mehr"
+        "linkText": "Lesen Sie mehr"
     },
     "userTestingLandingPage": {
         "title": "Vielen Dank, dass Sie unsere Webanwendung testen möchten",
